@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="bg-info ce-content-element-info{f:if(condition: header, then: ' cec-my')}">
+    <f:if condition="{frame_class} == 'none'">
+        <f:then>
+            <core:icon identifier="gsb-container-noframe" /> {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:without_frame')}
+        </f:then>
+        <f:else>
+            <core:icon identifier="gsb-container-frame" /> {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:with_frame')}
+        </f:else>
+    </f:if>
+</div>
+<f:format.raw>{tx_container_grid}</f:format.raw>
+<f:asset.css identifier="ce-container" href="EXT:gsb_template/Resources/Public/Css/backend.css" />
+
+</html>

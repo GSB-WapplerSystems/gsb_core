@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="typo3conf/ext/gsb_template/Resources/Favicons/apple-touch-icon-192x192.png"/>
+<!--            <TileColor>#</TileColor>-->
+        </tile>
+    </msapplication>
+</browserconfig>

@@ -1,0 +1,19 @@
+lib.footerNav = HMENU
+lib.footerNav {
+    special = directory
+    special.value = {$config.pids.Footer}
+    includeNotInMenu = 0
+
+    1 = TMENU
+    1 {
+        wrap = <ul>|</ul>
+        expAll = 1
+        NO.wrapItemAndSub = <li>|</li>
+
+        CUR < .NO
+        CUR = 1
+        CUR.allWrap = <strong>|</strong>
+        CUR.doNotLinkIt = 1
+        CUR.stdWrap.htmlSpecialChars = 1
+    }
+}

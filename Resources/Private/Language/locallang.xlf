@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+        <header/>
+        <body>
+            <trans-unit id="opens" resname="opens">
+                <source>Opens</source>
+            </trans-unit>
+            <trans-unit id="innewwindow" resname="innewwindow">
+                <source>in a new window</source>
+            </trans-unit>
+            <trans-unit id="header.text" resname="header.text">
+                <source>Link to Homepage</source>
+            </trans-unit>
+            <trans-unit id="header.jumpto" resname="header.jumpto">
+                <source>Jump directly to:</source>
+            </trans-unit>
+            <trans-unit id="header.jumptocontent" resname="header.jumptocontent">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="header.register" resname="header.register">
+                <source>Register</source>
+            </trans-unit>
+            <trans-unit id="header.login" resname="header.login">
+                <source>Log in</source>
+            </trans-unit>
+            <trans-unit id="header.servicemenu" resname="header.servicemenu">
+                <source>Service menu</source>
+            </trans-unit>
+            <trans-unit id="header.mainnavigation" resname="header.mainnavigation">
+                <source>Main navigation</source>
+            </trans-unit>
+            <trans-unit id="header.openMenu">
+                <source><![CDATA[<span class="visually-hidden">Open</span>]]> menu</source>
+            </trans-unit>
+            <trans-unit id="header.closeMenu">
+                <source><![CDATA[<span class="visually-hidden">Close</span>]]> menu</source>
+            </trans-unit>
+            <trans-unit id="header.openMenuTitle" resname="header.openMenuTitle">
+                <source>Open menu</source>
+            </trans-unit>
+            <trans-unit id="header.closeMenuTitle" resname="header.closeMenuTitle">
+                <source>Close menu</source>
+            </trans-unit>
+            <trans-unit id="header.search" resname="header.search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="header.searching" resname="header.searching">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="header.searchterm" resname="header.searchterm">
+                <source>Searchterm</source>
+            </trans-unit>
+            <trans-unit id="header.searchopen" resname="header.searchopen">
+                <target>open search</target>
+            </trans-unit>
+            <trans-unit id="header.magnifyingglass" resname="header.magnifyingglass">
+                <source>Magnifying glass</source>
+            </trans-unit>
+            <trans-unit id="header.youarehere" resname="header.youarehere">
+                <source>You are here</source>
+            </trans-unit>
+            <trans-unit id="header.linktohomepage" resname="header.linktohomepage">
+                <source>Link to homepage</source>
+            </trans-unit>
+            <trans-unit id="supplement.areamenu" resname="supplement.areamenu">
+                <source>Area menu</source>
+            </trans-unit>
+            <trans-unit id="supplement.aside" resname="supplement.aside">
+                <source>Additional information</source>
+            </trans-unit>
+            <trans-unit id="footer.metanav" resname="footer.metanav">
+                <source>Meta navigation</source>
+            </trans-unit>
+            <trans-unit id="footer.socialmediaheader">
+                <source>Follow us at</source>
+            </trans-unit>
+            <trans-unit id="footer.socialmediafooter">
+                <source>Always up to date - follow us on our socialmedia channels</source>
+            </trans-unit>
+            <trans-unit id="footer.overview">
+                <source>Overview</source>
+            </trans-unit>
+            <trans-unit id="content.readmore">
+                <source>Continue reading</source>
+            </trans-unit>
+            <trans-unit id="videoyoutube.play">
+                <source>Play video</source>
+            </trans-unit>
+            <trans-unit id="videoyoutube.link">
+                <source>To activate the video you need to click on the button. After activating the button, <![CDATA[<a href="https://policies.google.com/privacy?hl=en&gl=ZZ" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">Google's privacy policy</a>]]> applies.</source>
+            </trans-unit>
+            <trans-unit id="audio.play">
+                <source>Play audio</source>
+            </trans-unit>
+            <trans-unit id="audio.link">
+                <source>To activate the widget you need to click on the button. After activating the button, <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">SoundCloud's privacy policy</a>]]> applies.</source>
+            </trans-unit>
+            <trans-unit id="shariff.social">
+                <source>Did you like this article? Share it with others:</source>
+            </trans-unit>
+            <trans-unit id="article.detail.published" xml:space="preserve">
+                <source>Published on</source>
+            </trans-unit>
+            <trans-unit id="article.detail.dateformat" xml:space="preserve">
+                <source>%d %b %Y</source>
+            </trans-unit>
+            <trans-unit id="date.time">
+                <source>%H:%M</source>
+            </trans-unit>
+            <trans-unit id="date.day">
+                <source>%d</source>
+            </trans-unit>
+            <trans-unit id="date.dayfull">
+                <source>%A, %d, %H:%M</source>
+            </trans-unit>
+            <trans-unit id="date.time">
+                <source>, %H:%M</source>
+            </trans-unit>
+            <trans-unit id="date.month">
+                <source>%b</source>
+            </trans-unit>
+            <trans-unit id="date.daymonthfull">
+                <source>%A, %d %B, %H:%M</source>
+            </trans-unit>
+            <trans-unit id="date.daymonth">
+                <source>%d %b</source>
+            </trans-unit>
+            <trans-unit id="date.year">
+                <source>%Y</source>
+            </trans-unit>
+            <trans-unit id="date.daymonthyear">
+                <source>%d %b %Y</source>
+            </trans-unit>
+            <trans-unit id="date.daymonthyearfull">
+                <source>%A, %d %B %Y, %H:%M</source>
+            </trans-unit>
+            <trans-unit id="article.detail.topic" xml:space="preserve">
+                <source>on the topic</source>
+            </trans-unit>
+            <trans-unit id="footer.logo.alt" xml:space="preserve">
+                <source>Federal Ministry of Labour and Social Affairs  - Link to bmas.de</source>
+            </trans-unit>
+            <trans-unit id="claim.denkfabrik" xml:space="preserve">
+                <source>The Policy Lab of the Federal Ministry of Labour and Social Affairs</source>
+            </trans-unit>
+            <trans-unit id="to.content" xml:space="preserve">
+                <source>Read more</source>
+            </trans-unit>
+            <trans-unit id="event.when" xml:space="preserve">
+                <source>When</source>
+            </trans-unit>
+            <trans-unit id="event.where" xml:space="preserve">
+                <source>Where</source>
+            </trans-unit>
+            <trans-unit id="event.time" xml:space="preserve">
+                <source>o'clock</source>
+            </trans-unit>
+            <trans-unit id="event.calendar" xml:space="preserve">
+                <source>Save</source>
+            </trans-unit>
+            <trans-unit id="event.month.1" xml:space="preserve">
+                <source>January</source>
+            </trans-unit>
+            <trans-unit id="event.month.2" xml:space="preserve">
+                <source>February</source>
+            </trans-unit>
+            <trans-unit id="event.month.3" xml:space="preserve">
+                <source>March</source>
+            </trans-unit>
+            <trans-unit id="event.month.4" xml:space="preserve">
+                <source>April</source>
+            </trans-unit>
+            <trans-unit id="event.month.5" xml:space="preserve">
+                <source>May</source>
+            </trans-unit>
+            <trans-unit id="event.month.6" xml:space="preserve">
+                <source>June</source>
+            </trans-unit>
+            <trans-unit id="event.month.7" xml:space="preserve">
+                <source>July</source>
+            </trans-unit>
+            <trans-unit id="event.month.8" xml:space="preserve">
+                <source>August</source>
+            </trans-unit>
+            <trans-unit id="event.month.9" xml:space="preserve">
+                <source>September</source>
+            </trans-unit>
+            <trans-unit id="event.month.10" xml:space="preserve">
+                <source>October</source>
+            </trans-unit>
+            <trans-unit id="event.month.11" xml:space="preserve">
+                <source>November</source>
+            </trans-unit>
+            <trans-unit id="event.month.12" xml:space="preserve">
+                <source>December</source>
+            </trans-unit>
+            <trans-unit id="event.list.read_more">
+                <source>Read more</source>
+            </trans-unit>
+            <trans-unit id="aside.sharepage">
+                <source>Share page</source>
+            </trans-unit>
+            <trans-unit id="aside.socialmedia">
+                <source>Socialmedia</source>
+            </trans-unit>
+            <trans-unit id="aside.sharepageshort" resname="aside.sharepageshort">
+                <source>Share</source>
+            </trans-unit>
+            <trans-unit id="aside.tweet">
+                <source>Tweet</source>
+            </trans-unit>
+            <trans-unit id="aside.share">
+                <source>Share</source>
+            </trans-unit>
+            <trans-unit id="aside.print">
+                <source>Print</source>
+            </trans-unit>
+            <trans-unit id="aside.shareonfacebook">
+                <source>Share on Facebook</source>
+            </trans-unit>
+            <trans-unit id="aside.shareontwitter">
+                <source>Share on Twittter</source>
+            </trans-unit>
+            <trans-unit id="aside.shareonreddit">
+                <source>Share on Reddit</source>
+            </trans-unit>
+            <trans-unit id="aside.shareonwhatsapp">
+                <source>Share on Whatsapp</source>
+            </trans-unit>
+            <trans-unit id="aside.shareonxing">
+                <source>Share on Xing</source>
+            </trans-unit>
+            <trans-unit id="aside.shareonlinkedin">
+                <source>Share on LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="aside.printpage">
+                <source>Print page</source>
+            </trans-unit>
+            <trans-unit id="aside.copylink">
+                <source>Copy link to clipboard</source>
+            </trans-unit>
+            <trans-unit id="aside.copy">
+                <source>Copy</source>
+            </trans-unit>
+            <trans-unit id="event.header.counter">
+                <source>upcoming events</source>
+            </trans-unit>
+            <trans-unit id="overview.header.counter">
+                <source>article for</source>
+            </trans-unit>
+            <trans-unit id="medpub.header.counter">
+                <source>posts</source>
+            </trans-unit>
+            <trans-unit id="event.calendar" xml:space="preserve">
+                <source>Add to Calendar</source>
+            </trans-unit>
+            <trans-unit id="gallery.download" xml:space="preserve">
+                <source>Download</source>
+            </trans-unit>
+            <trans-unit id="gallery.close" xml:space="preserve">
+                <source>Close</source>
+            </trans-unit>
+            <trans-unit id="gallery.previous" xml:space="preserve">
+                <source>Previous image</source>
+            </trans-unit>
+            <trans-unit id="gallery.next" xml:space="preserve">
+                <source>Next image</source>
+            </trans-unit>
+            <trans-unit id="gallery.of" xml:space="preserve">
+                <source>of</source>
+            </trans-unit>
+            <trans-unit id="focus" xml:space="preserve">
+                <source>Focus</source>
+            </trans-unit>
+            <trans-unit id="content.close" xml:space="preserve">
+                <source>Close</source>
+            </trans-unit>
+            <trans-unit id="content.article" xml:space="preserve">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="content.articles" xml:space="preserve">
+                <source>Articles</source>
+            </trans-unit>
+			<trans-unit id="tt_content.gallery_of" xml:space="preserve">
+				<source>of</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_close" xml:space="preserve">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_download" xml:space="preserve">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_previous" xml:space="preserve">
+				<source>Next image</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_next" xml:space="preserve">
+				<source>Previous image</source>
+			</trans-unit>
+			<trans-unit id="tt_content.images" xml:space="preserve">
+				<source>images</source>
+			</trans-unit>
+			<trans-unit id="tt_content.images.open" xml:space="preserve">
+				<source>Open image gallery</source>
+			</trans-unit>
+			<trans-unit id="date.time">
+				<source>%H:%M</source>
+			</trans-unit>
+			<trans-unit id="date.day">
+				<source>%d</source>
+			</trans-unit>
+			<trans-unit id="date.dayfull">
+				<source>%A, %d, %H:%M</source>
+			</trans-unit>
+			<trans-unit id="date.time">
+				<source>, %H:%M</source>
+			</trans-unit>
+			<trans-unit id="date.month">
+				<source>%b</source>
+			</trans-unit>
+			<trans-unit id="date.daymonthfull">
+				<source>%A, %d %B, %H:%M</source>
+			</trans-unit>
+			<trans-unit id="date.daymonth">
+				<source>%d %b</source>
+			</trans-unit>
+			<trans-unit id="date.year">
+				<source>%Y</source>
+			</trans-unit>
+			<trans-unit id="date.daymonthyear">
+				<source>%d %b %Y</source>
+			</trans-unit>
+			<trans-unit id="date.daymonthyearfull">
+				<source>%A, %d %B %Y, %H:%M</source>
+			</trans-unit>
+			<trans-unit id="event.month.1" xml:space="preserve">
+				<source>Jan</source>
+			</trans-unit>
+			<trans-unit id="event.month.2" xml:space="preserve">
+				<source>Feb</source>
+			</trans-unit>
+			<trans-unit id="event.month.3" xml:space="preserve">
+				<source>Mar</source>
+			</trans-unit>
+			<trans-unit id="event.month.4" xml:space="preserve">
+				<source>Apr</source>
+			</trans-unit>
+			<trans-unit id="event.month.5" xml:space="preserve">
+				<source>May</source>
+			</trans-unit>
+			<trans-unit id="event.month.6" xml:space="preserve">
+				<source>Jun</source>
+			</trans-unit>
+			<trans-unit id="event.month.7" xml:space="preserve">
+				<source>Jul</source>
+			</trans-unit>
+			<trans-unit id="event.month.8" xml:space="preserve">
+				<source>Aug</source>
+			</trans-unit>
+			<trans-unit id="event.month.9" xml:space="preserve">
+				<source>Sep</source>
+			</trans-unit>
+			<trans-unit id="event.month.10" xml:space="preserve">
+				<source>Oct</source>
+			</trans-unit>
+			<trans-unit id="event.month.11" xml:space="preserve">
+				<source>Nov</source>
+			</trans-unit>
+			<trans-unit id="event.month.12" xml:space="preserve">
+				<source>Dec</source>
+			</trans-unit>
+			<trans-unit id="content.shareontwitter">
+				<source>Share this content on Twitter</source>
+			</trans-unit>
+			<trans-unit id="aside.share">
+				<source>Share</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

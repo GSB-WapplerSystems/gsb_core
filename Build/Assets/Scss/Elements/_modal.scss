@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+.modal-footer {
+  background-color: $p1-color-3;
+  position: relative;
+  top: -9px;
+
+  nav {
+    width: 100%;
+
+    ul {
+      width: 100%;
+
+      li {
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.modal-open {
+  .modal {
+    overflow-y: hidden;
+  }
+}
+
+.modal-content {
+  background-color: $o-color-20;
+}
+
+.modal-backdrop.show {
+  opacity: .5;
+}
+
+.modal-header {
+  background-color: $p1-color-3;
+  min-height: 56px;
+
+  .close {
+    text-align: right;
+  }
+
+  .btn-close {
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none;
+      outline: 1px dashed $p1-color-6;
+    }
+  }
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  position: relative;
+  text-align: center;
+
+  .download {
+    background-position: center center;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    top: -59px;
+    width: 30px;
+
+    + a {
+      margin-bottom: 26px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.modal-fullscreen .modal-body {
+  overflow: visible;
+
+  figure {
+    margin: 0;
+  }
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.carousel-iterator {
+  bottom: -28px;
+  color: $p1-color-6;
+  display: block;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  bottom: 0;
+  width: auto;
+}
+
+.carousel-control-prev {
+  left: 16px;
+}
+
+.carousel-control-next {
+  right: 16px;
+}
+
+.carousel-imagetitle {
+  background-color: $o-color-10;
+  bottom: 0;
+  color: $p1-color-6;
+  display: block;
+  font-size: 14px;
+  margin: 0;
+  min-height: 24px;
+  padding: 5px;
+  position: absolute;
+  width: 100%;
+}

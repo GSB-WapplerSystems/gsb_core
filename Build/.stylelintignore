@@ -1,0 +1,4 @@
+**/*.html
+**/*.php
+**/*.js
+_variables.scss

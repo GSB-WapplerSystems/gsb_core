@@ -1,0 +1,68 @@
+#########################################################
+####  Assign all editors in the BE  their own style  ####
+#########################################################
+RTE {
+    default {
+        preset = default
+        classesAnchor {
+            page {
+                class = internal-link
+                type = page
+                titleText = 
+                target = 
+            }
+            file {
+                class = download
+                type = file
+                titleText = Öffnet Download-Dialog
+                target = 
+            }
+            folder {
+                class = folder
+                type = folder
+                titleText = Öffnet Ordnerstruktur
+                target = 
+            }
+            mail {
+                class = email
+                type = mail
+                titleText = Öffnet E-Mail Programm
+                image = 
+                #params =
+                rel = 
+            }
+            url {
+                class = external-link
+                type = url
+                titleText = Öffnet Link in neuem Fenster
+                target = _blank
+                image = 
+                #params =
+                rel = 
+            }
+        }
+        buttons.link {
+            options.removeItems = folder
+
+            file.properties {
+                class.default = download
+                title.readOnly = 1
+            }
+            folder.properties {
+                class.default = folder
+                title.readOnly = 1
+            }
+            url.properties {
+                class.default = external-link
+                title.readOnly = 1
+            }
+            mail.properties {
+                class.default = email
+                title.readOnly = 1
+            }
+            properties.class.allowedClasses = internal-link,external-link,folder,email,download,phone
+            queryParametersSelector.enabled = 0
+
+        }
+    }
+}

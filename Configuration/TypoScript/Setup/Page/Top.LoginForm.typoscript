@@ -1,0 +1,9 @@
+lib.loginForm = CONTENT
+lib.loginForm {
+    table = tt_content
+    select {
+        pidInList = {$config.pids.LoginForm}
+        orderBy = sorting
+        where = colPos=1
+    }
+}

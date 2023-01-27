@@ -1,0 +1,5 @@
+page {
+    includeJSFooter {
+        vendor = EXT:gsb_template/Resources/Public/JavaScripts/screen.js
+    }
+}

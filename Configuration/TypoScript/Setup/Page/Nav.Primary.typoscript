@@ -1,0 +1,72 @@
+lib.navPrimary = COA
+lib.navPrimary {
+    wrap = 
+
+    10 = HMENU
+    10 {
+
+        entryLevel = 0
+        excludeUidList = 
+
+        ### Erste Ebene ###
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="main-menu list-unstyled row">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="first-child line-after dropdown-item"
+            NO.ATagTitle.field = 
+            NO.wrapItemAndSub = <li class="col-12 col-md-6 col-xl-3">|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong class="first-child line-after active dropdown-item-strong">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.ATagParams = class="first-child line-after active dropdown-item"
+            ACT.allWrap = |
+
+            IFSUB < .NO
+            IFSUB = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.ATagParams = class="first-child line-after active dropdown-item"
+            ACTIFSUB.allWrap = |
+        }
+        ### Zweite, dritte und vierte Ebene (Kopieren von erster Ebene) ###
+        2 < .1
+        2 {
+            wrap = <ul class="list-unstyled">|</ul>
+
+            NO = 1
+            NO.ATagParams = class="sub dropdown-item"
+            NO.ATagTitle.field = 
+            NO.wrapItemAndSub = <li>|</li>
+            NO.stdWrap.htmlSpecialChars = 1
+
+            CUR < .NO
+            CUR = 1
+            CUR.allWrap = <strong class="sub dropdown-item-strong">|</strong>
+            CUR.doNotLinkIt = 1
+            CUR.stdWrap.htmlSpecialChars = 1
+
+            ACT < .NO
+            ACT = 1
+            ACT.allWrap = |
+
+            IFSUB < .NO
+            IFSUB = 1
+
+            ACTIFSUB < .NO
+            ACTIFSUB = 1
+            ACTIFSUB.allWrap = |
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+.minimap {
+  display: flex;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 40px;
+  }
+
+  .minimap-sub {
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.minimap-item {
+  > a,
+  > strong {
+    color: $p1-color-2;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 17px;
+    }
+  }
+
+  &::after {
+    background-color: $p1-color-2;
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 2px auto 20px;
+    width: 100%;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &::after {
+      display: none;
+    }
+  }
+
+  strong {
+    text-decoration: underline;
+  }
+}
+
+.minimap-sub-item {
+  > a,
+  > strong {
+    color: $p1-color-2;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 15px;
+    }
+  }
+}

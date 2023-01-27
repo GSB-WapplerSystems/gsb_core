@@ -1,0 +1,27 @@
+tt_content.gsb_banner = FLUIDTEMPLATE
+tt_content.gsb_banner {
+    layoutRootPaths.0 = EXT:gsb_banner/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_gsbbanner.view.layoutRootPath}
+    partialRootPaths.0 = EXT:gsb_banner/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_gsbbanner.view.partialRootPath}
+    templateRootPaths.0 = EXT:gsb_banner/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_gsbbanner.view.templateRootPath}
+    templateName = Banner
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_gsbbanner_file
+        references {
+            fieldName = tx_gsbbanner_file
+            table = tt_content
+        }
+        as = data_tx_gsbbanner_file
+    }
+
+    variables {
+        aos-easing < plugin.tx_content_animations.variables.aos-easing
+        aos-once < plugin.tx_content_animations.variables.aos-once
+        aos-mirror < plugin.tx_content_animations.variables.aos-mirror
+    }
+
+    dataProcessing.78911002 < plugin.tx_content_animations.dataProcessing.78911002
+}

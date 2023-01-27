@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+        <header/>
+        <body>
+            <trans-unit id="teaser.wizard.title" xml:space="preserve">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="teaser.wizard.description" xml:space="preserve">
+                <source>Adds a list teaser or slider with any number of image / text elements.</source>
+            </trans-unit>
+            <trans-unit id="tca.tab.teaserElements" xml:space="preserve">
+                <source>Teaser Elements</source>
+            </trans-unit>
+            <trans-unit id="tca.tab.teaser" xml:space="preserve">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="video.video_title" xml:space="preserve">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="video.video_description" xml:space="preserve">
+                <source>Puts a local or external youtube video on the page</source>
+            </trans-unit>
+            <trans-unit id="audio.audio_title" xml:space="preserve">
+                <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="audio.audio_description" xml:space="preserve">
+                <source>Puts a local or external audio on the page</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

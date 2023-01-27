@@ -1,0 +1,10 @@
+plugin.tx_solr {
+    view {
+        # cat=Solr settings (RDA):; type=string; label=Template Root Path
+        templateRootPath = EXT:gsb_template/Resources/Extensions/solr/Private/Templates/
+        # cat=Solr settings (RDA):; type=string; label=Partial Root Path
+        partialRootPath = EXT:gsb_template/Resources/Extensions/solr/Private/Partials/
+        # cat=Solr settings (RDA):; type=string; label=Layout Root Path
+        layoutRootPath = EXT:gsb_template/Resources/Extensions/solr/Private/Layouts/
+    }
+}

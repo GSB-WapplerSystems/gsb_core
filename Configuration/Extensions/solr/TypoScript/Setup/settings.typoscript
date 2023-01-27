@@ -1,0 +1,71 @@
+plugin.tx_solr {
+
+    statistics = {$plugin.tx_solr.statistics}
+    suggest = {$plugin.tx_solr.suggest}
+
+    search {
+        targetPage = {$plugin.tx_solr.search.targetPage}
+        faceting = {$plugin.tx_solr.search.faceting}
+        grouping = {$plugin.tx_solr.search.grouping}
+        sorting = {$plugin.tx_solr.search.sorting}
+        spellchecking = {$plugin.tx_solr.search.spellchecking}
+        lastSearches = {$plugin.tx_solr.search.lastSearches}
+        frequentSearches = {$plugin.tx_solr.search.frequentSearches}
+    }
+}
+
+plugin.tx_solr.search.sorting >
+plugin.tx_solr.search {
+    sorting = 1
+    sorting.defaultOrder = asc
+
+    initializeWithEmptyQuery = 1
+    showResultsOfInitialEmptyQuery = 1
+
+    query {
+        queryFields = content^10.0, title^25.0, keywords^2.0, tagsH1^5.0, tagsH2H3^3.0, tagsH4H5H6^2.0, tagsInline^1.0, description^4.0, abstract^1.0, subtitle^1.0, navtitle^1.0, author^1.0
+        sortBy = relevance asc
+        boostFunction >
+        allowEmptyQuery = 1
+    }
+    results {
+        resultsPerPageSwitchOptions = 20, 50
+        resultsHighlighting = 1
+        resultsHighlighting {
+            highlightFields = content
+            fragmentSize = 200
+            fragmentSeparator = [...]
+
+            wrap = <span class="results-highlight">|</span>
+        }
+    }
+    spellchecking = 1
+}
+# 0 = German
+[siteLanguage("languageId") == 0]
+plugin.tx_solr.search.sorting.options {
+    relevance {
+        field = relevance
+        label = Relevanz
+    }
+    date {
+        field = lastUpdated_dateS
+        label = Datum
+        defaultOrder = desc
+    }
+}
+[global]
+# 1 = English
+[siteLanguage("languageId") == 1]
+plugin.tx_solr.search.sorting.options {
+    relevance {
+        field = relevance
+        label = Relevance
+    }
+    date {
+        field = lastUpdated_dateS
+        label = Date
+        defaultOrder = desc
+    }
+}
+[global]

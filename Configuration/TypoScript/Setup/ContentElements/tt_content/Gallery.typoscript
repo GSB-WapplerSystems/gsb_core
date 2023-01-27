@@ -1,0 +1,19 @@
+tt_content.gsbgallery_gsb_gallery = FLUIDTEMPLATE
+tt_content.gsbgallery_gsb_gallery {
+  layoutRootPaths.0 = EXT:gsb_gallery/Resources/Private/Layouts/
+  layoutRootPaths.10 = {$plugin.tx_gsbgallery.view.layoutRootPath}
+  partialRootPaths.0 = EXT:gsb_gallery/Resources/Private/Partials/
+  partialRootPaths.10 = {$plugin.tx_gsbgallery.view.partialRootPath}
+  templateRootPaths.0 = EXT:gsb_gallery/Resources/Private/Templates/Content/
+  templateRootPaths.10 = {$plugin.tx_gsbgallery.view.templateRootPath}
+  templateName = GsbGallery
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = tx_gsbgallery_file
+    references {
+      fieldName = tx_gsbgallery_file
+      table = tt_content
+    }
+    as = data_tx_gsbgallery_file
+  }
+}

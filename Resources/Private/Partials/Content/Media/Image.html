@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:alias map="<sgb:format.json.decode>{file.properties.crop}</v:format.json.decode>">
+    <f:link.typolink parameter="{file.link}" title="{file.link.title}">
+        <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}" media="(min-width: 1220px)">
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
+            <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}" alt="{file.properties.alternative}">
+        </picture>
+        <noscript>
+            <img src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}" alt="{file.properties.alternative}">
+        </noscript>
+    </f:link.typolink>
+</f:alias>
+
+</html>

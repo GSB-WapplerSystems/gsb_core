@@ -1,0 +1,41 @@
+lib.teaser = CONTENT
+lib.teaser {
+    table = tt_content
+    select {
+        pidInList = 24
+        orderBy = sorting
+        where = colPos=1
+    }
+}
+
+lib.footerText = CONTENT
+lib.footerText {
+    table = tt_content
+    select {
+        pidInList = 24
+        orderBy = sorting
+        where = colPos=2
+    }
+}
+
+lib.banner = RECORDS
+lib.banner {
+    tables = tt_content
+    source = 10
+}
+
+lib.newsletter = RECORDS
+lib.newsletter {
+    tables = tt_content
+    source = 17
+}
+
+lib.leveltitle = TEXT
+lib.leveltitle {
+    data = LEVELTITLE:2
+}
+
+lib.leveluid = TEXT
+lib.leveluid {
+    data = page:pid
+}

@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+body {
+  @extend %bundessansweb;
+}
+
+.cke_panel_grouptitle {
+  @extend %bundessansweb;
+}
+
+.cke_editable {
+  h2 {
+    @extend %bundessansweb;
+    color: $p1-color-3;
+    font-size: 46px;
+    font-weight: 400;
+    hyphens: auto;
+    margin-bottom: 16px;
+    word-break: break-word;
+  }
+
+  h3 {
+    @extend %bundessansweb;
+    color: $p1-color-3;
+    font-size: 30px;
+    font-weight: 400;
+    hyphens: auto;
+    margin-bottom: 16px;
+    word-break: break-word;
+  }
+
+  h4 {
+    color: $p1-color-3;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  h5 {
+    color: $p1-color-3;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  h6 {
+    color: $p1-color-3;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .subheader {
+    display: block;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 20px;
+
+    a {
+      color: $p1-color-3;
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1;
+      position: relative;
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    display: flex;
+    flex-flow: column wrap;
+
+    p {
+      display: block;
+      font-size: 22px;
+      font-style: italic;
+      margin: 30px 0;
+      padding: 0 30px;
+
+      &.small {
+        font-size: 18px;
+        letter-spacing: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .cite {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .internal-link,
+  .internal-link-new,
+  .external-link,
+  .external-link-new,
+  .download,
+  .email,
+  .phone {
+    background-position-x: 0;
+    background-repeat: no-repeat;
+    font-size: 17px;
+    padding-left: 25px;
+    position: relative;
+  }
+
+  .internal-link,
+  .internal-link-new {
+    color: #333;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 0;
+    text-decoration: underline;
+  }
+
+  .external-link,
+  .external-link-new {
+    background-image: svg-load("../Images/Icons/icon_external-link.svg");
+    background-position-y: 3px;
+    background-size: 16px 16px;
+    margin-bottom: 2px;
+  }
+
+  .download {
+    background-image: svg-load("../Images/Icons/icon_link_download.svg");
+    background-position-y: -1px;
+    background-size: 16px 16px;
+  }
+
+  .email {
+    background-image: svg-load("../Images/Icons/icon_link_email.svg");
+    background-position-y: 7px;
+  }
+
+  .phone {
+    background-image: svg-load("../Images/Icons/icon_link_phone.svg");
+    background-position-y: 0;
+  }
+
+  .list-unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .btn {
+    box-shadow: none !important;
+    white-space: nowrap;
+
+    &-primary,
+    &-secondary {
+      background-color: $p1-color-7;
+      border-style: solid;
+      border-width: 2px;
+      color: $p1-color-3;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1;
+      padding: 10px 19px;
+    }
+
+    &-primary {
+      border-color: $p1-color-1;
+    }
+
+    &-secondary {
+      border-color: $p1-color-8;
+    }
+  }
+
+  ul:not(.list-unstyled) {
+    li {
+      font-size: 22px;
+      list-style-image: url("../Images/Icons/icon_list_bullet.svg");
+      padding-bottom: 16px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  ol:not(.list-unstyled) {
+    counter-reset: counter;
+    list-style: none;
+    margin-bottom: 52px;
+    padding-left: 0;
+
+    li {
+      counter-increment: counter;
+      font-size: 17px;
+      margin-bottom: 16px;
+      padding-left: 32px;
+      position: relative;
+
+      &::before {
+        color: $p1-color-3;
+        content: counter(counter) ".";
+        display: block;
+        font-size: 17px;
+        font-weight: 400;
+        left: 0;
+        line-height: 1.3;
+        position: absolute;
+        text-align: center;
+        top: 2px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  table {
+    font-size: 18px;
+
+    tbody {
+      tr {
+        &:nth-of-type(2n+1) {
+          background-color: rgb(0 0 0 / 5%);
+        }
+      }
+    }
+
+    thead {
+      th {
+        border-bottom: 2px solid #e9ecef;
+        vertical-align: bottom;
+      }
+    }
+
+    th,
+    td {
+      border-top: 1px solid #e9ecef;
+      padding: 12px;
+      vertical-align: top;
+    }
+  }
+}

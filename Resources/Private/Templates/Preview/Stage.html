@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{processedRow.tx_gsbstage_file}">
+        <f:for each="{processedRow.tx_gsbstage_file}" as="item">
+            <ul class="list-unstyled">
+                <f:for each="{item.uid_local}" as="file">
+                    <li>
+                        <f:image src="{item.uid}" treatIdAsReference="1" cropVariant="default" maxWidth="200" />
+                    </li>
+                </f:for>
+            </ul>
+        </f:for>
+    </f:if>
+
+    <f:if condition="{processedRow.header}">
+        <h2>{processedRow.header}</h2>
+    </f:if>
+
+    <f:if condition="{processedRow.subheader}">
+        <p><strong>{processedRow.subheader}</strong></p>
+    </f:if>
+
+    <f:if condition="{processedRow.bodytext}">
+        <f:format.html>{processedRow.bodytext}</f:format.html>
+    </f:if>
+</html>

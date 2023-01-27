@@ -1,0 +1,274 @@
+.player {
+  margin-bottom: 30px;
+}
+
+video {
+  height: auto;
+  width: 100%;
+}
+
+.audio-soundcloud,
+.video {
+  height: 0;
+  margin-bottom: 32px;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  .mejs__container,
+  .mejs__overlay,
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.audio {
+  margin-bottom: 32px;
+}
+
+.dsgvo {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  .audio-start,
+  .video-start {
+    background-image: svg-load("../Images/videostart.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    border: 0 none;
+    border-radius: 50%;
+    margin-bottom: 8px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: -40px;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 1px dashed $p1-color-6;
+      outline-offset: 1px;
+    }
+  }
+
+  &-text {
+    align-items: center;
+    background: linear-gradient(to bottom, $o-color-18 0%, $o-color-2 100%);
+    color: $p1-color-2;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      padding: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 40px;
+    }
+
+    h3 {
+      color: $p-color-13 !important;
+      font-size: 18px !important;
+      margin: 0 !important;
+      max-width: 100%;
+      padding: 0 !important;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 20px !important;
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+
+    p {
+      color: $p1-color-2 !important;
+      font-size: 12px !important;
+      font-weight: 700;
+      max-width: 100%;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 15px !important;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 16px !important;
+      }
+
+      a {
+        color: $p1-color-2 !important;
+        display: inline;
+        font-size: 12px !important;
+        font-weight: 700;
+        outline-color: $p1-color-2 !important;
+
+        &.external-link {
+          background-image: svg-load("../Images/Icons/icon_link_external.svg");
+          background-position-x: 4px;
+          background-position-y: 3px;
+        }
+
+        @include media-breakpoint-up(sm) {
+          font-size: 15px !important;
+        }
+
+        @include media-breakpoint-up(lg) {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+.mejs__time {
+  color: $p1-color-1;
+}
+
+.mejs__time-total {
+  background: $o-color-14;
+}
+
+.mejs__controls:not([style*="display: none"]) {
+  background: $o-color-2;
+  border-top: 1px solid $p1-color-1;
+}
+
+.mejs__time-loaded {
+  background: $o-color-7;
+}
+
+.mejs__time-current,
+.mejs__time-handle-content {
+  background: $o-color-2;
+}
+
+.mejs__time-hovered {
+  background: $o-color-5;
+
+  &.negative {
+    background: $o-color-8;
+  }
+}
+
+.mejs__time-handle-content {
+  border: 4px solid $p1-color-1;
+}
+
+.mejs__time-float {
+  background: $p-color-9;
+  border: solid 1px $p1-color-3;
+  color: $p1-color-2;
+}
+
+.mejs__time-float-corner {
+  border: solid 5px $p-color-9;
+  border-color: $p-color-9 transparent transparent;
+}
+
+.mejs__broadcast {
+  color: $p-color-13;
+}
+
+.mejs__volume-total {
+  background: $o-color-5;
+}
+
+.mejs__volume-current {
+  background: $o-color-2;
+}
+
+.mejs__volume-handle {
+  background: $p1-color-1;
+}
+
+.mejs__volume-button > .mejs__volume-slider {
+  background: $o-color-4;
+}
+
+.mejs__volume-current,
+.mejs__volume-handle {
+  background: $p1-color-1;
+}
+
+.mejs__horizontal-volume-total {
+  background: $p-color-13;
+}
+
+.mejs__horizontal-volume-current {
+  background: $p1-color-1;
+}
+
+.mejs__captions-button > .mejs__captions-selector,
+.mejs__chapters-button > .mejs__chapters-selector {
+  background: $o-color-4;
+}
+
+.mejs__captions-selector-label,
+.mejs__chapters-selector-label {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mejs__captions-selector-list-item,
+.mejs__chapters-selector-list-item {
+  color: $p1-color-2;
+}
+
+.mejs__captions-selector-list-item:hover,
+.mejs__chapters-selector-list-item:hover {
+  background-color: $o-color-6 !important;
+}
+
+.mejs__captions-selected,
+.mejs__chapters-selected {
+  color: $p1-color-1;
+  text-decoration: underline;
+}
+
+.mejs__button > button {
+  color: $p1-color-1;
+}
+
+.mejs__button > button:hover,
+.mejs__button > button:focus {
+  outline: 1px dashed $p1-color-1;
+}
+
+.mejs__overlay:hover > .mejs__overlay-button {
+  outline: 1px dashed $p1-color-1;
+}
+
+.mejs__captions-position {
+  bottom: 40px;
+}
+
+.mejs__captions-position-hover {
+  bottom: 45px;
+}
+
+.youtube-wrapper {
+  margin-bottom: 30px;
+}
+
+.player,
+.youtube-player {
+  max-width: 100%;
+  width: 100%;
+}

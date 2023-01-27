@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-03-29T04:10:34+00:00" product-name="gsb_banner">
+    <header/>
+    <body>
+      <trans-unit id="wizards.contentElement.gsb_banner_title" xml:space="preserve">
+        <source>Banner</source>
+      </trans-unit>
+      <trans-unit id="wizards.contentElement.gsb_banner_description" xml:space="preserve">
+        <source>Display a banner on the page</source>
+      </trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_download_title" xml:space="preserve">
+			<source>File download</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_download_description" xml:space="preserve">
+			<source>Attaches a file or document as a donwload</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_gallery_title" xml:space="preserve">
+			<source>Gallery</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_gallery_description" xml:space="preserve">
+			<source>Inserts a gallery module</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_singleteaser_title" xml:space="preserve">
+			<source>Single teaser</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_singleteaser_description" xml:space="preserve">
+			<source>Adds a teaser with headline, image, text and link element</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_stage_title" xml:space="preserve">
+			<source>Stage</source>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_stage_description" xml:space="preserve">
+			<source>Inserts a stage module</source>
+		</trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+.internal-link,
+.internal-link-new,
+.external-link,
+.external-link-new,
+.download,
+.email,
+.phone {
+  background-position-x: 0;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.external-link,
+.external-link-new {
+  background-image: svg-load("../Images/Icons/icon_external-link.svg", fill=$p1-color-3);
+  background-position-y: 3px;
+  background-size: 16px 16px;
+  margin-bottom: 2px;
+}
+
+.gebaerdensprache-link {
+  background-image: svg-load("../Images/Icons/icon_meta_gebaerdensprache.svg", fill=$p1-color-3);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  display: inline;
+  height: 24px;
+  padding-bottom: .4rem;
+  padding-right: 30px;
+  padding-top: .4rem;
+  width: 24px;
+}
+
+.leichte-sprache-link {
+  background-image: svg-load("../Images/Icons/icon_meta_leichte-sprache.svg", fill=$p1-color-3);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  display: inline;
+  height: 24px;
+  padding-bottom: .4rem;
+  padding-right: 30px;
+  padding-top: .4rem;
+  width: 24px;
+}
+
+.download {
+  background-image: svg-load("../Images/Icons/icon_link_download.svg", fill=$p1-color-3);
+  background-position-y: -1px;
+  background-size: 16px 16px;
+
+  .modal-body & {
+    background-image: svg-load("../Images/Icons/icon_link_download.svg", fill=$p1-color-6) !important;
+    outline-color: $p1-color-6 !important;
+  }
+}
+
+.email {
+  background-image: svg-load("../Images/Icons/icon_link_email.svg", fill=$p1-color-3);
+  background-position-y: 7px;
+}
+
+.phone {
+  background-image: svg-load("../Images/Icons/icon_link_phone.svg", fill=$p1-color-3);
+  background-position-y: 0;
+}

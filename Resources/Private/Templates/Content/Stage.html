@@ -1,0 +1,58 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="frame frame-{data.frame_class} frame-type-{data.CType} stage {data.tx_gsbstage_stage_position} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.tx_gsbstage_stage_textcolor, then: ' stage-text-white')}{f:if(condition: data.tx_gsbstage_stage_bg, then: ' stage-bg-dark')}">
+        <f:if condition="{data_tx_gsbstage_file}">
+            <div class="stage-image">
+                <f:for each="{data_tx_gsbstage_file}" as="file">
+                    <f:render partial="Media/Image" arguments="{_all}"/>
+                </f:for>
+            </div>
+        </f:if>
+
+        <div class="overlay"></div>
+
+        <f:if condition="{data.tx_gsbstage_stage_salutation}">
+            <f:then>
+                <div class="container stage-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <f:security.ifAuthenticated>
+                                <f:if condition="{data.tx_gsbstage_stage_salutation}">
+                                    <h2 class="text-center salutation"><span>{f:translate(key: 'stage.welcome', extensionName: 'civic_template')}<br>
+                                {f:cObject(typoscriptObjectPath: 'lib.userName')}!</span></h2>
+                                </f:if>
+                            </f:security.ifAuthenticated>
+
+                            <f:if condition="{data.header}">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </f:if>
+
+                            <f:if condition="{data.bodytext}">
+                                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <f:if condition="{data.header} || {data.bodytext}">
+                    <f:if condition="{data.header_layout} != 100">
+                        <div class="container stage-content-wrapper">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="stage-content">
+                                        <f:if condition="{data.header}">
+                                            <f:render partial="Header/All" arguments="{_all}" />
+                                        </f:if>
+                                        <f:if condition="{data.bodytext}">
+                                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:if>
+                </f:if>
+            </f:else>
+        </f:if>
+    </div>
+</html>

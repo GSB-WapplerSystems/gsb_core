@@ -1,0 +1,91 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+fooooo
+<f:if condition="{header}">
+	<f:switch expression="{layout}">
+		<f:case value="2">
+			<h2 class="{positionClass}">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h2>
+			<f:if condition="{subheader}">
+				<p class="lead {positionClass}">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="3">
+			<h3 class="{positionClass}">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h3>
+			<f:if condition="{subheader}">
+				<p class="lead {positionClass}">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="4">
+			<h4 class="{positionClass}">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h4>
+			<f:if condition="{subheader}">
+				<p class="lead {positionClass}">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="5">
+			<h5 class="{positionClass}">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h5>
+			<f:if condition="{subheader}">
+				<p class="lead {positionClass}">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="6">
+			<h6 class="{positionClass}">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h6>
+			<f:if condition="{subheader}">
+				<p class="lead {positionClass}">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="7">
+			<h1 class="visually-hidden">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h1>
+			<f:if condition="{subheader}">
+				<p class="visually-hidden">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="8">
+			<h2 class="visually-hidden">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h2>
+			<f:if condition="{subheader}">
+				<p class="visually-hidden">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="9">
+			<h3 class="visually-hidden">
+				<span><f:format.raw>{header}</f:format.raw></span>
+			</h3>
+			<f:if condition="{subheader}">
+				<p class="visually-hidden">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="10">
+			<h4 class="visually-hidden">
+				{header}
+			</h4>
+			<f:if condition="{subheader}">
+				<p class="visually-hidden">{subheader}</p>
+			</f:if>
+		</f:case>
+		<f:case value="100">
+			<f:comment> -- do not show header -- </f:comment>
+		</f:case>
+		<f:defaultCase>
+			<f:if condition="{default}">
+				<f:render partial="Header/Header" arguments="{
+					header: header,
+					lead: lead,
+					layout: default,
+					positionClass: positionClass}" />
+			</f:if>
+		</f:defaultCase>
+	</f:switch>
+</f:if>
+</html>

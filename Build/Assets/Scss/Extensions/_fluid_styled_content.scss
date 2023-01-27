@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+.align-left,
+.ce-align-left {
+  text-align: left;
+}
+
+.align-center,
+.ce-align-center {
+  text-align: center;
+}
+
+.align-right,
+.ce-align-right {
+  text-align: right;
+}
+
+.ce-left {
+  .ce-gallery {
+    @include media-breakpoint-up(md) {
+      float: left;
+    }
+  }
+}
+
+.ce-gallery {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  iframe {
+    border-width: 0;
+  }
+
+  .ce-right & {
+    @include media-breakpoint-up(md) {
+      float: right;
+    }
+  }
+}
+
+.ce-row {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ce-intext {
+  .ce-left {
+    ol,
+    ul {
+      overflow: auto;
+      padding-left: 40px;
+    }
+  }
+}
+
+.ce-headline-left {
+  text-align: left;
+}
+
+.ce-headline-center {
+  text-align: center;
+}
+
+.ce-headline-right {
+  text-align: right;
+}
+
+.ce-uploads {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none outside none;
+    margin: 5px 0;
+
+    a {
+      width: 100%;
+
+      &::before {
+        background-image: svg-load("../Images/Icons/icon_download.svg");
+        background-repeat: no-repeat;
+        background-size: 16px;
+        content: "";
+        display: inline-block;
+        height: 16px;
+        margin-right: 10px;
+        position: relative;
+        top: 1px;
+        width: 16px;
+      }
+    }
+  }
+
+  img {
+    vertical-align: top;
+
+    @include media-breakpoint-up(md) {
+      float: left;
+    }
+  }
+
+  .ce-uploads-icon {
+    height: 24px;
+    margin-right: 10px;
+    width: 18px;
+  }
+
+  .ce-uploads-fileName {
+    font-size: 18px;
+  }
+
+  .ce-uploads-filesize {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    &::before {
+      content: ", ";
+    }
+  }
+
+  .ce-uploads-media-link {
+    display: inline-block;
+    float: left;
+    max-width: 100px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 1px dashed $p1-color-3;
+      outline-offset: -1px;
+    }
+
+    + .ce-uploads-link + .ce-uploads-description {
+      padding-left: 105px;
+    }
+  }
+
+  .ce-uploads-link {
+    display: flex;
+  }
+}
+
+.ce-table {
+  max-width: 100%;
+  vertical-align: top;
+  width: 100%;
+
+  thead {
+    border-bottom: 40px;
+    border-color: $p1-color-6;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+    border-top: 0;
+    color: $p1-color-6;
+
+    tr {
+      th:first-child {
+        background-color: $gsb-blue-80;
+      }
+
+      th {
+        background-color: $gsb-dark-blue-100;
+        border-right: 5px solid $p1-color-6;
+        font-weight: normal;
+        padding: 5px;
+      }
+
+      th:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td:first-child {
+        background-color: $gsb-light-blue-20;
+      }
+
+      td {
+        background-color: $gsb-blue-20;
+        border-bottom: 5px solid $p1-color-6;
+        border-right: 5px solid $p1-color-6;
+        padding: 5px;
+      }
+
+      td:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+.text-center {
+  .btn {
+    margin-top: 50px;
+  }
+}
+
+.frame-space-before-extra-small {
+  margin-top: 8px;
+}
+
+.frame-space-before-small {
+  margin-top: 12.5px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 25px;
+  }
+}
+
+.frame-space-before-medium {
+  margin-top: 25px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 50px;
+  }
+}
+
+.frame-space-before-large {
+  margin-top: 50px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 100px;
+  }
+}
+
+.frame-space-before-extra-large {
+  margin-top: 100px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 200px;
+  }
+}
+
+.frame-space-after-extra-small {
+  margin-bottom: 8px;
+}
+
+.frame-space-after-small {
+  margin-bottom: 12.5px;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 25px;
+  }
+}
+
+.frame-space-after-medium {
+  margin-bottom: 25px;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 50px;
+  }
+}
+
+.frame-space-after-large {
+  margin-bottom: 50px;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 100px;
+  }
+}
+
+.frame-space-after-extra-large {
+  margin-bottom: 100px;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 200px;
+  }
+}
+
+.frame-ruler-before {
+  &::before {
+    background: linear-gradient(to right, $p1-color-2 0%, $p1-color-1 100%);
+    content: "";
+    display: block;
+    height: 3px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    width: 100%;
+  }
+}
+
+.frame-ruler-after {
+  &::after {
+    background: linear-gradient(to right, $p1-color-2 0%, $p1-color-1 100%);
+    content: "";
+    display: block;
+    height: 3px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    width: 100%;
+  }
+}
+
+.ce-border img,
+.ce-border iframe {
+  border: 2px solid $p1-color-4;
+  padding: 0;
+}
+
+.ce-intext.ce-right .ce-gallery,
+.ce-intext.ce-left .ce-gallery,
+.ce-above .ce-gallery {
+  margin-bottom: 10px;
+}
+
+@include media-breakpoint-up(sm) {
+  .sliderteaser {
+    .ce-above .ce-gallery {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ce-intext.ce-right .ce-gallery {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 30px;
+    width: 40%;
+  }
+
+  .ce-column {
+    margin-bottom: 10px;
+  }
+}
+
+ul.ce-row {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ce-intext.ce-left .ce-gallery {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin-right: 30px;
+    width: 40%;
+  }
+
+  .ce-column {
+    margin-bottom: 10px;
+  }
+}
+
+.ce-below .ce-gallery {
+  margin-top: 15px;
+}
+
+.frame-indent {
+  margin-left: 0;
+  margin-right: 0;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  &-left,
+  &-right {
+    padding: 50px 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      margin: 0 calc(-50vw + 50% + 8px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 calc(-50vw + 50% + 8px);
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 100px 0;
+    }
+  }
+
+  &-left {
+    &::before {
+      background-color: $p1-color-7;
+    }
+  }
+
+  &-right {
+    &::before {
+      background-color: $p1-color-6;
+    }
+  }
+}
+
+.frame-layout-4 {
+  h2 {
+    margin: 0 -16px;
+  }
+
+  .ce-gallery {
+    figure {
+      margin: 0 0 36px;
+    }
+  }
+}

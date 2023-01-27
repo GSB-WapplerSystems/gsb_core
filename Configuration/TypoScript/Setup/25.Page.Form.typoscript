@@ -1,0 +1,19 @@
+plugin.tx_form {
+    view {
+        partialRootPaths.20 = EXT:gsb_template/Resources/Extensions/form/Frontend/Partials/
+        templateRootPaths.20 = EXT:gsb_template/Resources/Extensions/form/Frontend/Templates/
+        layoutRootPaths.20 = EXT:gsb_template/Resources/Extensions/form/Frontend/Layouts/
+    }
+    settings {
+        yamlConfigurations {
+            100 = EXT:gsb_template/Resources/Extensions/form/Yaml/BaseSetup.yaml
+        }
+    }
+}
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:gsb_template/Resources/Extensions/form/Yaml/BaseSetup.yaml
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "masterPicture": "Assets/Images/favicon.png",
+  "iconsPath": "typo3conf/ext/gsb_template/Resources/Favicons",
+  "design": {
+    "ios": {
+      "pictureAspect": "backgroundAndMargin",
+      "backgroundColor": "#333333",
+      "margin": "18%",
+      "assets": {
+        "ios6AndPriorIcons": false,
+        "ios7AndLaterIcons": true,
+        "precomposedIcons": false,
+        "declareOnlyDefaultIcon": false
+      },
+      "appName": "gsb-standardmandant.de"
+    },
+    "desktopBrowser": {},
+    "windows": {
+      "pictureAspect": "noChange",
+      "backgroundColor": "#333333",
+      "onConflict": "override",
+      "assets": {
+        "windows80Ie10Tile": false,
+        "windows10Ie11EdgeTiles": {
+          "small": true,
+          "medium": true,
+          "big": true,
+          "rectangle": true
+        }
+      },
+      "appName": "gsb-standardmandant.de"
+    },
+    "androidChrome": {
+      "pictureAspect": "shadow",
+      "themeColor": "#333333",
+      "manifest": {
+        "name": "gsb-standardmandant",
+        "startUrl": "https://www.gsb-standardmandant.de",
+        "display": "standalone",
+        "orientation": "notSet",
+        "onConflict": "override",
+        "declared": true
+      },
+      "assets": {
+        "legacyIcon": false,
+        "lowResolutionIcons": false
+      }
+    },
+    "safariPinnedTab": {
+      "pictureAspect": "blackAndWhite",
+      "threshold": 50,
+      "themeColor": "#333333"
+    }
+  },
+  "settings": {
+    "compression": 5,
+    "scalingAlgorithm": "Mitchell",
+    "errorOnImageTooSmall": true,
+    "readmeFile": true,
+    "htmlCodeFile": true,
+    "usePathAsIs": false
+  }
+}

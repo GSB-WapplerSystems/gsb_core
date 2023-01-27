@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: $brg-dark-grey;
+  hyphens: auto;
+  margin-bottom: 20px;
+  margin-top: 6px;
+  word-break: break-word;
+
+  .modal-content & {
+    color: $p1-color-6 !important;
+  }
+
+  &.ce-headline-center {
+    margin-bottom: 24px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 46px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 30px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 22px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
+
+  .teaser-col-4 & {
+    font-size: 24px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 22px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+  }
+}
+
+.subheader {
+  display: block;
+  font-size: 17px;
+  padding-bottom: 16px;
+
+  &.ce-headline-center {
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
+}
+
+.supplement {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .subheader {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}
+
+.date {
+  color: $p1-color-4;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}

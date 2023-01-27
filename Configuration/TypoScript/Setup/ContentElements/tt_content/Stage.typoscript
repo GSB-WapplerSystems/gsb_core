@@ -1,0 +1,19 @@
+tt_content.gsbstage_gsb_stage = FLUIDTEMPLATE
+tt_content.gsbstage_gsb_stage {
+  layoutRootPaths.0 = EXT:gsb_stage/Resources/Private/Layouts/
+  layoutRootPaths.10 = {$plugin.tx_gsbstage.view.layoutRootPath}
+  partialRootPaths.0 = EXT:gsb_stage/Resources/Private/Partials/
+  partialRootPaths.10 = {$plugin.tx_gsbstage.view.partialRootPath}
+  templateRootPaths.0 = EXT:gsb_stage/Resources/Private/Templates/Content/
+  templateRootPaths.10 = {$plugin.tx_gsbstage.view.templateRootPath}
+  templateName = GsbStage
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = tx_gsbstage_file
+    references {
+      fieldName = tx_gsbstage_file
+      table = tt_content
+    }
+    as = data_tx_gsbstage_file
+  }
+}

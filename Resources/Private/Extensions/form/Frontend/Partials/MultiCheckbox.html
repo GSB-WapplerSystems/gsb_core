@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+	<f:render partial="Field/Fieldset" arguments="{element: element}" contentAs="elementContent">
+		<ul id="{element.uniqueIdentifier}" class="inputs-list">
+			<f:for each="{element.properties.options}" as="label" key="value" iteration="idIterator">
+				<li class="form-check form-check-inline">
+					<f:form.checkbox
+							property="{element.identifier}"
+							multiple="1"
+							id="{element.uniqueIdentifier}-{idIterator.index}"
+							class="{element.properties.elementClassAttribute} form-check-input"
+							value="{value}"
+							errorClass="{element.properties.elementErrorClassAttribute}"
+							additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+					/>
+					<label class="form-check-label" for="{element.uniqueIdentifier}-{idIterator.index}">
+						{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}
+					</label>
+				</li>
+			</f:for>
+		</ul>
+	</f:render>
+</formvh:renderRenderable>
+</html>

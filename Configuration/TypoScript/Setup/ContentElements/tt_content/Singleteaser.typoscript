@@ -1,0 +1,34 @@
+tt_content.gsb_singleteaser = FLUIDTEMPLATE
+tt_content.gsb_singleteaser {
+  layoutRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Layouts/
+  layoutRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.layoutRootPath}
+  partialRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Partials/
+  partialRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.partialRootPath}
+  templateRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Templates/Content/
+  templateRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.templateRootPath}
+  templateName = Singleteaser
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = image
+    references {
+      fieldName = image
+      table = tt_content
+    }
+    as = data_image
+  }
+  dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.20 {
+    if.isTrue.field = tx_gsbsingleteaser_bgimage
+    references {
+      fieldName = tx_gsbsingleteaser_bgimage
+      table = tt_content
+    }
+    as = data_bgimage
+  }
+  variables {
+    aos-easing < plugin.tx_content_animations.variables.aos-easing
+    aos-once < plugin.tx_content_animations.variables.aos-once
+    aos-mirror < plugin.tx_content_animations.variables.aos-mirror
+  }
+  dataProcessing.78911002 < plugin.tx_content_animations.dataProcessing.78911002
+}

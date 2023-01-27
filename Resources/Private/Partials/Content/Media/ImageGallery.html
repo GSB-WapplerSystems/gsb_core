@@ -1,0 +1,8 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <picture data-aspectratio-xl="1:1" data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xs="1:1">
+        <img class="lazy" src="data:image/gif;base64,R0lGODlh9AEBAIAAAP///wAAACH5BAAAAAAALAAAAAD0AQEAAAIUhI+py+0Po5y02ouz3rz7D4biiBQAOw==" data-bs-target="#galleryCarousel-{data.uid}" data-bs-slide-to="{iterator.index}" data-src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: '600', maxHeight: '600', width: '600c', height: '600c')}" alt="{file.properties.alternative}" >
+    </picture>
+    <noscript>
+        {f:image(image: file, cropVariant: 'default', maxWidth: 600)}
+    </noscript>
+</html>

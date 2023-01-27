@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+//colors
+$facebook: #3b5998;
+$reddit: #ff2e2e;
+$twitter: #33aae8;
+$whatsapp: #5cbe4a;
+
+.shariff {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    border-radius: 50%;
+    height: 60px;
+    margin-bottom: 16px;
+    margin-right: 32px;
+    width: 60px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .share_text {
+      display: none;
+    }
+
+    a {
+      align-items: center;
+      background-color: $p1-color-3;
+      border: 2px solid $p1-color-6;
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: $p1-color-6;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      transition: all .2s ease-in-out;
+      width: 100%;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $p1-color-6;
+        color: $p1-color-3;
+      }
+    }
+
+    .fab,
+    .far,
+    .fas {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      display: inline-block;
+      height: 30px;
+      vertical-align: middle;
+      width: 30px;
+    }
+  }
+
+  .facebook {
+    a {
+      .fa-facebook-f {
+        background-image: svg-load("../Images/Icons/icon_facebook.svg", fill=$p1-color-6);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $facebook;
+
+        .fa-facebook-f {
+          background-image: svg-load("../Images/Icons/icon_facebook.svg", fill=$facebook);
+        }
+      }
+    }
+  }
+
+  .print {
+    a {
+      .fa-print {
+        background-image: svg-load("../Images/Icons/icon_print.svg", fill=$p1-color-6);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $p1-color-3;
+
+        .fa-print {
+          background-image: svg-load("../Images/Icons/icon_print.svg", fill=$p1-color-3);
+        }
+      }
+    }
+  }
+
+  .reddit {
+    a {
+      .fa-reddit-alien {
+        background-image: svg-load("../Images/Icons/icon_reddit.svg", fill=$p1-color-6);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $reddit;
+
+        .fa-reddit-alien {
+          background-image: svg-load("../Images/Icons/icon_reddit.svg", fill=$reddit);
+        }
+      }
+    }
+  }
+
+  .twitter {
+    a {
+      .fa-twitter {
+        background-image: svg-load("../Images/Icons/icon_twitter.svg", fill=$p1-color-6);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $twitter;
+
+        .fa-twitter {
+          background-image: svg-load("../Images/Icons/icon_twitter.svg", fill=$twitter);
+        }
+      }
+    }
+  }
+
+  .whatsapp {
+    a {
+      .fa-whatsapp {
+        background-image: svg-load("../Images/Icons/icon_whatsapp.svg", fill=$p1-color-6);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $whatsapp;
+
+        .fa-whatsapp {
+          background-image: svg-load("../Images/Icons/icon_whatsapp.svg", fill=$whatsapp);
+        }
+      }
+    }
+  }
+}
+
+.socialshared {
+  margin-bottom: 32px;
+}

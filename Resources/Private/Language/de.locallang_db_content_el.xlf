@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-03-29T04:10:34+00:00" product-name="gsb_banner">
+    <header/>
+    <body>
+      <trans-unit id="wizards.contentElement.gsb_banner_title" xml:space="preserve">
+        <target>Banner</target>
+      </trans-unit>
+      <trans-unit id="wizards.contentElement.gsb_banner_description" xml:space="preserve">
+        <target>Anzeige eines Banners auf der Seite</target>
+      </trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_download_title" xml:space="preserve">
+			<target>Datei download</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_download_description" xml:space="preserve">
+			<target>Fügt eine Datei oder ein Dokument als Donwload an</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_gallery_title" xml:space="preserve">
+			<target>Galerie</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_gallery_description" xml:space="preserve">
+			<target>Fügt ein Galerieelement ein</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_singleteaser_title" xml:space="preserve">
+			<target>Einzelteaser</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_singleteaser_description" xml:space="preserve">
+			<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_stage_title" xml:space="preserve">
+			<target>Bühne</target>
+		</trans-unit>
+		<trans-unit id="wizards.contentElement.gsb_stage_description" xml:space="preserve">
+			<target>Fügt ein Bühnenelement ein</target>
+		</trans-unit>
+    </body>
+  </file>
+</xliff>

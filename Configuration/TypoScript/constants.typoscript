@@ -1,0 +1,13 @@
+@import 'EXT:gsb_template/Configuration/TypoScript/Constants/constants.typoscript'
+@import 'EXT:gsb_template/Configuration/Extensions/constants.typoscript'
+@import 'EXT:gsb_template/Configuration/Server/constants.typoscript'
+
+## include only one file
+## @import 'EXT:mysitepackage/Configuration/TypoScript/randomfile.typoscript'
+
+## import all files width ".typoscript" ending from a folder
+## sorting is alphabetical
+## @import 'EXT:mysitepackage/Configuration/TypoScript/*.typoscript'
+
+## import all files
+## @import 'EXT:mysitepackage/Configuration/TypoScript/'

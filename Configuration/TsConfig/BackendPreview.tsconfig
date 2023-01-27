@@ -1,0 +1,4 @@
+mod.web_layout.tt_content.preview.gsbbanner = EXT:gsb_template/Resources/Private/Templates/Preview/Banner.html
+mod.web_layout.tt_content.preview.gsbfile = EXT:gsb_template/Resources/Private/Templates/Preview/File.html
+mod.web_layout.tt_content.preview.gsbgallery = EXT:gsb_template/Resources/Private/Templates/Preview/Gallery.html
+mod.web_layout.tt_content.preview.gsbstage = EXT:gsb_template/Resources/Private/Templates/Preview/Stage.html

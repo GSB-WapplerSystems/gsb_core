@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+        <header/>
+        <body>
+            <trans-unit id="opens">
+                <target>Öffnet</target>
+            </trans-unit>
+            <trans-unit id="innewwindow">
+                <target>in einem neuen Fenster</target>
+            </trans-unit>
+            <trans-unit id="header.text">
+                <target>Zur Startseite</target>
+            </trans-unit>
+            <trans-unit id="header.jumpto">
+                <target>Springe direkt zum:</target>
+            </trans-unit>
+            <trans-unit id="header.jumptocontent">
+                <target>Inhalt</target>
+            </trans-unit>
+            <trans-unit id="header.register">
+                <target>Registrieren</target>
+            </trans-unit>
+            <trans-unit id="header.login">
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="header.servicemenu">
+                <target>Servicemenü</target>
+            </trans-unit>
+            <trans-unit id="header.mainnavigation">
+                <target>Hauptnavigation</target>
+            </trans-unit>
+            <trans-unit id="header.openMenu">
+                <target>Menü <![CDATA[<span class="visually-hidden">öffnen</span>]]></target>
+            </trans-unit>
+            <trans-unit id="header.closeMenu">
+                <target>Menü <![CDATA[<span class="visually-hidden">schließen</span>]]></target>
+            </trans-unit>
+            <trans-unit id="header.openMenuTitle">
+                <target>Menü öffnen</target>
+            </trans-unit>
+            <trans-unit id="header.closeMenuTitle">
+                <target>Menü schließen</target>
+            </trans-unit>
+            <trans-unit id="header.search">
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="header.searching">
+                <target>Suchen</target>
+            </trans-unit>
+            <trans-unit id="header.searchterm">
+                <target>Suchbegriff</target>
+            </trans-unit>
+            <trans-unit id="header.searchopen">
+                <target>Suche öffnen</target>
+            </trans-unit>
+            <trans-unit id="header.magnifyingglass">
+                <target>Lupe</target>
+            </trans-unit>
+            <trans-unit id="header.youarehere">
+                <target>Sie sind hier</target>
+            </trans-unit>
+            <trans-unit id="header.linktohomepage">
+                <target>Zur Startseite</target>
+            </trans-unit>
+            <trans-unit id="supplement.areamenu">
+                <target>Bereichsmenü</target>
+            </trans-unit>
+            <trans-unit id="supplement.aside">
+                <target>Zusatzinformationen</target>
+            </trans-unit>
+            <trans-unit id="footer.metanav">
+                <target>Metanavigation</target>
+            </trans-unit>
+            <trans-unit id="footer.socialmediaheader">
+                <target>Folgen Sie uns auf</target>
+            </trans-unit>
+            <trans-unit id="footer.socialmediafooter">
+                <target>Immer aktuell - folgen Sie uns auf unseren sozialen Kanälen</target>
+            </trans-unit>
+            <trans-unit id="footer.overview">
+                <target>Übersicht</target>
+            </trans-unit>
+            <trans-unit id="content.readmore">
+                <target>Weiterlesen</target>
+            </trans-unit>
+            <trans-unit id="videoyoutube.play">
+                <target>Video abspielen</target>
+            </trans-unit>
+            <trans-unit id="videoyoutube.link">
+                <target>Zum Aktivieren des Videos musst Du auf den Button klicken. Nach dem Aktivieren des Buttons gelten die <![CDATA[<a href="https://policies.google.com/privacy?hl=de&gl=ZZ" target="_blank" class="external-link" rel="noreferrer" title="Link öffnet in neuem Fenster">Datenschutzbestimmungen von Google</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="audio.play">
+                <target>Audio abspielen</target>
+            </trans-unit>
+            <trans-unit id="audio.link">
+                <target>Zum Aktivieren des Widgets musst Du auf den Button klicken. Nach dem Aktivieren des Buttons gelten die <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link öffnet in neuem Fenster">Datenschutzbestimmungen von SoundCloud</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="shariff.social">
+                <target>Hat Ihnen dieser Artikel gefallen? Dann teilen Sie ihn doch mit anderen:</target>
+            </trans-unit>
+            <trans-unit id="article.detail.published" xml:space="preserve">
+                <target>Veröffentlicht am</target>
+            </trans-unit>
+            <trans-unit id="article.detail.dateformat" xml:space="preserve">
+                <target>%d. %b %Y</target>
+            </trans-unit>
+            <trans-unit id="date.time">
+                <target>%H:%M Uhr</target>
+            </trans-unit>
+            <trans-unit id="date.day">
+                <target>%d.</target>
+            </trans-unit>
+            <trans-unit id="date.dayfull">
+                <target>%A, %d., %H:%M Uhr</target>
+            </trans-unit>
+            <trans-unit id="date.month">
+                <target>%b</target>
+            </trans-unit>
+            <trans-unit id="date.daymonthfull">
+                <target>%A, %d. %b, %H:%M Uhr</target>
+            </trans-unit>
+            <trans-unit id="date.daymonth">
+                <target>%d. %b</target>
+            </trans-unit>
+            <trans-unit id="date.year">
+                <target>%Y</target>
+            </trans-unit>
+            <trans-unit id="date.daymonthyear">
+                <target>%d. %b %Y</target>
+            </trans-unit>
+            <trans-unit id="date.daymonthyearfull">
+                <target>%A, %d. %B %Y, %H:%M Uhr</target>
+            </trans-unit>
+            <trans-unit id="article.detail.topic" xml:space="preserve">
+                <target>zum Thema</target>
+            </trans-unit>
+            <trans-unit id="footer.logo.alt" xml:space="preserve">
+                <target>Bundesministeriums für Arbeit und Soziales - Link auf bmas.de</target>
+            </trans-unit>
+            <trans-unit id="claim.denkfabrik" xml:space="preserve">
+                <target>Die Denkfabrik des Bundesministeriums für Arbeit und Soziales</target>
+            </trans-unit>
+            <trans-unit id="to.content" xml:space="preserve">
+                <target>Zum Inhalt</target>
+            </trans-unit>
+            <trans-unit id="event.when" xml:space="preserve">
+                <target>Wann</target>
+            </trans-unit>
+            <trans-unit id="event.where" xml:space="preserve">
+                <target>Wo</target>
+            </trans-unit>
+            <trans-unit id="event.time" xml:space="preserve">
+                <target>Uhr</target>
+            </trans-unit>
+            <trans-unit id="event.calendar" xml:space="preserve">
+                <target>Speichern</target>
+            </trans-unit>
+            <trans-unit id="event.month.1" xml:space="preserve">
+                <target>Januar</target>
+            </trans-unit>
+            <trans-unit id="event.month.2" xml:space="preserve">
+                <target>Februar</target>
+            </trans-unit>
+            <trans-unit id="event.month.3" xml:space="preserve">
+                <target>März</target>
+            </trans-unit>
+            <trans-unit id="event.month.4" xml:space="preserve">
+                <target>April</target>
+            </trans-unit>
+            <trans-unit id="event.month.5" xml:space="preserve">
+                <target>Mai</target>
+            </trans-unit>
+            <trans-unit id="event.month.6" xml:space="preserve">
+                <target>Juni</target>
+            </trans-unit>
+            <trans-unit id="event.month.7" xml:space="preserve">
+                <target>Juli</target>
+            </trans-unit>
+            <trans-unit id="event.month.8" xml:space="preserve">
+                <target>August</target>
+            </trans-unit>
+            <trans-unit id="event.month.9" xml:space="preserve">
+                <target>September</target>
+            </trans-unit>
+            <trans-unit id="event.month.10" xml:space="preserve">
+                <target>Oktober</target>
+            </trans-unit>
+            <trans-unit id="event.month.11" xml:space="preserve">
+                <target>November</target>
+            </trans-unit>
+            <trans-unit id="event.month.12" xml:space="preserve">
+                <target>Dezember</target>
+            </trans-unit>
+            <trans-unit id="event.list.read_more">
+                <target>Mehr erfahren</target>
+            </trans-unit>
+            <trans-unit id="aside.sharepage">
+                <target>Seite teilen</target>
+            </trans-unit>
+            <trans-unit id="aside.socialmedia">
+                <target>Soziale Medien</target>
+            </trans-unit>
+            <trans-unit id="aside.sharepageshort">
+                <target>Teilen</target>
+            </trans-unit>
+            <trans-unit id="aside.tweet">
+                <target>Tweet</target>
+            </trans-unit>
+            <trans-unit id="aside.share">
+                <target>Teilen</target>
+            </trans-unit>
+            <trans-unit id="aside.print">
+                <target>Drucken</target>
+            </trans-unit>
+            <trans-unit id="aside.shareonfacebook">
+                <target>Teile auf Facebook</target>
+            </trans-unit>
+            <trans-unit id="aside.shareontwitter">
+                <target>Teile auf Twittter</target>
+            </trans-unit>
+            <trans-unit id="aside.shareonreddit">
+                <target>Teile auf Reddit</target>
+            </trans-unit>
+            <trans-unit id="aside.shareonwhatsapp">
+                <target>Teile mit Whatsapp</target>
+            </trans-unit>
+            <trans-unit id="aside.shareonxing">
+                <target>Teile auf Xing</target>
+            </trans-unit>
+            <trans-unit id="aside.shareonlinkedin">
+                <target>Teile auf LinkedIn</target>
+            </trans-unit>
+            <trans-unit id="aside.printpage">
+                <target>Seite drucken</target>
+            </trans-unit>
+            <trans-unit id="aside.copylink">
+                <target>Link in Zwischenablage kopieren</target>
+            </trans-unit>
+            <trans-unit id="aside.copy">
+                <target>Kopieren</target>
+            </trans-unit>
+            <trans-unit id="event.header.counter">
+                <target>anstehende Veranstaltungen</target>
+            </trans-unit>
+            <trans-unit id="overview.header.counter">
+                <target>Artikel für</target>
+            </trans-unit>
+            <trans-unit id="medpub.header.counter">
+                <target>Beiträge</target>
+            </trans-unit>
+            <trans-unit id="event.calendar" xml:space="preserve">
+                <target>Kalender hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="gallery.download" xml:space="preserve">
+                <target>Herunterladen</target>
+            </trans-unit>
+            <trans-unit id="gallery.close" xml:space="preserve">
+                <target>Schließen</target>
+            </trans-unit>
+            <trans-unit id="gallery.previous" xml:space="preserve">
+                <target>Vorheriges Bild</target>
+            </trans-unit>
+            <trans-unit id="gallery.next" xml:space="preserve">
+                <target>Nächstes Bild</target>
+            </trans-unit>
+            <trans-unit id="gallery.of" xml:space="preserve">
+                <target>von</target>
+            </trans-unit>
+            <trans-unit id="focus" xml:space="preserve">
+                <target>Schwerpunkte</target>
+            </trans-unit>
+            <trans-unit id="content.close" xml:space="preserve">
+                <target>Schließen</target>
+            </trans-unit>
+            <trans-unit id="content.article" xml:space="preserve">
+                <target>Artikel</target>
+            </trans-unit>
+            <trans-unit id="content.articles" xml:space="preserve">
+                <target>Artikel</target>
+            </trans-unit>
+			<trans-unit id="tt_content.gallery_of" xml:space="preserve">
+				<target>von</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_close" xml:space="preserve">
+				<target>Schließen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_download" xml:space="preserve">
+				<target>Herunterladen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_previous" xml:space="preserve">
+				<target>Vorheriges Bild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_next" xml:space="preserve">
+				<target>Nächstes Bild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.images" xml:space="preserve">
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="tt_content.images.open" xml:space="preserve">
+				<target>Bildergalerie öffnen</target>
+			</trans-unit>
+			<trans-unit id="date.time">
+				<target>%H:%M Uhr</target>
+			</trans-unit>
+			<trans-unit id="date.day">
+				<target>%d.</target>
+			</trans-unit>
+			<trans-unit id="date.dayfull">
+				<target>%A, %d., %H:%M Uhr</target>
+			</trans-unit>
+			<trans-unit id="date.month">
+				<target>%b</target>
+			</trans-unit>
+			<trans-unit id="date.daymonthfull">
+				<target>%A, %d. %b, %H:%M Uhr</target>
+			</trans-unit>
+			<trans-unit id="date.daymonth">
+				<target>%d. %b</target>
+			</trans-unit>
+			<trans-unit id="date.year">
+				<target>%Y</target>
+			</trans-unit>
+			<trans-unit id="date.daymonthyear">
+				<target>%d. %b %Y</target>
+			</trans-unit>
+			<trans-unit id="date.daymonthyearfull">
+				<target>%A, %d. %B %Y, %H:%M Uhr</target>
+			</trans-unit>
+			<trans-unit id="event.month.1" xml:space="preserve">
+				<target>Jan</target>
+			</trans-unit>
+			<trans-unit id="event.month.2" xml:space="preserve">
+				<target>Feb</target>
+			</trans-unit>
+			<trans-unit id="event.month.3" xml:space="preserve">
+				<target>Mär</target>
+			</trans-unit>
+			<trans-unit id="event.month.4" xml:space="preserve">
+				<target>Apr</target>
+			</trans-unit>
+			<trans-unit id="event.month.5" xml:space="preserve">
+				<target>Mai</target>
+			</trans-unit>
+			<trans-unit id="event.month.6" xml:space="preserve">
+				<target>Jun</target>
+			</trans-unit>
+			<trans-unit id="event.month.7" xml:space="preserve">
+				<target>Jul</target>
+			</trans-unit>
+			<trans-unit id="event.month.8" xml:space="preserve">
+				<target>Aug</target>
+			</trans-unit>
+			<trans-unit id="event.month.9" xml:space="preserve">
+				<target>Sep</target>
+			</trans-unit>
+			<trans-unit id="event.month.10" xml:space="preserve">
+				<target>Okt</target>
+			</trans-unit>
+			<trans-unit id="event.month.11" xml:space="preserve">
+				<target>Nov</target>
+			</trans-unit>
+			<trans-unit id="event.month.12" xml:space="preserve">
+				<target>Dez</target>
+			</trans-unit>
+			<trans-unit id="content.shareontwitter">
+				<target>Diesen Inhalt auf Twitter teilen</target>
+			</trans-unit>
+			<trans-unit id="aside.share">
+				<target>Teilen</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

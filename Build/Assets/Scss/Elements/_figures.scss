@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+figcaption {
+  caption-side: bottom;
+  color: $p1-color-4;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px 0;
+  transition: all .2s ease-in-out;
+  width: 100%;
+
+  .modal-content & {
+    background-color: $p1-color-11;
+    color: $p1-color-7 !important;
+  }
+}

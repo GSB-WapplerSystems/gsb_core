@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:if condition="{animationSettings}">
+    <f:then>
+        <f:asset.script identifier="aosJS" src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
+        <f:asset.script identifier="aosJS">
+            AOS.init();
+        </f:asset.script>
+        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
+    </f:then>
+</f:if>
+    <f:if condition="{data_tx_gsbfile_file}">
+        <div id="c{data.uid}" class="file-wrapper frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: ' {animationSettings -> f:format.raw()}')}>
+            <f:if condition="{data.header}">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:if>
+            <ul class="file-list {data.header_position} list-unstyled">
+                <f:for each="{data_tx_gsbfile_file}" as="file">
+                    <li class="file-list-item">
+                        <f:comment>
+                            <f:if condition="{file}">
+                                <div class="col-12 col-md-3">
+                                    <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" />
+                                </div>
+                            </f:if>
+                        </f:comment>
+                        <div class="file-item">
+                            <f:if condition="{file.title}">
+                                <f:then>
+                                    <h4 class="file-title">
+                                        <a href="fileadmin{file.properties.identifier}" class="download {file.properties.extension}" target="_blank">
+                                            {file.title} <span class="visually-hidden"><f:format.case mode="upper">- {file.properties.extension}:{file.properties.size -> f:format.bytes()}</f:format.case></span>
+                                        </a>
+                                    </h4>
+                                </f:then>
+                                <f:else>
+                                    <h4 class="file-title">
+                                        <a href="fileadmin{file.properties.identifier}" class="download {file.properties.extension}" target="_blank">
+                                            {file.properties.name} <span class="visually-hidden"><f:format.case mode="upper">- {file.properties.extension}:{file.properties.size -> f:format.bytes()}</f:format.case></span>
+                                        </a>
+                                    </h4>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{file.description}">
+                                <p class="file-description">{file.description}</p>
+                            </f:if>
+                            <f:if condition="{file.properties.identifier}">
+                                <p class="file-properties">
+                                    <f:format.case mode="upper">{file.properties.extension} - {file.properties.size -> f:format.bytes()}</f:format.case>
+                                    <f:if condition="{file.properties.content_creation_date}">
+                                        <span class="file-date"><f:translate key="LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.status" />: <f:format.date format="%d. %B %Y">{file.properties.content_creation_date}</f:format.date></span>
+                                    </f:if>
+                            </f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
+
+</html>

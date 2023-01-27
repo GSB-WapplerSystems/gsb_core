@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:if condition="{processedRow.header_position}">
+        <strong><f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position" /></strong>
+        {processedRow.header_position.0}<br>
+    </f:if>
+
+    <f:if condition="{processedRow.tx_gsbfile_file}">
+        <strong><f:translate key="LLL:EXT:gsb_file/Resources/Private/Language/locallang_db.xlf:tt_content.tx_gsbfile_file" /></strong><br>
+        <f:for each="{processedRow.tx_gsbfile_file}" as="item">
+            <ul>
+                <f:for each="{item.uid_local}" as="file">
+                    <li><f:translate key="LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.uid_local" /> {file.title} (id={item.uid})</li>
+                </f:for>
+            </ul>
+        </f:for>
+    </f:if>
+
+</html>

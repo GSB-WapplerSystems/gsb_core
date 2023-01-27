@@ -1,0 +1,16 @@
+// Mixins
+@import "Mixins/mixins";
+// Base
+@import "Base/fonts";
+@import "Base/colors";
+// Bootstrap
+@import "~bootstrap/scss/functions";
+@import "Base/Bootstrap/custom-variables";
+@import "Base/Bootstrap/custom-styles";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+// Templates
+@import "Extensions/ckeditor";
+@import "Extensions/backend";

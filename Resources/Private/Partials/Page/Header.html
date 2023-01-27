@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:format.raw>{jumpNav}</f:format.raw>
+
+    <header class="header-wrapper" id="top">
+        <div class="layer"></div>
+        <div class="header-wrapper-bg">
+            <div class="container">
+                <div class="row">
+                  <div class="position-elements mt-4 flex-wrap">
+                      <div class="col-3 logo">
+                          <f:render partial="Header-image" arguments="{_all}"></f:render>
+                      </div>
+                      <f:render partial="Header.Meta" arguments="{_all}"/>
+                      <div class="col-9 col-md-12 mt-md-4 mb-md-2 d-flex justify-content-end justify-content-md-start align-items-center">
+                          <button class="navbar-toggler mt-2 mt-md-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="line"></span>
+                              <span class="txt"><f:format.raw>{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:header.openMenu')}</f:format.raw></span>
+                          </button>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <f:render partial="Header.Mainnav" arguments="{headerMenu: headerMenu, navPrimary: navPrimary, navPrimaryMeta: navPrimaryMeta, searchBoxMobi: searchBoxMobi}"/>
+                </div>
+                <div class="row">
+                    <div class="accessibility-target py-3 d-md-none">
+                        <nav>
+                            <ul class="p-0 m-0">
+                                <li>
+                                    <a class="gebaerdensprache-link" href="/" hreflang="gsg">Gebärdensprache</a>
+                                </li>
+                                <li>
+                                    <a class="leichte-sprache-link" href="/" hreflang="de-simple">Leichte Sprache</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <f:if condition="{data.layout} != 1">
+        <nav class="breadcrumb-wrapper" aria-label="{f:translate(key: 'header.youarehere', extensionName: 'gsb_template')}">
+            <div class="container">
+                <f:format.raw>{navBreadcrumb}</f:format.raw>
+            </div>
+        </nav>
+    </f:if>
+</html>

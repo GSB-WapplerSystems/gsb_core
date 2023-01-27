@@ -1,0 +1,4 @@
+@import 'EXT:gsb_template/Configuration/Extensions/solr/TypoScript/Setup/'
+@import 'EXT:gsb_template/Configuration/Extensions/solr/TypoScript/Setup/Queue/'
+@import 'EXT:gsb_template/Configuration/Extensions/solr/TypoScript/Setup/View/'
+@import 'EXT:gsb_template/Configuration/Extensions/solr/TypoScript/Setup/Suggest/'

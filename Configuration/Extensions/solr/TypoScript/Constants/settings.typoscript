@@ -1,0 +1,30 @@
+plugin.tx_solr {
+    # cat=Solr settings (RDA):; type=boolean; label=Statistics: This will show statistics
+    statistics = 1
+    # cat=Solr settings (RDA):; type=boolean; label=Suggest: This will show suggestions
+    suggest = 1
+
+    search {
+        # cat=Solr settings (RDA):; type=boolean; label=Suggest: This will show suggestions
+        faceting = 1
+        # cat=Solr settings (RDA):; type=boolean; label=Grouping: This will show grouping
+        grouping = 0
+        # cat=Solr settings (RDA):; type=boolean; label=Sorting: This will show grouping
+        sorting = 1
+        # cat=Solr settings (RDA):; type=boolean; label=Spellchecking: This will show spellchecking
+        spellchecking = 0
+        # cat=Solr settings (RDA):; type=boolean; label=Last Searches: This will show last searches
+        lastSearches = 0
+        # cat=Solr settings (RDA):; type=boolean; label=Frequent Searches: This will show frequent searches
+        frequentSearches = 1
+        # cat=Solr settings (RDA):; type=string; label=Solr Search: Target page
+        targetPage = 601
+
+        results {
+            # cat=Solr settings (RDA):; type=string; label=Solr Results: Results per page
+            resultsPerPage = 10
+            # cat=Solr settings (RDA):; type=string; label=Solr Results: Results per page - filterComponent
+            resultsPerPage.filterComponent = 12
+        }
+    }
+}

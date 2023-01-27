@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+:root {
+  --swiper-navigation-size: 44px;
+}
+
+.swiper-navigation {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+  width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  align-items: center;
+  background: none;
+  border: 0 none;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  padding: 0;
+  position: relative;
+  z-index: 10;
+
+  &.swiper-button-disabled {
+    cursor: auto;
+    opacity: .35;
+    pointer-events: none;
+  }
+
+  &::after {
+    display: block;
+    height: 42px;
+    text-transform: none !important;
+    width: 42px;
+  }
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  &::after {
+    content: svg-load("../Images/Icons/icon_arrow.svg");
+    margin-top: 15px;
+  }
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  &::after {
+    content: svg-load("../Images/Icons/icon_arrow.svg");
+    margin-bottom: 15px;
+    transform: rotate(180deg);
+  }
+}
+
+@each $navColorName, $navColorValue in $colors {
+  .swiper-button-prev,
+  .swiper-button-next {
+    &.swiper-button-#{'' + $navColorName} {
+      --swiper-navigation-color: #{"" + $navColorValue};
+    }
+  }
+}
+
+.swiper-button-lock {
+  display: none;
+}

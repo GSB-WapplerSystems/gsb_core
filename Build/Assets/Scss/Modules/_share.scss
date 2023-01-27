@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+.socialmedia {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+
+  > p {
+    margin-bottom: 0;
+    padding-bottom: 16px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-flow: row;
+    justify-content: flex-end;
+    padding-right: 16px;
+
+    > p {
+      padding-bottom: 0;
+      padding-right: 16px;
+    }
+  }
+
+  .main-meta-wrapper & {
+    @include media-breakpoint-down(md) {
+      align-items: center;
+      flex-flow: column;
+      justify-content: center;
+      padding-right: 0;
+
+      > p {
+        padding-bottom: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .footer & {
+    padding-right: 0;
+
+    @include media-breakpoint-down(lg) {
+      align-items: center;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+
+      > p {
+        padding-bottom: 0;
+        padding-right: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      align-items: flex-start;
+      flex-flow: column;
+      justify-content: flex-start;
+      padding-right: 0;
+
+      > p {
+        padding-bottom: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .person-info & {
+    justify-content: flex-start;
+  }
+}
+
+.share-article {
+  display: none;
+  left: 0;
+  position: absolute;
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+  }
+
+  h2 {
+    font-weight: 500;
+  }
+}
+
+.share {
+  margin-bottom: 24px;
+
+  .socialmedia &,
+  .share-article & {
+    margin-bottom: 0;
+  }
+
+  .socialmedia & {
+    margin-top: 8px;
+    width: auto;
+  }
+
+  .col {
+    border-radius: 50%;
+    flex: 0 1 0;
+    height: 60px;
+    margin-right: 24px;
+    width: 60px;
+
+    .person-info & {
+      height: 44px;
+      margin-right: 16px;
+      width: 44px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 24px;
+
+      .person-info & {
+        margin-bottom: 16px;
+      }
+    }
+
+    &.whatsapp {
+      display: none;
+
+      .ios &,
+      .android & {
+        display: block;
+      }
+    }
+
+    .share-article & {
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+
+    .icon {
+      &-share {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        display: inline-block;
+        height: 24px;
+        vertical-align: middle;
+        width: 24px;
+
+        .person-info & {
+          background-size: 18px 18px;
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+
+    > a {
+      align-items: center;
+      background-color: transparent;
+      border: 2px solid $p1-color-2;
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: $p1-color-2;
+      display: flex;
+      height: 60px;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      transition: all .2s ease-in-out;
+      width: 60px;
+
+      .person-info & {
+        background-color: $p1-color-6;
+        height: 44px;
+        width: 44px;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $p1-color-2;
+        color: $p1-color-6;
+      }
+    }
+  }
+
+  .twitter {
+    > a {
+      .icon-twitter {
+        background-image: svg-load("../Images/Icons/icon_twitter.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-twitter {
+          background-image: svg-load("../Images/Icons/icon_twitter.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .facebook {
+    > a {
+      .icon-facebook {
+        background-image: svg-load("../Images/Icons/icon_facebook.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-facebook {
+          background-image: svg-load("../Images/Icons/icon_facebook.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .print {
+    > a {
+      .icon-print {
+        background-image: svg-load("../Images/Icons/icon_print.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-print {
+          background-image: svg-load("../Images/Icons/icon_print.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .reddit {
+    > a {
+      .icon-reddit {
+        background-image: svg-load("../Images/Icons/icon_reddit.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-reddit {
+          background-image: svg-load("../Images/Icons/icon_reddit.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .xing {
+    > a {
+      .icon-xing {
+        background-image: svg-load("../Images/Icons/icon_xing.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-xing {
+          background-image: svg-load("../Images/Icons/icon_xing.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .linkedin {
+    > a {
+      .icon-linkedin {
+        background-image: svg-load("../Images/Icons/icon_linkedin.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-linkedin {
+          background-image: svg-load("../Images/Icons/icon_linkedin.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .link {
+    > a {
+      .icon-link {
+        background-image: svg-load("../Images/Icons/icon_link.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-link {
+          background-image: svg-load("../Images/Icons/icon_link.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .whatsapp {
+    > a {
+      .icon-whatsapp {
+        background-image: svg-load("../Images/Icons/icon_whatsapp.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-whatsapp {
+          background-image: svg-load("../Images/Icons/icon_whatsapp.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .youtube {
+    > a {
+      .icon-youtube {
+        background-image: svg-load("../Images/Icons/icon_youtube.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-youtube {
+          background-image: svg-load("../Images/Icons/icon_youtube.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+
+  .instagram {
+    > a {
+      .icon-instagram {
+        background-image: svg-load("../Images/Icons/icon_instagram.svg", fill=$p1-color-2);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        .icon-instagram {
+          background-image: svg-load("../Images/Icons/icon_instagram.svg", fill=$p1-color-6);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+lib {
+    formPrefillUrl = TEXT
+    formPrefillUrl {
+        data = getIndpEnv:HTTP_REFERER
+        noTrimWrap = |{LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:barriere_melden.message} |
+        noTrimWrap.insertData = t3://page?uid=current
+    }
+}
+
+lib.prefillUrl = TEXT
+lib.prefillUrl {
+    dataWrap = {getIndpEnv:TYPO3_REQUEST_HOST}|
+    typolink.parameter = t3://page?uid=current
+    typolink.returnLast = url
+}
