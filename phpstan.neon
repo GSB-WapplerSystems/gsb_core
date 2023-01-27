@@ -2,7 +2,3 @@ parameters:
 	level: 8
 	paths:
 		- Classes/
-
-	ignoreErrors:
-		- '#Variable \$_EXTKEY might not be defined\.#'
-
