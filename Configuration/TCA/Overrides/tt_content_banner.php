@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 defined('TYPO3') || die();
 
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 (static function (): void {
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_template'] = 'tx_gsb_template';

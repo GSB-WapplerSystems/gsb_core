@@ -1,4 +1,5 @@
 <?php
+
 return [
     'tx_gsbstage_gsb_stage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
