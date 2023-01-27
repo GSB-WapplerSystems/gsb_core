@@ -1,29 +1,40 @@
 {
-  "name": "itzbund/gsb-template",
-  "description": "GSB Template",
-  "type": "typo3-cms-extension",
-  "version": "2.0.0",
-  "license": ["GPL-2.0+"],
-  "require": {
-    "php": "^8.1",
-    "typo3/cms-core": "^12.1",
-	"b13/container": "^2.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "ITZBund\\GsbTemplate\\": "Classes/"
-    }
-  },
-  "config": {
-    "allow-plugins": true,
-    "vendor-dir": ".composer/vendor",
-    "bin-dir": ".composer/bin"
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "gsb_template",
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".composer"
-    }
-  }
+	"name": "itzbund/gsb-template",
+	"description": "GSB Template",
+	"type": "typo3-cms-extension",
+	"version": "2.0.0",
+	"license": [
+		"GPL-2.0+"
+	],
+	"require": {
+		"php": "^8.1",
+		"typo3/cms-core": "^12.1",
+		"b13/container": "^2.1"
+	},
+	"require-dev": {
+		"michielroos/typo3scan": "^1.7",
+		"phpmd/phpmd": "^2.13",
+		"phpstan/phpstan": "^1.9",
+		"saschaegerer/phpstan-typo3": "^1.8",
+		"squizlabs/php_codesniffer": "*",
+		"ssch/typo3-rector": "^1.1",
+		"typo3/coding-standards": "^0.7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"ITZBund\\GsbTemplate\\": "Classes/"
+		}
+	},
+	"config": {
+		"allow-plugins": true,
+		"vendor-dir": ".composer/vendor",
+		"bin-dir": ".composer/bin"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "gsb_template",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".composer"
+		}
+	}
 }

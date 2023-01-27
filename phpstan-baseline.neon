@@ -1,0 +1,226 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method object\\:\\:compile\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:configureView\\(\\) has parameter \\$pageTsConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$databaseRow with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$processedTcaColumns with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:preProcess\\(\\) has parameter \\$row with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$supportedContentTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbBanner\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$view \\(TYPO3\\\\CMS\\\\Fluid\\\\View\\\\StandaloneView\\) does not accept object\\.$#"
+			count: 1
+			path: _packages/gsb_banner/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_accordion.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_columns2.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_columns3.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_columns4.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_container.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_grid.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:configureContainer\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_container/Configuration/TCA/Overrides/tt_content_tabs.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:compile\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:configureView\\(\\) has parameter \\$pageTsConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$databaseRow with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$processedTcaColumns with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:preProcess\\(\\) has parameter \\$row with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$supportedContentTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbFile\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$view \\(TYPO3\\\\CMS\\\\Fluid\\\\View\\\\StandaloneView\\) does not accept object\\.$#"
+			count: 1
+			path: _packages/gsb_file/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:compile\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:configureView\\(\\) has parameter \\$pageTsConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$databaseRow with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$processedTcaColumns with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:preProcess\\(\\) has parameter \\$row with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$supportedContentTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbGallery\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$view \\(TYPO3\\\\CMS\\\\Fluid\\\\View\\\\StandaloneView\\) does not accept object\\.$#"
+			count: 1
+			path: _packages/gsb_gallery/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:configureView\\(\\) has parameter \\$pageTsConfig with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$databaseRow with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) has parameter \\$processedTcaColumns with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:getProcessedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:preProcess\\(\\) has parameter \\$row with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$supportedContentTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbStage\\\\Hooks\\\\PageLayoutViewDrawItem\\:\\:\\$view \\(TYPO3\\\\CMS\\\\Fluid\\\\View\\\\StandaloneView\\) does not accept object\\.$#"
+			count: 1
+			path: _packages/gsb_stage/Classes/Hooks/PageLayoutViewDrawItem.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Hooks\\\\OverwriteFlexForm\\:\\:overwrite\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: _packages/gsb_template/Classes/Hooks/OverwriteFlexForm.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\HideSolrPaginationViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_template/Classes/ViewHelpers/HideSolrPaginationViewHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\ImageViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_template/Classes/ViewHelpers/ImageViewHelper.php
+
+		-
+			message: "#^Cannot access offset 'query' on array\\{scheme\\?\\: string, host\\?\\: string, port\\?\\: int\\<0, 65535\\>, user\\?\\: string, pass\\?\\: string, path\\?\\: string, query\\?\\: string, fragment\\?\\: string\\}\\|false\\.$#"
+			count: 1
+			path: _packages/gsb_template/Classes/ViewHelpers/TeaserViewHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\TeaserViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: _packages/gsb_template/Classes/ViewHelpers/TeaserViewHelper.php
+
+		-
+			message: "#^Call to an undefined method object\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: _packages/gsb_template/ext_tables.php
+
+		-
+			message: "#^Cannot access offset 'typoScript' on TYPO3\\\\CMS\\\\Core\\\\Configuration\\\\ExtensionConfiguration\\.$#"
+			count: 1
+			path: _packages/gsb_template/ext_tables.php

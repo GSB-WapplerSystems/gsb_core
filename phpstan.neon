@@ -1,0 +1,8 @@
+parameters:
+	level: 8
+	paths:
+		- _packages/
+
+	ignoreErrors:
+		- '#Variable \$_EXTKEY might not be defined\.#'
+
