@@ -4,30 +4,38 @@
         <div class="social-media d-flex justify-content-lg-end align-items-center mb-4 mb-lg-5">
             <h2 class="fs-3 fs-lg-2 me-4">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:footer.socialmediaheader')}</h2>
             <ul class="list-unstyled d-flex gap-4">
-                <li>
-                    <a class="facebook" href="{socialLinks-Facebook}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Facebook {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                        <div class="icon icon-facebook"></div>
-                        <span lang="en" class="visually-hidden">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="youtube" href="{socialLinks-YouTube}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} YouTube {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                        <div class="icon icon-youtube"></div>
-                        <span lang="en" class="visually-hidden">YouTube</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="instagram" href="{socialLinks-Instagram}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Instagram {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                        <div class="icon icon-instagram"></div>
-                        <span lang="en" class="visually-hidden">Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="twitter" href="{socialLinks-Twitter}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Twitter {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                        <div class="icon icon-twitter"></div>
-                        <span lang="en" class="visually-hidden">Twitter</span>
-                    </a>
-                </li>
+                <f:if condition="{socialLinks-Facebook}">
+                    <li>
+                        <a class="facebook" href="{socialLinks-Facebook}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Facebook {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <div class="icon icon-facebook"></div>
+                            <span lang="en" class="visually-hidden">Facebook</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{socialLinks-YouTube}">
+                    <li>
+                        <a class="youtube" href="{socialLinks-YouTube}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} YouTube {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <div class="icon icon-youtube"></div>
+                            <span lang="en" class="visually-hidden">YouTube</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{socialLinks-Instagram}">
+                    <li>
+                        <a class="instagram" href="{socialLinks-Instagram}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Instagram {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <div class="icon icon-instagram"></div>
+                            <span lang="en" class="visually-hidden">Instagram</span>
+                        </a>
+                    </li>
+                </f:if>
+                <f:if condition="{socialLinks-Twitter}">
+                    <li>
+                        <a class="twitter" href="{socialLinks-Twitter}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Twitter {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <div class="icon icon-twitter"></div>
+                            <span lang="en" class="visually-hidden">Twitter</span>
+                        </a>
+                    </li>
+                </f:if>
             </ul>
         </div>
     </div>
