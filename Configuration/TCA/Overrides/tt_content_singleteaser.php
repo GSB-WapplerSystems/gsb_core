@@ -215,38 +215,38 @@ defined('TYPO3') || die();
             ],
 
         'tx_gsbsingleteaser_bgimage' => [
-                'config' =>
-                    [
-                        'type' => 'file',
-                        'appearance' =>
-                            [
-                                'useSortable' => 'tx_gsbsingleteaser_bgimage',
-                                'headerThumbnail' =>
-                                    [
-                                        'field' => 'uid_local',
-                                        'width' => '45',
-                                        'height' => '45c',
-                                    ],
-                                'enabledControls' =>
-                                    [
-                                        'info' => 'tx_gsbsingleteaser_bgimage',
-                                        'new' => false,
-                                        'dragdrop' => 'tx_gsbsingleteaser_bgimage',
-                                        'sort' => false,
-                                        'hide' => 'tx_gsbsingleteaser_bgimage',
-                                        'delete' => 'tx_gsbsingleteaser_bgimage',
-                                    ],
-                                'fileUploadAllowed' => '1',
-                                'showAllLocalizationLink' => '1',
-                                'showPossibleLocalizationRecords' => '1',
-                                'showSynchronizationLink' => '1',
-                            ],
-                        'maxitems' => '1',
-                        'minitems' => '0',
-                    ],
-                'exclude' => '1',
-                'label' => 'Background image',
-            ],
+            'config' =>
+                [
+                    'type' => 'file',
+                    'appearance' =>
+                        [
+                            'useSortable' => 'tx_gsbsingleteaser_bgimage',
+                            'headerThumbnail' =>
+                                [
+                                    'field' => 'uid_local',
+                                    'width' => '45',
+                                    'height' => '45c',
+                                ],
+                            'enabledControls' =>
+                                [
+                                    'info' => 'tx_gsbsingleteaser_bgimage',
+                                    'new' => false,
+                                    'dragdrop' => 'tx_gsbsingleteaser_bgimage',
+                                    'sort' => false,
+                                    'hide' => 'tx_gsbsingleteaser_bgimage',
+                                    'delete' => 'tx_gsbsingleteaser_bgimage',
+                                ],
+                            'fileUploadAllowed' => '1',
+                            'showAllLocalizationLink' => '1',
+                            'showPossibleLocalizationRecords' => '1',
+                            'showSynchronizationLink' => '1',
+                        ],
+                    'maxitems' => '1',
+                    'minitems' => '0',
+                ],
+            'exclude' => '1',
+            'label' => 'Background image',
+        ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
@@ -260,13 +260,14 @@ defined('TYPO3') || die();
         ]
     );
 
-    $datePalettes = [
+
+    /*$datePalettes = [
         'date_config' => [
             'showitem' => 'tx_gsbsingleteaser_event_startdate,tx_gsbsingleteaser_event_enddate,tx_gsbsingleteaser_place,--linebreak--,tx_gsbsingleteaser_bgimage', 'canNotCollapse' => 1,
         ],
     ];
 
-    $GLOBALS['TCA']['tt_content']['palettes'] += $datePalettes;
+    $GLOBALS['TCA']['tt_content']['palettes'] += $datePalettes;*/
 
     $headerPalettes = [
         'header_config' => [
@@ -301,7 +302,7 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['palettes'] += $twitterPalettes;
 
     $tempTypes = [
-        'gsb_template' =>
+        'gsb_singleteaser' =>
             [
                 'columnsOverrides' =>
                     [
@@ -322,7 +323,7 @@ defined('TYPO3') || die();
         --palette--;;header_config,
         --palette--;;date_config,
         image,
-        --palette--;;image_config,
+        --palette--;;gallerySettings,
         bodytext,
         --palette--;;link_config,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
@@ -344,4 +345,5 @@ defined('TYPO3') || die();
     ];
 
     $GLOBALS['TCA']['tt_content']['types'] += $tempTypes;
+
 })();

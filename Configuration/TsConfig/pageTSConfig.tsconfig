@@ -6,196 +6,196 @@
 
 ## table singleview limit
 mod {
-    web_list {
-        itemsLimitSingleTable = 100
-        itemsLimitPerTable = 100
-    }
+  web_list {
+    itemsLimitSingleTable = 100
+    itemsLimitPerTable = 100
+  }
 }
 
 TCAdefaults {
-    tt_content {
-        imagecols = 1
-    }
+  tt_content {
+    imagecols = 1
+  }
 }
 
 TCEFORM {
-    #--------------
-    #	Pages
-    #--------------
-    pages {
-        layout {
-            removeItems = 3, 4
-            altLabels {
-                0 = Standard
-                1 = Overview Page Layout
-                2 = Publication
-            }
-        }
+  #--------------
+  #	Pages
+  #--------------
+  pages {
+    layout {
+      removeItems = 3, 4
+      altLabels {
+        0 = Standard
+        1 = Overview Page Layout
+        2 = Publication
+      }
     }
-    sys_file_metadata {
-        creator_tool.disabled = 1
-        location_region.disabled = 1
-        location_city.disabled = 1
-        location_country.disabled = 1
-        pages.disabled = 1
-        width.disabled = 1
-        height.disabled = 1
-        unit.disabled = 1
-        ranking.disabled = 1
-        download_name.disabled = 1
-        latitude.disabled = 1
-        longitude.disabled = 1
-        source.disabled = 1
-        color_space.disabled = 1
+  }
+  sys_file_metadata {
+    creator_tool.disabled = 1
+    location_region.disabled = 1
+    location_city.disabled = 1
+    location_country.disabled = 1
+    pages.disabled = 1
+    width.disabled = 1
+    height.disabled = 1
+    unit.disabled = 1
+    ranking.disabled = 1
+    download_name.disabled = 1
+    latitude.disabled = 1
+    longitude.disabled = 1
+    source.disabled = 1
+    color_space.disabled = 1
+  }
+  #--------------
+  #	Content
+  #--------------
+  tt_content {
+    header_layout {
+      altLabels {
+        0 = Standard
+        1 = H1
+        2 = H2 - Standard
+        3 = H3
+        4 = H4
+        5 = H5
+        6 = H6
+      }
+      removeItems = 0
+      addItems {
+        //7 = H1 - versteckt (SR only)
+        8 = H2 - versteckt (SR only)
+        9 = H3 - versteckt (SR only)
+        10 = H4 - versteckt (SR only)
+      }
     }
-    #--------------
-    #	Content
-    #--------------
-    tt_content {
-        header_layout {
-            altLabels {
-                0 = Standard
-                1 = H1
-                2 = H2 - Standard
-                3 = H3
-                4 = H4
-                5 = H5
-                6 = H6
-            }
-            removeItems = 0,1
-            addItems {
-                //7 = H1 - versteckt (SR only)
-                8 = H2 - versteckt (SR only)
-                9 = H3 - versteckt (SR only)
-                10 = H4 - versteckt (SR only)
-            }
-        }
-        CType {
-            # removeItems = bullets, div, form_formframework, header, html, image, list, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, menu_subpages, shortcut, table, text, textmedia, textpic, uploads
-            removeItems = bullets, div, menu_abstract, menu_categorized_content, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, shortcut, textmedia, table, uploads
-        }
-        layout {
-            removeItems = 3
-            addItems {
+    CType {
+      # removeItems = bullets, div, form_formframework, header, html, image, list, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, menu_subpages, shortcut, table, text, textmedia, textpic, uploads
+      removeItems = bullets, div, menu_abstract, menu_categorized_content, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, shortcut, textmedia, table, uploads
+    }
+    layout {
+      removeItems = 3
+      addItems {
 
-            }
-            altLabels {
-                0 = Normale Box (Standard)
-                1 = Einrückung Element (Col-8)
-                2 = Einrückung Element (Col-10)
-            }
-        }
-        frame_class {
-            removeItems = indent, indent-left, indent-right, none
-            addItems {
-                mint = Box (mint)
-                mint-border = Box border (mint-border)
-                magenta-border = Box border (magenta-border)
-                container = Container (Wrapper)
-            }
-            altLabels {
-                ruler-before = Kurze Linie unten
-                ruler-after = Lange Linie unten
-            }
-        }
-        imagecols {
-            removeItems = 4,6,7,8
-            altLabels {
-                5 = Auto
-            }
-            default = 1
-        }
-        imageorient {
-            types {
-                textmedia {
-                    removeItems = 1,2,9,10,17,18,25,26
-                }
-                textpic {
-                    removeItems = 1,2,9,10
-                }
-                gsb_singleteaser {
-                    addItems {
-
-                    }
-                    removeItems = 1,2,9,10,17
-                    altLabels {
-                        0 = LLL:EXT:gsb_singleteaser/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gsb_singleteaser.imageunderheadline
-                        8 = LLL:EXT:gsb_singleteaser/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gsb_singleteaser.imageundertext
-                    }
-                }
-            }
-        }
-        imageborder {
-            disabled = 1
-        }
-        media.config.appearance.fileUploadAllowed = 0
+      }
+      altLabels {
+        0 = Normale Box (Standard)
+        1 = Einrückung Element (Col-8)
+        2 = Einrückung Element (Col-10)
+      }
     }
+    frame_class {
+      removeItems = indent, indent-left, indent-right, none
+      addItems {
+        mint = Box (mint)
+        mint-border = Box border (mint-border)
+        magenta-border = Box border (magenta-border)
+        container = Container (Wrapper)
+      }
+      altLabels {
+        ruler-before = Kurze Linie unten
+        ruler-after = Lange Linie unten
+      }
+    }
+    imagecols {
+      removeItems = 4,6,7,8
+      altLabels {
+        5 = Auto
+      }
+      default = 1
+    }
+    imageorient {
+      types {
+        textmedia {
+          removeItems = 1,2,9,10,17,18,25,26
+        }
+        textpic {
+          removeItems = 1,2,9,10
+        }
+        gsb_singleteaser {
+          addItems {
+
+          }
+          removeItems = 1,2,9,10,17
+          altLabels {
+            0 = LLL:EXT:gsb_singleteaser/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gsb_singleteaser.imageunderheadline
+            8 = LLL:EXT:gsb_singleteaser/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gsb_singleteaser.imageundertext
+          }
+        }
+      }
+    }
+    imageborder {
+      disabled = 1
+    }
+    media.config.appearance.fileUploadAllowed = 0
+  }
 }
 
 mod.wizards.newContentElement.wizardItems.common {
-    elements {
-        video {
-            iconIdentifier = tx_video
-            title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_description
-            tt_content_defValues {
-                CType = video
-            }
-        }
-        audio {
-            iconIdentifier = tx_audio
-            title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_description
-            tt_content_defValues {
-                CType = audio
-            }
-        }
-        gsb_banner {
-            iconIdentifier = tx_gsb_banner
-            title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
-            tt_content_defValues {
-                CType = gsb_banner
-            }
-        }
-        gsb_download {
-            iconIdentifier = tx_gsbfile_gsb_download
-            title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_download_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_download_description
-            tt_content_defValues {
-                CType = gsb_download
-            }
-        }
-        gsb_gallery {
-            iconIdentifier = tx_gsbgallery_gsb_gallery
-            title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_gallery_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_gallery_description
-            tt_content_defValues {
-                CType = gsb_gallery
-            }
-        }
-        gsb_singleteaser {
-            iconIdentifier = tx_gsb_singleteaser
-            title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_singleteaser_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_singleteaser_description
-            tt_content_defValues {
-                CType = gsb_singleteaser
-            }
-        }
-        gsb_stage {
-            iconIdentifier = tx_gsbstage_gsb_stage
-            title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_description
-            tt_content_defValues {
-                CType = gsb_stage
-            }
-        }
+  elements {
+    video {
+      iconIdentifier = tx_video
+      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_description
+      tt_content_defValues {
+        CType = video
+      }
     }
-    show := addToList(video)
-    show := addToList(audio)
-    show := addToList(gsb_banner)
-    show := addToList(gsb_download)
-    show := addToList(gsb_gallery)
-    show := addToList(gsb_singleteaser)
-    show := addToList(gsb_stage)
+    audio {
+      iconIdentifier = tx_audio
+      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_description
+      tt_content_defValues {
+        CType = audio
+      }
+    }
+    gsb_banner {
+      iconIdentifier = tx_gsb_banner
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
+      tt_content_defValues {
+        CType = gsb_banner
+      }
+    }
+    gsb_download {
+      iconIdentifier = tx_gsbfile_gsb_download
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_description
+      tt_content_defValues {
+        CType = gsb_download
+      }
+    }
+    gsb_gallery {
+      iconIdentifier = tx_gsbgallery_gsb_gallery
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_description
+      tt_content_defValues {
+        CType = gsb_gallery
+      }
+    }
+    gsb_singleteaser {
+      iconIdentifier = tx_gsb_singleteaser
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_singleteaser_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_singleteaser_description
+      tt_content_defValues {
+        CType = gsb_singleteaser
+      }
+    }
+    gsb_stage {
+      iconIdentifier = tx_gsbstage_gsb_stage
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_description
+      tt_content_defValues {
+        CType = gsb_stage
+      }
+    }
+  }
+  show := addToList(video)
+  show := addToList(audio)
+  show := addToList(gsb_banner)
+  show := addToList(gsb_download)
+  show := addToList(gsb_gallery)
+  show := addToList(gsb_singleteaser)
+  show := addToList(gsb_stage)
 }

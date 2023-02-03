@@ -1,11 +1,8 @@
 tt_content.gsb_singleteaser = FLUIDTEMPLATE
 tt_content.gsb_singleteaser {
-  layoutRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Layouts/
-  layoutRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.layoutRootPath}
-  partialRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Partials/
-  partialRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.partialRootPath}
-  templateRootPaths.0 = EXT:gsb_singleteaser/Resources/Private/Templates/Content/
-  templateRootPaths.10 = {$plugin.tx_gsbsingleteaser.view.templateRootPath}
+  layoutRootPaths.0 = EXT:gsb_template/Resources/Private/Layouts/ContentElements/
+  partialRootPaths.0 = EXT:gsb_template/Resources/Private/Partials/Content/
+  templateRootPaths.0 = EXT:gsb_template/Resources/Private/Templates/Content/
   templateName = Singleteaser
   dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
   dataProcessing.10 {
@@ -14,7 +11,7 @@ tt_content.gsb_singleteaser {
       fieldName = image
       table = tt_content
     }
-    as = data_image
+    as = files
   }
   dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
   dataProcessing.20 {

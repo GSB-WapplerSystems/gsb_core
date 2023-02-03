@@ -3,6 +3,7 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
+    <f:format.raw>{tx_container_grid}</f:format.raw>
         <f:if condition="{children_101}">
             <f:for each="{children_101}" as="child">
                 <f:format.raw>{child.renderedContent}</f:format.raw>

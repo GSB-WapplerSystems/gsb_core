@@ -20,8 +20,7 @@
   margin-bottom: 2px;
 }
 
-.gebaerdensprache-link {
-  background-image: svg-load("../Images/Icons/icon_meta_gebaerdensprache.svg", fill=$p1-color-3);
+.service-link {
   background-position: right;
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -33,17 +32,12 @@
   width: 24px;
 }
 
-.leichte-sprache-link {
+.icon-gebaerdensprache {
+  background-image: svg-load("../Images/Icons/icon_meta_gebaerdensprache.svg", fill=$p1-color-3);
+}
+
+.icon-leichte-sprache {
   background-image: svg-load("../Images/Icons/icon_meta_leichte-sprache.svg", fill=$p1-color-3);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 24px 24px;
-  display: inline;
-  height: 24px;
-  padding-bottom: .4rem;
-  padding-right: 30px;
-  padding-top: .4rem;
-  width: 24px;
 }
 
 .download {

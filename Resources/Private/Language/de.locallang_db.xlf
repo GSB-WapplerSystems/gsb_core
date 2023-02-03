@@ -453,13 +453,13 @@
 			<trans-unit id="tt_content.CType.div._gsbsingleteaser_" xml:space="preserve">
 				<target>Einzelteaser</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.gsb_singleteaser" xml:space="preserve">
+			<trans-unit id="tt_content.CType.gsb_template" xml:space="preserve">
 				<target>Einzelteaser</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.gsb_singleteaser.imageunderheadline" xml:space="preserve">
+			<trans-unit id="tt_content.CType.gsb_template.imageunderheadline" xml:space="preserve">
 				<target>Bild über Headline</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.gsb_singleteaser.imageundertext" xml:space="preserve">
+			<trans-unit id="tt_content.CType.gsb_template.imageundertext" xml:space="preserve">
 				<target>Bild unter Text</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_gsbsingleteaser.kicker" xml:space="preserve">

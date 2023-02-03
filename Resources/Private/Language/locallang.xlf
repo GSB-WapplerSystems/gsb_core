@@ -81,6 +81,12 @@
             <trans-unit id="footer.overview">
                 <source>Overview</source>
             </trans-unit>
+			<trans-unit id="footer.meta">
+                <source>Metanavigation</source>
+            </trans-unit>
+			<trans-unit id="footer.language-switcher">
+                <source>language-switcher</source>
+            </trans-unit>
             <trans-unit id="content.readmore">
                 <source>Continue reading</source>
             </trans-unit>

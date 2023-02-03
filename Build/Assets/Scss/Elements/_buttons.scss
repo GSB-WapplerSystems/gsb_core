@@ -11,46 +11,52 @@
 
   &-primary,
   &-secondary {
-    background-color: $p1-color-7;
-    border-style: solid;
-    border-width: 2px;
-    color: $p1-color-3 !important;
-    font-size: 17px;
-    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
     line-height: 1;
-    padding: 10px 19px;
-    transition: all .2s ease-in-out;
+    padding: 0;
 
     &:hover,
     &:focus,
     &:active {
+      background-color: transparent;
       color: $p1-color-7;
+    }
+
+    span {
+      margin-left: 15px;
+    }
+
+    &::before {
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      border-right-style: solid;
+      border-right-width: 2px;
+      content: "";
+      display: inline-block;
+      height: 8px;
+      left: 0;
+      position: absolute;
+      top: 4px;
+      transform: rotate(-45deg);
+      width: 8px;
     }
   }
 
   &-primary {
-    border-color: $p1-color-1;
-
     &:hover,
     &:focus,
     &:active {
-      background-color: $p1-color-1;
-      border-color: $p1-color-1;
-      color: $p1-color-7 !important;
-      outline-color: $p1-color-7 !important;
+      background-color: transparent;
     }
   }
 
   &-secondary {
-    border-color: $p1-color-8;
-
     &:hover,
     &:focus,
     &:active {
-      background-color: $p1-color-8;
-      border-color: $p1-color-8;
-      color: $p1-color-7 !important;
-      outline-color: $p1-color-7 !important;
+      background-color: transparent;
     }
   }
 

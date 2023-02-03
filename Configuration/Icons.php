@@ -1,11 +1,10 @@
 <?php
-
 return [
     'tx_gsbstage_gsb_stage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/Stage.svg',
     ],
-    'tx_gsb_singleteaser' => [
+    'tx_gsb_template' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/SingleTeaser.svg',
     ],
