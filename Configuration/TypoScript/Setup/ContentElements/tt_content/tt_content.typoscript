@@ -15,29 +15,17 @@ tt_content {
 #=========================================================#
 # Content element
 #=========================================================#
-lib.containerContentElement =< lib.contentElement
+lib.containerContentElement < lib.contentElement
 lib.containerContentElement {
-  layoutRootPaths.0 = EXT:gsb_container/Resources/Private/Layouts/
+  layoutRootPaths.0 = EXT:gsb_template/Resources/Private/Layouts/
   layoutRootPaths.10 = {$plugin.containerContentElement.view.layoutRootPath}
-  partialRootPaths.0 = EXT:gsb_container/Resources/Private/Partials/General/
+  partialRootPaths.0 = EXT:gsb_template/Resources/Private/Partials/Content
   partialRootPaths.10 = {$plugin.containerContentElement.view.partialRootPath}
-  templateRootPaths.0 = EXT:gsb_container/Resources/Private/Templates/General/
+  templateRootPaths.0 = EXT:gsb_template/Resources/Private/Templates/ContentElements
   templateRootPaths.10 = {$plugin.containerContentElement.view.templateRootPath}
-  dataProcessing {
-    1597060000 = B13\Container\DataProcessing\ContainerProcessor
-    100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    100 {
-      if.isTrue.field = grid_bgimage
-      references {
-        fieldName = grid_bgimage
-        table = tt_content
-      }
-      as = data_bgimage
-    }
-  }
 }
 
-tt_content.ce_container =< lib.containerContentElement
+tt_content.ce_container < lib.containerContentElement
 tt_content.ce_container.templateName = Container
 tt_content.ce_columns2 =< lib.containerContentElement
 tt_content.ce_columns2.templateName = Columns2
@@ -49,8 +37,21 @@ tt_content.ce_tabs =< lib.containerContentElement
 tt_content.ce_tabs.templateName = Tabs
 tt_content.ce_accordion =< lib.containerContentElement
 tt_content.ce_accordion.templateName = Accordion
-tt_content.ce_grid =< lib.containerContentElement
-tt_content.ce_grid.templateName = Grid
+
+tt_content.ce_slider < lib.contentElement
+tt_content.ce_slider {
+  templateName = Grid
+  templateRootPaths {
+    10 = EXT:gsb_template/Resources/Private/Templates/Content/General/
+  }
+  dataProcessing {
+    200 = B13\Container\DataProcessing\ContainerProcessor
+    200 {
+      colPos = 200
+      as = children_101
+    }
+  }
+}
 
 
 #===========================================================================================#
