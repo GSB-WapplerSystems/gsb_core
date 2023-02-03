@@ -115,6 +115,18 @@ page {
             absRefPrefix = TEXT
             absRefPrefix.value = {$config.absRefPrefix}
 
+            socialLinks-Facebook = TEXT
+            socialLinks-Facebook.value = {$config.socialLinks.Facebook}
+
+            socialLinks-Instagram = TEXT
+            socialLinks-Instagram.value = {$config.socialLinks.Instagram}
+
+            socialLinks-Twitter = TEXT
+            socialLinks-Twitter.value = {$config.socialLinks.Twitter}
+
+            socialLinks-YouTube = TEXT
+            socialLinks-YouTube.value = {$config.socialLinks.YouTube}
+
             # general title and vars
             copyright = < lib.copyright
             pageheader = < lib.pageheader
