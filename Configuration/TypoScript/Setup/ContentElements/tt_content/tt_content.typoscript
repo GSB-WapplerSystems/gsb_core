@@ -40,7 +40,7 @@ tt_content.ce_accordion.templateName = Accordion
 
 tt_content.ce_slider < lib.contentElement
 tt_content.ce_slider {
-  templateName = Grid
+  templateName = Slider
   templateRootPaths {
     10 = EXT:gsb_template/Resources/Private/Templates/Content/General/
   }
