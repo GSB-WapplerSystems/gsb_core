@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 defined('TYPO3') or die();
 
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 (static function (): void {
     $headerIntext = [
@@ -222,10 +222,10 @@ use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'link' => [
                                 'icon' => 'actions-wizard-link',
                                 'params' => [
-                                    'allowedExtensions' => 'mp4,webm,ogg'
-                                ]
-                            ]
-                        ]
+                                    'allowedExtensions' => 'mp4,webm,ogg',
+                                ],
+                            ],
+                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
@@ -245,9 +245,9 @@ use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                         'type' => 'link',
                         'wizards' => [
                             'link' => [
-                                'icon' => 'actions-wizard-link'
-                            ]
-                        ]
+                                'icon' => 'actions-wizard-link',
+                            ],
+                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_videourl',
@@ -348,7 +348,7 @@ use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
                             'link' => [
                                 'icon' => 'actions-wizard-link',
                                 'params' => [
-                                    'allowedExtensions' => 'mp3,wav'
+                                    'allowedExtensions' => 'mp3,wav',
                                 ],
                             ],
                         ],

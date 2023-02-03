@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use B13\Container\Tca\ContainerConfiguration;
-
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -21,10 +19,10 @@ defined('TYPO3') || die();
                 'Container element for Slider', // description
                 [
                     [
-                        ['name' => 'header', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header, textpic']]
+                        ['name' => 'header', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header, textpic']],
                     ],
                 ] // grid configuration
-        )
+            )
         )
         ->setIcon('gsb-container-grid')
         ->setBackendTemplate('EXT:gsb_template/Resources/Private/Templates/Backend/Container.html')

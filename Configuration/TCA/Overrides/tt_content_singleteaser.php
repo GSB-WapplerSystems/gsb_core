@@ -260,7 +260,6 @@ defined('TYPO3') || die();
         ]
     );
 
-
     /*$datePalettes = [
         'date_config' => [
             'showitem' => 'tx_gsbsingleteaser_event_startdate,tx_gsbsingleteaser_event_enddate,tx_gsbsingleteaser_place,--linebreak--,tx_gsbsingleteaser_bgimage', 'canNotCollapse' => 1,
@@ -345,5 +344,4 @@ defined('TYPO3') || die();
     ];
 
     $GLOBALS['TCA']['tt_content']['types'] += $tempTypes;
-
 })();
