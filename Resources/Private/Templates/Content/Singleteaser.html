@@ -29,7 +29,9 @@
 
                     <div class="teaser-content">
                         <f:if condition="{data.header}">
-                            <f:render partial="Header/All" arguments="{_all}" />
+                            <header>
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </header>
                         </f:if>
 
                         <f:if condition="{data.bodytext}">
