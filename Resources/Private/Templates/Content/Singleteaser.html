@@ -11,36 +11,38 @@
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: '{animationSettings -> f:format.raw()}')}>
 <f:switch expression="{data.imageorient}">
     <f:case value="0">
-        <div class="row">
-            <div class="col-12">
-                <div class="teaser"
-                <f:if condition="{data_bgimage}">
-                    style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
-                </f:if>
-                >
-                <div class="teaser-wrapper img-top">
-                    <f:if condition="{files}">
-                        <f:for each="{files}" as="file">
-                            <f:render partial="Media/Image" arguments="{_all}"/>
-                        </f:for>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="teaser"
+                    <f:if condition="{data_bgimage}">
+                        style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
                     </f:if>
-                </div>
+                    >
+                    <div class="teaser-wrapper img-top">
+                        <f:if condition="{files}">
+                            <f:for each="{files}" as="file">
+                                <f:render partial="Media/Image" arguments="{_all}"/>
+                            </f:for>
+                        </f:if>
+                    </div>
 
-                <div class="teaser-content">
-                    <f:if condition="{data.header}">
-                        <f:render partial="Header/All" arguments="{_all}" />
-                    </f:if>
+                    <div class="teaser-content">
+                        <f:if condition="{data.header}">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:if>
 
-                    <f:if condition="{data.bodytext}">
-                        <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                    </f:if>
+                        <f:if condition="{data.bodytext}">
+                            <f:render partial="Media/Bodytext" arguments="{_all}"/>
+                        </f:if>
 
-                    <f:if condition="{data.tx_gsbsingleteaser_link}">
-                        <f:render partial="Media/Button" arguments="{_all}"/>
-                    </f:if>
+                        <f:if condition="{data.tx_gsbsingleteaser_link}">
+                            <f:render partial="Media/Button" arguments="{_all}"/>
+                        </f:if>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </f:case>
     <f:case value="8">
         <div class="row">
