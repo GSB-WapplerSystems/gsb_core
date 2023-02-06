@@ -20,7 +20,7 @@ editor:
     contentsCss: "EXT:gsb_template/Resources/Public/StyleSheets/ckeditor.css"
 
     language_list: [ 'en:English', 'de:German' ]
-    format_tags: "p;h2;h3;h4;h5;pre;div"
+    format_tags: "p;h1;h2;h3;h4;h5;pre;div"
     toolbarGroups:
       - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
       - { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
@@ -29,7 +29,7 @@ editor:
       - { name: 'links', groups: [ 'links' ] }
       - { name: 'insert', groups: [ 'insert' ] }
       - '/'
-      - { name: 'styles', groups: [ 'styles' ] }
+      - { name: 'styles', groups: [ 'styles','format' ] }
       - { name: 'colors', groups: [ 'colors' ] }
       - { name: 'tools', groups: [ 'tools' ] }
       - { name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
@@ -46,11 +46,40 @@ editor:
       - { name: "Link: Bezeichner", element: "span", attributes: { 'class': 'type' }}
 
       # multipal elements are not allowed
-      #- { name: "Style: H2", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h2' } }
-      #- { name: "Style: H3", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h3' } }
-      #- { name: "Style: H4", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h4' } }
-      #- { name: "Style: H5", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h5' } }
-      #- { name: "Style: H6", element: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], attributes: { 'class': 'h6' } }
+      - { name: "Style: H2", element: 'h1', attributes: { 'class': 'h2' } }
+      - { name: "Style: H2", element: 'h2', attributes: { 'class': 'h2' } }
+      - { name: "Style: H2", element: 'h3', attributes: { 'class': 'h2' } }
+      - { name: "Style: H2", element: 'h4', attributes: { 'class': 'h2' } }
+      - { name: "Style: H2", element: 'h5', attributes: { 'class': 'h2' } }
+      - { name: "Style: H2", element: 'h6', attributes: { 'class': 'h2' } }
+
+      - { name: "Style: H3", element: 'h1', attributes: { 'class': 'h3' } }
+      - { name: "Style: H3", element: 'h2', attributes: { 'class': 'h3' } }
+      - { name: "Style: H3", element: 'h3', attributes: { 'class': 'h3' } }
+      - { name: "Style: H3", element: 'h4', attributes: { 'class': 'h3' } }
+      - { name: "Style: H3", element: 'h5', attributes: { 'class': 'h3' } }
+      - { name: "Style: H3", element: 'h6', attributes: { 'class': 'h3' } }
+
+      - { name: "Style: H4", element: 'h1', attributes: { 'class': 'h4' } }
+      - { name: "Style: H4", element: 'h2', attributes: { 'class': 'h4' } }
+      - { name: "Style: H4", element: 'h3', attributes: { 'class': 'h4' } }
+      - { name: "Style: H4", element: 'h4', attributes: { 'class': 'h4' } }
+      - { name: "Style: H4", element: 'h5', attributes: { 'class': 'h4' } }
+      - { name: "Style: H4", element: 'h6', attributes: { 'class': 'h4' } }
+
+      - { name: "Style: H5", element: 'h1', attributes: { 'class': 'h5' } }
+      - { name: "Style: H5", element: 'h2', attributes: { 'class': 'h5' } }
+      - { name: "Style: H5", element: 'h3', attributes: { 'class': 'h5' } }
+      - { name: "Style: H5", element: 'h4', attributes: { 'class': 'h5' } }
+      - { name: "Style: H5", element: 'h5', attributes: { 'class': 'h5' } }
+      - { name: "Style: H5", element: 'h6', attributes: { 'class': 'h5' } }
+
+      - { name: "Style: H6", element: 'h1', attributes: { 'class': 'h6' } }
+      - { name: "Style: H6", element: 'h2', attributes: { 'class': 'h6' } }
+      - { name: "Style: H6", element: 'h3', attributes: { 'class': 'h6' } }
+      - { name: "Style: H6", element: 'h4', attributes: { 'class': 'h6' } }
+      - { name: "Style: H6", element: 'h5', attributes: { 'class': 'h6' } }
+      - { name: "Style: H6", element: 'h6', attributes: { 'class': 'h6' } }
 
       #Tabellen
       - { name: "Table: Striped Bordered", element: "table", attributes: { 'class': 'table table-striped table-hover table-bordered' } }

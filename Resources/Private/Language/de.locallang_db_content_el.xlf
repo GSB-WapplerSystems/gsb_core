@@ -9,16 +9,16 @@
       <trans-unit id="wizards.contentElement.gsb_banner_description" xml:space="preserve">
         <target>Anzeige eines Banners auf der Seite</target>
       </trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_download_title" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_download_title" xml:space="preserve">
 			<target>Datei download</target>
 		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_download_description" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_download_description" xml:space="preserve">
 			<target>Fügt eine Datei oder ein Dokument als Donwload an</target>
 		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_gallery_title" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_gallery_title" xml:space="preserve">
 			<target>Galerie</target>
 		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_gallery_description" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_gallery_description" xml:space="preserve">
 			<target>Fügt ein Galerieelement ein</target>
 		</trans-unit>
 		<trans-unit id="wizards.contentElement.gsb_singleteaser_title" xml:space="preserve">
@@ -27,10 +27,10 @@
 		<trans-unit id="wizards.contentElement.gsb_singleteaser_description" xml:space="preserve">
 			<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_stage_title" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_stage_title" xml:space="preserve">
 			<target>Bühne</target>
 		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_stage_description" xml:space="preserve">
+		<trans-unit id="wizards.newContentElement.gsb_stage_description" xml:space="preserve">
 			<target>Fügt ein Bühnenelement ein</target>
 		</trans-unit>
     </body>

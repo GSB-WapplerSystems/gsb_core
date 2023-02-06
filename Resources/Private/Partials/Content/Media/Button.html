@@ -1,25 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{data.tx_gsbbanner_link}">
     <f:link.typolink parameter="{data.tx_gsbbanner_link}">
-        <f:if condition="{data_tx_gsbbanner_file}">
-            <f:for each="{data_tx_gsbbanner_file}" as="file">
-                    <span class="banner-image-item">
-                        <f:alias map="<v:format.json.decode>{file.properties.crop}</v:format.json.decode>">
-                            <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                                <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 97)}" media="(min-width: 1200px)">
-                                <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 100)}" media="(min-width: 992px)">
-                                <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 97)}" media="(min-width: 768px)">
-                                <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 97)}" media="(min-width: 576px)">
-                                <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 55)}" media="(min-width: 0)">
-                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 97)}" data-description="{file.properties.description}" data-title="{file.properties.title}" alt="{file.properties.alternative}">
-                            </picture>
-                        </f:alias>
-                        <noscript>
-                            {f:image(image: file, cropVariant: 'default', maxWidth: 97)}
-                        </noscript>
-                    </span>
-            </f:for>
-        </f:if>
         <span class="banner-text {data.tx_gsbbanner_link_layout}{f:if(condition:'{data.tx_gsbbanner_link_bold} == 1', then:' banner-text-bold')}">
                 {data.tx_gsbbanner_link_text}
             </span>
