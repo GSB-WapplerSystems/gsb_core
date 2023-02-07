@@ -34,7 +34,7 @@ defined('TYPO3') || die();
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,
-    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title,columns_grid_col_1,columns_grid_col_2,grid_container,grid_bgcolor,grid_bgimage,slider,grid_type,slider_type,slider_columns,
+    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title,columns_grid_col_1,columns_grid_col_2,grid_container,grid_bgcolor,grid_bgimage,grid_type,slider_type,slider_columns,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
