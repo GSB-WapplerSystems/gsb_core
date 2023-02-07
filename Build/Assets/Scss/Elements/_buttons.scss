@@ -13,6 +13,7 @@
   &-secondary {
     background-color: transparent;
     border: none;
+    color: $brg-dark-grey;
     font-size: 16px;
     line-height: 1;
     padding: 0;
@@ -21,7 +22,8 @@
     &:focus,
     &:active {
       background-color: transparent;
-      color: $p1-color-7;
+      color: $brg-dark-grey;
+      text-decoration: underline;
     }
 
     span {
