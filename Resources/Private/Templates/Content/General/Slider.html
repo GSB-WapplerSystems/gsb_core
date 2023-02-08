@@ -24,7 +24,14 @@
                 </f:if>
                     <f:if condition="{children_101}">
                         <f:for each="{children_101}" as="child">
-                            <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
+                            <f:if condition="{data.grid_type} == ul">
+                                <f:then>
+                                    <li class="swiper-slide swiper-slide">
+                                </f:then>
+                                <f:else>
+                                    <div class="col">
+                                </f:else>
+                            </f:if>
                             <f:format.raw>{child.renderedContent}</f:format.raw>
                         </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
                         </f:for>
