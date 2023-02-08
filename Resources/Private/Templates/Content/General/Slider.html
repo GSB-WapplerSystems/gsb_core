@@ -22,13 +22,14 @@
                         <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
                     </f:else>
                 </f:if>
-                <f:if condition="{children_101}">
-                    <f:for each="{children_101}" as="child">
-                        <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
-                        <f:format.raw>{child.renderedContent}</f:format.raw>
-                    </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
-                    </f:for>
-                </f:if>
+                    <f:if condition="{children_101}">
+                        <f:for each="{children_101}" as="child">
+                            <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
+                            <f:format.raw>{child.renderedContent}</f:format.raw>
+                        </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
+                        </f:for>
+                    </f:if>
+            </div>
 
             <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
                 <f:then>
