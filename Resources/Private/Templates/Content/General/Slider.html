@@ -5,9 +5,14 @@
 <f:section name="Main">
 
     <f:if condition="{children_101}">
-            <div class="{f:if(condition:'{data.slider} != 1', then:'')}">
+            <div>
                 <f:if condition="{data.slider} == 1">
-                    <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                    <f:then>
+                        <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                    </f:then>
+                    <f:else>
+                        <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                    </f:else>
                 </f:if>
                 <{data.grid_type} class="{f:if(condition:'{data.slider} == 1', then:'slider swiper-wrapper', else: 'row row-cols-1 row-cols-lg-{data.grid_columns}')}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
                     <f:if condition="{children_101}">
@@ -41,7 +46,7 @@
             <f:if condition="{data.slider} == 1">
         </div>
     </f:if>
-    </div>
+    </section>
     <f:if condition="{data.slider} == 1">
         <f:asset.script identifier="swiperJS" src="EXT:gsb_template/Resources/Public/JavaScripts/swiper.js"/>
         <f:asset.css href="EXT:gsb_template/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>

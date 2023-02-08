@@ -47,7 +47,7 @@ editor:
 
       # multipal elements are not allowed
       - { name: "Style: H2", element: 'h1', attributes: { 'class': 'h2' } }
-      - { name: "Style: H2", element: 'h2', attributes: { 'class': 'h2' } }
+      #- { name: "Style: H2", element: 'h2', attributes: { 'class': 'h2' } }
       - { name: "Style: H2", element: 'h3', attributes: { 'class': 'h2' } }
       - { name: "Style: H2", element: 'h4', attributes: { 'class': 'h2' } }
       - { name: "Style: H2", element: 'h5', attributes: { 'class': 'h2' } }
@@ -55,7 +55,7 @@ editor:
 
       - { name: "Style: H3", element: 'h1', attributes: { 'class': 'h3' } }
       - { name: "Style: H3", element: 'h2', attributes: { 'class': 'h3' } }
-      - { name: "Style: H3", element: 'h3', attributes: { 'class': 'h3' } }
+      #- { name: "Style: H3", element: 'h3', attributes: { 'class': 'h3' } }
       - { name: "Style: H3", element: 'h4', attributes: { 'class': 'h3' } }
       - { name: "Style: H3", element: 'h5', attributes: { 'class': 'h3' } }
       - { name: "Style: H3", element: 'h6', attributes: { 'class': 'h3' } }
@@ -63,7 +63,7 @@ editor:
       - { name: "Style: H4", element: 'h1', attributes: { 'class': 'h4' } }
       - { name: "Style: H4", element: 'h2', attributes: { 'class': 'h4' } }
       - { name: "Style: H4", element: 'h3', attributes: { 'class': 'h4' } }
-      - { name: "Style: H4", element: 'h4', attributes: { 'class': 'h4' } }
+      #- { name: "Style: H4", element: 'h4', attributes: { 'class': 'h4' } }
       - { name: "Style: H4", element: 'h5', attributes: { 'class': 'h4' } }
       - { name: "Style: H4", element: 'h6', attributes: { 'class': 'h4' } }
 
@@ -71,7 +71,7 @@ editor:
       - { name: "Style: H5", element: 'h2', attributes: { 'class': 'h5' } }
       - { name: "Style: H5", element: 'h3', attributes: { 'class': 'h5' } }
       - { name: "Style: H5", element: 'h4', attributes: { 'class': 'h5' } }
-      - { name: "Style: H5", element: 'h5', attributes: { 'class': 'h5' } }
+      #- { name: "Style: H5", element: 'h5', attributes: { 'class': 'h5' } }
       - { name: "Style: H5", element: 'h6', attributes: { 'class': 'h5' } }
 
       - { name: "Style: H6", element: 'h1', attributes: { 'class': 'h6' } }
@@ -79,7 +79,7 @@ editor:
       - { name: "Style: H6", element: 'h3', attributes: { 'class': 'h6' } }
       - { name: "Style: H6", element: 'h4', attributes: { 'class': 'h6' } }
       - { name: "Style: H6", element: 'h5', attributes: { 'class': 'h6' } }
-      - { name: "Style: H6", element: 'h6', attributes: { 'class': 'h6' } }
+      #- { name: "Style: H6", element: 'h6', attributes: { 'class': 'h6' } }
 
       #Tabellen
       - { name: "Table: Striped Bordered", element: "table", attributes: { 'class': 'table table-striped table-hover table-bordered' } }
