@@ -1,5 +1,5 @@
-only activate javascript on breakpoint lg or higher
-uncomment this code, if we want this feature, current styleguide from bundesregierung.de doesn't have this
+// only activate javascript on breakpoint lg or higher
+// uncomment this code, if we want this feature, current styleguide from bundesregierung.de doesn't have this
 if (window.matchMedia('(min-width: 1170px)').matches) {
   const totop = document.querySelector('.totop')
   const footerEl = document.querySelector('footer')
