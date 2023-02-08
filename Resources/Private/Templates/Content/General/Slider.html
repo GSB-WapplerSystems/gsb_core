@@ -14,23 +14,21 @@
                         <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
                     </f:else>
                 </f:if>
-<!--                <f:if condition="{data.slider} == 1">-->
-<!--                    <f:then>-->
-<!--                        <div class="slider swiper-wrapper">-->
-<!--                    </f:then>-->
-<!--                    <f:else>-->
-<!--                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">-->
-<!--                    </f:else>-->
-<!--                </f:if>-->
-                <{data.grid_type} class="{f:if(condition:'{data.slider} == 1', then:'slider swiper-wrapper', else: 'row row-cols-1 row-cols-lg-{data.grid_columns}')}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
-                    <f:if condition="{children_101}">
-                        <f:for each="{children_101}" as="child">
-                            <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
-                            <f:format.raw>{child.renderedContent}</f:format.raw>
-                        </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
-                        </f:for>
-                    </f:if>
-                </{data.grid_type}>
+                <f:if condition="{data.slider} == 1">
+                    <f:then>
+                        <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
+                    </f:then>
+                    <f:else>
+                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
+                    </f:else>
+                </f:if>
+                <f:if condition="{children_101}">
+                    <f:for each="{children_101}" as="child">
+                        <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
+                        <f:format.raw>{child.renderedContent}</f:format.raw>
+                    </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
+                    </f:for>
+                </f:if>
 
             <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
                 <f:then>
