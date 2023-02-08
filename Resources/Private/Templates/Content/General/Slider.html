@@ -5,68 +5,64 @@
 <f:section name="Main">
 
     <f:if condition="{children_101}">
-            <div>
-                <f:if condition="{data.slider} == 1">
-                    <f:then>
-                        <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                    </f:then>
-                    <f:else>
-                        <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
-                    </f:else>
-                </f:if>
-                <f:if condition="{data.slider} == 1">
-                    <f:then>
-                        <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
-                    </f:then>
-                    <f:else>
-                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
-                    </f:else>
-                </f:if>
-                <f:if condition="{children_101}">
-                    <f:for each="{children_101}" as="child">
-                        <f:if condition="{data.grid_type} == ul">
-                            <f:then>
-                                <li class="swiper-slide swiper-slide">
-                            </f:then>
-                            <f:else>
-                                <div class="col">
-                            </f:else>
-                        </f:if>
-                        <f:if condition="{data.grid_type} == ul">
-                            <f:then>
-                                    <f:format.raw>{child.renderedContent}</f:format.raw>
-                                </li>
-                            </f:then>
-                            <f:else>
-                                    <f:format.raw>{child.renderedContent}</f:format.raw>
-                                </div>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </f:if>
-            </div>
-
-            <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
-                <f:then>
-                    <div class="autoplay container">
-                        <button class="swiper-start"><span>Start</span></button>
-                        <button class="swiper-stop active"><span>Pause</span></button>
-                    </div>
-                </f:then>
-            </f:if>
-
-            <f:if condition="{data.slider_type} == 'slide' && {data.slider} == 1">
-                <f:then>
-                    <div class="swiper-navigation">
-                        <button class="swiper-button-prev"></button>
-                        <div class="swiper-pagination"></div>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </f:then>
-            </f:if>
-
+        <div>
             <f:if condition="{data.slider} == 1">
+                <f:then>
+                    <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                </f:then>
+                <f:else>
+                    <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                </f:else>
+            </f:if>
+            <f:if condition="{data.slider} == 1">
+                <f:then>
+                    <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
+                </f:then>
+                <f:else>
+                    <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
+                </f:else>
+            </f:if>
+            <f:if condition="{children_101}">
+                <f:for each="{children_101}" as="child">
+                    <f:if condition="{data.grid_type} == ul">
+                        <f:then>
+                            <li class="swiper-slide swiper-slide">
+                        </f:then>
+                        <f:else>
+                            <div class="col">
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{data.grid_type} == ul">
+                        <f:then>
+                            <f:format.raw>{child.renderedContent}</f:format.raw>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <f:format.raw>{child.renderedContent}</f:format.raw>
         </div>
+        </f:else>
+    </f:if>
+    </f:for>
+    </f:if>
+    </div>
+
+    <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
+        <f:then>
+            <div class="autoplay container">
+                <button class="swiper-start"><span>Start</span></button>
+                <button class="swiper-stop active"><span>Pause</span></button>
+            </div>
+        </f:then>
+    </f:if>
+
+    <f:if condition="{data.slider_type} == 'slide' && {data.slider} == 1">
+        <f:then>
+            <div class="swiper-navigation">
+                <button class="swiper-button-prev"></button>
+                <div class="swiper-pagination"></div>
+                <button class="swiper-button-next"></button>
+            </div>
+        </f:then>
     </f:if>
     </section>
     <f:if condition="{data.slider} == 1">
