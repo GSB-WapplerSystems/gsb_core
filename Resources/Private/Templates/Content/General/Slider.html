@@ -8,19 +8,14 @@
             <f:if condition="{data.slider} == 1">
                 <f:then>
                     <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                        <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:'list-unstyled')}">
                 </f:then>
                 <f:else>
                     <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
                 </f:else>
             </f:if>
-            <f:if condition="{data.slider} == 1">
-                <f:then>
-                    <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
-                </f:then>
-                <f:else>
-                    <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
-                </f:else>
-            </f:if>
+
             <f:if condition="{children_101}">
                 <f:for each="{children_101}" as="child">
                     <f:if condition="{data.grid_type} == ul">
