@@ -54,12 +54,11 @@
 }
 
 .swiper-pagination-bullet {
-  background: #000;
+  background: $brg-dark-grey;
   border-radius: 50%;
   display: inline-block;
-  height: 10px;
-  opacity: .2;
-  width: 10px;
+  height: 12px;
+  width: 12px;
 
   @at-root button#{&} {
     appearance: none;
@@ -79,10 +78,10 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: $gsb-dark-blue-100;
+  background-color: $brg-dark-grey;
   border-radius: 5px;
   opacity: 1;
-  width: 18px;
+  width: 35px;
 }
 
 .swiper-vertical > .swiper-pagination-bullets,
