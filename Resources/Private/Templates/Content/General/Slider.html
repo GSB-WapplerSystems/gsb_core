@@ -32,8 +32,16 @@
                                 <div class="col">
                             </f:else>
                         </f:if>
-                        <f:format.raw>{child.renderedContent}</f:format.raw>
-                    </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
+                        <f:if condition="{data.grid_type} == ul">
+                            <f:then>
+                                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                                </div>
+                            </f:else>
+                        </f:if>
                     </f:for>
                 </f:if>
             </div>
