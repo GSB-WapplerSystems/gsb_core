@@ -14,6 +14,14 @@
                         <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
                     </f:else>
                 </f:if>
+<!--                <f:if condition="{data.slider} == 1">-->
+<!--                    <f:then>-->
+<!--                        <div class="slider swiper-wrapper">-->
+<!--                    </f:then>-->
+<!--                    <f:else>-->
+<!--                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">-->
+<!--                    </f:else>-->
+<!--                </f:if>-->
                 <{data.grid_type} class="{f:if(condition:'{data.slider} == 1', then:'slider swiper-wrapper', else: 'row row-cols-1 row-cols-lg-{data.grid_columns}')}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
                     <f:if condition="{children_101}">
                         <f:for each="{children_101}" as="child">
