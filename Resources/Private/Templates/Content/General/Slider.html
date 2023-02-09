@@ -3,54 +3,59 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-
     <f:if condition="{children_101}">
-            <div>
-                <f:if condition="{data.slider} == 1">
-                    <f:then>
-                        <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                    </f:then>
-                    <f:else>
-                        <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
-                    </f:else>
-                </f:if>
-                <{data.grid_type} class="{f:if(condition:'{data.slider} == 1', then:'slider swiper-wrapper', else: 'row row-cols-1 row-cols-lg-{data.grid_columns}')}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
-                    <f:if condition="{children_101}">
-                        <f:for each="{children_101}" as="child">
-                            <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="{f:if(condition:'{data.slider} == 1', then:'swiper-slide', else:'col')}">
-                            <f:format.raw>{child.renderedContent}</f:format.raw>
-                        </{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')}>
-                        </f:for>
-                    </f:if>
-                </{data.grid_type}>
-
-            <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
-                <f:then>
-                    <div class="autoplay container">
-                        <button class="swiper-start"><span>Start</span></button>
-                        <button class="swiper-stop active"><span>Pause</span></button>
-                    </div>
-                </f:then>
-            </f:if>
-
-            <f:if condition="{data.slider_type} == 'slide' && {data.slider} == 1">
-                <f:then>
-                    <div class="swiper-navigation">
-                        <button class="swiper-button-prev"></button>
-                        <div class="swiper-pagination"></div>
-                        <button class="swiper-button-next"></button>
-                    </div>
-                </f:then>
-            </f:if>
-
+        <div>
             <f:if condition="{data.slider} == 1">
+                <f:then>
+                    <div class="swiper swiper-slide-col-12 swiper-slide-col-12-0 swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                        <div class="slider swiper-wrapper {f:if(condition:'{data.grid_type} == ul', then:'list-unstyled')}">
+                </f:then>
+                <f:else>
+                    <div class="swiper swiper-{data.slider_type}-col-{data.slider_columns}">
+                        <div class="row row-cols-1 row-cols-lg-{data.grid_columns}">
+                </f:else>
+            </f:if>
+
+            <f:if condition="{children_101}">
+                <f:for each="{children_101}" as="child">
+                    <f:if condition="{data.grid_type} == ul">
+                        <f:then>
+                            <li class="swiper-slide swiper-slide">
+                                <f:format.raw>{child.renderedContent}</f:format.raw>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <div class="col-12">
+                                <f:format.raw>{child.renderedContent}</f:format.raw>
+                            </div>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:if>
         </div>
-    </f:if>
-    </section>
-    <f:if condition="{data.slider} == 1">
-        <f:asset.script identifier="swiperJS" src="EXT:gsb_template/Resources/Public/JavaScripts/swiper.js"/>
-        <f:asset.css href="EXT:gsb_template/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
-    </f:if>
+
+        <f:if condition="{data.slider_type} == 'fade' && {data.slider} == 1">
+            <f:then>
+                <div class="autoplay container">
+                    <button class="swiper-start"><span>Start</span></button>
+                    <button class="swiper-stop active"><span>Pause</span></button>
+                </div>
+            </f:then>
+        </f:if>
+
+        <f:if condition="{data.slider_type} == 'slide' && {data.slider} == 1">
+            <f:then>
+                <div class="swiper-navigation">
+                    <button class="swiper-button-prev"></button>
+                    <div class="swiper-pagination"></div>
+                    <button class="swiper-button-next"></button>
+                </div>
+            </f:then>
+        </f:if>
+        <f:if condition="{data.slider} == 1">
+            <f:asset.script identifier="swiperJS" src="EXT:gsb_template/Resources/Public/JavaScripts/swiper.js"/>
+            <f:asset.css href="EXT:gsb_template/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
+        </f:if>
     </f:if>
 </f:section>
 
