@@ -57,6 +57,9 @@
 		}
 	},
 	"config": {
+		"gitlab-domains": ["gitlab.itzbund.de"],
+		"gitlab-protocol": "https",
+		"sort-packages": true,
 		"allow-plugins": true,
 		"vendor-dir": ".composer/vendor",
 		"bin-dir": ".composer/bin"
