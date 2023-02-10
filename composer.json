@@ -40,7 +40,7 @@
 		"typo3/cms-t3editor": "^12.1",
 		"typo3/cms-tstemplate": "^12.1",
 		"typo3/cms-viewpage": "^12.1",
-		"b13/container": "^2.1"
+		"b13/container": "dev-master@dev"
 	},
 	"require-dev": {
 		"michielroos/typo3scan": "^1.7",
