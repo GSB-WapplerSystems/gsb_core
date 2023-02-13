@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace ITZBund\GsbTemplate\ViewHelpers\Format\Json;
@@ -9,7 +10,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Class DecodeViewHelper
- * @package Gsb\GsbTemplate\ViewHelpers\Format\Json
  */
 class DecodeViewHelper extends AbstractViewHelper
 {
@@ -25,9 +25,6 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     protected $escapeChildren = false;
 
-    /**
-     * @return void
-     */
     public function initializeArguments(): void
     {
         $this->registerArgument('json', 'string', 'The JSON string to decode', true);
