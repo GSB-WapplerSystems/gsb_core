@@ -1,10 +1,4 @@
 .swiper-pagination {
-  position: relative;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
-  transition: 300ms opacity;
-  z-index: 10;
-
   &.swiper-pagination-hidden {
     opacity: 0;
   }
