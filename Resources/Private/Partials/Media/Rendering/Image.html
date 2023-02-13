@@ -1,9 +1,10 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers"
       xmlns:ff="http://www.w3.org/1999/html">
 
     <f:if condition="{dimensions.width}">
         <f:then>
-            <f:alias map="<v:format.json.decode>{file.properties.crop}</v:format.json.decode>">
+            <f:alias map="<gsb:format.json.decode>{file.properties.crop}</gsb:format.json.decode>">
                 <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                     <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}">
                     <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width)}">
@@ -22,7 +23,7 @@
             </f:alias>
         </f:then>
         <f:else>
-            <f:alias map="<v:format.json.decode>{file.properties.crop}</v:format.json.decode>">
+            <f:alias map="<gsb:format.json.decode>{file.properties.crop}</gsb:format.json.decode>">
                 <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                     <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}">
                     <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}">
