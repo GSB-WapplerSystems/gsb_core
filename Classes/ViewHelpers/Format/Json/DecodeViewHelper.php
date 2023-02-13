@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Gsb\GsbTemplate\ViewHelpers\Format\Json;
+namespace ITZBund\GsbTemplate\ViewHelpers\Format\Json;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
@@ -28,11 +28,9 @@ class DecodeViewHelper extends AbstractViewHelper
     /**
      * @return void
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
-        $this->registerArgument('value', 'string', 'The JSON string to decode', true);
-        $this->registerArgument('as', 'string', 'If specified, a template variable with this name containing the decoded JSON will be inserted instead of returning it.', false, null);
-        $this->registerArgument('objectDecodeType', 'string', 'If specified, the JSON string will be decoded as an object of this class.', false, null);
+        $this->registerArgument('json', 'string', 'The JSON string to decode', true);
     }
 
     /**
@@ -43,18 +41,16 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-        $value = $renderChildrenClosure();
-        $as = $arguments['as'];
-        $objectDecodeType = $arguments['objectDecodeType'];
+        $json = $arguments['json'];
 
-        $decodedValue = json_decode($value, true, 512, $objectDecodeType);
+        if (empty($json)) {
+            return null;
+        }
 
-        if ($as !== null) {
-            $templateVariableContainer = $renderingContext->getVariableProvider();
-            $templateVariableContainer->add($as, $decodedValue);
-            $output = $renderChildrenClosure();
-            $templateVariableContainer->remove($as);
-            return $output;
+        $decodedValue = json_decode($json, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return null;
         }
 
         return $decodedValue;

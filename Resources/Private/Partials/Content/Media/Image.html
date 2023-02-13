@@ -1,7 +1,7 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/Gsb/GsbTemplate/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers" data-namespace-typo3-fluid="true">
 
     <f:link.typolink parameter="{file.link}" title="{file.link.title}">
-        <f:alias map="<gsb:format.json.decode>{file.properties.crop}</gsb:format.json.decode>">
+        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
                     media="(min-width: 1220px)"
