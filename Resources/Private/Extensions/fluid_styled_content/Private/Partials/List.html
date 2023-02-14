@@ -3,7 +3,7 @@
         <f:for each="{page.files}" as="file" iteration="counter">
             <f:if condition="{counter.cycle} == 1">
                 <figure class="image">
-                    <f:alias map="<v:format.json.decode>{file.properties.crop}</v:format.json.decode>">
+                    <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                         <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                             <img class="lazy" src="data:image/gif;base64,R0lGODlh9AEBAIAAAP///wAAACH5BAAAAAAALAAAAAD0AQEAAAIUhI+py+0Po5y02ouz3rz7D4biiBQAOw==" data-src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 543)}" alt="{file.originalFile.properties.alternative}">
                         </picture>

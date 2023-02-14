@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    public: false
+    autowire: true
+    autoconfigure: true
+
+  ITZBund\GsbTemplate\ViewHelpers\:
+    resource: '../Classes/ViewHelpers/*'
+    public: true
+
+  ITZBund\GsbTemplate\:
+    resource: '../Classes/*'
+    exclude: '../Classes/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

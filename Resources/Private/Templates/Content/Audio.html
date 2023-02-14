@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers"
       data-namespace-typo3-fluid="true">
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
     <f:if condition="{data.header_kicker}">
@@ -58,19 +58,19 @@
             </f:case>
         </f:switch>
     </f:if>
-    
+
     <f:if condition="{data.subheader}">
         <p class="lead"><f:format.raw>{data.subheader}</f:format.raw></p>
     </f:if>
-    
+
     <f:if condition="{data.bodytext}">
         <f:format.html>{data.bodytext}</f:format.html>
     </f:if>
-    
+
     <f:if condition="{data.tx_audio_audio}">
         <div class="audio audio-local">
             <f:if condition="{data_tx_audio_poster.0}">
-                <f:alias map="<v:format.json.decode>{data_tx_audio_poster.0.properties.crop}</v:format.json.decode>">
+                <f:alias map="<gsb:format.json.decode>{data_tx_audio_poster.0.properties.crop}</gsb:format.json.decode>">
                     <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                         <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
                         <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
@@ -89,7 +89,7 @@
             </audio>
         </div>
     </f:if>
-    
+
     <f:if condition="{data.tx_audio_audiourl}">
         <div class="audio audio-soundcloud">
             <div class="dsgvo" {f:if(condition: '{data_tx_audio_poster.0}', then: ' style="background:url(\'{f:uri.image(image: data_tx_audio_poster.0, maxWidth: 952, maxHeight: 535c)}\') no-repeat 0 0; background-size: cover;"')}>
