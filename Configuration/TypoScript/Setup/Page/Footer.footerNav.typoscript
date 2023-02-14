@@ -9,6 +9,7 @@ lib.footerNav {
     wrap = <ul class="list-unstyled d-flex flex-wrap justify-content-lg-end gap-4">|</ul>
     expAll = 1
     NO.wrapItemAndSub = <li>|</li>
+    NO.ATagParams = class="fw-bold"
 
     CUR < .NO
     CUR = 1

@@ -1,29 +1,41 @@
 @charset "utf-8";
 
 body {
-  padding-top: 120px;
+  padding-top: 186px;
   transition: padding-top .1s ease-in-out;
 
   &.sticky {
     padding-top: 70px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 128px;
+    }
   }
 }
 
 .header {
   &-wrapper {
-    height: 120px;
+    height: 186px;
     transition: height .1s ease-in-out;
 
     .sticky & {
       height: 70px;
+
+      @include media-breakpoint-up(md) {
+        height: 128px;
+      }
     }
 
     &-bg {
-      height: 120px;
+      height: 186px;
       transition: height .1s ease-in-out;
 
       .sticky & {
         height: 70px;
+
+        @include media-breakpoint-up(md) {
+          height: 128px;
+        }
       }
     }
   }

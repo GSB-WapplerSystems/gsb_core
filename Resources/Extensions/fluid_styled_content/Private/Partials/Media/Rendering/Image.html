@@ -11,10 +11,10 @@
                 <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543)}">
                 <f:if condition="{data.image_zoom}">
                     <f:then>
-                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </f:then>
                     <f:else>
-                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                        <f:image src="{file.properties.uid}" maxWidth="{dimensions.width}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </f:else>
                 </f:if>
             </picture>
@@ -28,10 +28,10 @@
                 <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576)}">
                 <f:if condition="{data.image_zoom}">
                     <f:then>
-                        <f:image src="{file.properties.uid}" maxWidth="1920" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                        <f:image src="{file.properties.uid}" maxWidth="1920" data="{bs-target: '#Carousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </f:then>
                     <f:else>
-                        <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                        <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </f:else>
                 </f:if>
             </picture>

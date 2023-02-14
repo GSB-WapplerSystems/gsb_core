@@ -4,7 +4,7 @@
             <f:if condition="{counter.cycle} == 1">
                 <figure class="figure">
                     <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                        <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                        <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </picture>
                     <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">
                         <figcaption class="image-caption">

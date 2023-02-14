@@ -32,25 +32,25 @@ page {
             }
         }
 
-        20 = TEXT
-        20 {
-            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
-        }
-
-        30 = TEXT
-        30 {
-            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-        }
-
-        40 = TEXT
-        40 {
-            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Italic.woff2" as="font" type="font/woff2" crossorigin>
-        }
-
-        50 = TEXT
-        50 {
-            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
-        }
+#        20 = TEXT
+#        20 {
+#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
+#        }
+#
+#        30 = TEXT
+#        30 {
+#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+#        }
+#
+#        40 = TEXT
+#        40 {
+#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Italic.woff2" as="font" type="font/woff2" crossorigin>
+#        }
+#
+#        50 = TEXT
+#        50 {
+#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
+#        }
     }
 
     10 = FLUIDTEMPLATE
@@ -173,11 +173,19 @@ page {
 }
 
 page.10.dataProcessing {
-    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    10 {
-        references.data = levelmedia: -1, slide
-        as = media
-    }
+  10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  10 {
+    references.data = levelmedia: -1, slide
+    as = media
+  }
+  20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  20 {
+    levels = 2
+    as = headerMenu
+    expandAll = 1
+    includeSpacer = 1
+    titleField = nav_title // title
+  }
 }
 
 lib {

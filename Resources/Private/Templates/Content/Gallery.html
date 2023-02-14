@@ -46,7 +46,7 @@
                                 <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'xsmall', maxWidth: 576)}"
                                         media="(min-width: 0)">
                                 <f:image src="{data_gallery_file.0.properties.uid}" maxWidth="1440" cropVariant="default"
-                                         treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy"/>
+                                         treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
                             </picture>
                             <f:if condition="{data_gallery_file.0.properties.copyright}">
                                 <p class="copyright">© {data_gallery_file.0.properties.copyright}</p>
@@ -161,13 +161,13 @@
 
 <f:section name="GallerySingle">
     <picture data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xl="1:1" data-aspectratio-xs="1:1">
-        <f:image src="{file.properties.uid}" maxWidth="600" maxHeight="600" width="600c" height="600c" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+        <f:image src="{file.properties.uid}" maxWidth="600" maxHeight="600" width="600c" height="600c" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
     </picture>
 </f:section>
 
 <f:section name="GallerySlide">
     <picture data-aspectratio-lg="16:9" data-aspectratio-md="16:9" data-aspectratio-sm="16:9" data-aspectratio-xl="16:9" data-aspectratio-xs="16:9">
-        <f:image class="figure-img img-fluid rounded" cropVariant="default" maxWidth="600" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" src="{file.properties.uid}" treatIdAsReference="1" loading="lazy"/>
+        <f:image class="figure-img img-fluid" cropVariant="default" maxWidth="600" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" src="{file.properties.uid}" treatIdAsReference="1" loading="lazy"/>
     </picture>
 </f:section>
 
@@ -175,7 +175,7 @@
     <a data-bs-slide="next" href="#galleryCarousel-{data.uid}" role="button" title="Nächstes Bild">
         <figure class="image">
             <picture>
-                <f:image class="figure-img img-fluid rounded" crop="false" loading="lazy" maxWidth="1920" src="{file.uid}" treatIdAsReference="1" />
+                <f:image class="figure-img img-fluid" crop="false" loading="lazy" maxWidth="1920" src="{file.uid}" treatIdAsReference="1" />
             </picture>
             <f:if condition="{file.originalFile.properties.description} || {file.originalFile.properties.copyright} || {file.properties.description}">
                 <figcaption class="image-caption container g-0">

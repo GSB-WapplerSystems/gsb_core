@@ -8,23 +8,38 @@
 .navbar {
   &-toggler {
     align-self: flex-start;
-    background-color: $gray-800;
+    background-color: $white;
     border: 0;
     cursor: pointer;
     display: block;
     height: 40px;
     padding: 0;
-    position: relative;
+    position: absolute;
+    right: 32px;
+    top: 32px;
     width: 40px;
+
+    .sticky & {
+      right: 16px;
+      top: 16px;
+    }
 
     @include media-breakpoint-up(md) {
       margin-right: 74px;
+      position: relative;
+      right: auto;
+      top: auto;
+
+      .sticky & {
+        right: auto;
+        top: auto;
+      }
     }
 
     .line,
     &::before,
     &::after {
-      background-color: $white;
+      background-color: $gray-500;
       color: transparent;
       display: block;
       font-size: 0;
@@ -41,7 +56,7 @@
     &::after {
       content: "";
       margin: 0 0 5px 5px;
-      width: 20px;
+      width: 30px;
     }
 
     &:hover,

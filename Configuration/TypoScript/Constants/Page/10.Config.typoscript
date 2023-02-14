@@ -3,7 +3,7 @@
 ##############
 config {
     # cat=Default Templateset (ITZBund): advanced/150/100; type=text; label=Header Title
-    headTitle = Digitas Pixelpark
+    headTitle = ITZ Bund
     # cat=Default Templateset (ITZBund): advanced/150/130; type=boolean; label=Admin Panel: This will show the admin-panel in the fe
     admPanel = 0
     # cat=Default Templateset (ITZBund): advanced/150/140; type=boolean; label=Debug: This will show debug messages in the fe

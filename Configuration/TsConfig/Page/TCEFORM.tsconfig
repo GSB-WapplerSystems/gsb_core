@@ -21,17 +21,18 @@ TCEFORM {
         header_layout {
             altLabels {
                 0 = Standard
-                1 = H1
-                2 = H2 - Standard
+                1 = H1 - Standard
+                2 = H2
                 3 = H3
                 4 = H4
                 5 = H5
                 6 = H6
             }
 
-            removeItems = 0,1
+            removeItems = 0
+
             addItems {
-                //7 = H1 - versteckt (SR only)
+                7 = H1 - versteckt (SR only)
                 8 = H2 - versteckt (SR only)
                 9 = H3 - versteckt (SR only)
                 10 = H4 - versteckt (SR only)
