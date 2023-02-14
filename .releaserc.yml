@@ -3,4 +3,5 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/gitlab"
 branches:
-  - "main"
+  - {name: "main", prerelease: "rc"}
+  - "release"
