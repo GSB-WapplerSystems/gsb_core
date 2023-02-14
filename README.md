@@ -132,9 +132,16 @@ Du kannst jederzeit
 - [Feature anfragen](https://jira.powerofone.de/jira/secure/CreateIssue.jspa?pid=21636&issuetype=10)
   
 Wenn du mitentwickelst, halte dich an unsere Standards
-- [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow ) 
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-- Commitsprache ist English
+- Branching
+  - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow )
+  - Benennung der Branches
+     ```sh
+     feature/ITZBUNDPHP-123-kurze-beschreibung 
+     ````
+     Ticket Id ist optional
+- Commits
+  - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  - Commitsprache ist English
 
 
 
