@@ -9,10 +9,19 @@ video {
 
 .audio-soundcloud,
 .video {
-  height: 0;
-  margin-bottom: 32px;
-  padding-bottom: 56.25%;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  overflow: hidden;
   position: relative;
+
+  button:not(:disabled),
+  [type="button"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  [type="submit"]:not(:disabled) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
   .mejs__container,
   .mejs__overlay,
@@ -27,6 +36,15 @@ video {
 
 .audio {
   margin-bottom: 32px;
+
+  button:not(:disabled),
+  [type="button"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  [type="submit"]:not(:disabled) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .dsgvo {
@@ -38,9 +56,18 @@ video {
   text-align: center;
   width: 100%;
 
+  .mejs__overlay-button {
+    border-radius: 50%;
+
+    @include media-breakpoint-down(sm) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
   .audio-start,
   .video-start {
-    background-image: svg-load("../Images/videostart.svg");
+    background-image: svg-load("../Images/Icons/icon-video.svg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 80px 80px;
@@ -48,28 +75,18 @@ video {
     border-radius: 50%;
     margin-bottom: 8px;
 
-    @include media-breakpoint-up(md) {
-      margin-top: -40px;
-      position: absolute;
-      top: 50%;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      outline: 1px dashed $p1-color-6;
-      outline-offset: 1px;
+    @include media-breakpoint-down(sm) {
+      background-size: 40px 40px;
     }
   }
 
   &-text {
     align-items: center;
-    background: linear-gradient(to bottom, $o-color-18 0%, $o-color-2 100%);
-    color: $p1-color-2;
+    color: $black;
     display: flex;
     flex-flow: column;
     height: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 10px;
     position: absolute;
     width: 100%;
@@ -83,7 +100,7 @@ video {
     }
 
     h3 {
-      color: $p-color-13 !important;
+      color: $black !important;
       font-size: 18px !important;
       margin: 0 !important;
       max-width: 100%;
@@ -99,31 +116,40 @@ video {
     }
 
     p {
-      color: $p1-color-2 !important;
+      background-color: $white;
+      border-radius: 4px;
+      color: $black !important;
       font-size: 12px !important;
-      font-weight: 700;
+      font-weight: 400;
+      hyphens: auto;
+      line-height: 1.6;
+      margin-bottom: 0;
       max-width: 100%;
+      overflow-y: scroll;
+      padding: 8px;
+      word-break: break-word;
 
       @include media-breakpoint-up(sm) {
         font-size: 15px !important;
+        font-weight: 400;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 15px !important;
+        max-width: 90%;
       }
 
       @include media-breakpoint-up(lg) {
         font-size: 16px !important;
+        max-width: 80%;
       }
 
       a {
-        color: $p1-color-2 !important;
+        color: $black !important;
         display: inline;
         font-size: 12px !important;
-        font-weight: 700;
-        outline-color: $p1-color-2 !important;
-
-        &.external-link {
-          background-image: svg-load("../Images/Icons/icon_link_external.svg");
-          background-position-x: 4px;
-          background-position-y: 3px;
-        }
+        font-weight: 400;
+        outline-color: $black !important;
 
         @include media-breakpoint-up(sm) {
           font-size: 15px !important;
@@ -132,92 +158,23 @@ video {
         @include media-breakpoint-up(lg) {
           font-size: 16px !important;
         }
+
+        &.external-link {
+          text-decoration: underline;
+
+          &::before {
+            left: 2px;
+            top: 1px;
+            width: 14px;
+          }
+        }
       }
     }
   }
 }
 
-.mejs__time {
-  color: $p1-color-1;
-}
-
-.mejs__time-total {
-  background: $o-color-14;
-}
-
-.mejs__controls:not([style*="display: none"]) {
-  background: $o-color-2;
-  border-top: 1px solid $p1-color-1;
-}
-
-.mejs__time-loaded {
-  background: $o-color-7;
-}
-
-.mejs__time-current,
-.mejs__time-handle-content {
-  background: $o-color-2;
-}
-
-.mejs__time-hovered {
-  background: $o-color-5;
-
-  &.negative {
-    background: $o-color-8;
-  }
-}
-
-.mejs__time-handle-content {
-  border: 4px solid $p1-color-1;
-}
-
-.mejs__time-float {
-  background: $p-color-9;
-  border: solid 1px $p1-color-3;
-  color: $p1-color-2;
-}
-
-.mejs__time-float-corner {
-  border: solid 5px $p-color-9;
-  border-color: $p-color-9 transparent transparent;
-}
-
-.mejs__broadcast {
-  color: $p-color-13;
-}
-
-.mejs__volume-total {
-  background: $o-color-5;
-}
-
-.mejs__volume-current {
-  background: $o-color-2;
-}
-
-.mejs__volume-handle {
-  background: $p1-color-1;
-}
-
-.mejs__volume-button > .mejs__volume-slider {
-  background: $o-color-4;
-}
-
-.mejs__volume-current,
-.mejs__volume-handle {
-  background: $p1-color-1;
-}
-
-.mejs__horizontal-volume-total {
-  background: $p-color-13;
-}
-
-.mejs__horizontal-volume-current {
-  background: $p1-color-1;
-}
-
-.mejs__captions-button > .mejs__captions-selector,
-.mejs__chapters-button > .mejs__chapters-selector {
-  background: $o-color-4;
+.mejs__controls {
+  background-color: $gray-800 !important;
 }
 
 .mejs__captions-selector-label,
@@ -226,33 +183,9 @@ video {
   font-weight: 700;
 }
 
-.mejs__captions-selector-list-item,
-.mejs__chapters-selector-list-item {
-  color: $p1-color-2;
-}
-
-.mejs__captions-selector-list-item:hover,
-.mejs__chapters-selector-list-item:hover {
-  background-color: $o-color-6 !important;
-}
-
 .mejs__captions-selected,
 .mejs__chapters-selected {
-  color: $p1-color-1;
   text-decoration: underline;
-}
-
-.mejs__button > button {
-  color: $p1-color-1;
-}
-
-.mejs__button > button:hover,
-.mejs__button > button:focus {
-  outline: 1px dashed $p1-color-1;
-}
-
-.mejs__overlay:hover > .mejs__overlay-button {
-  outline: 1px dashed $p1-color-1;
 }
 
 .mejs__captions-position {
@@ -261,6 +194,19 @@ video {
 
 .mejs__captions-position-hover {
   bottom: 45px;
+}
+
+.mejs__overlay-button {
+  border-radius: 50%;
+}
+
+.mejs__horizontal-volume-slider,
+.mejs__button > button {
+  &:hover,
+  &:focus,
+  &:active {
+    outline-color: $white !important;
+  }
 }
 
 .youtube-wrapper {

@@ -1,6 +1,6 @@
 lib.navMeta = COA
 lib.navMeta {
-    wrap = <ul class="metanav top">|</ul>
+    wrap = <nav aria-label="Meta-Navigation"><ul class="metanav nav">|</ul></nav>
 
     10 = HMENU
     10 {
@@ -11,12 +11,13 @@ lib.navMeta {
         1 = TMENU
         1 {
             expAll = 1
-            NO.wrapItemAndSub = <li>|</li>
+            NO.wrapItemAndSub = <li class="nav-item">|</li>
+            NO.ATagParams = class="nav-link"
 
             CUR < .NO
             CUR = 1
             CUR.doNotLinkIt = 1
-            CUR.allWrap = <strong>|</strong>
+            CUR.allWrap = <strong class="nav-link">|</strong>
             CUR.stdWrap.htmlSpecialChars = 1
         }
     }

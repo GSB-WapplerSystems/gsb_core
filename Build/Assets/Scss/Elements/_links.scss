@@ -1,28 +1,20 @@
 @charset "utf-8";
 
+button,
+.btn,
 a {
-  color: $p1-color-3;
-  display: inline-block;
-  font-weight: 700;
-  line-height: 1.4;
-  position: relative;
-
-  .modal-content & {
-    color: $p1-color-6 !important;
-  }
-
   &:hover,
   &:focus,
   &:active {
-    color: $p1-color-3;
-    outline: 1px dashed $p1-color-3;
-    outline-offset: -1px;
-    text-decoration: underline;
+    outline: 1px solid $black !important;
+    outline-offset: 2px;
 
-    .modal-content & {
-      color: $p1-color-6 !important;
-      outline: 1px dashed $p1-color-6 !important;
-      outline-offset: 0;
+    .figure & {
+      outline-offset: 1px;
+    }
+
+    .navbar-wrapper & {
+      outline-offset: 2px;
     }
   }
 }

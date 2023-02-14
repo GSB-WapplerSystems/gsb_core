@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     let $;
@@ -9,26 +9,26 @@
     CKEDITOR.plugins.add('jumplinks_mediaelement', {
         icons: 'JumpLink',
         allowedContent: 'button[data-seek]',
-        init: function ( editor ) {
+        init: function( editor ) {
 
-            editor.addCommand('jumplink', new CKEDITOR.dialogCommand('customLinkDialog'), {
+            editor.addCommand( 'jumplink', new CKEDITOR.dialogCommand( 'customLinkDialog' ), {
 
-                exec: function ( editor ) {
+                exec: function( editor ) {
 
                     const selection = editor.getSelection().getSelectedText();
 
                     const parsedData = editor.getData();
 
-                    editor.setData(parsedData);
+                    editor.setData( parsedData );
                 }
             });
-            editor.ui.addButton('JumpLink', {
+            editor.ui.addButton( 'JumpLink', {
                 label: 'Sprungmarke für Videos',
                 command: 'jumplink',
                 toolbar: 'insert,60',
                 icon: this.path + 'icons/jumplinks_mediaelement.png',
             });
-            CKEDITOR.dialog.add('customLinkDialog', this.path + 'dialogs/customLink.js');
+            CKEDITOR.dialog.add( 'customLinkDialog', this.path + 'dialogs/customLink.js' );
         }
     });
 }());

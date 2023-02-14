@@ -84,7 +84,7 @@
   <testsuite name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_container.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
-  <testsuite name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_gsb_info.scss" failures="0" errors="0" tests="1">
+  <testsuite name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_dpx_info.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
   <testsuite name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_fluid_styled_content.scss" failures="0" errors="0" tests="1">

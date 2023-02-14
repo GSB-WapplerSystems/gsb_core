@@ -1,12 +1,19 @@
 <?php
+declare(strict_types = 1);
 
-declare(strict_types=1);
+/*
+ * This file is part of the composer package itzbund/gsb-container.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-defined('TYPO3') || die();
+defined('TYPO3') or die('Access denied.');
 
 (static function (): void {
     /**
@@ -15,21 +22,21 @@ defined('TYPO3') || die();
     GeneralUtility::makeInstance(Registry::class)->configureContainer(
         (
         new ContainerConfiguration(
-            'ce_accordion',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description',
-            [
+                'ce_accordion',
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title',
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description',
+                [
                     [
                         [
                             'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
-                            'colPos' => 101,
-                        ],
-                    ],
+                            'colPos' => 101
+                        ]
+                    ]
                 ]
+            )
         )
-        )
-        ->setIcon('gsb-container-accordion')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Templates/Backend/Container.html')
+        ->setIcon('tx_accordion')
+        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -37,7 +44,7 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['types']['ce_accordion']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
-        --palette--;;header_config,
+        --palette--;;header_config,subheader,
     --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle_all,container_accordion_toggle,container_accordion_open,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
@@ -60,8 +67,8 @@ defined('TYPO3') || die();
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:civic_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                1 => '',
+                                0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                1 => '1',
                             ],
                         1 =>
                             [
@@ -93,7 +100,7 @@ defined('TYPO3') || die();
                 'type' => 'select',
             ],
             'exclude' => 1,
-            'label' => 'LLL:EXT:civic_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
         ],
         'container_accordion_toggle' => [
             'exclude' => 1,
@@ -116,8 +123,9 @@ defined('TYPO3') || die();
             'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.open',
             'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.open',
             'config' => [
-                'type' => 'number',
+                'type' => 'input',
                 'size' => 1,
+                'eval' => 'trim,number',
                 'range' => [
                     'lower' => 1,
                     'upper' => 50,
@@ -130,7 +138,7 @@ defined('TYPO3') || die();
             ],
             'displayCond' => 'FIELD:container_accordion_toggle:=:1',
         ],
-        'container_accordion_toggle_all' => [
+      'container_accordion_toggle_all' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
         'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
@@ -145,15 +153,16 @@ defined('TYPO3') || die();
           ],
           'default' => '0',
         ],
-        ],
+      ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $accordionOpen
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'container',
         'container_accordion_toggle, container_accordion_open, --linebreak--'

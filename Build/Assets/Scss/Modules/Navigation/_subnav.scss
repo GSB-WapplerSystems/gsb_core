@@ -1,129 +1,23 @@
 @charset "utf-8";
 
-.subnav {
-  > li {
-    a,
+#subnav {
+  margin-bottom: 32px;
+
+  .nav-item {
+    background-color: $gray-200;
+    border-radius: 4px;
+
     strong {
-      background-color: $p1-color-5;
-      display: block;
-      font-size: 18px;
       font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 2px;
-      min-height: 35px;
-      padding: 5px 10px 5px 20px;
+    }
 
+    .nav-link {
       &:hover,
       &:focus,
       &:active {
-        outline-offset: 0;
+        border-radius: 4px;
+        outline-offset: -3px;
       }
-    }
-
-    strong,
-    .act,
-    .actifsub {
-      background-image: svg-load("../Images/Icons/icon_link_internal.svg");
-      background-position: 3px 10px;
-      background-repeat: no-repeat;
-      background-size: 16px 16px;
-    }
-
-    strong {
-      text-decoration: underline;
-    }
-  }
-}
-
-.subnav-sub {
-  > li {
-    a,
-    strong {
-      background-color: $p1-color-5;
-      display: block;
-      font-size: 16px;
-      margin-bottom: 0;
-      padding: 5px 10px 5px 30px;
-
-      &:hover,
-      &:focus,
-      &:active {
-        outline-offset: -2px;
-      }
-    }
-
-    strong,
-    .act,
-    .actifsub {
-      background-position: 15px 7px;
-    }
-
-    strong {
-      line-height: 1.4;
-      text-decoration: underline;
-    }
-  }
-}
-
-.subnav-second {
-  margin-bottom: 4px;
-}
-
-.subnav-third,
-.subnav-forth,
-.subnav-fifth {
-  > li {
-    a,
-    strong {
-      font-weight: 400;
-    }
-  }
-}
-
-.subnav-third {
-  margin-bottom: 4px;
-
-  > li {
-    a,
-    strong {
-      padding-left: 40px;
-    }
-
-    strong,
-    .act,
-    .actifsub {
-      background-position: 25px 8px;
-    }
-  }
-}
-
-.subnav-forth {
-  > li {
-    a,
-    strong {
-      font-size: 15px;
-      padding-left: 50px;
-    }
-
-    strong,
-    .act,
-    .actifsub {
-      background-position: 34px 7px;
-    }
-  }
-}
-
-.subnav-fifth {
-  > li {
-    a,
-    strong {
-      padding-left: 60px;
-    }
-
-    strong,
-    .act,
-    .actifsub {
-      background-position: 40px 7px;
     }
   }
 }

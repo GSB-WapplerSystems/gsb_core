@@ -6,28 +6,33 @@
 
 .swiper-navigation {
   align-items: center;
-  // align-items: center;
   display: flex;
   justify-content: center;
-  // justify-content: center;
+  padding: 4px 0;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
   align-items: center;
-  background-color: $gsb-light-grey-bsg;
-  border: 0 none;
+  background-color: $gray-800;
+  border: 2px solid $white;
   border-radius: 50%;
+  color: $white;
   cursor: pointer;
+  display: flex;
+  flex: 0 1 auto;
+  height: 42px;
   justify-content: center;
   margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   padding: 0;
   position: relative;
+  width: 42px;
   z-index: 10;
 
   &.swiper-button-disabled {
     cursor: auto;
     opacity: .35;
+    outline: 0 !important;
     pointer-events: none;
   }
 
@@ -35,24 +40,32 @@
     display: block;
     height: 42px;
     text-transform: none !important;
-    width: 57px;
+    width: 42px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 1px solid $black !important;
+    outline-offset: 2px;
   }
 }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
+  margin-right: 32px;
+
   &::after {
-    content: svg-load("../Images/Icons/icon_arrow.svg");
-    margin-top: 14px;
+    content: svg-load("../Images/Icons/icon-chevron-left.svg", fill=$white);
   }
 }
 
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
+  margin-left: 32px;
+
   &::after {
-    content: svg-load("../Images/Icons/icon_arrow.svg");
-    margin-bottom: 14px;
-    transform: rotate(180deg);
+    content: svg-load("../Images/Icons/icon-chevron-right.svg", fill=$white);
   }
 }
 

@@ -12,7 +12,7 @@
         "precomposedIcons": false,
         "declareOnlyDefaultIcon": false
       },
-      "appName": "gsb-standardmandant.de"
+      "appName": "itzbund.de"
     },
     "desktopBrowser": {},
     "windows": {
@@ -28,14 +28,14 @@
           "rectangle": true
         }
       },
-      "appName": "gsb-standardmandant.de"
+      "appName": "itzbund.de"
     },
     "androidChrome": {
       "pictureAspect": "shadow",
       "themeColor": "#333333",
       "manifest": {
-        "name": "gsb-standardmandant",
-        "startUrl": "https://www.gsb-standardmandant.de",
+        "name": "itzbund.de",
+        "startUrl": "https://www.itzbund.de",
         "display": "standalone",
         "orientation": "notSet",
         "onConflict": "override",

@@ -1,6 +1,6 @@
 # Seitentitel ausgeben
 lib.pageheader = TEXT
 lib.pageheader {
-    value = {page:nav_title//page:title}
+    value = {page:title}
     insertData = 1
 }

@@ -1,131 +1,62 @@
 @charset "utf-8";
 
 .modal-footer {
-  background-color: $p1-color-3;
-  position: relative;
-  top: -9px;
+  background-color: $gray-100;
+  border-radius: 10px !important;
+  padding-bottom: 6px;
+  padding-top: 6px;
 
   nav {
+    height: 40px;
+    margin: 0;
     width: 100%;
 
     ul {
-      width: 100%;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+      margin-bottom: 0;
 
       li {
-        p {
-          text-align: center;
-        }
+        height: 100%;
+        position: relative;
+        width: 50%;
       }
     }
   }
-}
-
-.modal-open {
-  .modal {
-    overflow-y: hidden;
-  }
-}
-
-.modal-content {
-  background-color: $o-color-20;
-}
-
-.modal-backdrop.show {
-  opacity: .5;
 }
 
 .modal-header {
-  background-color: $p1-color-3;
-  min-height: 56px;
+  .modal-title {
+    font-size: 20px;
+    padding-top: 5px;
+  }
 
-  .close {
-    text-align: right;
+  > .container {
+    background-color: $gray-100;
+    border-radius: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+  }
+
+  .row {
+    align-items: center;
+    height: 40px;
+
+    .title,
+    .close {
+      height: 40px;
+    }
   }
 
   .btn-close {
-    &:hover,
-    &:focus,
-    &:active {
-      box-shadow: none;
-      outline: 1px dashed $p1-color-6;
-    }
-  }
-}
-
-.carousel-inner {
-  overflow: visible;
-}
-
-.carousel-item {
-  position: relative;
-  text-align: center;
-
-  .download {
-    background-position: center center;
-    height: 30px;
-    position: absolute;
-    right: 30px;
-    top: -59px;
-    width: 30px;
-
-    + a {
-      margin-bottom: 26px;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.modal-fullscreen .modal-body {
-  overflow: visible;
-
-  figure {
+    background-color: $gray-900;
+    border-radius: 50%;
     margin: 0;
+    padding: 10px;
   }
 }
 
-.modal-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.carousel-iterator {
-  bottom: -28px;
-  color: $p1-color-6;
-  display: block;
-  margin: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  bottom: 0;
-  width: auto;
-}
-
-.carousel-control-prev {
-  left: 16px;
-}
-
-.carousel-control-next {
-  right: 16px;
-}
-
-.carousel-imagetitle {
-  background-color: $o-color-10;
-  bottom: 0;
-  color: $p1-color-6;
-  display: block;
-  font-size: 14px;
-  margin: 0;
-  min-height: 24px;
-  padding: 5px;
-  position: absolute;
-  width: 100%;
+.modal-backdrop {
+  background-color: $white;
 }

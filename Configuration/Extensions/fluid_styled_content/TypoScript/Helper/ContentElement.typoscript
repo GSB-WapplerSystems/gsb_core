@@ -17,8 +17,6 @@ lib.contentElement {
     }
     settings {
         media {
-            lazyLoading = {$styles.content.image.lazyLoading}
-
             popup {
                 bodyTag = <body style="margin:0; background:#fff;">
                 wrap = <a href="javascript:close();"> | </a>

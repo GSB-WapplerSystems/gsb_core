@@ -1,2 +1,0 @@
-@import 'EXT:gsb_template/Configuration/TsConfig/pageTSConfig.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/CKEditor.tsconfig'

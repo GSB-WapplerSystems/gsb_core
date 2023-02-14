@@ -1,12 +1,19 @@
 <?php
+declare(strict_types = 1);
 
-declare(strict_types=1);
+/*
+ * This file is part of the composer package itzbund/gsb-container.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-defined('TYPO3') || die();
+defined('TYPO3') or die('Access denied.');
 
 (static function (): void {
     /**
@@ -16,40 +23,41 @@ defined('TYPO3') || die();
         (
             new ContainerConfiguration(
                 'ce_grid',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.description',
+                'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.title',
+                'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.description',
                 [
                     [
                         [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.elements',
-                            'colPos' => 101,
+                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.elements',
+                            'colPos' => 101
                         ],
-                    ],
+                    ]
                 ]
             )
         )
-        ->setIcon('gsb-container-grid')
+        ->setIcon('tx_grid')
+        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
     // override default settings
     $GLOBALS['TCA']['tt_content']['types']['ce_grid']['showitem'] = '
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
-        --palette--;;header_config,
-    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title,grid_type,grid_columns,grid_container,grid_bgcolor,grid_bgimage,grid_light,grid_bgfullsize,grid_parallax,grid_bottom_image,slider,slider_type,slider_columns,
-    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-        --palette--;;language,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-        --palette--;;hidden,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-    --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
-    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended;'
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+            --palette--;;header_config,subheader,
+        --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title,grid_type,grid_columns,grid_container,grid_bgcolor,grid_imgbg,grid_bgimage,grid_light,grid_bgfullsize,grid_parallax,grid_bottom_image,slider,slider_type,slider_columns,
+        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --palette--;;language,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+        --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended;'
     ;
 
     $grid = [
@@ -186,9 +194,33 @@ defined('TYPO3') || die();
         'grid_bgimage' => [
                 'config' =>
                     [
-                        'type' => 'file',
+                        'type' => 'inline',
+                        'foreign_table' => 'sys_file_reference',
+                        'foreign_field' => 'uid_foreign',
+                        'foreign_sortby' => 'sorting_foreign',
+                        'foreign_table_field' => 'tablenames',
+                        'foreign_match_fields' =>
+                            [
+                                'fieldname' => 'grid_bgimage',
+                            ],
+                        'foreign_label' => 'uid_local',
+                        'foreign_selector' => 'uid_local',
                         'overrideChildTca' =>
                             [
+                                'columns' =>
+                                    [
+                                        'uid_local' =>
+                                            [
+                                                'config' =>
+                                                    [
+                                                        'appearance' =>
+                                                            [
+                                                                'elementBrowserType' => 'file',
+                                                                'elementBrowserAllowed' => 'jpg,jpeg,svg,png,gif',
+                                                            ],
+                                                    ],
+                                            ],
+                                    ],
                                 'types' =>
                                     [
                                         0 =>
@@ -262,11 +294,28 @@ defined('TYPO3') || die();
                 'default' => '0',
             ],
         ],
+        'grid_imgbg' => [
+            'exclude' => '0',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg.description',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '0',
+                        1 => '1',
+                    ],
+                ],
+                'default' => '0',
+            ],
+        ],
         'grid_bgcolor' => [
             'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor',
             'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor.description',
             'config' => [
-                'type' => 'color',
+                'type' => 'input',
+                'renderType' => 'colorpicker',
                 'size' => 10,
             ],
         ],
@@ -322,26 +371,64 @@ defined('TYPO3') || die();
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.wave',
             'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.wave.description',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '0',
-                        1 => '1',
-                    ],
+            'config' =>
+                [
+                    'items' =>
+                        [
+                            0 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.0',
+                                    1 => '0',
+                                ],
+                            1 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.1',
+                                    1 => '1',
+                                ],
+                            2 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.2',
+                                    1 => '2',
+                                ],
+                            3 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.3',
+                                    1 => '3',
+                                ],
+                            4 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.4',
+                                    1 => '4',
+                                ],
+                            5 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.5',
+                                    1 => '5',
+                                ],
+                            6 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.6',
+                                    1 => '6',
+                                ],
+                            7 =>
+                                [
+                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:silhouette.7',
+                                    1 => '7',
+                                ],
+                        ],
+                    'renderType' => 'selectSingle',
+                    'type' => 'select',
+                    'default' => '0',
                 ],
-                'default' => '0',
-            ],
         ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         $grid
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'container',
         'grid'

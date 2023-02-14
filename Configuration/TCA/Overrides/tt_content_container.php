@@ -1,12 +1,18 @@
 <?php
+declare(strict_types = 1);
 
-declare(strict_types=1);
+/*
+ * This file is part of the composer package itzbund/gsb-container.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-defined('TYPO3') || die();
+defined('TYPO3') or die('Access denied.');
 
 (static function (): void {
     /**
@@ -22,14 +28,14 @@ defined('TYPO3') || die();
                     [
                         [
                             'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
-                            'colPos' => 101,
-                        ],
-                    ],
+                            'colPos' => 101
+                        ]
+                    ]
                 ]
             )
         )
-        ->setIcon('gsb-container-container')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Templates/Backend/Container.html')
+        ->setIcon('tx_container')
+        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -37,8 +43,8 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['types']['ce_container']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
-        --palette--;;header_config,
-    --div--;Container,grid_container,grid_bgcolor,grid_bgimage,grid_bgfullsize,grid_parallax,grid_bottom_image,grid_light,
+        --palette--;;header_config,subheader,
+    --div--;Container,grid_container,grid_bgcolor,grid_imgbg,grid_bgimage,grid_bgfullsize,grid_parallax,grid_bottom_image,grid_light,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,

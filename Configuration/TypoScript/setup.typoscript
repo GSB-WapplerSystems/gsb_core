@@ -3,7 +3,6 @@
 @import 'EXT:gsb_template/Configuration/TypoScript/Setup/*.typoscript'
 @import 'EXT:gsb_template/Configuration/Extensions/setup.typoscript'
 @import 'EXT:gsb_template/Configuration/TypoScript/Setup/ContentElements/setup.typoscript'
-@import 'EXT:gsb_template/Configuration/Server/setup.typoscript'
 
 ## include only one file
 ## @import 'EXT:mysitepackage/Configuration/TypoScript/randomfile.typoscript'

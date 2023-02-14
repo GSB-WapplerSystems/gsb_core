@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var $;
@@ -9,26 +9,26 @@
     CKEDITOR.plugins.add('footnotes', {
         icons: 'Fußnoten',
         allowedContent: 'button[data-jump]',
-        init: function ( editor ) {
+        init: function( editor ) {
 
-            editor.addCommand('footnote', new CKEDITOR.dialogCommand('customFootnoteDialog'), {
+            editor.addCommand( 'footnote', new CKEDITOR.dialogCommand( 'customFootnoteDialog' ), {
 
-                exec: function ( editor ) {
+                exec: function( editor ) {
 
                     let selection = editor.getSelection().getSelectedText();
 
                     let parsedData = editor.getData();
 
-                    editor.setData(parsedData);
+                    editor.setData( parsedData );
                 }
             });
-            editor.ui.addButton('footnote', {
+            editor.ui.addButton( 'footnote', {
                 label: 'Fußnote hinzufügen',
                 command: 'footnote',
                 toolbar: 'insert,60',
                 icon: this.path + 'icons/asterisk-solid.svg',
             });
-            CKEDITOR.dialog.add('customFootnoteDialog', this.path + 'dialogs/footnote.js');
+            CKEDITOR.dialog.add( 'customFootnoteDialog', this.path + 'dialogs/footnote.js');
         }
     });
 }());

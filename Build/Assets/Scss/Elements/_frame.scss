@@ -1,12 +1,1 @@
 @charset "utf-8";
-
-.frame-type {
-  &-text,
-  &-textpic {
-    margin-top: 20px;
-
-    @include media-breakpoint-up(md) {
-      margin-top: 20px;
-    }
-  }
-}
