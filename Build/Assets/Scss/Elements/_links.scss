@@ -6,15 +6,11 @@ a {
   &:hover,
   &:focus,
   &:active {
-    outline: 1px solid $black !important;
+    outline: 1px solid $darkblue !important;
     outline-offset: 2px;
 
     .figure & {
       outline-offset: 1px;
-    }
-
-    .navbar-wrapper & {
-      outline-offset: 2px;
     }
   }
 }

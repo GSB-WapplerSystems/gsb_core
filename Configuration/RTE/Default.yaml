@@ -46,13 +46,15 @@ editor:
 
     style:
       definitions:
-        - { name: "Button Primary", element: "a", classes: [ 'btn btn-primary' ] }
-        - { name: "Button Secondary", element: "a", classes: [ 'btn btn-secondary' ] }
         - { name: "Fett", element: "span", classes: [ 'bold' ] }
         - { name: "Kursiv", element: "span", classes: [ 'em' ] }
         - { name: "Visually hidden", element: "span", classes: [ 'visually-hidden hide' ] }
         - { name: "Kicker", element: "span", classes: [ 'kicker' ] }
         - { name: "Small", element: "small", classes: [ 'small' ] }
+
+    stylesSet:
+      - { name: 'Button Primary', element: 'a', attributes: { 'class': 'btn btn-primary' } }
+      - { name: 'Button Primary', element: 'a', attributes: { 'class': 'btn btn-secondary' } }
 
     alignment:
       options:

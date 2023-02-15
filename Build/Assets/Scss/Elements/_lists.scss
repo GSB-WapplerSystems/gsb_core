@@ -27,7 +27,7 @@ ul:not(.list-unstyled) {
       position: relative;
 
       &::before {
-        background-color: $black;
+        background-color: $darkblue;
         content: "";
         display: block;
         height: 12px;
@@ -58,7 +58,7 @@ ol:not(.list-unstyled) {
       position: relative;
 
       &::before {
-        @include font-size(17px);
+        @include font-size(20px);
         color: $black;
         content: counter(counter) ".";
         display: block;

@@ -14,8 +14,8 @@
 .swiper-button-prev,
 .swiper-button-next {
   align-items: center;
-  background-color: $gray-800;
-  border: 2px solid $white;
+  background-color: $darkblue;
+  border: 2px solid $darkblue;
   border-radius: 50%;
   color: $white;
   cursor: pointer;
@@ -46,7 +46,7 @@
   &:hover,
   &:focus,
   &:active {
-    outline: 1px solid $black !important;
+    outline: 1px solid $darkblue !important;
     outline-offset: 2px;
   }
 }

@@ -6,15 +6,15 @@
 
 // scss-docs-start gray-color-variables
 $white: #fff;
-$gray-100: #efefef;
-$gray-200: #ccc;
-$gray-300: #999;
-$gray-400: #888;
-$gray-500: #777;
-$gray-600: #666;
-$gray-700: #555;
-$gray-800: #333;
-$gray-900: #222;
+$gray-100: #f2f3f4;
+$gray-200: #e5e8e9;
+$gray-300: #d8dcdf;
+$gray-400: #cbd1d4;
+$gray-500: #dddfe0;
+$gray-600: #bcc0c1;
+$gray-700: #9aa0a2;
+$gray-800: #798183;
+$gray-900: #576164;
 $black: #000;
 // scss-docs-end gray-color-variables
 
@@ -36,6 +36,7 @@ $grays: (
 
 // scss-docs-start color-variables
 $blue: #0077b6;
+$darkblue: #004b76;
 $indigo: #5f316e;
 $purple: #6f42c1;
 $pink: #d63384;
@@ -44,6 +45,7 @@ $darkred: #780f2d;
 $orange: #f7bb3d;
 $yellow: #f9e03a;
 $green: #00854a;
+$darkgreen: #005c45;
 $teal: #c1ca31;
 $cyan: #80cdec;
 // scss-docs-end color-variables
@@ -51,6 +53,7 @@ $cyan: #80cdec;
 // scss-docs-start colors-map
 $colors: (
   "blue": $blue,
+  "darkblue": $darkblue,
   "indigo": $indigo,
   "purple": $purple,
   "pink": $pink,
@@ -59,6 +62,7 @@ $colors: (
   "orange": $orange,
   "yellow": $yellow,
   "green": $green,
+  "darkgreen": $darkgreen,
   "teal": $teal,
   "cyan": $cyan,
   "black": $black,
@@ -86,6 +90,16 @@ $blue-600: shade-color($blue, 20%);
 $blue-700: shade-color($blue, 40%);
 $blue-800: shade-color($blue, 60%);
 $blue-900: shade-color($blue, 80%);
+
+$darkblue-100: tint-color($darkblue, 80%);
+$darkblue-200: tint-color($darkblue, 60%);
+$darkblue-300: tint-color($darkblue, 40%);
+$darkblue-400: tint-color($darkblue, 20%);
+$darkblue-500: $darkblue;
+$darkblue-600: shade-color($darkblue, 20%);
+$darkblue-700: shade-color($darkblue, 40%);
+$darkblue-800: shade-color($darkblue, 60%);
+$darkblue-900: shade-color($darkblue, 80%);
 
 $indigo-100: tint-color($indigo, 80%);
 $indigo-200: tint-color($indigo, 60%);
@@ -167,6 +181,16 @@ $green-700: shade-color($green, 40%);
 $green-800: shade-color($green, 60%);
 $green-900: shade-color($green, 80%);
 
+$darkgreen-100: tint-color($darkgreen, 80%);
+$darkgreen-200: tint-color($darkgreen, 60%);
+$darkgreen-300: tint-color($darkgreen, 40%);
+$darkgreen-400: tint-color($darkgreen, 20%);
+$darkgreen-500: $darkgreen;
+$darkgreen-600: shade-color($darkgreen, 20%);
+$darkgreen-700: shade-color($darkgreen, 40%);
+$darkgreen-800: shade-color($darkgreen, 60%);
+$darkgreen-900: shade-color($darkgreen, 80%);
+
 $teal-100: tint-color($teal, 80%);
 $teal-200: tint-color($teal, 60%);
 $teal-300: tint-color($teal, 40%);
@@ -197,6 +221,18 @@ $blues: (
   "blue-700": $blue-700,
   "blue-800": $blue-800,
   "blue-900": $blue-900
+);
+
+$darkblues: (
+  "darkblue-100": $darkblue-100,
+  "darkblue-200": $darkblue-200,
+  "darkblue-300": $darkblue-300,
+  "darkblue-400": $darkblue-400,
+  "darkblue-500": $darkblue-500,
+  "darkblue-600": $darkblue-600,
+  "darkblue-700": $darkblue-700,
+  "darkblue-800": $darkblue-800,
+  "darkblue-900": $darkblue-900
 );
 
 $indigos: (
@@ -295,6 +331,18 @@ $greens: (
   "green-900": $green-900
 );
 
+$darkgreens: (
+  "darkgreen-100": $darkgreen-100,
+  "darkgreen-200": $darkgreen-200,
+  "darkgreen-300": $darkgreen-300,
+  "darkgreen-400": $darkgreen-400,
+  "darkgreen-500": $darkgreen-500,
+  "darkgreen-600": $darkgreen-600,
+  "darkgreen-700": $darkgreen-700,
+  "darkgreen-800": $darkgreen-800,
+  "darkgreen-900": $darkgreen-900
+);
+
 $teals: (
   "teal-100": $teal-100,
   "teal-200": $teal-200,
@@ -321,11 +369,11 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $gray-800;
-$secondary: $gray-900;
+$primary: $darkblue;
+$secondary: $darkgreen;
 $success: $green;
 $info: $cyan;
-$warning: $yellow;
+$warning: $orange;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
@@ -344,14 +392,14 @@ $theme-colors: (
 );
 // scss-docs-end theme-colors-map
 
-$primary-text: $blue-600;
-$secondary-text: $gray-600;
+$primary-text: $black;
+$secondary-text: $white;
 $success-text: $green-600;
 $info-text: $cyan-700;
 $warning-text: $yellow-700;
 $danger-text: $red-600;
 $light-text: $gray-600;
-$dark-text: $gray-700;
+$dark-text: $gray-900;
 
 $primary-bg-subtle: $blue-100;
 $secondary-bg-subtle: $gray-100;
@@ -447,7 +495,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-text-align: null;
-$body-color: $gray-900;
+$body-color: $black;
 $body-bg: $white;
 
 $body-emphasis-color: $black;

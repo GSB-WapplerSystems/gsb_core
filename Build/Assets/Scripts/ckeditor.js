@@ -1,2 +1,2 @@
 // screen.js
-require('../Scss/ckeditor.scss')
+import '../Scss/ckeditor.scss'

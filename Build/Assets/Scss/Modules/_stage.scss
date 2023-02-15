@@ -7,7 +7,6 @@
 
   .stage-image {
     picture {
-      background-color: $gray-100;
       position: relative;
     }
   }
@@ -61,12 +60,12 @@
 
       span {
         @include font-size(48px);
-        background-color: $gray-800;
+        background-color: $darkblue;
         border-radius: 4px;
         color: $white;
         display: inline;
         line-height: 1;
-        padding: 5px 10px;
+        padding: 7px 10px 3px;
       }
     }
 
@@ -78,7 +77,7 @@
         border-radius: 4px;
         color: $black;
         display: inline-block;
-        padding: 0 8px 4px;
+        padding: 0 5px;
         position: relative;
       }
     }

@@ -3,16 +3,16 @@
 /**
  * Including javascript parts from packages
  */
-require('mediaelement/build/mediaelement-and-player')
-require('mediaelement/build/lang/de')
+import 'mediaelement/build/mediaelement-and-player'
+import 'mediaelement/build/lang/de'
 
 /**
  * Including own javascript parts
  */
-require('./code/mediaelements')
+import './code/mediaelements'
 
 /**
  * Include stylesheet parts from packages
  */
-require('mediaelement/src/css/mediaelementplayer.css')
-require('../Scss/mediaelements.scss')
+import 'mediaelement/src/css/mediaelementplayer.css'
+import '../Scss/mediaelements.scss'

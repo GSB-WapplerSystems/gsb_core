@@ -16,21 +16,7 @@ if (window.matchMedia('(min-width: 1170px)').matches) {
     } else {
       totop.classList.remove('on')
     }
-    if (scrollTop > 64) {
-      document.body.classList.add('sticky')
-    } else {
-      document.body.classList.remove('sticky')
-    }
   }
-
-  totop.addEventListener('click', (e) => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    })
-    e.preventDefault()
-  })
 
   const handler = (entries) => {
     if (!entries[0].isIntersecting) {

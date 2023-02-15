@@ -12,7 +12,7 @@ lib.navMeta {
         1 {
             expAll = 1
             NO.wrapItemAndSub = <li class="nav-item">|</li>
-            NO.ATagParams = class="nav-link"
+            NO.ATagParams = class="nav-link fw-bold"
 
             CUR < .NO
             CUR = 1

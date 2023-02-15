@@ -1,2 +1,2 @@
 // print.js
-require('../Scss/print.scss')
+import '../Scss/print.scss'

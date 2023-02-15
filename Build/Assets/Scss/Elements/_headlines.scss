@@ -16,9 +16,9 @@ h6,
   word-break: break-word;
 }
 
-.subheader {
-  font-size: 20px;
-  font-weight: 700;
+.subheader,
+.lead {
+  font-style: italic;
 }
 
 .date {
@@ -29,8 +29,13 @@ h6,
 }
 
 .kicker {
-  color: $black;
-  font-size: 18px;
-  font-weight: 700;
+  background: $darkblue;
+  border-radius: 6px;
+  color: $white;
+  display: inline-block;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 1;
   margin-bottom: 8px;
+  padding: 4px 5px 3px;
 }

@@ -75,8 +75,8 @@
   &:hover,
   &:focus,
   &:active {
-    background: $white;
-    border: 2px solid $gray-800;
+    background: $darkblue;
+    border: 2px solid $gray-700;
     opacity: 1;
   }
 
@@ -90,7 +90,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: $white;
+  background: $darkblue;
   opacity: 1;
 }
 
