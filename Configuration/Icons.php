@@ -15,10 +15,11 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/SingleTeaser.svg',
     ],
-    'tx_gsb_banner' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Banner.svg',
-    ],
+//    TODO
+//    'tx_gsb_banner' => [
+//        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+//        'source' => 'EXT:gsb_template/Resources/Public/Icons/Banner.svg',
+//    ],
 //    TODO
 //    'tx_gsb_file' => [
 //        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

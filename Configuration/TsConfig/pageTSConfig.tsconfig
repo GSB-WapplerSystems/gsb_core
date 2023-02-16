@@ -193,7 +193,7 @@ mod.wizards.newContentElement.wizardItems.common {
   }
   # show := addToList(video)
   # show := addToList(audio)
-  show := addToList(gsb_banner)
+  # show := addToList(gsb_banner)
   # show := addToList(gsb_download)
   # show := addToList(gsb_gallery)
   show := addToList(gsb_singleteaser)
