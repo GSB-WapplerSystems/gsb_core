@@ -150,14 +150,14 @@ mod.wizards.newContentElement.wizardItems.common {
     #    CType = audio
     #  }
     #}
-    gsb_banner {
-      iconIdentifier = tx_gsb_banner
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
-      tt_content_defValues {
-        CType = gsb_banner
-      }
-    }
+    #gsb_banner {
+    #  iconIdentifier = tx_gsb_banner
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
+    #  tt_content_defValues {
+    #    CType = gsb_banner
+    #  }
+    #}
     #gsb_download {
     #  iconIdentifier = tx_gsb_file
     #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_title
