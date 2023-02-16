@@ -159,7 +159,7 @@ mod.wizards.newContentElement.wizardItems.common {
       }
     }
     gsb_download {
-      iconIdentifier = tx_gsbfile_gsb_download
+      iconIdentifier = tx_gsbfile
       title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_title
       description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_description
       tt_content_defValues {
@@ -167,7 +167,7 @@ mod.wizards.newContentElement.wizardItems.common {
       }
     }
     gsb_gallery {
-      iconIdentifier = tx_gsbgallery_gsb_gallery
+      iconIdentifier = tx_gsb_gallery
       title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_title
       description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_description
       tt_content_defValues {
@@ -183,9 +183,9 @@ mod.wizards.newContentElement.wizardItems.common {
       }
     }
     gsb_stage {
-      iconIdentifier = tx_gsbstage_gsb_stage
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_description
+      iconIdentifier = tx_gsb_stage
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_description
       tt_content_defValues {
         CType = gsb_stage
       }

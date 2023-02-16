@@ -27,10 +27,10 @@
 		<trans-unit id="wizards.contentElement.gsb_singleteaser_description" xml:space="preserve">
 			<source>Adds a teaser with headline, image, text and link element</source>
 		</trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_stage_title" xml:space="preserve">
+		<trans-unit id="wizards.contentElement.gsb_stage_title" xml:space="preserve">
 			<source>Stage</source>
 		</trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_stage_description" xml:space="preserve">
+		<trans-unit id="wizards.contentElement.gsb_stage_description" xml:space="preserve">
 			<source>Inserts a stage module</source>
 		</trans-unit>
     </body>
