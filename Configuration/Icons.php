@@ -1,11 +1,17 @@
 <?php
 
 return [
-    'tx_gsbstage_gsb_stage' => [
+//     TODO
+//    'tx_gsbstage_gsb_stage' => [
+//        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+//        'source' => 'EXT:gsb_template/Resources/Public/Icons/Stage.svg',
+//    ],
+//    TODO
+    'tx_video' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Stage.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Icons/Extension.svg',
     ],
-    'tx_gsb_template' => [
+    'tx_gsb_singleteaser' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/SingleTeaser.svg',
     ],
@@ -13,14 +19,16 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/Banner.svg',
     ],
-    'tx_gsbfile_gsb_download' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/File.svg',
-    ],
-    'tx_gsbgallery_gsb_gallery' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Gallery.svg',
-    ],
+//    TODO
+//    'tx_gsb_file' => [
+//        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+//        'source' => 'EXT:gsb_template/Resources/Public/Icons/File.svg',
+//    ],
+//    TODO
+//    'tx_gsbgallery_gsb_gallery' => [
+//        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+//        'source' => 'EXT:gsb_template/Resources/Public/Icons/Gallery.svg',
+//    ],
     'gsb-container-container' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Icons/Container.svg',
