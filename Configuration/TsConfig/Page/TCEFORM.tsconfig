@@ -26,16 +26,18 @@ TCEFORM {
                 3 = H3
                 4 = H4
                 5 = H5
-                6 = H6
             }
 
             removeItems = 0
 
             addItems {
-                7 = H1 - versteckt (SR only)
-                8 = H2 - versteckt (SR only)
-                9 = H3 - versteckt (SR only)
+                6  = H6
+                7  = H1 - versteckt (SR only)
+                8  = H2 - versteckt (SR only)
+                9  = H3 - versteckt (SR only)
                 10 = H4 - versteckt (SR only)
+                11 = H5 - versteckt (SR only)
+                12 = H6 - versteckt (SR only)
             }
         }
 

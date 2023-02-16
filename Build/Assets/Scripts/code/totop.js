@@ -10,7 +10,7 @@ if (window.matchMedia('(min-width: 1170px)').matches) {
     const winHeight = window.innerHeight
     const scrollPercent = scrollTop / (docHeight - winHeight)
     const degrees = scrollPercent * 360
-    document.querySelector('.bg').style.background = `#fff conic-gradient(#63686a ${degrees}deg, #fff ${degrees}deg) center center / 60px`
+    document.querySelector('.bg').style.background = `#fff conic-gradient(#004b76 ${degrees}deg, #fff ${degrees}deg) center center / 60px`
     if (scrollTop > 185) {
       totop.classList.add('on')
     } else {

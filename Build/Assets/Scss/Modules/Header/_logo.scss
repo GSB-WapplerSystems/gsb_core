@@ -39,6 +39,7 @@
     width: 108px;
 
     .sticky & {
+      display: none;
       opacity: 0;
     }
   }

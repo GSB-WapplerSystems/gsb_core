@@ -1,6 +1,6 @@
 styles {
     content {
-        defaultHeaderType = 2
+        defaultHeaderType = 1
 
         imgtext {
             maxW = 1920

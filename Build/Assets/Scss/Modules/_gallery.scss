@@ -7,7 +7,7 @@ a.popup {
 
   &::after {
     background-color: $white;
-    background-image: svg-load("../Images/Icons/icon-gallery.svg");
+    background-image: svg-load("../Images/Icons/icon-gallery.svg", fill=$darkblue);
     background-size: 30px 30px;
     border-radius: 50%;
     bottom: 16px;

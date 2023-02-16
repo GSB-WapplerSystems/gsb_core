@@ -1,42 +1,66 @@
-@charset "utf-8";
-
 .totop {
   align-items: center;
   border-radius: 50%;
-  bottom: -60px;
-  display: none;
-  height: 60px;
+  display: flex;
+  height: 48px;
   justify-content: center;
-  opacity: 0;
-  position: fixed;
-  right: 32px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   transition: all .5s ease-in-out;
-  width: 60px;
-  z-index: 1;
+  width: 48px;
+  z-index: 2;
 
   @include media-breakpoint-up(lg) {
-    display: flex;
+    /*
+                    Uncomment, when we also uncomment the js part in totop.js
+                    bottom: -60px;
+                    height: 60px;
+                    margin-left: 0;
+                    margin-right: 0;
+                    opacity: 0;
+                    position: fixed;
+                    right: 32px;
+                    width: 60px;
+                    */
   }
 
   &.on {
-    bottom: 10%;
+    bottom: 32px;
     opacity: 1;
   }
 
+  &.enabled {
+    bottom: 260px;
+  }
+
   .bg {
-    background: $black;
+    background: $white;
     background-size: 32px;
+    border: 2px solid $darkblue;
     border-radius: 50%;
-    height: 60px;
-    width: 60px;
+    height: 48px;
+    width: 48px;
+
+    @include media-breakpoint-up(lg) {
+      // Uncomment, when we also uncomment the js part in totop.js
+      //height: 60px;
+      //width: 60px;
+    }
   }
 
   .ol {
-    background: $gray-100 svg-load("../Images/Icons/icon-chevron-up.svg", fill=$gray-800) no-repeat center center;
+    background: $white svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue) no-repeat center center;
     background-size: 24px 24px;
     border-radius: 50%;
-    height: 50px;
+    height: 32px;
     position: absolute;
-    width: 50px;
+    width: 32px;
+
+    @include media-breakpoint-up(lg) {
+      // Uncomment, when we also uncomment the js part in totop.js
+      //height: 52px;
+      //width: 52px;
+    }
   }
 }

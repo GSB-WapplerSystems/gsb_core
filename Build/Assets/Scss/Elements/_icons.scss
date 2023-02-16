@@ -21,7 +21,7 @@
 .internal-link,
 .internal-link-new {
   &::before {
-    content: svg-load("../Images/Icons/icon-internal.svg", fill=$black);
+    content: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
 
     .grid-light & {
       content: svg-load("../Images/Icons/icon-internal.svg", fill=$white) !important;
@@ -32,7 +32,7 @@
 .external-link,
 .external-link-new {
   &::before {
-    content: svg-load("../Images/Icons/icon-external.svg", fill=$black);
+    content: svg-load("../Images/Icons/icon-external.svg", fill=$darkblue);
 
     .grid-light & {
       content: svg-load("../Images/Icons/icon-external.svg", fill=$white) !important;
@@ -42,7 +42,7 @@
 
 .download {
   &::before {
-    content: svg-load("../Images/Icons/icon-download.svg", fill=$black);
+    content: svg-load("../Images/Icons/icon-download.svg", fill=$darkblue);
 
     .grid-light & {
       content: svg-load("../Images/Icons/icon-download.svg", fill=$white) !important;
@@ -52,7 +52,7 @@
 
 .email {
   &::before {
-    content: svg-load("../Images/Icons/icon-email.svg", fill=$black);
+    content: svg-load("../Images/Icons/icon-email.svg", fill=$darkblue);
 
     .grid-light & {
       content: svg-load("../Images/Icons/icon-email.svg", fill=$white) !important;
@@ -62,7 +62,7 @@
 
 .phone {
   &::before {
-    content: svg-load("../Images/Icons/icon-phone.svg", fill=$black);
+    content: svg-load("../Images/Icons/icon-phone.svg", fill=$darkblue);
 
     .grid-light & {
       content: svg-load("../Images/Icons/icon-phone.svg", fill=$white) !important;
@@ -83,9 +83,9 @@
 }
 
 .icon-gebaerdensprache {
-  background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$black);
+  background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
 }
 
 .icon-leichte-sprache {
-  background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$black);
+  background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
 }

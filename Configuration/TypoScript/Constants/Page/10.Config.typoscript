@@ -11,7 +11,7 @@ config {
     # cat=Default Templateset (ITZBund): advanced/150/160; type=boolean; label=No Cache
     no_cache = 0
     # cat=Default Templateset (ITZBund): advanced/150/170; type=boolean; label=Remove default JavaScript
-    removeDefaultJS = 0
+    removeDefaultJS = 1
     # cat=Default Templateset (ITZBund): advanced/150/180; type=boolean; label=Compress JavaScript
     compressJs = 1
     # cat=Default Templateset (ITZBund): advanced/150/190; type=boolean; label=Compress Css
@@ -29,9 +29,9 @@ config {
     # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
     languageLocal = de_DE.UTF-8
     # cat=Default Templateset (ITZBund): advanced/150/260; type=boolean; label=Spam protect email addresses
-    spamProtectEmailAddresses = external
+    spamProtectEmailAddresses =
     # cat=Default Templateset (ITZBund): advanced/150/270; type=text; label=Spam protect email addresses atSubst
-    spamProtectEmailAddresses_atSubst = [at]
+    spamProtectEmailAddresses_atSubst =
     # cat=Default Templateset (ITZBund): advanced/150/280; type=text; label=absRefPrefix
     absRefPrefix =
 }
