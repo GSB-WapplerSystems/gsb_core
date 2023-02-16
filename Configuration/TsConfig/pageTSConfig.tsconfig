@@ -160,16 +160,16 @@ mod.wizards.newContentElement.wizardItems.common {
     }
     gsb_download {
       iconIdentifier = tx_gsbfile_gsb_download
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_description
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_description
       tt_content_defValues {
         CType = gsb_download
       }
     }
     gsb_gallery {
       iconIdentifier = tx_gsbgallery_gsb_gallery
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_description
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_description
       tt_content_defValues {
         CType = gsb_gallery
       }
