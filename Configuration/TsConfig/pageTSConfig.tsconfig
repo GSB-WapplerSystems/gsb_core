@@ -182,14 +182,14 @@ mod.wizards.newContentElement.wizardItems.common {
         CType = gsb_singleteaser
       }
     }
-    gsb_stage {
-      iconIdentifier = tx_gsb_stage
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_description
-      tt_content_defValues {
-        CType = gsb_stage
-      }
-    }
+    #gsb_stage {
+    #  iconIdentifier = tx_gsb_stage
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_description
+    #  tt_content_defValues {
+    #    CType = gsb_stage
+    #  }
+    #}
   }
   show := addToList(video)
   show := addToList(audio)
