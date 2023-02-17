@@ -1,4 +1,4 @@
-# integration of distributor template
 include:
-  - project: 'dig-pix/gitlab-ci/templates'
-    file: '/.gitlab-ci-distributor.yml'
+  - project: 'gsb11/gitlab-scripts'
+    ref: main
+    file: 'default-extension.yml'
