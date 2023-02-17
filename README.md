@@ -3,7 +3,7 @@
 
 
 <!-- PROJECT SHIELDS -->
-[![pipeline status](https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/badges/main/pipeline.svg)][pipeline-url] 
+[![pipeline status](https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/badges/main/pipeline.svg)][pipeline-url]
 [![Latest Release](https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/badges/release.svg)][release-url]
 
 
@@ -49,9 +49,9 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Über das Projekt (Entwurf)
+## Über das Projekt
 
-Der Government Site Builder ist das nutzerzentrierte und zukunftssichere Content Management System der Bundesverwaltung.  
+Der Government Site Builder ist das nutzerzentrierte und zukunftssichere Content Management System der Bundesverwaltung.
 
 
 ### Erstellt mit
@@ -127,16 +127,16 @@ Eine vollständige Liste der vorgeschlagenen neuen Funktionen (und bekannten Pro
 
 Beiträge sind es, die die Open-Source-Gemeinschaft zu einem so wunderbaren Ort des Lernens, der Inspiration und der Kreativität machen. Jeder Beitrag ist uns sehr willkommen. Ganz nach der TYPO3 Vision **Inspiring people to share**.
 
-Du kannst jederzeit 
+Du kannst jederzeit
 - [Fehler melden][jira-bug-url]
 - [Feature anfragen][jira-story-url]
-  
+
 Wenn du mitentwickelst, halte dich an unsere Standards
 - Branching
   - [Git Feature Branch Workflow][git-workflow-url]
   - Benennung der Branches
      ```sh
-     feature/ITZBUNDPHP-123-kurze-beschreibung 
+     feature/ITZBUNDPHP-123-kurze-beschreibung
      ````
      Ticket Id ist optional
 - Commits
@@ -148,7 +148,7 @@ Wenn du mitentwickelst, halte dich an unsere Standards
 <!-- LICENSE -->
 ## Lizenz
 
-Der Government Side Builder wird unter der GNU General Public License, Version 2 vertrieben. Siehe `LICENSE.txt` für mehr Informationen zur Lizenz. 
+Der Government Side Builder wird unter der GNU General Public License, Version 2 vertrieben. Siehe `LICENSE.txt` für mehr Informationen zur Lizenz.
 
 Und [TYPO3's Open Source Licenses][typo3-licenses-url] für einen generellen Überblick zu den Lizenzen im TYPO3 Projekt.
 
@@ -157,7 +157,7 @@ Und [TYPO3's Open Source Licenses][typo3-licenses-url] für einen generellen Üb
 <!-- CONTACT -->
 ## Kontakt
 
-Your Name - email@email_client.com
+gsb@itzbund.de
 
 
 
