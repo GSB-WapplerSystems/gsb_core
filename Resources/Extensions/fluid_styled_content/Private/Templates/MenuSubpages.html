@@ -13,9 +13,11 @@
                         <f:for as="file" each="{page.files}" iteration="counter">
                             <f:if condition="{counter.cycle} == 1">
                                 <figure class="figure">
-                                    <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                                        <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
-                                    </picture>
+                                    <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+                                      <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                                          <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                                      </picture>
+                                    </f:alias>
                                     <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">
                                         <figcaption class="image-caption">
                                             <f:if condition="{file.description}">

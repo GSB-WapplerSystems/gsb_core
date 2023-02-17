@@ -75,6 +75,7 @@
             </f:then>
             <f:else>
                 <f:if condition="{data_tx_video_poster_image.0}">
+                  <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                     <picture data-aspectratio-xs="{xsmall.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}">
                         <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
                         <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
@@ -83,6 +84,7 @@
                         <source srcset="{f:uri.image(image: data_tx_video_poster_image.0, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
                         <f:image src="{data_tx_video_poster_image.0.properties.uid}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                     </picture>
+                  </f:alias>
                 </f:if>
             </f:else>
         </f:if>

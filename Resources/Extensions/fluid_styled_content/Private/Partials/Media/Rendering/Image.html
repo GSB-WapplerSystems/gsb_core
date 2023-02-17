@@ -3,6 +3,7 @@
 
     <f:if condition="{dimensions.width}">
         <f:then>
+          <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}">
                 <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width)}">
@@ -18,8 +19,10 @@
                     </f:else>
                 </f:if>
             </picture>
+          </f:alias>
         </f:then>
         <f:else>
+          <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}">
                 <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}">
@@ -35,6 +38,7 @@
                     </f:else>
                 </f:if>
             </picture>
+          </f:alias>
         </f:else>
     </f:if>
 </html>
