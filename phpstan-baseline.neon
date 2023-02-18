@@ -6,6 +6,11 @@ parameters:
 			path: Classes/Hooks/OverwriteFlexForm.php
 
 		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\HideSolrPaginationViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/HideSolrPaginationViewHelper.php
