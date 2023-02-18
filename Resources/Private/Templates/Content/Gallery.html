@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
 <f:if condition="{animationSettings}">
     <f:then>
         <f:asset.script identifier="aosJS"
@@ -30,7 +30,7 @@
                     <figure class="image">
                         <f:link.typolink parameter="{data_gallery_file.0.properties.link}"
                                          title="{data_gallery_file.0.properties.link.title}">
-                            <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+                            <f:alias map="{gsb:format.json.decode(json: data_gallery_file.0.properties.crop)}">
                               <picture data-aspectratio-xl="{default.selectedRatio}"
                                        data-aspectratio-lg="{large.selectedRatio}"
                                        data-aspectratio-md="{medium.selectedRatio}"

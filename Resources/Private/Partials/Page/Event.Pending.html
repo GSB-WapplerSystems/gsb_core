@@ -64,7 +64,7 @@
 
             <div class="col-12 col-lg-8">
                 <figure class="figure">
-                  <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+                  <f:alias map="{gsb:format.json.decode(json: media.0.properties.crop)}">
                     <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                         <source media="(min-width: 1220px)" srcset="{f:uri.image(image: media.0, cropVariant: 'default', maxWidth: 874)}">
                         <source media="(min-width: 992px)" srcset="{f:uri.image(image: media.0, cropVariant: 'large', maxWidth: 874)}">

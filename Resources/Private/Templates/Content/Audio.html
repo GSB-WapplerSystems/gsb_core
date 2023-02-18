@@ -21,7 +21,7 @@
     <f:if condition="{data.tx_audio_audio}">
         <div class="audio audio-local">
             <f:if condition="{data_tx_audio_poster.0}">
-              <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+              <f:alias map="{gsb:format.json.decode(json: data_tx_audio_poster.0.properties.crop)}">
                 <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                     <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
                     <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">

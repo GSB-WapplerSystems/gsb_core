@@ -2,7 +2,7 @@
 	"name": "itzbund/gsb-template",
 	"description": "GSB Template",
 	"type": "typo3-cms-extension",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"license": [
 		"GPL-2.0+"
 	],
