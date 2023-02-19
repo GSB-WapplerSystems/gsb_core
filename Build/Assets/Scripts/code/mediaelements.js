@@ -19,7 +19,7 @@ function mediaelements () {
         AndroidUseNativeControls: true,
         videoVolume: 'horizontal',
         nocookie: true,
-        iconSprite: 'https://typo3-os.itzbund.docker/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
+        iconSprite: '/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
       })
     })
   }
@@ -35,7 +35,7 @@ function mediaelements () {
         AndroidUseNativeControls: true,
         videoVolume: 'horizontal',
         nocookie: true,
-        iconSprite: 'https://typo3-os.itzbund.docker/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
+        iconSprite: '/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
       })
 
       const popupVideo = document.querySelector('.js-popup-player')
@@ -60,7 +60,7 @@ function mediaelements () {
         AndroidUseNativeControls: true,
         audioVolume: 'horizontal',
         nocookie: true,
-        iconSprite: 'https://typo3-os.itzbund.docker/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
+        iconSprite: '/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg'
       })
     })
   }
@@ -127,7 +127,7 @@ function youtube () {
         videoVolume: 'horizontal',
         nocookie: true,
         autoplay: 'true',
-        iconSprite: 'https://typo3-os.itzbund.docker/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg',
+        iconSprite: '/typo3conf/ext/gsb_template/Resources/Public/Images/mejs-controls.svg',
 
         success: function (player) {
           const jumpLink = document.querySelectorAll('.jump-link')
