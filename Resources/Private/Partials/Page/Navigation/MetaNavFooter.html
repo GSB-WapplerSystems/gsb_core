@@ -1,0 +1,64 @@
+<f:if condition="{menuMeta}">
+  <div class="row">
+    <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+      <nav>
+        <h2 aria-labelledby="service-nav" class="visually-hidden">Servicenavigation</h2>
+        <ul class="list-unstyled d-flex gap-4" id="service-nav">
+          <li>
+            <a class="service-link icon-gebaerdensprache" href="/" hreflang="gsg">Gebärdensprache</a>
+          </li>
+          <li>
+            <a class="service-link icon-leichte-sprache" href="/" hreflang="de-simple">Leichte Sprache</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-12 col-lg-4">
+      <nav class="language-switcher text-uppercase" aria-labelledby="language-switcher">
+        <h3 id="language-switcher" class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:footer.language-switcher')}</h3>
+        <f:format.raw>{navLanguage}</f:format.raw>
+      </nav>
+    </div>
+  </div>
+  <footer class="row">
+    <div class="col-12">
+      <hr>
+      <div class="row align-items-center py-4">
+        <div class="col-12 col-lg-2">
+          <f:if condition="{copyright}">
+            <p class="fw-normal fs-6 mb-0">
+              <f:format.raw>{copyright}</f:format.raw>
+            </p>
+          </f:if>
+          </div>
+          <div class="col-12 col-lg-10">
+            <nav aria-labelledby="meta" class="text-uppercase">
+              <h2 class="visually-hidden" id="meta">{f:translate(key: 'footer.metanav', extensionName: 'dpx_template')}</h2>
+              <ul class="footer-nav nav justify-content-end">
+                <f:for each="{menuMeta}" as="mainItem">
+                  <li class="nav-item pt-2 pb-2{f:if(condition:mainItem.active, then:' active')}">
+                    <f:if condition="{mainItem.current}">
+                      <f:then>
+                        <strong class="nav-link p-2 lh-1">
+                          {mainItem.title}
+                        </strong>
+                      </f:then>
+                      <f:else>
+                        <f:link.page pageUid="{mainItem.data.uid}" class="p-2 lh-1 fw-bold{f:if(condition:mainItem.active, then:' active')}">
+                          {mainItem.title}
+                        </f:link.page>
+                      </f:else>
+                    </f:if>
+                  </li>
+                </f:for>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</f:if>
+
+
+

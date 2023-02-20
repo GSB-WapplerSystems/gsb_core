@@ -1,5 +1,4 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
@@ -30,10 +29,9 @@
                                 </div>
                             </f:else>
                         </f:if>
-                        <f:render partial="Header.Mainnav" arguments="{headerMenu: headerMenu, navPrimary: navPrimary, navPrimaryMeta: navPrimaryMeta, searchBoxMobi: searchBoxMobi}"/>
+                        <f:render arguments="{menuMainGsb: menuMainGsb, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi}" partial="Header.Mainnav"/>
                     </div>
-
-                    <f:render partial="Header.Meta" arguments="{_all}"/>
+                    <f:render arguments="{menuMetaTop: menuMetaTop}" partial="Navigation/MetaNavTop"/>
                 </div>
             </div>
         </div>

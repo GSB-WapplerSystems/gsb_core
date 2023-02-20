@@ -31,26 +31,6 @@ page {
                 }
             }
         }
-
-#        20 = TEXT
-#        20 {
-#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
-#        }
-#
-#        30 = TEXT
-#        30 {
-#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
-#        }
-#
-#        40 = TEXT
-#        40 {
-#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Italic.woff2" as="font" type="font/woff2" crossorigin>
-#        }
-#
-#        50 = TEXT
-#        50 {
-#            value = <link rel="preload" href="typo3conf/ext/gsb_template/Resources/Public/Fonts/BundesSansWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
-#        }
     }
 
     10 = FLUIDTEMPLATE
@@ -99,17 +79,10 @@ page {
 
         variables {
             # navigation & element libs
-            navMeta             = < lib.navMeta
-            navMetaTop          = < lib.navMetaTop
             jumpNav             = < lib.jumpNav
             navBreadcrumb       = < lib.navBreadcrumb
-            navPrimary          = < lib.navPrimary
-            navSubnav           = < lib.navSubnav
-            navPrimaryMeta      = < lib.navPrimaryMeta
             navMinimap          = < lib.navMinimap
-            footerNav           = < lib.footerNav
             teaser              = < lib.teaser
-            shariff             = < lib.shariff
 
             socialLinks-Facebook = TEXT
             socialLinks-Facebook.value = {$config.socialLinks.Facebook}
@@ -170,22 +143,6 @@ page {
         google = {$page.meta.google}
         google-site-verification = {$page.meta.google-site-verification}
     }
-}
-
-page.10.dataProcessing {
-  10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  10 {
-    references.data = levelmedia: -1, slide
-    as = media
-  }
-  20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  20 {
-    levels = 2
-    as = headerMenu
-    expandAll = 1
-    includeSpacer = 1
-    titleField = nav_title // title
-  }
 }
 
 lib {

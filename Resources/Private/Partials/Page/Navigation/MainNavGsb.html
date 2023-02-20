@@ -1,0 +1,47 @@
+<div class="main-nav-wrapper">
+  <div class="container">
+    <ol class="main-menu list-unstyled">
+      <li class="{f:if(condition: menuItem.children, then: '', else: 'no-children')}">
+        <f:link.page pageUid="1" class="px-0 first-child line-after dropdown-item">
+          Startseite
+        </f:link.page>
+      </li>
+      <f:for each="{menuMainGsb}" as="menuItem" iteration="headerMenuIteration">
+        <li class="{f:if(condition: menuItem.children, then: '', else: 'no-children')}">
+          <f:link.page pageUid="{menuItem.data.uid}" class="px-0 first-child line-after dropdown-item">
+            {menuItem.title}
+          </f:link.page>
+          <f:if condition="{menuItem.children}">
+            <f:then>
+              <ul class="row list-unstyled">
+                <f:for each="{menuItem.children}" as="menuChild" iteration="headerChildIteration">
+                  <f:if condition="{headerChildIteration.index} < 3">
+                    <f:then>
+                      <li class="col-12 col-lg-4 px-0">
+                        <f:link.page pageUid="{menuChild.data.uid}" class="sub dropdown-item">
+                          {menuChild.title}
+                        </f:link.page>
+                      </li>
+                    </f:then>
+                    <f:else>
+                      <li class="col-12 col-lg-4 px-0 d-none hidden-link">
+                        <f:link.page pageUid="{menuChild.data.uid}" class="sub dropdown-item">
+                          {menuChild.title}
+                        </f:link.page>
+                      </li>
+                    </f:else>
+                  </f:if>
+                </f:for>
+                <f:if condition="{menuItem.children -> f:count()} > 2">
+                  <f:then>
+                    <li class="px-0 nav-more readmore"><span>mehr anzeigen</span></li>
+                  </f:then>
+                </f:if>
+              </ul>
+            </f:then>
+          </f:if>
+        </li>
+      </f:for>
+    </ol>
+  </div>
+</div>
