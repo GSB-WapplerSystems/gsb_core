@@ -106,7 +106,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
 
 ### Anmerkungen 2023-02-21
 1. Zu 5: Deploy-Token?
-1. TYPO3 installieren. Sollte DB Tabllen haben, DB erstmal frisch anlegen. 
+1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen 
    ```sh
    vendor/bin/typo3 setup --dbname=*DBNAME* 
    ```
