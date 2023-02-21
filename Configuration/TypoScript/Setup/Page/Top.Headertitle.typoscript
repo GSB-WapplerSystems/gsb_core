@@ -1,17 +1,23 @@
 # Seitentitel ausgeben
 lib {
-    headTitle = TEXT
-    headTitle {
-        value = {$config.headTitle}
-    }
+  headTitle = TEXT
+  headTitle {
+      value = {$config.headTitle}
+  }
 
-    headerTitle = TEXT
-    headerTitle {
-        data = page : title
-    }
+  headerTitle = TEXT
+  headerTitle {
+      data = page : title
+  }
 
-    headerDescription = TEXT
-    headerDescription {
-        data = page : description
-    }
+  headerDescription = TEXT
+  headerDescription {
+      data = page : description
+  }
+
+  pageheader = TEXT
+  pageheader {
+    value = {page:title}
+    insertData = 1
+  }
 }

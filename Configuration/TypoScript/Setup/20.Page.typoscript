@@ -82,7 +82,6 @@ page {
             jumpNav             = < lib.jumpNav
             navBreadcrumb       = < lib.navBreadcrumb
             navMinimap          = < lib.navMinimap
-            teaser              = < lib.teaser
 
             socialLinks-Facebook = TEXT
             socialLinks-Facebook.value = {$config.socialLinks.Facebook}
@@ -103,8 +102,6 @@ page {
             headtitle           = < lib.headTitle
             headertitle         = < lib.headerTitle
             headerDescription   = < lib.headerDescription
-            newsTitle           = < lib.newsTitle
-            newsDescription     = < lib.newsDescription
 
             # Top
             top < styles.content.get

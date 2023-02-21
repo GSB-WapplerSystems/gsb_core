@@ -1,14 +1,4 @@
 config {
-  socialLinks {
-    # cat=Social Media Links (MP): advanced/160/100; type=string; label=Facebook:Url
-    Facebook = https://facebook.com
-    # cat=Social Media Links (MP): advanced/160/110; type=string; label=Instagram:Url
-    Instagram = https://instagram.com
-    # cat=Social Media Links (MP): advanced/160/120; type=string; label=YouTube:Url
-    YouTube = https://youtube.com
-    # cat=Social Media Links (MP): advanced/160/130; type=string; label=Twitter:Url
-    Twitter = https://twitter.com
-  }
     pids {
         # cat=Default Templateset (ITZBund): advanced/160/100; type=text; label=Homepage:PageID
         Home                            = 1
