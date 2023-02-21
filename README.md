@@ -104,7 +104,30 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    composer require itzbund/gsb-template
    ```
 
+### Anmerkungen 2023-02-21
+1. Zu 5: Deploy-Token?
+1. TYPO3 installieren. Sollte DB Tabllen haben, DB erstmal frisch anlegen. 
+   ```sh
+   vendor/bin/typo3 setup --dbname=*DBNAME* 
+   ```
+1. .htaccess im Public-Ordner anlegen
+1. Rechte setzen
+    ```sh
+   chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/´
+   ```
+1. Site und TypoScript record
+1. (Momentant) auch: Frontend builden. NPM muss installiert sein und der Build-Ordner muss vorher dem gsb_templte bereitgestellt werden
+   ```sh
+   cd /opt/typo3/vendor/itzbund/gsb-template/Build
+   ```
+   ```sh
+   npm install && npm run build
+   ```
+  ```sh
+   composer install im root-Order der TYPO3-Installation
+   ```
 
+ 
 
 <!-- GETTING STARTED -->
 ## Erste Schritte mit DDEV
