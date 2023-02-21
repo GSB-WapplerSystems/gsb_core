@@ -123,8 +123,8 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```sh
    npm install && npm run build
    ```
-  ```sh
-   composer install im root-Order der TYPO3-Installation
+   ```sh
+   composer install im root-Ordner der TYPO3-Installation
    ```
 
  
