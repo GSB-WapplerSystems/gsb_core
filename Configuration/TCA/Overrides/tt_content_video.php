@@ -206,7 +206,7 @@ $tempVideoColumns = [
             'items' => [
                 ['LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_checkbox', ''],
             ],
-        ]
+        ],
     ],
 ];
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);

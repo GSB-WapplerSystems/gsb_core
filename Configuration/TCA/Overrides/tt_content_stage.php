@@ -1,10 +1,9 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use ITZBund\GsbTemplate\Preview\StagePreviewRenderer;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx_stage';
-
 
 $tempStageColumns = [
     'tx_stage_file' =>
@@ -191,7 +190,7 @@ $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
 
 $stagePositionPalettes = [
     'stageposition_config' => [
-        'showitem' => 'tx_stage_position,tx_stage_textcolor,tx_stage_bg', 'canNotCollapse' => 1
+        'showitem' => 'tx_stage_position,tx_stage_textcolor,tx_stage_bg', 'canNotCollapse' => 1,
     ],
 ];
 

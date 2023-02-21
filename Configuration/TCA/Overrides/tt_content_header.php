@@ -8,8 +8,8 @@ $headerIntext = [
         'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.inside',
         'config' => [
             'type' => 'check',
-        ]
-    ]
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns(
@@ -58,7 +58,7 @@ $headerStyle = [
         ],
         'exclude' => 1,
         'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
-    ]
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns(
@@ -81,8 +81,8 @@ $headerKicker = [
             'type' => 'input',
             'size' => 50,
             'max' => 255,
-        ]
-    ]
+        ],
+    ],
 ];
 
 ExtensionManagementUtility::addTCAcolumns(
@@ -97,10 +97,10 @@ ExtensionManagementUtility::addFieldsToPalette(
     'before:header'
 );
 
-$headerPalettes = array(
+$headerPalettes = [
     'header_config' => [
-        'showitem' => 'header_layout,header_position,tx_header_style,tx_header_inside', 'canNotCollapse' => 1
+        'showitem' => 'header_layout,header_position,tx_header_style,tx_header_inside', 'canNotCollapse' => 1,
     ],
-);
+];
 
 $GLOBALS['TCA']['tt_content']['palettes'] += $headerPalettes;

@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 /*
  * This file is part of the composer package itzbund/gsb-container.
@@ -22,18 +23,18 @@ defined('TYPO3') or die('Access denied.');
     GeneralUtility::makeInstance(Registry::class)->configureContainer(
         (
         new ContainerConfiguration(
-                'ce_accordion',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description',
+            'ce_accordion',
+            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title',
+            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description',
+            [
                 [
                     [
-                        [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
-                            'colPos' => 101
-                        ]
-                    ]
-                ]
-            )
+                        'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
+                        'colPos' => 101,
+                    ],
+                ],
+            ]
+        )
         )
         ->setIcon('tx_accordion')
         ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
@@ -155,7 +156,6 @@ defined('TYPO3') or die('Access denied.');
         ],
       ],
     ];
-
 
     ExtensionManagementUtility::addTCAcolumns(
         'tt_content',

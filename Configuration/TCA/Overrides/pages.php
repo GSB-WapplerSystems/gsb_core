@@ -62,7 +62,7 @@ $visibleoptions = [
         'config' => [
             'type' => 'text',
             'cols' => 60,
-            'rows' => 10
+            'rows' => 10,
         ],
     ],
 ];
@@ -110,7 +110,7 @@ $event = [
             'size' => 13,
             'default' => 0,
             'range' => [
-                'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                'upper' => mktime(0, 0, 0, 1, 1, 2038),
             ],
         ],
         'displayCond' => 'FIELD:event:=:1',
@@ -122,7 +122,7 @@ $event = [
         'config' => [
             'type' => 'input',
             'size' => 48,
-            'max' => 255
+            'max' => 255,
         ],
         'displayCond' => 'FIELD:event:=:1',
     ],
@@ -152,7 +152,7 @@ $event = [
         'config' => [
             'type' => 'input',
             'size' => 48,
-            'max' => 255
+            'max' => 255,
         ],
         'displayCond' => 'FIELD:event:=:1',
     ],
@@ -201,7 +201,7 @@ ExtensionManagementUtility::addToAllTCAtypes(
 );
 
 $GLOBALS['TCA']['pages']['palettes']['event'] = [
-    'showitem' => 'event,--linebreak--,event_startdate,event_enddate,--linebreak--,event_location,event_category,--linebreak--,event_address,event_past,--linebreak--,event_signup_link,event_signup_link_label'
+    'showitem' => 'event,--linebreak--,event_startdate,event_enddate,--linebreak--,event_location,event_category,--linebreak--,event_address,event_past,--linebreak--,event_signup_link,event_signup_link_label',
 ];
 
 ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');

@@ -1,7 +1,7 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use ITZBund\GsbTemplate\Preview\GalleryPreviewRenderer;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gallery'] = 'tx_gallery';
 
@@ -184,7 +184,7 @@ $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
 
 $galleryPositionPalettes = [
     'galleryposition_config' => [
-        'showitem' => 'gallery_layout,gallery_textcolor,gallery_bg', 'canNotCollapse' => 1
+        'showitem' => 'gallery_layout,gallery_textcolor,gallery_bg', 'canNotCollapse' => 1,
     ],
 ];
 

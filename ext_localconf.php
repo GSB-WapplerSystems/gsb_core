@@ -29,32 +29,32 @@ $extensionConfiguration = GeneralUtility::makeInstance(
  */
 
 // Add Content Elements
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
 }
 
 // Add BackendLayouts for the BackendLayout DataProvider
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">');
 }
 
 // RTE
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsRTE')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsRTE')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/RTE.tsconfig">');
 }
 
 // TCADefaults
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsTCADefaults')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCADefaults')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCADefaults.tsconfig">');
 }
 
 // TCEMAIN
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsTCEMAIN')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCEMAIN')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
 }
 
 // TCEFORM
-if (!(bool) $extensionConfiguration->get('gsb_template', 'disablePageTsTCEFORM')) {
+if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCEFORM')) {
     ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
 }
 
@@ -88,7 +88,7 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Con
     $iconRegistry = TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CMS\Core\Imaging\IconRegistry::class);
     // Content elements
     $icons = [
-        'Audio', 'Video', 'Stage', 'Gallery', 'Grid', 'Container', 'Tabs', 'Accordion', 'Columns2', 'Columns3', 'Columns4', 'Frame', 'NoFrame'
+        'Audio', 'Video', 'Stage', 'Gallery', 'Grid', 'Container', 'Tabs', 'Accordion', 'Columns2', 'Columns3', 'Columns4', 'Frame', 'NoFrame',
     ];
     foreach ($icons as $icon) {
         $iconRegistry->registerIcon(

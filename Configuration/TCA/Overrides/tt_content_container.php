@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 /*
  * This file is part of the composer package itzbund/gsb-container.
@@ -28,9 +29,9 @@ defined('TYPO3') or die('Access denied.');
                     [
                         [
                             'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
-                            'colPos' => 101
-                        ]
-                    ]
+                            'colPos' => 101,
+                        ],
+                    ],
                 ]
             )
         )
