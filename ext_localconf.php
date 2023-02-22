@@ -46,20 +46,3 @@ if (ExtensionManagementUtility::isLoaded('form')) {
 // Add default RTE configuration for the template package
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Configuration/RTE/Default.yaml';
 
-(function () {
-    /**
-     * Register icons
-     */
-    $iconRegistry = TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    // Content elements
-    $icons = [
-        'Audio', 'Video', 'Stage', 'Gallery', 'Grid', 'Container', 'Tabs', 'Accordion', 'Columns2', 'Columns3', 'Columns4', 'Frame', 'NoFrame',
-    ];
-    foreach ($icons as $icon) {
-        $iconRegistry->registerIcon(
-            'tx_' . strtolower($icon),
-            TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:gsb_template/Resources/Public/Images/Icons/' . $icon . '.svg']
-        );
-    }
-})();

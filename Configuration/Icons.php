@@ -1,68 +1,68 @@
 <?php
 return [
-    'tx_gsbstage_gsb_stage' => [
+    'tx_stage' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Stage.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Stage.svg',
     ],
-    'tx_gsb_template' => [
+    'tx_singleteaser' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/SingleTeaser.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/SingleTeaser.svg',
     ],
-    'tx_gsb_banner' => [
+    'tx_banner' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Banner.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Banner.svg',
     ],
-    'tx_gsbfile_gsb_download' => [
+    'tx_file' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/File.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/File.svg',
     ],
-    'tx_gsbgallery_gsb_gallery' => [
+    'tx_gallery' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Gallery.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Gallery.svg',
     ],
-    'gsb-container-container' => [
+    'tx_container' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Container.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Container.svg',
         'spinning' => false,
     ],
-    'gsb-container-columns2' => [
+    'tx_columns2' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Columns2.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns2.svg',
         'spinning' => false,
     ],
-    'gsb-container-columns3' => [
+    'tx_columns3' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Columns3.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns3.svg',
         'spinning' => false,
     ],
-    'gsb-container-columns4' => [
+    'tx_columns4' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Columns4.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns4.svg',
         'spinning' => false,
     ],
-    'gsb-container-tabs' => [
+    'tx_tabs' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Tabs.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Tabs.svg',
         'spinning' => false,
     ],
-    'gsb-container-accordion' => [
+    'tx_accordion' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Accordion.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Accordion.svg',
         'spinning' => false,
     ],
-    'gsb-container-grid' => [
+    'tx_grid' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Grid.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Grid.svg',
         'spinning' => false,
     ],
-    'gsb-container-frame' => [
+    'tx_frame' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/Frame.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons//Frame.svg',
         'spinning' => false,
     ],
-    'gsb-container-noframe' => [
+    'tx_noframe' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Icons/NoFrame.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/NoFrame.svg',
         'spinning' => false,
     ],
 ];
