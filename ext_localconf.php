@@ -19,44 +19,9 @@ defined('TYPO3') or die('Access denied.');
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/';
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/ContentElement/';
 
-// Make the extension configuration accessible
-$extensionConfiguration = GeneralUtility::makeInstance(
-    ExtensionConfiguration::class
-);
 
-/***************
- * PageTS
- */
 
-// Add Content Elements
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
-}
 
-// Add BackendLayouts for the BackendLayout DataProvider
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsContentElements')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">');
-}
-
-// RTE
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsRTE')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/RTE.tsconfig">');
-}
-
-// TCADefaults
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCADefaults')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCADefaults.tsconfig">');
-}
-
-// TCEMAIN
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCEMAIN')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig">');
-}
-
-// TCEFORM
-if (!(bool)$extensionConfiguration->get('gsb_template', 'disablePageTsTCEFORM')) {
-    ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
-}
 
 // Register custom EXT:form configuration
 if (ExtensionManagementUtility::isLoaded('form')) {
