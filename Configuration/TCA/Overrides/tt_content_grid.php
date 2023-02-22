@@ -2,13 +2,6 @@
 
 declare(strict_types=1);
 
-/*
- * This file is part of the composer package itzbund/gsb-container.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
- */
-
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -195,7 +188,7 @@ defined('TYPO3') or die('Access denied.');
         'grid_bgimage' => [
                 'config' =>
                     [
-                        'type' => 'inline',
+                        'type' => 'file',
                         'foreign_table' => 'sys_file_reference',
                         'foreign_field' => 'uid_foreign',
                         'foreign_sortby' => 'sorting_foreign',
@@ -316,7 +309,7 @@ defined('TYPO3') or die('Access denied.');
             'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor.description',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'colorpicker',
+                'renderType' => 'color',
                 'size' => 10,
             ],
         ],

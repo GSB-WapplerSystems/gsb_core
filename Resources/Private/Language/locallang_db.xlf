@@ -3,6 +3,42 @@
     <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
         <header/>
         <body>
+						<trans-unit id="tt_content.tx_link" xml:space="preserve">
+								<source>Link</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout" xml:space="preserve">
+								<source>Link layout</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_text" xml:space="preserve">
+								<source>Link text</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_position" xml:space="preserve">
+								<source>Link position</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout.I.0" xml:space="preserve">
+								<source>Primary button</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout.I.1" xml:space="preserve">
+								<source>Secondary button</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout.I.2" xml:space="preserve">
+								<source>Internal link</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout.I.3" xml:space="preserve">
+								<source>External link</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_layout.I.4" xml:space="preserve">
+								<source>Download</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_position.I.0" xml:space="preserve">
+								<source>Middle</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_position.I.1" xml:space="preserve">
+								<source>Left</source>
+						</trans-unit>
+						<trans-unit id="tt_content.tx_link_position.I.2" xml:space="preserve">
+								<source>Right</source>
+						</trans-unit>
             <trans-unit id="tt_content.header_position.kicker" xml:space="preserve">
                 <source>Kicker</source>
             </trans-unit>
