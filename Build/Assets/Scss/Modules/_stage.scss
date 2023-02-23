@@ -102,6 +102,7 @@
         color: $white;
         display: inline;
         line-height: 1;
+        opacity: .95;
         padding: 7px 10px 3px;
       }
     }
@@ -114,8 +115,22 @@
         border-radius: 4px;
         color: $black;
         display: inline-block;
+        opacity: .95;
         padding: 0 5px;
         position: relative;
+      }
+    }
+
+    .ce-bodytext {
+      background: $gray-100;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      opacity: .95;
+      padding: 5px 10px;
+
+      p,
+      li {
+        font-weight: 400;
       }
     }
   }
