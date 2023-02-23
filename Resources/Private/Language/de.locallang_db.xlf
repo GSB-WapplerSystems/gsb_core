@@ -120,19 +120,22 @@
             <trans-unit id="stage.tx_stage_bg" xml:space="preserve">
                 <target>Bühne Hintergrund</target>
             </trans-unit>
+            <trans-unit id="stage.tx_stage_bgcolor" xml:space="preserve">
+                <target>Bühne Hintergrund Farbe</target>
+            </trans-unit>
             <trans-unit id="stage.tx_stage_position" xml:space="preserve">
                 <target>Bühne Text Position</target>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_textcolor" xml:space="preserve">
-                <target>Bühne Text Farbe</target>
+            <trans-unit id="stage.tx_stage_bg" xml:space="preserve">
+                <target>Bühne Hintergrund</target>
             </trans-unit>
             <trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
                 <target>Begrüßung</target>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_bg.I.0" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bgcolor.I.0" xml:space="preserve">
                 <target>Hell</target>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_bg.I.1" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bgcolor.I.1" xml:space="preserve">
                 <target>Dunkel</target>
             </trans-unit>
             <trans-unit id="stage.tx_stage_position.I.0" xml:space="preserve">

@@ -132,6 +132,23 @@ defined('TYPO3') || die();
                 'exclude' => '0',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position',
             ],
+        'tx_stage_bgcolor' =>
+            [
+                'config' =>
+                    [
+                        'items' =>
+                            [
+                                0 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor.I.1',
+                                    ],
+                            ],
+                        'renderType' => 'checkboxToggle',
+                        'type' => 'check',
+                    ],
+                'exclude' => '1',
+                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor',
+            ],
         'tx_stage_bg' =>
             [
                 'config' =>
@@ -149,23 +166,6 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg',
             ],
-        'tx_stage_textcolor' =>
-            [
-                'config' =>
-                    [
-                        'items' =>
-                            [
-                                0 =>
-                                    [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_textcolor.I.1',
-                                    ],
-                            ],
-                        'renderType' => 'checkboxToggle',
-                        'type' => 'check',
-                    ],
-                'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_textcolor',
-            ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempStageColumns);
@@ -178,7 +178,7 @@ defined('TYPO3') || die();
 
     $stagePositionPalettes = [
         'stageposition_config' => [
-            'showitem' => 'tx_stage_position,tx_stage_textcolor,tx_stage_bg', 'canNotCollapse' => 1,
+            'showitem' => 'tx_stage_position,tx_stage_bg,tx_stage_bgcolor', 'canNotCollapse' => 1,
         ],
     ];
 

@@ -120,19 +120,22 @@
             <trans-unit id="tt_content.tx_stage_stage_bg" xml:space="preserve">
                 <source>Stage background</source>
             </trans-unit>
+            <trans-unit id="stage.tx_stage_bgcolor" xml:space="preserve">
+                <source>Stage background color</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_stage_position" xml:space="preserve">
                 <source>Stage text position</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_textcolor" xml:space="preserve">
-                <source>Stage text color</source>
+            <trans-unit id="tt_content.tx_stage_bg" xml:space="preserve">
+                <source>Stage background</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_stage_salutation" xml:space="preserve">
                 <source>Salutation</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_bg.I.0" xml:space="preserve">
+            <trans-unit id="tt_content.tx_stage_bgcolor.I.0" xml:space="preserve">
                 <source>Bright</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_bg.I.1" xml:space="preserve">
+            <trans-unit id="tt_content.tx_stage_bgcolor.I.1" xml:space="preserve">
                 <source>Dark</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_stage_position.I.0" xml:space="preserve">

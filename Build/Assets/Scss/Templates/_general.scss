@@ -21,6 +21,8 @@ html {
   .footer > .container {
     margin: 0 auto;
     max-width: 1920px;
+    position: relative;
+    z-index: 0;
   }
 }
 
@@ -30,5 +32,6 @@ html {
 .frame-type-ce_container .frame,
 .frame-type-ce_grid .frame,
 .container-wrapper {
+  overflow: hidden;
   position: relative;
 }
