@@ -7,9 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') or die('Access denied.');
 
@@ -19,9 +17,10 @@ defined('TYPO3') or die('Access denied.');
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/';
 $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/ContentElement/';
 
-
-
-
+/***************
+ * PageTS
+ */
+ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gsb_template/Configuration/TsConfig/page.tsconfig">');
 
 // Register custom EXT:form configuration
 if (ExtensionManagementUtility::isLoaded('form')) {

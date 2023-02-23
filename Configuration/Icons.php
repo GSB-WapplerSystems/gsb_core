@@ -4,17 +4,13 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Stage.svg',
     ],
-    'tx_singleteaser' => [
+    'tx_video' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/SingleTeaser.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Video.svg',
     ],
-    'tx_banner' => [
+    'tx_audio' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Banner.svg',
-    ],
-    'tx_file' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/File.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Audio.svg',
     ],
     'tx_gallery' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -23,21 +19,6 @@ return [
     'tx_container' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Container.svg',
-        'spinning' => false,
-    ],
-    'tx_columns2' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns2.svg',
-        'spinning' => false,
-    ],
-    'tx_columns3' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns3.svg',
-        'spinning' => false,
-    ],
-    'tx_columns4' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Columns4.svg',
         'spinning' => false,
     ],
     'tx_tabs' => [
