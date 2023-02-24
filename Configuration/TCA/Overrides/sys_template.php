@@ -10,6 +10,6 @@ defined('TYPO3') || die();
     ExtensionManagementUtility::addStaticFile(
         'gsb_template',
         'Configuration/TypoScript',
-        'GSB Template: Bootstrap Package'
+        'GSB Distribution Package'
     );
 })();

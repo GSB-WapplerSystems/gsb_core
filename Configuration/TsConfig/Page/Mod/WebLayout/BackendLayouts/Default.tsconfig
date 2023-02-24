@@ -1,6 +1,6 @@
 mod.web_layout.BackendLayouts {
-    OneCol {
-        title = OneCol
+  Default {
+        title = Default
         icon = EXT:gsb_template/Resources/Public/BackendLayouts/OneCol.svg
         config {
             backend_layout {
