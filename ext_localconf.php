@@ -39,4 +39,3 @@ if (ExtensionManagementUtility::isLoaded('form')) {
 
 // Add default RTE configuration for the template package
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Configuration/RTE/Default.yaml';
-

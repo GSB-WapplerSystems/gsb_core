@@ -28,7 +28,6 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $headerPalettes;
 
-
     $imagePalettes = [
         'image_config' => [
             'showitem' => 'imageorient,imagewidth', 'canNotCollapse' => 1,
@@ -36,7 +35,6 @@ defined('TYPO3') || die();
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $imagePalettes;
-
 
     $singleteaserTypes = [
         'gsb_singleteaser' =>

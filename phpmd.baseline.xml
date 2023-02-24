@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <phpmd-baseline>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
