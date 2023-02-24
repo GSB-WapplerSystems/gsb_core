@@ -114,58 +114,58 @@
             <trans-unit id="tt_content.CType.audio" xml:space="preserve">
                 <source>Audio</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_file" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_file" xml:space="preserve">
                 <source>Stage Image/Video</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_stage_bg" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bg" xml:space="preserve">
                 <source>Stage background</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_bgcolor" xml:space="preserve">
                 <source>Stage background color</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_position" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_position" xml:space="preserve">
                 <source>Stage text position</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_bg" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bg" xml:space="preserve">
                 <source>Stage background</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_salutation" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
                 <source>Salutation</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_bgcolor.I.0" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bgcolor.I.0" xml:space="preserve">
                 <source>Bright</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_bgcolor.I.1" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_bgcolor.I.1" xml:space="preserve">
                 <source>Dark</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_position.I.0" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_position.I.0" xml:space="preserve">
                 <source>Default</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_position.I.1" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_position.I.1" xml:space="preserve">
                 <source>Top</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_salutation.I.0" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_salutation.I.0" xml:space="preserve">
                 <source>Hide</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_salutation.I.1" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_salutation.I.1" xml:space="preserve">
                 <source>Show</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_position.I.2" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_position.I.2" xml:space="preserve">
                 <source>Middle</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_position.I.3" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_position.I.3" xml:space="preserve">
                 <source>Bottom</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_textcolor.I.0" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_textcolor.I.0" xml:space="preserve">
                 <source>Black</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage_textcolor.I.1" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_textcolor.I.1" xml:space="preserve">
                 <source>White</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_stage" xml:space="preserve">
+            <trans-unit id="stage.tx_stage" xml:space="preserve">
                 <source>Stage</source>
             </trans-unit>
-            <trans-unit id="tt_content.CType.stage" xml:space="preserve">
+            <trans-unit id="stage.CType.stage" xml:space="preserve">
                 <source>Stage</source>
             </trans-unit>
             <trans-unit id="with_frame" xml:space="preserve">

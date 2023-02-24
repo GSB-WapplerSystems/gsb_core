@@ -15,6 +15,16 @@
     .stage-content-wrapper {
       top: 30%;
     }
+
+    .overlay {
+      background: linear-gradient(to bottom, transparent 0%, $white 100%);
+    }
+
+    &.stage-bg-dark {
+      .overlay {
+        background: linear-gradient(to bottom, transparent 0%, $black 100%);
+      }
+    }
   }
 
   &-top {
