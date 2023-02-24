@@ -1,5 +1,6 @@
 @import 'EXT:gsb_template/Configuration/TypoScript/Helper/PageClass.typoscript'
 @import 'EXT:gsb_template/Configuration/TypoScript/Setup/Page/*.typoscript'
 @import 'EXT:gsb_template/Configuration/TypoScript/Setup/*.typoscript'
+@import 'EXT:gsb_template/Configuration/TypoScript/Setup/ContentElements/tt_content/*.typoscript'
 @import 'EXT:gsb_template/Configuration/Extensions/setup.typoscript'
 @import 'EXT:gsb_template/Configuration/TypoScript/Setup/ContentElements/setup.typoscript'

@@ -17,8 +17,8 @@ defined('TYPO3') or die('Access denied.');
         (
             new ContainerConfiguration(
                 'ce_grid',
-                'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.description',
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title',
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.description',
                 [
                     [
                         [

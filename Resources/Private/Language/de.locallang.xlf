@@ -3,7 +3,7 @@
     <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
         <header/>
         <body>
-            <trans-unit id="footer.serviceheader" resname="footer.serviceheader">
+			<trans-unit id="footer.serviceheader" resname="footer.serviceheader">
                 <target>Services der Bundesregierung</target>
             </trans-unit>
 			<trans-unit id="footer.language-switcher">

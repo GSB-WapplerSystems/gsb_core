@@ -4,6 +4,14 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Stage.svg',
     ],
+    'tx_singleteaser' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Singleteaser.svg',
+    ],
+    'tx_slider' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Slider.svg',
+    ],
     'tx_video' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Video.svg',
@@ -38,7 +46,7 @@ return [
     ],
     'tx_frame' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons//Frame.svg',
+        'source' => 'EXT:gsb_template/Resources/Public/Images/Icons/Frame.svg',
         'spinning' => false,
     ],
     'tx_noframe' => [

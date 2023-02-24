@@ -60,13 +60,14 @@ TCEFORM {
         }
 
         frame_class {
-            removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
+            disabled = 1
+            #removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
             addItems {
-                text-2-columns = Text: 2-Spalten (column-2-col)
-                text-3-columns = Text: 3-Spalten (column-3-col)
-                teaser = Teaser: Element (Dunkel)
-                teaser-light = Teaser: Element (Hell)
-                teaser-transparent = Teaser: Element (Transparent)
+                #text-2-columns = Text: 2-Spalten (column-2-col)
+                #text-3-columns = Text: 3-Spalten (column-3-col)
+                #teaser = Teaser: Element (Dunkel)
+                #teaser-light = Teaser: Element (Hell)
+                #teaser-transparent = Teaser: Element (Transparent)
             }
 
             altLabels {
