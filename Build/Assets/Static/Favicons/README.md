@@ -20,8 +20,8 @@ Insert the following code in the `head` section of your pages:
     <link rel="manifest" href="typo3conf/ext/gsb_template/Resources/Favicons/site.webmanifest">
     <link rel="mask-icon" href="typo3conf/ext/gsb_template/Resources/Favicons/safari-pinned-tab.svg" color="#333333">
     <link rel="shortcut icon" href="typo3conf/ext/gsb_template/Resources/Favicons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="gsb-standardmandant.de">
-    <meta name="application-name" content="gsb-standardmandant.de">
+    <meta name="apple-mobile-web-app-title" content="itzbund.de">
+    <meta name="application-name" content="itzbund.de">
     <meta name="msapplication-TileColor" content="#333333">
     <meta name="msapplication-config" content="typo3conf/ext/gsb_template/Resources/Favicons/browserconfig.xml">
     <meta name="theme-color" content="#333333">

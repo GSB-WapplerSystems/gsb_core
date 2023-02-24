@@ -1,4 +1,4 @@
- ##Favicons 
+ ##Favicons
  *Uses*: https://realfavicongenerator.net/
  ### You can automate the favicon creation using a Node.js command-line interface:
 
@@ -85,15 +85,15 @@ Inject the HTML code in your pages:
 Check for updates (to be run from time to time, ideally by your continuous integration system):
 
     real-favicon check-for-update --fail-on-update faviconData.json
-    
+
 Upload "Resources/Favicons" to your server or deploy
 
-###Get the HTML code from generated 
+###Get the HTML code from generated
 
     typo3conf/ext/your_template/Resources/Favicons/html_code.html
-    
+
 and put it in
-    
+
     typo3conf/ext/gsb_template/Resources/Private/Partials/Page/Favicons.html
 
 Deploy the Extension. Done :)

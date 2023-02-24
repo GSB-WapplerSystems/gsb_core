@@ -70,9 +70,9 @@ lib.parseFunc_RTE {
                 HTMLparser = 1
                 HTMLparser {
                     tags.table.fixAttrib.class {
-                        default = contenttable
+                        default = table table-dark table-striped table-hover
                         always = 1
-                        list = contenttable
+                        list = table table-dark table-striped table-hover
                     }
                     keepNonMatchedTags = 1
                 }

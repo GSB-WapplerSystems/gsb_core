@@ -49,6 +49,7 @@ module.exports = { // eslint-disable-line no-undef
       true, {
         ignoreProperties: ['backface-visibility', 'appearance']
       }],
-    'selector-id-pattern': null
+    'selector-id-pattern': null,
+    'import-notation': null
   }
 }

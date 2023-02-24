@@ -1,19 +1,13 @@
 @charset "utf-8";
 
-body {
+.ck-content {
   @extend %bundessansweb;
-}
+  font-size: 20px;
 
-.cke_panel_grouptitle {
-  @extend %bundessansweb;
-}
-
-.cke_editable {
   h2 {
     @extend %bundessansweb;
-    color: $p1-color-3;
-    font-size: 46px;
-    font-weight: 400;
+    color: $black;
+    font-size: 48px;
     hyphens: auto;
     margin-bottom: 16px;
     word-break: break-word;
@@ -21,33 +15,33 @@ body {
 
   h3 {
     @extend %bundessansweb;
-    color: $p1-color-3;
+    color: $black;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 700;
     hyphens: auto;
     margin-bottom: 16px;
     word-break: break-word;
   }
 
   h4 {
-    color: $p1-color-3;
-    font-size: 24px;
-    font-weight: 400;
+    color: $black;
+    font-size: 18px;
+    font-weight: 700;
   }
 
   h5 {
-    color: $p1-color-3;
-    font-size: 22px;
-    font-weight: 400;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
   }
 
   h6 {
-    color: $p1-color-3;
-    font-size: 20px;
+    color: $black;
+    font-size: 16px;
     font-weight: 400;
   }
 
-  .subheader {
+  .lead {
     display: block;
     font-size: 24px;
     font-style: italic;
@@ -55,26 +49,68 @@ body {
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
+  }
 
-    a {
-      color: $p1-color-3;
-      display: inline-block;
-      font-weight: 400;
-      line-height: 1;
-      position: relative;
-      text-decoration: none;
+  a {
+    color: $black;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .text {
+    &-right {
+      text-align: right;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-left {
+      text-align: left;
     }
   }
 
-  blockquote {
+  .bold {
+    font-weight: 700;
+  }
+
+  .em {
+    font-style: italic;
+  }
+
+  .small {
+    font-size: 16px;
+  }
+
+  .hide {
+    color: #555;
+    font-size: 12px;
+    font-style: italic;
+
+    &::before {
+      content: "Hidden: ";
+      display: inline-block;
+    }
+  }
+
+  blockquote,
+  cite {
+    background-color: $gray-200;
+    border-left: 3px solid $gray-800;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: wrap column;
+    margin-bottom: 30px;
 
     p {
       display: block;
-      font-size: 22px;
+      font-size: 24px;
       font-style: italic;
+      font-weight: 400;
       margin: 30px 0;
       padding: 0 30px;
 
@@ -84,13 +120,6 @@ body {
         text-transform: uppercase;
       }
     }
-  }
-
-  .cite {
-    display: flex;
-    flex-flow: column wrap;
-    font-size: 22px;
-    font-style: italic;
   }
 
   .internal-link,
@@ -109,35 +138,31 @@ body {
 
   .internal-link,
   .internal-link-new {
-    color: #333;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.4;
-    padding-left: 0;
-    text-decoration: underline;
+    background-image: svg-load("../Images/Icons/icon-internal.svg");
+    background-position-y: 0;
   }
 
   .external-link,
   .external-link-new {
-    background-image: svg-load("../Images/Icons/icon_external-link.svg");
+    background-image: svg-load("../Images/Icons/icon-external.svg");
     background-position-y: 3px;
     background-size: 16px 16px;
     margin-bottom: 2px;
   }
 
   .download {
-    background-image: svg-load("../Images/Icons/icon_link_download.svg");
+    background-image: svg-load("../Images/Icons/icon-download.svg");
     background-position-y: -1px;
     background-size: 16px 16px;
   }
 
   .email {
-    background-image: svg-load("../Images/Icons/icon_link_email.svg");
+    background-image: svg-load("../Images/Icons/icon-email.svg");
     background-position-y: 7px;
   }
 
   .phone {
-    background-image: svg-load("../Images/Icons/icon_link_phone.svg");
+    background-image: svg-load("../Images/Icons/icon-phone.svg");
     background-position-y: 0;
   }
 
@@ -146,51 +171,55 @@ body {
     padding-left: 0;
   }
 
-  .text-left {
-    text-align: left;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .text-right {
-    text-align: right;
-  }
-
   .btn {
     box-shadow: none !important;
     white-space: nowrap;
 
     &-primary,
     &-secondary {
-      background-color: $p1-color-7;
+      background-color: $gray-800;
       border-style: solid;
       border-width: 2px;
-      color: $p1-color-3;
+      color: $white;
       font-size: 17px;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1;
       padding: 10px 19px;
     }
 
     &-primary {
-      border-color: $p1-color-1;
+      border-color: $gray-500;
     }
 
     &-secondary {
-      border-color: $p1-color-8;
+      border-color: $black;
     }
   }
 
   ul:not(.list-unstyled) {
+    list-style: none;
+    margin-bottom: 52px;
+    padding-left: 0;
+
     li {
-      font-size: 22px;
-      list-style-image: url("../Images/Icons/icon_list_bullet.svg");
-      padding-bottom: 16px;
+      font-size: 17px;
+      margin-bottom: 16px;
+      padding-left: 32px;
+      position: relative;
+
+      &::before {
+        background-color: $black;
+        content: "";
+        display: block;
+        height: 12px;
+        left: 0;
+        position: absolute;
+        top: 6px;
+        width: 12px;
+      }
 
       &:last-child {
-        padding-bottom: 0;
+        margin-bottom: 0;
       }
     }
   }
@@ -209,11 +238,11 @@ body {
       position: relative;
 
       &::before {
-        color: $p1-color-3;
+        color: $black;
         content: counter(counter) ".";
         display: block;
         font-size: 17px;
-        font-weight: 400;
+        font-weight: 700;
         left: 0;
         line-height: 1.3;
         position: absolute;

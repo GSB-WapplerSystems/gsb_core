@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
@@ -7,11 +9,11 @@ const CopyPlugin = require('copy-webpack-plugin')
 module.exports = {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
-    screen: './Assets/screen.js',
-    mediaelements: './Assets/mediaelements.js',
-    swiper: './Assets/swiper.js',
-    ckeditor: './Assets/ckeditor.js',
-    print: './Assets/print.js'
+    screen: './Assets/Scripts/screen.js',
+    mediaelements: './Assets/Scripts/mediaelements.js',
+    swiper: './Assets/Scripts/swiper.js',
+    ckeditor: './Assets/Scripts/ckeditor.js',
+    print: './Assets/Scripts/print.js'
   },
 
   // Define the destination directory and filenames of compiled resources and files
@@ -87,6 +89,11 @@ module.exports = {
       patterns: [
         {from: './Assets/Static', to: './'}
       ]
+    }),
+
+    // Load .env file for environment variables in JS
+    new Dotenv({
+      path: './.env'
     }),
 
     // Extracts CSS into separate files

@@ -27,8 +27,8 @@
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS.js">
 <testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\gsb_info.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\gsb_info.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\gsb_info" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info.js">
+<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info" />
 </testsuite>
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main.js">
 <testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main" />

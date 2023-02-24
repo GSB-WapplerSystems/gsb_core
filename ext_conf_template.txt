@@ -1,8 +1,21 @@
-#####################################
-### GSB Template                   ###
-#####################################
+##############
+### PAGETS ###
+##############
 
-config {
-    # cat=basic; type=boolean; label= automatically include TypoScript
-    typoScript = 0
-}
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsRTE
+disablePageTsRTE = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsBackendLayouts
+disablePageTsBackendLayouts = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEMAIN
+disablePageTsTCEMAIN = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCEFORM
+disablePageTsTCEFORM = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsTCADefaults
+disablePageTsTCADefaults = 0
+
+# cat=PageTS; type=boolean; label=LLL:EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf:pageTs.disablePageTsContentElements
+disablePageTsContentElements = 0

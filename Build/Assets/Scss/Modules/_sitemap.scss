@@ -23,7 +23,7 @@
       position: relative;
 
       &::before {
-        background-color: $p1-color-1;
+        background-color: $gray-500;
         content: "";
         display: block;
         height: 12px;
@@ -44,7 +44,7 @@
         padding-left: 30px;
 
         &::before {
-          background-color: $p-color-14;
+          background-color: $gray-300;
           height: 10px;
           left: 0;
           top: 7px;

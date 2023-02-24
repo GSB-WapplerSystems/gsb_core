@@ -15,8 +15,8 @@ defined('TYPO3') || die();
         (
             new \B13\Container\Tca\ContainerConfiguration(
                 'ce_slider', // CType
-                'Slider', // label
-                'Container element for Slider', // description
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.title', // label
+                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.description', // description
                 [
                     [
                         ['name' => 'header', 'colPos' => 200, 'colspan' => 2, 'allowed' => ['CType' => 'header, textpic']],
@@ -24,8 +24,8 @@ defined('TYPO3') || die();
                 ] // grid configuration
             )
         )
-        ->setIcon('gsb-container-grid')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Templates/Backend/Container.html')
+        ->setIcon('tx_slider')
+        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 

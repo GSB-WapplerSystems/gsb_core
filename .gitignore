@@ -2,6 +2,6 @@
 .DS_Store
 /Build/node_modules/
 Resources/Public
-!Resources/Public/Icons/Extension.svg
+!Resources/Public/Icons/*
 !Resources/Public/Favicons/*
 !Resources/Public/Images/*

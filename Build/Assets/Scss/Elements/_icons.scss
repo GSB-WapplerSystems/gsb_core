@@ -7,17 +7,67 @@
 .download,
 .email,
 .phone {
-  background-position-x: 0;
-  background-repeat: no-repeat;
-  position: relative;
+  font-weight: 700;
+
+  &::before {
+    display: inline-block;
+    margin-right: 8px;
+    position: relative;
+    top: 4px;
+    width: 20px;
+  }
+}
+
+.internal-link,
+.internal-link-new {
+  &::before {
+    content: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+
+    .grid-light & {
+      content: svg-load("../Images/Icons/icon-internal.svg", fill=$white) !important;
+    }
+  }
 }
 
 .external-link,
 .external-link-new {
-  background-image: svg-load("../Images/Icons/icon_external-link.svg", fill=$p1-color-3);
-  background-position-y: 3px;
-  background-size: 16px 16px;
-  margin-bottom: 2px;
+  &::before {
+    content: svg-load("../Images/Icons/icon-external.svg", fill=$darkblue);
+
+    .grid-light & {
+      content: svg-load("../Images/Icons/icon-external.svg", fill=$white) !important;
+    }
+  }
+}
+
+.download {
+  &::before {
+    content: svg-load("../Images/Icons/icon-download.svg", fill=$darkblue);
+
+    .grid-light & {
+      content: svg-load("../Images/Icons/icon-download.svg", fill=$white) !important;
+    }
+  }
+}
+
+.email {
+  &::before {
+    content: svg-load("../Images/Icons/icon-email.svg", fill=$darkblue);
+
+    .grid-light & {
+      content: svg-load("../Images/Icons/icon-email.svg", fill=$white) !important;
+    }
+  }
+}
+
+.phone {
+  &::before {
+    content: svg-load("../Images/Icons/icon-phone.svg", fill=$darkblue);
+
+    .grid-light & {
+      content: svg-load("../Images/Icons/icon-phone.svg", fill=$white) !important;
+    }
+  }
 }
 
 .service-link {
@@ -33,30 +83,9 @@
 }
 
 .icon-gebaerdensprache {
-  background-image: svg-load("../Images/Icons/icon_meta_gebaerdensprache.svg", fill=$p1-color-3);
+  background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
 }
 
 .icon-leichte-sprache {
-  background-image: svg-load("../Images/Icons/icon_meta_leichte-sprache.svg", fill=$p1-color-3);
-}
-
-.download {
-  background-image: svg-load("../Images/Icons/icon_link_download.svg", fill=$p1-color-3);
-  background-position-y: -1px;
-  background-size: 16px 16px;
-
-  .modal-body & {
-    background-image: svg-load("../Images/Icons/icon_link_download.svg", fill=$p1-color-6) !important;
-    outline-color: $p1-color-6 !important;
-  }
-}
-
-.email {
-  background-image: svg-load("../Images/Icons/icon_link_email.svg", fill=$p1-color-3);
-  background-position-y: 7px;
-}
-
-.phone {
-  background-image: svg-load("../Images/Icons/icon_link_phone.svg", fill=$p1-color-3);
-  background-position-y: 0;
+  background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
 }

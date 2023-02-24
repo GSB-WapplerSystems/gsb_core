@@ -103,12 +103,11 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```sh
    composer require itzbund/gsb-template
    ```
-
 ### Anmerkungen 2023-02-21
 1. Zu 5: Deploy-Token?
-1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen 
+1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen
    ```sh
-   vendor/bin/typo3 setup --dbname=*DBNAME* 
+   vendor/bin/typo3 setup --dbname=*DBNAME*
    ```
 1. .htaccess im Public-Ordner anlegen
 1. Rechte setzen
@@ -127,7 +126,6 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    composer install im root-Ordner der TYPO3-Installation
    ```
 
- 
 
 <!-- GETTING STARTED -->
 ## Erste Schritte mit DDEV

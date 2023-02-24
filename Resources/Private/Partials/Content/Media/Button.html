@@ -1,14 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{data.tx_gsbbanner_link}">
-    <f:link.typolink parameter="{data.tx_gsbbanner_link}">
-        <span class="banner-text {data.tx_gsbbanner_link_layout}{f:if(condition:'{data.tx_gsbbanner_link_bold} == 1', then:' banner-text-bold')}">
-                {data.tx_gsbbanner_link_text}
-            </span>
-    </f:link.typolink>
-</f:if>
-<f:if condition="{data.tx_gsbsingleteaser_link}">
-    <div class="ce-button ce-{data.tx_gsbsingleteaser_link_position}">
-        <f:link.typolink parameter="{data.tx_gsbsingleteaser_link}" class="{data.tx_gsbsingleteaser_link_layout} {data.tx_gsbsingleteaser_link_position}"><span>{data.tx_gsbsingleteaser_link_text}</span></f:link.typolink>
+<f:if condition="{data.tx_link}">
+    <div class="ce-button ce-btn-left">
+        <f:link.typolink parameter="{data.tx_link}" class="btn btn-primary btn-left"><span>{data.tx_link_text}</span></f:link.typolink>
     </div>
 </f:if>
 </html>

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-defined('TYPO3') or die();
+defined('TYPO3') || die();
 
 (static function (): void {
     $visibleoptions = [
@@ -62,13 +62,6 @@ defined('TYPO3') or die();
             ],
         ],
 
-        'highlight' => [
-            'label' => 'Highlight Article',
-            'config' => [
-                'type' => 'check',
-            ],
-        ],
-
         'teaser_description' => [
             'label' => 'Teaser Description',
             'config' => [
@@ -77,29 +70,10 @@ defined('TYPO3') or die();
                 'rows' => 10,
             ],
         ],
-
-        'teaser_description_overview' => [
-            'label' => 'Teaser Description Overview',
-            'config' => [
-                'type' => 'text',
-                'cols' => 60,
-                'rows' => 10,
-            ],
-        ],
-
-        'category_title' => [
-            'label' => 'Category title',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-                'max' => 255,
-            ],
-        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('pages', $visibleoptions);
     ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb', 'after:newUntil');
-    ExtensionManagementUtility::addFieldsToPalette('pages', 'title', '--linebreak--,category_title', 'after:subtitle');
 
     $event = [
         'event' => [
@@ -124,7 +98,8 @@ defined('TYPO3') or die();
             'exclude' => 1,
             'label' => 'Beginn',
             'config' => [
-                'type' => 'datetime',
+                'type' => 'input',
+                'renderType' => 'datetime',
                 'size' => 13,
                 'default' => 0,
             ],
@@ -135,7 +110,8 @@ defined('TYPO3') or die();
             'exclude' => 1,
             'label' => 'Ende',
             'config' => [
-                'type' => 'datetime',
+                'type' => 'input',
+                'renderType' => 'datetime',
                 'size' => 13,
                 'default' => 0,
                 'range' => [
@@ -202,7 +178,8 @@ defined('TYPO3') or die();
             'exclude' => 1,
             'label' => 'Link',
             'config' => [
-                'type' => 'link',
+                'type' => 'input',
+                'renderType' => 'link',
             ],
             'displayCond' => 'FIELD:event:=:1',
         ],
@@ -232,5 +209,5 @@ defined('TYPO3') or die();
         'showitem' => 'event,--linebreak--,event_startdate,event_enddate,--linebreak--,event_location,event_category,--linebreak--,event_address,event_past,--linebreak--,event_signup_link,event_signup_link_label',
     ];
 
-    ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,highlight,--linebreak--,teaser_description,--linebreak--,teaser_description_overview', 'after:media');
+    ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');
 })();

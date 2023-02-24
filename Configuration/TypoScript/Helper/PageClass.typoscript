@@ -22,7 +22,7 @@ lib.page.class {
         case = lower
         replacement.10 {
             search = pagets__
-            replace = 
+            replace =
         }
         ifEmpty = default
         noTrimWrap = | ||

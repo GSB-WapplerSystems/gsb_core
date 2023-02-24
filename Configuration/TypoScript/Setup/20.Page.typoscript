@@ -7,13 +7,11 @@ page {
 
     bodyTagCObject = COA
     bodyTagCObject {
-        10 = TEXT
-        10.data = TSFE:id
-        10.noTrimWrap = | id="p|"|
-        20 =< lib.page.class
-        20.stdWrap.noTrimWrap = | class="| gsb"|
-        wrap = <body|>
+        10 =< lib.page.class
+        10.stdWrap.noTrimWrap = | class="| gsb"|
+        wrap = <body id="top"|>
     }
+
     headerData {
         10 = HMENU
         10 {
@@ -33,27 +31,8 @@ page {
                 }
             }
         }
-        20 = COA
-        20 {
-            value = <link rel="preload" href="{f:uri.image(src: 'EXT:gsb_template/Resources/Public/Fonts/BundesSansWeb-Bold.woff2')}" as="font" type="font/woff2" crossorigin>
-        }
-        30 = COA
-        30 {
-            value = <link rel="preload" href="{f:uri.image(src: 'EXT:gsb_template/Resources/Public/Fonts/BundesSansWeb-BoldItalic.woff2')}" as="font" type="font/woff2" crossorigin>
-        }
-        40 = COA
-        40 {
-            value = <link rel="preload" href="{f:uri.image(src: 'EXT:gsb_template/Resources/Public/Fonts/BundesSansWeb-Italic.woff2')}" as="font" type="font/woff2" crossorigin>
-        }
-        50 = COA
-        50 {
-            value = <link rel="preload" href="{f:uri.image(src: 'EXT:gsb_template/Resources/Public/Fonts/BundesSansWeb-Regular.woff2')}" as="font" type="font/woff2" crossorigin>
-        }
-        60 = COA
-        60 {
-            value = <meta name="google-site-verification" content="zPXbpegj_B5wbUDB7aXteJbnbT0IPiTDgsP53on-gRA">
-        }
     }
+
     10 = FLUIDTEMPLATE
     10 {
         # Template names will be generated automatically by converting the applied
@@ -82,55 +61,47 @@ page {
             }
             ifEmpty = Default
         }
+
         templateRootPaths {
             0 = EXT:gsb_template/Resources/Private/Templates/Page/
             1 = {$page.fluidtemplate.templateRootPath}
         }
+
         partialRootPaths {
             0 = EXT:gsb_template/Resources/Private/Partials/Page/
-            1 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
-            2 = {$page.fluidtemplate.partialRootPath}
+            1 = {$page.fluidtemplate.partialRootPath}
         }
+
         layoutRootPaths {
             0 = EXT:gsb_template/Resources/Private/Layouts/Page/
             1 = {$page.fluidtemplate.layoutRootPath}
         }
+
         variables {
             # navigation & element libs
-            navMeta = < lib.navMeta
-            navMetaTop = < lib.navMetaTop
-            jumpNav = < lib.jumpNav
-            navBreadcrumb = < lib.navBreadcrumb
-            navPrimary = < lib.navPrimary
-            navSubnav = < lib.navSubnav
-            navPrimaryMeta = < lib.navPrimaryMeta
-            navMinimap = < lib.navMinimap
-            footerNav = < lib.footerNav
-            banner = < lib.banner
-            newsletter = < lib.newsletter
-            shariff = < lib.shariff
-            navLanguage = < lib.language
-
-            // getting absRefPrefix dynamically
-            absRefPrefix = TEXT
-            absRefPrefix.value = {$config.absRefPrefix}
+            jumpNav             = < lib.jumpNav
+            navBreadcrumb       = < lib.navBreadcrumb
+            navMinimap          = < lib.navMinimap
 
             socialLinks-Facebook = TEXT
             socialLinks-Facebook.value = {$config.socialLinks.Facebook}
-
             socialLinks-Instagram = TEXT
             socialLinks-Instagram.value = {$config.socialLinks.Instagram}
-
             socialLinks-Twitter = TEXT
             socialLinks-Twitter.value = {$config.socialLinks.Twitter}
-
             socialLinks-YouTube = TEXT
             socialLinks-YouTube.value = {$config.socialLinks.YouTube}
 
+            // getting absRefPrefix dynamically
+            absRefPrefix       = TEXT
+            absRefPrefix.value = {$config.absRefPrefix}
+
             # general title and vars
-            copyright = < lib.copyright
-            pageheader = < lib.pageheader
-            headertitle = < lib.headerTitle
+            copyright           = < lib.copyright
+            pageheader          = < lib.pageheader
+            headtitle           = < lib.headTitle
+            headertitle         = < lib.headerTitle
+            headerDescription   = < lib.headerDescription
 
             # Top
             top < styles.content.get
@@ -140,15 +111,21 @@ page {
             main < styles.content.get
             main.select.where = colPos=1
 
+            # Supplement
+            supplement < styles.content.get
+            supplement.select.where = colPos=2
+
             # Bottom
             bottom < styles.content.get
-            bottom.select.where = colPos=2
+            bottom.select.where = colPos=3
         }
+
         # set extension name
         extbase {
             controllerExtensionName = gsb_template
         }
     }
+
     meta {
         viewport = {$page.meta.viewport}
         robots = {$page.meta.robots}
@@ -158,25 +135,10 @@ page {
         X-UA-Compatible {
             attribute = http-equiv
         }
+
         # Google
         google = {$page.meta.google}
         google-site-verification = {$page.meta.google-site-verification}
-    }
-}
-
-page.10.dataProcessing {
-    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    10 {
-        references.data = levelmedia: -1, slide
-        as = media
-    }
-    20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-    20 {
-        levels = 2
-        as = headerMenu
-        expandAll = 1
-        includeSpacer = 1
-        titleField = nav_title // title
     }
 }
 
@@ -188,10 +150,9 @@ lib {
             pidInList = 135
             selectFields = title
             join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
-            where.data = field:recordUid
+            where.data =field:recordUid
             where.intval = 1
             where.wrap = uid_foreign=|
-            max = 1
         }
         renderObj = COA
         renderObj {
@@ -200,5 +161,3 @@ lib {
         }
     }
 }
-
-page.config.contentObjectExceptionHandler.errorMessage = Hoppla, des woar a Fehla :o). Code: %s

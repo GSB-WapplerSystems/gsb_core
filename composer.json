@@ -2,7 +2,6 @@
 	"name": "itzbund/gsb-template",
 	"description": "GSB Template",
 	"type": "typo3-cms-extension",
-	"version": "2.0.0",
 	"license": [
 		"GPL-2.0+"
 	],
@@ -71,5 +70,17 @@
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"web-dir": ".composer"
 		}
+	},
+	"scripts": {
+		"phpstan:analyze": "php .composer/bin/phpstan analyse --no-progress Classes",
+		"phpmd:analyze": "php .composer/bin/phpmd Classes/ text cleancode,codesize,controversial,design,naming,unusedcode --baseline-file phpmd.baseline.xml",
+		"phpcs:analyze": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff",
+		"phpcs:fix": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --using-cache no --diff"
+	},
+	"scripts-descriptions": {
+		"phpstan:analyze": "Analyze code with PHPStan",
+		"phpmd:analyze": "Analyze code with PHPMD",
+		"phpcs:analyze": "Analyze code with PHP Code Sniffer (TYPO3 Ruleset)",
+		"phpcs:fix": "Fix code with PHP Code Sniffer (TYPO3 Ruleset)"
 	}
 }

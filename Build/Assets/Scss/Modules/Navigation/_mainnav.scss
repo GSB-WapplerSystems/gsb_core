@@ -1,25 +1,5 @@
 @charset "utf-8";
 
-.meta-desktop {
-  display: none;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-  }
-
-  .custom-wrapper {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: flex-end;
-    padding: 0;
-  }
-
-  .custom-button {
-    margin-right: 16px;
-  }
-}
-
 .navbar {
   display: flex;
   flex-direction: column;
@@ -53,19 +33,14 @@
   &.show {
     opacity: 1;
   }
-
-  .main-meta-wrapper {
-    box-shadow: 0 0 3px 0 $o-color-11;
-  }
 }
 
 .navbar-wrapper {
-  background-color: $gsb-light-grey-bsg;
-  padding: 15px;
+  background-color: $gray-100;
   position: relative;
 
   ul {
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       ul {
         padding-bottom: 16px;
       }
@@ -74,6 +49,10 @@
 }
 
 .main-nav-wrapper {
+  padding: 64px 0 79px;
+  position: relative;
+  z-index: 1;
+
   > .container {
     padding: 0 16px;
   }
@@ -100,8 +79,16 @@
     }
   }
 
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none !important;
+    }
+  }
+
   .first-child {
-    color: $p1-color-14;
+    color: $black;
     display: inline-block;
     font-size: 24px;
     font-weight: 500;
@@ -112,27 +99,26 @@
     &:focus,
     &:active {
       background-color: transparent;
-      color: $p1-color-14;
-      outline: 1px dashed $p1-color-14;
+      color: $black;
       text-decoration: underline;
     }
   }
 
   ul {
-    border-bottom: 1px dotted $gsb-dark-grey-40;
-    margin: 0;
-    margin-bottom: 15px;
+    border-bottom: 1px solid $gray-200;
+    margin: 0 0 15px;
     padding-bottom: 15px;
     padding-left: 0;
     padding-right: 0;
 
     .nav-more {
-      color: $p1-color-14;
+      color: $black;
       cursor: pointer;
       font-size: 20px;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
         span {
           text-decoration: underline;
         }
@@ -159,12 +145,12 @@
     padding: 0;
 
     &.no-children {
-      border-bottom: .0625rem dotted #bcc0c1;
-      margin-bottom: .9375rem;
-      padding-bottom: .9375rem;
+      border-bottom: 1px solid $gray-200;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
     }
 
-    >ul {
+    > ul {
       li {
         &:not(:nth-child(-n+3)) {
           display: block;
@@ -178,18 +164,20 @@
   }
 
   .sub {
-    color: $p1-color-3;
+    color: $black;
+    display: inline-block;
     font-size: 20px;
     outline: none;
     padding: 5px 0;
     position: relative;
     white-space: normal;
+    width: auto;
 
     &:hover,
     &:focus,
     &:active {
       background-color: transparent;
-      color: $p1-color-2;
+      color: $black;
       text-decoration: underline;
     }
   }
@@ -197,12 +185,12 @@
   .active,
   strong {
     background-color: transparent;
-    color: $p1-color-1;
+    color: $green;
     font-weight: 700;
     text-decoration: none;
 
     &.sub {
-      color: $p1-color-1;
+      color: $green;
       text-decoration: underline;
     }
   }
@@ -210,69 +198,12 @@
 
 .main-meta-wrapper {
   align-items: center;
-  background-color: $p-color-20;
+  background-color: $gray-400;
   // nor for presentation
   display: none;
   // display: flex;
   height: 145px;
   padding: 15px;
-}
-
-.main-meta {
-  display: flex;
-  margin-bottom: 0;
-
-  .meta-item {
-    display: block;
-    padding: 0 7px 0 0;
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 26px 0 0;
-    }
-
-    a,
-    strong {
-      background-color: transparent;
-      color: $p1-color-2;
-      display: block;
-      font-size: 17px;
-      font-weight: 700;
-      outline: none;
-
-      .navbar & {
-        color: $p1-color-2;
-      }
-    }
-
-    a {
-      &:hover,
-      &:focus,
-      &:active {
-        outline: none;
-        text-decoration: underline;
-      }
-    }
-
-    strong {
-      text-decoration: underline;
-    }
-  }
-}
-
-.layer {
-  background: $o-color-4;
-  color: $o-color-10;
-  display: none;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-
-  .active-nav-body &,
-  .active-nav-body-mobile & {
-    background: $o-color-4;
-    display: block;
-  }
 }
 
 .hidden-link {

@@ -1,0 +1,68 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+      gsb_singleteaser {
+        iconIdentifier = tx_singleteaser
+        title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title
+        description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.description
+        tt_content_defValues {
+          CType = gsb_singleteaser
+        }
+      }
+    }
+    show := addToList(gsb_singleteaser)
+}
+
+TCEFORM {
+  tt_content {
+    tx_link_layout {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    tx_link_position {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    tx_header_style {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    frame_class {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    tx_header_inside {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    header_position {
+      types {
+        gsb_singleteaser {
+          disabled = 1
+        }
+      }
+    }
+    imageorient {
+      types {
+        gsb_singleteaser {
+          #remove 25 and 26 to get the left right option
+          removeItems = 1,2,8,9,10,17,18,25,26
+        }
+      }
+    }
+  }
+}

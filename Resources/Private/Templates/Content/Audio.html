@@ -1,66 +1,17 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-      xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-    <f:if condition="{data.header_kicker}">
-        <p class="kicker"><f:format.raw>{data.header_kicker}</f:format.raw></p>
-    </f:if>
-    <f:if condition="{data.header}">
-        <f:switch expression="{data.header_layout}">
-            <f:case value="2">
-                <h2 class="{f:if(condition: data.header_position, then: 'ce-headline-{data.header_position}')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h2>
-            </f:case>
-            <f:case value="3">
-                <h3 class="{f:if(condition: data.header_position, then: 'ce-headline-{data.header_position}')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h3>
-            </f:case>
-            <f:case value="4">
-                <h4 class="{f:if(condition: data.header_position, then: 'ce-headline-{data.header_position}')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h4>
-            </f:case>
-            <f:case value="5">
-                <h5 class="{f:if(condition: data.header_position, then: 'ce-headline-{data.header_position}')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h5>
-            </f:case>
-            <f:case value="6">
-                <h6 class="{f:if(condition: data.header_position, then: 'ce-headline-{data.header_position}')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h6>
-            </f:case>
-            <f:case value="7">
-                <h1 class="visually-hidden">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h1>
-            </f:case>
-            <f:case value="8">
-                <h2 class="visually-hidden">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h2>
-            </f:case>
-            <f:case value="9">
-                <h3 class="visually-hidden">
-                    <f:format.raw>{data.header}</f:format.raw>
-                </h3>
-            </f:case>
-            <f:case value="10">
-                <h4 class="visually-hidden">
-                    {header}
-                </h4>
-            </f:case>
-            <f:case value="100">
-                <f:comment> -- do not show header -- </f:comment>
-            </f:case>
-        </f:switch>
-    </f:if>
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<f:if condition="{animationSettings}">
+    <f:then>
+        <f:asset.script identifier="aosJS" src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
+        <f:asset.script identifier="aosJS">
+            AOS.init();
+        </f:asset.script>
+        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
+    </f:then>
+</f:if>
+<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: '{animationSettings -> f:format.raw()}')}>
 
-    <f:if condition="{data.subheader}">
-        <p class="lead"><f:format.raw>{data.subheader}</f:format.raw></p>
+    <f:if condition="{data.header}">
+        <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
 
     <f:if condition="{data.bodytext}">
@@ -70,19 +21,16 @@
     <f:if condition="{data.tx_audio_audio}">
         <div class="audio audio-local">
             <f:if condition="{data_tx_audio_poster.0}">
-                <f:alias map="<gsb:format.json.decode>{data_tx_audio_poster.0.properties.crop}</gsb:format.json.decode>">
-                    <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
-                        <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
-                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" alt="{file.properties.alternative}{f:if(condition:'{file.properties.link}', then:', Link: {file.properties.link}')}" >
-                    </picture>
-                </f:alias>
-                <noscript>
-                    {f:image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1340)}
-                </noscript>
+              <f:alias map="{gsb:format.json.decode(json: data_tx_audio_poster.0.properties.crop)}">
+                <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
+                    <source srcset="{f:uri.image(image: data_tx_audio_poster.0, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
+                    <f:image src="{data_tx_audio_poster.0.properties.uid}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                </picture>
+              </f:alias>
             </f:if>
             <audio preload="none" controls style="max-width:100%; width: 100%;">
                 <source src="{f:uri.typolink(parameter: '{data.tx_audio_audio}')}" type="audio/mp3">

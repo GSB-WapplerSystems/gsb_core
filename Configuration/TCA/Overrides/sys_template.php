@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-defined('TYPO3') or die();
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+defined('TYPO3') || die();
 
 (static function (): void {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    ExtensionManagementUtility::addStaticFile(
         'gsb_template',
-        'Configuration/TypoScript/',
-        'GSB Template'
+        'Configuration/TypoScript',
+        'GSB Distribution Package'
     );
 })();

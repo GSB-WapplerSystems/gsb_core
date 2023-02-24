@@ -49,7 +49,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: $brg-dark-grey;
+  background: $black;
   border-radius: 50%;
   display: inline-block;
   height: 12px;
@@ -73,7 +73,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: $brg-dark-grey;
+  background-color: $black;
   border-radius: 5px;
   opacity: 1;
   transition: width .3s ease;
