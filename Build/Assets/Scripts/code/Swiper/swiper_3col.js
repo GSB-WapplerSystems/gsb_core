@@ -37,7 +37,8 @@ if (document.querySelector('.swiper-slide-col-4')) {
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-          bulletElement: 'a'
+          bulletElement: 'a',
+          dynamicBullets: true
         },
         navigation: {
           nextEl: '.swiper-button-next',
