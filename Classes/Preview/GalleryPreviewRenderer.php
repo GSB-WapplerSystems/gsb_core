@@ -22,7 +22,7 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 
 /**
- * Contains a preview rendering for the page module of CType="textpic"
+ * Contains a preview rendering for the page module of CType="gallery"
  * @internal this is a concrete TYPO3 hook implementation and solely used for EXT:frontend and not part of TYPO3's Core API.
  */
 class GalleryPreviewRenderer extends StandardContentPreviewRenderer
