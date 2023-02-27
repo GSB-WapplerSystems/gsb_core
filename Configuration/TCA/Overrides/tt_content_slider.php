@@ -66,7 +66,6 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $sliderPalettes;
 
-
     // override default settings
     $GLOBALS['TCA']['tt_content']['types']['ce_slider']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
