@@ -180,6 +180,9 @@ defined('TYPO3') || die();
         'stageposition_config' => [
             'showitem' => 'tx_stage_position,tx_stage_bg,tx_stage_bgcolor', 'canNotCollapse' => 1,
         ],
+        'stagefile_config' => [
+            'showitem' => 'tx_stage_file,--linebreak--,bodytext', 'canNotCollapse' => 1,
+        ],
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $stagePositionPalettes;
@@ -201,8 +204,9 @@ defined('TYPO3') || die();
                 'showitem' => '
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                   --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
-                  --palette--;;header_config,subheader,tx_stage_file,
-                  --palette--;;headerstage_config,bodytext,
+                  --palette--;;header_config,subheader,
+              --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage,
+                  --palette--;;stagefile_config,
                   --palette--;;stageposition_config,
                   --palette--;;link_config,
               --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,

@@ -13,7 +13,7 @@
 
   &-default {
     .stage-content-wrapper {
-      top: 30%;
+      align-items: center;
     }
 
     .overlay {
@@ -29,7 +29,8 @@
 
   &-top {
     .stage-content-wrapper {
-      top: 5%;
+      align-items: flex-start;
+      padding-top: 16px;
     }
 
     .overlay {
@@ -45,7 +46,7 @@
 
   &-middle {
     .stage-content-wrapper {
-      top: 30%;
+      align-items: center;
     }
 
     .overlay {
@@ -61,8 +62,8 @@
 
   &-bottom {
     .stage-content-wrapper {
-      bottom: 5%;
-      top: auto;
+      align-items: flex-end;
+      padding-bottom: 16px;
     }
 
     .overlay {
@@ -78,9 +79,12 @@
 
   .stage-content {
     &-wrapper {
+      display: flex;
+      height: 100%;
       left: 0;
       position: absolute;
       right: 0;
+      top: 0;
       z-index: 2;
     }
   }
@@ -153,6 +157,10 @@
       p,
       li {
         font-weight: 400;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

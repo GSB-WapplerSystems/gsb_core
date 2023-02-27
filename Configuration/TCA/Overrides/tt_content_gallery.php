@@ -213,6 +213,7 @@ defined('TYPO3') || die();
                   --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                       --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                       --palette--;;header_config,subheader,bodytext,
+                  --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gallery,
                       --palette--;;galleryposition_config,gallery_file,
                   --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                       --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,

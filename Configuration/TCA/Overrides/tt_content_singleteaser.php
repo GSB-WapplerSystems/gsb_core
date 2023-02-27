@@ -14,23 +14,15 @@ defined('TYPO3') || die();
         'tt_content',
         'CType',
         [
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gsb_singleteaser',
+            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
             'gsb_singleteaser',
             'tx_singleteaser',
         ]
     );
 
-    $headerPalettes = [
-        'header_config' => [
-            'showitem' => 'header_layout,--linebreak--,subheader,--linebreak--,header_link', 'canNotCollapse' => 1,
-        ],
-    ];
-
-    $GLOBALS['TCA']['tt_content']['palettes'] += $headerPalettes;
-
     $imagePalettes = [
         'image_config' => [
-            'showitem' => 'imageorient,imagewidth', 'canNotCollapse' => 1,
+            'showitem' => 'image,--linebreak--,imageorient,imagewidth,--linebreak--,bodytext', 'canNotCollapse' => 1,
         ],
     ];
 
@@ -52,14 +44,11 @@ defined('TYPO3') || die();
                     ],
                 'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-        header_kicker,
-        header,
-        --palette--;;header_config,subheader,
-        image,
-        --palette--;;gallerySettings,
-        bodytext,
-        --palette--;;link_config,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, header_kicker, header,
+            --palette--;;header_config,subheader,
+        --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title,
+            --palette--;;image_config,
+            --palette--;;link_config,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;
         frames,

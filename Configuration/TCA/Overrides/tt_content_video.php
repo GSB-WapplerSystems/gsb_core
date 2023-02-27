@@ -202,17 +202,18 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_videourl',
             ],
-        'tx_video_mainstage' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_label',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_description',
-            'config' => [
-                'type' => 'check',
-                'items' => [
-                    ['LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_checkbox', ''],
+        'tx_video_mainstage' =>
+            [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_label',
+                'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_description',
+                'config' => [
+                    'type' => 'check',
+                    'items' => [
+                        ['LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_checkbox', ''],
+                    ],
                 ],
             ],
-        ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
 
@@ -236,7 +237,24 @@ defined('TYPO3') || die();
                                     ],
                             ],
                     ],
-                'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,--palette--;;header_config,subheader,bodytext,tx_video_mainstage,tx_video_video,tx_video_videourl,tx_video_poster_image,tx_video_poster_video,tx_video_caption,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                'showitem' => '
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+                        --palette--;;header_config,subheader,bodytext,
+                    --div--;Video,
+                        --palette--;;tx_video_mainstage,tx_video_video,tx_video_videourl,tx_video_poster_image,tx_video_poster_video,tx_video_caption,
+                    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
+                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                        --palette--;;language,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                        --palette--;;hidden,
+                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
             ],
     ];
 
