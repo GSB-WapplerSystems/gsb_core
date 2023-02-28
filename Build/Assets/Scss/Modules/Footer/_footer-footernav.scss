@@ -1,11 +1,19 @@
 @charset "utf-8";
 
 .additional-languages {
-  li:first-child {
-    margin-bottom: 1rem;
+  ul {
+    li:first-child {
+      margin-bottom: 1rem;
 
-    @include media-breakpoint-up(sm) {
-      margin-bottom: 0;
+      @include media-breakpoint-up(sm) {
+        margin-bottom: 0;
+      }
     }
+  }
+}
+
+.language-switcher {
+  a {
+    text-decoration: underline;
   }
 }
