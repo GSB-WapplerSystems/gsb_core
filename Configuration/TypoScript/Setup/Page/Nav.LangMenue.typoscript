@@ -13,7 +13,7 @@ lib.language {
             NO {
                 doNotLinkIt = 1
                 linkWrap = <li>|</li>
-                stdWrap.override = De || En
+                stdWrap.override = Deutsch || English
                 stdWrap {
                     typolink {
                         parameter.data = page:uid
