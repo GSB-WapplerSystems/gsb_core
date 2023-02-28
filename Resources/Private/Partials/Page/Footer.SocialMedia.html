@@ -1,9 +1,9 @@
 <f:if condition="{socialLinks-Facebook} || {socialLinks-YouTube} || {socialLinks-Instagram} || {socialLinks-Twitter}">
     <aside class="row">
         <div class="col-12">
-            <div class="social-media d-flex align-items-center mb-4 mb-lg-5">
-                <h2 class="fs-3 fs-lg-2 fw-normal me-4">{f:translate(key: 'footer.socialmediaheader',extensionName:'gsb_template')}</h2>
-                <ul class="list-unstyled d-flex gap-4">
+            <div class="social-media justify-content-lg-end d-sm-flex align-items-center">
+                <h2 class="fs-3 fs-lg-2 fw-normal mt-4 mt-sm-0 mb-0 me-4">{f:translate(key: 'footer.socialmediaheader',extensionName:'gsb_template')}</h2>
+                <ul class="mb-4 mt-4 list-unstyled d-flex gap-4">
                     <f:if condition="{socialLinks-Facebook}">
                         <li>
                             <a class="facebook" href="{socialLinks-Facebook}" target="_blank" rel="noreferrer" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:opens')} Facebook {f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:innewwindow')}">
