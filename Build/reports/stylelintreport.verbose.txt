@@ -28,7 +28,7 @@
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_banner.scss
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_ckeditor.scss
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_container.scss
- D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_gsb_info.scss
+ D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_dpx_info.scss
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_fluid_styled_content.scss
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_footnotes.scss
  D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scss\Extensions\_medpub.scss

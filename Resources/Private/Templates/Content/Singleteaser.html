@@ -1,161 +1,28 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:if condition="{animationSettings}">
-    <f:then>
-        <f:asset.script identifier="aosJS" src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
-        <f:asset.script identifier="aosJS">
-            AOS.init();
-        </f:asset.script>
-        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
-    </f:then>
-</f:if>
-<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: '{animationSettings -> f:format.raw()}')}>
-<f:switch expression="{data.imageorient}">
-    <f:case value="0">
-        <section>
-            <div class="row">
-                <div class="col-12">
-                    <div class="teaser"
-                    <f:if condition="{data_bgimage}">
-                        style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
-                    </f:if>
-                    >
-                    <div class="teaser-wrapper img-top">
-                        <f:if condition="{files}">
-                            <f:for each="{files}" as="file">
-                                <f:render partial="Media/Image" arguments="{_all}"/>
-                            </f:for>
-                        </f:if>
-                    </div>
-
-                    <div class="teaser-content">
-                        <f:if condition="{data.header}">
-                            <header>
-                                <f:render partial="Header/All" arguments="{_all}" />
-                            </header>
-                        </f:if>
-
-                        <f:if condition="{data.bodytext}">
-                            <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                        </f:if>
-
-                        <f:if condition="{data.tx_gsbsingleteaser_link}">
-                            <f:render partial="Media/Button" arguments="{_all}"/>
-                        </f:if>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </f:case>
-    <f:case value="8">
-        <div class="row">
-            <div class="col-12">
-                <div class="content-wrapper">
-                    <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="teaser-wrapper img-below">
-                    <f:if condition="{files}">
-                        <f:for each="{files}" as="file">
-                            <f:render partial="Media/Image" arguments="{_all}"/>
-                        </f:for>
-                    </f:if>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="content-wrapper">
-                    <f:render partial="Media/Button" arguments="{_all}"/>
-                </div>
-            </div>
-        </div>
-    </f:case>
-    <f:case value="18">
-        <div class="teaser-wrapper img-intext-left"
-        <f:if condition="{data_bgimage}">
-            style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
-        </f:if>
-        >
-        <div class="row">
-            <div class="col-12">
-                <div class="img-left">
-                    <f:if condition="{files}">
-                        <f:for each="{files}" as="file">
-                            <f:render partial="Media/Image" arguments="{_all}"/>
-                        </f:for>
-                    </f:if>
-                </div>
-                <div class="content-right">
-                    <f:if condition="{data.header}">
-                        <div class="statement-head">
-                            <f:if condition="{data.tx_gsbsingleteaser_twittertext}">
-                                <div class="socialmedia">
-                                    <p>{f:translate(key: 'aside.share', extensionName: 'gsb_template')}</p>
-                                    <div class="row g-0 list-unstyled flex-nowrap share">
-                                        <div class="col twitter">
-                                            <a href="https://twitter.com/intent/tweet?text={data.tx_gsbsingleteaser_twittertext -> f:format.urlencode()}&url={f:uri.typolink(parameter: '{data.tx_gsbsingleteaser_twitterlink -> f:format.htmlentities()}', absolute: '1')}&hashtags={data.tx_gsbsingleteaser_twitterhashtag -> f:format.urlencode()}&via={data.tx_gsbsingleteaser_twittervia -> f:format.urlencode()}&related={data.tx_gsbsingleteaser_twitterrelated -> f:format.urlencode()}" data-size="large" data-url="{f:uri.typolink(parameter: '{data.tx_gsbsingleteaser_twitterlink -> f:format.htmlentities()}', absolute: '1')}" class="share-link" rel="noreferrer" title="{f:translate(key: 'content.shareontwitter', extensionName: 'gsb_singleteaser')}" target="_blank">
-                                                <span class="icon-share icon-twitter"></span>
-                                                <span class="visually-hidden">{f:translate(key: 'content.shareontwitter', extensionName: 'gsb_template')}</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </f:if>
-                        </div>
-                    </f:if>
-                    <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                    <f:render partial="Media/Button" arguments="{_all}"/>
-                </div>
-            </div>
-        </div>
-        </div>
-    </f:case>
-    <f:case value="25">
-        <div class="teaser-wrapper img-right"
-        <f:if condition="{data_bgimage}">
-            style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
-        </f:if>
-        >
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="content-wrapper">
-                    <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                    <f:render partial="Media/Button" arguments="{_all}"/>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 img-right-link">
-                <f:if condition="{files}">
+<div id="c{data.uid}" class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"{f:if(condition: animationSettings, then: '{animationSettings -> f:format.raw()}')}>
+<div class="row">
+    <div class="col-12">
+        <div class="teaser">
+            <f:if condition="{files}">
+                <div class="teaser-wrapper img-top">
                     <f:for each="{files}" as="file">
                         <f:render partial="Media/Image" arguments="{_all}"/>
                     </f:for>
-                </f:if>
-            </div>
-        </div>
-        </div>
-    </f:case>
-    <f:case value="26">
-        <div class="teaser-wrapper img-left"
-        <f:if condition="{data_bgimage}">
-            style="background-image: url({f:uri.image(src: '{data_bgimage.0.properties.uid}', maxWidth: 700, treatIdAsReference: '1') -> f:format.raw()});"
-        </f:if>
-        >
-        <div class="row">
-            <div class="col-12 col-md-6 img-left-link">
-                <f:if condition="{files}">
-                    <f:for each="{files}" as="file">
-                        <f:render partial="Media/Image" arguments="{_all}"/>
-                    </f:for>
-                </f:if>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="content-wrapper">
-                    <f:render partial="Media/Bodytext" arguments="{_all}"/>
-                    <f:render partial="Media/Button" arguments="{_all}"/>
                 </div>
-            </div>
+            </f:if>
+            <article class="teaser-content">
+                <f:if condition="{data.header}">
+                    <f:render partial="Header/All" arguments="{_all}" />
+                </f:if>
+                <f:if condition="{data.bodytext}">
+                    <f:render partial="Media/Bodytext" arguments="{_all}"/>
+                </f:if>
+                <f:if condition="{data.tx_link}">
+                    <f:render partial="Media/Button" arguments="{_all}"/>
+                </f:if>
+            </article>
         </div>
-        </div>
-    </f:case>
-</f:switch>
-
+    </div>
+</div>
 </div>
 </html>

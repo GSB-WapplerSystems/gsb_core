@@ -1,4 +1,12 @@
 .swiper-pagination {
+  display: flex;
+  padding: 2px;
+  position: relative;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition: 300ms opacity;
+  z-index: 10;
+
   &.swiper-pagination-hidden {
     opacity: 0;
   }
@@ -9,8 +17,7 @@
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  margin-left: 25px;
-  margin-right: 25px;
+  width: auto;
 }
 
 /* Bullets */
@@ -20,7 +27,7 @@
 
   .swiper-pagination-bullet {
     position: relative;
-    transform: scale(.33);
+    transform: scale(.55);
   }
 
   .swiper-pagination-bullet-active {
@@ -32,28 +39,30 @@
   }
 
   .swiper-pagination-bullet-active-prev {
-    transform: scale(.66);
+    transform: scale(.77);
   }
 
   .swiper-pagination-bullet-active-prev-prev {
-    transform: scale(.33);
+    transform: scale(.55);
   }
 
   .swiper-pagination-bullet-active-next {
-    transform: scale(.66);
+    transform: scale(.77);
   }
 
   .swiper-pagination-bullet-active-next-next {
-    transform: scale(.33);
+    transform: scale(.55);
   }
 }
 
 .swiper-pagination-bullet {
-  background: $brg-dark-grey;
+  background: $darkblue;
+  border: 2px solid $black;
   border-radius: 50%;
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  opacity: .4;
+  width: 24px;
 
   @at-root button#{&} {
     appearance: none;
@@ -61,6 +70,15 @@
     box-shadow: none;
     margin: 0;
     padding: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $darkblue;
+    border: 1px solid $black;
+    opacity: 1;
+    outline-offset: 1px;
   }
 
   .swiper-pagination-clickable & {
@@ -73,11 +91,8 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: $brg-dark-grey;
-  border-radius: 5px;
+  background: $black;
   opacity: 1;
-  transition: width .3s ease;
-  width: 35px;
 }
 
 .swiper-vertical > .swiper-pagination-bullets,
@@ -92,8 +107,7 @@
   }
 
   &.swiper-pagination-bullets-dynamic {
-    top: 50%;
-    transform: translateY(-50%);
+    top: 32%;
     width: 8px;
 
     .swiper-pagination-bullet {
@@ -107,12 +121,10 @@
 .swiper-pagination-horizontal.swiper-pagination-bullets {
   .swiper-pagination-bullet {
     margin: 0 4px;
-    transition: width .3s ease;
   }
 
   &.swiper-pagination-bullets-dynamic {
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
     white-space: nowrap;
 
     .swiper-pagination-bullet {

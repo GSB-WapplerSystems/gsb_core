@@ -22,7 +22,6 @@ nav,
 .socialshared,
 .gallery,
 .gallery-image,
-.sliderteaser,
 .navbar-toggler,
 .meta-desktop,
 .stage-image,
@@ -30,7 +29,10 @@ nav,
 .footer-socialmedia,
 .frame-type-video,
 .frame-type-audio,
-.metanav {
+.metanav,
+.supplement,
+.supplement-wrapper,
+#share {
   display: none !important;
 }
 

@@ -2,78 +2,45 @@
 
 .logo {
   a {
-    color: $p1-color-2;
-    display: block;
-    line-height: 1;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $p1-color-2;
-      outline-color: $p1-color-2;
-    }
-  }
-
-  .header-image {
-    display: inline-flex;
-
-    >svg {
-      transition: all .5s ease-in-out 0ms;
-    }
-
-    #eagle {
-      height: 33px;
-      width: 36px;
-    }
-
-    #flag {
-      height: 92px;
-      margin-left: 9px;
-      position: relative;
-      top: 1px;
-      transition: all .2s linear;
-      width: 6px;
-
-      .sticky & {
-        height: 34px;
-      }
-    }
-
-    #type {
-      height: 35px;
-      margin-left: 9px;
-      opacity: 1;
-      transition: opacity .2s linear;
-      width: 108px;
-
-      .sticky & {
-        opacity: 0;
-      }
-    }
-  }
-
-  .header-text {
     display: inline-block;
-    line-height: 1;
-    padding-left: 10px;
-
-    @include media-breakpoint-up(lg) {
-      padding-right: 10px;
-    }
   }
 }
 
-.accessibility-target {
-  nav {
-    ul {
-      display: grid;
-      grid-template-columns: auto auto;
-      list-style: none;
+.header-image {
+  display: inline-flex;
 
-      li {
-        display: inline;
-        text-align: center;
-      }
+  > svg {
+    transition: all .5s ease-in-out 0ms;
+  }
+
+  #eagle {
+    height: 33px;
+    width: 36px;
+  }
+
+  #flag {
+    height: 92px;
+    margin-left: 9px;
+    position: relative;
+    top: 1px;
+    transition: all .2s linear;
+    width: 6px;
+
+    .sticky & {
+      height: 34px;
+    }
+  }
+
+  #type {
+    height: 35px;
+    margin-left: 9px;
+    opacity: 1;
+    transition: opacity .2s linear;
+    width: 108px;
+
+    .sticky & {
+      display: none;
+      opacity: 0;
     }
   }
 }

@@ -1,8 +1,7 @@
 page {
     includeCSS {
-        tx_rxshariff_shariff >
-        screen = EXT:gsb_template/Resources/Public/StyleSheets/screen.css
-        print = EXT:gsb_template/Resources/Public/StyleSheets/print.css
-        print.media = print
+        screen                  = EXT:gsb_template/Resources/Public/StyleSheets/screen.css
+        print                   = EXT:gsb_template/Resources/Public/StyleSheets/print.css
+        print.media             = print
     }
 }

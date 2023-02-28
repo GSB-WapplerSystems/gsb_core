@@ -1,0 +1,4 @@
+##########################
+#### CONTENT ELEMENTS ####
+##########################
+@import 'EXT:gsb_template/Configuration/TsConfig/Page/ContentElement/Element/*.tsconfig'

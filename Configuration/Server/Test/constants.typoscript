@@ -1,6 +1,0 @@
-config.baseProtocol = http
-
-# preparing protocol for https protocol
-[request.getNormalizedParams().isHttps()]
-    config.baseProtocol = https
-[END]

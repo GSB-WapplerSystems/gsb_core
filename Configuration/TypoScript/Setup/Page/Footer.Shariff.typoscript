@@ -1,5 +1,0 @@
-lib.shariff = RECORDS
-lib.shariff {
-    tables = tt_content
-    source = 259
-}

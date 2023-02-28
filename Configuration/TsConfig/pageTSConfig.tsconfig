@@ -134,46 +134,46 @@ TCEFORM {
 
 mod.wizards.newContentElement.wizardItems.common {
   elements {
-    video {
-      iconIdentifier = tx_video
-      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_description
-      tt_content_defValues {
-        CType = video
-      }
-    }
-    audio {
-      iconIdentifier = tx_audio
-      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_description
-      tt_content_defValues {
-        CType = audio
-      }
-    }
-    gsb_banner {
-      iconIdentifier = tx_gsb_banner
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
-      tt_content_defValues {
-        CType = gsb_banner
-      }
-    }
-    gsb_download {
-      iconIdentifier = tx_gsbfile_gsb_download
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_download_description
-      tt_content_defValues {
-        CType = gsb_download
-      }
-    }
-    gsb_gallery {
-      iconIdentifier = tx_gsbgallery_gsb_gallery
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_gallery_description
-      tt_content_defValues {
-        CType = gsb_gallery
-      }
-    }
+    #video {
+    #  iconIdentifier = tx_video
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_description
+    #  tt_content_defValues {
+    #    CType = video
+    #  }
+    #}
+    # audio {
+    #  iconIdentifier = tx_audio
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:audio.audio_description
+    #  tt_content_defValues {
+    #    CType = audio
+    #  }
+    #}
+    #gsb_banner {
+    #  iconIdentifier = tx_gsb_banner
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_banner_description
+    #  tt_content_defValues {
+    #    CType = gsb_banner
+    #  }
+    #}
+    #gsb_download {
+    #  iconIdentifier = tx_gsb_file
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_download_description
+    #  tt_content_defValues {
+    #    CType = gsb_download
+    #  }
+    #}
+    #gsb_gallery {
+    #  iconIdentifier = tx_gsb_gallery
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.newContentElement.gsb_gallery_description
+    #  tt_content_defValues {
+    #    CType = gsb_gallery
+    #  }
+    #}
     gsb_singleteaser {
       iconIdentifier = tx_gsb_singleteaser
       title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_singleteaser_title
@@ -182,20 +182,20 @@ mod.wizards.newContentElement.wizardItems.common {
         CType = gsb_singleteaser
       }
     }
-    gsb_stage {
-      iconIdentifier = tx_gsbstage_gsb_stage
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.gsb_stage_description
-      tt_content_defValues {
-        CType = gsb_stage
-      }
-    }
+    #gsb_stage {
+    #  iconIdentifier = tx_gsb_stage
+    #  title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_title
+    #  description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf:wizards.contentElement.gsb_stage_description
+    #  tt_content_defValues {
+    #    CType = gsb_stage
+    #  }
+    #}
   }
-  show := addToList(video)
-  show := addToList(audio)
-  show := addToList(gsb_banner)
-  show := addToList(gsb_download)
-  show := addToList(gsb_gallery)
+  # show := addToList(video)
+  # show := addToList(audio)
+  # show := addToList(gsb_banner)
+  # show := addToList(gsb_download)
+  # show := addToList(gsb_gallery)
   show := addToList(gsb_singleteaser)
-  show := addToList(gsb_stage)
+  # show := addToList(gsb_stage)
 }

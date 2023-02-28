@@ -1,8 +1,3 @@
-#####################################
-### GSB Template                   ###
-#####################################
-
-config {
-    # cat=basic; type=boolean; label= automatically include TypoScript
-    typoScript = 0
-}
+##############
+### PAGETS ###
+##############

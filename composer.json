@@ -2,14 +2,13 @@
 	"name": "itzbund/gsb-template",
 	"description": "GSB Template",
 	"type": "typo3-cms-extension",
-	"version": "2.0.0",
 	"license": [
 		"GPL-2.0+"
 	],
 	"require": {
 		"php": "^8.1",
+		"b13/container": "dev-master@dev",
 		"typo3/cms-adminpanel": "^12.2",
-		"typo3/cms-workspaces": "^12.2",
 		"typo3/cms-backend": "^12.2",
 		"typo3/cms-belog": "^12.2",
 		"typo3/cms-beuser": "^12.2",
@@ -41,7 +40,7 @@
 		"typo3/cms-t3editor": "^12.2",
 		"typo3/cms-tstemplate": "^12.2",
 		"typo3/cms-viewpage": "^12.2",
-		"b13/container": "dev-master@dev"
+		"typo3/cms-workspaces": "^12.2"
 	},
 	"require-dev": {
 		"michielroos/typo3scan": "^1.7",
@@ -71,5 +70,21 @@
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"web-dir": ".composer"
 		}
+	},
+	"scripts": {
+		"phpstan:analyze": "php .composer/bin/phpstan analyse --no-progress Classes",
+		"phpstan:generatebaseline": "php .composer/bin/phpstan analyse --no-progress Classes --generate-baseline",
+		"phpmd:analyze": "php .composer/bin/phpmd Classes/ text cleancode,codesize,controversial,design,naming,unusedcode --baseline-file phpmd.baseline.xml",
+		"phpmd:generatebaseline": "php .composer/bin/phpmd Classes/ text cleancode,codesize,controversial,design,naming,unusedcode --baseline-file phpmd.baseline.xml --generate-baseline",
+		"phpcs:analyze": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff",
+		"phpcs:fix": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --using-cache no --diff"
+	},
+	"scripts-descriptions": {
+		"phpstan:analyze": "Analyze code with PHPStan",
+		"phpstan:generatebaseline": "Generate baseline for PHPStan",
+		"phpmd:analyze": "Analyze code with PHPMD",
+		"phpmd:generatebaseline": "Generate baseline for PHPMD",
+		"phpcs:analyze": "Analyze code with PHP Code Sniffer (TYPO3 Ruleset)",
+		"phpcs:fix": "Fix code with PHP Code Sniffer (TYPO3 Ruleset)"
 	}
 }

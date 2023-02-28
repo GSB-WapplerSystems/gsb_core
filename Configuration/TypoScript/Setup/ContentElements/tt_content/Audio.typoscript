@@ -1,5 +1,6 @@
 tt_content.audio = FLUIDTEMPLATE
 tt_content.audio {
+    partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
     templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content/
     templateName = Audio
     dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -9,6 +10,7 @@ tt_content.audio {
             fieldName = tx_audio_poster
             table = tt_content
         }
+
         as = data_tx_audio_poster
     }
 }
