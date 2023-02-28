@@ -1,9 +1,9 @@
 <f:if condition="{menuMeta}">
   <div class="row">
     <div class="col-12 col-lg-8 mb-3 mb-lg-0">
-      <nav>
+      <nav class="additional-languages">
         <h2 aria-labelledby="service-nav" class="visually-hidden">Servicenavigation</h2>
-        <ul class="list-unstyled d-flex gap-4" id="service-nav">
+        <ul class="list-unstyled d-sm-flex gap-4 mb-0" id="service-nav">
           <li>
             <a class="service-link icon-gebaerdensprache" href="/" hreflang="gsg">Gebärdensprache</a>
           </li>
@@ -14,9 +14,9 @@
       </nav>
     </div>
     <div class="col-12 col-lg-4">
-      <nav class="language-switcher text-uppercase" aria-labelledby="language-switcher">
+      <nav class="language-switcher text-uppercase d-sm-flex justify-content-lg-end" aria-labelledby="language-switcher">
         <h3 id="language-switcher" class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:footer.language-switcher')}</h3>
-        <f:format.raw>{navLanguage}</f:format.raw>
+          <f:format.raw>{navlanguage}</f:format.raw>
       </nav>
     </div>
   </div>
