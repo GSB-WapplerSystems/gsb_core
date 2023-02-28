@@ -60,7 +60,7 @@ defined('TYPO3') || die();
 
     $sliderPalettes = [
         'slider_config' => [
-            'showitem' => 'slider_type,grid_columns', 'canNotCollapse' => 1,
+            'showitem' => 'slider_type, grid_columns', 'canNotCollapse' => 1,
         ],
     ];
 
