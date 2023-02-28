@@ -9,6 +9,13 @@
     height: 32px;
     width: 32px;
 
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 1px solid $darkblue;
+      outline-offset: 2px;
+    }
+
     &-facebook {
       background-image: svg-load("../Images/Icons/icon-facebook.svg", fill=#3b5998);
     }
