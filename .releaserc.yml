@@ -6,13 +6,11 @@ plugins:
       assets:
         - path: gsb-distribution.zip
           label: GSB Distribution (zip)
-          target: generic_package
+          type: package
         - path: Documentation/Release.md
           label: Release Notes
-          target: generic_package
         - url: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/blob/main/README.md
           label: README
-          target: generic_package
 branches:
   - name: release
   - name: main
