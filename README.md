@@ -95,6 +95,10 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```sh
    composer config gitlab-token.git.gsb-itzbund.de <personal_access_token>
    ```
+   Alternavitiv kannst du auch einen GitLab-Deploy-Token verwenden:
+   ```sh
+    composer config gitlab-token.git.gsb-itzbund.de <deploy_token_username> <deploy_token>
+    ```
 1. Temporärer Schritt: setze minimum-stability auf dev
    ```sh
    composer config minimum-stability dev
@@ -103,27 +107,19 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```sh
    composer require itzbund/gsb-template
    ```
-### Anmerkungen 2023-02-21
-1. Zu 5: Deploy-Token?
+
 1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen
    ```sh
-   vendor/bin/typo3 setup --dbname=*DBNAME*
+   composer exec typo3 setup --dbname=*DBNAME*
    ```
 1. .htaccess im Public-Ordner anlegen
 1. Rechte setzen
     ```sh
    chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/´
    ```
-1. Site und TypoScript record
-1. (Momentant) auch: Frontend builden. NPM muss installiert sein und der Build-Ordner muss vorher dem gsb_templte bereitgestellt werden
+1. Installiere die Extensions
    ```sh
-   cd /opt/typo3/vendor/itzbund/gsb-template/Build
-   ```
-   ```sh
-   npm install && npm run build
-   ```
-   ```sh
-   composer install im root-Ordner der TYPO3-Installation
+   composer exec typo3 extension:setup
    ```
 
 
