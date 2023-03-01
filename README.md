@@ -160,6 +160,22 @@ Wenn du mitentwickelst, halte dich an unsere Standards
   - [Conventional Commits][conventionalcommits-url]
   - Commitsprache ist English
 
+- Coding Standards
+  - [TYPO3 Coding Guidelines][typo3-coding-guidelines-url]
+  - [PSR-12][psr12-url]
+  - Das GSB Distribution Paket enthält alle notwendigen Konfigurationen um die Coding Standards zu prüfen.
+  - In diesem Paket wird jedes Feature möglichst TYPO3 Core nah entwickelt.
+
+### Release Workflow
+Zum erstellen eines neuen Releases folgt der Release Workflow folgende Schritte:
+- Erstellen eines neuen Merge Requests in GitLab mit dem Zielbranch `release` und dem Quellbranch `main`
+- Auswählen des Templates "release"
+- Ergänzen der Release Informationen
+- Merge Request mergen
+
+Vor dem start der Entwicklung an einer neuen Versione sind folgende Schritte durchzuführen:
+- Erstellen eines neuen Merge Requests in GitLab mit dem Zielbranch `main` und dem Quellbranch `release`
+- Mergen des Merge Requests
 
 
 <!-- LICENSE -->
@@ -201,3 +217,6 @@ gsb@itzbund.de
 [typo3-url]: https://get.typo3.org/
 [typo3-licenses-url]: https://typo3.org/project/licenses
 [typo3-requirements-url]: https://get.typo3.org/version/12#system-requirements
+[typo3-coding-guidelines-url]: https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/CodingGuidelines/Index.html
+[psr12-url]: https://www.php-fig.org/psr/psr-12/
+
