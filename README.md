@@ -95,7 +95,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```sh
    composer config gitlab-token.git.gsb-itzbund.de <personal_access_token>
    ```
-   Alternavitiv kannst du auch einen GitLab-Deploy-Token verwenden:
+   Alternativ kannst du auch einen GitLab-Deploy-Token verwenden:
    ```sh
     composer config gitlab-token.git.gsb-itzbund.de <deploy_token_username> <deploy_token>
     ```
@@ -167,7 +167,7 @@ Wenn du mitentwickelst, halte dich an unsere Standards
   - In diesem Paket wird jedes Feature möglichst TYPO3 Core nah entwickelt.
 
 ### Release Workflow
-Zum erstellen eines neuen Releases folgt der Release Workflow folgende Schritte:
+Zum Erstellen eines neuen Releases folgt der Release Workflow folgende Schritte:
 - Erstellen eines neuen Merge Requests in GitLab mit dem Zielbranch `release` und dem Quellbranch `main`
 - Auswählen des Templates "release"
 - Ergänzen der Release Informationen
