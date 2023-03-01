@@ -87,7 +87,6 @@ defined('TYPO3') or die('Access denied.');
                     'renderType' => 'selectSingle',
                     'type' => 'select',
                 ],
-            'displayCond' => 'FIELD:slider:=:0',
             'exclude' => '1',
             'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns',
             'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.description',

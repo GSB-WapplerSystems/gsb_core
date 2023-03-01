@@ -13,7 +13,7 @@ lib.language {
             NO {
                 doNotLinkIt = 1
                 linkWrap = <li>|</li>
-                stdWrap.override = De || En
+                stdWrap.override = Deutsch || English
                 stdWrap {
                     typolink {
                         parameter.data = page:uid
@@ -33,5 +33,5 @@ lib.language {
             }
         }
     }
-    wrap = <ul id="language_menu" class="language-menu list-unstyled">|</ul>
+    wrap = <ul id="language_menu" class="language-menu list-unstyled language-menu list-unstyled d-sm-flex gap-4">|</ul>
 }

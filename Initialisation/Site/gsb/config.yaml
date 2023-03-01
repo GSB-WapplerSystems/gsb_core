@@ -16,7 +16,6 @@ languages:
     flag: de
     languageId: 0
     base: /
-    solr_core_read: core_de
   - title: English
     enabled: true
     typo3Language: default
@@ -31,8 +30,6 @@ languages:
     flag: gb
     languageId: 1
     base: /en/
-    solr_core_read: core_en
-luxletterUnsubscribePid: /
 rootPageId: 1
 routes:
   - route: sitemap.xml
@@ -41,10 +38,3 @@ routes:
   - route: robots.txt
     type: staticText
     content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
-solr_enabled_read: true
-solr_host_read: solr
-solr_path_read: /solr/
-solr_port_read: '8983'
-solr_scheme_read: http
-solr_use_write_connection: false
-websiteTitle: 'GSB Standardmandant'
