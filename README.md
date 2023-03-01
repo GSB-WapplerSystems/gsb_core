@@ -113,6 +113,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    composer exec typo3 setup --dbname=*DBNAME*
    ```
 1. .htaccess im Public-Ordner anlegen
+Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/root-htaccess als Basis für die .htaccess Datei
 1. Rechte setzen
     ```sh
    chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/´
