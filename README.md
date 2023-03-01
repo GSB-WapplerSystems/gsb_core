@@ -182,7 +182,7 @@ Vor dem start der Entwicklung an einer neuen Versione sind folgende Schritte dur
 <!-- LICENSE -->
 ## Lizenz
 
-Der Government Side Builder wird unter der GNU General Public License, Version 2 vertrieben. Siehe `LICENSE.txt` für mehr Informationen zur Lizenz.
+Der Government Side Builder wird unter der GNU General Public License, Version 2 vertrieben. Siehe `LICENSE` für mehr Informationen zur Lizenz.
 
 Und [TYPO3's Open Source Licenses][typo3-licenses-url] für einen generellen Überblick zu den Lizenzen im TYPO3 Projekt.
 
