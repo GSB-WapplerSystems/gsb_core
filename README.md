@@ -115,7 +115,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
 
 1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen. Ab "V 12.2 mit vendor/bin/typo3 ..." arbeiten 
    ```sh
-   vendor/bin/typo3 setup --dbname=*DBNAME*
+   vendor/bin/typo3 setup --dbname=*DBNAME* --admin-username #ADMIN# --admin-user-password #PASSWORD#
    ```
 1. .htaccess im Public-Ordner anlegen
 Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/root-htaccess als Basis für die .htaccess Datei
@@ -127,6 +127,11 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    ```sh
    vendor/bin/typo3 extension:setup
    ```
+1. (Temporär) _assets-Ordner unter public löschen und einmal composer install ausführen
+   ```sh
+   rm -R public/_assets && cp distribution-package-gsb_template/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-template/Resources/ -R
+   ```
+
 1. Ab 12.2 ist https obligatorisch 
    ```sh
    SSL-Certs erstellen und httpd einrichten 
