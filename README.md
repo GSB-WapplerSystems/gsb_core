@@ -108,7 +108,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    composer require itzbund/gsb-template
    ```
 
-1. (Temporär) Füge den GSB-Template den Public Ordner hinzu. Public-Ordner kann über die Releases (GSB Distribution.zip) bezogen werden.
+1. (Temporär) Füge dem GSB-Template den Public Ordner hinzu. Public-Ordner kann über die Releases (GSB Distribution.zip) bezogen werden.
    ```sh
    cp Public /opt/typo3/vendor/itzbund/gsb-template/Resources/Public
    ```
@@ -123,7 +123,7 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
     ```sh
    chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/
    ```
-1. Installiere die Extensions. (Anmerung V 12.2 über vendor gehen)
+1. Installiere die Extensions. (Anmerkung V 12.2 über vendor gehen)
    ```sh
    vendor/bin/typo3 extension:setup
    ```
