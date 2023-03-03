@@ -132,12 +132,6 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    rm -R public/_assets && cp distribution-package-gsb_template/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-template/Resources/ -R
    ```
 
-1. Ab 12.2 ist https obligatorisch 
-   ```sh
-   SSL-Certs erstellen und httpd einrichten 
-   ```
-
-
 
 <!-- GETTING STARTED -->
 ## Erste Schritte mit DDEV
