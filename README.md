@@ -108,20 +108,30 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    composer require itzbund/gsb-template
    ```
 
-1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen
+1. (Temporär) Füge den GSB-Template den Public Ordner hinzu. Public-Ordner kann über die Releases (GSB Distribution.zip) bezogen werden.
    ```sh
-   composer exec typo3 setup --dbname=*DBNAME*
+   cp Public /opt/typo3/vendor/itzbund/gsb-template/Resources/Public
+   ```
+
+1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen. Ab "V 12.2 mit vendor/bin/typo3 ..." arbeiten 
+   ```sh
+   vendor/bin/typo3 setup --dbname=*DBNAME*
    ```
 1. .htaccess im Public-Ordner anlegen
 Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/root-htaccess als Basis für die .htaccess Datei
-1. Rechte setzen
+1. Rechte setzen. Je nach Linux-Distribution bitte entsprechend anpassen.
     ```sh
-   chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/´
+   chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/
    ```
-1. Installiere die Extensions
+1. Installiere die Extensions. (Anmerung V 12.2 über vendor gehen)
    ```sh
-   composer exec typo3 extension:setup
+   vendor/bin/typo3 extension:setup
    ```
+1. Ab 12.2 ist https obligatorisch 
+   ```sh
+   SSL-Cert einrichten 
+   ```
+
 
 
 <!-- GETTING STARTED -->
