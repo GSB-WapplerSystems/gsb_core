@@ -129,7 +129,7 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    ```
 1. Ab 12.2 ist https obligatorisch 
    ```sh
-   SSL-Cert einrichten 
+   SSL-Certs erstellen und httpd einrichten 
    ```
 
 
