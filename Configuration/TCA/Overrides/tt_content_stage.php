@@ -174,6 +174,7 @@ defined('TYPO3') || die();
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage',
         'stage',
         'tx_stage',
+        'default',
     ];
 
     $stagePositionPalettes = [

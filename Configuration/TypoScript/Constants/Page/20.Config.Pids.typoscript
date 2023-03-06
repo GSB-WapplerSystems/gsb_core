@@ -5,7 +5,7 @@ config {
         # cat=Default Templateset (ITZBund): advanced/160/110; type=text; label=Meta-Sysfolder:PageID
         Meta                            = 66
         # cat=Default Templateset (ITZBund): advanced/160/120; type=text; label=MetaTop-Sysfolder:PageID
-        MetaTop                         = 25
+        MetaTop                         = 66
         # cat=Default Templateset (ITZBund): advanced/160/130; type=text; label=Footernav-Sysfolder:PageID
         Footer                          = 25
         # cat=Default Templateset (ITZBund): advanced/160/140; type=text; label=Minimap-Sysfolder:PageID

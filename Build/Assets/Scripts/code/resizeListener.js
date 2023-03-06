@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 function detachMetaMobile () {
   document.querySelector('.meta-mobile').appendChild(document.querySelector('.meta-wrapper'))
 }
 
+// eslint-disable-next-line no-unused-vars
 function detachMetaDesktop () {
   document.querySelector('.meta-desktop').appendChild(document.querySelector('.meta-wrapper'))
 }
@@ -14,10 +16,10 @@ function resize () {
   function mediaQueryListener (mediaQuery) {
     if (mediaQuery.matches) {
       // do something
-      detachMetaDesktop()
+      // detachMetaDesktop()
     } else {
       // do something
-      detachMetaMobile()
+      // detachMetaMobile()
     }
   }
 

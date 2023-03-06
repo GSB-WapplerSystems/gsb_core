@@ -1,13 +1,13 @@
 import Swiper from 'swiper/bundle'
 
-if (document.querySelector('.swiper-fade-col-4')) {
+if (document.querySelector('.swiper-fade-col-3')) {
   const SwiperFade3Col = function () {
-    const customSwiper = document.querySelectorAll('.swiper-fade-col-4')
+    const customSwiper = document.querySelectorAll('.swiper-fade-col-3')
     let i
     for (i = 0; i < customSwiper.length; i++) {
-      customSwiper[i].classList.add('swiper-fade-col-4-' + i)
+      customSwiper[i].classList.add('swiper-fade-col-3-' + i)
       /* eslint-disable no-unused-vars */
-      const swiperFadeCol4 = new Swiper('.swiper-fade-col-4-' + i, {
+      const swiperFadeCol4 = new Swiper('.swiper-fade-col-3-' + i, {
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 10,
