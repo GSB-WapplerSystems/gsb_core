@@ -1,0 +1,37 @@
+config.additionalHeaders {
+  10.header = strict-transport-security:max-age=31536000
+  20.header = X-Frame-Options:SAMEORIGIN
+  30.header = X-Xss-Protection: 1; mode=block
+  40.header = X-Content-Type-Options: nosniff
+  50.header = Referrer-Policy:strict-origin
+  60.header = Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(self), clipboard-write=(self), gamepad=(), speaker-selection=()
+  70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self'; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample'; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline'; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+}
+
+[applicationContext matches "/^Development/"]
+  config.additionalHeaders.70.header = Content-Security-Policy: base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+[end]
+
+[feature("cspForBitvTestTools")]
+  config.additionalHeaders.70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+[END]
+
+[feature("crossOriginEmbedderPolicy")]
+  config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: require-corp
+[END]
+
+[feature("cspForBitvTestTools") && feature("crossOriginEmbedderPolicy")]
+  config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: unsafe-none
+[END]
+
+[feature("crossOriginOpenerPolicy")]
+  config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: same-origin
+[END]
+
+[feature("crossOriginOpenerPolicy") && feature("cspForBitvTestTools")]
+  config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: unsafe-none
+[END]
+
+[feature("crossOriginResourcePolicy")]
+  config.additionalHeaders.90.header = Cross-Origin-Resource-Policy: same-origin
+[END]
