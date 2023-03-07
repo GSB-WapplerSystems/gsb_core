@@ -9,11 +9,11 @@ config.additionalHeaders {
 }
 
 [applicationContext matches "/^Development/"]
-  config.additionalHeaders.70.header = Content-Security-Policy: base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+  config.additionalHeaders.70.header = Content-Security-Policy: base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
 [end]
 
 [feature("cspForBitvTestTools")]
-  config.additionalHeaders.70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+  config.additionalHeaders.70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
 [END]
 
 [feature("crossOriginEmbedderPolicy")]
