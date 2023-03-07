@@ -26,12 +26,9 @@ html {
   }
 }
 
-.frame-type-ce_columns2 .frame,
-.frame-type-ce_columns3 .frame,
-.frame-type-ce_columns4 .frame,
+.frame-type-ce_slider .frame,
 .frame-type-ce_container .frame,
 .frame-type-ce_grid .frame,
 .container-wrapper {
-  overflow: hidden;
   position: relative;
 }

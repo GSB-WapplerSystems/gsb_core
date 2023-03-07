@@ -185,6 +185,7 @@ defined('TYPO3') || die();
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gallery',
         'gallery',
         'tx_gallery',
+        'default',
     ];
 
     $galleryPositionPalettes = [

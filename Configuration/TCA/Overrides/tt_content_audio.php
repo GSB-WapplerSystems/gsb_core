@@ -167,6 +167,7 @@ defined('TYPO3') || die();
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.audio',
         'audio',
         'tx_audio',
+        'default',
     ];
 
     $tempAudioTypes = [

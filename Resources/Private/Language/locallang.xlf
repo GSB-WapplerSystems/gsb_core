@@ -3,14 +3,14 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
         <header/>
         <body>
-            <trans-unit id="footer.serviceheader" resname="footer.serviceheader">
+            <trans-unit id="footer.serviceheader" xml:space="preserve">
                 <source>Federal Government Services</source>
             </trans-unit>
-			<trans-unit id="footer.language-switcher">
+			<trans-unit id="footer.language-switcher" xml:space="preserve">
                 <source>Language switcher</source>
             </trans-unit>
             <trans-unit id="element.pflichtfeld.properties.text" xml:space="preserve">
-                <target>Required</target>
+                <source>Required</source>
             </trans-unit>
             <trans-unit id="opens" xml:space="preserve">
                 <source>Opens</source>
@@ -61,24 +61,24 @@
                 <source>Searchterm</source>
             </trans-unit>
             <trans-unit id="header.searchopen" xml:space="preserve">
-                <target>open search</target>
+                <source>open search</source>
             </trans-unit>
             <trans-unit id="header.magnifyingglass" xml:space="preserve">
                 <source>Magnifying glass</source>
             </trans-unit>
-            <trans-unit id="header.youarehere" resname="header.youarehere" xml:space="preserve">
+            <trans-unit id="header.youarehere" xml:space="preserve">
                 <source>You are here</source>
             </trans-unit>
-            <trans-unit id="header.linktohomepage" resname="header.linktohomepage" xml:space="preserve">
+            <trans-unit id="header.linktohomepage" xml:space="preserve">
                 <source>Link to homepage</source>
             </trans-unit>
-            <trans-unit id="supplement.areamenu" resname="supplement.areamenu" xml:space="preserve">
+            <trans-unit id="supplement.areamenu" xml:space="preserve">
                 <source>Area menu</source>
             </trans-unit>
-            <trans-unit id="supplement.aside" resname="supplement.aside" xml:space="preserve">
+            <trans-unit id="supplement.aside" xml:space="preserve">
                 <source>Additional information</source>
             </trans-unit>
-            <trans-unit id="footer.metanav" resname="footer.metanav" xml:space="preserve">
+            <trans-unit id="footer.metanav" xml:space="preserve">
                 <source>Meta navigation</source>
             </trans-unit>
             <trans-unit id="footer.socialmediaheader" xml:space="preserve">

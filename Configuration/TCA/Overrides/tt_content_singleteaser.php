@@ -17,6 +17,7 @@ defined('TYPO3') || die();
             'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
             'gsb_singleteaser',
             'tx_singleteaser',
+            'default',
         ]
     );
 
