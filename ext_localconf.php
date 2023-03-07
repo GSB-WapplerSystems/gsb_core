@@ -11,15 +11,23 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die('Access denied.');
 
-/***************
- * Define TypoScript as content rendering template
- */
-$GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/';
-$GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/ContentElement/';
+(function () {
+    // @todo Check after implementation of  Feature https://forge.typo3.org/issues/100056
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= true;
+    // Future Security Headers
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginEmbedderPolicy'] ??= false;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginOpenerPolicy'] ??= false;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginResourcePolicy'] ??= false;
 
-// Register custom EXT:form configuration
-if (ExtensionManagementUtility::isLoaded('form')) {
-    ExtensionManagementUtility::addTypoScriptSetup(trim('
+    /***************
+     * Define TypoScript as content rendering template
+     */
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/';
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/ContentElement/';
+
+    // Register custom EXT:form configuration
+    if (ExtensionManagementUtility::isLoaded('form')) {
+        ExtensionManagementUtility::addTypoScriptSetup(trim('
         module.tx_form {
             settings {
                 yamlConfigurations {
@@ -35,7 +43,8 @@ if (ExtensionManagementUtility::isLoaded('form')) {
             }
         }
     '));
-}
+    }
 
-// Add default RTE configuration for the template package
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Configuration/RTE/Default.yaml';
+    // Add default RTE configuration for the template package
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Configuration/RTE/Default.yaml';
+})();
