@@ -187,6 +187,14 @@ video {
   border-color: $darkblue;
 }
 
+.mejs__captions-text,
+.mejs__captions-text * {
+  background: $darkblue;
+  box-shadow: 0 0 0 $darkblue;
+  display: inline-block;
+  padding: 5px;
+}
+
 .mejs__horizontal-volume-current {
   background: $darkblue;
   border-right-color: $white;
