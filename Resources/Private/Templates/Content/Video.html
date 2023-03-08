@@ -20,14 +20,14 @@
                     <f:then>
                         <video controls height="100%" poster="{f:uri.image(image: '{data_tx_video_poster_image.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" width="100%" src="{f:uri.typolink(parameter: '{data.tx_video_video}')}">
                             <f:if condition="{data.tx_video_caption}">
-                                <track default kind="subtitles" src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}" srclang="{f:cObject(typoscriptObjectPath: 'lib.language')}">
+                                <track default kind="subtitles" src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}" srclang="de">
                             </f:if>
                         </video>
                     </f:then>
                     <f:else>
                         <video controls height="100%" preload="none" style="width:100%; height:100%;" width="100%" src="{f:uri.typolink(parameter: '{data.tx_video_video}')}">
                             <f:if condition="{data.tx_video_caption}">
-                                <track default kind="subtitles" src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}" srclang="{f:cObject(typoscriptObjectPath: 'lib.language')}">
+                                <track default kind="subtitles" src="{f:uri.typolink(parameter: '{data.tx_video_caption}')}" srclang="de">
                             </f:if>
                         </video>
                     </f:else>
