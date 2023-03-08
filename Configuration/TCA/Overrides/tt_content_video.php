@@ -244,7 +244,7 @@ defined('TYPO3') || die();
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Video,
-                        --palette--;;tx_video_mainstage,tx_video_video,tx_video_videourl,tx_video_poster_image,tx_video_poster_video,tx_video_caption,
+                        --palette--;;tx_video_mainstage,tx_video_video,tx_video_videourl,tx_video_poster_image,tx_video_caption,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
