@@ -10,12 +10,18 @@ editor:
   config:
     toolbar:
       items:
+        - clipboard
+        - '|'
+        - undo
+        - redo
+        - '|'
         - style
         - heading
         # grouping separator
         - '|'
         - bold
         - italic
+        - underline
         - subscript
         - superscript
         - softhyphen
@@ -31,8 +37,6 @@ editor:
         - removeFormat
         - undo
         - redo
-        - '|'
-        - insertTable
         - '|'
         - specialCharacters
         - horizontalLine
@@ -52,7 +56,7 @@ editor:
       definitions:
         - { name: "Lead", element: "p", classes: [ 'lead' ] }
         - { name: "Button Primary", element: "p", classes: [ 'btn btn-primary' ] }
-        - { name: "Small", element: "small", classes: [ ] }
+        - { name: "Small", element: "small", classes: [ 'small' ] }
         - { name: "Muted", element: "span", classes: [ 'text-muted' ] }
 
     alignment:
@@ -70,5 +74,3 @@ editor:
         - mergeTableCells
         - tableProperties
         - tableCellProperties
-
-    extraPlugins:
