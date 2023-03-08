@@ -111,13 +111,9 @@ page {
             main < styles.content.get
             main.select.where = colPos=1
 
-            # Supplement
-            supplement < styles.content.get
-            supplement.select.where = colPos=2
-
             # Bottom
             bottom < styles.content.get
-            bottom.select.where = colPos=3
+            bottom.select.where = colPos=2
         }
 
         # set extension name
