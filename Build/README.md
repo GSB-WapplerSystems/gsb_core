@@ -1,38 +1,9 @@
-### Installation
-
-Navigate into own extension and use the following command lines:
-
-```bash
-# using npm
-npm i / npm ci
-
-# using yarn
-yarn install
-```
-
-### Building files
-
-```bash
-# Currently webpack build has 4 default scripts
-# 
-# "dev-server": "encore dev-server"
-# "dev": "encore dev"
-# "watch": "encore dev --watch"
-# "build": "encore production"
-#
-# Production build has no sourcemapping for displaying all scss-files into dev-tools
-
-# using npm
-npm run dev|dev|watch|build
-
-# using yarn
-yarn dev-server|dev|watch|build
-```
-
-### Migrating from current projects
-
-- [TYPO3](Documentation/TYPO3.md)
-
-### Setting favicon
-
-- [Favicon](Documentation/Favicon.md)
+## Frontend-Build meta information
+--------------------------
+- The processes for the frontend build take place in the ./Build/ folder
+- Node Version 18 LTS is used for the work https://nodejs.org/en/
+- For development the latest bootstrap library is used https://getbootstrap.com/
+- Webpack is used to compile the frontend https://webpack.js.org/
+- Two important linters are worked with in this project. The ESlint and stylelint are used.
+More details can be found in the package.json.
+- In addition, postcss is also used to implement routine operations for the SCSS/CSS. https://postcss.org/
