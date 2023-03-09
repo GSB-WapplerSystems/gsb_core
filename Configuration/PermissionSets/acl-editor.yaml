@@ -36,13 +36,28 @@ resources:
   sys_file_storage:
     permissions: ['read']
     fields: '*'
+  sys_redirect:
+    permissions: [ 'read', 'write' ]
+    fields: '*'
   sys_note:
     permissions: ['read', 'write']
     fields: '*'
   tt_content:
     permissions: ['read', 'write']
     fields: '*'
-    types: ["text"]
+    types:
+      - "ce_container"
+      - "ce_grid"
+      - "ce_tabs"
+      - "form_formframework"
+      - "gsb_singleteaser"
+      - "header"
+      - "image"
+      - "shortcut"
+      - "stage"
+      - "text"
+      - "textpic"
+      - "video"
 
 files:
   # file-related permissions
