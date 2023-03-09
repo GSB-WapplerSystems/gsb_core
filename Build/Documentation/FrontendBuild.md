@@ -15,3 +15,19 @@ such as blindness or other impairments.
 - In addition, there is the package swiper for the presentation of a slideshow.
 Here too, the theme is simplified development for people with disabilities.
 
+## The path to be able to develop
+1. Go to the level of the build folder
+2. Install node js
+   ```sh
+   npm install
+   ```
+3. Check the package.json in the build folder to see which scripts you can use to assemble the js and the SCSS/CSS.
+There are different possibilities.
+
+4. An example of the compiled files for the product system looks like this:
+   ```sh
+   npm run build
+   ```
+
+5. After the example above has been executed, a folder is created under */Resources/Public/* with all relevant files.
+The following folders should be there.
