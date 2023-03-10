@@ -7,4 +7,4 @@ This module documents all **content elements**, **plugins** and any other import
 >
 > Documentation is as important for the editors who use the extension as it is for the extension creator.
 
-link to [GIT](git.pixelpark.com:dig-pix-cgn/project/dev-typo3/gsb_template)
+link to [GIT](https://git.gsb-itzbund.de/gsb11/local-dev)
