@@ -51,7 +51,7 @@ class DecodeViewHelper extends AbstractViewHelper
         $decodedValue = json_decode($json, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('The provided argument is invalid JSON.', (integer) 1358440054);
+            throw new Exception('The provided argument is invalid JSON.', (int)1358440054);
         }
 
         return $decodedValue;
