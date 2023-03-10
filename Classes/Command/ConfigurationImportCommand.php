@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace ITZBund\GsbTemplate\Command;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -18,8 +20,6 @@ use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
  */
 class ConfigurationImportCommand extends Command
 {
-
-    const SUCCESS = 0;
 
     private \TYPO3\CMS\Core\Package\PackageManager $packageManager;
     private \TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader $yamlFileLoader;
@@ -55,7 +55,7 @@ class ConfigurationImportCommand extends Command
 
         }
 
-        return self::SUCCESS;
+        return Command::SUCCESS;
     }
 
 
@@ -84,12 +84,6 @@ class ConfigurationImportCommand extends Command
         }
     }
 
-    /**
-     * @param string $table
-     * @param array[] $config
-     * @param OutputInterface $output
-     * @return void
-     */
     private function importTables(string $table, array $config, OutputInterface $output): void
     {
         $mode = $config['mode'] ?? 'append';
