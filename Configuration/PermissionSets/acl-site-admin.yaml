@@ -1,0 +1,18 @@
+imports:
+  - { resource: "acl-editor-in-chief.yaml" }
+
+label: "[GSB Distribution][ACL] Site Administator"
+modules:
+  workspaces:
+    - 'workspaces_admin'
+
+resources:
+  tt_content:
+    permissions: ['read', 'write']
+    fields: '*'
+    types: ["html"]
+
+widgets:
+  - 'sysLogErrors'
+  - 'typeOfUsers'
+  - 't3securityAdvisories'

@@ -1,4 +1,4 @@
-base: 'https://docker-ddev-compose-gsbt3.pixelpark.docker/'
+base: /
 errorHandling:
   - errorCode: 404
     errorHandler: Page
