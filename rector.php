@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use Ssch\TYPO3Rector\FileProcessor\TypoScript\Rector\v9\v0\FileIncludeToImportStatementTypoScriptRector;
 
 use Rector\Config\RectorConfig;
 use Rector\Core\Configuration\Option;
@@ -90,5 +91,5 @@ return static function (RectorConfig $rectorConfig): void {
     ]);
 
     // Modernize your TypoScript include statements for files and move from <INCLUDE /> to @import use the FileIncludeToImportStatementVisitor (introduced with TYPO3 9.0)
-    $rectorConfig->rule(\Ssch\TYPO3Rector\FileProcessor\TypoScript\Rector\v9\v0\FileIncludeToImportStatementTypoScriptRector::class);
+    $rectorConfig->rule(FileIncludeToImportStatementTypoScriptRector::class);
 };

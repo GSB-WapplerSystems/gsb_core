@@ -10,7 +10,6 @@ tt_content.stage {
             fieldName = tx_stage_file
             table = tt_content
         }
-
         as = data_tx_stage_file
     }
 }

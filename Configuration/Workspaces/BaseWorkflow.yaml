@@ -1,0 +1,4 @@
+workspaces:
+  mode: 'replace'
+  entries:
+    - { name: 'Base Workflow', description: 'Base Workflow', stages: [ 'Draft', 'Review', 'Live' ], publishAccess: [ 'Editor' ], reviewAccess: [ 'Editor' ], baseStage: 'Draft' }

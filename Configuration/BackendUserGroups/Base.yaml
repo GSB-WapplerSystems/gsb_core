@@ -1,0 +1,4 @@
+BackendUserGroups:
+  mode: "replace"
+  entries:
+    - { name: "Editor", description: "Editor", modules: [ "web_layout", "web_list", "web_view"]}

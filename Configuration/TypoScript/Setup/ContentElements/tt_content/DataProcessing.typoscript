@@ -4,7 +4,6 @@ page.10.dataProcessing {
     references.data = levelmedia: -1, slide
     as = media
   }
-
   20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   20 {
     special = directory
@@ -13,7 +12,6 @@ page.10.dataProcessing {
     includeSpacer = 1
     as = menuMain
   }
-
   30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   30 {
     entryLevel = 1
@@ -21,7 +19,6 @@ page.10.dataProcessing {
     levels = 6
     as = menuSub
   }
-
   40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   40 {
     special = directory
@@ -29,7 +26,6 @@ page.10.dataProcessing {
     levels = 1
     as = menuMeta
   }
-
   50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   50 {
     special = directory
@@ -37,7 +33,6 @@ page.10.dataProcessing {
     levels = 1
     as = menuMetaTop
   }
-
   60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   60 {
     special = directory
@@ -45,7 +40,6 @@ page.10.dataProcessing {
     levels = 1
     as = menuMetaMain
   }
-
   70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   70 {
     special = directory

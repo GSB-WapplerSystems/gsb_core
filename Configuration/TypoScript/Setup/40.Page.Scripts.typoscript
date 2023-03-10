@@ -1,5 +1,5 @@
 page {
-    includeJSFooter  {
-        screen              = EXT:gsb_template/Resources/Public/JavaScripts/screen.js
+    includeJSFooter {
+        screen = EXT:gsb_template/Resources/Public/JavaScripts/screen.js
     }
 }

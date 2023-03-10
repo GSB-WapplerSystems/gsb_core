@@ -21,13 +21,12 @@ lib.navMinimap {
             CUR.doNotLinkIt = 1
             CUR.stdWrap.htmlSpecialChars = 1
 
-            CUR <.NO
+            CUR < .NO
             CUR {
                 wrapItemAndSub = <li class="breadcrumb-item"><strong>|</strong></li>
                 doNotLinkIt = 1
             }
         }
-
         2 < .1
         2 = TMENU
         2 {

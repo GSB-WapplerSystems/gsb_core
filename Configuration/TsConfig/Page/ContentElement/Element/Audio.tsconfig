@@ -9,6 +9,5 @@ mod.wizards.newContentElement.wizardItems.common {
             }
         }
     }
-
     show := addToList(audio)
 }
