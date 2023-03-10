@@ -16,15 +16,14 @@ such as blindness or other impairments.
 Here too, the theme is simplified development for people with disabilities.
 
 ### The path to be able to develop
-1. Go to the level of the build folder
+1. Go to the level of the **gsb_template/Build** folder
 2. Install node js
    ```sh
    npm install
    ```
 3. Check the package.json in the build folder to see which scripts you can use to assemble the js and the SCSS/CSS.
 There are different possibilities.
-
-4. An example of the compiled files for the product system looks like this:
+An example of the compiled files for the product system looks like this:
    ```sh
    npm run build
    ```
