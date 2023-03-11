@@ -1,6 +1,16 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
+
+		-
+			message: "#^Return type \\(mixed\\) of method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) should be covariant with return type \\(string\\) of method TYPO3Fluid\\\\Fluid\\\\Core\\\\ViewHelper\\\\ViewHelperInterface\\:\\:renderStatic\\(\\)$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php

@@ -1,9 +1,9 @@
 lib.teaser = CONTENT
 lib.teaser {
-    table = tt_content
-    select {
-        pidInList = 24
-        orderBy = sorting
-        where = colPos=1
-    }
+  table = tt_content
+  select {
+    pidInList = 24
+    orderBy = sorting
+    where = colPos=1
+  }
 }

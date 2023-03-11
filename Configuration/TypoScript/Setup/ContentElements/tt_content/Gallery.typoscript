@@ -1,32 +1,15 @@
 tt_content.gallery = FLUIDTEMPLATE
 tt_content.gallery {
-    partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content/
-    templateName = Gallery
-    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    dataProcessing.10 {
-        if.isTrue.field = gallery_file
-        references {
-            fieldName = gallery_file
-            table = tt_content
-        }
-
-        as = data_gallery_file
+  partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
+  templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content/
+  templateName = Gallery
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = gallery_file
+    references {
+      fieldName = gallery_file
+      table = tt_content
     }
-}
-
-tt_content.gallery = FLUIDTEMPLATE
-tt_content.gallery {
-    partialRootPaths.0 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.0 = EXT:gsb_template/Resources/Private/Templates/Content/
-    templateName = Gallery
-    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    dataProcessing.10 {
-        if.isTrue.field = gallery_file
-        references {
-            fieldName = gallery_file
-            table = tt_content
-        }
-        as = data_gallery_file
-    }
+    as = data_gallery_file
+  }
 }
