@@ -18,7 +18,7 @@ use ITZBund\GsbTemplate\Configuration\Discovery\ExtendSiteConfigurationLocator;
 class ExtendSiteConfigurationRegistry
 {
     /**
-     * @var array
+     * @var array[]
      */
     protected array $extendSiteConfigurations = [];
 

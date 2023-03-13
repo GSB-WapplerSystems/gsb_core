@@ -35,23 +35,23 @@ class DecodeViewHelper extends AbstractViewHelper
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param RenderingContextInterface $renderingContext
-     * @return mixed
+     * @return string
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-        if (empty($arguments)) {
-            return null;
+        if ($arguments === ['']) {
+            return 'null';
         }
         $json = $arguments['json'];
 
-        if (empty($json)) {
-            return null;
+        if ($json === '' || $json === null) {
+            return '';
         }
 
         $decodedValue = json_decode($json, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('The provided argument is invalid JSON.', (int)1358440054);
+            throw new Exception('The provided argument is invalid JSON.', 1358440054);
         }
 
         return $decodedValue;

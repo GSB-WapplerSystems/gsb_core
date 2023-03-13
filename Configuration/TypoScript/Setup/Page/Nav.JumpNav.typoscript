@@ -1,3 +1,7 @@
-lib.jumpNav = TEXT
-lib.jumpNav.data = getIndpEnv:TYPO3_REQUEST_URL
-lib.jumpNav.dataWrap = <div class="skipnav" aria-label="{lll:EXT:gsb_template/Resources/Private/Language/locallang.xlf:header.jumpto}"><a href=" | #mainContent">{lll:EXT:gsb_template/Resources/Private/Language/locallang.xlf:header.jumptocontent}</a></div>
+lib {
+  jumpNav = TEXT
+  jumpNav {
+    data = getIndpEnv:TYPO3_REQUEST_URL
+    dataWrap = <div class="skipnav" aria-label="{lll:EXT:gsb_template/Resources/Private/Language/locallang.xlf:header.jumpto}"><a href=" | #mainContent">{lll:EXT:gsb_template/Resources/Private/Language/locallang.xlf:header.jumptocontent}</a></div>
+  }
+}

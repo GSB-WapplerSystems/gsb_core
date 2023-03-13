@@ -1,15 +1,15 @@
 tt_content.stage = FLUIDTEMPLATE
 tt_content.stage {
-    partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content
-    templateName = Stage
-    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    dataProcessing.10 {
-        if.isTrue.field = tx_stage_file
-        references {
-            fieldName = tx_stage_file
-            table = tt_content
-        }
-        as = data_tx_stage_file
+  partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
+  templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content
+  templateName = Stage
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = tx_stage_file
+    references {
+      fieldName = tx_stage_file
+      table = tt_content
     }
+    as = data_tx_stage_file
+  }
 }
