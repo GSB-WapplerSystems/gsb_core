@@ -26,6 +26,16 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+
+		-
+			message: "#^Only booleans are allowed in a ternary operator condition, string\\|null given\\.$#"
+			count: 2
+			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
