@@ -15,3 +15,13 @@ Resources/Private/Partials/Page/Header.html
 ```
 Resources/Private/Partials/Page/Header-Image.html
 ```
+
+```
+Resources/Private/Partials/Page/Header.Mainnav.html
+```
+
+```
+Resources/Private/Partials/Page/Header.Search.html
+```
+
+All these files are in rellation to the **Header.html**.
