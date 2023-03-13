@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/Tca.xlf" date="2018-07-31T109:48:17Z" product-name="gsb_template">
         <header/>
         <body>
-            <trans-unit id="video.video_title" xml:space="preserve">
+            <trans-unit id="video.video_title" resname="video.video_title">
                 <source>Video</source>
             </trans-unit>
-            <trans-unit id="video.video_description" xml:space="preserve">
+            <trans-unit id="video.video_description" resname="video.video_description">
                 <source>Puts a local or external youtube video on the page</source>
             </trans-unit>
-            <trans-unit id="audio.audio_title" xml:space="preserve">
+            <trans-unit id="audio.audio_title" resname="audio.audio_title">
                 <source>Audio</source>
             </trans-unit>
-            <trans-unit id="audio.audio_description" xml:space="preserve">
+            <trans-unit id="audio.audio_description" resname="audio.audio_description">
                 <source>Puts a local or external audio on the page</source>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_title" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_title" resname="stage.tx_stage_title">
                 <source>Stage</source>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_description" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_description" resname="stage.tx_stage_description">
                 <source>Inserts a stage module</source>
             </trans-unit>
-            <trans-unit id="grid.title" xml:space="preserve">
+            <trans-unit id="grid.title" resname="grid.title">
                 <target>Grid</target>
             </trans-unit>
-            <trans-unit id="grid.description" xml:space="preserve">
+            <trans-unit id="grid.description" resname="grid.description">
                 <target>Create a grid with any number of elements. Can also be switched to a slider can be switched to a slider.</target>
             </trans-unit>
-            <trans-unit id="grid.elements" xml:space="preserve">
+            <trans-unit id="grid.elements" resname="grid.elements">
                 <source>Grid elements</source>
             </trans-unit>
-            <trans-unit id="gallery.title" xml:space="preserve">
+            <trans-unit id="gallery.title" resname="gallery.title">
                 <source>Gallery</source>
             </trans-unit>
-            <trans-unit id="gallery.description" xml:space="preserve">
+            <trans-unit id="gallery.description" resname="gallery.description">
                 <source>Inserts a gallery element as a single image preview, tiles or slider</source>
             </trans-unit>
         </body>
