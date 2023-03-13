@@ -18,9 +18,9 @@ video {
   [type="button"]:not(:disabled),
   [type="reset"]:not(:disabled),
   [type="submit"]:not(:disabled) {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .mejs__container,
