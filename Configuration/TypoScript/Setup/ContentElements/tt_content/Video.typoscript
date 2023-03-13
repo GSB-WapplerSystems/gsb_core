@@ -21,13 +21,13 @@ tt_content.video {
         }
         as = data_tx_video_video
     }
-  dataProcessing.30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  dataProcessing.30 {
-      if.isTrue.field = tx_video_caption
-      references {
-          fieldName = tx_video_caption
-          table = tt_content
-      }
-      as = data_tx_video_caption
-  }
+    dataProcessing.30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.30 {
+        if.isTrue.field = tx_video_caption
+        references {
+            fieldName = tx_video_caption
+            table = tt_content
+        }
+        as = data_tx_video_caption
+    }
 }
