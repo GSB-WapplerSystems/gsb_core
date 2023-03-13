@@ -1,6 +1,7 @@
 <?php
 
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+
 return [
     'tx_stage' => [
         'provider' => SvgIconProvider::class,
