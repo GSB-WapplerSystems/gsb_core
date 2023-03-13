@@ -1,0 +1,7 @@
+workspaces:
+  mode: 'replace'
+  entries:
+    - { uid: 1, title: 'Einfacher Freigabeprozess', adminusers: 'be_groups_5,be_groups_7', members: 'be_groups_9', publish_access: 3,
+        previewlink_lifetime: 48, custom_stages: 0, stagechg_notification: 1, edit_notification_preselection: 2,
+        edit_allow_notificaton_settings: 3, publish_notification_preselection: 1, publish_allow_notificaton_settings: 3,
+        execute_notification_preselection: 3, execute_allow_notificaton_settings: 3 }

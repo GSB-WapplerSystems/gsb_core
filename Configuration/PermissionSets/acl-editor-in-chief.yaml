@@ -1,0 +1,23 @@
+imports:
+  - { resource: "acl-editor.yaml" }
+
+label: "[GSB Distribution][ACL] Editor in Chief"
+modules:
+  web:
+    - 'web_linkvalidator'
+    - 'web_RecyclerRecycler'
+  site:
+    - 'site_redirects'
+
+resources:
+  sys_redirect:
+    permissions: ['read', 'write']
+    fields: '*'
+
+files:
+  # file-related permissions
+  - replaceFile
+  - deleteFile
+  # folder-related permissions
+  - deleteFolder
+  - recursiveDeleteFolder
