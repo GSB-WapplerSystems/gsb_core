@@ -39,9 +39,11 @@ class SingleteaserPreviewRenderer extends StandardContentPreviewRenderer
                 $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'tx_stage_file'), $row);
                 $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'tx_stage_file', $row);
                 if (!empty($fileReferences)) {
+                    // @codeCoverageIgnoreStart
                     $linkedContent = '';
                     $content .= $this->linkEditContent($linkedContent, $row);
                     unset($linkedContent);
+                    // @codeCoverageIgnoreEnd
                 }
             }
         }
