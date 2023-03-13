@@ -150,7 +150,7 @@ final class AddTypoScriptFromSitePackageEvent
                 $newSysTemplateRows[] = $sysTemplateRow;
                 continue;
             }
-            if (in_array((int)($sysTemplateRow['pid'] ?? 0), $pidsBeforeSite, false)) {
+            if (in_array((int)($sysTemplateRow['pid'] ?? 0), $pidsBeforeSite, true)) {
                 $newSysTemplateRows[] = $sysTemplateRow;
                 // If there is a sys_template row *before* our site, we assume settings from above
                 // templates should "fall through", so we unset the clear flags. If this is not
