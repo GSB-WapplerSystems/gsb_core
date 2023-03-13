@@ -132,22 +132,22 @@ defined('TYPO3') or die('Access denied.');
             ],
             'displayCond' => 'FIELD:container_accordion_toggle:=:1',
         ],
-      'container_accordion_toggle_all' => [
-        'exclude' => 1,
-        'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
-        'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
-        'config' => [
-          'type' => 'check',
-          'renderType' => 'checkboxToggle',
-          'items' => [
-            [
-              0 => '0',
-              1 => '1',
+        'container_accordion_toggle_all' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '0',
+                        1 => '1',
+                    ],
+                ],
+                'default' => '0',
             ],
-          ],
-          'default' => '0',
         ],
-      ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns(
