@@ -1,16 +1,14 @@
 tt_content.video = FLUIDTEMPLATE
 tt_content.video {
-    partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content/
-    templateName = Video
-    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    dataProcessing.10 {
-        if.isTrue.field = tx_video_poster_image
-        references {
-            fieldName = tx_video_poster_image
-            table = tt_content
-        }
-        as = data_tx_video_poster_image
+  partialRootPaths.200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
+  templateRootPaths.200 = EXT:gsb_template/Resources/Private/Templates/Content/
+  templateName = Video
+  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.10 {
+    if.isTrue.field = tx_video_poster_image
+    references {
+      fieldName = tx_video_poster_image
+      table = tt_content
     }
     dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
     dataProcessing.20 {
