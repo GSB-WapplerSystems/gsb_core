@@ -93,7 +93,7 @@ class ConfigurationImportCommand extends Command
         foreach ($config['entries'] ?? [] as $entry) {
             if ($mode === 'update' && isset($entry['uid'])) {
                 $identifiers = ['uid' => $entry['uid']];
-                if ($conn->count('uid', $table, $identifiers)) {
+                if ($conn->count('uid', $table, $identifiers) > 0) {
                     $conn->update($table, $entry, $identifiers);
                     $output->writeln('Updated (mode=update, entry has uid): ' . json_encode($entry) . ' to database table ' . $table);
                 } else {

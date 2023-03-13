@@ -1,7 +1,7 @@
 page {
-    includeCSS {
-        screen = EXT:gsb_template/Resources/Public/StyleSheets/screen.css
-        print = EXT:gsb_template/Resources/Public/StyleSheets/print.css
-        print.media = print
-    }
+  includeCSS {
+    screen = EXT:gsb_template/Resources/Public/StyleSheets/screen.css
+    print = EXT:gsb_template/Resources/Public/StyleSheets/print.css
+    print.media = print
+  }
 }
