@@ -17,8 +17,8 @@ config {
   debug = {$config.debug}
   cache_period = 43200
   sendCacheHeaders = 1
-  intTarget = 
-  extTarget = 
+  intTarget =
+  extTarget =
   disablePrefixComment = 1
   index_enable = 1
   index_externals = 1

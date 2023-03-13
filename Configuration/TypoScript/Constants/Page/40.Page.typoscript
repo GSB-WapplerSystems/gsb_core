@@ -22,6 +22,6 @@ page {
     # cat=template: meta data/130/140; type=string; label=google
     google = notranslate
     # cat=template: meta data/130/150; type=string; label=google-site-verification
-    google-site-verification = 
+    google-site-verification =
   }
 }
