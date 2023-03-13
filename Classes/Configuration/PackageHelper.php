@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace ITZBund\GSBTemplate\Configuration;
@@ -63,7 +64,7 @@ class PackageHelper
     {
         $fieldDefinition['items'][] = [
             '-- None --',
-            ''
+            '',
         ];
         $currentValue = $fieldDefinition['row']['sitePackage'] ?? '';
         $gotCurrentValue = false;

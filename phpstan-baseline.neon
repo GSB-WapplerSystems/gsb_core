@@ -1,6 +1,31 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Command\\\\ConfigurationImportCommand\\:\\:importTables\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Command/ConfigurationImportCommand.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:get\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:getAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:\\$extendSiteConfigurations type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Method ITZBund\\\\GSBTemplate\\\\Configuration\\\\PackageHelper\\:\\:getSiteListForSiteModule\\(\\) has parameter \\$fieldDefinition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/PackageHelper.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php

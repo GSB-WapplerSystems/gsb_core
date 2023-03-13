@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace ITZBund\GsbTemplate\Command;
@@ -6,11 +7,11 @@ namespace ITZBund\GsbTemplate\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Symfony\Component\Finder\Finder;
-use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Package\PackageManager;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This command imports a configuration from a yaml file.
@@ -20,7 +21,6 @@ use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
  */
 class ConfigurationImportCommand extends Command
 {
-
     private \TYPO3\CMS\Core\Package\PackageManager $packageManager;
     private \TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader $yamlFileLoader;
 
@@ -52,12 +52,10 @@ class ConfigurationImportCommand extends Command
             if (file_exists($package->getPackagePath() . 'Configuration/BackendUserGroups')) {
                 $this->readAndImportConfiguration($package->getPackagePath() . 'Configuration/BackendUserGroups', $output);
             }
-
         }
 
         return Command::SUCCESS;
     }
-
 
     private function readAndImportConfiguration(string $path, OutputInterface $output): void
     {
@@ -77,11 +75,11 @@ class ConfigurationImportCommand extends Command
     {
         if (str_contains($path, 'Workspaces')) {
             return 'sys_workspace';
-        } elseif (str_contains($path, 'BackendUserGroups')) {
-            return 'be_groups';
-        } else {
-            return '';
         }
+        if (str_contains($path, 'BackendUserGroups')) {
+            return 'be_groups';
+        }
+        return '';
     }
 
     private function importTables(string $table, array $config, OutputInterface $output): void
@@ -90,24 +88,22 @@ class ConfigurationImportCommand extends Command
         $conn = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
         if ($mode === 'replace') {
             $conn->truncate($table);
-            $output->writeln('Emptied database table "'.$table.'"');
+            $output->writeln('Emptied database table "' . $table . '"');
         }
         foreach ($config['entries'] ?? [] as $entry) {
             if ($mode === 'update' && isset($entry['uid'])) {
                 $identifiers = ['uid' => $entry['uid']];
                 if ($conn->count('uid', $table, $identifiers)) {
                     $conn->update($table, $entry, $identifiers);
-                    $output->writeln('Updated (mode=update, entry has uid): '.json_encode($entry).' to database table '.$table);
+                    $output->writeln('Updated (mode=update, entry has uid): ' . json_encode($entry) . ' to database table ' . $table);
                 } else {
                     $conn->insert($table, $entry);
-                    $output->writeln('Added (mode=update, entry does not have uid): '.json_encode($entry).' to database table '.$table);
+                    $output->writeln('Added (mode=update, entry does not have uid): ' . json_encode($entry) . ' to database table ' . $table);
                 }
             } else {
                 $conn->insert($table, $entry);
-                $output->writeln('Added '.json_encode($entry).' to database table '.$table);
+                $output->writeln('Added ' . json_encode($entry) . ' to database table ' . $table);
             }
         }
     }
-
-
 }
