@@ -10,7 +10,6 @@ tt_content.video {
             fieldName = tx_video_poster_image
             table = tt_content
         }
-
         as = data_tx_video_poster_image
     }
 }

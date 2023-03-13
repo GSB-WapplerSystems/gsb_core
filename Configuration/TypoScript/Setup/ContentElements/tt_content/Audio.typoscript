@@ -10,7 +10,6 @@ tt_content.audio {
             fieldName = tx_audio_poster
             table = tt_content
         }
-
         as = data_tx_audio_poster
     }
 }

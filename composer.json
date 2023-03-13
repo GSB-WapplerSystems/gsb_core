@@ -8,6 +8,7 @@
 	"require": {
 		"php": "^8.1",
 		"b13/container": "dev-master@dev",
+		"b13/permission-sets": "dev-main@dev",
 		"typo3/cms-adminpanel": "^12.2",
 		"typo3/cms-backend": "^12.2",
 		"typo3/cms-belog": "^12.2",

@@ -6,6 +6,7 @@ namespace ITZBund\GsbTemplate\ViewHelpers\Format\Json;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -38,6 +39,9 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
+        if (empty($arguments)) {
+            return null;
+        }
         $json = $arguments['json'];
 
         if (empty($json)) {
@@ -47,7 +51,7 @@ class DecodeViewHelper extends AbstractViewHelper
         $decodedValue = json_decode($json, true);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            return null;
+            throw new Exception('The provided argument is invalid JSON.', (int)1358440054);
         }
 
         return $decodedValue;

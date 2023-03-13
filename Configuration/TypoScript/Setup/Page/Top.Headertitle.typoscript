@@ -2,19 +2,16 @@
 lib {
   headTitle = TEXT
   headTitle {
-      value = {$config.headTitle}
+    value = {$config.headTitle}
   }
-
   headerTitle = TEXT
   headerTitle {
-      data = page : title
+    data = page : title
   }
-
   headerDescription = TEXT
   headerDescription {
-      data = page : description
+    data = page : description
   }
-
   pageheader = TEXT
   pageheader {
     value = {page:title}

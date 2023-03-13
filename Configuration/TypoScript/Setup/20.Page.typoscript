@@ -11,7 +11,6 @@ page {
         10.stdWrap.noTrimWrap = | class="| gsb"|
         wrap = <body id="top"|>
     }
-
     headerData {
         10 = HMENU
         10 {
@@ -32,7 +31,6 @@ page {
             }
         }
     }
-
     10 = FLUIDTEMPLATE
     10 {
         # Template names will be generated automatically by converting the applied
@@ -61,27 +59,23 @@ page {
             }
             ifEmpty = Default
         }
-
         templateRootPaths {
             0 = EXT:gsb_template/Resources/Private/Templates/Page/
             1 = {$page.fluidtemplate.templateRootPath}
         }
-
         partialRootPaths {
             0 = EXT:gsb_template/Resources/Private/Partials/Page/
             1 = {$page.fluidtemplate.partialRootPath}
         }
-
         layoutRootPaths {
             0 = EXT:gsb_template/Resources/Private/Layouts/Page/
             1 = {$page.fluidtemplate.layoutRootPath}
         }
-
         variables {
             # navigation & element libs
-            jumpNav             = < lib.jumpNav
-            navBreadcrumb       = < lib.navBreadcrumb
-            navMinimap          = < lib.navMinimap
+            jumpNav = < lib.jumpNav
+            navBreadcrumb = < lib.navBreadcrumb
+            navMinimap = < lib.navMinimap
 
             socialLinks-Facebook = TEXT
             socialLinks-Facebook.value = {$config.socialLinks.Facebook}
@@ -93,16 +87,16 @@ page {
             socialLinks-YouTube.value = {$config.socialLinks.YouTube}
 
             // getting absRefPrefix dynamically
-            absRefPrefix       = TEXT
+            absRefPrefix = TEXT
             absRefPrefix.value = {$config.absRefPrefix}
 
             # general title and vars
-            copyright           = < lib.copyright
-            pageheader          = < lib.pageheader
-            headtitle           = < lib.headTitle
-            headertitle         = < lib.headerTitle
-            headerDescription   = < lib.headerDescription
-            navlanguage         = < lib.language
+            copyright = < lib.copyright
+            pageheader = < lib.pageheader
+            headtitle = < lib.headTitle
+            headertitle = < lib.headerTitle
+            headerDescription = < lib.headerDescription
+            navlanguage = < lib.language
             # Top
             top < styles.content.get
             top.select.where = colPos=0
@@ -111,21 +105,15 @@ page {
             main < styles.content.get
             main.select.where = colPos=1
 
-            # Supplement
-            supplement < styles.content.get
-            supplement.select.where = colPos=2
-
             # Bottom
             bottom < styles.content.get
-            bottom.select.where = colPos=3
+            bottom.select.where = colPos=2
         }
-
         # set extension name
         extbase {
             controllerExtensionName = gsb_template
         }
     }
-
     meta {
         viewport = {$page.meta.viewport}
         robots = {$page.meta.robots}
@@ -135,7 +123,6 @@ page {
         X-UA-Compatible {
             attribute = http-equiv
         }
-
         # Google
         google = {$page.meta.google}
         google-site-verification = {$page.meta.google-site-verification}
@@ -150,7 +137,7 @@ lib {
             pidInList = 135
             selectFields = title
             join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
-            where.data =field:recordUid
+            where.data = field:recordUid
             where.intval = 1
             where.wrap = uid_foreign=|
         }

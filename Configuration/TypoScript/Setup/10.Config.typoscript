@@ -7,7 +7,6 @@ config {
     pageTitleFirst = 1
     pageTitleSeparator = -
     pageTitleSeparator.noTrimWrap = | | |
-    metaCharset = utf-8
     doctype = html5
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
@@ -18,8 +17,8 @@ config {
     debug = {$config.debug}
     cache_period = 43200
     sendCacheHeaders = 1
-    intTarget =
-    extTarget =
+    intTarget = 
+    extTarget = 
     disablePrefixComment = 1
     index_enable = 1
     index_externals = 1
