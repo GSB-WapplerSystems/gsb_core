@@ -11,7 +11,6 @@ plugin.tx_seo {
                         additionalWhere = no_index = 0
                     }
                 }
-
                 news {
                     provider = GeorgRinger\News\Seo\NewsXmlSitemapDataProvider
                     config {
@@ -25,13 +24,10 @@ plugin.tx_seo {
                             fieldToParameterMap {
                                 uid = tx_news_pi1[news]
                             }
-
                             additionalGetParameters {
                                 tx_news_pi1.controller = News
                                 tx_news_pi1.action = detail
                             }
-
-                            useCacheHash = 1
                         }
                     }
                 }

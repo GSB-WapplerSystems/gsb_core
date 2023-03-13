@@ -5,7 +5,7 @@ lib.navBreadcrumb {
     10 = HMENU
     10 {
         special = rootline
-        special.range =  0 | -1
+        special.range = 0 | -1
 
         1 = TMENU
         1 {
@@ -16,15 +16,13 @@ lib.navBreadcrumb {
                 wrapItemAndSub = <li class="breadcrumb-item">|</li>
                 stdWrap.htmlSpecialChars = 1
             }
-
-            CUR <.NO
+            CUR < .NO
             CUR {
                 wrapItemAndSub = <li class="breadcrumb-item"><strong>|</strong></li>
                 doNotLinkIt = 1
             }
         }
     }
-
     # Add news title if on single view
     20 = RECORDS
     20 {
@@ -41,7 +39,6 @@ lib.navBreadcrumb {
         stdWrap.wrap = <li class="breadcrumb-item"><strong>|</strong></li>
         stdWrap.required = 1
     }
-
     # Add glossary meaning if on detail view
     30 = RECORDS
     30 {

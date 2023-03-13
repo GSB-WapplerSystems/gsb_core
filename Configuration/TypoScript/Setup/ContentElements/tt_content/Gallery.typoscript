@@ -10,7 +10,6 @@ tt_content.gallery {
             fieldName = gallery_file
             table = tt_content
         }
-
         as = data_gallery_file
     }
 }

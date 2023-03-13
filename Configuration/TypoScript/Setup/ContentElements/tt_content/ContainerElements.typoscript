@@ -15,7 +15,6 @@ lib.containerContentElement {
                 fieldName = grid_bgimage
                 table = tt_content
             }
-
             as = data_bgimage
         }
     }
