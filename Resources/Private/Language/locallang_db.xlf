@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T109:48:17" product-name="gsb_template">
+    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
         <header/>
         <body>
 			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
@@ -137,9 +137,6 @@
             </trans-unit>
             <trans-unit id="stage.tx_stage_position" xml:space="preserve">
                 <source>Stage text position</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_bg" xml:space="preserve">
-                <source>Stage background</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
                 <source>Salutation</source>
@@ -338,9 +335,6 @@
             </trans-unit>
             <trans-unit id="grid.bg.light.description" xml:space="preserve">
                 <source>Switch font-color from dark to light</source>
-            </trans-unit>
-            <trans-unit id="grid.title" xml:space="preserve">
-                <source>Grid</source>
             </trans-unit>
             <trans-unit id="grid.description" xml:space="preserve">
                 <source>Create a grid with any number of elements</source>
