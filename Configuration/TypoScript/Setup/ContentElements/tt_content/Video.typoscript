@@ -10,6 +10,29 @@ tt_content.video {
       fieldName = tx_video_poster_image
       table = tt_content
     }
+
     as = data_tx_video_poster_image
+  }
+
+  dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.20 {
+    if.isTrue.field = tx_video_video
+    references {
+      fieldName = tx_video_video
+      table = tt_content
+    }
+
+    as = data_tx_video_video
+  }
+
+  dataProcessing.30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.30 {
+    if.isTrue.field = tx_video_caption
+    references {
+      fieldName = tx_video_caption
+      table = tt_content
+    }
+
+    as = data_tx_video_caption
   }
 }

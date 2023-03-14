@@ -73,7 +73,7 @@ function youtube () {
       const dsgvo = element.closest('.dsgvo')
       const playerWrapper = element.closest('.player-wrapper')
       const src = dsgvo.getAttribute('data-src')
-      const track = dsgvo.getAttribute('data-track')
+      const track = dsgvo.getAttribute('data-caption')
 
       if (track) {
         dsgvo.innerHTML += '<video class="youtube" style="width:100%;height:100%;" controls autoplay preload="none" src="' + src + '"><track src="' + track + '" srclang="' + langShort + '" label="' + langLong + '" kind="subtitles" type="text/vtt"></video>'
