@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang.xlf" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang.xlf" date="2022-12-11T109:48:17" product-name="gsb_template">
         <header/>
         <body>
             <trans-unit id="footer.serviceheader" resname="footer.serviceheader">
@@ -123,9 +123,6 @@
             <trans-unit id="date.dayfull" resname="date.dayfull">
                 <source>%A, %d, %H:%M</source>
             </trans-unit>
-            <trans-unit id="date.time" resname="date.time">
-                <source>, %H:%M</source>
-            </trans-unit>
             <trans-unit id="date.month" resname="date.month">
                 <source>%b</source>
             </trans-unit>
@@ -158,9 +155,6 @@
             </trans-unit>
             <trans-unit id="event.time" resname="event.time">
                 <source>o'clock</source>
-            </trans-unit>
-            <trans-unit id="event.calendar" resname="event.calendar">
-                <source>Save</source>
             </trans-unit>
             <trans-unit id="event.month.1" resname="event.month.1">
                 <source>January</source>
