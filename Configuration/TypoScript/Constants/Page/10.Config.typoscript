@@ -29,11 +29,11 @@ config {
   # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
   languageLocal = de_DE.UTF-8
   # cat=Default Templateset (ITZBund): advanced/150/260; type=boolean; label=Spam protect email addresses
-  spamProtectEmailAddresses = 
+  spamProtectEmailAddresses =
   # cat=Default Templateset (ITZBund): advanced/150/270; type=text; label=Spam protect email addresses atSubst
-  spamProtectEmailAddresses_atSubst = 
+  spamProtectEmailAddresses_atSubst =
   # cat=Default Templateset (ITZBund): advanced/150/280; type=text; label=absRefPrefix
-  absRefPrefix = 
+  absRefPrefix =
 
   socialLinks {
     # cat=Social Media Links (MP): advanced/160/100; type=string; label=Facebook:Url
@@ -48,10 +48,10 @@ config {
 }
 
 [siteLanguage("languageId") == "1"]
-config {
-  # cat=Default Templateset (ITZBund): advanced/150/230; type=text; label=Language
-  language = en
-  # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
-  languageLocal = en_GB.UTF-8
-}
+  config {
+    # cat=Default Templateset (ITZBund): advanced/150/230; type=text; label=Language
+    language = en
+    # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
+    languageLocal = en_GB.UTF-8
+  }
 [global]
