@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GSBTemplate\Configuration;
+namespace ITZBund\GsbTemplate\Configuration;
 
 /*
  * This file is part of TYPO3 CMS-based extension "gsb_template".
@@ -59,6 +59,8 @@ class PackageHelper
     /**
      * "itemsProcFunc" method adding a list of available "*site*" extension
      * keys or "gsb_template" as select drop down items. Used in Site backend module.
+     *
+     * @param array[] $fieldDefinition
      */
     public function getSiteListForSiteModule(array &$fieldDefinition): void
     {

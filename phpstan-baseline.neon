@@ -21,7 +21,7 @@ parameters:
 			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
 
 		-
-			message: "#^Method ITZBund\\\\GSBTemplate\\\\Configuration\\\\PackageHelper\\:\\:getSiteListForSiteModule\\(\\) has parameter \\$fieldDefinition with no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\PackageHelper\\:\\:getSiteListForSiteModule\\(\\) has parameter \\$fieldDefinition with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Configuration/PackageHelper.php
 
