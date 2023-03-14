@@ -59,6 +59,9 @@ class PackageHelper
     /**
      * "itemsProcFunc" method adding a list of available "*site*" extension
      * keys or "gsb_template" as select drop down items. Used in Site backend module.
+     *
+     * @param array[] $fieldDefinition
+     * @return void
      */
     public function getSiteListForSiteModule(array &$fieldDefinition): void
     {
