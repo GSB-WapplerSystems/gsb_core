@@ -3,35 +3,34 @@
 ################
 
 config {
-    no_cache = {$config.no_cache}
-    pageTitleFirst = 1
-    pageTitleSeparator = -
-    pageTitleSeparator.noTrimWrap = | | |
-    metaCharset = utf-8
-    doctype = html5
-    removeDefaultJS = {$config.removeDefaultJS}
-    inlineStyle2TempFile = 1
-    moveJsFromHeaderToFooter = 1
-    spamProtectEmailAddresses = {$config.spamProtectEmailAddresses}
-    spamProtectEmailAddresses_atSubst = {$config.spamProtectEmailAddresses_atSubst}
-    admPanel = {$config.admPanel}
-    debug = {$config.debug}
-    cache_period = 43200
-    sendCacheHeaders = 1
-    intTarget =
-    extTarget =
-    disablePrefixComment = 1
-    index_enable = 1
-    index_externals = 1
-    index_metatags = 0
-    headerComment = {$config.headerComment}
+  no_cache = {$config.no_cache}
+  pageTitleFirst = 1
+  pageTitleSeparator = -
+  pageTitleSeparator.noTrimWrap = | | |
+  doctype = html5
+  removeDefaultJS = {$config.removeDefaultJS}
+  inlineStyle2TempFile = 1
+  moveJsFromHeaderToFooter = 1
+  spamProtectEmailAddresses = {$config.spamProtectEmailAddresses}
+  spamProtectEmailAddresses_atSubst = {$config.spamProtectEmailAddresses_atSubst}
+  admPanel = {$config.admPanel}
+  debug = {$config.debug}
+  cache_period = 43200
+  sendCacheHeaders = 1
+  intTarget =
+  extTarget =
+  disablePrefixComment = 1
+  index_enable = 1
+  index_externals = 1
+  index_metatags = 0
+  headerComment = {$config.headerComment}
 
-    // Language Settings
-    htmlTag_setParams = lang="{$config.language}" dir="{$config.languageDir}" class="no-js" data-bs-theme="light"
+  // Language Settings
+  htmlTag_setParams = lang="{$config.language}" dir="{$config.languageDir}" class="no-js" data-bs-theme="light"
 
-    // Compression and concatenation of CSS and JS files
-    compressJs = {$config.compressJs}
-    compressCss = {$config.compressCss}
-    concatenateJs = {$config.concatenateJs}
-    concatenateCss = {$config.concatenateCss}
+  // Compression and concatenation of CSS and JS files
+  compressJs = {$config.compressJs}
+  compressCss = {$config.compressCss}
+  concatenateJs = {$config.concatenateJs}
+  concatenateCss = {$config.concatenateCss}
 }

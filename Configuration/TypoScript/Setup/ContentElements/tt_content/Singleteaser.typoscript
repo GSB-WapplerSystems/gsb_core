@@ -12,14 +12,15 @@ tt_content.gsb_singleteaser {
     200 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
   }
   templateName = Singleteaser
-  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  dataProcessing.10 {
-    if.isTrue.field = image
-    references {
-      fieldName = image
-      table = tt_content
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      if.isTrue.field = image
+      references {
+        fieldName = image
+        table = tt_content
+      }
+      as = files
     }
-    as = files
   }
-  dataProcessing.78911002 < plugin.tx_content_animations.dataProcessing.78911002
 }

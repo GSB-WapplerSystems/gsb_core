@@ -1,14 +1,13 @@
 mod.wizards.newContentElement.wizardItems.common {
-    elements {
-        gallery {
-            iconIdentifier = tx_gallery
-            title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:gallery.title
-            description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:gallery.description
-            tt_content_defValues {
-                CType = gallery
-            }
-        }
+  elements {
+    gallery {
+      iconIdentifier = tx_gallery
+      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:gallery.title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:gallery.description
+      tt_content_defValues {
+        CType = gallery
+      }
     }
-
-    show := addToList(gallery)
+  }
+  show := addToList(gallery)
 }

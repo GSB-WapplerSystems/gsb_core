@@ -9,29 +9,29 @@ config.additionalHeaders {
 }
 
 [applicationContext matches "/^Development/"]
-  config.additionalHeaders.70.header = Content-Security-Policy: base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
-[end]
+  config.additionalHeaders.70.header = Content-Security-Policy: base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net ajax.googleapis.com; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+[global]
 
 [feature("cspForBitvTestTools")]
-  config.additionalHeaders.70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
-[END]
+  config.additionalHeaders.70.header = Content-Security-Policy: upgrade-insecure-requests; base-uri 'self'; frame-ancestors 'self'; worker-src 'self' blob:; form-action 'self' *.w3.org; default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'report-sample' *.w3.org cdn.jsdelivr.net ajax.googleapis.com; font-src 'self'; style-src 'self' 'unsafe-inline' 'report-sample'; img-src 'self' data: 'self'; media-src 'self' 'unsafe-inline'; child-src 'self'; frame-src 'self' 'unsafe-inline' *.w3.org; connect-src 'self' 'unsafe-inline'; object-src 'none'; manifest-src 'self'
+[global]
 
 [feature("crossOriginEmbedderPolicy")]
   config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: require-corp
-[END]
+[global]
 
 [feature("cspForBitvTestTools") && feature("crossOriginEmbedderPolicy")]
   config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: unsafe-none
-[END]
+[global]
 
 [feature("crossOriginOpenerPolicy")]
   config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: same-origin
-[END]
+[global]
 
 [feature("crossOriginOpenerPolicy") && feature("cspForBitvTestTools")]
   config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: unsafe-none
-[END]
+[global]
 
 [feature("crossOriginResourcePolicy")]
   config.additionalHeaders.90.header = Cross-Origin-Resource-Policy: same-origin
-[END]
+[global]
