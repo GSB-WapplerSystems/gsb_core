@@ -43,29 +43,6 @@
       }
     }
   }
-
-  &-silhouette {
-    &::after {
-      bottom: -8px;
-      display: block;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-    }
-
-    &-1 {
-      &::after {
-        background-image: svg-load("../Images/wave.svg", fill=$white);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        content: "";
-        display: block;
-        height: 80px;
-        transform: rotate(180deg);
-        width: 100%;
-      }
-    }
-  }
 }
 
 .row-cols-lg-2 > .col,
