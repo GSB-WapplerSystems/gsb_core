@@ -1,75 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_1col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_1col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_1col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\ckeditor.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\ckeditor.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\ckeditor" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_2col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_2col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_2col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_1col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_1col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_1col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_3col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_3col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_3col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_2col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_2col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_2col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_4col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_4col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_4col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_3col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_3col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_3col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_1col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_1col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_1col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_4col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_4col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_4col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_2col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_2col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_2col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_1col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_1col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_1col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_3col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_3col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_3col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_2col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_2col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_2col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_4col.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_4col.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\Swiper\swiper_fade_4col" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_3col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_3col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_3col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\checkOS" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\dpx_info" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\kio\main" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\main.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\main.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\main" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mainNavigation.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mainNavigation.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mainNavigation" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mediaelements.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mediaelements.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\mediaelements" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\modalGallery.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\modalGallery.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\modalGallery" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\modalGallery.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\modalGallery.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\modalGallery" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\resizeListener.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\resizeListener.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\resizeListener" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\resizeListener.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\resizeListener.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\resizeListener" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\scrollTo.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\scrollTo.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\scrollTo" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\scrollTo.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\scrollTo.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\scrollTo" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\totop.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\totop.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\Scripts\totop" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\sticky.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\sticky.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\sticky" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\ckeditor.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\ckeditor.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\ckeditor" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\totop.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\totop.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\totop" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\kio.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\kio.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\kio" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\mediaelements.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\mediaelements.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\mediaelements" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\mediaelements.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\mediaelements.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\mediaelements" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\print.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\print.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\print" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\print.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\print.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\print" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\screen.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\screen.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\screen" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\screen.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\screen.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\screen" />
-</testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\swiper.js">
-<testcase time="0" name="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\swiper.js" classname="D:\Projekte\Docker\BMAS-Denkfabrik-TYPO3-10\docker-ddev-composer\_packages\gsb_template\Build\Assets\swiper" />
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\swiper.js">
+<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\swiper.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\swiper" />
 </testsuite>
 </testsuites>
