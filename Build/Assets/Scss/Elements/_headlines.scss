@@ -29,15 +29,17 @@ h6,
 }
 
 .kicker {
-  background: $orange;
-  border-radius: 4px;
-  color: $black;
-  display: inline-block;
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  line-height: 1;
-  margin-bottom: 8px;
-  padding: 4px 5px 3px;
+  span {
+    background: $orange;
+    border-radius: 4px;
+    color: $black;
+    display: inline-block;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1;
+    margin-bottom: 8px;
+    padding: 4px 5px 3px;
+  }
 
   .stage-content & {
     margin-bottom: 16px;
