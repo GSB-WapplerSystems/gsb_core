@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GSBTemplate\Configuration;
+namespace ITZBund\GsbTemplate\Configuration;
 
 /*
  * This file is part of TYPO3 CMS-based extension "gsb_template".
