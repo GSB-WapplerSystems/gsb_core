@@ -61,7 +61,6 @@ class PackageHelper
      * keys or "gsb_template" as select drop down items. Used in Site backend module.
      *
      * @param array[] $fieldDefinition
-     * @return void
      */
     public function getSiteListForSiteModule(array &$fieldDefinition): void
     {
