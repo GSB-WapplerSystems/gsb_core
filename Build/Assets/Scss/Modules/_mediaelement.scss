@@ -18,9 +18,9 @@ video {
   [type="button"]:not(:disabled),
   [type="reset"]:not(:disabled),
   [type="submit"]:not(:disabled) {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .mejs__container,
@@ -31,6 +31,11 @@ video {
     position: absolute;
     top: 0;
     width: 100%;
+  }
+
+  .mejs__overlay {
+    align-items: flex-end;
+    justify-content: flex-start;
   }
 }
 
@@ -174,7 +179,35 @@ video {
 }
 
 .mejs__controls {
-  background-color: $gray-800 !important;
+  background-color: $blue-100 !important;
+}
+
+.mejs__horizontal-volume-total {
+  background: $white;
+  border-color: $darkblue;
+}
+
+.mejs__captions-text,
+.mejs__captions-text * {
+  background: $darkblue;
+  box-shadow: 0 0 0 $darkblue;
+  display: inline-block;
+  padding: 5px;
+}
+
+.mejs__horizontal-volume-current {
+  background: $darkblue;
+  border-right-color: $white;
+}
+
+.mejs__time,
+.mejs__button > button {
+  color: $darkblue;
+}
+
+.mejs__time-current,
+.mejs__time-handle-content {
+  background: $darkblue;
 }
 
 .mejs__captions-selector-label,
@@ -198,6 +231,8 @@ video {
 
 .mejs__overlay-button {
   border-radius: 50%;
+  margin-bottom: 50px;
+  margin-left: 10px;
 }
 
 .mejs__horizontal-volume-slider,
@@ -205,7 +240,7 @@ video {
   &:hover,
   &:focus,
   &:active {
-    outline-color: $white !important;
+    outline-color: $darkblue !important;
   }
 }
 

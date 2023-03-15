@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use ITZBund\GsbTemplate\Preview\VideoPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -14,31 +15,10 @@ defined('TYPO3') || die();
             [
                 'config' =>
                     [
-                        'fieldControl' =>
-                            [
-                                'linkPopup' =>
-                                    [
-                                        'options' =>
-                                            [
-                                                'blindLinkOptions' => 'mail,page,folder,url',
-                                                'title' => 'Link',
-                                                'windowOpenParameters' => 'height=500,width=800,status=0,menubar=0,scrollbars=1',
-                                            ],
-                                    ],
-                            ],
-                        'renderType' => 'link',
-                        'type' => 'input',
-                        'wizards' =>
-                            [
-                                'link' =>
-                                    [
-                                        'icon' => 'actions-wizard-link',
-                                        'params' =>
-                                            [
-                                                'allowedExtensions' => 'vtt,rst',
-                                            ],
-                                    ],
-                            ],
+                        'type' => 'file',
+                        'allowed' => 'vtt',
+                        'maxitems' => 1,
+                        'minitems' => 0,
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
@@ -48,85 +28,9 @@ defined('TYPO3') || die();
                 'config' =>
                     [
                         'type' => 'file',
-                        'foreign_table' => 'sys_file_reference',
-                        'foreign_field' => 'uid_foreign',
-                        'foreign_sortby' => 'sorting_foreign',
-                        'foreign_table_field' => 'tablenames',
-                        'foreign_match_fields' =>
-                            [
-                                'fieldname' => 'tx_video_poster_image',
-                            ],
-                        'foreign_label' => 'uid_local',
-                        'foreign_selector' => 'uid_local',
-                        'overrideChildTca' =>
-                            [
-                                'columns' =>
-                                    [
-                                        'uid_local' =>
-                                            [
-                                                'config' =>
-                                                    [
-                                                        'appearance' =>
-                                                            [
-                                                                'elementBrowserType' => 'file',
-                                                                'elementBrowserAllowed' => 'jpg,jpeg,svg,png,gif',
-                                                            ],
-                                                    ],
-                                            ],
-                                    ],
-                                'types' =>
-                                    [
-                                        0 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        1 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        2 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        3 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        4 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        5 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                    ],
-                            ],
-                        'appearance' =>
-                            [
-                                'useSortable' => 'tx_video_poster_image',
-                                'headerThumbnail' =>
-                                    [
-                                        'field' => 'uid_local',
-                                        'width' => '45',
-                                        'height' => '45c',
-                                    ],
-                                'enabledControls' =>
-                                    [
-                                        'info' => 'tx_video_poster_image',
-                                        'new' => false,
-                                        'dragdrop' => 'tx_video_poster_image',
-                                        'sort' => false,
-                                        'hide' => 'tx_video_poster_image',
-                                        'delete' => 'tx_video_poster_image',
-                                    ],
-                                'fileUploadAllowed' => '1',
-                                'showAllLocalizationLink' => '1',
-                                'showPossibleLocalizationRecords' => '1',
-                                'showSynchronizationLink' => '1',
-                            ],
-                        'maxitems' => '1',
-                        'minitems' => '0',
+                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                        'maxitems' => 1,
+                        'minitems' => 0,
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
@@ -136,71 +40,23 @@ defined('TYPO3') || die();
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_video_label',
                 'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_video_description',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'link',
+                    'type' => 'file',
+                    'allowed' => 'mp4,webm,ogg,youtube,vimeo',
+                    'maxitems' => 1,
+                    'minitems' => 0,
                 ],
             ],
         'tx_video_video' =>
             [
                 'config' =>
                     [
-                        'fieldControl' =>
-                            [
-                                'linkPopup' =>
-                                    [
-                                        'options' =>
-                                            [
-                                                'blindLinkOptions' => 'mail,page,folder,url',
-                                                'title' => 'Link',
-                                                'windowOpenParameters' => 'height=500,width=800,status=0,menubar=0,scrollbars=1',
-                                            ],
-                                    ],
-                            ],
-                        'renderType' => 'link',
-                        'type' => 'input',
-                        'wizards' =>
-                            [
-                                'link' =>
-                                    [
-                                        'icon' => 'actions-wizard-link',
-                                        'params' =>
-                                            [
-                                                'allowedExtensions' => 'mp4,webm,ogg',
-                                            ],
-                                    ],
-                            ],
+                        'type' => 'file',
+                        'allowed' => 'mp4,webm,ogg,youtube,vimeo',
+                        'maxitems' => 1,
+                        'minitems' => 0,
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
-            ],
-        'tx_video_videourl' =>
-            [
-                'config' =>
-                    [
-                        'fieldControl' =>
-                            [
-                                'linkPopup' =>
-                                    [
-                                        'options' =>
-                                            [
-                                                'blindLinkOptions' => 'file,mail,page,folder',
-                                                'title' => 'Link',
-                                                'windowOpenParameters' => 'height=500,width=800,status=0,menubar=0,scrollbars=1',
-                                            ],
-                                    ],
-                            ],
-                        'renderType' => 'link',
-                        'type' => 'input',
-                        'wizards' =>
-                            [
-                                'link' =>
-                                    [
-                                        'icon' => 'actions-wizard-link',
-                                    ],
-                            ],
-                    ],
-                'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_videourl',
             ],
         'tx_video_mainstage' =>
             [
@@ -221,6 +77,7 @@ defined('TYPO3') || die();
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.video',
         'video',
         'tx_video',
+        'default',
     ];
 
     $tempVideoTypes = [
@@ -242,7 +99,7 @@ defined('TYPO3') || die();
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Video,
-                        --palette--;;tx_video_mainstage,tx_video_video,tx_video_videourl,tx_video_poster_image,tx_video_poster_video,tx_video_caption,
+                        --palette--;;tx_video_mainstage,tx_video_video,tx_video_poster_image,tx_video_caption,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -259,4 +116,6 @@ defined('TYPO3') || die();
     ];
 
     $GLOBALS['TCA']['tt_content']['types'] += $tempVideoTypes;
+
+    $GLOBALS['TCA']['tt_content']['types']['video']['previewRenderer'] = VideoPreviewRenderer::class;
 })();

@@ -1,6 +1,42 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Command\\\\ConfigurationImportCommand\\:\\:importTables\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Command/ConfigurationImportCommand.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:get\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:getAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbTemplate\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:\\$extendSiteConfigurations type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbTemplate\\\\Configuration\\\\PackageHelper\\:\\:getSiteListForSiteModule\\(\\) has parameter \\$fieldDefinition with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Configuration/PackageHelper.php
+
+		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+
+		-
+			message: "#^Only booleans are allowed in a ternary operator condition, string\\|null given\\.$#"
+			count: 2
+			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbTemplate\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
+

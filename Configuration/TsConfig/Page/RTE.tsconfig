@@ -2,7 +2,7 @@
 #### RTE ####
 #############
 RTE {
-    default {
-        preset = default
-    }
+  default {
+    preset = default
+  }
 }

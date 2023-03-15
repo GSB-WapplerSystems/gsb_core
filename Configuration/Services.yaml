@@ -4,10 +4,40 @@ services:
     autowire: true
     autoconfigure: true
 
+  ITZBund\GsbTemplate\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  ITZBund\GsbTemplate\Command\ConfigurationImportCommand:
+    tags:
+      - name: console.command
+        schedulable: false
+        command: 'gsbtemplate:configuration:import'
+        description: 'A command that does import Configuration for Workspaces and Backend User Groups from yaml-Files.'
+
+  ITZBund\GsbTemplate\Configuration\PackageHelper:
+    public: true
+
+  ITZBund\GsbTemplate\Configuration\ExtendSiteConfigurationRegistry:
+    public: true
+
+  ITZBund\GsbTemplate\Configuration\Discovery\ExtendSiteConfigurationLocator:
+    public: true
+
+  ITZBund\GsbTemplate\EventListener\AddTypoScriptFromSitePackageEvent:
+    public: true
+    arguments:
+      - '@ITZBund\GsbTemplate\Configuration\PackageHelper'
+    tags:
+      - name: event.listener
+        identifier: 'gsb_template/add-typoscript-from-site-package'
+
+  ITZBund\GsbTemplate\EventListener\ExtendsSiteConfigurationEvent:
+    public: true
+    tags:
+      - name: event.listener
+        identifier: 'gsb_template/extends-site-configuration'
+
   ITZBund\GsbTemplate\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true
-
-  ITZBund\GsbTemplate\:
-    resource: '../Classes/*'
-    exclude: '../Classes/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

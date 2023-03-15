@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-07-31T109:48:17Z" product-name="gsb_template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/Tca.xlf" date="2022-12-01T109:48:17" product-name="gsb_template">
         <header/>
         <body>
-            <trans-unit id="video.video_title" xml:space="preserve">
+            <trans-unit id="video.video_title" resname="video.video_title">
                 <target>Video</target>
             </trans-unit>
-            <trans-unit id="video.video_description" xml:space="preserve">
+            <trans-unit id="video.video_description" resname="video.video_description">
                 <target>Legt ein lokales Video oder ein externes YouTube Video an</target>
             </trans-unit>
-            <trans-unit id="audio.audio_title" xml:space="preserve">
+            <trans-unit id="audio.audio_title" resname="audio.audio_title">
                 <target>Audio</target>
             </trans-unit>
-            <trans-unit id="audio.audio_description" xml:space="preserve">
+            <trans-unit id="audio.audio_description" resname="audio.audio_description">
                 <target>Legt ein lokales Audio oder ein externes Audio an</target>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_title" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_title" resname="stage.tx_stage_title">
                 <target>Bühne</target>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_description" xml:space="preserve">
+            <trans-unit id="stage.tx_stage_description" resname="stage.tx_stage_description">
                 <target>Fügt ein Bühnenelement ein</target>
             </trans-unit>
-            <trans-unit id="grid.title" xml:space="preserve">
+            <trans-unit id="grid.title" resname="grid.title">
                 <target>Raster</target>
             </trans-unit>
-            <trans-unit id="grid.description" xml:space="preserve">
+            <trans-unit id="grid.description" resname="grid.description">
                 <target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider
 umgeschaltet werden.</target>
             </trans-unit>
-            <trans-unit id="grid.elements" xml:space="preserve">
+            <trans-unit id="grid.elements" resname="grid.elements">
                 <target>Raster Elemente</target>
             </trans-unit>
-            <trans-unit id="gallery.title" xml:space="preserve">
+            <trans-unit id="gallery.title" resname="gallery.title">
                 <target>Galerie</target>
             </trans-unit>
-            <trans-unit id="gallery.description" xml:space="preserve">
+            <trans-unit id="gallery.description" resname="gallery.description">
                 <target>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</target>
             </trans-unit>
         </body>

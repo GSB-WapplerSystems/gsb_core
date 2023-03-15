@@ -15,83 +15,7 @@ defined('TYPO3') || die();
                 'config' =>
                     [
                         'type' => 'file',
-                        'foreign_table' => 'sys_file_reference',
-                        'foreign_field' => 'uid_foreign',
-                        'foreign_sortby' => 'sorting_foreign',
-                        'foreign_table_field' => 'tablenames',
-                        'foreign_match_fields' =>
-                            [
-                                'fieldname' => 'tx_audio_poster',
-                            ],
-                        'foreign_label' => 'uid_local',
-                        'foreign_selector' => 'uid_local',
-                        'overrideChildTca' =>
-                            [
-                                'columns' =>
-                                    [
-                                        'uid_local' =>
-                                            [
-                                                'config' =>
-                                                    [
-                                                        'appearance' =>
-                                                            [
-                                                                'elementBrowserType' => 'file',
-                                                                'elementBrowserAllowed' => 'jpg,jpeg,svg,png,gif',
-                                                            ],
-                                                    ],
-                                            ],
-                                    ],
-                                'types' =>
-                                    [
-                                        0 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        1 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        2 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        3 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        4 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                        5 =>
-                                            [
-                                                'showitem' => '--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette, --palette--;;filePalette',
-                                            ],
-                                    ],
-                            ],
-                        'appearance' =>
-                            [
-                                'useSortable' => 'tx_audio_poster',
-                                'headerThumbnail' =>
-                                    [
-                                        'field' => 'uid_local',
-                                        'width' => '45',
-                                        'height' => '45c',
-                                    ],
-                                'enabledControls' =>
-                                    [
-                                        'info' => 'tx_audio_poster',
-                                        'new' => false,
-                                        'dragdrop' => 'tx_audio_poster',
-                                        'sort' => false,
-                                        'hide' => 'tx_audio_poster',
-                                        'delete' => 'tx_audio_poster',
-                                    ],
-                                'fileUploadAllowed' => '1',
-                                'showAllLocalizationLink' => '1',
-                                'showPossibleLocalizationRecords' => '1',
-                                'showSynchronizationLink' => '1',
-                            ],
+                        'allowed' => 'jpg,jpeg,svg,png,gif',
                         'maxitems' => '1',
                         'minitems' => '0',
                     ],
@@ -102,31 +26,10 @@ defined('TYPO3') || die();
             [
                 'config' =>
                     [
-                        'fieldControl' =>
-                            [
-                                'linkPopup' =>
-                                    [
-                                        'options' =>
-                                            [
-                                                'blindLinkOptions' => 'mail,page,folder,url',
-                                                'title' => 'Link',
-                                                'windowOpenParameters' => 'height=500,width=800,status=0,menubar=0,scrollbars=1',
-                                            ],
-                                    ],
-                            ],
-                        'renderType' => 'link',
-                        'type' => 'input',
-                        'wizards' =>
-                            [
-                                'link' =>
-                                    [
-                                        'icon' => 'actions-wizard-link',
-                                        'params' =>
-                                            [
-                                                'allowedExtensions' => 'mp3,wav',
-                                            ],
-                                    ],
-                            ],
+                        'type' => 'file',
+                        'allowed' => 'mp3,wav',
+                        'maxitems' => '1',
+                        'minitems' => '0',
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_audio',
@@ -167,6 +70,7 @@ defined('TYPO3') || die();
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.audio',
         'audio',
         'tx_audio',
+        'default',
     ];
 
     $tempAudioTypes = [

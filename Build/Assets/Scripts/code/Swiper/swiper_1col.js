@@ -22,14 +22,14 @@ if (language === 'de') {
   paginationBulletMessage = 'Go to slide {{index}}'
 }
 
-if (document.querySelector('.swiper-slide-col-12')) {
+if (document.querySelector('.swiper-slide-col-1')) {
   const Swiper1Col = function () {
-    const customSwiper = document.querySelectorAll('.swiper-slide-col-12')
+    const customSwiper = document.querySelectorAll('.swiper-slide-col-1')
     let i
     for (i = 0; i < customSwiper.length; i++) {
-      customSwiper[i].classList.add('swiper-slide-col-12-' + i)
+      customSwiper[i].classList.add('swiper-slide-col-1-' + i)
       // eslint-disable-next-line no-new
-      new Swiper('.swiper-slide-col-12-' + i, {
+      new Swiper('.swiper-slide-col-1-' + i, {
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 10,
