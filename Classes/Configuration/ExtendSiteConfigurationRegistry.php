@@ -42,7 +42,7 @@ class ExtendSiteConfigurationRegistry
         if ($this->has($identifier)) {
             return $this->extendSiteConfigurations[$identifier];
         }
-        return $this->extendSiteConfigurations[$identifier];
+        return [];
     }
 
     public function getAll(): array
