@@ -63,11 +63,15 @@
 		"ssch/typo3-rector": "^1.1",
 		"symfony/yaml": "^6.1",
 		"typo3/coding-standards": "^0.7",
-		"typo3/testing-framework": "^7.0@dev"
+		"typo3/testing-framework": "dev-main",
+		"codeception/codeception": "*",
+		"codeception/module-asserts": "*",
+		"codeception/module-db": "*"
 	},
 	"autoload": {
 		"psr-4": {
-			"ITZBund\\GsbTemplate\\": "Classes/"
+			"ITZBund\\GsbTemplate\\": "Classes/",
+			"ITZBund\\GsbTemplate\\Tests\\": "Tests/"
 		}
 	},
 	"config": {
