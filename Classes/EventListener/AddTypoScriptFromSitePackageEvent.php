@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbTemplate\EventListener;
 
-use ITZBund\GSBTemplate\Configuration\PackageHelper;
+use ITZBund\GsbTemplate\Configuration\PackageHelper;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\TypoScript\IncludeTree\Event\AfterTemplatesHaveBeenDeterminedEvent;
 
