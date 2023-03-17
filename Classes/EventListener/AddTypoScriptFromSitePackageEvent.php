@@ -52,12 +52,18 @@ final class AddTypoScriptFromSitePackageEvent
         $setupFile = $package->getPackagePath() . 'Configuration/TypoScript/setup.typoscript';
 
         $constants = null;
-        if (file_exists($constantsFile)) {
-            $constants = (string)@file_get_contents($constantsFile);
+        if (file_exists($constantsFile) && is_readable($constantsFile)) {
+            $fileContent = file_get_contents($constantsFile);
+            if ($fileContent !== false) {
+                $constants = $fileContent;
+            }
         }
         $setup = null;
-        if (file_exists($setupFile)) {
-            $setup = (string)@file_get_contents($setupFile);
+        if (file_exists($setupFile) && is_readable($setupFile)) {
+            $fileContent = file_get_contents($setupFile);
+            if ($fileContent !== false) {
+                $setup = $fileContent;
+            }
         }
 
         if ($constants === null && $setup === null) {
@@ -150,7 +156,6 @@ final class AddTypoScriptFromSitePackageEvent
                 $newSysTemplateRows[] = $sysTemplateRow;
                 continue;
             }
-            // phpstan-ignore-next-line
             if (in_array((int)($sysTemplateRow['pid'] ?? 0), $pidsBeforeSite)) {
                 $newSysTemplateRows[] = $sysTemplateRow;
                 // If there is a sys_template row *before* our site, we assume settings from above

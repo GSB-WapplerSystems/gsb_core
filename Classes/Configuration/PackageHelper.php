@@ -26,15 +26,8 @@ use TYPO3\CMS\Core\Site\SiteFinder;
  */
 class PackageHelper
 {
-    /**
-     * @var PackageManager
-     */
-    protected $packageManager;
-
-    /**
-     * @var SiteFinder
-     */
-    protected $siteFinder;
+    protected PackageManager $packageManager;
+    protected SiteFinder $siteFinder;
 
     public function __construct(PackageManager $packageManager, SiteFinder $siteFinder)
     {

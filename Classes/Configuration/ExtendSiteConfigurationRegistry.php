@@ -29,6 +29,9 @@ class ExtendSiteConfigurationRegistry
 
     public function add(string $identifier, string $extendSiteConfigurationPath): void
     {
+        if (!isset($this->extendSiteConfigurations[$identifier])) {
+            $this->extendSiteConfigurations[$identifier] = [];
+        }
         $this->extendSiteConfigurations[$identifier][] = $extendSiteConfigurationPath;
     }
 
