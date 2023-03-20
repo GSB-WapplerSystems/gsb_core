@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0387460af74410878d1c51f36f3f5e54",
+    "content-hash": "c996aa3abbdc9d8deed45d01678b2a91",
     "packages": [
         {
             "name": "b13/container",
@@ -66,7 +66,7 @@
             "homepage": "https://b13.com",
             "support": {
                 "issues": "https://github.com/b13/container/issues",
-                "source": "https://github.com/b13/container/tree/master"
+                "source": "https://github.com/b13/container/tree/2.2.1"
             },
             "time": "2023-03-03T16:22:36+00:00"
         },
