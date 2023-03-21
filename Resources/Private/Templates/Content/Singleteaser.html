@@ -15,10 +15,12 @@
                         <f:render partial="Header/All" arguments="{_all}" />
                     </f:if>
                     <f:if condition="{data.bodytext}">
-                        <f:render partial="Media/Bodytext" arguments="{_all}"/>
+                        <div class="ce-bodytext">
+                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                        </div>
                     </f:if>
                     <f:if condition="{data.tx_link}">
-                        <f:render partial="Media/Button" arguments="{_all}"/>
+                        <f:render partial="Button" arguments="{_all}"/>
                     </f:if>
                 </div>
             </div>
