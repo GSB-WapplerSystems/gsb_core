@@ -147,54 +147,6 @@
             <trans-unit id="to.content" resname="to.content">
                 <source>Read more</source>
             </trans-unit>
-            <trans-unit id="event.when" resname="event.when">
-                <source>When</source>
-            </trans-unit>
-            <trans-unit id="event.where" resname="event.where">
-                <source>Where</source>
-            </trans-unit>
-            <trans-unit id="event.time" resname="event.time">
-                <source>o'clock</source>
-            </trans-unit>
-            <trans-unit id="event.month.1" resname="event.month.1">
-                <source>January</source>
-            </trans-unit>
-            <trans-unit id="event.month.2" resname="event.month.2">
-                <source>February</source>
-            </trans-unit>
-            <trans-unit id="event.month.3" resname="event.month.3">
-                <source>March</source>
-            </trans-unit>
-            <trans-unit id="event.month.4" resname="event.month.4">
-                <source>April</source>
-            </trans-unit>
-            <trans-unit id="event.month.5" resname="event.month.5">
-                <source>May</source>
-            </trans-unit>
-            <trans-unit id="event.month.6" resname="event.month.6">
-                <source>June</source>
-            </trans-unit>
-            <trans-unit id="event.month.7" resname="event.month.7">
-                <source>July</source>
-            </trans-unit>
-            <trans-unit id="event.month.8" resname="event.month.8">
-                <source>August</source>
-            </trans-unit>
-            <trans-unit id="event.month.9" resname="event.month.9">
-                <source>September</source>
-            </trans-unit>
-            <trans-unit id="event.month.10" resname="event.month.10">
-                <source>October</source>
-            </trans-unit>
-            <trans-unit id="event.month.11" resname="event.month.11">
-                <source>November</source>
-            </trans-unit>
-            <trans-unit id="event.month.12" resname="event.month.12">
-                <source>December</source>
-            </trans-unit>
-            <trans-unit id="event.list.read_more" resname="event.list.read_more">
-                <source>Read more</source>
-            </trans-unit>
             <trans-unit id="aside.sharepage" resname="aside.sharepage">
                 <source>Share page</source>
             </trans-unit>
@@ -240,17 +192,11 @@
             <trans-unit id="aside.copy" resname="aside.copy">
                 <source>Copy</source>
             </trans-unit>
-            <trans-unit id="event.header.counter" resname="event.header.counter">
-                <source>upcoming events</source>
-            </trans-unit>
             <trans-unit id="overview.header.counter" resname="overview.header.counter">
                 <source>article for</source>
             </trans-unit>
             <trans-unit id="medpub.header.counter" resname="medpub.header.counter">
                 <source>posts</source>
-            </trans-unit>
-            <trans-unit id="event.calendar" resname="event.calendar">
-                <source>Add to Calendar</source>
             </trans-unit>
             <trans-unit id="gallery.download" resname="gallery.download">
                 <source>Download</source>
