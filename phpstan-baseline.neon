@@ -26,6 +26,11 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+
+		-
 			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
 			count: 1
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
