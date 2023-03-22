@@ -35,6 +35,18 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
             ],
+        'tx_video_poster_video' =>
+            [
+                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_video_label',
+                'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_video_description',
+                'config' => [
+                    'type' => 'file',
+                    'allowed' => 'mp4,webm,ogg,youtube,vimeo',
+                    'maxitems' => 1,
+                    'minitems' => 0,
+                ],
+            ],
+
         'tx_video_video' =>
             [
                 'config' =>
@@ -46,6 +58,18 @@ defined('TYPO3') || die();
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
+            ],
+        'tx_video_mainstage' =>
+            [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_label',
+                'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_description',
+                'config' => [
+                    'type' => 'check',
+                    'items' => [
+                        ['LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_mainstage_checkbox', ''],
+                    ],
+                ],
             ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
@@ -76,6 +100,7 @@ defined('TYPO3') || die();
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Video,
+                    --palette--;;tx_video_mainstage,tx_video_video,tx_video_poster_image,tx_video_caption,
                         --palette--;;tx_video_video,tx_video_poster_image,tx_video_caption,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
