@@ -8,6 +8,17 @@
     margin-bottom: 0;
   }
 
+  .topcenter &,
+  .bottomcenter & {
+    display: flex;
+
+    .popup {
+      display: inline-block;
+      margin: 0 auto;
+      width: auto;
+    }
+  }
+
   .popup & {
     display: block;
   }

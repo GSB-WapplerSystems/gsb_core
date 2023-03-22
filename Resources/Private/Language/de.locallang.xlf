@@ -147,57 +147,6 @@
             <trans-unit id="to.content" xml:space="preserve">
                 <target>Zum Inhalt</target>
             </trans-unit>
-            <trans-unit id="event.when" xml:space="preserve">
-                <target>Wann</target>
-            </trans-unit>
-            <trans-unit id="event.where" xml:space="preserve">
-                <target>Wo</target>
-            </trans-unit>
-            <trans-unit id="event.time" xml:space="preserve">
-                <target>Uhr</target>
-            </trans-unit>
-            <trans-unit id="event.calendar" xml:space="preserve">
-                <target>Speichern</target>
-            </trans-unit>
-            <trans-unit id="event.month.1" xml:space="preserve">
-                <target>Januar</target>
-            </trans-unit>
-            <trans-unit id="event.month.2" xml:space="preserve">
-                <target>Februar</target>
-            </trans-unit>
-            <trans-unit id="event.month.3" xml:space="preserve">
-                <target>März</target>
-            </trans-unit>
-            <trans-unit id="event.month.4" xml:space="preserve">
-                <target>April</target>
-            </trans-unit>
-            <trans-unit id="event.month.5" xml:space="preserve">
-                <target>Mai</target>
-            </trans-unit>
-            <trans-unit id="event.month.6" xml:space="preserve">
-                <target>Juni</target>
-            </trans-unit>
-            <trans-unit id="event.month.7" xml:space="preserve">
-                <target>Juli</target>
-            </trans-unit>
-            <trans-unit id="event.month.8" xml:space="preserve">
-                <target>August</target>
-            </trans-unit>
-            <trans-unit id="event.month.9" xml:space="preserve">
-                <target>September</target>
-            </trans-unit>
-            <trans-unit id="event.month.10" xml:space="preserve">
-                <target>Oktober</target>
-            </trans-unit>
-            <trans-unit id="event.month.11" xml:space="preserve">
-                <target>November</target>
-            </trans-unit>
-            <trans-unit id="event.month.12" xml:space="preserve">
-                <target>Dezember</target>
-            </trans-unit>
-            <trans-unit id="event.list.read_more" xml:space="preserve">
-                <target>Mehr erfahren</target>
-            </trans-unit>
             <trans-unit id="aside.sharepage" xml:space="preserve">
                 <target>Seite teilen</target>
             </trans-unit>
@@ -243,17 +192,11 @@
             <trans-unit id="aside.copy" xml:space="preserve">
                 <target>Kopieren</target>
             </trans-unit>
-            <trans-unit id="event.header.counter" xml:space="preserve">
-                <target>anstehende Veranstaltungen</target>
-            </trans-unit>
             <trans-unit id="overview.header.counter" xml:space="preserve">
                 <target>Artikel für</target>
             </trans-unit>
             <trans-unit id="medpub.header.counter" xml:space="preserve">
                 <target>Beiträge</target>
-            </trans-unit>
-            <trans-unit id="event.calendar" xml:space="preserve">
-                <target>Kalender hinzufügen</target>
             </trans-unit>
             <trans-unit id="gallery.download" xml:space="preserve">
                 <target>Herunterladen</target>

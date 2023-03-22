@@ -29,6 +29,9 @@ class ExtendSiteConfigurationRegistry
 
     public function add(string $identifier, string $extendSiteConfigurationPath): void
     {
+        if (!isset($this->extendSiteConfigurations[$identifier])) {
+            $this->extendSiteConfigurations[$identifier] = [];
+        }
         $this->extendSiteConfigurations[$identifier][] = $extendSiteConfigurationPath;
     }
 
@@ -42,7 +45,7 @@ class ExtendSiteConfigurationRegistry
         if ($this->has($identifier)) {
             return $this->extendSiteConfigurations[$identifier];
         }
-        return $this->extendSiteConfigurations[$identifier];
+        return [];
     }
 
     public function getAll(): array
