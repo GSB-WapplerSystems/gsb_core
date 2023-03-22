@@ -36,7 +36,7 @@ class GalleryPreviewRenderer extends StandardContentPreviewRenderer
             if ($row['gallery_file']) {
                 $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'gallery_file'), $row);
                 $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'gallery_file', $row);
-                if (!empty($fileReferences)) {
+                if ($fileReferences !== []) {
                     // @codeCoverageIgnoreStart
                     $linkedContent = '';
                     $content .= $this->linkEditContent($linkedContent, $row);

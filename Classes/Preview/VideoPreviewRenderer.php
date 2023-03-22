@@ -25,7 +25,7 @@ class VideoPreviewRenderer extends StandardContentPreviewRenderer
             if ($row['tx_video_poster_image']) {
                 $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'tx_video_poster_image'), $row);
                 $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'tx_video_poster_image', $row);
-                if (!empty($fileReferences)) {
+                if ($fileReferences !== []) {
                     // @codeCoverageIgnoreStart
                     $linkedContent = '';
                     $content .= $this->linkEditContent($linkedContent, $row);

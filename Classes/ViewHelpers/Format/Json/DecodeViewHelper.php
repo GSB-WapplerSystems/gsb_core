@@ -40,7 +40,7 @@ class DecodeViewHelper extends AbstractViewHelper
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
         if ($arguments === ['']) {
-            return null;
+            return '';
         }
         $json = $arguments['json'];
 
