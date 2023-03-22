@@ -1,4 +1,5 @@
 <?php
+
 namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers;
 
 use ITZBund\GsbTemplate\Tests\Fixtures\DummyViewHelperNode;
@@ -155,7 +156,7 @@ abstract class AbstractViewHelperTestCase extends AbstractTestCase
     public function canCreateViewHelperInstance()
     {
         $instance = $this->createInstance();
-        $this->assertInstanceOf($this->getViewHelperClassName(), $instance);
+        self::assertInstanceOf($this->getViewHelperClassName(), $instance);
     }
 
     /**
@@ -165,12 +166,12 @@ abstract class AbstractViewHelperTestCase extends AbstractTestCase
     {
         $instance = $this->createInstance();
         $arguments = $instance->prepareArguments();
-        $this->assertIsArray($arguments);
+        self::assertIsArray($arguments);
     }
 
     protected function getViewHelperClassName(): string
     {
-        $class = get_class($this);
+        $class = static::class;
         $class = str_replace('ITZBund\\GsbTemplate\\Tests\\Unit\\', 'ITZBund\\GsbTemplate\\', $class);
         return substr($class, 0, -4);
     }
@@ -220,7 +221,7 @@ abstract class AbstractViewHelperTestCase extends AbstractTestCase
 
         if ($instance instanceof AbstractTagBasedViewHelper || $instance instanceof \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper) {
             $tagBuilder = new TagBuilder(
-                (string) $this->getInaccessiblePropertyValue($instance, 'tagName')
+                (string)$this->getInaccessiblePropertyValue($instance, 'tagName')
             );
             $this->setInaccessiblePropertyValue($instance, 'tag', $tagBuilder);
         }

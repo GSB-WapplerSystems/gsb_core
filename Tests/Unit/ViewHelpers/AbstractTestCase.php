@@ -1,4 +1,5 @@
 <?php
+
 namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers;
 
 use FluidTYPO3\Flux\Form;
@@ -23,9 +24,6 @@ abstract class AbstractTestCase extends TestCase
     private array $singletonInstancesBackup = [];
     protected array $singletonInstances = [];
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         if (!defined('LF')) {
@@ -62,12 +60,12 @@ abstract class AbstractTestCase extends TestCase
         );
 
         $GLOBALS['EXEC_TIME'] = time();
-        $GLOBALS['LANG'] = (object) ['csConvObj' => new CharsetConverter()];
+        $GLOBALS['LANG'] = (object)['csConvObj' => new CharsetConverter()];
         $GLOBALS['TYPO3_CONF_VARS']['BE']['versionNumberInFilename'] = false;
         $GLOBALS['TYPO3_CONF_VARS']['FE']['versionNumberInFilename'] = false;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['preProcessors'] = [];
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['interceptors'] = [
-            Escape::class
+            Escape::class,
         ];
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['fluid_template'] = [
             'frontend' => VariableFrontend::class,
@@ -111,7 +109,6 @@ abstract class AbstractTestCase extends TestCase
      * @param object $object
      * @param string $propertyName
      * @param mixed $value
-     * @return void
      */
     protected function setInaccessiblePropertyValue(object $object, string $propertyName, $value): void
     {
@@ -137,7 +134,6 @@ abstract class AbstractTestCase extends TestCase
      * @param mixed $value
      * @param mixed $expectedValue
      * @param mixed $expectsChaining
-     * @return void
      */
     protected function assertGetterAndSetterWorks($propertyName, $value, $expectedValue = null, $expectsChaining = false)
     {
@@ -146,34 +142,30 @@ abstract class AbstractTestCase extends TestCase
         $getter = 'get' . ucfirst($propertyName);
         $chained = $instance->$setter($value);
         $expectedValue = $expectedValue ?? $value;
-        if (true === $expectsChaining) {
-            $this->assertSame($instance, $chained);
+        if ($expectsChaining === true) {
+            self::assertSame($instance, $chained);
         } else {
-            $this->assertNull($chained);
+            self::assertNull($chained);
         }
-        $this->assertEquals($expectedValue, $instance->$getter());
+        self::assertEquals($expectedValue, $instance->$getter());
     }
-
-
 
     /**
      * @param mixed $value
-     * @return void
      */
     protected function assertIsInteger($value)
     {
         $isIntegerConstraint = new IsType(IsType::TYPE_INT);
-        $this->assertThat($value, $isIntegerConstraint);
+        self::assertThat($value, $isIntegerConstraint);
     }
 
     /**
      * @param mixed $value
-     * @return void
      */
     protected function assertIsBoolean($value)
     {
         $isBooleanConstraint = new IsType(IsType::TYPE_BOOL);
-        $this->assertThat($value, $isBooleanConstraint);
+        self::assertThat($value, $isBooleanConstraint);
     }
 
     /**
@@ -181,18 +173,18 @@ abstract class AbstractTestCase extends TestCase
      */
     protected function assertIsValidAndWorkingFormObject($value)
     {
-        $this->assertInstanceOf(Form::class, $value);
-        $this->assertInstanceOf(Form\FormInterface::class, $value);
-        $this->assertInstanceOf(Form\ContainerInterface::class, $value);
+        self::assertInstanceOf(Form::class, $value);
+        self::assertInstanceOf(Form\FormInterface::class, $value);
+        self::assertInstanceOf(Form\ContainerInterface::class, $value);
         /** @var Form $value */
         $structure = $value->build();
-        $this->assertIsArray($structure);
+        self::assertIsArray($structure);
         // scan for and attempt building of closures in structure
         foreach ($value->getFields() as $field) {
-            if (true === $field instanceof Custom) {
+            if ($field instanceof Custom === true) {
                 $closure = $field->getClosure();
                 $output = $closure($field->getArguments());
-                $this->assertNotEmpty($output);
+                self::assertNotEmpty($output);
             }
         }
     }
@@ -202,11 +194,11 @@ abstract class AbstractTestCase extends TestCase
      */
     protected function assertIsValidAndWorkingGridObject($value)
     {
-        $this->assertInstanceOf(Form\Container\Grid::class, $value);
-        $this->assertInstanceOf(Form\ContainerInterface::class, $value);
+        self::assertInstanceOf(Form\Container\Grid::class, $value);
+        self::assertInstanceOf(Form\ContainerInterface::class, $value);
         /** @var Form $value */
         $structure = $value->build();
-        $this->assertIsArray($structure);
+        self::assertIsArray($structure);
     }
 
     /**
@@ -222,7 +214,7 @@ abstract class AbstractTestCase extends TestCase
      * @param array $methods
      * @return FluxService
      */
-    protected function createFluxServiceInstance($methods = array('dummy'))
+    protected function createFluxServiceInstance($methods = ['dummy'])
     {
         /** @var FluxService $fluxService */
         $fluxService = $this->getMockBuilder(FluxService::class)->setMethods($methods)->disableOriginalConstructor()->getMock();
@@ -236,7 +228,7 @@ abstract class AbstractTestCase extends TestCase
      */
     protected function createInstanceClassName()
     {
-        return str_replace('Tests\\Unit\\', '', substr(get_class($this), 0, -4));
+        return str_replace('Tests\\Unit\\', '', substr(static::class, 0, -4));
     }
 
     /**

@@ -2,7 +2,6 @@
 
 namespace ITZBund\GsbTemplate\Tests\Unit\Preview;
 
-
 use Codeception\Test\Unit;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
@@ -13,17 +12,14 @@ use UnitTester;
 
 class AbstractPreviewRendererTest extends Unit
 {
-
     protected UnitTester $tester;
-
 
     protected $subject;
 
-
-
     protected function setUp(): void
     {
-        $beuser = \Codeception\Stub::make(\TYPO3\CMS\Core\Authentication\BackendUserAuthentication::class,
+        $beuser = \Codeception\Stub::make(
+            \TYPO3\CMS\Core\Authentication\BackendUserAuthentication::class,
             [
                 //'getRecord' => $this->getDummyDataArray(),
             ]
@@ -53,7 +49,7 @@ class AbstractPreviewRendererTest extends Unit
         $iconRegistry = $this->getMockBuilder(IconRegistry::class)->disableOriginalConstructor()->getMock();
         $container = $this->getMockBuilder(ContainerInterface::class)->disableOriginalConstructor()->getMock();
 
-        $iconFatory = new IconFactory($eventDispatcher,$iconRegistry,$container);
+        $iconFatory = new IconFactory($eventDispatcher, $iconRegistry, $container);
         GeneralUtility::addInstance(IconFactory::class, $iconFatory);
-     }
+    }
 }

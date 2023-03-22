@@ -1,4 +1,5 @@
 <?php
+
 namespace ITZBund\GsbTemplate\Tests\Fixtures;
 
 use TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode;

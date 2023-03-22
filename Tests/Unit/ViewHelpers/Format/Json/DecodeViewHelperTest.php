@@ -1,22 +1,21 @@
 <?php
+
 namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers\Format\Json;
 
 use ITZBund\GsbTemplate\Tests\Unit\ViewHelpers\AbstractViewHelperTestCase;
 use ITZBund\GsbTemplate\ViewHelpers\Format\Json\DecodeViewHelper;
 
-
 class DecodeViewHelperTest extends AbstractViewHelperTestCase
 {
-
     /**
      * @test
      */
     public function returnsNullForEmptyArguments()
     {
         $result = DecodeViewHelper::renderStatic([''], function () {}, $this->renderingContext);
-        $this->assertEquals("",$result);
+        self::assertEquals('', $result);
         $result = DecodeViewHelper::renderStatic(['json'=>''], function () {}, $this->renderingContext);
-        $this->assertEquals("",$result);
+        self::assertEquals('', $result);
     }
 
     /**
@@ -24,7 +23,6 @@ class DecodeViewHelperTest extends AbstractViewHelperTestCase
      */
     public function testReturnsExpectedValueForProvidedArguments()
     {
-
         $fixture = '{"foo":"bar","bar":true,"baz":1,"foobar":null}';
 
         $expected = [
@@ -35,10 +33,8 @@ class DecodeViewHelperTest extends AbstractViewHelperTestCase
         ];
 
         $result = $this->executeViewHelper(['json' => $fixture]);
-        $this->assertEquals($expected, $result);
+        self::assertEquals($expected, $result);
     }
-
-
 
     //adds in real error
     /**
@@ -49,8 +45,5 @@ class DecodeViewHelperTest extends AbstractViewHelperTestCase
         $invalidJson = "{'foo': 'bar'}";
         $this->expectViewHelperException();
         $this->executeViewHelper(['json' => $invalidJson]);
-
     }
-
-
 }
