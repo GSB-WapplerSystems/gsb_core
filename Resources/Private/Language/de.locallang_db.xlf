@@ -4,7 +4,7 @@
         <header/>
         <body>
 			<trans-unit id="gsb_slider.description" xml:space="preserve">
-				<target>Container für Slider</target>
+				<source>Container für Slider</source>
 			</trans-unit>
 			<trans-unit id="gsb_slider.title" xml:space="preserve">
 				<target>Slideshow</target>
