@@ -4,7 +4,7 @@
         <header/>
         <body>
             <trans-unit id="video.video_title" resname="video.video_title">
-                <source>Video</source>
+                <target>Video</target>
             </trans-unit>
             <trans-unit id="video.video_description" resname="video.video_description">
                 <target>Legt ein lokales Video oder ein externes YouTube Video an</target>
