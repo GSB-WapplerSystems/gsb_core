@@ -276,9 +276,6 @@
 			<trans-unit id="content" xml:space="preserve">
 				<source>Inhalt</source>
 			</trans-unit>
-			<trans-unit id="grid.title" xml:space="preserve">
-				<source>Raster</source>
-			</trans-unit>
 			<trans-unit id="grid.type" xml:space="preserve">
 				<source>Raster Typ</source>
 			</trans-unit>
@@ -340,9 +337,7 @@
 				<source>Raster</source>
 			</trans-unit>
 			<trans-unit id="grid.description" xml:space="preserve">
-				<source>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider
-umgeschaltet werden.
-				</source>
+				<source>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider umgeschaltet werden.</source>
 			</trans-unit>
 			<trans-unit id="grid.elements" xml:space="preserve">
 				<source>Raster Elemente</source>
