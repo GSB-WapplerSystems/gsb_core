@@ -138,9 +138,6 @@
 			<trans-unit id="stage.tx_stage_position" xml:space="preserve">
 				<source>Bühne Text Position</source>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_bg" xml:space="preserve">
-				<source>Bühne Hintergrund</source>
-			</trans-unit>
 			<trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
 				<source>Begrüßung</source>
 			</trans-unit>
