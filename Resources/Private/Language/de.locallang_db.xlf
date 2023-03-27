@@ -408,42 +408,55 @@
 			</trans-unit>
 			<trans-unit id="grid.bg.wave.description" xml:space="preserve">
 				<source>Abschluss Grafik einfügen</source>
+				<target>Abschluss Grafik einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" xml:space="preserve">
 				<source>Hintergrundfarbe</source>
+				<target>Hintergrundfarbe</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" xml:space="preserve">
 				<source>Eine Hintergrundfarbe festlegen</source>
+				<target>Eine Hintergrundfarbe festlegen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize" xml:space="preserve">
 				<source>Grid Ausdehnung</source>
+				<target>Grid Ausdehnung</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize.description" xml:space="preserve">
 				<source>Grid Container über die ganze Breite ziehen</source>
+				<target>Grid Container über die ganze Breite ziehen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.container" xml:space="preserve">
 				<source>Container</source>
+				<target>Container</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.container.description" xml:space="preserve">
 				<source>Schaltet den Container Wrapper aus.</source>
+				<target>Schaltet den Container Wrapper aus.</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.light" xml:space="preserve">
 				<source>Grid Schriftfarbe</source>
+				<target>Grid Schriftfarbe</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.light.description" xml:space="preserve">
 				<source>Schriftfarbe von dunkel auf hell umstellen</source>
+				<target>Schriftfarbe von dunkel auf hell umstellen</target>
 			</trans-unit>
 			<trans-unit id="grid.title" xml:space="preserve">
 				<source>Raster</source>
+				<target>Raster</target>
 			</trans-unit>
 			<trans-unit id="grid.description" xml:space="preserve">
 				<source>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider umgeschaltet werden.</source>
+				<target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider umgeschaltet werden.</target>
 			</trans-unit>
 			<trans-unit id="grid.elements" xml:space="preserve">
 				<source>Raster Elemente</source>
+				<target>Raster Elemente</target>
 			</trans-unit>
 			<trans-unit id="grid.columns" xml:space="preserve">
 				<source>Raster Spalten</source>
+				<target>Raster Spalten</target>
 			</trans-unit>
 			<trans-unit id="grid.columns.description" xml:space="preserve">
 				<source>Wähle, in wie viele Spalten das Raster aufgeteilt wird</source>
