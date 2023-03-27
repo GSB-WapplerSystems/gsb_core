@@ -248,123 +248,163 @@
 			</trans-unit>
 			<trans-unit id="columns.twoColumnDescription" xml:space="preserve">
 				<source>Zwei Spalten mit individueller Breite</source>
+				<target>Zwei Spalten mit individueller Breite</target>
 			</trans-unit>
 			<trans-unit id="columns.column.0" xml:space="preserve">
 				<source>Eine Spalte 8.33%</source>
+				<target>Eine Spalte 8.33%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.1" xml:space="preserve">
 				<source>Zwei Spalten 16.66%</source>
+				<target>Zwei Spalten 16.66%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.2" xml:space="preserve">
 				<source>Drei Spalten 25%</source>
+				<target>Drei Spalten 25%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.3" xml:space="preserve">
 				<source>Vier Spalten 33.33%</source>
+				<target>Vier Spalten 33.33%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.4" xml:space="preserve">
 				<source>Fünf Spalten 41.66%</source>
+				<target>Fünf Spalten 41.66%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.5" xml:space="preserve">
 				<source>Sechs Spalten 50%</source>
+				<target>Sechs Spalten 50%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.6" xml:space="preserve">
 				<source>Sieben Spalten 58.33%</source>
+				<target>Sieben Spalten 58.33%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.7" xml:space="preserve">
 				<source>Acht Spalten 66.66%</source>
+				<target>Acht Spalten 66.66%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.8" xml:space="preserve">
 				<source>Neun Spalten 75%</source>
+				<target>Neun Spalten 75%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.9" xml:space="preserve">
 				<source>Zehn Spalten 83.33%</source>
+				<target>Zehn Spalten 83.33%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.10" xml:space="preserve">
 				<source>Elf Spalten 91.66%</source>
+				<target>Elf Spalten 91.66%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.11" xml:space="preserve">
 				<source>Zwölf Spalten 100%</source>
+				<target>Zwölf Spalten 100%</target>
 			</trans-unit>
 			<trans-unit id="columns.column.first" xml:space="preserve">
 				<source>Erste Spalte</source>
+				<target>Erste Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.first.description" xml:space="preserve">
 				<source>Breite der ersten Spalte</source>
+				<target>Breite der ersten Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.second" xml:space="preserve">
 				<source>Zweite Spalte</source>
+				<target>Zweite Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.second.description" xml:space="preserve">
 				<source>Breite der zweiten Spalte</source>
+				<target>Breite der zweiten Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.third" xml:space="preserve">
 				<source>Dritte Spalte</source>
+				<target>Dritte Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.third.description" xml:space="preserve">
 				<source>Breite der dritten Spalte</source>
+				<target>Breite der dritten Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.fourth" xml:space="preserve">
 				<source>Vierte Spalte</source>
+				<target>Vierte Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.column.fourth.description" xml:space="preserve">
 				<source>Breite der vierten Spalte</source>
+				<target>Breite der vierten Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.threeColumnTitle" xml:space="preserve">
 				<source>3 Spalten</source>
+				<target>3 Spalten</target>
 			</trans-unit>
 			<trans-unit id="columns.threeColumnDescription" xml:space="preserve">
 				<source>Drei Spalten mit individueller Breite</source>
+				<target>Drei Spalten mit individueller Breite</target>
 			</trans-unit>
 			<trans-unit id="columns.fourColumnTitle" xml:space="preserve">
 				<source>4 Spalten</source>
+				<target>4 Spalten</target>
 			</trans-unit>
 			<trans-unit id="columns.fourColumnDescription" xml:space="preserve">
 				<source>Vier Spalten mit individueller Breite</source>
+				<target>Vier Spalten mit individueller Breite</target>
 			</trans-unit>
 			<trans-unit id="columns.column1" xml:space="preserve">
 				<source>Spalte 1</source>
+				<target>Spalte 1</target>
 			</trans-unit>
 			<trans-unit id="columns.column2" xml:space="preserve">
 				<source>Spalte 2</source>
+				<target>Spalte 2</target>
 			</trans-unit>
 			<trans-unit id="columns.column3" xml:space="preserve">
 				<source>Spalte 3</source>
+				<target>Spalte 3</target>
 			</trans-unit>
 			<trans-unit id="columns.column4" xml:space="preserve">
 				<source>Spalte 4</source>
+				<target>Spalte 4</target>
 			</trans-unit>
 			<trans-unit id="content" xml:space="preserve">
 				<source>Inhalt</source>
+				<target>Inhalt</target>
 			</trans-unit>
 			<trans-unit id="grid.type" xml:space="preserve">
 				<source>Raster Typ</source>
+				<target>Raster Typ</target>
 			</trans-unit>
 			<trans-unit id="grid.type.description" xml:space="preserve">
 				<source>Wähle, ob Elemente in einer Liste oder in Containern sind</source>
+				<target>Wähle, ob Elemente in einer Liste oder in Containern sind</target>
 			</trans-unit>
 			<trans-unit id="grid.type.list" xml:space="preserve">
 				<source>Liste</source>
+				<target>Liste</target>
 			</trans-unit>
 			<trans-unit id="grid.type.container" xml:space="preserve">
 				<source>Container</source>
+				<target>Container</target>
 			</trans-unit>
 			<trans-unit id="grid.bgimage" xml:space="preserve">
 				<source>Hintergrundbild</source>
+				<target>Hintergrundbild</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.parallax" xml:space="preserve">
 				<source>Parallax Animation</source>
+				<target>Parallax Animation</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.parallax.description" xml:space="preserve">
 				<source>Parallax Animation für Hintergrundbild aktivieren</source>
+				<target>Parallax Animation für Hintergrundbild aktivieren</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.imgbg" xml:space="preserve">
 				<source>Farblayer</source>
+				<target>Farblayer</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.imgbg.description" xml:space="preserve">
 				<source>Farblayer über Bild einfügen</source>
+				<target>Farblayer über Bild einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.wave" xml:space="preserve">
 				<source>Abschluss Grafik</source>
+				<target>Abschluss Grafik</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.wave.description" xml:space="preserve">
 				<source>Abschluss Grafik einfügen</source>
