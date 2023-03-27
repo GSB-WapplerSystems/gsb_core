@@ -1,4 +1,21 @@
+stages:
+  - build
+  - lint
+  - test
+  - semver
+  - release
+  - trigger
+
 include:
   - project: 'gsb11/gitlab-scripts'
     ref: main
     file: 'default-extension.yml'
+
+trigger-local-demo-build:
+  trigger:
+    project: devops/container
+    forward:
+      yaml_variables: false
+    rules:
+      - if: $CI_COMMIT_REF_NAME == 'release'
+        allow_failure: false
