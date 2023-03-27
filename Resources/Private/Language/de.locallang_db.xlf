@@ -5,186 +5,246 @@
 		<body>
 			<trans-unit id="gsb_slider.description" xml:space="preserve">
 				<source>Container für Slider</source>
+				<target>Container für Slider</target>
 			</trans-unit>
 			<trans-unit id="gsb_slider.title" xml:space="preserve">
 				<source>Slideshow</source>
+				<target>Slideshow</target>
 			</trans-unit>
 			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
 				<source>Einzelteaser</source>
+				<target>Einzelteaser</target>
 			</trans-unit>
 			<trans-unit id="gsb_singleteaser.description" xml:space="preserve">
 				<source>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</source>
+				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link" xml:space="preserve">
 				<source>Link</source>
+				<target>Link</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout" xml:space="preserve">
 				<source>Link Layout</source>
+				<target>Link Layout</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position" xml:space="preserve">
 				<source>Link Position</source>
+				<target>Link Position</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_text" xml:space="preserve">
 				<source>Link Text</source>
+				<target>Link Text</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.0" xml:space="preserve">
 				<source>Primary button</source>
+				<target>Primary button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.1" xml:space="preserve">
 				<source>Secondary button</source>
+				<target>Secondary button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.2" xml:space="preserve">
 				<source>Interner Link</source>
+				<target>Interner Link</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.3" xml:space="preserve">
 				<source>Externer Link</source>
+				<target>Externer Link</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.4" xml:space="preserve">
 				<source>Download</source>
+				<target>Download</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.0" xml:space="preserve">
 				<source>Mitte</source>
+				<target>Mitte</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.1" xml:space="preserve">
 				<source>Links</source>
+				<target>Links</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.2" xml:space="preserve">
 				<source>Rechts</source>
+				<target>Rechts</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.kicker" xml:space="preserve">
 				<source>Dachzeile</source>
+				<target>Dachzeile</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.inside" xml:space="preserve">
 				<source>Im Text</source>
+				<target>Im Text</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.leftintext" xml:space="preserve">
 				<source>Links (im Text)</source>
+				<target>Links (im Text)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.rightintext" xml:space="preserve">
 				<source>Rechts (im Text)</source>
+				<target>Rechts (im Text)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.centerintext" xml:space="preserve">
 				<source>Mitte (im Text)</source>
+				<target>Mitte (im Text)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_style" xml:space="preserve">
 				<source>Style</source>
+				<target>Style</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_style.default" xml:space="preserve">
 				<source>Standard</source>
+				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="CType.menu_section_pages" xml:space="preserve">
 				<source>Teasermenü: Verzeichnis der Unterseiten ausgewählter Seiten</source>
+				<target>Teasermenü: Verzeichnis der Unterseiten ausgewählter Seiten</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_caption" xml:space="preserve">
 				<source>Untertitel</source>
+				<target>Untertitel</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_poster_image" xml:space="preserve">
 				<source>Hintergrundbild</source>
+				<target>Hintergrundbild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_poster_video" xml:space="preserve">
 				<source>Hintergrundvideo</source>
+				<target>Hintergrundvideo</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_poster_description" xml:space="preserve">
 				<source>Hintergrundvideo darf nicht länger als 5 Sekunden sein</source>
+				<target>Hintergrundvideo darf nicht länger als 5 Sekunden sein</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video" xml:space="preserve">
 				<source>Video</source>
+				<target>Video</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_videourl" xml:space="preserve">
 				<source>YouTube Video URL</source>
+				<target>YouTube Video URL</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_mainstage_label" xml:space="preserve">
 				<source>Hauptbühne Video</source>
+				<target>Hauptbühne Video</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_mainstage_description" xml:space="preserve">
 				<source>Wird nur auf der Startseite eingesetzt</source>
+				<target>Wird nur auf der Startseite eingesetzt</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_mainstage_checkbox" xml:space="preserve">
 				<source>Hauptbühne</source>
+				<target>Hauptbühne</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_video" xml:space="preserve">
 				<source>Video (Datei)</source>
+				<target>Video (Datei)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" xml:space="preserve">
 				<source>Multimedia</source>
+				<target>Multimedia</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.video" xml:space="preserve">
 				<source>Video</source>
+				<target>Video</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_audio_poster" xml:space="preserve">
 				<source>Bild über Audioplayer</source>
+				<target>Bild über Audioplayer</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_audio" xml:space="preserve">
 				<source>Audio</source>
+				<target>Audio</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_audio_audiourl" xml:space="preserve">
 				<source>Audio URL</source>
+				<target>Audio URL</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_audio_audio" xml:space="preserve">
 				<source>Audio (Datei)</source>
+				<target>Audio (Datei)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.audio" xml:space="preserve">
 				<source>Audio</source>
+				<target>Audio</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_file" xml:space="preserve">
 				<source>Bühne Bild/Video</source>
+				<target>Bühne Bild/Video</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bg" xml:space="preserve">
 				<source>Bühne Hintergrund</source>
+				<target>Bühne Hintergrund</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bgcolor" xml:space="preserve">
 				<source>Bühne Hintergrund Farbe</source>
+				<target>Bühne Hintergrund Farbe</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_position" xml:space="preserve">
 				<source>Bühne Text Position</source>
+				<target>Bühne Text Position</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
 				<source>Begrüßung</source>
+				<target>Begrüßung</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bgcolor.I.0" xml:space="preserve">
 				<source>Hell</source>
+				<target>Hell</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bgcolor.I.1" xml:space="preserve">
 				<source>Dunkel</source>
+				<target>Dunkel</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_position.I.0" xml:space="preserve">
 				<source>Standard</source>
+				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_position.I.1" xml:space="preserve">
 				<source>Oben</source>
+				<target>Oben</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_salutation.I.0" xml:space="preserve">
 				<source>Verborgen</source>
+				<target>Verborgen</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_salutation.I.1" xml:space="preserve">
 				<source>Anzeigen</source>
+				<target>Anzeigen</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_position.I.2" xml:space="preserve">
 				<source>Mitte</source>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_position.I.3" xml:space="preserve">
 				<source>Unten</source>
+				<target>Unten</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_textcolor.I.0" xml:space="preserve">
 				<source>Schwarz</source>
+				<target>Schwarz</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_textcolor.I.1" xml:space="preserve">
 				<source>Weiss</source>
+				<target>Weiss</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_stage" xml:space="preserve">
 				<source>Bühne</source>
+				<target>Bühne</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.stage" xml:space="preserve">
 				<source>Bühne</source>
+				<target>Bühne</target>
 			</trans-unit>
 			<trans-unit id="with_frame" xml:space="preserve">
 				<source>Mit Rahmen</source>
+				<target>Mit Rahmen</target>
 			</trans-unit>
 			<trans-unit id="without_frame" xml:space="preserve">
 				<source>Ohne Rahmen</source>
+				<target>Ohne Rahmen</target>
 			</trans-unit>
 			<trans-unit id="columns.twoColumnTitle" xml:space="preserve">
 				<source>2 Spalten</source>
+				<target>2 Spalten</target>
 			</trans-unit>
 			<trans-unit id="columns.twoColumnDescription" xml:space="preserve">
 				<source>Zwei Spalten mit individueller Breite</source>
