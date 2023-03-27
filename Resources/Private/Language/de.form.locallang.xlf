@@ -37,300 +37,288 @@
 				<source>Warnung: Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten Cookies sofort aktivieren (oder Cookies von dieser Website akzeptieren)!</source>
 			</trans-unit>
 			<trans-unit id="username" resname="username">
-				<target>Benutzername</target>
+				<source>Benutzername</source>
 			</trans-unit>
 			<trans-unit id="password" resname="password">
-				<target>Passwort</target>
+				<source>Passwort</source>
 			</trans-unit>
 			<trans-unit id="login" resname="login">
-				<target>Login</target>
+				<source>Login</source>
 			</trans-unit>
 			<trans-unit id="permalogin" resname="permalogin">
-				<target>Eingeloggt bleiben</target>
+				<source>Eingeloggt bleiben</source>
 			</trans-unit>
 			<trans-unit id="logout" resname="logout">
-				<target>Ausloggen</target>
+				<source>Ausloggen</source>
 			</trans-unit>
 			<trans-unit id="send_password" resname="send_password">
-				<target>Passwort senden</target>
+				<source>Passwort senden</source>
 			</trans-unit>
 			<trans-unit id="reset_password" resname="reset_password">
-				<target>Passwort zurücksetzen</target>
+				<source>Passwort zurücksetzen</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_header" resname="ll_change_password_header">
-				<target>Ändern Sie Ihr Passwort</target>
+				<source>Ändern Sie Ihr Passwort</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_message" resname="ll_change_password_message">
-				<target>Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+				<source>Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_nolinkprefix_message" resname="ll_change_password_nolinkprefix_message">
-				<target>Fehler: Es gibt kein Präfix für den Link. Bitte setzen Sie eine der folgenden Angaben in Ihrer Typoskript-Vorlage: plugin.tx_felogin_pi1.feloginBaseURL = http://yourdomain/, config.baseURL = http://yourdomain/, config.absRefPrefix = /</target>
+				<source>Fehler: Es gibt kein Präfix für den Link. Bitte setzen Sie eine der folgenden Angaben in Ihrer Typoskript-Vorlage: plugin.tx_felogin_pi1.feloginBaseURL = http://yourdomain/, config.baseURL = http://yourdomain/, config.absRefPrefix = /</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_notvalid_message" resname="ll_change_password_notvalid_message">
-				<target>Der von Ihnen angeklickte Link ist nicht gültig. Bitte wiederholen Sie die Prozedur "Passwort vergessen".</target>
+				<source>Der von Ihnen angeklickte Link ist nicht gültig. Bitte wiederholen Sie die Prozedur "Passwort vergessen".</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_notequal_message" resname="ll_change_password_notequal_message">
-				<target>Die Passwörter sind nicht gleich, bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+				<source>Die Passwörter sind nicht gleich, bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_tooshort_message" resname="ll_change_password_tooshort_message">
-				<target>Die Passwortlänge ist zu kurz. Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</target>
+				<source>Die Passwortlänge ist zu kurz. Bitte geben Sie Ihr neues Passwort zweimal ein. Das Passwort benötigt eine Mindestlänge von %s Zeichen.</source>
 			</trans-unit>
 			<trans-unit id="ll_change_password_done_message" resname="ll_change_password_done_message">
-				<target>Ihr Passwort wurde gespeichert. Sie können sich nun mit Ihrem neuen Passwort anmelden.</target>
+				<source>Ihr Passwort wurde gespeichert. Sie können sich nun mit Ihrem neuen Passwort anmelden.</source>
 			</trans-unit>
 			<trans-unit id="change_password" resname="change_password">
-				<target>Ändern Sie Ihr Passwort</target>
+				<source>Ändern Sie Ihr Passwort</source>
 			</trans-unit>
 			<trans-unit id="newpassword_label1" resname="newpassword_label1">
-				<target>Neues Passwort eingeben</target>
+				<source>Neues Passwort eingeben</source>
 			</trans-unit>
 			<trans-unit id="newpassword_label2" resname="newpassword_label2">
-				<target>Wiederholen Sie das neue Passwort</target>
+				<source>Wiederholen Sie das neue Passwort</source>
 			</trans-unit>
 			<trans-unit id="your_email" resname="your_email">
-				<target>Ihre E-Mail</target>
+				<source>Ihre E-Mail</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_header" resname="ll_forgot_header">
-				<target>Passwort vergessen?</target>
+				<source>Passwort vergessen?</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_email_password" resname="ll_forgot_email_password" xml:space="preserve">
-				<target>Ihr Passwort
+				<source>Ihr Passwort
 Hallo %s
 
 Ihr Benutzername lautet "%s"
-Ihr Passwort lautet "%s"</target>
+Ihr Passwort lautet "%s"</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_email_nopassword" resname="ll_forgot_email_nopassword" xml:space="preserve">
-				<target>Ihr Passwort
+				<source>Ihr Passwort
 Hallo %s
 
 
-Wir konnten keinen Benutzernamen für diese E-Mail-Adresse finden und können Ihnen daher das Passwort nicht zusenden. Wahrscheinlich haben Sie die E-Mail-Adresse falsch geschrieben (Groß-/Kleinschreibung macht einen Unterschied) oder vielleicht haben Sie sich sogar noch nicht registriert?</target>
+Wir konnten keinen Benutzernamen für diese E-Mail-Adresse finden und können Ihnen daher das Passwort nicht zusenden. Wahrscheinlich haben Sie die E-Mail-Adresse falsch geschrieben (Groß-/Kleinschreibung macht einen Unterschied) oder vielleicht haben Sie sich sogar noch nicht registriert?</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_validate_reset_password" resname="ll_forgot_validate_reset_password" xml:space="preserve">
-				<target>Ihr neues Passwort
+				<source>Ihr neues Passwort
 Sehr geehrte/r %s,
 
 Diese E-Mail wurde als Antwort auf Ihre Anfrage zum Zurücksetzen Ihres Passworts gesendet. Bitte klicken Sie auf den untenstehenden Link.
 %s
 
-Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link bis dahin nicht besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</target>
+Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link bis dahin nicht besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_message" resname="ll_forgot_message">
-				<target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</target>
+				<tarsourceget>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</tarsourceget>
 			</trans-unit>
 			<trans-unit id="ll_forgot_message_emailSent" resname="ll_forgot_message_emailSent">
-				<target>Ihr Passwort wurde nun an die E-Mail-Adresse %s gesendet.</target>
+				<source>Ihr Passwort wurde nun an die E-Mail-Adresse %s gesendet.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_reset_message" resname="ll_forgot_reset_message">
-				<target>Bitte geben Sie Ihre E-Mail-Adresse ein und klicken Sie auf "Weiter". Wir senden Ihnen dann einen Link zur Erstellung eines neuen Passworts zu.</target>
+				<source>Bitte geben Sie Ihre E-Mail-Adresse ein und klicken Sie auf "Weiter". Wir senden Ihnen dann einen Link zur Erstellung eines neuen Passworts zu.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_reset_message_emailSent" resname="ll_forgot_reset_message_emailSent">
-				<target>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</target>
+				<source>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_reset_message_error" resname="ll_forgot_reset_message_error">
-				<target>Ihr Konto oder Ihre E-Mail-Adresse existiert nicht.</target>
+				<source>Ihr Konto oder Ihre E-Mail-Adresse existiert nicht.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_header_backToLogin" resname="ll_forgot_header_backToLogin">
-				<target>Zurück zum Anmeldeformular</target>
+				<source>Zurück zum Anmeldeformular</source>
 			</trans-unit>
 			<trans-unit id="ll_enter_your_data" resname="ll_enter_your_data">
-				<target>Benutzername oder E-Mail-Adresse</target>
+				<source>Benutzername oder E-Mail-Adresse</source>
 			</trans-unit>
 			<trans-unit id="ll_register" resname="ll_register">
-				<target>Registrieren</target>
+				<source>Registrieren</source>
 			</trans-unit>
-
 			<trans-unit id="stepper.eingabe">
-				<target>Eingabe</target>
+				<source>Eingabe</source>
 			</trans-unit>
 			<trans-unit id="stepper.check">
-				<target>Check</target>
+				<source>Check</source>
 			</trans-unit>
 			<trans-unit id="stepper.fertig">
-				<target>Fertig</target>
+				<source>Fertig</source>
 			</trans-unit>
 			<trans-unit id="element.pflichtfeld.properties.text">
-				<target>Pflichtfeld</target>
+				<source>Pflichtfeld</source>
 			</trans-unit>
 			<trans-unit id="unsubscribeHeadline2">
-				<target>Sie möchten Ihren Newsletter abbestellen?</target>
+				<source>Sie möchten Ihren Newsletter abbestellen?</source>
 			</trans-unit>
 			<trans-unit id="unsubscribeHeadlineTeaser1">
-				<target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie sich für den Newsletter angemeldet haben.</target>
+				<source>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie sich für den Newsletter angemeldet haben.</source>
 			</trans-unit>
 			<trans-unit id="unsubscribeHeadlineTeaser2">
-				<target>Wir senden Ihnen anschließend eine E-Mail mit einem Bestätigungslink.</target>
+				<source>Wir senden Ihnen anschließend eine E-Mail mit einem Bestätigungslink.</source>
 			</trans-unit>
 			<trans-unit id="element.anrede-select.properties.label">
-				<target>Anrede</target>
+				<source>Anrede</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560910">
-				<target>Bitte Anrede angeben</target>
+				<source>Bitte Anrede angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560718">
-				<target>Bitte Anrede angeben</target>
+				<source>Bitte Anrede angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992400">
-				<target>Bitte Anrede angeben</target>
+				<source>Bitte Anrede angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992453">
-				<target>Bitte Anrede angeben</target>
+				<source>Bitte Anrede angeben</source>
 			</trans-unit>
-
 			<trans-unit id="element.anrede-select.properties.prependOptionLabel">
-				<target>Bitte Auswählen...</target>
+				<source>Bitte Auswählen...</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.1">
-				<target>Herr</target>
+				<source>Herr</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.2">
-				<target>Frau</target>
+				<source>Frau</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.3">
-				<target>Divers</target>
+				<source>Divers</source>
 			</trans-unit>
-
 			<trans-unit id="element.firstname.properties.label">
-				<target>Vorname</target>
+				<source>Vorname</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1221560910">
-				<target>Bitte Vornamen angeben</target>
+				<source>Bitte Vornamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1221560718">
-				<target>Bitte Vornamen angeben</target>
+				<source>Bitte Vornamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1347992400">
-				<target>Bitte Vornamen angeben</target>
+				<source>Bitte Vornamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1347992453">
-				<target>Bitte Vornamen angeben</target>
+				<source>Bitte Vornamen angeben</source>
 			</trans-unit>
-
 			<trans-unit id="element.lastname.properties.label">
-				<target>Nachname</target>
+				<source>Nachname</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1221560910">
-				<target>Bitte Nachnamen angeben</target>
+				<source>Bitte Nachnamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1221560718">
-				<target>Bitte Nachnamen angeben</target>
+				<source>Bitte Nachnamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1347992400">
-				<target>Bitte Nachnamen angeben</target>
+				<source>Bitte Nachnamen angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1347992453">
-				<target>Bitte Nachnamen angeben</target>
+				<source>Bitte Nachnamen angeben</source>
 			</trans-unit>
-
 			<trans-unit id="element.email.properties.label">
-				<target>E-Mail</target>
+				<source>E-Mail</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221560910">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221560718">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1347992400">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1347992453">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221559976">
-				<target>Bitte eine valide E-Mail Adresse angeben</target>
+				<source>Bitte eine valide E-Mail Adresse angeben</source>
 			</trans-unit>
-
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560910">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560718">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992400">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992453">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221559976">
-				<target>Bitte eine valide E-Mail Adresse angeben</target>
+				<source>Bitte eine valide E-Mail Adresse angeben</source>
 			</trans-unit>
-
 			<trans-unit id="barriere_melden.validation.error.email.1221560910">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1221560718">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1347992400">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1347992453">
-				<target>Bitte E-Mail Adresse angeben</target>
+				<source>Bitte E-Mail Adresse angeben</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1221559976">
-				<target>Bitte eine valide E-Mail Adresse angeben</target>
+				<source>Bitte eine valide E-Mail Adresse angeben</source>
 			</trans-unit>
-
 			<trans-unit id="element.Veranstaltungen-1.properties.prependOptionLabel">
-				<target>Kategorien</target>
+				<source>Kategorien</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1221560910">
-				<target>Bitte mindestens eine Kategorie wählen</target>
+				<source>Bitte mindestens eine Kategorie wählen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1221560718">
-				<target>Bitte mindestens eine Kategorie wählen</target>
+				<source>Bitte mindestens eine Kategorie wählen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1347992400">
-				<target>Bitte mindestens eine Kategorie wählen</target>
+				<source>Bitte mindestens eine Kategorie wählen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.Veranstaltungen-1.1347992453">
-				<target>Bitte mindestens eine Kategorie wählen</target>
+				<source>Bitte mindestens eine Kategorie wählen</source>
 			</trans-unit>
-
 			<trans-unit id="element.Veranstaltungen-1.properties.label">
-				<target>Dafür interessiere ich mich</target>
+				<source>Dafür interessiere ich mich</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.Veranstaltungen-1.properties.options.1">
-				<target>Aktuelles</target>
+				<source>Aktuelles</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.Veranstaltungen-1.properties.options.2">
-				<target>Veranstaltungen</target>
+				<source>Veranstaltungen</source>
 			</trans-unit>
-
 			<trans-unit id="element.nachricht.properties.label">
-				<target>Nachricht</target>
+				<source>Nachricht</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.nachricht.1221560910">
-				<target>Bitte geben Sie eine Nachricht ein</target>
+				<source>Bitte geben Sie eine Nachricht ein</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.nachricht.1221560718">
-				<target>Bitte geben Sie eine Nachricht ein</target>
+				<source>Bitte geben Sie eine Nachricht ein</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.nachricht.1347992400">
-				<target>Bitte geben Sie eine Nachricht ein</target>
+				<source>Bitte geben Sie eine Nachricht ein</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.nachricht.1347992453">
-				<target>Bitte geben Sie eine Nachricht ein</target>
+				<source>Bitte geben Sie eine Nachricht ein</source>
 			</trans-unit>
-
-
 			<trans-unit id="element.eingabe.renderingOptions.nextButtonLabel">
-				<target>Weiter</target>
+				<source>Weiter</source>
 			</trans-unit>
 			<trans-unit id="element.eingabe.renderingOptions.previousButtonLabel">
-				<target>Zurück</target>
+				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="element.barriere_melden.renderingOptions.submitButtonLabel">
-				<target>Senden</target>
+				<source>Senden</source>
 			</trans-unit>
 			<trans-unit id="element.newsletter_subscription.renderingOptions.submitButtonLabel">
-				<target>Jetzt anmelden</target>
+				<source>Jetzt anmelden</source>
 			</trans-unit>
 			<trans-unit id="element.newsletter_unsubsription_form.renderingOptions.submitButtonLabel">
-				<target>Senden</target>
+				<source>Senden</source>
 			</trans-unit>
 			<trans-unit id="element.checkbox-zustimmung-newsletter.properties.label">
 				<target>Zustimmung zur Datenverarbeitung</target>
