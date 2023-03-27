@@ -1,4 +1,5 @@
 .composer
+composer.lock
 .DS_Store
 /Build/node_modules/
 Resources/Public
