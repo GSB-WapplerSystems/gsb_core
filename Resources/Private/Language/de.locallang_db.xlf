@@ -363,9 +363,9 @@
 			<trans-unit id="grid.slider.type" xml:space="preserve">
 				<source>Slider Typ</source>
 			</trans-unit>
-			<trans-source id="grid.slider.columns" xml:space="preserve">
+			<trans-unit id="grid.slider.columns" xml:space="preserve">
 				<source>Slider Spalten</source>
-			</trans-source>
+			</trans-unit>
 			<trans-unit id="grid.slider.description" xml:space="preserve">
 				<source>Zu einem Slider umschalten</source>
 			</trans-unit>
