@@ -321,138 +321,134 @@ Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link
 				<source>Senden</source>
 			</trans-unit>
 			<trans-unit id="element.checkbox-zustimmung-newsletter.properties.label">
-				<target>Zustimmung zur Datenverarbeitung</target>
+				<source>Zustimmung zur Datenverarbeitung</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-1.properties.textBeforeLink">
-				<target>Ich stimme der Zusendung des Newsletters zu, habe die</target>
+				<source>Ich stimme der Zusendung des Newsletters zu, habe die</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-1.properties.linkText">
-				<target>Datenschutzerklärung</target>
+				<source>Datenschutzerklärung</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-1.properties.label">
-				<target>Datenschutzerklärung</target>
+				<source>Datenschutzerklärung</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-1.properties.textAfterLink">
-				<target> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</target>
+				<source> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-2.properties.textBeforeLink">
-				<target>Ich habe den</target>
+				<source>Ich habe den</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-2.properties.linkText">
-				<target>Datenschutz</target>
+				<source>Datenschutz</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-2.properties.label">
-				<target>Datenschutz</target>
+				<source>Datenschutz</source>
 			</trans-unit>
 			<trans-unit id="element.linkedcheckbox-2.properties.textAfterLink">
-				<target> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</target>
+				<source> gelesen und weiß, dass ich mein Einverständnis jederzeit widerrufen kann.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1221560910">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1221560718">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1347992400">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.linkedcheckbox-1.1347992453">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
-
 			<trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1221560910">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1221560718">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1347992400">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.linkedcheckbox-1.1347992453">
-				<target>Bitte akzeptieren Sie die Datenschutzbestimmungen</target>
+				<source>Bitte akzeptieren Sie die Datenschutzbestimmungen</source>
 			</trans-unit>
-
 			<trans-unit id="newsletter_subscription.element.checkbox-zustimmung-newsletter.properties.label">
-				<target>Zustimmung zur Datenverarbeitung</target>
+				<source>Zustimmung zur Datenverarbeitung</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.checkbox-zustimmung-newsletter.properties.text">
-				<target>Ich stimme der Zusendung des Newsletters zu und gebe hierfür meine Daten an.</target>
+				<source>Ich stimme der Zusendung des Newsletters zu und gebe hierfür meine Daten an.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1221560910">
-				<target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+				<source>Bitte stimmen Sie der Nutzung Ihrer Daten zu</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1221560718">
-				<target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+				<source>Bitte stimmen Sie der Nutzung Ihrer Daten zu</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1347992400">
-				<target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+				<source>Bitte stimmen Sie der Nutzung Ihrer Daten zu</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.checkbox-zustimmung-newsletter.1347992453">
-				<target>Bitte stimmen Sie der Nutzung Ihrer Daten zu</target>
+				<source>Bitte stimmen Sie der Nutzung Ihrer Daten zu</source>
 			</trans-unit>
-
 			<trans-unit id="element.datenueberpruefen.properties.previousButtonLabel">
-				<target>Zurück</target>
+				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="element.datenueberpruefen.properties.nextButtonLabel">
-				<target>Weiter</target>
+				<source>Weiter</source>
 			</trans-unit>
 			<trans-unit id="element.datenueberpruefen.renderingOptions.previousButtonLabel">
-				<target>Zurück</target>
+				<source>Zurück</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.finisher.Confirmation.message">
-				<target>Ihre Anmerkungen zur Barrierefreiheit wurden an uns versendet. Wir danken Ihnen für Ihre Nachricht und kümmern uns nach Möglichkeit um Ihr Anliegen.</target>
+				<source>Ihre Anmerkungen zur Barrierefreiheit wurden an uns versendet. Wir danken Ihnen für Ihre Nachricht und kümmern uns nach Möglichkeit um Ihr Anliegen.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.finisher.Confirmation.message1">
-				<target>Wir haben eine Mail an Ihre E-Mail Adresse geschickt.</target>
+				<source>Wir haben eine Mail an Ihre E-Mail Adresse geschickt.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.finisher.Confirmation.message2">
-				<target>Bitte klicken Sie zur Bestätigung Ihrer Bestellung auf den Link in dieser Mail.</target>
+				<source>Bitte klicken Sie zur Bestätigung Ihrer Bestellung auf den Link in dieser Mail.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.finisher.Confirmation.message3">
-				<target>Hinweis: Sollten Sie diese E-Mail nicht in Ihrem Posteingang finden, prüfen Sie auch Ihren Spam-Ordner.</target>
+				<source>Hinweis: Sollten Sie diese E-Mail nicht in Ihrem Posteingang finden, prüfen Sie auch Ihren Spam-Ordner.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubscription.finisher.Confirmation.message">
-				<target>Wenn Sie mit dieser E-Mail für unseren Newsletter angemeldet sind, dann erhalten Sie jetzt eine E-Mail um die Abmeldung abzuschließen. Bitte prüfen Sie gegebenenfalls auch Ihren Spam-Ordner.</target>
+				<source>Wenn Sie mit dieser E-Mail für unseren Newsletter angemeldet sind, dann erhalten Sie jetzt eine E-Mail um die Abmeldung abzuschließen. Bitte prüfen Sie gegebenenfalls auch Ihren Spam-Ordner.</source>
 			</trans-unit>
 			<trans-unit id="element.renderingOptions.submitButtonLabel">
-				<target>Senden</target>
+				<source>Senden</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.heading.h3">
-				<target>Barriere melden</target>
+				<source>Barriere melden</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.subheader.h3">
-				<target>Rückmeldung zur Barrierefreiheit</target>
+				<source>Rückmeldung zur Barrierefreiheit</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.rueckmeldung.fertig">
-				<target>Rückmeldung fertig</target>
+				<source>Rückmeldung fertig</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.subheader.h3">
-				<target>Abonnieren Sie den Newsletter der Denkfabrik</target>
+				<source>Abonnieren Sie den Newsletter der Denkfabrik</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.heading.h3">
-				<target>Blick in die Zukunft</target>
+				<source>Blick in die Zukunft</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.teaser.eingabe">
-				<target>Immer auf dem neusten Stand! Informieren Sie sich mit unseren Newslettern über aktuelle Themen der Denkfabrik oder erhalten Sie Veranstaltungshinweise.</target>
+				<source>Immer auf dem neusten Stand! Informieren Sie sich mit unseren Newslettern über aktuelle Themen der Denkfabrik oder erhalten Sie Veranstaltungshinweise.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.teaser.datenueberpruefen">
-				<target>Überprüfen Sie Ihre Angaben.</target>
+				<source>Überprüfen Sie Ihre Angaben.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubscription.teaser.datenueberpruefen">
-				<target>Überprüfen Sie Ihre Angaben.</target>
+				<source>Überprüfen Sie Ihre Angaben.</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.teaser.eingabe">
-				<target>Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten unserer Internetseite aufgefallen? Dann nutzen Sie unser Feedback-Formular, um uns eine Nachricht zukommen zu lassen.</target>
+				<source>Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten unserer Internetseite aufgefallen? Dann nutzen Sie unser Feedback-Formular, um uns eine Nachricht zukommen zu lassen.</source>
 			</trans-unit>
 			<trans-unit id="barriere_melden.teaser.datenueberpruefen">
-				<target>Überprüfen Sie hier Ihre Angaben und senden Sie eine Nachricht an uns.</target>
+				<source>Überprüfen Sie hier Ihre Angaben und senden Sie eine Nachricht an uns.</source>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.confimation.headline">
-				<target>Fast fertig...</target>
+				<source>Fast fertig...</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
