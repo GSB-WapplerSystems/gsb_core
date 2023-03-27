@@ -403,85 +403,85 @@
 				<source>Beim Laden</source>
 			</trans-unit>
 			<trans-unit id="tabs.description.onload" xml:space="preserve">
-				<target>Öffne einen bestimmten Tab beim Laden</target>
+				<source>Öffne einen bestimmten Tab beim Laden</source>
 			</trans-unit>
 			<trans-unit id="container.title" xml:space="preserve">
-				<target>Seitencontainer</target>
+				<source>Seitencontainer</source>
 			</trans-unit>
 			<trans-unit id="container.description" xml:space="preserve">
-				<target>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</target>
+				<source>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</source>
 			</trans-unit>
 			<trans-unit id="silhouette.0" xml:space="preserve">
 				<source>Standard</source>
 			</trans-unit>
 			<trans-unit id="silhouette.1" xml:space="preserve">
-				<target>Silhouette 1</target>
+				<source>Silhouette 1</source>
 			</trans-unit>
 			<trans-unit id="silhouette.2" xml:space="preserve">
-				<target>Silhouette 2</target>
+				<source>Silhouette 2</source>
 			</trans-unit>
 			<trans-unit id="silhouette.3" xml:space="preserve">
-				<target>Silhouette 3</target>
+				<source>Silhouette 3</source>
 			</trans-unit>
 			<trans-unit id="silhouette.4" xml:space="preserve">
-				<target>Silhouette 4</target>
+				<source>Silhouette 4</source>
 			</trans-unit>
 			<trans-unit id="silhouette.5" xml:space="preserve">
-				<target>Silhouette 5</target>
+				<source>Silhouette 5</source>
 			</trans-unit>
 			<trans-unit id="silhouette.6" xml:space="preserve">
-				<target>Silhouette 6</target>
+				<source>Silhouette 6</source>
 			</trans-unit>
 			<trans-unit id="silhouette.7" xml:space="preserve">
-				<target>Silhouette 7</target>
+				<source>Silhouette 7</source>
 			</trans-unit>
 			<trans-unit id="tt_content.file" xml:space="preserve">
-				<target>Galerie Bild</target>
+				<source>Galerie Bild</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg" xml:space="preserve">
-				<target>Galerie Hintergrund</target>
+				<source>Galerie Hintergrund</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout" xml:space="preserve">
-				<target>Galerie Layout</target>
+				<source>Galerie Layout</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor" xml:space="preserve">
-				<target>Galerie Text Farbe</target>
+				<source>Galerie Text Farbe</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation" xml:space="preserve">
-				<target>Begrüßung</target>
+				<source>Begrüßung</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.0" xml:space="preserve">
-				<target>Hell</target>
+				<source>Hell</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.1" xml:space="preserve">
-				<target>Dunkel</target>
+				<source>Dunkel</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.0" xml:space="preserve">
-				<target>Einzeln</target>
+				<source>Einzeln</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.1" xml:space="preserve">
-				<target>Kacheln</target>
+				<source>Kacheln</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.2" xml:space="preserve">
-				<target>Slider</target>
+				<source>Slider</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.0" xml:space="preserve">
-				<target>Verborgen</target>
+				<source>Verborgen</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.1" xml:space="preserve">
-				<target>Anzeigen</target>
+				<source>Anzeigen</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor.I.0" xml:space="preserve">
-				<target>Schwarz</target>
+				<source>Schwarz</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor.I.1" xml:space="preserve">
-				<target>Weiss</target>
+				<source>Weiss</source>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div._gallery_" xml:space="preserve">
-				<target>Galerie</target>
+				<source>Galerie</source>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.gallery" xml:space="preserve">
-				<target>Galerie</target>
+				<source>Galerie</source>
 			</trans-unit>
 		</body>
 	</file>

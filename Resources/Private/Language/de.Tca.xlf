@@ -4,38 +4,38 @@
         <header/>
         <body>
             <trans-unit id="video.video_title" resname="video.video_title">
-                <target>Video</target>
+                <source>Video</source>
             </trans-unit>
             <trans-unit id="video.video_description" resname="video.video_description">
-                <target>Legt ein lokales Video oder ein externes YouTube Video an</target>
+                <source>Legt ein lokales Video oder ein externes YouTube Video an</source>
             </trans-unit>
             <trans-unit id="audio.audio_title" resname="audio.audio_title">
-                <target>Audio</target>
+                <source>Audio</source>
             </trans-unit>
             <trans-unit id="audio.audio_description" resname="audio.audio_description">
-                <target>Legt ein lokales Audio oder ein externes Audio an</target>
+                <source>Legt ein lokales Audio oder ein externes Audio an</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_title" resname="stage.tx_stage_title">
-                <target>Bühne</target>
+                <source>Bühne</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_description" resname="stage.tx_stage_description">
-                <target>Fügt ein Bühnenelement ein</target>
+                <source>Fügt ein Bühnenelement ein</source>
             </trans-unit>
             <trans-unit id="grid.title" resname="grid.title">
-                <target>Raster</target>
+                <source>Raster</source>
             </trans-unit>
             <trans-unit id="grid.description" resname="grid.description">
-                <target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider
-umgeschaltet werden.</target>
+                <source>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider
+umgeschaltet werden.</source>
             </trans-unit>
             <trans-unit id="grid.elements" resname="grid.elements">
-                <target>Raster Elemente</target>
+                <source>Raster Elemente</source>
             </trans-unit>
             <trans-unit id="gallery.title" resname="gallery.title">
-                <target>Galerie</target>
+                <source>Galerie</source>
             </trans-unit>
             <trans-unit id="gallery.description" resname="gallery.description">
-                <target>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</target>
+                <source>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</source>
             </trans-unit>
         </body>
     </file>
