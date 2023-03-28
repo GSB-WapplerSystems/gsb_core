@@ -177,117 +177,155 @@
 			</trans-unit>
 			<trans-unit id="date.year" xml:space="preserve">
 				<source>%Y</source>
+				<target>%Y</target>
 			</trans-unit>
 			<trans-unit id="date.daymonthyear" xml:space="preserve">
 				<source>%d. %b %Y</source>
+				<target>%d. %b %Y</target>
 			</trans-unit>
 			<trans-unit id="date.daymonthyearfull" xml:space="preserve">
 				<source>%A, %d. %B %Y, %H:%M Uhr</source>
+				<target>%A, %d. %B %Y, %H:%M Uhr</target>
 			</trans-unit>
 			<trans-unit id="article.detail.topic" xml:space="preserve">
 				<source>zum Thema</source>
+				<target>zum Thema</target>
 			</trans-unit>
 			<trans-unit id="to.content" xml:space="preserve">
 				<source>Zum Inhalt</source>
+				<target>Zum Inhalt</target>
 			</trans-unit>
 			<trans-unit id="aside.sharepage" xml:space="preserve">
 				<source>Seite teilen</source>
+				<target>Seite teilen</target>
 			</trans-unit>
 			<trans-unit id="aside.socialmedia" xml:space="preserve">
 				<source>Soziale Medien</source>
+				<target>Soziale Medien</target>
 			</trans-unit>
 			<trans-unit id="aside.sharepageshort" xml:space="preserve">
 				<source>Teilen</source>
+				<target>Teilen</target>
 			</trans-unit>
 			<trans-unit id="aside.tweet" xml:space="preserve">
 				<source>Tweet</source>
+				<target>Tweet</target>
 			</trans-unit>
 			<trans-unit id="aside.share" xml:space="preserve">
 				<source>Teilen</source>
+				<target>Teilen</target>
 			</trans-unit>
 			<trans-unit id="aside.print" xml:space="preserve">
 				<source>Drucken</source>
+				<target>Drucken</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonfacebook" xml:space="preserve">
 				<source>Teile auf Facebook</source>
+				<target>Teile auf Facebook</target>
 			</trans-unit>
 			<trans-unit id="aside.shareontwitter" xml:space="preserve">
 				<source>Teile auf Twittter</source>
+				<target>Teile auf Twittter</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonreddit" xml:space="preserve">
 				<source>Teile auf Reddit</source>
+				<target>Teile auf Reddit</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonwhatsapp" xml:space="preserve">
 				<source>Teile mit Whatsapp</source>
+				<target>Teile mit Whatsapp</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonxing" xml:space="preserve">
 				<source>Teile auf Xing</source>
+				<target>Teile auf Xing</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonlinkedin" xml:space="preserve">
 				<source>Teile auf LinkedIn</source>
+				<target>Teile auf LinkedIn</target>
 			</trans-unit>
 			<trans-unit id="aside.printpage" xml:space="preserve">
 				<source>Seite drucken</source>
+				<target>Seite drucken</target>
 			</trans-unit>
 			<trans-unit id="aside.copylink" xml:space="preserve">
 				<source>Link in Zwischenablage kopieren</source>
+				<target>Link in Zwischenablage kopieren</target>
 			</trans-unit>
 			<trans-unit id="aside.copy" xml:space="preserve">
 				<source>Kopieren</source>
+				<target>Kopieren</target>
 			</trans-unit>
 			<trans-unit id="overview.header.counter" xml:space="preserve">
 				<source>Artikel für</source>
+				<target>Artikel für</target>
 			</trans-unit>
 			<trans-unit id="medpub.header.counter" xml:space="preserve">
 				<source>Beiträge</source>
+				<target>Beiträge</target>
 			</trans-unit>
 			<trans-unit id="gallery.download" xml:space="preserve">
 				<source>Herunterladen</source>
+				<target>Herunterladen</target>
 			</trans-unit>
 			<trans-unit id="gallery.close" xml:space="preserve">
 				<source>Schließen</source>
+				<target>Schließen</target>
 			</trans-unit>
 			<trans-unit id="gallery.previous" xml:space="preserve">
 				<source>Vorheriges Bild</source>
+				<target>Vorheriges Bild</target>
 			</trans-unit>
 			<trans-unit id="gallery.next" xml:space="preserve">
 				<source>Nächstes Bild</source>
+				<target>Nächstes Bild</target>
 			</trans-unit>
 			<trans-unit id="gallery.of" xml:space="preserve">
 				<source>von</source>
+				<target>von</target>
 			</trans-unit>
 			<trans-unit id="focus" xml:space="preserve">
 				<source>Schwerpunkte</source>
+				<target>Schwerpunkte</target>
 			</trans-unit>
 			<trans-unit id="content.close" xml:space="preserve">
 				<source>Schließen</source>
+				<target>Schließen</target>
 			</trans-unit>
 			<trans-unit id="content.article" xml:space="preserve">
 				<source>Artikel</source>
+				<target>Artikel</target>
 			</trans-unit>
 			<trans-unit id="content.articles" xml:space="preserve">
 				<source>Artikel</source>
+				<target>Artikel</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_of" xml:space="preserve">
 				<source>von</source>
+				<target>von</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_close" xml:space="preserve">
 				<source>Schließen</source>
+				<target>Schließen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_download" xml:space="preserve">
 				<source>Herunterladen</source>
+				<target>Herunterladen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_previous" xml:space="preserve">
 				<source>Vorheriges Bild</source>
+				<target>Vorheriges Bild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_next" xml:space="preserve">
 				<source>Nächstes Bild</source>
+				<target>Nächstes Bild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.images" xml:space="preserve">
 				<source>Bilder</source>
+				<target>Bilder</target>
 			</trans-unit>
 			<trans-unit id="tt_content.images.open" xml:space="preserve">
 				<source>Bildergalerie öffnen</source>
+				<target>Bildergalerie öffnen</target>
 			</trans-unit>
 		</body>
 	</file>
