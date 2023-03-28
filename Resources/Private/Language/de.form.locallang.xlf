@@ -5,7 +5,7 @@
 		<body>
 			<trans-unit id="ll_welcome_header" resname="ll_welcome_header">
 				<source>Anmelden</source>
-				<source>Anmelden</source>
+				<target>Anmelden</target>
 			</trans-unit>
 			<trans-unit id="ll_welcome_message" resname="ll_welcome_message">
 				<source>Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.</source>
@@ -48,7 +48,7 @@
 				<target>Warnung: Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten Cookies sofort aktivieren (oder Cookies von dieser Website akzeptieren)!</target>
 			</trans-unit>
 			<trans-unit id="username" resname="username">
-				<target>Benutzername</target>
+				<source>Benutzername</source>
 				<target>Benutzername</target>
 			</trans-unit>
 			<trans-unit id="password" resname="password">
@@ -157,7 +157,7 @@ Diese E-Mail wurde als Antwort auf Ihre Anfrage zum Zurücksetzen Ihres Passwort
 Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link bis dahin nicht besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</source>
 			</trans-unit>
 			<trans-unit id="ll_forgot_message" resname="ll_forgot_message">
-				<target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</target>
+				<source>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</source>
 				<target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Dann drücken Sie auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugesandt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</target>
 			</trans-unit>
 			<trans-unit id="ll_forgot_message_emailSent" resname="ll_forgot_message_emailSent">
@@ -169,8 +169,8 @@ Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link
 				<target>Bitte geben Sie Ihre E-Mail-Adresse ein und klicken Sie auf "Weiter". Wir senden Ihnen dann einen Link zur Erstellung eines neuen Passworts zu.</target>
 			</trans-unit>
 			<trans-unit id="ll_forgot_reset_message_emailSent" resname="ll_forgot_reset_message_emailSent">
-				<target>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</target>
 				<source>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</source>
+				<target>Eine E-Mail wurde an die in Ihrem Konto gespeicherte Adresse geschickt und enthält einen Link zum Zurücksetzen Ihres Passworts. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</target>
 			</trans-unit>
 			<trans-unit id="ll_forgot_reset_message_error" resname="ll_forgot_reset_message_error">
 				<source>Ihr Konto oder Ihre E-Mail-Adresse existiert nicht.</source>
