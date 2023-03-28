@@ -460,141 +460,187 @@
 			</trans-unit>
 			<trans-unit id="grid.columns.description" xml:space="preserve">
 				<source>Wähle, in wie viele Spalten das Raster aufgeteilt wird</source>
+				<target>Wähle, in wie viele Spalten das Raster aufgeteilt wird</target>
 			</trans-unit>
 			<trans-unit id="grid.columns.onecol" xml:space="preserve">
 				<source>Eine Spalte</source>
+				<target>Eine Spalte</target>
 			</trans-unit>
 			<trans-unit id="grid.columns.twocol" xml:space="preserve">
 				<source>Zwei Spalten</source>
+				<target>Zwei Spalten</target>
 			</trans-unit>
 			<trans-unit id="grid.columns.threecol" xml:space="preserve">
 				<source>Drei Spalten</source>
+				<target>Drei Spalten</target>
 			</trans-unit>
 			<trans-unit id="grid.columns.fourcol" xml:space="preserve">
 				<source>Vier Spalten</source>
+				<target>Vier Spalten</target>
 			</trans-unit>
 			<trans-unit id="grid.slider.type" xml:space="preserve">
 				<source>Slider Typ</source>
+				<target>Slider Typ</target>
 			</trans-unit>
 			<trans-unit id="grid.slider.columns" xml:space="preserve">
 				<source>Slider Spalten</source>
+				<target>Slider Spalten</target>
 			</trans-unit>
 			<trans-unit id="grid.slider.description" xml:space="preserve">
 				<source>Zu einem Slider umschalten</source>
+				<target>Zu einem Slider umschalten</target>
 			</trans-unit>
 			<trans-unit id="accordion.title" xml:space="preserve">
 				<source>Akkordeon</source>
+				<target>Akkordeon</target>
 			</trans-unit>
 			<trans-unit id="accordion.description" xml:space="preserve">
 				<source>Die Inhaltselemente sind in einem Akkordeon zugänglich</source>
+				<target>Die Inhaltselemente sind in einem Akkordeon zugänglich</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.onload" xml:space="preserve">
 				<source>Beim Laden</source>
+				<target>Beim Laden</target>
 			</trans-unit>
 			<trans-unit id="accordion.description.onload" xml:space="preserve">
 				<source>Öffne eine bestimmte Akkordeon Kachel beim Laden</source>
+				<target>Öffne eine bestimmte Akkordeon Kachel beim Laden</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.onloadall" xml:space="preserve">
 				<source>Akkordion Toggle</source>
+				<target>Akkordion Toggle</target>
 			</trans-unit>
 			<trans-unit id="accordion.description.onloadall" xml:space="preserve">
 				<source>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</source>
+				<target>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.open" xml:space="preserve">
 				<source>Akkordeon Kachel</source>
+				<target>Akkordeon Kachel</target>
 			</trans-unit>
 			<trans-unit id="accordion.description.open" xml:space="preserve">
 				<source>Wähle die Akkordeonkachel, die geöffnet werden soll</source>
+				<target>Wähle die Akkordeonkachel, die geöffnet werden soll</target>
 			</trans-unit>
 			<trans-unit id="tabs.title" xml:space="preserve">
 				<source>Tabs</source>
+				<target>Tabs</target>
 			</trans-unit>
 			<trans-unit id="tabs.description" xml:space="preserve">
 				<source>Die Inhaltselemente sind über Tabs zugänglich</source>
+				<target>Die Inhaltselemente sind über Tabs zugänglich</target>
 			</trans-unit>
 			<trans-unit id="tabs.label.onload" xml:space="preserve">
 				<source>Beim Laden</source>
+				<target>Beim Laden</target>
 			</trans-unit>
 			<trans-unit id="tabs.description.onload" xml:space="preserve">
 				<source>Öffne einen bestimmten Tab beim Laden</source>
+				<target>Öffne einen bestimmten Tab beim Laden</target>
 			</trans-unit>
 			<trans-unit id="container.title" xml:space="preserve">
 				<source>Seitencontainer</source>
+				<target>Seitencontainer</target>
 			</trans-unit>
 			<trans-unit id="container.description" xml:space="preserve">
 				<source>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</source>
+				<target>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</target>
 			</trans-unit>
 			<trans-unit id="silhouette.0" xml:space="preserve">
 				<source>Standard</source>
+				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="silhouette.1" xml:space="preserve">
 				<source>Silhouette 1</source>
+				<target>Silhouette 1</target>
 			</trans-unit>
 			<trans-unit id="silhouette.2" xml:space="preserve">
 				<source>Silhouette 2</source>
+				<target>Silhouette 2</target>
 			</trans-unit>
 			<trans-unit id="silhouette.3" xml:space="preserve">
 				<source>Silhouette 3</source>
+				<target>Silhouette 3</target>
 			</trans-unit>
 			<trans-unit id="silhouette.4" xml:space="preserve">
 				<source>Silhouette 4</source>
+				<target>Silhouette 4</target>
 			</trans-unit>
 			<trans-unit id="silhouette.5" xml:space="preserve">
 				<source>Silhouette 5</source>
+				<target>Silhouette 5</target>
 			</trans-unit>
 			<trans-unit id="silhouette.6" xml:space="preserve">
 				<source>Silhouette 6</source>
+				<target>Silhouette 6</target>
 			</trans-unit>
 			<trans-unit id="silhouette.7" xml:space="preserve">
 				<source>Silhouette 7</source>
+				<target>Silhouette 7</target>
 			</trans-unit>
 			<trans-unit id="tt_content.file" xml:space="preserve">
 				<source>Galerie Bild</source>
+				<target>Galerie Bild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg" xml:space="preserve">
 				<source>Galerie Hintergrund</source>
+				<target>Galerie Hintergrund</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout" xml:space="preserve">
 				<source>Galerie Layout</source>
+				<target>Galerie Layout</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor" xml:space="preserve">
 				<source>Galerie Text Farbe</source>
+				<target>Galerie Text Farbe</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation" xml:space="preserve">
 				<source>Begrüßung</source>
+				<target>Begrüßung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.0" xml:space="preserve">
 				<source>Hell</source>
+				<target>Hell</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.1" xml:space="preserve">
 				<source>Dunkel</source>
+				<target>Dunkel</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.0" xml:space="preserve">
 				<source>Einzeln</source>
+				<target>Einzeln</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.1" xml:space="preserve">
 				<source>Kacheln</source>
+				<target>Kacheln</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.2" xml:space="preserve">
 				<source>Slider</source>
+				<target>Slider</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.0" xml:space="preserve">
 				<source>Verborgen</source>
+				<target>Verborgen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.1" xml:space="preserve">
 				<source>Anzeigen</source>
+				<target>Anzeigen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor.I.0" xml:space="preserve">
 				<source>Schwarz</source>
+				<target>Schwarz</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_textcolor.I.1" xml:space="preserve">
 				<source>Weiss</source>
+				<target>Weiss</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div._gallery_" xml:space="preserve">
 				<source>Galerie</source>
+				<target>Galerie</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.gallery" xml:space="preserve">
 				<source>Galerie</source>
+				<target>Galerie</target>
 			</trans-unit>
 		</body>
 	</file>
