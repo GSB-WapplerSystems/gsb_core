@@ -5,36 +5,47 @@
 		<body>
 			<trans-unit id="ll_welcome_header" resname="ll_welcome_header">
 				<source>Anmelden</source>
+				<source>Anmelden</source>
 			</trans-unit>
 			<trans-unit id="ll_welcome_message" resname="ll_welcome_message">
 				<source>Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.</source>
+				<target>Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.</target>
 			</trans-unit>
-			<trans-source id="ll_logout_header" resname="ll_logout_header">
+			<trans-unit id="ll_logout_header" resname="ll_logout_header">
 				<source>Sie haben sich ausgeloggt.</source>
-			</trans-source>
+				<target>Sie haben sich ausgeloggt.</target>
+			</trans-unit>
 			<trans-unit id="ll_logout_message" resname="ll_logout_message">
 				<source>Sie haben sich gerade von Ihrer Benutzersitzung auf dieser Website abgemeldet. Sie können sich erneut oder als anderer Benutzer über das untenstehende Formular anmelden.</source>
+				<target>Sie haben sich gerade von Ihrer Benutzersitzung auf dieser Website abgemeldet. Sie können sich erneut oder als anderer Benutzer über das untenstehende Formular anmelden.</target>
 			</trans-unit>
 			<trans-unit id="ll_error_header" resname="ll_error_header">
 				<source>Anmelden</source>
+				<target>Anmelden</target>
 			</trans-unit>
 			<trans-unit id="ll_error_message" resname="ll_error_message" xml:space="preserve">
 				<source>Das hat leider nicht funktioniert. Versichern Sie sich, dass Sie die richtige E-Mail-Adresse und das richtige Passwort verwenden.</source>
+				<target>Das hat leider nicht funktioniert. Versichern Sie sich, dass Sie die richtige E-Mail-Adresse und das richtige Passwort verwenden.</target>
 			</trans-unit>
 			<trans-unit id="ll_success_header" resname="ll_success_header">
 				<source>Anmeldung erfolgreich</source>
+				<target>Anmeldung erfolgreich</target>
 			</trans-unit>
 			<trans-unit id="ll_success_message" resname="ll_success_message">
 				<source>Sie sind jetzt eingeloggt als '###USER###'</source>
+				<target>Sie sind jetzt eingeloggt als '###USER###'</target>
 			</trans-unit>
 			<trans-unit id="ll_status_header" resname="ll_status_header">
 				<source>Aktueller Status</source>
+				<target>Aktueller Status</target>
 			</trans-unit>
 			<trans-unit id="ll_status_message" resname="ll_status_message">
 				<source>Dies ist Ihr aktueller Status</source>
+				<target>Dies ist Ihr aktueller Status</target>
 			</trans-unit>
 			<trans-unit id="cookie_warning" resname="cookie_warning">
 				<source>Warnung: Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten Cookies sofort aktivieren (oder Cookies von dieser Website akzeptieren)!</source>
+				<target>Warnung: Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten Cookies sofort aktivieren (oder Cookies von dieser Website akzeptieren)!</target>
 			</trans-unit>
 			<trans-unit id="username" resname="username">
 				<source>Benutzername</source>
