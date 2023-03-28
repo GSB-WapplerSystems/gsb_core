@@ -19,8 +19,7 @@
                 <source>Login</source>
             </trans-unit>
             <trans-unit id="ll_error_message" resname="ll_error_message">
-				<source>Sorry, we could not log you in.
-                    Please check if your e-mail address and password are spelled correctly and try again.</source>
+				<source>Sorry, we could not log you in. Please check if your e-mail address and password are spelled correctly and try again.</source>
 			</trans-unit>
             <trans-unit id="ll_success_header" resname="ll_success_header">
                 <source>Login successful</source>
@@ -38,7 +37,7 @@
                 <source>Warning: There is a possibility that cookies are not enabled in your web browser! If your login disappears on your next click that is the case and you should enable cookies (or accept cookies from this website) immediately!</source>
             </trans-unit>
             <trans-unit id="username" resname="username">
-                <source>E-mail address</source>
+                <source>Username</source>
             </trans-unit>
             <trans-unit id="password" resname="password">
                 <source>Password</source>
@@ -114,7 +113,8 @@ Dear %s,
 This email was sent in response to your request to reset your password. Please click on the link below.
 %s
 
-For security reasons, this link is only active until %s. If you do not visit the link before then, you will need to repeat the password reset steps.</source>
+For security reasons, this link is only active until %s. If you do not visit the link before then, you will need to repeat the password reset steps.
+				</source>
 			</trans-unit>
             <trans-unit id="ll_forgot_message" resname="ll_forgot_message">
                 <source>Please enter the email address by which you registered your user account. Then press "Send password" and your password will immediately be emailed to you. Make sure to spell your email address correctly.</source>
