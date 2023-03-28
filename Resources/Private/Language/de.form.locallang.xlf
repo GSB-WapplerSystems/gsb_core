@@ -218,99 +218,131 @@ Aus Sicherheitsgründen ist diese Verbindung nur bis %s aktiv. Wenn Sie den Link
 			</trans-unit>
 			<trans-unit id="element.anrede-select.properties.label">
 				<source>Anrede</source>
+				<target>Anrede</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560910">
 				<source>Bitte Anrede angeben</source>
+				<target>Bitte Anrede angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1221560718">
 				<source>Bitte Anrede angeben</source>
+				<target>Bitte Anrede angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992400">
 				<source>Bitte Anrede angeben</source>
+				<target>Bitte Anrede angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.anrede-select.1347992453">
 				<source>Bitte Anrede angeben</source>
+				<target>Bitte Anrede angeben</target>
 			</trans-unit>
 			<trans-unit id="element.anrede-select.properties.prependOptionLabel">
 				<source>Bitte Auswählen...</source>
+				<target>Bitte Auswählen...</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.1">
 				<source>Herr</source>
+				<target>Herr</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.2">
 				<source>Frau</source>
+				<target>Frau</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.element.anrede-select.properties.options.3">
 				<source>Divers</source>
+				<target>Divers</target>
 			</trans-unit>
 			<trans-unit id="element.firstname.properties.label">
 				<source>Vorname</source>
+				<target>Vorname</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1221560910">
 				<source>Bitte Vornamen angeben</source>
+				<target>Bitte Vornamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1221560718">
 				<source>Bitte Vornamen angeben</source>
+				<target>Bitte Vornamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1347992400">
 				<source>Bitte Vornamen angeben</source>
+				<target>Bitte Vornamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.firstname.1347992453">
 				<source>Bitte Vornamen angeben</source>
+				<target>Bitte Vornamen angeben</target>
 			</trans-unit>
 			<trans-unit id="element.lastname.properties.label">
 				<source>Nachname</source>
+				<target>Nachname</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1221560910">
 				<source>Bitte Nachnamen angeben</source>
+				<target>Bitte Nachnamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1221560718">
 				<source>Bitte Nachnamen angeben</source>
+				<target>Bitte Nachnamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1347992400">
 				<source>Bitte Nachnamen angeben</source>
+				<target>Bitte Nachnamen angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.lastname.1347992453">
 				<source>Bitte Nachnamen angeben</source>
+				<target>Bitte Nachnamen angeben</target>
 			</trans-unit>
 			<trans-unit id="element.email.properties.label">
 				<source>E-Mail</source>
+				<target>E-Mail</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221560910">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221560718">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1347992400">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1347992453">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_subscription.validation.error.email.1221559976">
 				<source>Bitte eine valide E-Mail Adresse angeben</source>
+				<target>Bitte eine valide E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560910">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221560718">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992400">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1347992453">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="newsletter_unsubsription_form.validation.error.email.1221559976">
 				<source>Bitte eine valide E-Mail Adresse angeben</source>
+				<target>Bitte eine valide E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1221560910">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1221560718">
 				<source>Bitte E-Mail Adresse angeben</source>
+				<target>Bitte E-Mail Adresse angeben</target>
 			</trans-unit>
 			<trans-unit id="barriere_melden.validation.error.email.1347992400">
 				<source>Bitte E-Mail Adresse angeben</source>
