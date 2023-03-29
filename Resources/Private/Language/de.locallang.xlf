@@ -4,11 +4,11 @@
 		<header />
 		<body>
 			<trans-unit id="footer.serviceheader" xml:space="preserve">
-				<source>Services der Bundesregierung</source>
+				<source>Federal Government Services</source>
 				<target>Services der Bundesregierung</target>
 			</trans-unit>
 			<trans-unit id="footer.language-switcher" xml:space="preserve">
-				<source>Sprachumschalter</source>
+				<source>Language switcher</source>
 				<target>Sprachumschalter</target>
 			</trans-unit>
 			<trans-unit id="element.pflichtfeld.properties.text" xml:space="preserve">
