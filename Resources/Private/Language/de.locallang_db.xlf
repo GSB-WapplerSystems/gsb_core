@@ -3,6 +3,74 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
 		<header />
 		<body>
+			<trans-unit id="header_layout.0" resname="header_layout.0">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="header_layout.1" resname="header_layout.1">
+				<source>H1 - Default</source>
+				<target>H1 - Standard</target>
+			</trans-unit>
+			<trans-unit id="header_layout.2" resname="header_layout.2">
+				<source>H2</source>
+				<target>H2</target>
+			</trans-unit>
+			<trans-unit id="header_layout.3" resname="header_layout.3">
+				<source>H3</source>
+				<target>H3</target>
+			</trans-unit>
+			<trans-unit id="header_layout.4" resname="header_layout.4">
+				<source>H4</source>
+				<target>H4</target>
+			</trans-unit>
+			<trans-unit id="header_layout.5" resname="header_layout.5">
+				<source>H5</source>
+				<target>H5</target>
+			</trans-unit>
+			<trans-unit id="header_layout.6" resname="header_layout.6">
+				<source>H6</source>
+				<target>H6</target>
+			</trans-unit>
+			<trans-unit id="header_layout.7" resname="header_layout.7">
+				<source>H1 - Hidden (SR only)</source>
+				<target>H1 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.8" resname="header_layout.8">
+				<source>H2 - Hidden (SR only)</source>
+				<target>H2 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.9" resname="header_layout.9">
+				<source>H3 - Hidden (SR only)</source>
+				<target>H3 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.10" resname="header_layout.10">
+				<source>H4 - Hidden (SR only)</source>
+				<target>H4 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.11" resname="header_layout.11">
+				<source>H5 - Hidden (SR only)</source>
+				<target>H5 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.12" resname="header_layout.12">
+				<source>H6 - Hidden (SR only)</source>
+				<target>H6 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="layout.0" resname="layout.0">
+				<source>Normal box (default)</source>
+				<target>Normale Box (Standard)</target>
+			</trans-unit>
+			<trans-unit id="layout.1" resname="layout.1">
+				<source>Element indentation (col-8)</source>
+				<target>Element Einrückung (col-8)</target>
+			</trans-unit>
+			<trans-unit id="layout.2" resname="layout.2">
+				<source>Element indentation (col-10)</source>
+				<target>Element Einrückung (col-10)</target>
+			</trans-unit>
+			<trans-unit id="frame_class.text-2-columns" resname="frame_class.text-2-columns">
+				<source>Text: 2 columns</source>
+				<target>Text: 2 Spalten</target>
+			</trans-unit>
 			<trans-unit id="video.video_title" resname="video.video_title">
 				<source>Video</source>
 				<target>Video</target>
