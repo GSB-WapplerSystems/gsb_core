@@ -12,10 +12,11 @@ include:
     file: 'default-extension.yml'
 
 trigger-local-demo-build:
+  stage: trigger
   rules:
     - if: $CI_COMMIT_REF_NAME == 'release'
       allow_failure: false
   trigger:
-    project: devops/container
+    project: gsb11/devops/container
     forward:
       yaml_variables: false
