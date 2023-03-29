@@ -3,9 +3,6 @@ module.exports = {
     // inline-svg
     '@andreyvolokitin/postcss-inline-svg': {},
 
-    // svgo
-    'postcss-svgo': {},
-
     // preset-env
     'postcss-preset-env': {
       browsers: 'defaults'

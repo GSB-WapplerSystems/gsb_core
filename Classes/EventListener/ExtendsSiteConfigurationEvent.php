@@ -32,11 +32,14 @@ final class ExtendsSiteConfigurationEvent
     {
         $loader = GeneralUtility::makeInstance(YamlFileLoader::class);
         $siteConfiguration = $event->getConfiguration();
-        foreach ($this->registry->get($event->getSiteIdentifier()) as $fileInfo) {
-            $configuration = $loader->load(GeneralUtility::fixWindowsFilePath((string)$fileInfo), YamlFileLoader::PROCESS_IMPORTS);
-            $siteConfiguration = array_merge($siteConfiguration, $configuration);
-            // Maybe better?
-            //ArrayUtility::mergeRecursiveWithOverrule($siteConfiguration, $configuration);
+        $siteConfigExtends = $this->registry->get($event->getSiteIdentifier());
+        if ($siteConfigExtends !== []) {
+            foreach ($siteConfigExtends as $fileInfo) {
+                $configuration = $loader->load(GeneralUtility::fixWindowsFilePath((string)$fileInfo), YamlFileLoader::PROCESS_IMPORTS);
+                $siteConfiguration = array_merge($siteConfiguration, $configuration);
+                // Maybe better?
+                //ArrayUtility::mergeRecursiveWithOverrule($siteConfiguration, $configuration);
+            }
         }
         $event->setConfiguration($siteConfiguration);
     }

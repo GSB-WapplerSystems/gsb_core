@@ -1,68 +1,71 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
 
-    <f:link.typolink parameter="{file.link}" title="{file.link.title}">
-        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                <source
-                    media="(min-width: 1220px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'webp')}"
-                    type="image/webp"
-                >
-                <source
-                    media="(min-width: 1220px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'jpg')}"
-                    type="image/jpeg"
-                >
-                <source
-                    media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'webp')}"
-                    type="image/webp"
-                >
-                <source
-                    media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'jpg')}"
-                    type="image/jpeg"
-                >
-                <source
-                    media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'webp')}"
-                    type="image/webp"
-                >
-                <source
-                    media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'jpg')}"
-                    type="image/jpeg"
-                >
-                <source
-                    media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'webp')}"
-                    type="image/webp"
-                >
-                <source
-                    media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'jpg')}"
-                    type="image/jpeg"
-                >
-                <source
-                    media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'webp')}"
-                    type="image/webp"
-                >
-                <source
-                    media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
-                    type="image/jpeg"
-                >
-                <img alt="{file.properties.alternative}" loading="lazy"
-                     data-bs-slide-to="0" data-bs-target="#Carousel-{data.uid}"
-                     src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}"
-                >
-            </picture>
-            <noscript>
-                {f:image(image: file, cropVariant: 'default', maxWidth: dimensions.width, width: dimensions.width)}
-            </noscript>
-        </f:alias>
-    </f:link.typolink>
+<f:link.typolink parameter="{file.link}" title="{file.link.title}">
+    <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+        <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}"
+                 data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}"
+                 data-aspectratio-xs="{xsmall.selectedRatio}">
+            <source
+                media="(min-width: 1220px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'webp')}"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 1220px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'jpg')}"
+                type="image/jpeg"
+            >
+            <source
+                media="(min-width: 992px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'webp')}"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 992px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'jpg')}"
+                type="image/jpeg"
+            >
+            <source
+                media="(min-width: 768px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'webp')}"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 768px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'jpg')}"
+                type="image/jpeg"
+            >
+            <source
+                media="(min-width: 576px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'webp')}"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 576px)"
+                srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'jpg')}"
+                type="image/jpeg"
+            >
+            <source
+                media="(min-width: 0)"
+                srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'webp')}"
+                type="image/webp"
+            >
+            <source
+                media="(min-width: 0)"
+                srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
+                type="image/jpeg"
+            >
+            <img alt="{file.properties.alternative}" data-bs-slide-to="0"
+                 data-bs-target="#Carousel-{data.uid}" loading="lazy"
+                 src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}"
+            >
+        </picture>
+        <noscript>
+            {f:image(image: file, cropVariant: 'default', maxWidth: dimensions.width, width: dimensions.width)}
+        </noscript>
+    </f:alias>
+</f:link.typolink>
 
 
 </html>

@@ -1,38 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf" date="2022-12-01T04:10:34" product-name="gsb_template">
-    <header/>
-    <body>
-      <trans-unit id="wizards.contentElement.gsb_banner_title" resname="wizards.contentElement.gsb_banner_title">
-        <source>Banner</source>
-      </trans-unit>
-      <trans-unit id="wizards.contentElement.gsb_banner_description" resname="wizards.contentElement.gsb_banner_description">
-        <source>Display a banner on the page</source>
-      </trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_download_title" resname="wizards.newContentElement.gsb_download_title">
-			<source>File download</source>
-		</trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_download_description" resname="wizards.newContentElement.gsb_download_description">
-			<source>Attaches a file or document as a donwload</source>
-		</trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_gallery_title" resname="wizards.newContentElement.gsb_gallery_title">
-			<source>Gallery</source>
-		</trans-unit>
-		<trans-unit id="wizards.newContentElement.gsb_gallery_description" resname="wizards.newContentElement.gsb_gallery_description">
-			<source>Inserts a gallery module</source>
-		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_singleteaser_title" resname="wizards.contentElement.gsb_singleteaser_title">
-			<source>Single teaser</source>
-		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_singleteaser_description" resname="wizards.contentElement.gsb_singleteaser_description">
-			<source>Adds a teaser with headline, image, text and link element</source>
-		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_stage_title" resname="wizards.contentElement.gsb_stage_title">
-			<source>Stage</source>
-		</trans-unit>
-		<trans-unit id="wizards.contentElement.gsb_stage_description" resname="wizards.contentElement.gsb_stage_description">
-			<source>Inserts a stage module</source>
-		</trans-unit>
-    </body>
-  </file>
+	<file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db_content_el.xlf" date="2022-12-01T04:10:34" product-name="gsb_template">
+		<header />
+		<body>
+			<trans-unit id="wizards.contentElement.gsb_banner_title" resname="wizards.contentElement.gsb_banner_title">
+				<source>Banner</source>
+			</trans-unit>
+			<trans-unit id="wizards.contentElement.gsb_banner_description" resname="wizards.contentElement.gsb_banner_description">
+				<source>Display a banner on the page</source>
+			</trans-unit>
+			<trans-unit id="wizards.newContentElement.gsb_download_title" resname="wizards.newContentElement.gsb_download_title">
+				<source>File download</source>
+			</trans-unit>
+			<trans-unit id="wizards.newContentElement.gsb_download_description" resname="wizards.newContentElement.gsb_download_description">
+				<source>Attaches a file or document as a donwload</source>
+			</trans-unit>
+			<trans-unit id="wizards.newContentElement.gsb_gallery_title" resname="wizards.newContentElement.gsb_gallery_title">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="wizards.newContentElement.gsb_gallery_description" resname="wizards.newContentElement.gsb_gallery_description">
+				<source>Inserts a gallery module</source>
+			</trans-unit>
+			<trans-unit id="wizards.contentElement.gsb_singleteaser_title" resname="wizards.contentElement.gsb_singleteaser_title">
+				<source>Single teaser</source>
+			</trans-unit>
+			<trans-unit id="wizards.contentElement.gsb_singleteaser_description" resname="wizards.contentElement.gsb_singleteaser_description">
+				<source>Adds a teaser with headline, image, text and link element</source>
+			</trans-unit>
+			<trans-unit id="wizards.contentElement.gsb_stage_title" resname="wizards.contentElement.gsb_stage_title">
+				<source>Stage</source>
+			</trans-unit>
+			<trans-unit id="wizards.contentElement.gsb_stage_description" resname="wizards.contentElement.gsb_stage_description">
+				<source>Inserts a stage module</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>

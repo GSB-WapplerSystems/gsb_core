@@ -22,10 +22,10 @@
                 <source>Inserts a stage module</source>
             </trans-unit>
             <trans-unit id="grid.title" resname="grid.title">
-                <target>Grid</target>
+                <source>Grid</source>
             </trans-unit>
             <trans-unit id="grid.description" resname="grid.description">
-                <target>Create a grid with any number of elements. Can also be switched to a slider can be switched to a slider.</target>
+                <source>Create a grid with any number of elements. Can also be switched to a slider can be switched to a slider.</source>
             </trans-unit>
             <trans-unit id="grid.elements" resname="grid.elements">
                 <source>Grid elements</source>

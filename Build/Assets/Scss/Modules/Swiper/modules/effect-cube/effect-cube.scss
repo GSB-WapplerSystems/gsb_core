@@ -53,13 +53,10 @@
 
     &::before {
       background: #000;
-      bottom: 0;
       content: "";
       filter: blur(50px);
-      left: 0;
+      inset: 0;
       position: absolute;
-      right: 0;
-      top: 0;
     }
   }
 }

@@ -31,17 +31,21 @@ class GalleryPreviewRenderer extends StandardContentPreviewRenderer
     {
         $content = '';
         $row = $item->getRecord();
+
         if ($row['CType'] === 'gallery') {
             if ($row['gallery_file']) {
                 $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'gallery_file'), $row);
                 $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'gallery_file', $row);
                 if ($fileReferences !== []) {
+                    // @codeCoverageIgnoreStart
                     $linkedContent = '';
                     $content .= $this->linkEditContent($linkedContent, $row);
                     unset($linkedContent);
+                    // @codeCoverageIgnoreEnd
                 }
             }
         }
+
         if ($row['gallery_layout']) {
             $content .= $this->linkEditContent('<div class="text-left"><p style="font-size: 14px; padding-top: 14px;"><b>Layout: ' . $row['gallery_layout'] . '</b></p></div>', $row);
         }
