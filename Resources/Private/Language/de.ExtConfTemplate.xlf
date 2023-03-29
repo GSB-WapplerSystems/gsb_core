@@ -4,8 +4,8 @@
         <header/>
         <body>
             <trans-unit id="pageTs.enableDropdownNavigation" resname="pageTs.enableDropdownNavigation">
-				<source>Navigation: Enable dropdown navigation.</source>
-                <target>Navigation: Dropdown-Navigation aktivieren.</target>
+				<source>Navigation: Enable dropdown navigation</source>
+                <target>Navigation: Dropdown-Navigation aktivieren</target>
             </trans-unit>
         </body>
     </file>

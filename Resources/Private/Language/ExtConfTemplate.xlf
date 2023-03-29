@@ -3,8 +3,8 @@
 	<file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/ExtConfTemplate.xlf" date="2013-09-19T09:11:39Z" product-name="gsb_template">
 		<header/>
 		<body>
-			<trans-unit id="pageTs.enableDropdownNavigation" resname="pageTs.disablePageTsRTE">
-				<source>Navigation: Enable dropdown navigation.</source>
+			<trans-unit id="pageTs.enableDropdownNavigation" resname="pageTs.enableDropdownNavigation">
+				<source>Navigation: Enable dropdown navigation</source>
 			</trans-unit>
 		</body>
 	</file>
