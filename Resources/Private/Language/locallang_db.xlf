@@ -3,6 +3,39 @@
     <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
         <header/>
         <body>
+			<trans-unit id="video.video_title" resname="video.video_title">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="video.video_description" resname="video.video_description">
+				<source>Puts a local or external youtube video on the page</source>
+			</trans-unit>
+			<trans-unit id="audio.audio_title" resname="audio.audio_title">
+				<source>Audio</source>
+			</trans-unit>
+			<trans-unit id="audio.audio_description" resname="audio.audio_description">
+				<source>Puts a local or external audio on the page</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_title" resname="stage.tx_stage_title">
+				<source>Stage</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_description" resname="stage.tx_stage_description">
+				<source>Inserts a stage module</source>
+			</trans-unit>
+			<trans-unit id="grid.title" resname="grid.title">
+				<source>Grid</source>
+			</trans-unit>
+			<trans-unit id="grid.description" resname="grid.description">
+				<source>Create a grid with any number of elements</source>
+			</trans-unit>
+			<trans-unit id="grid.elements" resname="grid.elements">
+				<source>Grid elements</source>
+			</trans-unit>
+			<trans-unit id="gallery.title" resname="gallery.title">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="gallery.description" resname="gallery.description">
+				<source>Inserts a gallery element as a single image preview, tiles or slider</source>
+			</trans-unit>
 			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
 				<source>Single teaser</source>
 			</trans-unit>
@@ -81,12 +114,6 @@
             <trans-unit id="tt_content.tx_video_poster_image" xml:space="preserve">
                 <source>Poster Image</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_video_poster_video_label" xml:space="preserve">
-                <source>Poster Video</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_poster_video_description" xml:space="preserve">
-                <source>The Videofile may not be longer than 5 seconds</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_video" xml:space="preserve">
                 <source>Video</source>
             </trans-unit>
@@ -137,9 +164,6 @@
             </trans-unit>
             <trans-unit id="stage.tx_stage_position" xml:space="preserve">
                 <source>Stage text position</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
-                <source>Salutation</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_bgcolor.I.0" xml:space="preserve">
                 <source>Bright</source>
@@ -276,9 +300,6 @@
             <trans-unit id="content" xml:space="preserve">
                 <source>Content</source>
             </trans-unit>
-            <trans-unit id="grid.title" xml:space="preserve">
-                <source>Grid</source>
-            </trans-unit>
             <trans-unit id="grid.type" xml:space="preserve">
                 <source>Grid type</source>
             </trans-unit>
@@ -293,12 +314,6 @@
             </trans-unit>
             <trans-unit id="grid.bgimage" xml:space="preserve">
                 <source>Background image</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.parallax" xml:space="preserve">
-                <source>Parallax animation</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.parallax.description" xml:space="preserve">
-                <source>Enable parallax animation for background image</source>
             </trans-unit>
             <trans-unit id="grid.bg.imgbg" xml:space="preserve">
                 <source>Color layer</source>
@@ -328,16 +343,13 @@
                 <source>Container</source>
             </trans-unit>
             <trans-unit id="grid.bg.container.description" xml:space="preserve">
-                <source>Turns off the container wrapper.</source>
+                <source>Turns off the container wrapper</source>
             </trans-unit>
             <trans-unit id="grid.bg.light" xml:space="preserve">
                 <source>Grid font-color</source>
             </trans-unit>
             <trans-unit id="grid.bg.light.description" xml:space="preserve">
                 <source>Switch font-color from dark to light</source>
-            </trans-unit>
-            <trans-unit id="grid.description" xml:space="preserve">
-                <source>Create a grid with any number of elements</source>
             </trans-unit>
             <trans-unit id="grid.elements" xml:space="preserve">
                 <source>Grid elements</source>
@@ -346,8 +358,7 @@
                 <source>Grid Columns</source>
             </trans-unit>
             <trans-unit id="grid.columns.description" xml:space="preserve">
-                <source>Choose how many columns the grid will be divided into. Can also be switched to a slider.
-                </source>
+                <source>Choose how many columns the grid will be divided into</source>
             </trans-unit>
             <trans-unit id="grid.columns.onecol" xml:space="preserve">
                 <source>One column</source>
@@ -410,10 +421,10 @@
                 <source>Page container</source>
             </trans-unit>
             <trans-unit id="container.description" xml:space="preserve">
-                <source>Container covering the entire page or screen width.</source>
+                <source>Container covering the entire page or screen width</source>
             </trans-unit>
             <trans-unit id="silhouette.0" xml:space="preserve">
-                <source>Standard</source>
+                <source>Default</source>
             </trans-unit>
             <trans-unit id="silhouette.1" xml:space="preserve">
                 <source>Silhouette 1</source>

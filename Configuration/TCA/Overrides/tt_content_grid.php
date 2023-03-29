@@ -22,7 +22,7 @@ defined('TYPO3') or die('Access denied.');
                 [
                     [
                         [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:grid.elements',
+                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.elements',
                             'colPos' => 101,
                         ],
                     ],
