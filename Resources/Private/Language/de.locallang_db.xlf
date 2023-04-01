@@ -3,6 +3,62 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
 		<header />
 		<body>
+			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.Article" resname="BackendLayouts.Article">
+				<source>Article</source>
+				<target>Artikel</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.top">
+				<source>Top (full width)</source>
+				<target>Oben (volle Breite)</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.main" resname="BackendLayouts.main">
+				<source>Maincontent</source>
+				<target>Hauptinhalt</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement">
+				<source>Supplement</source>
+				<target>Ergänzung</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.bottom" resname="BackendLayouts.bottom">
+				<source>Bottom</source>
+				<target>Unten</target>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox" resname="pages.NewsletterBox">
+				<source>Newsletter Box</source>
+				<target>Newsletter-Box</target>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox.description" resname="pages.NewsletterBox.description">
+				<source>Remove newsletter box</source>
+				<target>Newsletter-Box entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar" resname="pages.SocialmediaBar">
+				<source>Socialmedia Bar</source>
+				<target>Socialmedia-Leiste</target>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar.description" resname="pages.SocialmediaBar.description">
+				<source>Remove socialmedia bar</source>
+				<target>Socialmedia-Leiste entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb">
+				<source>Breadcrumb</source>
+				<target>Breadcrumb</target>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb.description" resname="pages.Breadcrumb.description">
+				<source>Remove breadcrumb</source>
+				<target>Breadcrumb entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription" resname="pages.TeaserDescription.description">
+				<source>Teaser short text</source>
+				<target>Teaser Kurztext</target>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription.description" resname="pages.TeaserDescription.description">
+				<source>Short text that can be displayed in teasers to this page</source>
+				<target>Kurztext der in Teasern zu dieser Seite angezeigt werden kann</target>
+			</trans-unit>
 			<trans-unit id="header_layout.0" resname="header_layout.0">
 				<source>Default</source>
 				<target>Standard</target>
@@ -115,19 +171,19 @@
 				<source>Inserts a gallery element as a single image preview, tiles or slider</source>
 				<target>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</target>
 			</trans-unit>
-			<trans-unit id="gsb_slider.description" xml:space="preserve">
+			<trans-unit id="dpx_slider.description" xml:space="preserve">
 				<source>Container element for Slider</source>
 				<target>Container für Slider</target>
 			</trans-unit>
-			<trans-unit id="gsb_slider.title" xml:space="preserve">
+			<trans-unit id="dpx_slider.title" xml:space="preserve">
 				<source>Slideshow</source>
 				<target>Slideshow</target>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
+			<trans-unit id="dpx_singleteaser.title" xml:space="preserve">
 				<source>Single teaser</source>
 				<target>Einzelteaser</target>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.description" xml:space="preserve">
+			<trans-unit id="dpx_singleteaser.description" xml:space="preserve">
 				<source>Adds a teaser with headline, image, text and link element</source>
 				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 			</trans-unit>
@@ -337,86 +393,6 @@
 			<trans-unit id="columns.twoColumnDescription" xml:space="preserve">
 				<source>Two columns with customized width</source>
 				<target>Zwei Spalten mit individueller Breite</target>
-			</trans-unit>
-			<trans-unit id="columns.column.0" xml:space="preserve">
-				<source>One Column 8.33%</source>
-				<target>Eine Spalte 8.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.1" xml:space="preserve">
-				<source>Two columns 16.66%</source>
-				<target>Zwei Spalten 16.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.2" xml:space="preserve">
-				<source>Three columns 25%</source>
-				<target>Drei Spalten 25%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.3" xml:space="preserve">
-				<source>Four columns 33.33%</source>
-				<target>Vier Spalten 33.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.4" xml:space="preserve">
-				<source>Five columns 41.66%</source>
-				<target>Fünf Spalten 41.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.5" xml:space="preserve">
-				<source>Six columns 50%</source>
-				<target>Sechs Spalten 50%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.6" xml:space="preserve">
-				<source>Seven columns 58.33%</source>
-				<target>Sieben Spalten 58.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.7" xml:space="preserve">
-				<source>Eight columns 66.66%</source>
-				<target>Acht Spalten 66.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.8" xml:space="preserve">
-				<source>Nine columns 75%</source>
-				<target>Neun Spalten 75%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.9" xml:space="preserve">
-				<source>Ten columns 83.33%</source>
-				<target>Zehn Spalten 83.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.10" xml:space="preserve">
-				<source>Elven columns 91.66%</source>
-				<target>Elf Spalten 91.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.11" xml:space="preserve">
-				<source>Twelve columns 100%</source>
-				<target>Zwölf Spalten 100%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.first" xml:space="preserve">
-				<source>First column</source>
-				<target>Erste Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.first.description" xml:space="preserve">
-				<source>Width of the first column</source>
-				<target>Breite der ersten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.second" xml:space="preserve">
-				<source>Second column</source>
-				<target>Zweite Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.second.description" xml:space="preserve">
-				<source>Width of the second column</source>
-				<target>Breite der zweiten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.third" xml:space="preserve">
-				<source>Third column</source>
-				<target>Dritte Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.third.description" xml:space="preserve">
-				<source>Width of the third column</source>
-				<target>Breite der dritten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.fourth" xml:space="preserve">
-				<source>Fourth column</source>
-				<target>Vierte Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.fourth.description" xml:space="preserve">
-				<source>Width of the fourth column</source>
-				<target>Breite der vierten Spalte</target>
 			</trans-unit>
 			<trans-unit id="columns.threeColumnTitle" xml:space="preserve">
 				<source>3 Columns</source>

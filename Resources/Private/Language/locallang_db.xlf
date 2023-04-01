@@ -3,6 +3,54 @@
     <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
         <header/>
         <body>
+			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.Article" resname="BackendLayouts.Article">
+				<source>Article</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.top">
+				<source>Top (full width)</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.main" resname="BackendLayouts.main">
+				<source>Maincontent</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement">
+				<source>Supplement</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.bottom" resname="BackendLayouts.bottom">
+				<source>Bottom</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.supplement">
+				<source>Supplement</source>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.bottom">
+				<source>Bottom</source>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox" resname="pages.NewsletterBox">
+				<source>Newsletter Box</source>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox.description" resname="pages.NewsletterBox.description">
+				<source>Remove newsletter box</source>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar" resname="pages.SocialmediaBar">
+				<source>Socialmedia Bar</source>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar.description" resname="pages.SocialmediaBar.description">
+				<source>Remove socialmedia bar</source>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb">
+				<source>Breadcrumb</source>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb.description" resname="pages.Breadcrumb.description">
+				<source>Remove breadcrumb</source>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription" resname="pages.TeaserDescription.description">
+				<source>Teaser short text</source>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription.description" resname="pages.TeaserDescription.description">
+				<source>Short text that can be displayed in teasers to this page</source>
+			</trans-unit>
 			<trans-unit id="header_layout.0" resname="header_layout.0">
 				<source>Default</source>
 			</trans-unit>
@@ -87,16 +135,16 @@
 			<trans-unit id="gallery.description" resname="gallery.description">
 				<source>Inserts a gallery element as a single image preview, tiles or slider</source>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
+			<trans-unit id="dpx_singleteaser.title" xml:space="preserve">
 				<source>Single teaser</source>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.description" xml:space="preserve">
+			<trans-unit id="dpx_singleteaser.description" xml:space="preserve">
 				<source>Adds a teaser with headline, image, text and link element</source>
 			</trans-unit>
-			<trans-unit id="gsb_slider.description" xml:space="preserve">
+			<trans-unit id="dpx_slider.description" xml:space="preserve">
 				<source>Container element for Slider</source>
 			</trans-unit>
-			<trans-unit id="gsb_slider.title" xml:space="preserve">
+			<trans-unit id="dpx_slider.title" xml:space="preserve">
 				<source>Slideshow</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link" xml:space="preserve">
