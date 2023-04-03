@@ -40,7 +40,7 @@
 		"typo3/cms-t3editor": "^12.2",
 		"typo3/cms-tstemplate": "^12.2",
 		"typo3/cms-viewpage": "^12.2",
-		"typo3/cms-workspaces": "12.2"
+		"typo3/cms-workspaces": "^12.2"
 	},
 	"require-dev": {
 		"codeception/codeception": "*",
