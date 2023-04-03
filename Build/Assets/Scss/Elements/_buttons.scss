@@ -26,7 +26,7 @@
     }
 
     @include media-breakpoint-up(md) {
-      margin-right: 74px;
+      margin-left: 74px;
       position: relative;
       right: auto;
       top: auto;
@@ -88,13 +88,14 @@
 
       @include media-breakpoint-up(md) {
         clip: auto;
-        color: $black;
+        color: $darkblue;
         display: block;
         font-size: 17px;
         font-weight: bold;
         height: auto;
+        left: -60px;
         position: absolute;
-        right: -60px;
+        text-transform: uppercase;
         top: 12px;
         width: auto;
       }

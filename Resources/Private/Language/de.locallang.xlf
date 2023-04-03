@@ -3,6 +3,18 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang.xlf" date="2022-12-11T09:48:17" product-name="gsb_template">
 		<header />
 		<body>
+			<trans-unit id="meta.NavigationSection" resname="meta.homepage">
+				<source>Homepage</source>
+				<target>Startseite</target>
+			</trans-unit>
+			<trans-unit id="meta.NavigationSection" resname="meta.serviceheader">
+				<source>Navigation section</source>
+				<target>Navigationsbereich</target>
+			</trans-unit>
+			<trans-unit id="meta.ServiceSection" resname="meta.serviceheader">
+				<source>Service section</source>
+				<target>Servicebereich</target>
+			</trans-unit>
 			<trans-unit id="footer.serviceheader" resname="footer.serviceheader">
 				<source>Federal Government Services</source>
 				<target>Services der Bundesregierung</target>

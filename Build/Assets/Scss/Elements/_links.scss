@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-button,
-.btn,
 a {
   &:hover,
   &:focus,
@@ -12,5 +10,16 @@ a {
     .figure & {
       outline-offset: 1px;
     }
+  }
+}
+
+button,
+.btn,
+.nav-link {
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 1px solid $darkblue !important;
+    outline-offset: 0;
   }
 }
