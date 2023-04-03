@@ -159,10 +159,6 @@
 				<source>Create a grid with any number of elements.</source>
 				<target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen.</target>
 			</trans-unit>
-			<trans-unit id="grid.elements" resname="grid.elements">
-				<source>Grid elements</source>
-				<target>Raster Elemente</target>
-			</trans-unit>
 			<trans-unit id="gallery.title" resname="gallery.title">
 				<source>Gallery</source>
 				<target>Galerie</target>

@@ -15,17 +15,11 @@
 			<trans-unit id="BackendLayouts.main" resname="BackendLayouts.main">
 				<source>Maincontent</source>
 			</trans-unit>
-			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement">
-				<source>Supplement</source>
-			</trans-unit>
 			<trans-unit id="BackendLayouts.bottom" resname="BackendLayouts.bottom">
 				<source>Bottom</source>
 			</trans-unit>
-			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.supplement">
+			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement">
 				<source>Supplement</source>
-			</trans-unit>
-			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.bottom">
-				<source>Bottom</source>
 			</trans-unit>
 			<trans-unit id="pages.NewsletterBox" resname="pages.NewsletterBox">
 				<source>Newsletter Box</source>
@@ -125,9 +119,6 @@
 			</trans-unit>
 			<trans-unit id="grid.description" resname="grid.description">
 				<source>Create a grid with any number of elements</source>
-			</trans-unit>
-			<trans-unit id="grid.elements" resname="grid.elements">
-				<source>Grid elements</source>
 			</trans-unit>
 			<trans-unit id="gallery.title" resname="gallery.title">
 				<source>Gallery</source>
