@@ -19,23 +19,23 @@ TCEFORM {
   tt_content {
     header_layout {
       altLabels {
-        0 = Standard
-        1 = H1 - Standard
-        2 = H2
-        3 = H3
-        4 = H4
-        5 = H5
+        0 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.0
+        1 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.1
+        2 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.2
+        3 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.3
+        4 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.4
+        5 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.5
       }
       removeItems = 0
 
       addItems {
-        6 = H6
-        7 = H1 - versteckt (SR only)
-        8 = H2 - versteckt (SR only)
-        9 = H3 - versteckt (SR only)
-        10 = H4 - versteckt (SR only)
-        11 = H5 - versteckt (SR only)
-        12 = H6 - versteckt (SR only)
+        6 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.6
+        7 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.7
+        8 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.8
+        9 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.9
+        10 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.10
+        11 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.11
+        12 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.12
       }
     }
     CType {
@@ -48,20 +48,16 @@ TCEFORM {
 
       }
       altLabels {
-        0 = Normale Box (Standard)
-        1 = Einrückung Element (Col-8)
-        2 = Einrückung Element (Col-10)
+        0 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.0
+        1 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.1
+        2 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.2
       }
     }
     frame_class {
       disabled = 1
       #removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
       addItems {
-        #text-2-columns = Text: 2-Spalten (column-2-col)
-        #text-3-columns = Text: 3-Spalten (column-3-col)
-        #teaser = Teaser: Element (Dunkel)
-        #teaser-light = Teaser: Element (Hell)
-        #teaser-transparent = Teaser: Element (Transparent)
+        #text-2-columns = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:frame_class.text-2-columns
       }
       altLabels {
 

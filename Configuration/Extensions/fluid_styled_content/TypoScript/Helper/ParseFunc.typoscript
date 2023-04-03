@@ -46,7 +46,6 @@ lib.parseFunc {
     }
 }
 
-
 # Creates persistent ParseFunc setup for RTE content (which is mainly HTML) based on the "default" transformation.
 lib.parseFunc_RTE < lib.parseFunc
 lib.parseFunc_RTE {
@@ -70,9 +69,9 @@ lib.parseFunc_RTE {
                 HTMLparser = 1
                 HTMLparser {
                     tags.table.fixAttrib.class {
-                        default = table table-dark table-striped table-hover
+                        default = table table-striped table-hover
                         always = 1
-                        list = table table-dark table-striped table-hover
+                        list = table table-striped table-hover
                     }
                     keepNonMatchedTags = 1
                 }
