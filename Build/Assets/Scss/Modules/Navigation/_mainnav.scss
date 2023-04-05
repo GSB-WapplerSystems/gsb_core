@@ -1,4 +1,4 @@
-@charset "utf-8";
+// main nav
 
 .navbar {
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 .navbar-wrapper {
-  background-color: $gray-100;
+  background-color: $white;
   position: relative;
 
   ul {
@@ -60,103 +60,70 @@
 
 .main-menu {
   align-items: flex-start !important;
-  padding: 0;
-  width: 100%;
-
-  li:last-child {
-    border: none !important;
-  }
 
   &-layer {
     position: static;
 
-    > .dropdown-menu {
-      border: none;
-      left: 0;
-      padding: 0;
-      position: absolute;
-      width: 100%;
+    @include media-breakpoint-down(md) {
+      flex: 0 1 0;
     }
-  }
 
-  a {
-    &:hover,
-    &:focus,
-    &:active {
-      outline: none !important;
+    > .dropdown-menu {
+      border: 0 none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      right: 0;
+      top: 101%;
     }
   }
 
   .first-child {
-    color: $black;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    width: auto;
+    @include font-size(18px);
+    background-color: transparent;
+    color: $darkblue;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0;
+    text-transform: uppercase;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: transparent;
-      color: $black;
+      color: $darkblue;
       text-decoration: underline;
     }
   }
 
-  ul {
-    border-bottom: 1px solid $gray-200;
-    margin: 0 0 15px;
-    padding-bottom: 15px;
-    padding-left: 0;
-    padding-right: 0;
-
-    .nav-more {
-      color: $black;
-      cursor: pointer;
-      font-size: 20px;
-
-      &:hover,
-      &:focus,
-      &:active {
-        span {
-          text-decoration: underline;
-        }
-      }
-
-      &::before {
-        content: "+";
-        font-size: 28px;
-        line-height: 0;
-        margin-right: .8rem;
-        position: relative;
-        top: 3px;
-      }
-
-      &.open {
-        &::before {
-          content: "-";
-        }
-      }
-    }
+  li {
+    padding-right: 60px;
+    position: relative;
   }
 
-  > li {
-    padding: 0;
+  ul {
+    margin-bottom: 16px;
+    margin-right: -60px;
 
-    &.no-children {
-      border-bottom: 1px solid $gray-200;
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-    }
-
-    > ul {
+    ul {
       li {
-        &:not(:nth-child(-n+3)) {
-          display: block;
+        padding-left: 8px;
 
-          @include media-breakpoint-up(lg) {
-            display: none;
+        ul {
+          li {
+            padding-left: 16px;
+
+            ul {
+              li {
+                padding-left: 24px;
+
+                ul {
+                  li {
+                    padding-left: 32px;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -164,64 +131,32 @@
   }
 
   .sub {
-    color: $black;
-    display: inline-block;
-    font-size: 20px;
-    outline: none;
-    padding: 5px 0;
+    color: $darkblue;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    outline-offset: -2px;
     position: relative;
+    text-decoration: none;
     white-space: normal;
-    width: auto;
+    width: 100%;
+
+    + .btn-open {
+      top: 0;
+    }
 
     &:hover,
     &:focus,
     &:active {
       background-color: transparent;
-      color: $black;
+      color: $darkblue;
       text-decoration: underline;
     }
   }
 
-  .active,
-  strong {
-    background-color: transparent;
-    color: $green;
-    font-weight: 700;
-    text-decoration: none;
-
-    &.sub {
-      color: $green;
-      text-decoration: underline;
-    }
-  }
-}
-
-.main-meta-wrapper {
-  align-items: center;
-  background-color: $gray-400;
-  // nor for presentation
-  display: none;
-  // display: flex;
-  height: 145px;
-  padding: 15px;
-}
-
-.hidden-link {
-  display: none;
-}
-
-.will-hidden {
-  display: block;
-}
-
-@include media-breakpoint-up(lg) {
-  .list-unstyled {
-    .hidden-link {
-      display: block !important;
-    }
-  }
-
-  .will-hidden {
-    display: none;
+  .act {
+    color: $darkblue;
+    text-decoration: underline;
   }
 }

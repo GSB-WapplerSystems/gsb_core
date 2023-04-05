@@ -23,3 +23,14 @@ button,
     outline-offset: 0;
   }
 }
+
+.btn {
+  margin: 7px 0;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 2px solid $black !important;
+    outline-offset: 4px;
+  }
+}

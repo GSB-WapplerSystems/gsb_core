@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 .btn {
-  border: 2px solid $white;
-  color: $white;
-  font-weight: 700;
+  border-radius: 0 24px 24px;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
 }
 
 .navbar {
@@ -104,40 +104,45 @@
 }
 
 .btn-open {
-  background-color: $gray-800;
-  background-image: svg-load("../Images/Icons/icon-minus.svg", fill=$white);
+  background-color: $white;
+  background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 16px 2px;
-  border: 1px solid $white;
+  background-size: 24px 24px;
   display: block;
-  height: 29px;
+  height: 33px;
   margin: 0;
   padding: 0;
   position: absolute;
-  right: 3px;
-  top: 3px;
-  width: 29px;
+  right: 16px;
+  top: -3px;
+  width: 33px;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: $gray-800;
+    background-color: $darkblue;
+    background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$white);
+    outline-color: $white !important;
+    outline-offset: -2px;
   }
 
   &.active {
-    background-color: $gray-800 !important;
+    background-color: $darkblue !important;
+    background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$white);
   }
 
   &.collapsed {
-    background-color: $gray-800;
-    background-image: svg-load("../Images/Icons/icon-plus.svg", fill=$white);
-    background-size: 16px 16px;
+    background-color: $white;
+    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: $gray-800;
+      background-color: $darkblue;
+      background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$white);
+      outline-color: $white !important;
+      outline-offset: -2px;
     }
   }
 }

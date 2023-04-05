@@ -369,8 +369,8 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary: $darkblue;
-$secondary: $darkgreen;
+$primary: $red;
+$secondary: $gray-200;
 $success: $green;
 $info: $cyan;
 $warning: $orange;
@@ -681,6 +681,7 @@ $font-weight-bolder: bolder;
 
 $font-weight-base: $font-weight-normal;
 
+$line-height: 1;
 $line-height-base: 1.5;
 $line-height-sm: 1.25;
 $line-height-lg: 2;
@@ -832,11 +833,11 @@ $table-variants: (
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 // scss-docs-start input-btn-variables
-$input-btn-padding-y: .375rem;
-$input-btn-padding-x: .75rem;
+$input-btn-padding-y: .9375rem;
+$input-btn-padding-x: 2.5rem;
 $input-btn-font-family: null;
 $input-btn-font-size: $font-size-base;
-$input-btn-line-height: $line-height-base;
+$input-btn-line-height: $line-height;
 
 $input-btn-focus-width: $focus-ring-width;
 $input-btn-focus-color-opacity: $focus-ring-opacity;
@@ -877,7 +878,7 @@ $btn-font-size-lg: $input-btn-font-size-lg;
 
 $btn-border-width: $input-btn-border-width;
 
-$btn-font-weight: 18px;
+$btn-font-weight: 700;
 $btn-box-shadow: none;
 $btn-focus-width: $input-btn-focus-width;
 $btn-focus-box-shadow: none;
@@ -889,9 +890,9 @@ $btn-link-hover-color: var(--#{$prefix}link-hover-color);
 $btn-link-disabled-color: $gray-600;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius;
-$btn-border-radius-sm: $border-radius-sm;
-$btn-border-radius-lg: $border-radius-lg;
+$btn-border-radius: 0 $border-radius $border-radius $border-radius;
+$btn-border-radius-sm: 0 $border-radius-sm $border-radius-sm $border-radius-sm;
+$btn-border-radius-lg: 0 $border-radius-lg $border-radius-lg $border-radius-lg;
 
 $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
