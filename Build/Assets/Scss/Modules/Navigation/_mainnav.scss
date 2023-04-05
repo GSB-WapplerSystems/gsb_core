@@ -78,6 +78,33 @@
     }
   }
 
+  a[type="button"] {
+    background-color: $white;
+    padding-right: 30px !important;
+    position: relative;
+
+    &::after {
+      background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue);
+      background-position: 99% center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      content: '';
+      height: 24px;
+      position: absolute;
+      right: 3px;
+      top: 4px;
+      transition: transform .1s ease-in-out;
+      width: 24px;
+    }
+
+    &.collapsed {
+      &::after {
+        transform: rotate(180deg);
+        transition: transform .1s ease-in-out;
+      }
+    }
+  }
+
   .first-child {
     @include font-size(18px);
     background-color: transparent;
@@ -97,29 +124,31 @@
   }
 
   li {
-    padding-right: 60px;
     position: relative;
   }
 
   ul {
     margin-bottom: 16px;
-    margin-right: -60px;
+
+    li {
+      padding-left: 0;
+    }
 
     ul {
       li {
-        padding-left: 8px;
+        padding-left: 16px;
 
         ul {
           li {
-            padding-left: 16px;
+            padding-left: 24px;
 
             ul {
               li {
-                padding-left: 24px;
+                padding-left: 32px;
 
                 ul {
                   li {
-                    padding-left: 32px;
+                    padding-left: 48px;
                   }
                 }
               }
@@ -137,6 +166,7 @@
     font-weight: 400;
     margin-bottom: 8px;
     outline-offset: -2px;
+    padding-left: 4px;
     position: relative;
     text-decoration: none;
     white-space: normal;
