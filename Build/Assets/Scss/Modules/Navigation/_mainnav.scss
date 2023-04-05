@@ -115,6 +115,10 @@
     padding: 0;
     text-transform: uppercase;
 
+    &::after {
+      top: 0 !important;
+    }
+
     &:hover,
     &:focus,
     &:active {
@@ -165,8 +169,8 @@
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 8px;
-    outline-offset: -2px;
-    padding-left: 4px;
+    outline-offset: 0;
+    padding-left: 2px;
     position: relative;
     text-decoration: none;
     white-space: normal;
