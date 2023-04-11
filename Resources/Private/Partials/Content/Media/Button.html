@@ -1,7 +1,8 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:if condition="{data.tx_link}">
     <div class="ce-button ce-btn-left">
-        <f:link.typolink parameter="{data.tx_link}" class="btn btn-primary btn-left"><span>{data.tx_link_text}</span></f:link.typolink>
+        <f:link.typolink class="btn btn-primary btn-left stretched-link" parameter="{data.tx_link}"><span>{data.tx_link_text}</span>
+        </f:link.typolink>
     </div>
 </f:if>
 </html>
