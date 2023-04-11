@@ -4,15 +4,18 @@
 
 <f:section name="Main">
     <f:render arguments="{_all}" partial="Header"/>
-    
+
     <main class="main-wrapper" id="mainContent">
-        
+        <f:if condition="{data.is_siteroot} == 1">
+            <h1 class="visually-hidden">{f:translate(key: 'meta.homepage', extensionName: 'gsb_template')}: {f:cObject(typoscriptObjectPath: 'lib.headTitle')}</h1>
+        </f:if>
+
         <f:if condition="{top}">
             <div class="top-container">
                 <f:format.raw>{top}</f:format.raw>
             </div>
         </f:if>
-        
+
         <div class="main-container container pb-5">
             <div class="row">
                 <div class="col-12">

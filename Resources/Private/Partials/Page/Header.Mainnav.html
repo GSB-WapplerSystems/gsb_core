@@ -2,7 +2,7 @@
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-    <nav class="col main-menu-layer dropdown order-1" aria-labelledby="mainmenu" id="main-menu">
+    <nav class="main-menu-layer dropdown flex-grow-0" aria-labelledby="mainmenu" id="main-menu">
         <button aria-expanded="false" aria-controls="menu" class="navbar-toggler" data-bs-boundary="scrollParent" data-bs-auto-close="outside" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_template')}" type="button">
             <span class="line"></span>
             <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_template')}</f:format.raw></span>
@@ -11,8 +11,7 @@
             <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_template')}</h2>
             <div class="navbar-wrapper">
                 <div class="meta-mobile" id="meta-mobile"></div>
-                <f:render arguments="{menuMainGsb: menuMainGsb}" partial="Navigation/MainNavGsb"/>
-                <f:render arguments="{menuMetaMain: menuMetaMain}" partial="Navigation/MainNavMeta"/>
+                <f:render arguments="{menuMain: menuMain}" partial="Navigation/MainNav"/>
             </div>
         </div>
     </nav>

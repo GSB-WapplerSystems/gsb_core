@@ -6,7 +6,7 @@
 
     <div class="layer"></div>
 
-    <h1 class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</h1>
+    <h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
 
     <header class="header-wrapper fixed-top">
         <div class="header-wrapper-bg">
@@ -15,13 +15,13 @@
                     <div class="col logo-wrapper">
                         <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
                             <f:then>
-                                <div class="logo mb-md-3 lh-1">
+                                <div class="logo lh-1 h-100 d-flex align-items-center">
                                     <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render partial="Header.Image" arguments="{_all}"></f:render>
                                 </div>
                             </f:then>
                             <f:else>
-                                <div class="logo mb-md-3 lh-1">
+                                <div class="logo lh-1 h-100 d-flex align-items-center">
                                     <f:link.page pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}" additionalAttributes="{aria-label: 'Zur Startseite'}">
                                         <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                         <f:render partial="Header.Image" arguments="{_all}"></f:render>
@@ -29,9 +29,11 @@
                                 </div>
                             </f:else>
                         </f:if>
-                        <f:render arguments="{menuMainGsb: menuMainGsb, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi}" partial="Header.Mainnav"/>
                     </div>
-                    <f:render arguments="{menuMetaTop: menuMetaTop}" partial="Navigation/MetaNavTop"/>
+                    <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
+                        <f:render arguments="{menuMetaTop: menuMetaTop}" partial="Navigation/MetaNavTop"/>
+                        <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi}" partial="Header.Mainnav"/>
+                    </div>
                 </div>
             </div>
         </div>

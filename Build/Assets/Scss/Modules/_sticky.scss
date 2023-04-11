@@ -8,7 +8,7 @@ body {
     padding-top: 70px;
 
     @include media-breakpoint-up(md) {
-      padding-top: 128px;
+      padding-top: 96px;
     }
   }
 }
@@ -22,7 +22,7 @@ body {
       height: 70px;
 
       @include media-breakpoint-up(md) {
-        height: 128px;
+        height: 96px;
       }
     }
 
@@ -34,7 +34,7 @@ body {
         height: 70px;
 
         @include media-breakpoint-up(md) {
-          height: 128px;
+          height: 96px;
         }
       }
     }

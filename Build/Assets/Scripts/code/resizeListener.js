@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-function detachMetaMobile () {
-  document.querySelector('.meta-mobile').appendChild(document.querySelector('.meta-wrapper'))
+function detachDesktop () {
+  document.querySelector('.meta-desktop').appendChild(document.querySelector('.meta-wrapper'))
 }
 
 // eslint-disable-next-line no-unused-vars
-function detachMetaDesktop () {
-  document.querySelector('.meta-desktop').appendChild(document.querySelector('.meta-wrapper'))
+function detachMobile () {
+  document.querySelector('.meta-mobile').appendChild(document.querySelector('.meta-wrapper'))
 }
 
 function resize () {
@@ -15,11 +15,9 @@ function resize () {
   // Function to do something with the media query
   function mediaQueryListener (mediaQuery) {
     if (mediaQuery.matches) {
-      // do something
-      // detachMetaDesktop()
+      // detachDesktop()
     } else {
-      // do something
-      // detachMetaMobile()
+      // detachMobile()
     }
   }
 
