@@ -1,14 +1,10 @@
 
 Deprecation warnings:
  - The "block-closing-brace-newline-after" rule is deprecated.
- - The "declaration-colon-newline-after" rule is deprecated.
- - The "function-comma-newline-after" rule is deprecated.
- - The "function-parentheses-newline-inside" rule is deprecated.
  - The "max-empty-lines" rule is deprecated.
- - The "max-line-length" rule is deprecated.
  - The "number-leading-zero" rule is deprecated.
 
-81 sources checked
+82 sources checked
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\ckeditor.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\mediaelements.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\print.scss
@@ -65,6 +61,7 @@ Deprecation warnings:
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Header\_skipnav.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_breadcrumb.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_mainnav.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_mainnav_old.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_metanav.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_navigation.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_pagination.scss
@@ -78,18 +75,18 @@ Deprecation warnings:
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Base\Bootstrap\Original\_variables-dark.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\a11y\a11y.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-cards\effect-cards.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-cube\effect-cube.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-flip\effect-flip.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-fade\effect-fade.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-creative\effect-creative.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-cube\effect-cube.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-fade\effect-fade.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-flip\effect-flip.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\free-mode\free-mode.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\grid\grid.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\lazy\lazy.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\navigation\navigation.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\scrollbar\scrollbar.scss
- D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\virtual\virtual.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\pagination\pagination.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\navigation\navigation.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\virtual\virtual.scss
  D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\zoom\zoom.scss
+ D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\scrollbar\scrollbar.scss
 
 0 problems found
 
