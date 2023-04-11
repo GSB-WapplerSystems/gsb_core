@@ -626,7 +626,7 @@ $focus-ring-width: .25rem;
 $focus-ring-opacity: .25;
 $focus-ring-color: rgba($primary, $focus-ring-opacity);
 $focus-ring-blur: 0;
-$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+$focus-ring-box-shadow: none;
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
