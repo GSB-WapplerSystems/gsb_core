@@ -38,14 +38,6 @@
 .navbar-wrapper {
   background-color: $white;
   position: relative;
-
-  ul {
-    @include media-breakpoint-down(md) {
-      ul {
-        padding-bottom: 16px;
-      }
-    }
-  }
 }
 
 .main-nav-wrapper {
@@ -129,30 +121,58 @@
 
   li {
     position: relative;
+    z-index: 2;
   }
 
   ul {
-    margin-bottom: 16px;
-
     li {
-      padding-left: 0;
+      a {
+        background-color: transparent !important;
+        padding-left: 2px;
+      }
     }
 
     ul {
+      position: relative;
+
+      &::after {
+        background-color: $cyan-100;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+
       li {
-        padding-left: 16px;
+        a {
+          padding-left: 16px;
+        }
 
         ul {
+          &::after {
+            background-color: $blue-100;
+            z-index: 1;
+          }
+
           li {
-            padding-left: 24px;
+            a {
+              padding-left: 24px;
+            }
 
             ul {
               li {
-                padding-left: 32px;
+                a {
+                  padding-left: 32px;
+                }
 
                 ul {
                   li {
-                    padding-left: 48px;
+                    a {
+                      padding-left: 48px;
+                    }
                   }
                 }
               }
@@ -170,7 +190,6 @@
     font-weight: 400;
     margin-bottom: 8px;
     outline-offset: 0;
-    padding-left: 2px;
     position: relative;
     text-decoration: none;
     white-space: normal;
