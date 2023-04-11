@@ -75,6 +75,14 @@
     padding-right: 30px !important;
     position: relative;
 
+    + ul > li:first-child > a.sub {
+      background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+      background-position: 99% center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      font-weight: 700;
+    }
+
     &::after {
       background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue);
       background-position: 99% center;
@@ -84,7 +92,6 @@
       height: 24px;
       position: absolute;
       right: 3px;
-      top: 4px;
       transition: transform .1s ease-in-out;
       width: 24px;
     }
@@ -103,13 +110,10 @@
     color: $darkblue;
     display: block;
     font-weight: 700;
-    margin-bottom: 30px;
-    padding: 0;
+    margin-bottom: 0;
+    outline-offset: -2px;
+    padding: 16px 0;
     text-transform: uppercase;
-
-    &::after {
-      top: 0 !important;
-    }
 
     &:hover,
     &:focus,
@@ -120,8 +124,30 @@
   }
 
   li {
+    min-width: 100%;
     position: relative;
     z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      min-width: 50%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      min-width: 25%;
+    }
+
+    a {
+      &::before {
+        background-color: $darkblue-100;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
   }
 
   ul {
@@ -136,7 +162,7 @@
       position: relative;
 
       &::after {
-        background-color: $cyan-100;
+        background-color: $navbgcolor-1;
         content: '';
         display: block;
         height: 100%;
@@ -153,13 +179,18 @@
 
         ul {
           &::after {
-            background-color: $blue-100;
+            background-color: $navbgcolor-2;
             z-index: 1;
           }
 
           li {
             a {
               padding-left: 24px;
+
+              &::before {
+                background-color: $darkblue-200 !important;
+                height: 1px !important;
+              }
             }
 
             ul {
@@ -188,8 +219,10 @@
     display: block;
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 8px;
-    outline-offset: 0;
+    margin-bottom: 0;
+    outline-offset: -2px;
+    padding-bottom: 16px;
+    padding-top: 16px;
     position: relative;
     text-decoration: none;
     white-space: normal;
