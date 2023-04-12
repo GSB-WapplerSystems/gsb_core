@@ -149,7 +149,7 @@
         width: 100%;
       }
 
-      &.act {
+      &.act.hassub {
         &::before {
           background-color: $darkblue !important;
           height: 2px !important;
@@ -252,5 +252,14 @@
   .act {
     color: $darkblue;
     text-decoration: none;
+  }
+
+  .current {
+    text-decoration: underline;
+
+    &::before {
+      background-color: $darkblue !important;
+      height: 2px !important;
+    }
   }
 }
