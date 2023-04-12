@@ -2,8 +2,8 @@ mod.wizards.newContentElement.wizardItems.common {
   elements {
     video {
       iconIdentifier = tx_video
-      title = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:video.video_description
+      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:video.video_title
+      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:video.video_description
       tt_content_defValues {
         CType = video
       }

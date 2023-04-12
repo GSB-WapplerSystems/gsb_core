@@ -24,6 +24,10 @@
     @include media-breakpoint-up(lg) {
       display: block;
     }
+
+    .sticky & {
+      display: none !important;
+    }
   }
 
   &-mobile {
@@ -38,9 +42,10 @@
 
 .metanav {
   flex-wrap: nowrap;
-  margin-right: 16px;
+  margin-bottom: 8px;
 
   .nav-item {
     margin-bottom: 0;
+    white-space: nowrap;
   }
 }

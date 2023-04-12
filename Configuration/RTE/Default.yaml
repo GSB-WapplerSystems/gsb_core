@@ -1,8 +1,8 @@
 # Load default processing options
 imports:
-  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
-  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
-  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+  - { resource: 'EXT:gsb_template/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:gsb_template/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:gsb_template/Configuration/RTE/Editor/Plugins.yaml' }
 
 # Add configuration for the editor
 # For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
@@ -55,15 +55,15 @@ editor:
     style:
       definitions:
         - { name: "Lead", element: "p", classes: [ 'lead' ] }
-        - { name: "Button Primary", element: "p", classes: [ 'btn btn-primary' ] }
+        - { name: "Button Primary", element: "a", classes: [ 'btn btn-primary' ] }
         - { name: "Small", element: "small", classes: [ 'small' ] }
         - { name: "Muted", element: "span", classes: [ 'text-muted' ] }
 
     alignment:
       options:
-        - { name: 'left', className: 'text-left' }
+        - { name: 'left', className: 'text-start' }
         - { name: 'center', className: 'text-center' }
-        - { name: 'right', className: 'text-right' }
+        - { name: 'right', className: 'text-end' }
         - { name: 'justify', className: 'text-justify' }
 
     table:

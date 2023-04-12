@@ -3,643 +3,687 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
 		<header />
 		<body>
-			<trans-unit id="gsb_slider.description" xml:space="preserve">
-				<source>Container für Slider</source>
+			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.Article" resname="BackendLayouts.Article">
+				<source>Article</source>
+				<target>Artikel</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.top" resname="BackendLayouts.top">
+				<source>Top (full width)</source>
+				<target>Oben (volle Breite)</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.main" resname="BackendLayouts.main">
+				<source>Maincontent</source>
+				<target>Hauptinhalt</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement">
+				<source>Supplement</source>
+				<target>Ergänzung</target>
+			</trans-unit>
+			<trans-unit id="BackendLayouts.bottom" resname="BackendLayouts.bottom">
+				<source>Bottom</source>
+				<target>Unten</target>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox" resname="pages.NewsletterBox">
+				<source>Newsletter Box</source>
+				<target>Newsletter-Box</target>
+			</trans-unit>
+			<trans-unit id="pages.NewsletterBox.description" resname="pages.NewsletterBox.description">
+				<source>Remove newsletter box</source>
+				<target>Newsletter-Box entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar" resname="pages.SocialmediaBar">
+				<source>Socialmedia Bar</source>
+				<target>Socialmedia-Leiste</target>
+			</trans-unit>
+			<trans-unit id="pages.SocialmediaBar.description" resname="pages.SocialmediaBar.description">
+				<source>Remove socialmedia bar</source>
+				<target>Socialmedia-Leiste entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb">
+				<source>Breadcrumb</source>
+				<target>Breadcrumb</target>
+			</trans-unit>
+			<trans-unit id="pages.Breadcrumb.description" resname="pages.Breadcrumb.description">
+				<source>Remove breadcrumb</source>
+				<target>Breadcrumb entfernen</target>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription" resname="pages.TeaserDescription.description">
+				<source>Teaser short text</source>
+				<target>Teaser Kurztext</target>
+			</trans-unit>
+			<trans-unit id="pages.TeaserDescription.description" resname="pages.TeaserDescription.description">
+				<source>Short text that can be displayed in teasers to this page</source>
+				<target>Kurztext der in Teasern zu dieser Seite angezeigt werden kann</target>
+			</trans-unit>
+			<trans-unit id="header_layout.0" resname="header_layout.0">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="header_layout.1" resname="header_layout.1">
+				<source>H1 - Default</source>
+				<target>H1 - Standard</target>
+			</trans-unit>
+			<trans-unit id="header_layout.2" resname="header_layout.2">
+				<source>H2</source>
+				<target>H2</target>
+			</trans-unit>
+			<trans-unit id="header_layout.3" resname="header_layout.3">
+				<source>H3</source>
+				<target>H3</target>
+			</trans-unit>
+			<trans-unit id="header_layout.4" resname="header_layout.4">
+				<source>H4</source>
+				<target>H4</target>
+			</trans-unit>
+			<trans-unit id="header_layout.5" resname="header_layout.5">
+				<source>H5</source>
+				<target>H5</target>
+			</trans-unit>
+			<trans-unit id="header_layout.6" resname="header_layout.6">
+				<source>H6</source>
+				<target>H6</target>
+			</trans-unit>
+			<trans-unit id="header_layout.7" resname="header_layout.7">
+				<source>H1 - Hidden (SR only)</source>
+				<target>H1 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.8" resname="header_layout.8">
+				<source>H2 - Hidden (SR only)</source>
+				<target>H2 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.9" resname="header_layout.9">
+				<source>H3 - Hidden (SR only)</source>
+				<target>H3 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.10" resname="header_layout.10">
+				<source>H4 - Hidden (SR only)</source>
+				<target>H4 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.11" resname="header_layout.11">
+				<source>H5 - Hidden (SR only)</source>
+				<target>H5 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="header_layout.12" resname="header_layout.12">
+				<source>H6 - Hidden (SR only)</source>
+				<target>H6 - Versteckt (nur SR)</target>
+			</trans-unit>
+			<trans-unit id="layout.0" resname="layout.0">
+				<source>Normal box (default)</source>
+				<target>Normale Box (Standard)</target>
+			</trans-unit>
+			<trans-unit id="layout.1" resname="layout.1">
+				<source>Element indentation (col-8)</source>
+				<target>Element Einrückung (col-8)</target>
+			</trans-unit>
+			<trans-unit id="layout.2" resname="layout.2">
+				<source>Element indentation (col-10)</source>
+				<target>Element Einrückung (col-10)</target>
+			</trans-unit>
+			<trans-unit id="frame_class.text-2-columns" resname="frame_class.text-2-columns">
+				<source>Text: 2 columns</source>
+				<target>Text: 2 Spalten</target>
+			</trans-unit>
+			<trans-unit id="video.video_title" resname="video.video_title">
+				<source>Video</source>
+				<target>Video</target>
+			</trans-unit>
+			<trans-unit id="video.video_description" resname="video.video_description">
+				<source>Puts a local or external youtube video on the page</source>
+				<target>Legt ein lokales Video oder ein externes YouTube Video an</target>
+			</trans-unit>
+			<trans-unit id="audio.audio_title" resname="audio.audio_title">
+				<source>Audio</source>
+				<target>Audio</target>
+			</trans-unit>
+			<trans-unit id="audio.audio_description" resname="audio.audio_description">
+				<source>Puts a local or external audio on the page</source>
+				<target>Legt ein lokales Audio oder ein externes Audio an</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_title" resname="stage.tx_stage_title">
+				<source>Stage</source>
+				<target>Bühne</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_description" resname="stage.tx_stage_description">
+				<source>Inserts a stage module</source>
+				<target>Fügt ein Bühnenelement ein</target>
+			</trans-unit>
+			<trans-unit id="grid.title" resname="grid.title">
+				<source>Grid</source>
+				<target>Raster</target>
+			</trans-unit>
+			<trans-unit id="grid.description" resname="grid.description">
+				<source>Create a grid with any number of elements.</source>
+				<target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen.</target>
+			</trans-unit>
+			<trans-unit id="gallery.title" resname="gallery.title">
+				<source>Gallery</source>
+				<target>Galerie</target>
+			</trans-unit>
+			<trans-unit id="gallery.description" resname="gallery.description">
+				<source>Inserts a gallery element as a single image preview, tiles or slider</source>
+				<target>Fügt ein Galerieelement als Einzelbild Vorschau, Kacheln oder Slider ein</target>
+			</trans-unit>
+			<trans-unit id="gsb_slider.description" resname="gsb_slider.description">
+				<source>Container element for Slider</source>
 				<target>Container für Slider</target>
 			</trans-unit>
-			<trans-unit id="gsb_slider.title" xml:space="preserve">
+			<trans-unit id="gsb_slider.title" resname="gsb_slider.title">
 				<source>Slideshow</source>
 				<target>Slideshow</target>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.title" xml:space="preserve">
-				<source>Einzelteaser</source>
+			<trans-unit id="gsb_singleteaser.title" resname="gsb_singleteaser.title">
+				<source>Single teaser</source>
 				<target>Einzelteaser</target>
 			</trans-unit>
-			<trans-unit id="gsb_singleteaser.description" xml:space="preserve">
-				<source>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</source>
+			<trans-unit id="gsb_singleteaser.description" resname="gsb_singleteaser.description">
+				<source>Adds a teaser with headline, image, text and link element</source>
 				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link" xml:space="preserve">
+			<trans-unit id="tt_content.tx_link" resname="tt_content.tx_link">
 				<source>Link</source>
 				<target>Link</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout" xml:space="preserve">
-				<source>Link Layout</source>
+			<trans-unit id="tt_content.tx_link_layout" resname="tt_content.tx_link_layout">
+				<source>Link layout</source>
 				<target>Link Layout</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_position" xml:space="preserve">
-				<source>Link Position</source>
+			<trans-unit id="tt_content.tx_link_position" resname="tt_content.tx_link_position">
+				<source>Link position</source>
 				<target>Link Position</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_text" xml:space="preserve">
-				<source>Link Text</source>
+			<trans-unit id="tt_content.tx_link_text" resname="tt_content.tx_link_text">
+				<source>Link text</source>
 				<target>Link Text</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.0" xml:space="preserve">
+			<trans-unit id="tt_content.tx_link_layout.I.0" resname="tt_content.tx_link_layout.I.0">
 				<source>Primary button</source>
-				<target>Primary button</target>
+				<target>Primary Button</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.1" xml:space="preserve">
+			<trans-unit id="tt_content.tx_link_layout.I.1" resname="tt_content.tx_link_layout.I.1">
 				<source>Secondary button</source>
-				<target>Secondary button</target>
+				<target>Secondary Button</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.2" xml:space="preserve">
-				<source>Interner Link</source>
+			<trans-unit id="tt_content.tx_link_layout.I.2" resname="tt_content.tx_link_layout.I.2">
+				<source>Internal link</source>
 				<target>Interner Link</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.3" xml:space="preserve">
-				<source>Externer Link</source>
+			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3">
+				<source>External link</source>
 				<target>Externer Link</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.4" xml:space="preserve">
+			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4">
 				<source>Download</source>
 				<target>Download</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_position.I.0" xml:space="preserve">
-				<source>Mitte</source>
+			<trans-unit id="tt_content.tx_link_position.I.0" resname="tt_content.tx_link_position.I.0">
+				<source>Middle</source>
 				<target>Mitte</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_position.I.1" xml:space="preserve">
-				<source>Links</source>
+			<trans-unit id="tt_content.tx_link_position.I.1" resname="tt_content.tx_link_position.I.1">
+				<source>Left</source>
 				<target>Links</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_position.I.2" xml:space="preserve">
-				<source>Rechts</source>
+			<trans-unit id="tt_content.tx_link_position.I.2" resname="tt_content.tx_link_position.I.2">
+				<source>Right</source>
 				<target>Rechts</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker" xml:space="preserve">
-				<source>Dachzeile</source>
+			<trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
+				<source>Kicker</source>
 				<target>Dachzeile</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.inside" xml:space="preserve">
-				<source>Im Text</source>
+			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
+				<source>Intext</source>
 				<target>Im Text</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.leftintext" xml:space="preserve">
-				<source>Links (im Text)</source>
+			<trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext">
+				<source>Left (in text)</source>
 				<target>Links (im Text)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.rightintext" xml:space="preserve">
-				<source>Rechts (im Text)</source>
+			<trans-unit id="tt_content.header_position.rightintext" resname="tt_content.header_position.rightintext">
+				<source>Right (in text)</source>
 				<target>Rechts (im Text)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.centerintext" xml:space="preserve">
-				<source>Mitte (im Text)</source>
+			<trans-unit id="tt_content.header_position.centerintext" resname="tt_content.header_position.centerintext">
+				<source>Center (in text)</source>
 				<target>Mitte (im Text)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_style" xml:space="preserve">
+			<trans-unit id="tt_content.header_style" resname="tt_content.header_style">
 				<source>Style</source>
 				<target>Style</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_style.default" xml:space="preserve">
-				<source>Standard</source>
+			<trans-unit id="tt_content.header_style.default" resname="tt_content.header_style.default">
+				<source>Default</source>
 				<target>Standard</target>
 			</trans-unit>
-			<trans-unit id="CType.menu_section_pages" xml:space="preserve">
-				<source>Teasermenü: Verzeichnis der Unterseiten ausgewählter Seiten</source>
+			<trans-unit id="CType.menu_section_pages" resname="CType.menu_section_pages">
+				<source>Teaser menu: Index of subpages from selected pages</source>
 				<target>Teasermenü: Verzeichnis der Unterseiten ausgewählter Seiten</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_caption" xml:space="preserve">
-				<source>Untertitel</source>
+			<trans-unit id="tt_content.tx_video_caption" resname="tt_content.tx_video_caption">
+				<source>Caption</source>
 				<target>Untertitel</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_poster_image" xml:space="preserve">
-				<source>Hintergrundbild</source>
+			<trans-unit id="tt_content.tx_video_poster_image" resname="tt_content.tx_video_poster_image">
+				<source>Poster Image</source>
 				<target>Hintergrundbild</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_poster_video" xml:space="preserve">
-				<source>Hintergrundvideo</source>
-				<target>Hintergrundvideo</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_video_poster_description" xml:space="preserve">
-				<source>Hintergrundvideo darf nicht länger als 5 Sekunden sein</source>
-				<target>Hintergrundvideo darf nicht länger als 5 Sekunden sein</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_video" xml:space="preserve">
+			<trans-unit id="tt_content.tx_video" resname="tt_content.tx_video">
 				<source>Video</source>
 				<target>Video</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_videourl" xml:space="preserve">
-				<source>YouTube Video URL</source>
+			<trans-unit id="tt_content.tx_video_videourl" resname="tt_content.tx_video_videourl">
+				<source>YouTube video url</source>
 				<target>YouTube Video URL</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_mainstage_label" xml:space="preserve">
-				<source>Hauptbühne Video</source>
-				<target>Hauptbühne Video</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_video_mainstage_description" xml:space="preserve">
-				<source>Wird nur auf der Startseite eingesetzt</source>
-				<target>Wird nur auf der Startseite eingesetzt</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_video_mainstage_checkbox" xml:space="preserve">
-				<source>Hauptbühne</source>
-				<target>Hauptbühne</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_video_video" xml:space="preserve">
-				<source>Video (Datei)</source>
+			<trans-unit id="tt_content.tx_video_video" resname="tt_content.tx_video_video">
+				<source>Video (File)</source>
 				<target>Video (Datei)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.div.video" xml:space="preserve">
+			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
 				<source>Multimedia</source>
 				<target>Multimedia</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.video" xml:space="preserve">
+			<trans-unit id="tt_content.CType.video" resname="tt_content.CType.video">
 				<source>Video</source>
 				<target>Video</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_audio_poster" xml:space="preserve">
-				<source>Bild über Audioplayer</source>
+			<trans-unit id="tt_content.tx_audio_poster" resname="tt_content.tx_audio_poster">
+				<source>Picture above audioplayer</source>
 				<target>Bild über Audioplayer</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_audio" xml:space="preserve">
+			<trans-unit id="tt_content.tx_audio" resname="tt_content.tx_audio">
 				<source>Audio</source>
 				<target>Audio</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_audio_audiourl" xml:space="preserve">
+			<trans-unit id="tt_content.tx_audio_audiourl" resname="tt_content.tx_audio_audiourl">
 				<source>Audio URL</source>
 				<target>Audio URL</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_audio_audio" xml:space="preserve">
-				<source>Audio (Datei)</source>
+			<trans-unit id="tt_content.tx_audio_audio" resname="tt_content.tx_audio_audio">
+				<source>Audio (File)</source>
 				<target>Audio (Datei)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.audio" xml:space="preserve">
+			<trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
 				<source>Audio</source>
 				<target>Audio</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_file" xml:space="preserve">
-				<source>Bühne Bild/Video</source>
+			<trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file">
+				<source>Stage Image/Video</source>
 				<target>Bühne Bild/Video</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_bg" xml:space="preserve">
-				<source>Bühne Hintergrund</source>
+			<trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg">
+				<source>Stage background</source>
 				<target>Bühne Hintergrund</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_bgcolor" xml:space="preserve">
-				<source>Bühne Hintergrund Farbe</source>
+			<trans-unit id="stage.tx_stage_bgcolor" resname="stage.tx_stage_bgcolor">
+				<source>Stage background color</source>
 				<target>Bühne Hintergrund Farbe</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_position" xml:space="preserve">
-				<source>Bühne Text Position</source>
+			<trans-unit id="stage.tx_stage_position" resname="stage.tx_stage_position">
+				<source>Stage text position</source>
 				<target>Bühne Text Position</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_salutation" xml:space="preserve">
-				<source>Begrüßung</source>
-				<target>Begrüßung</target>
-			</trans-unit>
-			<trans-unit id="stage.tx_stage_bgcolor.I.0" xml:space="preserve">
-				<source>Hell</source>
+			<trans-unit id="stage.tx_stage_bgcolor.I.0" resname="stage.tx_stage_bgcolor.I.0">
+				<source>Bright</source>
 				<target>Hell</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_bgcolor.I.1" xml:space="preserve">
-				<source>Dunkel</source>
+			<trans-unit id="stage.tx_stage_bgcolor.I.1" resname="stage.tx_stage_bgcolor.I.1">
+				<source>Dark</source>
 				<target>Dunkel</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.0" xml:space="preserve">
-				<source>Standard</source>
+			<trans-unit id="stage.tx_stage_position.I.0" resname="stage.tx_stage_position.I.0">
+				<source>Default</source>
 				<target>Standard</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.1" xml:space="preserve">
-				<source>Oben</source>
+			<trans-unit id="stage.tx_stage_position.I.1" resname="stage.tx_stage_position.I.1">
+				<source>Top</source>
 				<target>Oben</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_salutation.I.0" xml:space="preserve">
-				<source>Verborgen</source>
+			<trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0">
+				<source>Hide</source>
 				<target>Verborgen</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_salutation.I.1" xml:space="preserve">
-				<source>Anzeigen</source>
+			<trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1">
+				<source>Show</source>
 				<target>Anzeigen</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.2" xml:space="preserve">
-				<source>Mitte</source>
+			<trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2">
+				<source>Middle</source>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.3" xml:space="preserve">
-				<source>Unten</source>
+			<trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3">
+				<source>Bottom</source>
 				<target>Unten</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_textcolor.I.0" xml:space="preserve">
-				<source>Schwarz</source>
+			<trans-unit id="stage.tx_stage_textcolor.I.0" resname="stage.tx_stage_textcolor.I.0">
+				<source>Black</source>
 				<target>Schwarz</target>
 			</trans-unit>
-			<trans-unit id="stage.tx_stage_textcolor.I.1" xml:space="preserve">
-				<source>Weiss</source>
+			<trans-unit id="stage.tx_stage_textcolor.I.1" resname="stage.tx_stage_textcolor.I.1">
+				<source>White</source>
 				<target>Weiss</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_stage" xml:space="preserve">
-				<source>Bühne</source>
+			<trans-unit id="tt_content.tx_stage" resname="tt_content.tx_stage">
+				<source>Stage</source>
 				<target>Bühne</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.stage" xml:space="preserve">
-				<source>Bühne</source>
+			<trans-unit id="tt_content.CType.stage" resname="tt_content.CType.stage">
+				<source>Stage</source>
 				<target>Bühne</target>
 			</trans-unit>
-			<trans-unit id="with_frame" xml:space="preserve">
-				<source>Mit Rahmen</source>
+			<trans-unit id="with_frame" resname="with_frame">
+				<source>With frame</source>
 				<target>Mit Rahmen</target>
 			</trans-unit>
-			<trans-unit id="without_frame" xml:space="preserve">
-				<source>Ohne Rahmen</source>
+			<trans-unit id="without_frame" resname="without_frame">
+				<source>Without frame</source>
 				<target>Ohne Rahmen</target>
 			</trans-unit>
-			<trans-unit id="columns.twoColumnTitle" xml:space="preserve">
-				<source>2 Spalten</source>
+			<trans-unit id="columns.twoColumnTitle" resname="columns.twoColumnTitle">
+				<source>2 Columns</source>
 				<target>2 Spalten</target>
 			</trans-unit>
-			<trans-unit id="columns.twoColumnDescription" xml:space="preserve">
-				<source>Zwei Spalten mit individueller Breite</source>
+			<trans-unit id="columns.twoColumnDescription" resname="columns.twoColumnDescription">
+				<source>Two columns with customized width</source>
 				<target>Zwei Spalten mit individueller Breite</target>
 			</trans-unit>
-			<trans-unit id="columns.column.0" xml:space="preserve">
-				<source>Eine Spalte 8.33%</source>
-				<target>Eine Spalte 8.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.1" xml:space="preserve">
-				<source>Zwei Spalten 16.66%</source>
-				<target>Zwei Spalten 16.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.2" xml:space="preserve">
-				<source>Drei Spalten 25%</source>
-				<target>Drei Spalten 25%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.3" xml:space="preserve">
-				<source>Vier Spalten 33.33%</source>
-				<target>Vier Spalten 33.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.4" xml:space="preserve">
-				<source>Fünf Spalten 41.66%</source>
-				<target>Fünf Spalten 41.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.5" xml:space="preserve">
-				<source>Sechs Spalten 50%</source>
-				<target>Sechs Spalten 50%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.6" xml:space="preserve">
-				<source>Sieben Spalten 58.33%</source>
-				<target>Sieben Spalten 58.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.7" xml:space="preserve">
-				<source>Acht Spalten 66.66%</source>
-				<target>Acht Spalten 66.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.8" xml:space="preserve">
-				<source>Neun Spalten 75%</source>
-				<target>Neun Spalten 75%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.9" xml:space="preserve">
-				<source>Zehn Spalten 83.33%</source>
-				<target>Zehn Spalten 83.33%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.10" xml:space="preserve">
-				<source>Elf Spalten 91.66%</source>
-				<target>Elf Spalten 91.66%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.11" xml:space="preserve">
-				<source>Zwölf Spalten 100%</source>
-				<target>Zwölf Spalten 100%</target>
-			</trans-unit>
-			<trans-unit id="columns.column.first" xml:space="preserve">
-				<source>Erste Spalte</source>
-				<target>Erste Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.first.description" xml:space="preserve">
-				<source>Breite der ersten Spalte</source>
-				<target>Breite der ersten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.second" xml:space="preserve">
-				<source>Zweite Spalte</source>
-				<target>Zweite Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.second.description" xml:space="preserve">
-				<source>Breite der zweiten Spalte</source>
-				<target>Breite der zweiten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.third" xml:space="preserve">
-				<source>Dritte Spalte</source>
-				<target>Dritte Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.third.description" xml:space="preserve">
-				<source>Breite der dritten Spalte</source>
-				<target>Breite der dritten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.fourth" xml:space="preserve">
-				<source>Vierte Spalte</source>
-				<target>Vierte Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.column.fourth.description" xml:space="preserve">
-				<source>Breite der vierten Spalte</source>
-				<target>Breite der vierten Spalte</target>
-			</trans-unit>
-			<trans-unit id="columns.threeColumnTitle" xml:space="preserve">
-				<source>3 Spalten</source>
+			<trans-unit id="columns.threeColumnTitle" resname="columns.threeColumnTitle">
+				<source>3 Columns</source>
 				<target>3 Spalten</target>
 			</trans-unit>
-			<trans-unit id="columns.threeColumnDescription" xml:space="preserve">
-				<source>Drei Spalten mit individueller Breite</source>
+			<trans-unit id="columns.threeColumnDescription" resname="columns.threeColumnDescription">
+				<source>Three columns with customized width</source>
 				<target>Drei Spalten mit individueller Breite</target>
 			</trans-unit>
-			<trans-unit id="columns.fourColumnTitle" xml:space="preserve">
-				<source>4 Spalten</source>
+			<trans-unit id="columns.fourColumnTitle" resname="columns.fourColumnTitle">
+				<source>4 Columns</source>
 				<target>4 Spalten</target>
 			</trans-unit>
-			<trans-unit id="columns.fourColumnDescription" xml:space="preserve">
-				<source>Vier Spalten mit individueller Breite</source>
+			<trans-unit id="columns.fourColumnDescription" resname="columns.fourColumnDescription">
+				<source>Four columns with customized width</source>
 				<target>Vier Spalten mit individueller Breite</target>
 			</trans-unit>
-			<trans-unit id="columns.column1" xml:space="preserve">
-				<source>Spalte 1</source>
+			<trans-unit id="columns.column1" resname="columns.column1">
+				<source>Column 1</source>
 				<target>Spalte 1</target>
 			</trans-unit>
-			<trans-unit id="columns.column2" xml:space="preserve">
-				<source>Spalte 2</source>
+			<trans-unit id="columns.column2" resname="columns.column2">
+				<source>Column 2</source>
 				<target>Spalte 2</target>
 			</trans-unit>
-			<trans-unit id="columns.column3" xml:space="preserve">
-				<source>Spalte 3</source>
+			<trans-unit id="columns.column3" resname="columns.column3">
+				<source>Column 3</source>
 				<target>Spalte 3</target>
 			</trans-unit>
-			<trans-unit id="columns.column4" xml:space="preserve">
-				<source>Spalte 4</source>
+			<trans-unit id="columns.column4" resname="columns.column4">
+				<source>Column 4</source>
 				<target>Spalte 4</target>
 			</trans-unit>
-			<trans-unit id="content" xml:space="preserve">
-				<source>Inhalt</source>
+			<trans-unit id="content" resname="content">
+				<source>Content</source>
 				<target>Inhalt</target>
 			</trans-unit>
-			<trans-unit id="grid.type" xml:space="preserve">
-				<source>Raster Typ</source>
+			<trans-unit id="grid.type" resname="grid.type">
+				<source>Grid type</source>
 				<target>Raster Typ</target>
 			</trans-unit>
-			<trans-unit id="grid.type.description" xml:space="preserve">
-				<source>Wähle, ob Elemente in einer Liste oder in Containern sind</source>
+			<trans-unit id="grid.type.description" resname="grid.type.description">
+				<source>Choose whether elements are in a list or in containers</source>
 				<target>Wähle, ob Elemente in einer Liste oder in Containern sind</target>
 			</trans-unit>
-			<trans-unit id="grid.type.list" xml:space="preserve">
-				<source>Liste</source>
+			<trans-unit id="grid.type.list" resname="grid.type.list">
+				<source>List</source>
 				<target>Liste</target>
 			</trans-unit>
-			<trans-unit id="grid.type.container" xml:space="preserve">
+			<trans-unit id="grid.type.container" resname="grid.type.container">
 				<source>Container</source>
 				<target>Container</target>
 			</trans-unit>
-			<trans-unit id="grid.bgimage" xml:space="preserve">
-				<source>Hintergrundbild</source>
+			<trans-unit id="grid.bgimage" resname="grid.bgimage">
+				<source>Background image</source>
 				<target>Hintergrundbild</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.parallax" xml:space="preserve">
-				<source>Parallax Animation</source>
-				<target>Parallax Animation</target>
-			</trans-unit>
-			<trans-unit id="grid.bg.parallax.description" xml:space="preserve">
-				<source>Parallax Animation für Hintergrundbild aktivieren</source>
-				<target>Parallax Animation für Hintergrundbild aktivieren</target>
-			</trans-unit>
-			<trans-unit id="grid.bg.imgbg" xml:space="preserve">
-				<source>Farblayer</source>
+			<trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg">
+				<source>Color layer</source>
 				<target>Farblayer</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.imgbg.description" xml:space="preserve">
-				<source>Farblayer über Bild einfügen</source>
+			<trans-unit id="grid.bg.imgbg.description" resname="grid.bg.imgbg.description">
+				<source>Insert color layer over image</source>
 				<target>Farblayer über Bild einfügen</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.wave" xml:space="preserve">
-				<source>Abschluss Grafik</source>
+			<trans-unit id="grid.bg.wave" resname="grid.bg.wave">
+				<source>Conclusion image</source>
 				<target>Abschluss Grafik</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.wave.description" xml:space="preserve">
-				<source>Abschluss Grafik einfügen</source>
+			<trans-unit id="grid.bg.wave.description" resname="grid.bg.wave.description">
+				<source>Insert final image</source>
 				<target>Abschluss Grafik einfügen</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.bgcolor" xml:space="preserve">
-				<source>Hintergrundfarbe</source>
+			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor">
+				<source>Backgroud color</source>
 				<target>Hintergrundfarbe</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.bgcolor.description" xml:space="preserve">
-				<source>Eine Hintergrundfarbe festlegen</source>
+			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
+				<source>Set a backgroundcolor</source>
 				<target>Eine Hintergrundfarbe festlegen</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.bgfullsize" xml:space="preserve">
+			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize">
 				<source>Grid Ausdehnung</source>
 				<target>Grid Ausdehnung</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.bgfullsize.description" xml:space="preserve">
-				<source>Grid Container über die ganze Breite ziehen</source>
+			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description">
+				<source>Drag grid container across the entire width</source>
 				<target>Grid Container über die ganze Breite ziehen</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.container" xml:space="preserve">
+			<trans-unit id="grid.bg.container" resname="grid.bg.container">
 				<source>Container</source>
 				<target>Container</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.container.description" xml:space="preserve">
-				<source>Schaltet den Container Wrapper aus.</source>
-				<target>Schaltet den Container Wrapper aus.</target>
+			<trans-unit id="grid.bg.container.description" resname="grid.bg.container.description">
+				<source>Turns off the container wrapper</source>
+				<target>Schaltet den Container Wrapper aus</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.light" xml:space="preserve">
-				<source>Grid Schriftfarbe</source>
+			<trans-unit id="grid.bg.light" resname="grid.bg.light">
+				<source>Grid font-color</source>
 				<target>Grid Schriftfarbe</target>
 			</trans-unit>
-			<trans-unit id="grid.bg.light.description" xml:space="preserve">
-				<source>Schriftfarbe von dunkel auf hell umstellen</source>
+			<trans-unit id="grid.bg.light.description" resname="grid.bg.light.description">
+				<source>Switch font-color from dark to light</source>
 				<target>Schriftfarbe von dunkel auf hell umstellen</target>
 			</trans-unit>
-			<trans-unit id="grid.title" xml:space="preserve">
-				<source>Raster</source>
-				<target>Raster</target>
-			</trans-unit>
-			<trans-unit id="grid.description" xml:space="preserve">
-				<source>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider umgeschaltet werden.</source>
-				<target>Erstelle ein Raster mit einer beliebigen Anzahl von Elementen. Kann auch zu einem Slider umgeschaltet werden.</target>
-			</trans-unit>
-			<trans-unit id="grid.elements" xml:space="preserve">
-				<source>Raster Elemente</source>
+			<trans-unit id="grid.elements" resname="grid.elements">
+				<source>Grid elements</source>
 				<target>Raster Elemente</target>
 			</trans-unit>
-			<trans-unit id="grid.columns" xml:space="preserve">
-				<source>Raster Spalten</source>
+			<trans-unit id="grid.columns" resname="grid.columns">
+				<source>Grid Columns</source>
 				<target>Raster Spalten</target>
 			</trans-unit>
-			<trans-unit id="grid.columns.description" xml:space="preserve">
-				<source>Wähle, in wie viele Spalten das Raster aufgeteilt wird</source>
+			<trans-unit id="grid.columns.description" resname="grid.columns.description">
+				<source>Choose how many columns the grid will be divided into</source>
 				<target>Wähle, in wie viele Spalten das Raster aufgeteilt wird</target>
 			</trans-unit>
-			<trans-unit id="grid.columns.onecol" xml:space="preserve">
-				<source>Eine Spalte</source>
+			<trans-unit id="grid.columns.onecol" resname="grid.columns.onecol">
+				<source>One column</source>
 				<target>Eine Spalte</target>
 			</trans-unit>
-			<trans-unit id="grid.columns.twocol" xml:space="preserve">
-				<source>Zwei Spalten</source>
+			<trans-unit id="grid.columns.twocol" resname="grid.columns.twocol">
+				<source>Two columns</source>
 				<target>Zwei Spalten</target>
 			</trans-unit>
-			<trans-unit id="grid.columns.threecol" xml:space="preserve">
-				<source>Drei Spalten</source>
+			<trans-unit id="grid.columns.threecol" resname="grid.columns.threecol">
+				<source>Three columns</source>
 				<target>Drei Spalten</target>
 			</trans-unit>
-			<trans-unit id="grid.columns.fourcol" xml:space="preserve">
-				<source>Vier Spalten</source>
+			<trans-unit id="grid.columns.fourcol" resname="grid.columns.fourcol">
+				<source>Four columns</source>
 				<target>Vier Spalten</target>
 			</trans-unit>
-			<trans-unit id="grid.slider.type" xml:space="preserve">
-				<source>Slider Typ</source>
+			<trans-unit id="grid.slider.type" resname="grid.slider.type">
+				<source>Slider type</source>
 				<target>Slider Typ</target>
 			</trans-unit>
-			<trans-unit id="grid.slider.columns" xml:space="preserve">
-				<source>Slider Spalten</source>
+			<trans-unit id="grid.slider.columns" resname="grid.slider.columns">
+				<source>Slider columns</source>
 				<target>Slider Spalten</target>
 			</trans-unit>
-			<trans-unit id="grid.slider.description" xml:space="preserve">
-				<source>Zu einem Slider umschalten</source>
+			<trans-unit id="grid.slider.description" resname="grid.slider.description">
+				<source>Toggle to a Slider</source>
 				<target>Zu einem Slider umschalten</target>
 			</trans-unit>
-			<trans-unit id="accordion.title" xml:space="preserve">
-				<source>Akkordeon</source>
+			<trans-unit id="accordion.title" resname="accordion.title">
+				<source>Accordion</source>
 				<target>Akkordeon</target>
 			</trans-unit>
-			<trans-unit id="accordion.description" xml:space="preserve">
-				<source>Die Inhaltselemente sind in einem Akkordeon zugänglich</source>
+			<trans-unit id="accordion.description" resname="accordion.description">
+				<source>The content elements are accessible in an accordion</source>
 				<target>Die Inhaltselemente sind in einem Akkordeon zugänglich</target>
 			</trans-unit>
-			<trans-unit id="accordion.label.onload" xml:space="preserve">
-				<source>Beim Laden</source>
+			<trans-unit id="accordion.label.onload" resname="accordion.label.onload">
+				<source>On load</source>
 				<target>Beim Laden</target>
 			</trans-unit>
-			<trans-unit id="accordion.description.onload" xml:space="preserve">
-				<source>Öffne eine bestimmte Akkordeon Kachel beim Laden</source>
+			<trans-unit id="accordion.description.onload" resname="accordion.description.onload">
+				<source>Open a specific accordion tile when loading</source>
 				<target>Öffne eine bestimmte Akkordeon Kachel beim Laden</target>
 			</trans-unit>
-			<trans-unit id="accordion.label.onloadall" xml:space="preserve">
-				<source>Akkordion Toggle</source>
+			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall">
+				<source>Accordion toggle</source>
 				<target>Akkordion Toggle</target>
 			</trans-unit>
-			<trans-unit id="accordion.description.onloadall" xml:space="preserve">
-				<source>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</source>
+			<trans-unit id="accordion.description.onloadall" resname="accordion.description.onloadall">
+				<source>Accordions close when an accordion element is selected / Accordions stay open</source>
 				<target>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</target>
 			</trans-unit>
-			<trans-unit id="accordion.label.open" xml:space="preserve">
-				<source>Akkordeon Kachel</source>
+			<trans-unit id="accordion.label.open" resname="accordion.label.open">
+				<source>Accordion tile</source>
 				<target>Akkordeon Kachel</target>
 			</trans-unit>
-			<trans-unit id="accordion.description.open" xml:space="preserve">
-				<source>Wähle die Akkordeonkachel, die geöffnet werden soll</source>
+			<trans-unit id="accordion.description.open" resname="accordion.description.open">
+				<source>Choose the accordion tile, wich should be opened</source>
 				<target>Wähle die Akkordeonkachel, die geöffnet werden soll</target>
 			</trans-unit>
-			<trans-unit id="tabs.title" xml:space="preserve">
+			<trans-unit id="tabs.title" resname="tabs.title">
 				<source>Tabs</source>
 				<target>Tabs</target>
 			</trans-unit>
-			<trans-unit id="tabs.description" xml:space="preserve">
-				<source>Die Inhaltselemente sind über Tabs zugänglich</source>
+			<trans-unit id="tabs.description" resname="tabs.description">
+				<source>The content elements are accessible through tabs</source>
 				<target>Die Inhaltselemente sind über Tabs zugänglich</target>
 			</trans-unit>
-			<trans-unit id="tabs.label.onload" xml:space="preserve">
-				<source>Beim Laden</source>
+			<trans-unit id="tabs.label.onload" resname="tabs.label.onload">
+				<source>On load</source>
 				<target>Beim Laden</target>
 			</trans-unit>
-			<trans-unit id="tabs.description.onload" xml:space="preserve">
-				<source>Öffne einen bestimmten Tab beim Laden</source>
+			<trans-unit id="tabs.description.onload" resname="tabs.description.onload">
+				<source>Open a specific tab when loading</source>
 				<target>Öffne einen bestimmten Tab beim Laden</target>
 			</trans-unit>
-			<trans-unit id="container.title" xml:space="preserve">
-				<source>Seitencontainer</source>
+			<trans-unit id="container.title" resname="container.title">
+				<source>Page container</source>
 				<target>Seitencontainer</target>
 			</trans-unit>
-			<trans-unit id="container.description" xml:space="preserve">
-				<source>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</source>
-				<target>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt.</target>
+			<trans-unit id="container.description" resname="container.description">
+				<source>Container covering the entire page or screen width</source>
+				<target>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt</target>
 			</trans-unit>
-			<trans-unit id="silhouette.0" xml:space="preserve">
-				<source>Standard</source>
+			<trans-unit id="silhouette.0" resname="silhouette.0">
+				<source>Default</source>
 				<target>Standard</target>
 			</trans-unit>
-			<trans-unit id="silhouette.1" xml:space="preserve">
+			<trans-unit id="silhouette.1" resname="silhouette.1">
 				<source>Silhouette 1</source>
 				<target>Silhouette 1</target>
 			</trans-unit>
-			<trans-unit id="silhouette.2" xml:space="preserve">
+			<trans-unit id="silhouette.2" resname="silhouette.2">
 				<source>Silhouette 2</source>
 				<target>Silhouette 2</target>
 			</trans-unit>
-			<trans-unit id="silhouette.3" xml:space="preserve">
+			<trans-unit id="silhouette.3" resname="silhouette.3">
 				<source>Silhouette 3</source>
 				<target>Silhouette 3</target>
 			</trans-unit>
-			<trans-unit id="silhouette.4" xml:space="preserve">
+			<trans-unit id="silhouette.4" resname="silhouette.4">
 				<source>Silhouette 4</source>
 				<target>Silhouette 4</target>
 			</trans-unit>
-			<trans-unit id="silhouette.5" xml:space="preserve">
+			<trans-unit id="silhouette.5" resname="silhouette.5">
 				<source>Silhouette 5</source>
 				<target>Silhouette 5</target>
 			</trans-unit>
-			<trans-unit id="silhouette.6" xml:space="preserve">
+			<trans-unit id="silhouette.6" resname="silhouette.6">
 				<source>Silhouette 6</source>
 				<target>Silhouette 6</target>
 			</trans-unit>
-			<trans-unit id="silhouette.7" xml:space="preserve">
+			<trans-unit id="silhouette.7" resname="silhouette.7">
 				<source>Silhouette 7</source>
 				<target>Silhouette 7</target>
 			</trans-unit>
-			<trans-unit id="tt_content.file" xml:space="preserve">
-				<source>Galerie Bild</source>
+			<trans-unit id="tt_content.file" resname="tt_content.file">
+				<source>Gallery Image</source>
 				<target>Galerie Bild</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_bg" xml:space="preserve">
-				<source>Galerie Hintergrund</source>
+			<trans-unit id="tt_content.gallery_bg" resname="tt_content.gallery_bg">
+				<source>Gallery background</source>
 				<target>Galerie Hintergrund</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_layout" xml:space="preserve">
-				<source>Galerie Layout</source>
+			<trans-unit id="tt_content.gallery_layout" resname="tt_content.gallery_layout">
+				<source>Gallery layout</source>
 				<target>Galerie Layout</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_textcolor" xml:space="preserve">
-				<source>Galerie Text Farbe</source>
+			<trans-unit id="tt_content.gallery_textcolor" resname="tt_content.gallery_textcolor">
+				<source>Gallery text color</source>
 				<target>Galerie Text Farbe</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_salutation" xml:space="preserve">
-				<source>Begrüßung</source>
+			<trans-unit id="tt_content.gallery_salutation" resname="tt_content.gallery_salutation">
+				<source>Salutation</source>
 				<target>Begrüßung</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_bg.I.0" xml:space="preserve">
-				<source>Hell</source>
+			<trans-unit id="tt_content.gallery_bg.I.0" resname="tt_content.gallery_bg.I.0">
+				<source>Bright</source>
 				<target>Hell</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_bg.I.1" xml:space="preserve">
-				<source>Dunkel</source>
+			<trans-unit id="tt_content.gallery_bg.I.1" resname="tt_content.gallery_bg.I.1">
+				<source>Dark</source>
 				<target>Dunkel</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_layout.I.0" xml:space="preserve">
-				<source>Einzeln</source>
+			<trans-unit id="tt_content.gallery_layout.I.0" resname="tt_content.gallery_layout.I.0">
+				<source>Single</source>
 				<target>Einzeln</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_layout.I.1" xml:space="preserve">
-				<source>Kacheln</source>
+			<trans-unit id="tt_content.gallery_layout.I.1" resname="tt_content.gallery_layout.I.1">
+				<source>Tiles</source>
 				<target>Kacheln</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_layout.I.2" xml:space="preserve">
+			<trans-unit id="tt_content.gallery_layout.I.2" resname="tt_content.gallery_layout.I.2">
 				<source>Slider</source>
 				<target>Slider</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_salutation.I.0" xml:space="preserve">
-				<source>Verborgen</source>
+			<trans-unit id="tt_content.gallery_salutation.I.0" resname="tt_content.gallery_salutation.I.0">
+				<source>Hide</source>
 				<target>Verborgen</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_salutation.I.1" xml:space="preserve">
-				<source>Anzeigen</source>
+			<trans-unit id="tt_content.gallery_salutation.I.1" resname="tt_content.gallery_salutation.I.1">
+				<source>Show</source>
 				<target>Anzeigen</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_textcolor.I.0" xml:space="preserve">
-				<source>Schwarz</source>
+			<trans-unit id="tt_content.gallery_textcolor.I.0" resname="tt_content.gallery_textcolor.I.0">
+				<source>Black</source>
 				<target>Schwarz</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_textcolor.I.1" xml:space="preserve">
-				<source>Weiss</source>
+			<trans-unit id="tt_content.gallery_textcolor.I.1" resname="tt_content.gallery_textcolor.I.1">
+				<source>White</source>
 				<target>Weiss</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.div._gallery_" xml:space="preserve">
-				<source>Galerie</source>
+			<trans-unit id="tt_content.CType.div._gallery_" resname="tt_content.CType.div._gallery_">
+				<source>Gallery</source>
 				<target>Galerie</target>
 			</trans-unit>
-			<trans-unit id="tt_content.CType.gallery" xml:space="preserve">
-				<source>Galerie</source>
+			<trans-unit id="tt_content.CType.gallery" resname="tt_content.CType.gallery">
+				<source>Gallery</source>
 				<target>Galerie</target>
 			</trans-unit>
 		</body>

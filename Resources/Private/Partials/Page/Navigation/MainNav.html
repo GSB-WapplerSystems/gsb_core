@@ -1,52 +1,51 @@
 <f:if condition="{menuMain}">
-  <ul class="main-menu list-unstyled row" id="mainNav">
-    <f:for each="{menuMain}" as="mainItem">
-      <li class="col-12 col-md-6 col-xl-3{f:if(condition:mainItem.active, then:' active')}">
-        <f:if condition="{mainItem.current}">
-          <f:then>
-            <strong class="first-child gradient-line-after current dropdown-item-strong">
-              {mainItem.title}
-            </strong>
-          </f:then>
-          <f:else>
-            <f:link.page pageUid="{mainItem.data.uid}" class="first-child gradient-line-after dropdown-item{f:if(condition:mainItem.active, then:' active')}">
-              {mainItem.title}
-            </f:link.page>
-          </f:else>
-        </f:if>
-        <f:if condition="{mainItem.children}">
-          <ul class="list-unstyled">
-            <f:for each="{mainItem.children}" as="mainChild">
-              <f:render section="submenu" arguments="{mainChild: mainChild}"/>
-            </f:for>
-          </ul>
-        </f:if>
-      </li>
-    </f:for>
-  </ul>
+    <div class="main-nav-wrapper">
+        <div class="container-md">
+            <ul class="main-menu list-unstyled row" id="mainNav">
+                <f:for each="{menuMain}" as="mainItem">
+                    <li class="col">
+                        <f:if condition="{mainItem.children}">
+                            <f:then>
+                                <f:if condition="{mainItem.children}">
+                                    <a href="#" class="first-child collapsed dropdown-item{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{mainItem.data.uid}" aria-expanded="false" aria-controls="menu-{mainItem.data.uid}">{mainItem.title}</a>
+                                    <ul class="list-unstyled collapse" id="menu-{mainItem.data.uid}">
+                                        <f:for each="{mainItem.children}" as="mainChild">
+                                            <f:render section="submenu" arguments="{mainChild: mainChild}"/>
+                                        </f:for>
+                                    </ul>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:link.page pageUid="{mainItem.data.uid}" class="first-child dropdown-item{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}">
+                                    {mainItem.title}
+                                </f:link.page>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </div>
 </f:if>
 
 <f:section name="submenu">
-  <li>
-    <f:if condition="{mainChild.current}">
-      <f:then>
-        <strong class="sub dropdown-item-strong">
-          {mainChild.title}
-        </strong>
-      </f:then>
-      <f:else>
-        <f:link.page pageUid="{mainChild.data.uid}" class="sub dropdown-item{f:if(condition:mainChild.active, then:' active')}">
-          {mainChild.title}
-        </f:link.page>
-      </f:else>
-    </f:if>
     <f:if condition="{mainChild.children}">
-      <button class="btn-open collapsed dropdown-item" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{mainChild.data.uid}" aria-expanded="false" aria-controls="menu-{mainChild.data.uid}"><span class="visually-hidden">Untermenü öffnen</span></button>
-      <ul class="list-unstyled collapse" id="menu-{mainChild.data.uid}">
-        <f:for each="{mainChild.children}" as="mainChild">
-          <f:render section="submenu" arguments="{mainChild: mainChild}"/>
-        </f:for>
-      </ul>
+        <f:then>
+            <li>
+                <a href="#" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{mainChild.data.uid}" aria-expanded="false" aria-controls="menu-{mainChild.data.uid}">{mainChild.title}</a>
+                <ul class="list-unstyled collapse" id="menu-{mainChild.data.uid}">
+                    <f:for each="{mainChild.children}" as="mainChild">
+                        <f:render section="submenu" arguments="{mainChild: mainChild}"/>
+                    </f:for>
+                </ul>
+            </li>
+        </f:then>
+        <f:else>
+            <li>
+                <f:link.page pageUid="{mainChild.data.uid}" class="sub dropdown-item{f:if(condition:mainChild.active, then:' act')}">
+                    {mainChild.title}
+                </f:link.page>
+            </li>
+        </f:else>
     </f:if>
-  </li>
 </f:section>

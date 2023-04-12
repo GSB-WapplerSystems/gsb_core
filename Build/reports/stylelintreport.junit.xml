@@ -168,6 +168,9 @@
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_mainnav.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
+  <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_mainnav_old.scss" failures="0" errors="0" tests="1">
+    <testcase name="stylelint.passed"/>
+  </testsuite>
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Navigation\_metanav.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
@@ -204,19 +207,19 @@
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\a11y\a11y.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
+  <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-creative\effect-creative.scss" failures="0" errors="0" tests="1">
+    <testcase name="stylelint.passed"/>
+  </testsuite>
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-cards\effect-cards.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
-  <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-creative\effect-creative.scss" failures="0" errors="0" tests="1">
+  <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-fade\effect-fade.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-cube\effect-cube.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-flip\effect-flip.scss" failures="0" errors="0" tests="1">
-    <testcase name="stylelint.passed"/>
-  </testsuite>
-  <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\effect-fade\effect-fade.scss" failures="0" errors="0" tests="1">
     <testcase name="stylelint.passed"/>
   </testsuite>
   <testsuite name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scss\Modules\Swiper\modules\free-mode\free-mode.scss" failures="0" errors="0" tests="1">

@@ -6,7 +6,7 @@
                 <f:render arguments="{_all}" partial="Header/All" />
             </f:if>
             <f:if condition="{data.bodytext}">
-                <f:format.html>{data.bodytext}</f:format.html>
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
             </f:if>
             <div class="video video-local">
                 <f:if condition="{data_tx_video_poster_image.0}">

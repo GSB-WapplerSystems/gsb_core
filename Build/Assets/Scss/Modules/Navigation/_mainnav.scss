@@ -1,4 +1,4 @@
-@charset "utf-8";
+// main nav
 
 .navbar {
   display: flex;
@@ -36,16 +36,8 @@
 }
 
 .navbar-wrapper {
-  background-color: $gray-100;
+  background-color: $white;
   position: relative;
-
-  ul {
-    @include media-breakpoint-down(md) {
-      ul {
-        padding-bottom: 16px;
-      }
-    }
-  }
 }
 
 .main-nav-wrapper {
@@ -60,103 +52,162 @@
 
 .main-menu {
   align-items: flex-start !important;
-  padding: 0;
-  width: 100%;
-
-  li:last-child {
-    border: none !important;
-  }
 
   &-layer {
     position: static;
 
+    @include media-breakpoint-down(md) {
+      flex: 0 1 0;
+    }
+
     > .dropdown-menu {
-      border: none;
-      left: 0;
+      border: 0 none;
+      border-radius: 0;
+      margin: 0;
       padding: 0;
-      position: absolute;
-      width: 100%;
+      right: 0;
+      top: 101%;
     }
   }
 
-  a {
-    &:hover,
-    &:focus,
-    &:active {
-      outline: none !important;
+  a[type="button"] {
+    background-color: $white;
+    padding-right: 30px !important;
+    position: relative;
+
+    + ul > li:first-child > a.sub {
+      background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+      background-position: 99% center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      font-weight: 700;
+    }
+
+    &::after {
+      background-image: svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue);
+      background-position: 99% center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      content: '';
+      height: 24px;
+      position: absolute;
+      right: 3px;
+      transition: transform .1s ease-in-out;
+      width: 24px;
+    }
+
+    &.collapsed {
+      &::after {
+        transform: rotate(180deg);
+        transition: transform .1s ease-in-out;
+      }
     }
   }
 
   .first-child {
-    color: $black;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    width: auto;
+    @include font-size(18px);
+    background-color: transparent;
+    color: $darkblue;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0;
+    outline-offset: -2px;
+    padding: 16px 0;
+    text-transform: uppercase;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: transparent;
-      color: $black;
+      color: $darkblue;
       text-decoration: underline;
     }
   }
 
-  ul {
-    border-bottom: 1px solid $gray-200;
-    margin: 0 0 15px;
-    padding-bottom: 15px;
-    padding-left: 0;
-    padding-right: 0;
+  li {
+    min-width: 100%;
+    position: relative;
+    z-index: 2;
 
-    .nav-more {
-      color: $black;
-      cursor: pointer;
-      font-size: 20px;
+    @include media-breakpoint-up(lg) {
+      min-width: 50%;
+    }
 
-      &:hover,
-      &:focus,
-      &:active {
-        span {
-          text-decoration: underline;
-        }
-      }
+    @include media-breakpoint-up(xl) {
+      min-width: 25%;
+    }
 
+    a {
       &::before {
-        content: "+";
-        font-size: 28px;
-        line-height: 0;
-        margin-right: .8rem;
-        position: relative;
-        top: 3px;
-      }
-
-      &.open {
-        &::before {
-          content: "-";
-        }
+        background-color: $darkblue-100;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
       }
     }
   }
 
-  > li {
-    padding: 0;
-
-    &.no-children {
-      border-bottom: 1px solid $gray-200;
-      margin-bottom: 15px;
-      padding-bottom: 15px;
+  ul {
+    li {
+      a {
+        background-color: transparent !important;
+        padding-left: 2px;
+      }
     }
 
-    > ul {
-      li {
-        &:not(:nth-child(-n+3)) {
-          display: block;
+    ul {
+      position: relative;
 
-          @include media-breakpoint-up(lg) {
-            display: none;
+      &::after {
+        background-color: $navbgcolor-1;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+
+      li {
+        a {
+          padding-left: 16px;
+        }
+
+        ul {
+          &::after {
+            background-color: $navbgcolor-2;
+            z-index: 1;
+          }
+
+          li {
+            a {
+              padding-left: 24px;
+
+              &::before {
+                background-color: $darkblue-200 !important;
+                height: 1px !important;
+              }
+            }
+
+            ul {
+              li {
+                a {
+                  padding-left: 32px;
+                }
+
+                ul {
+                  li {
+                    a {
+                      padding-left: 48px;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -164,64 +215,34 @@
   }
 
   .sub {
-    color: $black;
-    display: inline-block;
-    font-size: 20px;
-    outline: none;
-    padding: 5px 0;
+    color: $darkblue;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+    outline-offset: -2px;
+    padding-bottom: 16px;
+    padding-top: 16px;
     position: relative;
+    text-decoration: none;
     white-space: normal;
-    width: auto;
+    width: 100%;
+
+    + .btn-open {
+      top: 0;
+    }
 
     &:hover,
     &:focus,
     &:active {
       background-color: transparent;
-      color: $black;
+      color: $darkblue;
       text-decoration: underline;
     }
   }
 
-  .active,
-  strong {
-    background-color: transparent;
-    color: $green;
-    font-weight: 700;
-    text-decoration: none;
-
-    &.sub {
-      color: $green;
-      text-decoration: underline;
-    }
-  }
-}
-
-.main-meta-wrapper {
-  align-items: center;
-  background-color: $gray-400;
-  // nor for presentation
-  display: none;
-  // display: flex;
-  height: 145px;
-  padding: 15px;
-}
-
-.hidden-link {
-  display: none;
-}
-
-.will-hidden {
-  display: block;
-}
-
-@include media-breakpoint-up(lg) {
-  .list-unstyled {
-    .hidden-link {
-      display: block !important;
-    }
-  }
-
-  .will-hidden {
-    display: none;
+  .act {
+    color: $darkblue;
+    text-decoration: underline;
   }
 }

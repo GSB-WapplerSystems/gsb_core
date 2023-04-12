@@ -22,7 +22,7 @@ defined('TYPO3') || die();
             [
                 [
                     [
-                        'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/Tca.xlf:gsb_slider.elements',
+                        'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.elements',
                         'colPos' => 101,
                     ],
                 ],

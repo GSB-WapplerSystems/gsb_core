@@ -38,9 +38,9 @@
 
   &::after {
     display: block;
-    height: 42px;
+    height: 32px;
     text-transform: none !important;
-    width: 42px;
+    width: 32px;
   }
 
   &:hover,
@@ -54,6 +54,7 @@
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   margin-right: 32px;
+  padding-right: 3px;
 
   &::after {
     content: svg-load("../Images/Icons/icon-chevron-left.svg", fill=$white);
@@ -63,6 +64,7 @@
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   margin-left: 32px;
+  padding-left: 3px;
 
   &::after {
     content: svg-load("../Images/Icons/icon-chevron-right.svg", fill=$white);

@@ -27,17 +27,11 @@
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col.js">
 <testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\Swiper\swiper_fade_4col" />
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax.js">
-<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\jarallax" />
-</testsuite>
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main.js">
 <testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\main" />
 </testsuite>
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation.js">
 <testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mainNavigation" />
-</testsuite>
-<testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry.js">
-<testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\masonry" />
 </testsuite>
 <testsuite package="org.eslint" time="0" tests="1" errors="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements.js">
 <testcase time="0" name="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements.js" classname="D:\Projekte\Docker\GSB-ITZBUND\local-dev\_packages\gsb_template\Build\Assets\Scripts\code\mediaelements" />

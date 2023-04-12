@@ -10,8 +10,8 @@ defined('TYPO3') || die();
     $visibleoptions = [
         'newsletter' => [
             'exclude' => 1,
-            'label' => 'Newsletter Box',
-            'description' => 'Remove newsletter box in the footer',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -28,8 +28,8 @@ defined('TYPO3') || die();
 
         'socialmedia' => [
             'exclude' => 1,
-            'label' => 'Socialmedia Bar',
-            'description' => 'Remove socialmedia bar',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -46,8 +46,8 @@ defined('TYPO3') || die();
 
         'breadcrumb' => [
             'exclude' => 1,
-            'label' => 'Breadcrumb',
-            'description' => 'Remove breadcrumb',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -63,7 +63,8 @@ defined('TYPO3') || die();
         ],
 
         'teaser_description' => [
-            'label' => 'Teaser Description',
+            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription',
+            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 60,
