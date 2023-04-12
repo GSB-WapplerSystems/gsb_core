@@ -148,6 +148,13 @@
         position: absolute;
         width: 100%;
       }
+
+      &.act {
+        &::before {
+          background-color: $darkblue !important;
+          height: 2px !important;
+        }
+      }
     }
   }
 
@@ -244,6 +251,6 @@
 
   .act {
     color: $darkblue;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
