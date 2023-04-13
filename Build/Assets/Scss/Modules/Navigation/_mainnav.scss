@@ -113,6 +113,7 @@
     margin-bottom: 0;
     outline-offset: -2px;
     padding: 16px 0;
+    position: relative;
     text-transform: uppercase;
 
     &:hover,
@@ -146,6 +147,13 @@
         left: 0;
         position: absolute;
         width: 100%;
+      }
+
+      &.act.hassub {
+        &::before {
+          background-color: $darkblue !important;
+          height: 2px !important;
+        }
       }
     }
   }
@@ -243,6 +251,15 @@
 
   .act {
     color: $darkblue;
+    text-decoration: none;
+  }
+
+  .current {
     text-decoration: underline;
+
+    &::before {
+      background-color: $darkblue !important;
+      height: 2px !important;
+    }
   }
 }
