@@ -70,22 +70,27 @@
   }
 }
 
+.metanav .nav-link,
 .service-link {
-  background-position: right;
+  background-position: 99% center;
   background-repeat: no-repeat;
-  background-size: 24px 24px;
+  background-size: 20px 20px;
   display: inline;
-  height: 24px;
-  padding-bottom: .4rem;
-  padding-right: 30px;
-  padding-top: .4rem;
-  width: 24px;
+  margin-right: 16px;
+  padding-left: 8px;
+  padding-right: 32px;
 }
 
+.\/gebaerdensprache,
 .icon-gebaerdensprache {
   background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
 }
 
+.\/leichte-sprache,
 .icon-leichte-sprache {
   background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
+}
+
+.\/suche {
+  background-image: svg-load("../Images/Icons/icon-search.svg", fill=$darkblue);
 }

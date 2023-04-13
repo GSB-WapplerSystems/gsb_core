@@ -150,6 +150,8 @@
       }
 
       &.act.hassub {
+        font-weight: 700;
+        
         &::before {
           background-color: $darkblue !important;
           height: 2px !important;
@@ -255,6 +257,7 @@
   }
 
   .current {
+    font-weight: 700;
     text-decoration: underline;
 
     &::before {

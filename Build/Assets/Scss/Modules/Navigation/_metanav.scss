@@ -47,5 +47,11 @@
   .nav-item {
     margin-bottom: 0;
     white-space: nowrap;
+
+    &:last-child {
+      .nav-link {
+        margin-right: 0 !important;
+      }
+    }
   }
 }
