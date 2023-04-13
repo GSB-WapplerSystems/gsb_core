@@ -1,28 +1,118 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
-    <f:if condition="{data.imagewidth}">
-        <f:then>
-          <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+<f:if condition="{data.imagewidth}">
+    <f:then>
+        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth)}">
-                <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: data.imagewidth)}">
-                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: data.imagewidth)}">
-                <source media="(min-width: 576px)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550)}">
-                <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550)}">
-                <f:image src="{file.properties.uid}" maxWidth="{data.imagewidth}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                <source
+                    media="(min-width: 1220px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 1220px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 992px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: data.imagewidth, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 992px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: data.imagewidth, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 768px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 768px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 576px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 576px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 0)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 0)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <f:image src="{file.properties.uid}" maxWidth="{data.imagewidth}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
             </picture>
-          </f:alias>
-        </f:then>
-        <f:else>
-          <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+        </f:alias>
+    </f:then>
+    <f:else>
+        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                <source media="(min-width: 1220px)" srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}">
-                <source media="(min-width: 992px)" srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220)}">
-                <source media="(min-width: 768px)" srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992)}">
-                <source media="(min-width: 576px)" srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768)}">
-                <source media="(min-width: 0)" srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576)}">
-                <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                <source
+                    media="(min-width: 1220px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 1220px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 992px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 992px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 768px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 768px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 576px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 576px)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <source
+                    media="(min-width: 0)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'webp')}"
+                    type="image/webp"
+                >
+                <source
+                    media="(min-width: 0)"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
+                    type="image/jpeg"
+                >
+                <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
             </picture>
-          </f:alias>
-        </f:else>
-    </f:if>
+        </f:alias>
+    </f:else>
+</f:if>
 </html>
