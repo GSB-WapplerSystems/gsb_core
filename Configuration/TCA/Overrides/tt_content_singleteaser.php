@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use ITZBund\GsbTemplate\Preview\SingleteaserPreviewRenderer;
+use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -20,6 +21,32 @@ defined('TYPO3') || die();
             'default',
         ]
     );
+
+    $imageColumn = [
+        'image' => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.image',
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'jpg,jpeg,svg,png,gif',
+                'overrideChildTca' => [
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        AbstractFile::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ];
+    ExtensionManagementUtility::addTCAcolumns('tt_content', $imageColumn);
 
     $imagePalettes = [
         'image_config' => [
