@@ -5,4 +5,4 @@
 @import 'EXT:gsb_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
 @import 'EXT:gsb_template/Configuration/TsConfig/Page/TCEFORM.tsconfig'
 
-templates.typo3/cms-backend.1643293191 = itzbund/gsb-template:Resources/Private/TemplateOverrides
+templates.typo3/cms-backend.1643293191 = itzbund/gsb-template:Resources/Private/Backend/TemplateOverrides
