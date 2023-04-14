@@ -19,7 +19,7 @@ lib.language {
           override = Deutsch || English || Français
           typolink {
             parameter.data = page:uid
-            additionalParams = &L=0 || &L=1
+            additionalParams = &L=0 || &L=1 || &L=2
             ATagParams = hreflang="de-DE" || hreflang="en-GB" || hreflang="fr-FR"
             addQueryString = 1
             addQueryString {
@@ -32,10 +32,10 @@ lib.language {
       }
       ACT < .NO
       ACT {
-        linkWrap = <li><p class="is-active">|</p></li>
+        linkWrap = <li><span class="is-active">|</span></li>
         stdWrap.typolink >
       }
     }
   }
-  wrap = <ul id="language_menu" class="language-menu list-unstyled language-menu list-unstyled d-sm-flex gap-4">|</ul>
+  wrap = <ul id="language_menu" class="language-menu list-unstyled">|</ul>
 }

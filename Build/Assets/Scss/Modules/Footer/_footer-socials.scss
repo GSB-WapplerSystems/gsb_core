@@ -1,20 +1,28 @@
-@charset "utf-8";
+// footer socials
 
 .social-media {
+  a {
+    background-color: $white;
+    border-radius: 50%;
+    display: block;
+    height: 48px;
+    width: 48px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline-color: $white !important;
+      outline-offset: 2px;
+    }
+  }
+
   .icon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 32px 32px;
     display: block;
-    height: 32px;
-    width: 32px;
-
-    &:hover,
-    &:focus,
-    &:active {
-      outline: 1px solid $darkblue;
-      outline-offset: 2px;
-    }
+    height: 48px;
+    width: 48px;
 
     &-facebook {
       background-image: svg-load("../Images/Icons/icon-facebook.svg", fill=#3b5998);

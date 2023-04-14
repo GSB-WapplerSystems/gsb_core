@@ -1,4 +1,4 @@
-// main nav
+// mainnav
 
 .navbar {
   display: flex;
@@ -151,7 +151,7 @@
 
       &.act.hassub {
         font-weight: 700;
-        
+
         &::before {
           background-color: $darkblue !important;
           height: 2px !important;
