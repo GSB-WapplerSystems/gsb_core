@@ -48,4 +48,9 @@ page.10.dataProcessing {
     includeSpacer = 1
     as = menuMainGsb
   }
+  80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  80 {
+    as = breadcrumbMenu
+    special = rootline
+  }
 }

@@ -4,7 +4,7 @@ lib.language {
   20 {
     special = language
     special {
-      value = 0,1
+      value = 0,1,2
       normalWhenNoLanguage = 0
     }
     wrap =
@@ -16,11 +16,11 @@ lib.language {
         doNotLinkIt = 1
         linkWrap = <li>|</li>
         stdWrap {
-          override = Deutsch || English
+          override = Deutsch || English || Français
           typolink {
             parameter.data = page:uid
             additionalParams = &L=0 || &L=1
-            ATagParams = hreflang="de-DE" || hreflang="en-US"
+            ATagParams = hreflang="de-DE" || hreflang="en-GB" || hreflang="fr-FR"
             addQueryString = 1
             addQueryString {
               exclude = L,id,no_cache

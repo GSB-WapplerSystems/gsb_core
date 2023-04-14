@@ -40,11 +40,7 @@
     </header>
 
     <f:if condition="{data.breadcrumb} != 1">
-        <nav class="breadcrumb d-none d-md-block" aria-label="{f:translate(key: 'header.youarehere', extensionName: 'gsb_template')}">
-            <div class="container">
-                <f:format.raw>{navBreadcrumb}</f:format.raw>
-            </div>
-        </nav>
+        <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
     </f:if>
 
 </html>
