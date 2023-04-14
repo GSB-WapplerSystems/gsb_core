@@ -72,6 +72,10 @@ page {
       1 = {$page.fluidtemplate.layoutRootPath}
     }
     variables {
+      // set main-menu
+      navType = TEXT
+      navType.value = {$config.navType}
+
       // social media links
       socialLinks-Facebook = TEXT
       socialLinks-Facebook.value = {$config.socialLinks.Facebook}
@@ -106,7 +110,7 @@ page {
       bottom < styles.content.get
       bottom.select.where = colPos=2
     }
-    
+
     # set extension name
     extbase {
       controllerExtensionName = gsb_template
