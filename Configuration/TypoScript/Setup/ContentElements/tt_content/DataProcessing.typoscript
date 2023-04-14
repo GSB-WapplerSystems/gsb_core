@@ -53,4 +53,9 @@ page.10.dataProcessing {
     as = breadcrumbMenu
     special = rootline
   }
+  90 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+  90 {
+    languages = auto
+    as = languagenavigation
+  }
 }

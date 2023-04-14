@@ -70,27 +70,47 @@
   }
 }
 
+.language-menu .nav-link,
 .metanav .nav-link,
 .service-link {
-  background-position: 99% center;
+  background-position: 98% center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
   display: inline;
   margin-right: 16px;
   padding-left: 8px;
-  padding-right: 32px;
+  padding-right: 8px;
 }
 
-.\/gebaerdensprache,
-.icon-gebaerdensprache {
-  background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
+.metanav {
+  .nav-item {
+    &:nth-child(1) {
+      .nav-link {
+        background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
+        padding-right: 32px;
+      }
+    }
+
+    &:nth-child(2) {
+      .nav-link {
+        background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
+        padding-right: 32px;
+      }
+    }
+  }
 }
 
-.\/leichte-sprache,
-.icon-leichte-sprache {
-  background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
+.de {
+  background-image: svg-load("../Images/Icons/Flags/de.svg");
+  padding-right: 32px !important;
 }
 
-.\/suche {
-  background-image: svg-load("../Images/Icons/icon-search.svg", fill=$darkblue);
+.fr {
+  background-image: svg-load("../Images/Icons/Flags/fr.svg");
+  padding-right: 32px !important;
+}
+
+.en {
+  background-image: svg-load("../Images/Icons/Flags/gb.svg");
+  padding-right: 32px !important;
 }

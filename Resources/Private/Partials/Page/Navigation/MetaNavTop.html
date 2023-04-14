@@ -1,18 +1,19 @@
 <f:if condition="{menuMetaTop}">
     <div class="col meta-desktop d-none d-lg-block flex-grow-0">
         <div class="meta-wrapper d-flex justify-content-end align-items-center">
+            <f:render arguments="{languagenavigation: languagenavigation}" partial="Navigation/LanguageNavigation"/>
             <nav aria-label="Meta-Navigation">
                 <ul class="metanav nav">
                     <f:for each="{menuMetaTop}" as="mainItem" iteration="i">
                         <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
                             <f:if condition="{mainItem.current}">
                                 <f:then>
-                                    <f:link.page pageUid="{mainItem.data.uid}" aria="{current: 'page'}" class="nav-link{f:if(condition:mainItem.active, then:' current')} {mainItem.link -> f:format.raw()}">
+                                    <f:link.page pageUid="{mainItem.data.uid}" aria="{current: 'page'}" class="nav-link{f:if(condition:mainItem.active, then:' current')}">
                                         {mainItem.title}
                                     </f:link.page>
                                 </f:then>
                                 <f:else>
-                                    <f:link.page pageUid="{mainItem.data.uid}" class="nav-link {mainItem.link -> f:format.raw()}">
+                                    <f:link.page pageUid="{mainItem.data.uid}" class="nav-link">
                                         {mainItem.title}
                                     </f:link.page>
                                 </f:else>

@@ -40,6 +40,7 @@
   }
 }
 
+.language-menu,
 .metanav {
   flex-wrap: nowrap;
   margin-bottom: 8px;
@@ -47,6 +48,13 @@
   .nav-item {
     margin-bottom: 0;
     white-space: nowrap;
+
+    .nav-link {
+      &.text-muted {
+        opacity: .5;
+        outline: none !important;
+      }
+    }
 
     &:last-child {
       .nav-link {
