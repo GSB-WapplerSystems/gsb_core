@@ -1,1 +1,18 @@
 // footer navigation
+
+.footer-nav {
+  a {
+    color: $white;
+
+    &.current {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      outline-color: $white !important;
+    }
+  }
+}

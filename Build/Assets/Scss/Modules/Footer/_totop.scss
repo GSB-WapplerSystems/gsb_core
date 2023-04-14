@@ -13,18 +13,23 @@
   width: 48px;
   z-index: 0;
 
+  &:hover,
+  &:focus,
+  &:active {
+    outline-color: $white !important;
+  }
+
   @include media-breakpoint-up(xl) {
-    bottom: 260px;
+    bottom: 280.8px;
     position: absolute;
   }
 
   &.on {
     bottom: 32px;
     opacity: 1;
-    outline-width: 2px !important;
 
     @include media-breakpoint-up(xl) {
-      bottom: 260px;
+      bottom: 280.8px;
     }
   }
 
@@ -32,7 +37,7 @@
     bottom: 32px;
 
     @include media-breakpoint-up(xl) {
-      bottom: 260px;
+      bottom: 280.8px;
     }
   }
 

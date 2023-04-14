@@ -1,13 +1,5 @@
 <f:if condition="{menuMeta}">
     <div class="row pb-5">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <nav class="language-switcher text-uppercase d-sm-flex justify-content-lg-end" aria-labelledby="language-switcher">
-                    <h3 id="language-switcher" class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:footer.language-switcher')}</h3>
-                    <f:format.raw>{navlanguage}</f:format.raw>
-                </nav>
-            </div>
-        </div>
         <div class="col-12">
             <hr aria-hidden="true">
             <div class="row align-items-start py-4">
@@ -23,15 +15,15 @@
                         <h2 class="visually-hidden" id="meta">{f:translate(key: 'footer.metanav', extensionName: 'gsb_template')}</h2>
                         <ul class="footer-nav nav justify-content-end">
                             <f:for each="{menuMeta}" as="mainItem">
-                                <li class="nav-item pt-2 pb-2{f:if(condition:mainItem.active, then:' active')}">
+                                <li class="nav-item pt-2 pb-2">
                                     <f:if condition="{mainItem.current}">
                                         <f:then>
-                                            <strong class="nav-link p-2 lh-1">
+                                            <f:link.page aria="{current: 'page'}" pageUid="{mainItem.data.uid}" class="nav-link fw-bold current">
                                                 {mainItem.title}
-                                            </strong>
+                                            </f:link.page>
                                         </f:then>
                                         <f:else>
-                                            <f:link.page pageUid="{mainItem.data.uid}" class="p-2 lh-1 fw-bold{f:if(condition:mainItem.active, then:' active')}">
+                                            <f:link.page pageUid="{mainItem.data.uid}" class="nav-link fw-bold">
                                                 {mainItem.title}
                                             </f:link.page>
                                         </f:else>
