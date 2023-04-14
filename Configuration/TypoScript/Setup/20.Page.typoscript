@@ -72,9 +72,7 @@ page {
       1 = {$page.fluidtemplate.layoutRootPath}
     }
     variables {
-      # navigation & element libs
-      jumpNav = < lib.jumpNav
-
+      // social media links
       socialLinks-Facebook = TEXT
       socialLinks-Facebook.value = {$config.socialLinks.Facebook}
       socialLinks-Instagram = TEXT
@@ -89,12 +87,13 @@ page {
       absRefPrefix.value = {$config.absRefPrefix}
 
       # general title and vars
+      jumpNav = < lib.jumpNav
       copyright = < lib.copyright
       pageheader = < lib.pageheader
       headtitle = < lib.headTitle
       headertitle = < lib.headerTitle
       headerDescription = < lib.headerDescription
-      navlanguage = < lib.language
+
       # Top
       top < styles.content.get
       top.select.where = colPos=0
@@ -107,6 +106,7 @@ page {
       bottom < styles.content.get
       bottom.select.where = colPos=2
     }
+    
     # set extension name
     extbase {
       controllerExtensionName = gsb_template
