@@ -34,6 +34,8 @@ config {
   spamProtectEmailAddresses_atSubst =
   # cat=Default Templateset (ITZBund): advanced/150/280; type=text; label=absRefPrefix
   absRefPrefix =
+  # cat=Default Templateset (ITZBund): advanced/150/290; type=text; label=navType
+  navType = 1
 
   socialLinks {
     # cat=Social Media Links (MP): advanced/160/100; type=string; label=Facebook:Url
@@ -53,5 +55,14 @@ config {
     language = en
     # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
     languageLocal = en_GB.UTF-8
+  }
+[global]
+
+[siteLanguage("languageId") == "2"]
+  config {
+    # cat=Default Templateset (ITZBund): advanced/150/260; type=text; label=Language
+    language = fr
+    # cat=Default Templateset (ITZBund): advanced/150/260; type=text; label=Local all
+    languageLocal = fr_FR.UTF-8
   }
 [global]

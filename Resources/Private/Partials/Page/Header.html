@@ -31,8 +31,8 @@
                         </f:if>
                     </div>
                     <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
-                        <f:render arguments="{menuMetaTop: menuMetaTop}" partial="Navigation/MetaNavTop"/>
-                        <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi}" partial="Header.Mainnav"/>
+                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
+                        <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
                     </div>
                 </div>
             </div>
@@ -40,11 +40,7 @@
     </header>
 
     <f:if condition="{data.breadcrumb} != 1">
-        <nav class="breadcrumb d-none d-md-block" aria-label="{f:translate(key: 'header.youarehere', extensionName: 'gsb_template')}">
-            <div class="container">
-                <f:format.raw>{navBreadcrumb}</f:format.raw>
-            </div>
-        </nav>
+        <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
     </f:if>
 
 </html>

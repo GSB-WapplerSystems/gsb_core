@@ -1,4 +1,4 @@
-// main nav
+// mainnav
 
 .navbar {
   display: flex;
@@ -52,6 +52,36 @@
 
 .main-menu {
   align-items: flex-start !important;
+
+  @include media-breakpoint-up(lg) {
+    &-desktop {
+      .main-nav-wrapper {
+        padding: 0;
+      }
+
+      &.main-menu-layer {
+        > .dropdown-menu {
+          top: 88%;
+        }
+      }
+
+      .navbar-toggler {
+        display: none;
+
+        + #menu {
+          display: block;
+
+          #mainNav {
+            margin: 0;
+
+            li.col {
+              min-width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 
   &-layer {
     position: static;
@@ -150,6 +180,8 @@
       }
 
       &.act.hassub {
+        font-weight: 700;
+
         &::before {
           background-color: $darkblue !important;
           height: 2px !important;
@@ -255,6 +287,7 @@
   }
 
   .current {
+    font-weight: 700;
     text-decoration: underline;
 
     &::before {

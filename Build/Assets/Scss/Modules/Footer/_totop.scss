@@ -13,18 +13,23 @@
   width: 48px;
   z-index: 0;
 
+  &:hover,
+  &:focus,
+  &:active {
+    outline-color: $white !important;
+  }
+
   @include media-breakpoint-up(xl) {
-    bottom: 260px;
+    bottom: 280.8px;
     position: absolute;
   }
 
   &.on {
     bottom: 32px;
     opacity: 1;
-    outline-width: 2px !important;
 
     @include media-breakpoint-up(xl) {
-      bottom: 260px;
+      bottom: 280.8px;
     }
   }
 
@@ -32,14 +37,14 @@
     bottom: 32px;
 
     @include media-breakpoint-up(xl) {
-      bottom: 260px;
+      bottom: 280.8px;
     }
   }
 
   .bg {
-    background: $white conic-gradient($darkblue 360deg, $white 360deg) center center / 60px !important;
+    background: $darkblue conic-gradient($white 360deg, $darkblue 360deg) center center / 60px !important;
     background-size: 32px;
-    border: 2px solid $darkblue;
+    border: 2px solid $white;
     border-radius: 50%;
     height: 48px;
     width: 48px;
@@ -52,7 +57,7 @@
   }
 
   .ol {
-    background: $white svg-load("../Images/Icons/icon-chevron-up.svg", fill=$darkblue) no-repeat center center;
+    background: $darkblue svg-load("../Images/Icons/icon-chevron-up.svg", fill=$white) no-repeat center center;
     background-size: 24px 24px;
     border-radius: 50%;
     height: 32px;

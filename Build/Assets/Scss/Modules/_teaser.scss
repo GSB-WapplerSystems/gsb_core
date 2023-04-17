@@ -1,7 +1,12 @@
-@charset "utf-8";
+// teaser
+
+.frame-type-gsb_singleteaser {
+  background-color: $cyan-100;
+  margin-bottom: 16px;
+}
 
 .teaser {
   &-content {
-    margin-top: 16px;
+    padding: 16px;
   }
 }
