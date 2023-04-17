@@ -100,6 +100,15 @@
   }
 }
 
+/* an extra class for the css after attribute to keep bootstrap updatable */
+.dropdown-custom-after {
+  &::after {
+    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
+    background-repeat: no-repeat;
+    min-width: 50px;
+  }
+}
+
 .de {
   background-image: svg-load("../Images/Icons/Flags/de.svg");
   padding-right: 32px !important;
