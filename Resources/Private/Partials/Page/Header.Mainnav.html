@@ -1,20 +1,37 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-    <nav class="main-menu-layer dropdown flex-grow-0" aria-labelledby="mainmenu" id="main-menu">
-        <button aria-expanded="false" aria-controls="menu" class="navbar-toggler" data-bs-boundary="scrollParent" data-bs-auto-close="outside" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_template')}" type="button">
-            <span class="line"></span>
-            <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_template')}</f:format.raw></span>
-        </button>
-        <div class="dropdown-menu" id="menu">
-            <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_template')}</h2>
-            <div class="navbar-wrapper">
-                <div class="meta-mobile" id="meta-mobile"></div>
-                <f:render arguments="{menuMain: menuMain}" partial="Navigation/MainNav"/>
+<f:if condition="{navType} == 1">
+    <f:then>
+        <nav class="main-menu-layer dropdown flex-grow-0" aria-labelledby="mainmenu" id="main-menu">
+            <button aria-expanded="false" aria-controls="menu" class="navbar-toggler" data-bs-boundary="scrollParent" data-bs-auto-close="outside" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_template')}" type="button">
+                <span class="line"></span>
+                <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_template')}</f:format.raw></span>
+            </button>
+            <div class="dropdown-menu" id="menu">
+                <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_template')}</h2>
+                <div class="navbar-wrapper">
+                    <div class="meta-mobile" id="meta-mobile"></div>
+                    <f:render arguments="{menuMain: menuMain}" partial="Navigation/MainNav"/>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </f:then>
+    <f:else>
+        <nav class="main-menu-layer main-menu-desktop dropdown flex-grow-0" aria-labelledby="mainmenu" id="main-menu">
+            <button aria-expanded="false" aria-controls="menu" class="navbar-toggler" data-bs-boundary="scrollParent" data-bs-auto-close="outside" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_template')}" type="button">
+                <span class="line"></span>
+                <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_template')}</f:format.raw></span>
+            </button>
+            <div class="dropdown-menu" id="menu">
+                <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_template')}</h2>
+                <div class="navbar-wrapper">
+                    <div class="meta-mobile" id="meta-mobile"></div>
+                    <f:render arguments="{menuMain: menuMain}" partial="Navigation/MainNav"/>
+                </div>
+            </div>
+        </nav>
+    </f:else>
+</f:if>
 
 </html>
 
