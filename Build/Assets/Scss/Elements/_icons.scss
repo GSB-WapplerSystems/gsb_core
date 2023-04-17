@@ -101,7 +101,7 @@
 }
 
 /* an extra class for the css after attribute to keep bootstrap updatable */
-.dropdown-custom-after {
+.dropdown-custom {
   &::after {
     background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
     background-repeat: no-repeat;
