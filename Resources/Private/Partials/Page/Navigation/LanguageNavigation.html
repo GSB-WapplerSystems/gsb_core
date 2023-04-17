@@ -4,12 +4,12 @@
                 type="button">
             Dummy Button
         </button>
-        <ul class="language-menu list-unstyled nav flex-nowrap me-5" id="language-menu">
+        <ul class="dropdown-menu language-menu list-unstyled nav flex-nowrap me-5" id="language-menu">
             <f:for as="item" each="{languagenavigation}">
                 <f:if condition="{item.available} && {item.active} != 1">
                     <f:then>
                         <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                            <a class="nav-link {item.twoLetterIsoCode}{f:if(condition: item.available, else: ' text-muted')}"
+                            <a class="dropdown-item nav-link {item.twoLetterIsoCode}{f:if(condition: item.available, else: ' text-muted')}"
                                href="{item.link}"
                                hreflang="{item.hreflang}">
                                 <span>{item.navigationTitle}</span>
@@ -19,8 +19,8 @@
                     <f:else>
                         <f:if condition="{item.active} != 1">
                             <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                            <span
-                                class="nav-link {item.twoLetterIsoCode}{f:if(condition: item.available, else: ' text-muted')}">{item.navigationTitle}</span>
+                                <span
+                                    class="dropdown-item nav-link {item.twoLetterIsoCode}{f:if(condition: item.available, else: ' text-muted')}">{item.navigationTitle}</span>
                             </li>
                         </f:if>
                     </f:else>
