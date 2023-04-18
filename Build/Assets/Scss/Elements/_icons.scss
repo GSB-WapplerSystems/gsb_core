@@ -100,20 +100,14 @@
   }
 }
 
-.btn-dropdown-custom {
+.btn-language-menu {
+  background: none;
+  border: 0;
+  border-radius: unset;
   display: flex;
   justify-content: flex-end;
-
-  &::after {
-    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
-    background-position: right;
-    background-repeat: no-repeat;
-    border: none;
-    height: 20px;
-    position: relative;
-    top: 2px;
-    width: 20px;
-  }
+  padding-bottom: 5px;
+  padding-top: 6px;
 }
 
 .dropdown-custom {

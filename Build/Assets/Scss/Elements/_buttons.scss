@@ -6,14 +6,6 @@
   transition: all .2s ease-in-out;
 }
 
-.btn-language-menu {
-  background: none;
-  border: 0;
-  border-radius: unset;
-  padding-bottom: 5px;
-  padding-top: 6px;
-}
-
 .navbar {
   &-toggler {
     align-self: flex-start;
@@ -152,5 +144,18 @@
       outline-color: $white !important;
       outline-offset: -2px;
     }
+  }
+}
+
+.btn-dropdown-icon {
+  &::after {
+    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
+    background-position: right;
+    background-repeat: no-repeat;
+    border: none;
+    height: 20px;
+    position: relative;
+    top: 2px;
+    width: 20px;
   }
 }
