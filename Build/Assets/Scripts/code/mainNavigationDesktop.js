@@ -1,4 +1,4 @@
-function mainnav () {
+function mainnavDesktop () {
   const language = document.querySelector('html').getAttribute('lang')
 
   let closeTitle
@@ -24,7 +24,7 @@ function mainnav () {
     closeButton = 'Close Submenu'
   }
 
-  const Dropdown = document.getElementById('main-menu')
+  const Dropdown = document.querySelector('.dropdown-menu')
   const body = document.querySelector('body')
   const headerWrapper = document.querySelector('.header-wrapper')
   const navbarToggler = document.querySelector('.navbar-toggler')
@@ -57,5 +57,5 @@ function mainnav () {
 }
 
 if (document.querySelector('#main-menu')) {
-  mainnav()
+  mainnavDesktop()
 }

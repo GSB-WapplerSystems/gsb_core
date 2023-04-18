@@ -44,9 +44,9 @@ page.10.dataProcessing {
   70 {
     special = directory
     special.value = 1
-    levels = 2
+    levels = 5
     includeSpacer = 1
-    as = menuMainGsb
+    as = menuMainDesktop
   }
   80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
   80 {

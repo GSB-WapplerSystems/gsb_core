@@ -3,339 +3,339 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang.xlf" date="2022-12-11T09:48:17" product-name="gsb_template">
 		<header />
 		<body>
-			<trans-unit id="meta.homepage" resname="meta.homepage">
+			<trans-unit id="meta.homepage" resname="meta.homepage" approved="yes">
 				<source>Homepage</source>
 				<target>Startseite</target>
 			</trans-unit>
-			<trans-unit id="meta.NavigationSection" resname="meta.NavigationSection">
+			<trans-unit id="meta.NavigationSection" resname="meta.NavigationSection" approved="yes">
 				<source>Navigation section</source>
 				<target>Navigationsbereich</target>
 			</trans-unit>
-			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection">
+			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection" approved="yes">
 				<source>Service section</source>
 				<target>Servicebereich</target>
 			</trans-unit>
-			<trans-unit id="footer.serviceheader" resname="footer.serviceheader">
+			<trans-unit id="footer.serviceheader" resname="footer.serviceheader" approved="yes">
 				<source>Federal Government Services</source>
 				<target>Services der Bundesregierung</target>
 			</trans-unit>
-			<trans-unit id="footer.language-switcher" resname="footer.language-switcher">
+			<trans-unit id="footer.language-switcher" resname="footer.language-switcher" approved="yes">
 				<source>Language switcher</source>
 				<target>Sprachumschalter</target>
 			</trans-unit>
-			<trans-unit id="element.pflichtfeld.properties.text" resname="element.pflichtfeld.properties.text">
+			<trans-unit id="element.pflichtfeld.properties.text" resname="element.pflichtfeld.properties.text" approved="yes">
 				<source>Required</source>
 				<target>Pflichtfeld</target>
 			</trans-unit>
-			<trans-unit id="opens" resname="opens">
+			<trans-unit id="opens" resname="opens" approved="yes">
 				<source>Opens</source>
 				<target>Öffnet</target>
 			</trans-unit>
-			<trans-unit id="innewwindow" resname="innewwindow">
+			<trans-unit id="innewwindow" resname="innewwindow" approved="yes">
 				<source>in a new window</source>
 				<target>in einem neuen Fenster</target>
 			</trans-unit>
-			<trans-unit id="header.text" resname="header.text">
+			<trans-unit id="header.text" resname="header.text" approved="yes">
 				<source>Link to Homepage</source>
 				<target>Zur Startseite</target>
 			</trans-unit>
-			<trans-unit id="header.jumpto" resname="header.jumpto">
+			<trans-unit id="header.jumpto" resname="header.jumpto" approved="yes">
 				<source>Jump directly to:</source>
 				<target>Springe direkt zum:</target>
 			</trans-unit>
-			<trans-unit id="header.jumptocontent" resname="header.jumptocontent">
+			<trans-unit id="header.jumptocontent" resname="header.jumptocontent" approved="yes">
 				<source>Jump to content</source>
 				<target>Zum Inhalt springen</target>
 			</trans-unit>
-			<trans-unit id="header.register" resname="header.register">
+			<trans-unit id="header.register" resname="header.register" approved="yes">
 				<source>Register</source>
 				<target>Registrieren</target>
 			</trans-unit>
-			<trans-unit id="header.login" resname="header.login">
+			<trans-unit id="header.login" resname="header.login" approved="yes">
 				<source>Log in</source>
 				<target>Anmelden</target>
 			</trans-unit>
-			<trans-unit id="header.servicemenu" resname="header.servicemenu">
+			<trans-unit id="header.servicemenu" resname="header.servicemenu" approved="yes">
 				<source>Service menu</source>
 				<target>Servicemenü</target>
 			</trans-unit>
-			<trans-unit id="header.mainnavigation" resname="header.mainnavigation">
+			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
 				<target>Hauptnavigation</target>
 			</trans-unit>
-			<trans-unit id="header.openMenu" resname="header.openMenu">
+			<trans-unit id="header.openMenu" resname="header.openMenu" approved="yes">
 				<source><![CDATA[<span class="visually-hidden">Open</span>]]> menu</source>
 				<target>Menü <![CDATA[<span class="visually-hidden">öffnen</span>]]></target>
 			</trans-unit>
-			<trans-unit id="header.closeMenu" resname="header.closeMenu">
+			<trans-unit id="header.closeMenu" resname="header.closeMenu" approved="yes">
 				<source><![CDATA[<span class="visually-hidden">Close</span>]]> menu</source>
-				<target>Menü <![CDATA[<span class="visually-hidden">schließen</span>]]></target>
+				<target>Menü <![CDATA[<span class="visually-hidden"">schließen</span>]]></target>
 			</trans-unit>
-			<trans-unit id="header.openMenuTitle" resname="header.openMenuTitle">
+			<trans-unit id="header.openMenuTitle" resname="header.openMenuTitle" approved="yes">
 				<source>Open menu</source>
 				<target>Menü öffnen</target>
 			</trans-unit>
-			<trans-unit id="header.closeMenuTitle" resname="header.closeMenuTitle">
+			<trans-unit id="header.closeMenuTitle" resname="header.closeMenuTitle" approved="yes">
 				<source>Close menu</source>
 				<target>Menü schließen</target>
 			</trans-unit>
-			<trans-unit id="header.search" resname="header.search">
+			<trans-unit id="header.search" resname="header.search" approved="yes">
 				<source>Search</source>
 				<target>Suche</target>
 			</trans-unit>
-			<trans-unit id="header.searching" resname="header.searching">
+			<trans-unit id="header.searching" resname="header.searching" approved="yes">
 				<source>Search</source>
 				<target>Suchen</target>
 			</trans-unit>
-			<trans-unit id="header.searchterm" resname="header.searchterm">
+			<trans-unit id="header.searchterm" resname="header.searchterm" approved="yes">
 				<source>Searchterm</source>
 				<target>Suchbegriff</target>
 			</trans-unit>
-			<trans-unit id="header.searchopen" resname="header.searchopen">
+			<trans-unit id="header.searchopen" resname="header.searchopen" approved="yes">
 				<source>open search</source>
 				<target>Suche öffnen</target>
 			</trans-unit>
-			<trans-unit id="header.magnifyingglass" resname="header.magnifyingglass">
+			<trans-unit id="header.magnifyingglass" resname="header.magnifyingglass" approved="yes">
 				<source>Magnifying glass</source>
 				<target>Lupe</target>
 			</trans-unit>
-			<trans-unit id="header.youarehere" resname="header.youarehere">
+			<trans-unit id="header.youarehere" resname="header.youarehere" approved="yes">
 				<source>You are here</source>
 				<target>Sie sind hier</target>
 			</trans-unit>
-			<trans-unit id="header.linktohomepage" resname="header.linktohomepage">
+			<trans-unit id="header.linktohomepage" resname="header.linktohomepage" approved="yes">
 				<source>Link to homepage</source>
 				<target>Zur Startseite</target>
 			</trans-unit>
-			<trans-unit id="supplement.areamenu" resname="supplement.areamenu">
+			<trans-unit id="supplement.areamenu" resname="supplement.areamenu" approved="yes">
 				<source>Area menu</source>
 				<target>Bereichsmenü</target>
 			</trans-unit>
-			<trans-unit id="supplement.aside" resname="supplement.aside">
+			<trans-unit id="supplement.aside" resname="supplement.aside" approved="yes">
 				<source>Additional information</source>
 				<target>Zusatzinformationen</target>
 			</trans-unit>
-			<trans-unit id="footer.metanav" resname="footer.metanav">
+			<trans-unit id="footer.metanav" resname="footer.metanav" approved="yes">
 				<source>Meta navigation</source>
 				<target>Metanavigation</target>
 			</trans-unit>
-			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader">
+			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader" approved="yes">
 				<source>Follow us at</source>
 				<target>Folgen Sie uns auf</target>
 			</trans-unit>
-			<trans-unit id="footer.socialmediafooter" resname="footer.socialmediafooter">
+			<trans-unit id="footer.socialmediafooter" resname="footer.socialmediafooter" approved="yes">
 				<source>Always up to date - follow us on our socialmedia channels</source>
 				<target>Immer aktuell - folgen Sie uns auf unseren sozialen Kanälen</target>
 			</trans-unit>
-			<trans-unit id="footer.overview" resname="footer.overview">
+			<trans-unit id="footer.overview" resname="footer.overview" approved="yes">
 				<source>Overview</source>
 				<target>Übersicht</target>
 			</trans-unit>
-			<trans-unit id="content.readmore" resname="content.readmore">
+			<trans-unit id="content.readmore" resname="content.readmore" approved="yes">
 				<source>Read more</source>
 				<target>Mehr lesen</target>
 			</trans-unit>
-			<trans-unit id="videoyoutube.play" resname="videoyoutube.play">
+			<trans-unit id="videoyoutube.play" resname="videoyoutube.play" approved="yes">
 				<source>Play video</source>
 				<target>Video abspielen</target>
 			</trans-unit>
-			<trans-unit id="videoyoutube.link" resname="videoyoutube.link">
+			<trans-unit id="videoyoutube.link" resname="videoyoutube.link" approved="yes">
 				<source>To activate the video you need to click on the button. After activating the button, <![CDATA[<a href="https://policies.google.com/privacy?hl=en&gl=ZZ" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">Google's privacy policy</a>]]> applies.</source>
 				<target>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <![CDATA[<a href="/datenschutz" target="_blank" class="external-link" rel="noreferrer" title="Link öffnet in neuem Fenster">Datenschutzerklärung</a>.]]></target>
 			</trans-unit>
-			<trans-unit id="audio.play" resname="audio.play">
+			<trans-unit id="audio.play" resname="audio.play" approved="yes">
 				<source>Play audio</source>
 				<target>Audio abspielen</target>
 			</trans-unit>
-			<trans-unit id="audio.link" resname="audio.link">
+			<trans-unit id="audio.link" resname="audio.link" approved="yes">
 				<source>To activate the widget you need to click on the button. After activating the button, <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">SoundCloud's privacy policy</a>]]> applies.</source>
 				<target>Zum Aktivieren des Widgets musst Du auf den Button klicken. Nach dem Aktivieren des Buttons gelten die <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link öffnet in neuem Fenster">Datenschutzbestimmungen von SoundCloud</a>.]]></target>
 			</trans-unit>
-			<trans-unit id="shariff.social" resname="shariff.social">
+			<trans-unit id="shariff.social" resname="shariff.social" approved="yes">
 				<source>Share this article:</source>
 				<target>Teile den Artikel:</target>
 			</trans-unit>
-			<trans-unit id="article.detail.published" resname="article.detail.published">
+			<trans-unit id="article.detail.published" resname="article.detail.published" approved="yes">
 				<source>Published on</source>
 				<target>Veröffentlicht am</target>
 			</trans-unit>
-			<trans-unit id="article.detail.dateformat" resname="article.detail.dateformat">
+			<trans-unit id="article.detail.dateformat" resname="article.detail.dateformat" approved="yes">
 				<source>%d %b %Y</source>
 				<target>%d. %b %Y</target>
 			</trans-unit>
-			<trans-unit id="date.time" resname="date.time">
+			<trans-unit id="date.time" resname="date.time" approved="yes">
 				<source>%H:%M</source>
 				<target>%H:%M Uhr</target>
 			</trans-unit>
-			<trans-unit id="date.day" resname="date.day">
+			<trans-unit id="date.day" resname="date.day" approved="yes">
 				<source>%d</source>
 				<target>%d.</target>
 			</trans-unit>
-			<trans-unit id="date.dayfull" resname="date.dayfull">
+			<trans-unit id="date.dayfull" resname="date.dayfull" approved="yes">
 				<source>%A, %d, %H:%M</source>
 				<target>%A, %d., %H:%M Uhr</target>
 			</trans-unit>
-			<trans-unit id="date.month" resname="date.month">
+			<trans-unit id="date.month" resname="date.month" approved="yes">
 				<source>%b</source>
 				<target>%b</target>
 			</trans-unit>
-			<trans-unit id="date.daymonthfull" resname="date.daymonthfull">
+			<trans-unit id="date.daymonthfull" resname="date.daymonthfull" approved="yes">
 				<source>%A, %d %B, %H:%M</source>
 				<target>%A, %d. %b, %H:%M Uhr</target>
 			</trans-unit>
-			<trans-unit id="date.daymonth" resname="date.daymonth">
+			<trans-unit id="date.daymonth" resname="date.daymonth" approved="yes">
 				<source>%d %b</source>
 				<target>%d. %b</target>
 			</trans-unit>
-			<trans-unit id="date.year" resname="date.year">
+			<trans-unit id="date.year" resname="date.year" approved="yes">
 				<source>%Y</source>
 				<target>%Y</target>
 			</trans-unit>
-			<trans-unit id="date.daymonthyear" resname="date.daymonthyear">
+			<trans-unit id="date.daymonthyear" resname="date.daymonthyear" approved="yes">
 				<source>%d %b %Y</source>
 				<target>%d. %b %Y</target>
 			</trans-unit>
-			<trans-unit id="date.daymonthyearfull" resname="date.daymonthyearfull">
+			<trans-unit id="date.daymonthyearfull" resname="date.daymonthyearfull" approved="yes">
 				<source>%A, %d %B %Y, %H:%M</source>
 				<target>%A, %d. %B %Y, %H:%M Uhr</target>
 			</trans-unit>
-			<trans-unit id="article.detail.topic" resname="article.detail.topic">
+			<trans-unit id="article.detail.topic" resname="article.detail.topic" approved="yes">
 				<source>on the topic</source>
 				<target>zum Thema</target>
 			</trans-unit>
-			<trans-unit id="to.content" resname="to.content">
+			<trans-unit id="to.content" resname="to.content" approved="yes">
 				<source>Read more</source>
 				<target>Zum Inhalt</target>
 			</trans-unit>
-			<trans-unit id="aside.sharepage" resname="aside.sharepage">
+			<trans-unit id="aside.sharepage" resname="aside.sharepage" approved="yes">
 				<source>Share page</source>
 				<target>Seite teilen</target>
 			</trans-unit>
-			<trans-unit id="aside.socialmedia" resname="aside.socialmedia">
+			<trans-unit id="aside.socialmedia" resname="aside.socialmedia" approved="yes">
 				<source>Socialmedia</source>
 				<target>Soziale Medien</target>
 			</trans-unit>
-			<trans-unit id="aside.sharepageshort" resname="aside.sharepageshort">
+			<trans-unit id="aside.sharepageshort" resname="aside.sharepageshort" approved="yes">
 				<source>Share</source>
 				<target>Teilen</target>
 			</trans-unit>
-			<trans-unit id="aside.tweet" resname="aside.tweet">
+			<trans-unit id="aside.tweet" resname="aside.tweet" approved="yes">
 				<source>Tweet</source>
 				<target>Tweet</target>
 			</trans-unit>
-			<trans-unit id="aside.share" resname="aside.share">
+			<trans-unit id="aside.share" resname="aside.share" approved="yes">
 				<source>Share</source>
 				<target>Teilen</target>
 			</trans-unit>
-			<trans-unit id="aside.print" resname="aside.print">
+			<trans-unit id="aside.print" resname="aside.print" approved="yes">
 				<source>Print</source>
 				<target>Drucken</target>
 			</trans-unit>
-			<trans-unit id="aside.shareonfacebook" resname="aside.shareonfacebook">
+			<trans-unit id="aside.shareonfacebook" resname="aside.shareonfacebook" approved="yes">
 				<source>Share on Facebook</source>
 				<target>Teile auf Facebook</target>
 			</trans-unit>
-			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter">
+			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter" approved="yes">
 				<source>Share on Twittter</source>
 				<target>Teile auf Twittter</target>
 			</trans-unit>
-			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit">
+			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit" approved="yes">
 				<source>Share on Reddit</source>
 				<target>Teile auf Reddit</target>
 			</trans-unit>
-			<trans-unit id="aside.shareonwhatsapp" resname="aside.shareonwhatsapp">
+			<trans-unit id="aside.shareonwhatsapp" resname="aside.shareonwhatsapp" approved="yes">
 				<source>Share on Whatsapp</source>
 				<target>Teile mit Whatsapp</target>
 			</trans-unit>
-			<trans-unit id="aside.shareonxing" resname="aside.shareonxing">
+			<trans-unit id="aside.shareonxing" resname="aside.shareonxing" approved="yes">
 				<source>Share on Xing</source>
 				<target>Teile auf Xing</target>
 			</trans-unit>
-			<trans-unit id="aside.shareonlinkedin" resname="aside.shareonlinkedin">
+			<trans-unit id="aside.shareonlinkedin" resname="aside.shareonlinkedin" approved="yes">
 				<source>Share on LinkedIn</source>
 				<target>Teile auf LinkedIn</target>
 			</trans-unit>
-			<trans-unit id="aside.printpage" resname="aside.printpage">
+			<trans-unit id="aside.printpage" resname="aside.printpage" approved="yes">
 				<source>Print page</source>
 				<target>Seite drucken</target>
 			</trans-unit>
-			<trans-unit id="aside.copylink" resname="aside.copylink">
+			<trans-unit id="aside.copylink" resname="aside.copylink" approved="yes">
 				<source>Copy link to clipboard</source>
 				<target>Link in Zwischenablage kopieren</target>
 			</trans-unit>
-			<trans-unit id="aside.copy" resname="aside.copy">
+			<trans-unit id="aside.copy" resname="aside.copy" approved="yes">
 				<source>Copy</source>
 				<target>Kopieren</target>
 			</trans-unit>
-			<trans-unit id="overview.header.counter" resname="overview.header.counter">
+			<trans-unit id="overview.header.counter" resname="overview.header.counter" approved="yes">
 				<source>article for</source>
 				<target>Artikel für</target>
 			</trans-unit>
-			<trans-unit id="medpub.header.counter" resname="medpub.header.counter">
+			<trans-unit id="medpub.header.counter" resname="medpub.header.counter" approved="yes">
 				<source>posts</source>
 				<target>Beiträge</target>
 			</trans-unit>
-			<trans-unit id="gallery.download" resname="gallery.download">
+			<trans-unit id="gallery.download" resname="gallery.download" approved="yes">
 				<source>Download</source>
 				<target>Herunterladen</target>
 			</trans-unit>
-			<trans-unit id="gallery.close" resname="gallery.close">
+			<trans-unit id="gallery.close" resname="gallery.close" approved="yes">
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
-			<trans-unit id="gallery.previous" resname="gallery.previous">
+			<trans-unit id="gallery.previous" resname="gallery.previous" approved="yes">
 				<source>Previous image</source>
 				<target>Vorheriges Bild</target>
 			</trans-unit>
-			<trans-unit id="gallery.next" resname="gallery.next">
+			<trans-unit id="gallery.next" resname="gallery.next" approved="yes">
 				<source>Next image</source>
 				<target>Nächstes Bild</target>
 			</trans-unit>
-			<trans-unit id="gallery.of" resname="gallery.of">
+			<trans-unit id="gallery.of" resname="gallery.of" approved="yes">
 				<source>of</source>
 				<target>von</target>
 			</trans-unit>
-			<trans-unit id="focus" resname="focus">
+			<trans-unit id="focus" resname="focus" approved="yes">
 				<source>Focus</source>
 				<target>Schwerpunkte</target>
 			</trans-unit>
-			<trans-unit id="content.close" resname="content.close">
+			<trans-unit id="content.close" resname="content.close" approved="yes">
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
-			<trans-unit id="content.article" resname="content.article">
+			<trans-unit id="content.article" resname="content.article" approved="yes">
 				<source>Article</source>
 				<target>Artikel</target>
 			</trans-unit>
-			<trans-unit id="content.articles" resname="content.articles">
+			<trans-unit id="content.articles" resname="content.articles" approved="yes">
 				<source>Articles</source>
 				<target>Artikel</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_of" resname="tt_content.gallery_of">
+			<trans-unit id="tt_content.gallery_of" resname="tt_content.gallery_of" approved="yes">
 				<source>of</source>
 				<target>von</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_close" resname="tt_content.gallery_close">
+			<trans-unit id="tt_content.gallery_close" resname="tt_content.gallery_close" approved="yes">
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_download" resname="tt_content.gallery_download">
+			<trans-unit id="tt_content.gallery_download" resname="tt_content.gallery_download" approved="yes">
 				<source>Download</source>
 				<target>Herunterladen</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_previous" resname="tt_content.gallery_previous">
+			<trans-unit id="tt_content.gallery_previous" resname="tt_content.gallery_previous" approved="yes">
 				<source>Next image</source>
 				<target>Vorheriges Bild</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_next" resname="tt_content.gallery_next">
+			<trans-unit id="tt_content.gallery_next" resname="tt_content.gallery_next" approved="yes">
 				<source>Previous image</source>
 				<target>Nächstes Bild</target>
 			</trans-unit>
-			<trans-unit id="tt_content.images" resname="tt_content.images">
+			<trans-unit id="tt_content.images" resname="tt_content.images" approved="yes">
 				<source>images</source>
 				<target>Bilder</target>
 			</trans-unit>
-			<trans-unit id="tt_content.images.open" resname="tt_content.images.open">
+			<trans-unit id="tt_content.images.open" resname="tt_content.images.open" approved="yes">
 				<source>Open image gallery</source>
 				<target>Bildergalerie öffnen</target>
 			</trans-unit>

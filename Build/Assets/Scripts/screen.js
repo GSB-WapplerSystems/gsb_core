@@ -9,6 +9,7 @@ window.bootstrap = require('bootstrap')
  * Including customized default javascript parts
  */
 require('./code/mainNavigation')
+require('./code/mainNavigationDesktop')
 require('./code/modalGallery')
 require('./code/resizeListener')
 require('./code/scrollTo')
