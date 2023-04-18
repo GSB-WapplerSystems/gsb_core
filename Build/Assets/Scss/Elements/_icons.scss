@@ -102,10 +102,16 @@
 
 /* an extra class for the css after attribute to keep bootstrap updatable */
 .dropdown-custom {
+  padding-left: 10px;
+  padding-top: 10px;
+  vertical-align: -4px;
+
   &::after {
     background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
     background-repeat: no-repeat;
-    min-width: 50px;
+    border: none;
+    height: 20px;
+    width: 20px;
   }
 }
 
