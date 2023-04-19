@@ -64,6 +64,21 @@
   }
 }
 
+/* the bootstrap class d-none is not used here because it is set to important. */
+.d-none-not-important {
+  display: none;
+}
+
+.language-menu .show {
+  display: block;
+}
+
+.language-menu {
+  .dropdown-item {
+    background-color: lightblue;
+  }
+}
+
 .dropdown-custom {
   margin-bottom: 8px;
   margin-right: 16px;
