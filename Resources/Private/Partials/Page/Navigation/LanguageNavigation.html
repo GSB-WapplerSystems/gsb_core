@@ -10,10 +10,10 @@
                 <f:if condition="{item.available} && {item.active} != 1">
                     <f:then>
                         <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                            <a class="dropdown-item nav-link {f:if(condition: item.available, else: ' text-muted')}"
+                            <a class="dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
                                href="{item.link}"
                                hreflang="{item.hreflang}">
-                                <span>{item.navigationTitle}</span>
+                                <span class="dividing-line d-block w-100">{item.navigationTitle}</span>
                             </a>
                         </li>
                     </f:then>
