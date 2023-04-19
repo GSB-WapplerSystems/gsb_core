@@ -75,7 +75,11 @@
 
 .language-menu {
   .dropdown-item {
-    background-color: lightblue;
+    background-color: $lightblue;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid black;
   }
 }
 
