@@ -18,25 +18,9 @@
 }
 
 .meta {
-  &-desktop {
-    display: none;
-
-    @include media-breakpoint-up(lg) {
-      display: block;
-    }
-
-    .sticky & {
-      display: none !important;
-    }
-  }
-
   &-mobile {
     display: block;
     padding: 16px 16px 0;
-
-    @include media-breakpoint-up(lg) {
-      display: none;
-    }
   }
 }
 
@@ -64,7 +48,6 @@
   }
 }
 
-/* the bootstrap class d-none is not used here because it is set to important. */
 .d-none-not-important {
   display: none;
 }
