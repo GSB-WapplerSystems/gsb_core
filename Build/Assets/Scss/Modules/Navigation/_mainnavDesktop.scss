@@ -4,7 +4,7 @@
   .main-menu-desktop {
     background-color: transparent;
     border: 0;
-    height: 80vh;
+    height: 80vh !important;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -27,7 +27,7 @@
 
     .container {
       background-color: $white;
-      height: 100vh;
+      height: 100vh !important;
       position: relative;
 
       > li:first-child {
@@ -63,10 +63,11 @@
 
         ul {
           background-color: $navbgcolor-1;
-          height: 100vh;
+          height: 100vh !important;
           left: 33.7%;
           position: absolute;
           top: 88px;
+          transition: none !important;
           width: 33.6%;
 
           li {
@@ -79,7 +80,7 @@
 
             ul {
               background-color: $navbgcolor-2;
-              height: 100vh;
+              height: 100vh !important;
               left: 100%;
               top: -146px;
               width: calc(100% - 23px);
