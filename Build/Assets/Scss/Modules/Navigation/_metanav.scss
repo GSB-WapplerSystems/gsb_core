@@ -32,6 +32,8 @@
   .active {
     .dropdown-item {
       background-color: $lightblue;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
 
       .active-span {
         background-image: svg-load("../Images/Icons/icon-check.svg", fill=$darkblue);
