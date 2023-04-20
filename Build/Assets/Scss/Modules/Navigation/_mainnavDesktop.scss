@@ -2,38 +2,97 @@
 
 .mainnav-desktop {
   .main-menu-desktop {
+    background-color: transparent;
     border: 0;
+    height: 80vh;
+    overflow: hidden;
+    padding: 0;
     width: 100%;
 
     a {
       color: $darkblue;
+      position: relative;
+
+      &::before {
+        background-color: $darkblue-100;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
 
     .container {
+      background-color: $white;
+      height: 100vh;
       position: relative;
 
       > li:first-child {
         @include font-size(32px);
         width: 100%;
+
+        a {
+          &::after {
+            background-color: transparent;
+            background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            bottom: 0;
+            content: '';
+            display: inline-block;
+            height: 24px;
+            position: relative;
+            width: 24px;
+          }
+        }
       }
 
       li {
         @include font-size(22px);
         width: 33.3333%;
 
+        a {
+          background-color: white;
+          outline-offset: -4px !important;
+          padding: 20px 40px;
+        }
+
         ul {
-          left: 33.3333%;
+          background-color: $navbgcolor-1;
+          height: 100vh;
+          left: 33.7%;
           position: absolute;
-          top: 58px;
-          width: 33.3333%;
+          top: 88px;
+          width: 33.6%;
 
           li {
+            position: relative;
             width: 100%;
 
+            a {
+              background-color: $navbgcolor-1;
+            }
+
             ul {
+              background-color: $navbgcolor-2;
+              height: 100vh;
               left: 100%;
-              top: 0;
-              width: 100%;
+              top: -146px;
+              width: calc(100% - 23px);
+
+              li {
+                a {
+                  background-color: $navbgcolor-2;
+
+                  &::before {
+                    background-color: $darkblue-200 !important;
+                  }
+                }
+              }
             }
           }
         }

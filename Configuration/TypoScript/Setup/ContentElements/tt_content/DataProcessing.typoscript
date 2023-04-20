@@ -44,7 +44,7 @@ page.10.dataProcessing {
   70 {
     special = directory
     special.value = 1
-    levels = 5
+    levels = 4
     includeSpacer = 1
     as = menuMainDesktop
   }
