@@ -72,6 +72,8 @@
 }
 
 .language-menu {
+  min-width: 240px;
+
   .dropdown-item {
     &:hover,
     &:focus {

@@ -81,14 +81,14 @@
   .nav-item {
     &:nth-child(1) {
       .nav-link {
-        background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
+        background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$bmas-grey);
         padding-right: 32px;
       }
     }
 
     &:nth-child(2) {
       .nav-link {
-        background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
+        background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$bmas-grey);
         padding-right: 32px;
       }
     }
