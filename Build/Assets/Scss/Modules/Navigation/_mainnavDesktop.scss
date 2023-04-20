@@ -4,6 +4,41 @@
   .main-menu-desktop {
     border: 0;
     width: 100%;
+
+    a {
+      color: $darkblue;
+    }
+
+    .container {
+      position: relative;
+
+      > li:first-child {
+        @include font-size(32px);
+        width: 100%;
+      }
+
+      li {
+        @include font-size(22px);
+        width: 33.3333%;
+
+        ul {
+          left: 33.3333%;
+          position: absolute;
+          top: 58px;
+          width: 33.3333%;
+
+          li {
+            width: 100%;
+
+            ul {
+              left: 100%;
+              top: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 
   .first-child {
@@ -17,5 +52,37 @@
     padding: 4px 8px;
     position: relative;
     text-transform: uppercase;
+
+    &.act {
+      &::after {
+        background-color: $darkblue;
+        bottom: 3px;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: calc(100% - 16px);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::after {
+        background-color: $darkblue;
+        bottom: 3px;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: calc(100% - 16px);
+      }
+    }
   }
 }

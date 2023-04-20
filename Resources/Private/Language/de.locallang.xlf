@@ -79,6 +79,14 @@
 				<source>Close menu</source>
 				<target>Menü schließen</target>
 			</trans-unit>
+			<trans-unit id="header.openMenuTitleOpen" resname="header.openMenuTitle" approved="yes">
+				<source>Open</source>
+				<target>Öffnen</target>
+			</trans-unit>
+			<trans-unit id="header.closeMenuTitleClose" resname="header.closeMenuTitle" approved="yes">
+				<source>Close</source>
+				<target>Schließen</target>
+			</trans-unit>
 			<trans-unit id="header.search" resname="header.search" approved="yes">
 				<source>Search</source>
 				<target>Suche</target>

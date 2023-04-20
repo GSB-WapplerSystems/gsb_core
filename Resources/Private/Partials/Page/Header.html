@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <f:if condition="{navType} == 0">
-                    <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
+                    <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}" id="main-menu-desktop">
                         <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
                     </nav>
                 </f:if>
