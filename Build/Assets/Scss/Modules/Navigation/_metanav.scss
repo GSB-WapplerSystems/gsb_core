@@ -24,6 +24,12 @@
   }
 }
 
+.meta-wrapper {
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}
+
 .language-menu,
 .metanav {
   flex-wrap: nowrap;
