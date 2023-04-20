@@ -34,6 +34,8 @@
     white-space: nowrap;
 
     .nav-link {
+      color: $bmas-grey;
+      
       &.text-muted {
         opacity: .5;
         outline: none !important;
