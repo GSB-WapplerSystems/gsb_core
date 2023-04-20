@@ -29,13 +29,26 @@
   flex-wrap: nowrap;
   margin-bottom: 8px;
 
+  .active {
+    .dropdown-item {
+      background-color: $lightblue;
+
+      .active-span {
+        background-image: svg-load("../Images/Icons/icon-check.svg", fill=$darkblue);
+        background-position: right 7px;
+        background-repeat: no-repeat;
+        background-size: 13px auto;
+      }
+    }
+  }
+
   .nav-item {
     margin-bottom: 0;
     white-space: nowrap;
 
     .nav-link {
       color: $bmas-grey;
-      
+
       &.text-muted {
         opacity: .5;
         outline: none !important;

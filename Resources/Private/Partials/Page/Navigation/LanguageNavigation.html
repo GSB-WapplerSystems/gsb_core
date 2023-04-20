@@ -10,6 +10,15 @@
     </button>
     <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
         <f:for as="item" each="{languagenavigation}">
+            <f:if condition="{item.available} && {item.active} = 1">
+                <li class="nav-item {f:if(condition: item.active, then: 'active')}">
+                    <a class="test dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
+                       href="{item.link}"
+                       hreflang="{item.hreflang}">
+                        <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                    </a>
+                </li>
+            </f:if>
             <f:if condition="{item.available} && {item.active} != 1">
                 <f:then>
                     <li class="nav-item {f:if(condition: item.active, then: 'active')}">

@@ -149,7 +149,7 @@
 
 .btn-dropdown-icon {
   &::after {
-    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$darkblue);
+    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$bmas-grey);
     background-position: right;
     background-repeat: no-repeat;
     border: none;
