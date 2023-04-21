@@ -2,7 +2,11 @@
     <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
             data-bs-toggle="dropdown"
             type="button">
-        <f:for as="item" each="{languagenavigation}">
+        <f:for as="item" each="{languagenavigation}" iteration="itemIterator">
+            <f:if condition="{itemIterator.cycle} <= 2">
+                {item.navigationTitle}
+                <h1>HELLO WORLD</h1>
+            </f:if>
             <f:if condition="{item.available} && {item.active} = 1">
                 {item.navigationTitle}
             </f:if>
@@ -41,4 +45,3 @@
         </f:for>
     </ul>
 </div>
-
