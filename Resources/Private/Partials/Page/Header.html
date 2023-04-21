@@ -13,8 +13,7 @@
         <div class="container-md">
             <div class="row">
                 <div class="col logo-wrapper">
-                    <f:if
-                        condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
+                    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
                         <f:then>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
                                 <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
@@ -27,19 +26,19 @@
                                              pageUid="1"
                                              title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
                                     <span
-                                        class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+                                            class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
                                 </f:link.page>
                             </div>
                         </f:else>
                     </f:if>
                 </div>
-                <div class="col-sm meta-wrapper d-sm-flex flex-sm-wrap justify-content-sm-end flex-sm-grow-0">
+                <div class="meta-wrapper custom-border-top sm-border-top-0 col-sm d-sm-flex flex-sm-wrap justify-content-sm-end flex-sm-grow-0">
                     <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}"
                               partial="Navigation/MetaNavTop"/>
                     <f:render
-                        arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}"
-                        partial="Header.Mainnav"/>
+                            arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}"
+                            partial="Header.Mainnav"/>
                 </div>
             </div>
         </div>

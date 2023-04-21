@@ -24,9 +24,14 @@
   }
 }
 
-.meta-wrapper {
-  @include media-breakpoint-down(md) {
-    /* width: 100%; */
+.custom-border-top {
+  align-items: center;
+  border-top: 1px solid $gray-100;
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-up(sm) {
+    border: unset;
   }
 }
 
@@ -102,6 +107,9 @@
 
 .dropdown-custom {
   display: grid;
-  grid-column: 1 2;
   margin-bottom: 8px;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
 }
