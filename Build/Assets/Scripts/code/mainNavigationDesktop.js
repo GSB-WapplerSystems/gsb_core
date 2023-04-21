@@ -1,15 +1,21 @@
-function mainnavDesktop () {
-  // const body = document.querySelector('body')
-  // const headerWrapper = document.querySelector('.header-wrapper')
+function MainNavDesktop () {
+  const MainNavDesktopItem = document.querySelectorAll('.mainnav-desktop-item')
+  const body = document.querySelector('body')
+  const headerWrapper = document.querySelector('.header-wrapper')
 
-  const FirstChild = document.querySelectorAll('.first-child')
-  FirstChild.forEach(function (element) {
-    element.addEventListener('click', function () {
-      // test
+  MainNavDesktopItem.forEach(function (element) {
+    element.addEventListener('show.bs.dropdown', function () {
+      body.classList.add('active-nav-body')
+      headerWrapper.classList.add('active-nav')
+    })
+
+    element.addEventListener('hide.bs.dropdown', function () {
+      body.classList.remove('active-nav-body')
+      headerWrapper.classList.remove('active-nav')
     })
   })
 }
 
-if (document.querySelector('#main-menu')) {
-  mainnavDesktop()
+if (document.querySelector('.mainnav-desktop-item')) {
+  MainNavDesktop()
 }
