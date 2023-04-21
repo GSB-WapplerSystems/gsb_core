@@ -1,47 +1,83 @@
-<div class="dropdown dropdown-custom">
-    <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
-            data-bs-toggle="dropdown"
-            type="button">
-        <f:for as="item" each="{languagenavigation}" iteration="itemIterator">
-            <f:if condition="{itemIterator.cycle} <= 2">
-                {item.navigationTitle}
-                <h1>HELLO WORLD</h1>
-            </f:if>
-            <f:if condition="{item.available} && {item.active} = 1">
-                {item.navigationTitle}
-            </f:if>
-        </f:for>
-    </button>
-    <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
-        <f:for as="item" each="{languagenavigation}">
-            <f:if condition="{item.available} && {item.active} = 1">
-                <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                    <a class="dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
-                       href="{item.link}"
-                       hreflang="{item.hreflang}">
-                        <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
-                    </a>
-                </li>
-            </f:if>
-        </f:for>
-        <f:for as="item" each="{languagenavigation}">
-            <f:if condition="{item.available} && {item.active} != 1">
-                <f:then>
+<f:variable name="dropdown" value="false"/>
+<f:for as="item" each="{languagenavigation}" iteration="itemIterator">
+    <f:if condition="{itemIterator.cycle} > 2">
+        <f:variable name="dropdown" value="true"/>
+    </f:if>
+</f:for>
+<f:if condition="{dropdown}">
+    <f:then>
+        <div class="dropdown dropdown-custom">
+        <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
+                data-bs-toggle="dropdown"
+                type="button">
+            <f:for as="item" each="{languagenavigation}">
+                <f:if condition="{item.active} == 1">
+                    <f:then>
+                        {item.navigationTitle}
+                    </f:then>
+                </f:if>
+            </f:for>
+        </button>
+        <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
+            <f:for as="item" each="{languagenavigation}">
+                <f:if condition="{item.available} && {item.active} = 1">
                     <li class="nav-item {f:if(condition: item.active, then: 'active')}">
                         <a class="dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
                            href="{item.link}"
                            hreflang="{item.hreflang}">
-                            <span class="dividing-line d-block w-100">{item.navigationTitle}</span>
+                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
                         </a>
                     </li>
+                </f:if>
+            </f:for>
+            <f:for as="item" each="{languagenavigation}">
+                <f:if condition="{item.available} == 1 && {item.active} != 1">
+                    <f:then>
+                        <li class="nav-item {f:if(condition: item.active, then: 'active')}">
+                            <a class="dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
+                               href="{item.link}"
+                               hreflang="{item.hreflang}">
+                                <span class="dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </li>
+                    </f:then>
+                    <f:else if="{item.active} != 1">
+                        <li class="nav-item {f:if(condition: item.active, then: 'active')}">
+                            <a class="dropdown-item nav-link pb-0 {f:if(condition: item.available, else: ' text-muted')}"
+                               href="/{item.twoLetterIsoCode}/"
+                               hreflang="{item.hreflang}">
+                                <span class="dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </ul>
+    </div>
+    </f:then>
+    <f:else>
+        <f:for as="item" each="{languagenavigation}">
+            <f:if condition="{item.active} != 1">
+                <f:then>
+                    <f:if condition="{item.available} == 1">
+                        <f:then>
+                            <a class="btn-language-menu text-capitalize"
+                               href="{item.link}"
+                               hreflang="{item.hreflang}">
+                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </f:then>
+                        <f:else if="{item.active} != 1">
+                            <f:comment>Das ist keine gute Lösung</f:comment>
+                            <a class="btn-language-menu text-capitalize"
+                               href="/{item.twoLetterIsoCode}/"
+                               hreflang="{item.hreflang}">
+                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </f:else>
+                    </f:if>
                 </f:then>
-                <f:else if="{item.active} != 1">
-                    <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                        <span
-                                class="dropdown-item nav-link {item.twoLetterIsoCode}{f:if(condition: item.available, else: ' text-muted')}">{item.navigationTitle}</span>
-                    </li>
-                </f:else>
             </f:if>
         </f:for>
-    </ul>
-</div>
+    </f:else>
+</f:if>
