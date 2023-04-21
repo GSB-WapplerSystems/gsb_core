@@ -147,6 +147,18 @@
   }
 }
 
+.btn-language-menu {
+  background: none;
+  border: 0;
+  border-radius: unset;
+  color: $bmas-grey;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 5px;
+  padding-left: 16px;
+  padding-top: 6px;
+}
+
 .btn-dropdown-icon {
   &::after {
     background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$bmas-grey);

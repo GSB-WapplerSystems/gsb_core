@@ -100,16 +100,12 @@
   }
 }
 
-.cutsom-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
 .dropdown-custom {
   display: grid;
+  justify-content: left;
   margin-bottom: 8px;
 
-  @include media-breakpoint-down(sm) {
-    display: block;
-  }
+  /*  @include media-breakpoint-down(sm) {
+      display: block;
+    } */
 }

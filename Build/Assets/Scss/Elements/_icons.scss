@@ -95,17 +95,6 @@
   }
 }
 
-.btn-language-menu {
-  background: none;
-  border: 0;
-  border-radius: unset;
-  color: $bmas-grey;
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 5px;
-  padding-top: 6px;
-}
-
 .dropdown-custom {
   .show {
     &::after {

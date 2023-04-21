@@ -1,6 +1,6 @@
 <f:if condition="{menuMetaTop}">
     <div class="d-sm-block flex-sm-grow-0">
-        <div class="cutsom-grid d-sm-flex justify-content-sm-end align-items-center">
+        <div class="d-sm-flex justify-content-sm-end align-items-center">
             <f:render arguments="{languagenavigation: languagenavigation}" partial="Navigation/LanguageNavigation"/>
             <nav aria-label="Meta-Navigation">
                 <ul class="metanav nav">
@@ -9,7 +9,7 @@
                             <f:if condition="{mainItem.current}">
                                 <f:then>
                                     <f:link.page aria="{current: 'page'}"
-                                                 class="nav-link{f:if(condition:mainItem.active, then:' current')}"
+                                                 class="nav-link {f:if(condition:mainItem.active, then:' current')}"
                                                  pageUid="{mainItem.data.uid}">
                                         {mainItem.title}
                                     </f:link.page>
