@@ -95,6 +95,13 @@
   }
 }
 
+.cutsom-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .dropdown-custom {
+  display: grid;
+  grid-column: 1 2;
   margin-bottom: 8px;
 }
