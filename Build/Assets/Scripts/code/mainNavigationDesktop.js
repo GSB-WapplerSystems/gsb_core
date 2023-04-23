@@ -1,4 +1,4 @@
-function MainNavDesktop () {
+function mainNavigationDesktop () {
   const MainNavDesktopItem = document.querySelectorAll('.mainnav-desktop-item')
   const body = document.querySelector('body')
   const headerWrapper = document.querySelector('.header-wrapper')
@@ -18,6 +18,11 @@ function MainNavDesktop () {
   })
 }
 
+const MainNavDesktop = document.querySelectorAll('.mainnav-desktop')
+if (MainNavDesktop) {
+  mainNavigationDesktop()
+}
+
 function resize () {
   // Initialize the media query
   const mediaQuery = window.matchMedia('(min-width: 62rem)')
@@ -26,26 +31,27 @@ function resize () {
 
   // Function to do something with the media query
   function mediaQueryListener (mediaQuery) {
-    const NavbarToggler = document.querySelectorAll('.navbar-toggler.show')
-    const DropdownMenu = document.querySelectorAll('.first-child.show')
+    const NavbarToggler = document.querySelector('.navbar-toggler.show')
+    const FirstNav = document.querySelector('.first-nav.show')
 
     if (mediaQuery.matches) {
+      if (NavbarToggler) {
+        NavbarToggler.click()
+      }
       body.classList.remove('active-nav-body')
       headerWrapper.classList.remove('active-nav')
-      if (document.querySelector('.mainnav-desktop-item')) {
-        DropdownMenu.forEach(function (element) {
-          // eslint-disable-next-line no-undef
-          bootstrap.Dropdown.getInstance(element).hide()
-        })
-        MainNavDesktop()
+      if (FirstNav) {
+        FirstNav.click()
       }
     } else {
+      if (FirstNav) {
+        FirstNav.click()
+      }
       body.classList.remove('active-nav-body')
       headerWrapper.classList.remove('active-nav')
-      NavbarToggler.forEach(function (element) {
-        // eslint-disable-next-line no-undef
-        bootstrap.Dropdown.getInstance(element).hide()
-      })
+      if (NavbarToggler) {
+        NavbarToggler.click()
+      }
     }
   }
 

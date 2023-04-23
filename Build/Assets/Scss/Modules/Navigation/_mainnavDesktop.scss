@@ -30,7 +30,7 @@
       height: 100vh !important;
       position: relative;
 
-      > li:first-child {
+      > li.shortcut:first-child {
         @include font-size(32px);
         width: 100%;
 
@@ -60,11 +60,11 @@
           outline-offset: -4px !important;
           padding: 20px 40px;
 
-          &[type="button"] {
+          &[role="button"] {
             padding-right: 30px !important;
             position: relative;
 
-            + ul > li:first-child > a.sub {
+            + ul > li.shortcut:first-child > a {
               background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
               background-position: 98% center;
               background-repeat: no-repeat;
@@ -135,7 +135,7 @@
     }
   }
 
-  .first-child {
+  .first-nav {
     @include font-size(18px);
     background-color: transparent;
     color: $darkblue;

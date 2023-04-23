@@ -1,4 +1,4 @@
-function mainnav () {
+function mainNavigation () {
   const language = document.querySelector('html').getAttribute('lang')
 
   let closeTitle
@@ -57,5 +57,5 @@ function mainnav () {
 }
 
 if (document.querySelector('#main-menu')) {
-  mainnav()
+  mainNavigation()
 }
