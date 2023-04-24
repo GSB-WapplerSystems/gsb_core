@@ -2,7 +2,7 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
 		<header />
-		<body approved="yes">
+		<body>
 			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default" approved="yes">
 				<source>Default</source>
 				<target>Standard</target>
@@ -16,7 +16,7 @@
 				<target>Oben (volle Breite)</target>
 			</trans-unit>
 			<trans-unit id="BackendLayouts.main" resname="BackendLayouts.main" approved="yes">
-				<source>Maincontent</source>
+				<source>Main content</source>
 				<target>Hauptinhalt</target>
 			</trans-unit>
 			<trans-unit id="BackendLayouts.supplement" resname="BackendLayouts.supplement" approved="yes">
@@ -548,7 +548,7 @@
 			</trans-unit>
 			<trans-unit id="accordion.description.onload" resname="accordion.description.onload" approved="yes">
 				<source>Open a specific accordion tile when loading</source>
-				<target>Öffne eine bestimmte Akkordeon Kachel beim Laden</target>
+				<target>Öffne eine bestimmte Akkordeon-Kachel beim Laden</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall" approved="yes">
 				<source>Accordion toggle</source>
