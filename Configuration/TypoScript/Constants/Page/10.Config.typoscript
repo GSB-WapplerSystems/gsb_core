@@ -22,12 +22,6 @@ config {
   concatenateCss = 1
   # cat=Default Templateset (ITZBund): advanced/150/220; type=text; label=Header Comment
   headerComment = itzbund.de
-  # cat=Default Templateset (ITZBund): advanced/150/230; type=text; label=Language
-  language = de
-  # cat=Default Templateset (ITZBund): advanced/150/240; type=text; label=Language dir
-  languageDir = ltr
-  # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
-  languageLocal = de_DE.UTF-8
   # cat=Default Templateset (ITZBund): advanced/150/260; type=boolean; label=Spam protect email addresses
   spamProtectEmailAddresses =
   # cat=Default Templateset (ITZBund): advanced/150/270; type=text; label=Spam protect email addresses atSubst
@@ -48,21 +42,3 @@ config {
     Twitter = https://twitter.com
   }
 }
-
-[siteLanguage("languageId") == "1"]
-  config {
-    # cat=Default Templateset (ITZBund): advanced/150/230; type=text; label=Language
-    language = en
-    # cat=Default Templateset (ITZBund): advanced/150/250; type=text; label=Local all
-    languageLocal = en_GB.UTF-8
-  }
-[global]
-
-[siteLanguage("languageId") == "2"]
-  config {
-    # cat=Default Templateset (ITZBund): advanced/150/260; type=text; label=Language
-    language = fr
-    # cat=Default Templateset (ITZBund): advanced/150/260; type=text; label=Local all
-    languageLocal = fr_FR.UTF-8
-  }
-[global]

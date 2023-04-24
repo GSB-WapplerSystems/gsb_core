@@ -25,8 +25,8 @@ config {
   index_metatags = 0
   headerComment = {$config.headerComment}
 
-  // Language Settings
-  htmlTag_setParams = lang="{$config.language}" dir="{$config.languageDir}" class="no-js" data-bs-theme="light"
+  htmlTag.attributes.class =  no-js
+  htmlTag.attributes.data-bs-theme = light
 
   // Compression and concatenation of CSS and JS files
   compressJs = {$config.compressJs}
