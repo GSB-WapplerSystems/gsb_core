@@ -190,6 +190,8 @@
     }
   }
 
+  .container li a.current,
+  .container li ul li a.current,
   .container li ul li ul li a.current {
     font-weight: 700;
     text-decoration: underline;
