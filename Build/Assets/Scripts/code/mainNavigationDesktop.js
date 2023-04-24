@@ -18,8 +18,7 @@ function mainNavigationDesktop () {
   })
 }
 
-const MainNavDesktop = document.querySelectorAll('.mainnav-desktop')
-if (MainNavDesktop) {
+if (document.querySelector('.mainnav-desktop')) {
   mainNavigationDesktop()
 }
 

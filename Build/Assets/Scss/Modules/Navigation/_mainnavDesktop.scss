@@ -92,6 +92,15 @@
                 transition: transform .1s ease-in-out;
               }
             }
+
+            &.act.hassub {
+              font-weight: 700;
+
+              &::before {
+                background-color: $darkblue !important;
+                height: 2px !important;
+              }
+            }
           }
         }
 
@@ -110,6 +119,7 @@
 
             a {
               background-color: $navbgcolor-1;
+              width: 99.8%;
             }
 
             ul {
@@ -177,6 +187,16 @@
         right: 0;
         width: calc(100% - 16px);
       }
+    }
+  }
+
+  .container li ul li ul li a.current {
+    font-weight: 700;
+    text-decoration: underline;
+
+    &::before {
+      background-color: $darkblue !important;
+      height: 2px !important;
     }
   }
 }
