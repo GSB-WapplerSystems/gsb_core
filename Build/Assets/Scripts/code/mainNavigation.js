@@ -1,4 +1,4 @@
-function mainnav () {
+function mainNavigation () {
   const language = document.querySelector('html').getAttribute('lang')
 
   let closeTitle
@@ -54,66 +54,8 @@ function mainnav () {
       }
     })
   })
-
-  // Create a media condition that targets viewports at least 991px wide
-  const mediaQuery = window.matchMedia('(max-width: 991px)')
-  // Check if the media query is true
-  if (mediaQuery.matches) {
-    const getSiblings = function (e) {
-      const siblings = []
-      if (!e.parentNode) {
-        return siblings
-      }
-      let sibling = e.parentNode.firstChild
-      while (sibling) {
-        if (sibling.nodeType === 1 && sibling !== e) {
-          siblings.push(sibling)
-        }
-        sibling = sibling.nextSibling
-      }
-      return siblings
-    }
-
-    const more = document.querySelectorAll('.readmore')
-
-    more.forEach(e => {
-      e.addEventListener('click', function () {
-        showElements(e)
-        this.classList.toggle('open')
-      })
-    })
-
-    function showElements (target) {
-      const sib = getSiblings(target)
-      let less = true
-
-      sib.forEach(s => {
-        if (s.classList.contains('d-none')) {
-          less = false
-        }
-      })
-
-      if (!less) {
-        sib.forEach(s => {
-          if (s.classList.contains('d-none')) {
-            s.classList.remove('d-none')
-            s.classList.add('will-hidden')
-            target.innerHTML = '<span>weniger anzeigen</span>'
-          }
-        })
-      } else {
-        sib.forEach(s => {
-          if (s.classList.contains('will-hidden')) {
-            s.classList.remove('will-hidden')
-            s.classList.add('d-none')
-            target.innerHTML = '<span>mehr anzeigen</span>'
-          }
-        })
-      }
-    }
-  }
 }
 
 if (document.querySelector('#main-menu')) {
-  mainnav()
+  mainNavigation()
 }

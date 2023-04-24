@@ -35,7 +35,7 @@ config {
   # cat=Default Templateset (ITZBund): advanced/150/280; type=text; label=absRefPrefix
   absRefPrefix =
   # cat=Default Templateset (ITZBund): advanced/150/290; type=text; label=navType
-  navType = 1
+  navType = 0
 
   socialLinks {
     # cat=Social Media Links (MP): advanced/160/100; type=string; label=Facebook:Url

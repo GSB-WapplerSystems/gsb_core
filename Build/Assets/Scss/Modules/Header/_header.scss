@@ -66,13 +66,13 @@
 }
 
 .layer {
-  background: rgb(255 255 255 / 80%);
-  color: rgb(0 0 0 / 80%);
+  background: rgb(255 255 255 / 95%);
+  color: $black;
   display: none;
   height: 100%;
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 
   .active-nav-body &,
   .active-nav-body-mobile & {
