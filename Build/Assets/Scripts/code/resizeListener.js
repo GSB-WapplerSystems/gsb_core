@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 function detachDesktop () {
-  document.querySelector('.meta-desktop').appendChild(document.querySelector('.meta-wrapper'))
+  document.querySelector('.meta-desktop').appendChild(document.querySelector('.meta-item'))
 }
 
 // eslint-disable-next-line no-unused-vars
 function detachMobile () {
-  document.querySelector('.meta-mobile').appendChild(document.querySelector('.meta-wrapper'))
+  document.querySelector('.meta-mobile').appendChild(document.querySelector('.meta-item'))
 }
 
 function resize () {
@@ -15,9 +15,9 @@ function resize () {
   // Function to do something with the media query
   function mediaQueryListener (mediaQuery) {
     if (mediaQuery.matches) {
-      // detachDesktop()
+      detachDesktop()
     } else {
-      // detachMobile()
+      detachMobile()
     }
   }
 

@@ -31,7 +31,9 @@
                     </f:if>
                 </div>
                 <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
-                    <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
+                    <div class="meta-desktop d-none d-lg-block">
+                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
+                    </div>
                     <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
                 </div>
             </div>
