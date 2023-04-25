@@ -2,50 +2,52 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
-    <f:format.raw>{jumpNav}</f:format.raw>
+<f:format.raw>{jumpNav}</f:format.raw>
 
-    <div class="layer"></div>
+<div class="layer"></div>
 
-    <h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
+<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
 
-    <header class="header-wrapper fixed-top">
-        <div class="header-wrapper-bg">
-            <div class="container-md">
-                <div class="row">
-                    <div class="col logo-wrapper">
-                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
-                            <f:then>
-                                <div class="logo lh-1 h-100 d-flex align-items-center">
+<header class="header-wrapper fixed-top">
+    <div class="header-wrapper-bg">
+        <div class="container-md">
+            <div class="row">
+                <div class="col logo-wrapper">
+                    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
+                        <f:then>
+                            <div class="logo lh-1 h-100 d-flex align-items-center">
+                                <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+                                <f:render arguments="{_all}" partial="Header.Image"></f:render>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="logo lh-1 h-100 d-flex align-items-center">
+                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
                                     <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
-                                </div>
-                            </f:then>
-                            <f:else>
-                                <div class="logo lh-1 h-100 d-flex align-items-center">
-                                    <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
-                                        <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
-                                        <f:render arguments="{_all}" partial="Header.Image"></f:render>
-                                    </f:link.page>
-                                </div>
-                            </f:else>
-                        </f:if>
-                    </div>
-                    <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
-                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
-                        <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
-                    </div>
+                                </f:link.page>
+                            </div>
+                        </f:else>
+                    </f:if>
                 </div>
-                <f:if condition="{navType} == 0">
-                    <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
-                        <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
-                    </nav>
-                </f:if>
+                <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
+                    <div class="meta-desktop d-none d-lg-block">
+                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
+                    </div>
+                    <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
+                </div>
             </div>
+            <f:if condition="{navType} == 0">
+                <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
+                    <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
+                </nav>
+            </f:if>
         </div>
-    </header>
+    </div>
+</header>
 
-    <f:if condition="{data.breadcrumb} != 1">
-        <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
-    </f:if>
+<f:if condition="{data.breadcrumb} != 1">
+    <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
+</f:if>
 
 </html>

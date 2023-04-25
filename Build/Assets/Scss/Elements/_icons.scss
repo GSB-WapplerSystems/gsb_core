@@ -71,46 +71,34 @@
 }
 
 .language-menu .nav-link,
-.metanav .nav-link,
-.service-link {
+.metanav .nav-link {
   background-position: 98% center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  display: inline;
-  margin-right: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
 .metanav {
   .nav-item {
     &:nth-child(1) {
       .nav-link {
-        background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$darkblue);
+        background-image: svg-load("../Images/Icons/icon-sign-language.svg", fill=$bmas-grey);
         padding-right: 32px;
       }
     }
 
     &:nth-child(2) {
       .nav-link {
-        background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$darkblue);
+        background-image: svg-load("../Images/Icons/icon-simple-language.svg", fill=$bmas-grey);
         padding-right: 32px;
       }
     }
   }
 }
 
-.de {
-  background-image: svg-load("../Images/Icons/Flags/de.svg");
-  padding-right: 32px !important;
-}
-
-.fr {
-  background-image: svg-load("../Images/Icons/Flags/fr.svg");
-  padding-right: 32px !important;
-}
-
-.en {
-  background-image: svg-load("../Images/Icons/Flags/gb.svg");
-  padding-right: 32px !important;
+.dropdown-custom {
+  .show {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
 }
