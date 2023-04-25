@@ -12,12 +12,12 @@
                                     <f:link.page aria="{current: 'page'}"
                                                  class="nav-link {f:if(condition:mainItem.active, then:' current')}"
                                                  pageUid="{mainItem.data.uid}">
-                                        {mainItem.title}
+                                        <span>{mainItem.title}</span>
                                     </f:link.page>
                                 </f:then>
                                 <f:else>
                                     <f:link.page class="nav-link" pageUid="{mainItem.data.uid}">
-                                        {mainItem.title}
+                                        <span>{mainItem.title}</span>
                                     </f:link.page>
                                 </f:else>
                             </f:if>

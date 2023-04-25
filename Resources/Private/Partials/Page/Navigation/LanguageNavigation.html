@@ -7,7 +7,7 @@
 <f:if condition="{dropdown}">
     <f:comment>if languagenavigation count is over 2 than render languageswitch as Dropdown</f:comment>
     <f:then>
-        <div class="dropdown dropdown-custom">
+        <div class="dropdown">
             <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
                     data-bs-toggle="dropdown"
                     type="button">
@@ -41,14 +41,12 @@
     </f:then>
     <f:comment>if languagenavigation count is under 2 than render languageswitch as navbar</f:comment>
     <f:else>
-        <div class="dropdown dropdown-custom">
-            <ul class="mb-0 list-unstyled">
-                <f:for as="item" each="{languagenavigation}">
-                    <f:render
-                            arguments="{item: item, site:site, itemClass:'btn-language-menu btn-dropdown-icon remove-after text-capitalize dropdown-toggle'}"
-                            section="isActiveAndAvailableSection"/>
-                </f:for>
-            </ul>
+        <div class="nav">
+            <f:for as="item" each="{languagenavigation}">
+                <f:render
+                        arguments="{item: item, site:site, itemClass:'nav-link'}"
+                        section="isActiveAndAvailableSection"/>
+            </f:for>
         </div>
     </f:else>
 </f:if>
@@ -59,22 +57,22 @@
         <f:then>
             <f:if condition="{item.available} == 1">
                 <f:then>
-                    <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                        <a class="{itemClass} text-capitalize"
+                    <div class="nav-item">
+                        <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
                            href="{item.link}"
                            hreflang="{item.hreflang}">
                             <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
                         </a>
-                    </li>
+                    </div>
                 </f:then>
                 <f:else>
-                    <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                        <a class="{itemClass} text-capitalize"
+                    <div class="nav-item">
+                        <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
                            href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
                            hreflang="{item.hreflang}">
                             <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
                         </a>
-                    </li>
+                    </div>
                 </f:else>
             </f:if>
         </f:then>

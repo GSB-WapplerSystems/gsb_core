@@ -38,7 +38,7 @@
 .language-menu,
 .metanav {
   flex-wrap: nowrap;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 
   @include media-breakpoint-down(sm) {
     margin-bottom: 0;
@@ -86,7 +86,8 @@
 .language-menu {
   .dropdown-item {
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       background-color: $lightblue;
     }
   }
@@ -95,10 +96,4 @@
     border-bottom: 1px solid $gray-100;
     padding-bottom: 8px;
   }
-}
-
-.dropdown-custom {
-  display: grid;
-  justify-content: left;
-  margin-bottom: 8px;
 }
