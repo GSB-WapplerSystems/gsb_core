@@ -8,7 +8,6 @@
 
 <h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
 
-<<<<<<< HEAD
 <header class="header-wrapper fixed-top">
     <div class="header-wrapper-bg">
         <div class="container-md">
@@ -23,58 +22,24 @@
                         </f:then>
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}"
-                                             pageUid="1"
-                                             title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
-                                    <span
-                                            class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
+                                    <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
                                 </f:link.page>
                             </div>
                         </f:else>
                     </f:if>
                 </div>
-                <div class="meta-wrapper positioning-mobile custom-border-top sm-border-top-0 col-sm d-sm-flex flex-sm-wrap justify-content-sm-end flex-sm-grow-0">
-                    <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation, site: site}"
-                              partial="Navigation/MetaNavTop"/>
-                    <f:render
-                            arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}"
-                            partial="Header.Mainnav"/>
-=======
-    <header class="header-wrapper fixed-top">
-        <div class="header-wrapper-bg">
-            <div class="container-md">
-                <div class="row">
-                    <div class="col logo-wrapper">
-                        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
-                            <f:then>
-                                <div class="logo lh-1 h-100 d-flex align-items-center">
-                                    <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
-                                    <f:render arguments="{_all}" partial="Header.Image"></f:render>
-                                </div>
-                            </f:then>
-                            <f:else>
-                                <div class="logo lh-1 h-100 d-flex align-items-center">
-                                    <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
-                                        <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
-                                        <f:render arguments="{_all}" partial="Header.Image"></f:render>
-                                    </f:link.page>
-                                </div>
-                            </f:else>
-                        </f:if>
-                    </div>
-                    <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
-                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
-                        <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
-                    </div>
->>>>>>> ITZBUNDPHP-836-Hauptnavigation-Desktop
+                <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
+                    <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
+                    <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
                 </div>
-                <f:if condition="{navType} == 0">
-                    <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
-                        <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
-                    </nav>
-                </f:if>
             </div>
+            <f:if condition="{navType} == 0">
+                <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
+                    <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
+                </nav>
+            </f:if>
         </div>
     </div>
 </header>
