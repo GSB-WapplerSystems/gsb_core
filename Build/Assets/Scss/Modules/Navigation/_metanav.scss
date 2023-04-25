@@ -39,7 +39,7 @@
 .metanav {
   flex-wrap: nowrap;
   margin-bottom: 8px;
-  
+
   @include media-breakpoint-down(sm) {
     margin-bottom: 0;
   }
@@ -65,11 +65,6 @@
 
     .nav-link {
       color: $bmas-grey;
-
-      &.text-muted {
-        opacity: .5;
-        outline: none !important;
-      }
     }
 
     &:last-child {
@@ -89,8 +84,6 @@
 }
 
 .language-menu {
-  min-width: 240px;
-
   .dropdown-item {
     &:hover,
     &:focus {

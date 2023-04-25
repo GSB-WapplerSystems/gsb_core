@@ -8,42 +8,48 @@
     <f:comment>if languagenavigation count is over 2 than render languageswitch as Dropdown</f:comment>
     <f:then>
         <div class="dropdown dropdown-custom">
-        <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
-                data-bs-toggle="dropdown"
-                type="button">
-            <f:for as="item" each="{languagenavigation}">
-                <f:if condition="{item.active} == 1">
-                    <f:then>
-                        {item.navigationTitle}
-                    </f:then>
-                </f:if>
-            </f:for>
-        </button>
-        <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
-            <f:for as="item" each="{languagenavigation}">
-                <f:if condition="{item.available} == 1 && {item.active} = 1">
-                    <li class="nav-item {f:if(condition: item.active, then: 'active')}" aria-hidden="true">
-                        <a class="dropdown-item nav-link pb-0"
-                           href="{item.link}"
-                           hreflang="{item.hreflang}">
-                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
-                        </a>
-                    </li>
-                </f:if>
-            </f:for>
-            <f:for as="item" each="{languagenavigation}">
-                <f:render section="isActiveAndAvailableSection" arguments="{item: item, site:site, itemClass:'dropdown-item'}" />
-            </f:for>
-        </ul>
-    </div>
+            <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    type="button">
+                <f:for as="item" each="{languagenavigation}">
+                    <f:if condition="{item.active} == 1">
+                        <f:then>
+                            {item.navigationTitle}
+                        </f:then>
+                    </f:if>
+                </f:for>
+            </button>
+            <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav"
+                id="language-menu">
+                <f:for as="item" each="{languagenavigation}">
+                    <f:if condition="{item.available} == 1 && {item.active} = 1">
+                        <li aria-hidden="true" class="nav-item {f:if(condition: item.active, then: 'active')}">
+                            <a class="dropdown-item nav-link pb-0"
+                               href="{item.link}"
+                               hreflang="{item.hreflang}">
+                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </li>
+                    </f:if>
+                </f:for>
+                <f:for as="item" each="{languagenavigation}">
+                    <f:render arguments="{item: item, site:site, itemClass:'dropdown-item nav-link pb-0'}"
+                              section="isActiveAndAvailableSection"/>
+                </f:for>
+            </ul>
+        </div>
     </f:then>
     <f:comment>if languagenavigation count is under 2 than render languageswitch as navbar</f:comment>
     <f:else>
-        <ul class="language-menu list-unstyled p-0 rounded-0 nav">
-            <f:for as="item" each="{languagenavigation}">
-                <f:render section="isActiveAndAvailableSection" arguments="{item: item, site:site, itemClass:'btn-language-menu'}" />
-            </f:for>
-        </ul>
+        <div class="dropdown dropdown-custom">
+            <ul class="mb-0 list-unstyled">
+                <f:for as="item" each="{languagenavigation}">
+                    <f:render
+                            arguments="{item: item, site:site, itemClass:'btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle'}"
+                            section="isActiveAndAvailableSection"/>
+                </f:for>
+            </ul>
+        </div>
     </f:else>
 </f:if>
 
@@ -54,20 +60,20 @@
             <f:if condition="{item.available} == 1">
                 <f:then>
                     <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                    <a class="{itemClass} text-capitalize"
-                       href="{item.link}"
-                       hreflang="{item.hreflang}">
-                        <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
-                    </a>
+                        <a class="{itemClass} text-capitalize"
+                           href="{item.link}"
+                           hreflang="{item.hreflang}">
+                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                        </a>
                     </li>
                 </f:then>
                 <f:else>
                     <li class="nav-item {f:if(condition: item.active, then: 'active')}">
-                    <a class="{itemClass} text-capitalize"
-                       href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
-                       hreflang="{item.hreflang}">
-                        <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
-                    </a>
+                        <a class="{itemClass} text-capitalize"
+                           href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                           hreflang="{item.hreflang}">
+                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                        </a>
                     </li>
                 </f:else>
             </f:if>
