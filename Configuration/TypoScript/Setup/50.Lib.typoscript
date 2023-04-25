@@ -10,6 +10,7 @@ lib {
     current = 1
     prioriCalc = 1
   }
+
   home = TEXT
   home.value = {$config.pids.Home}
 

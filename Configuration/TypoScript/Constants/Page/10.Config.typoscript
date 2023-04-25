@@ -34,17 +34,17 @@ config {
   spamProtectEmailAddresses_atSubst =
   # cat=Default Templateset (ITZBund): advanced/150/280; type=text; label=absRefPrefix
   absRefPrefix =
-  # cat=Default Templateset (ITZBund): advanced/150/290; type=text; label=navType
+  # cat=Default Templateset (ITZBund): advanced/150/290; type=text; label=Set navigation type: Desktop-Navigation (0) or Burger-Navigation (1)
   navType = 0
 
   socialLinks {
-    # cat=Social Media Links (MP): advanced/160/100; type=string; label=Facebook:Url
+    # cat=Social Media Links (ITZBund): advanced/160/100; type=string; label=Facebook:Url
     Facebook = https://facebook.com
-    # cat=Social Media Links (MP): advanced/160/110; type=string; label=Instagram:Url
+    # cat=Social Media Links (ITZBund): advanced/160/110; type=string; label=Instagram:Url
     Instagram = https://instagram.com
-    # cat=Social Media Links (MP): advanced/160/120; type=string; label=YouTube:Url
+    # cat=Social Media Links (ITZBund): advanced/160/120; type=string; label=YouTube:Url
     YouTube = https://youtube.com
-    # cat=Social Media Links (MP): advanced/160/130; type=string; label=Twitter:Url
+    # cat=Social Media Links (ITZBund): advanced/160/130; type=string; label=Twitter:Url
     Twitter = https://twitter.com
   }
 }

@@ -347,6 +347,10 @@
 				<source>Open image gallery</source>
 				<target>Bildergalerie öffnen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.jumptotop" resname="tt_content.jumptotop" approved="yes">
+				<source>Jump to top</source>
+				<target>Nach oben springen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
