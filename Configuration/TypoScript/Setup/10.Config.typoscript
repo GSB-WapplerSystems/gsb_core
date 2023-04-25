@@ -26,7 +26,7 @@ config {
   headerComment = {$config.headerComment}
   htmlTag {
     attributes {
-      class =  no-js
+      class = no-js
       data-bs-theme = light
     }
   }
