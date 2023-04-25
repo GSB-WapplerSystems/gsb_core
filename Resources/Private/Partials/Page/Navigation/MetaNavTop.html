@@ -1,7 +1,8 @@
 <f:if condition="{menuMetaTop}">
     <div class="d-sm-block flex-sm-grow-0">
         <div class="d-sm-flex justify-content-sm-end align-items-center">
-            <f:render arguments="{languagenavigation: languagenavigation, site: site}" partial="Navigation/LanguageNavigation"/>
+            <f:render arguments="{languagenavigation: languagenavigation, site: site}"
+                      partial="Navigation/LanguageNavigation"/>
             <nav aria-label="Meta-Navigation">
                 <ul class="metanav nav">
                     <f:for as="mainItem" each="{menuMetaTop}" iteration="i">
