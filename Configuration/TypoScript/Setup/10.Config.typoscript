@@ -24,10 +24,12 @@ config {
   index_externals = 1
   index_metatags = 0
   headerComment = {$config.headerComment}
-
-  htmlTag.attributes.class =  no-js
-  htmlTag.attributes.data-bs-theme = light
-
+  htmlTag {
+    attributes {
+      class =  no-js
+      data-bs-theme = light
+    }
+  }
   // Compression and concatenation of CSS and JS files
   compressJs = {$config.compressJs}
   compressCss = {$config.compressCss}
