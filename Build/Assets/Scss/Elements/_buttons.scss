@@ -171,3 +171,9 @@
     width: 20px;
   }
 }
+
+.remove-after {
+  &::after {
+    display: none;
+  }
+}
