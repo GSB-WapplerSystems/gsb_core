@@ -1,10 +1,10 @@
 <nav aria-label="Breadcrumb" class="container">
     <ol class="breadcrumb">
-        <f:for each="{breadcrumbMenu}" as="item" iteration="iterator">
+        <f:for as="item" each="{breadcrumbMenu}" iteration="iterator">
             <li class="breadcrumb-item">
-                <f:if condition="{item.link} == '/'">
+                <f:if condition="{item.data.is_siteroot} == '1'">
                     <f:then>
-                        <a class="breadcrumb-link" title="{item.title}" href="{item.link}">
+                        <a class="breadcrumb-link" href="{item.link}" title="{item.title}">
                             <span class="visually-hidden">{item.title}</span>
                         </a>
                     </f:then>

@@ -50,42 +50,8 @@
   }
 }
 
-.container-md {
-  position: relative;
-}
-
 .main-menu {
   align-items: flex-start !important;
-
-  @include media-breakpoint-up(lg) {
-    &-desktop {
-      .main-nav-wrapper {
-        padding: 0;
-      }
-
-      &.main-menu-layer {
-        > .dropdown-menu {
-          top: 88%;
-        }
-      }
-
-      .navbar-toggler {
-        display: none;
-
-        + #menu {
-          display: block;
-
-          #mainNav {
-            margin: 0;
-
-            li.col {
-              min-width: auto;
-            }
-          }
-        }
-      }
-    }
-  }
 
   &-layer {
     position: static;
@@ -104,7 +70,7 @@
     }
   }
 
-  a[type="button"] {
+  a[role="button"] {
     background-color: $white;
     padding-right: 30px !important;
     position: relative;

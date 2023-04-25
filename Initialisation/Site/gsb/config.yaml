@@ -6,7 +6,6 @@ errorHandling:
 languages:
   - title: Deutsch
     enabled: true
-    typo3Language: de
     locale: de_DE.UTF-8
     iso-639-1: de
     websiteTitle: 'GSB Standardmandant'
@@ -18,7 +17,6 @@ languages:
     base: /
   - title: English
     enabled: true
-    typo3Language: default
     locale: en_GB.UTF-8
     iso-639-1: en
     websiteTitle: 'GSB Standardmandant'

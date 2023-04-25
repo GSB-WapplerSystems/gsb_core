@@ -60,6 +60,12 @@
 			<trans-unit id="header.closeMenuTitle" resname="header.closeMenuTitle">
 				<source>Close menu</source>
 			</trans-unit>
+			<trans-unit id="header.openMenuTitleOpen" resname="header.openMenuTitle">
+				<source>Open</source>
+			</trans-unit>
+			<trans-unit id="header.closeMenuTitleClose" resname="header.closeMenuTitle">
+				<source>Close</source>
+			</trans-unit>
 			<trans-unit id="header.search" resname="header.search">
 				<source>Search</source>
 			</trans-unit>
