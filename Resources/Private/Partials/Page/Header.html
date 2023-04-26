@@ -30,7 +30,7 @@
                         </f:else>
                     </f:if>
                 </div>
-                <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
+                <div class="col meta-wrapper d-flex flex-wrap justify-content-end">
                     <div class="meta-desktop d-none d-lg-block">
                         <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
                     </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 </header>
-
+<div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
 <f:if condition="{data.breadcrumb} != 1">
     <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
 </f:if>
