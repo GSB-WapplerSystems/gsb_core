@@ -149,6 +149,7 @@
         width: 100%;
       }
 
+      &[aria-expanded="true"],
       &.act.hassub {
         font-weight: 700;
 

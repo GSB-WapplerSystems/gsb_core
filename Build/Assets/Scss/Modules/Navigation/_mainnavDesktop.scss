@@ -93,6 +93,7 @@
               }
             }
 
+            &[aria-expanded="true"],
             &.act.hassub {
               font-weight: 700;
 
@@ -158,6 +159,7 @@
     text-transform: uppercase;
     top: -17px;
 
+    &[aria-expanded="true"],
     &.act {
       &::after {
         background-color: $darkblue;
