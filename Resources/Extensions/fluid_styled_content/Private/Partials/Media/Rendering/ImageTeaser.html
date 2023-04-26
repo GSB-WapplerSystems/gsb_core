@@ -1,68 +1,60 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
-
-<f:if condition="{dimensions.width}">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<f:if condition="{data.imagewidth}">
     <f:then>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
                     media="(min-width: 1220px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 1220px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: data.imagewidth, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: dimensions.width, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: data.imagewidth, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 688, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 508, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <img alt="{file.properties.alternative}" loading="lazy"
-                     data-bs-slide-to="0" data-bs-target="#Carousel-{data.uid}"
-                     src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width)}"
-                >
+                <f:image src="{file.properties.uid}" maxWidth="{data.imagewidth}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
             </picture>
-            <noscript>
-                {f:image(image: file, cropVariant: 'default', maxWidth: dimensions.width, width: dimensions.width)}
-            </noscript>
         </f:alias>
     </f:then>
     <f:else>
@@ -90,42 +82,36 @@
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 992, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 768, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <img alt="{file.properties.alternative}" loading="lazy"
-                     data-bs-slide-to="0" data-bs-target="#Carousel-{data.uid}"
-                     src="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920)}"
-                >
+                <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
             </picture>
-            <noscript>
-                {f:image(image: file, cropVariant: 'default', maxWidth: 1920)}
-            </noscript>
         </f:alias>
     </f:else>
 </f:if>

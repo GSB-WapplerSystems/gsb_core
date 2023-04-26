@@ -36,18 +36,56 @@
                                        data-aspectratio-md="{medium.selectedRatio}"
                                        data-aspectratio-sm="{small.selectedRatio}"
                                        data-aspectratio-xs="{xsmall.selectedRatio}">
-                                  <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'default', maxWidth: 1313)}"
-                                          media="(min-width: 1220px)">
-                                  <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'large', maxWidth: 1220)}"
-                                          media="(min-width: 992px)">
-                                  <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'medium', maxWidth: 992)}"
-                                          media="(min-width: 768px)">
-                                  <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'small', maxWidth: 768)}"
-                                          media="(min-width: 576px)">
-                                  <source srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'xsmall', maxWidth: 576)}"
-                                          media="(min-width: 0)">
-                                  <f:image src="{data_gallery_file.0.properties.uid}" maxWidth="1440" cropVariant="default"
-                                           treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
+                                  <source
+                                      media="(min-width: 1220px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'default', maxWidth: 1440, fileExtension: 'webp')}"
+                                      type="image/webp"
+                                  >
+                                  <source
+                                      media="(min-width: 1220px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'default', maxWidth: 1440, fileExtension: 'jpg')}"
+                                      type="image/jpeg"
+                                  >
+                                  <source
+                                      media="(min-width: 992px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'large', maxWidth: 1220, fileExtension: 'webp')}"
+                                      type="image/webp"
+                                  >
+                                  <source
+                                      media="(min-width: 992px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'large', maxWidth: 1220, fileExtension: 'jpg')}"
+                                      type="image/jpeg"
+                                  >
+                                  <source
+                                      media="(min-width: 768px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'medium', maxWidth: 992, fileExtension: 'webp')}"
+                                      type="image/webp"
+                                  >
+                                  <source
+                                      media="(min-width: 768px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'medium', maxWidth: 992, fileExtension: 'jpg')}"
+                                      type="image/jpeg"
+                                  >
+                                  <source
+                                      media="(min-width: 576px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'small', maxWidth: 768, fileExtension: 'webp')}"
+                                      type="image/webp"
+                                  >
+                                  <source
+                                      media="(min-width: 576px)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'small', maxWidth: 768, fileExtension: 'jpg')}"
+                                      type="image/jpeg"
+                                  >
+                                  <source
+                                      media="(min-width: 0)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'webp')}"
+                                      type="image/webp"
+                                  >
+                                  <source
+                                      media="(min-width: 0)"
+                                      srcset="{f:uri.image(image: data_gallery_file.0, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'jpg')}"
+                                      type="image/jpeg"
+                                  >
                               </picture>
                             </f:alias>
                             <f:if condition="{data_gallery_file.0.properties.copyright}">

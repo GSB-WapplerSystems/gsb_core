@@ -11,7 +11,6 @@ CREATE TABLE tt_content
 	tx_video_caption               tinytext,
 	tx_video_poster_image          int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_video_poster_video          tinytext,
-	tx_video_mainstage             tinyint(4)       DEFAULT '0' NOT NULL,
 	tx_video_video                 tinytext,
 	tx_video_videourl              tinytext,
 	tx_audio_poster                int(11) unsigned DEFAULT '0' NOT NULL,
@@ -52,11 +51,10 @@ CREATE TABLE tt_content
 
 CREATE TABLE pages
 (
-	newsletter                  varchar(255)  DEFAULT ''  NOT NULL,
-	socialmedia                 varchar(255)  DEFAULT ''  NOT NULL,
-	breadcrumb                  varchar(255)  DEFAULT ''  NOT NULL,
-	highlight                   tinyint(1)    DEFAULT '0' NOT NULL,
+	newsletter                  varchar(255) DEFAULT ''  NOT NULL,
+	socialmedia                 varchar(255) DEFAULT ''  NOT NULL,
+	breadcrumb                  varchar(255) DEFAULT ''  NOT NULL,
+	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
-	teaser_description_overview text,
 	category_title              text
 );

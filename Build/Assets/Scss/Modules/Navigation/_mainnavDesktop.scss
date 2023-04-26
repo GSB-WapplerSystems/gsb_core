@@ -1,0 +1,204 @@
+// mainnav desktop
+
+.mainnav-desktop {
+  .main-menu-desktop {
+    background-color: transparent;
+    border: 0;
+    height: 80vh !important;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+
+    a {
+      color: $darkblue;
+      position: relative;
+
+      &::before {
+        background-color: $darkblue-100;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .container {
+      background-color: $white;
+      height: 100vh !important;
+      position: relative;
+
+      > li.shortcut:first-child {
+        @include font-size(32px);
+        width: 100%;
+
+        a {
+          &::after {
+            background-color: transparent;
+            background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            bottom: 0;
+            content: '';
+            display: inline-block;
+            height: 24px;
+            position: relative;
+            width: 24px;
+          }
+        }
+      }
+
+      li {
+        @include font-size(22px);
+        width: 33.3333%;
+
+        a {
+          background-color: white;
+          outline-offset: -4px !important;
+          padding: 20px 40px;
+
+          &[role="button"] {
+            padding-right: 30px !important;
+            position: relative;
+
+            + ul > li.shortcut:first-child > a {
+              background-image: svg-load("../Images/Icons/icon-internal.svg", fill=$darkblue);
+              background-position: 98% center;
+              background-repeat: no-repeat;
+              background-size: 24px 24px;
+              font-weight: 700;
+            }
+
+            &::after {
+              background-image: svg-load("../Images/Icons/icon-chevron-left.svg", fill=$darkblue);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 24px 24px;
+              content: '';
+              height: 24px;
+              position: absolute;
+              right: 8px;
+              top: 33%;
+              transition: transform .1s ease-in-out;
+              width: 24px;
+            }
+
+            &.collapsed {
+              &::after {
+                transform: rotate(180deg);
+                transition: transform .1s ease-in-out;
+              }
+            }
+
+            &.act.hassub {
+              font-weight: 700;
+
+              &::before {
+                background-color: $darkblue !important;
+                height: 2px !important;
+              }
+            }
+          }
+        }
+
+        ul {
+          background-color: $navbgcolor-1;
+          height: 100vh !important;
+          left: 33.7%;
+          position: absolute;
+          top: 88px;
+          transition: none !important;
+          width: 33.6%;
+
+          li {
+            position: relative;
+            width: 100%;
+
+            a {
+              background-color: $navbgcolor-1;
+              width: 99.8%;
+            }
+
+            ul {
+              background-color: $navbgcolor-2;
+              height: 100vh !important;
+              left: 100%;
+              top: -146px;
+              width: calc(100% - 23px);
+
+              li {
+                a {
+                  background-color: $navbgcolor-2;
+
+                  &::before {
+                    background-color: $darkblue-200 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .first-nav {
+    @include font-size(18px);
+    background-color: transparent;
+    color: $darkblue;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0;
+    outline-offset: -2px;
+    padding: 4px 8px;
+    position: relative;
+    text-transform: uppercase;
+
+    &.act {
+      &::after {
+        background-color: $darkblue;
+        bottom: 3px;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: calc(100% - 16px);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::after {
+        background-color: $darkblue;
+        bottom: 3px;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: calc(100% - 16px);
+      }
+    }
+  }
+
+  .container li a.current,
+  .container li ul li a.current,
+  .container li ul li ul li a.current {
+    font-weight: 700;
+    text-decoration: underline;
+
+    &::before {
+      background-color: $darkblue !important;
+      height: 2px !important;
+    }
+  }
+}

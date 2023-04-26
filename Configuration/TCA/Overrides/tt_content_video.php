@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use ITZBund\GsbTemplate\Preview\VideoPreviewRenderer;
+use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -31,6 +32,20 @@ defined('TYPO3') || die();
                         'allowed' => 'jpg,jpeg,svg,png,gif',
                         'maxitems' => 1,
                         'minitems' => 0,
+                        'overrideChildTca' => [
+                            'types' => [
+                                '0' => [
+                                    'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                                ],
+                                AbstractFile::FILETYPE_IMAGE => [
+                                    'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                                ],
+                            ],
+                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
@@ -49,6 +64,14 @@ defined('TYPO3') || die();
             ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
+
+    $videoPalettes = [
+        'video_config' => [
+            'showitem' => 'tx_video_video,--linebreak--,tx_video_poster_image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
+        ],
+    ];
+
+    $GLOBALS['TCA']['tt_content']['palettes'] += $videoPalettes;
 
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
         'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.video',
@@ -76,7 +99,7 @@ defined('TYPO3') || die();
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Video,
-                        --palette--;;tx_video_video,tx_video_poster_image,tx_video_caption,
+                        --palette--;;video_config,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,

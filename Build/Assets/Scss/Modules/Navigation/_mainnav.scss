@@ -1,4 +1,4 @@
-// main nav
+// mainnav
 
 .navbar {
   display: flex;
@@ -70,7 +70,7 @@
     }
   }
 
-  a[type="button"] {
+  a[role="button"] {
     background-color: $white;
     padding-right: 30px !important;
     position: relative;
@@ -113,6 +113,7 @@
     margin-bottom: 0;
     outline-offset: -2px;
     padding: 16px 0;
+    position: relative;
     text-transform: uppercase;
 
     &:hover,
@@ -146,6 +147,15 @@
         left: 0;
         position: absolute;
         width: 100%;
+      }
+
+      &.act.hassub {
+        font-weight: 700;
+
+        &::before {
+          background-color: $darkblue !important;
+          height: 2px !important;
+        }
       }
     }
   }
@@ -243,6 +253,16 @@
 
   .act {
     color: $darkblue;
+    text-decoration: none;
+  }
+
+  .current {
+    font-weight: 700;
     text-decoration: underline;
+
+    &::before {
+      background-color: $darkblue !important;
+      height: 2px !important;
+    }
   }
 }

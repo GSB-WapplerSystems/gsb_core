@@ -36,7 +36,8 @@ $grays: (
 
 // scss-docs-start color-variables
 $blue: #0077b6;
-$darkblue: #004b76;
+$lightblue: #e7edf3;
+$darkblue: #0a406e;
 $indigo: #5f316e;
 $purple: #6f42c1;
 $pink: #d63384;
@@ -45,6 +46,7 @@ $darkred: #780f2d;
 $orange: #f7bb3d;
 $yellow: #f9e03a;
 $green: #00854a;
+$bmas-grey: #4f4f4f;
 $darkgreen: #005c45;
 $teal: #c1ca31;
 $cyan: #80cdec;
@@ -370,7 +372,8 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary: $red;
-$secondary: $gray-200;
+$secondary: $gray-100;
+$thirdly: $darkblue;
 $success: $green;
 $info: $cyan;
 $warning: $orange;
@@ -387,6 +390,7 @@ $navbgcolor-2: #d4e0eb;
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  "thirdly": $thirdly,
   "success": $success,
   "info": $info,
   "warning": $warning,
@@ -399,6 +403,7 @@ $theme-colors: (
 // scss-docs-start theme-text-variables
 $primary-text-emphasis: $black;
 $secondary-text-emphasis: $white;
+$thirdly-text-emphasis: $white;
 $success-text-emphasis: $green-600;
 $info-text-emphasis: $cyan-700;
 $warning-text-emphasis: $yellow-700;
@@ -410,6 +415,7 @@ $dark-text-emphasis: $gray-900;
 // scss-docs-start theme-bg-subtle-variables
 $primary-bg-subtle: $blue-100;
 $secondary-bg-subtle: $gray-100;
+$thirdly-bg-subtle: $darkblue-100;
 $success-bg-subtle: $green-100;
 $info-bg-subtle: $cyan-100;
 $warning-bg-subtle: $yellow-100;
@@ -421,6 +427,7 @@ $dark-bg-subtle: $gray-400;
 // scss-docs-start theme-border-subtle-variables
 $primary-border-subtle: $blue-200;
 $secondary-border-subtle: $gray-200;
+$thirdly-border-subtle: $darkblue-200;
 $success-border-subtle: $green-200;
 $info-border-subtle: $cyan-200;
 $warning-border-subtle: $yellow-200;
@@ -824,6 +831,7 @@ $table-bg-scale: -80%;
 $table-variants: (
   "primary": shift-color($primary, $table-bg-scale),
   "secondary": shift-color($secondary, $table-bg-scale),
+  "thirdly": shift-color($thirdly, $table-bg-scale),
   "success": shift-color($success, $table-bg-scale),
   "info": shift-color($info, $table-bg-scale),
   "warning": shift-color($warning, $table-bg-scale),
@@ -1661,15 +1669,15 @@ $figure-caption-color: var(--#{$prefix}secondary-color);
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-$breadcrumb-font-size: 15px;
-$breadcrumb-padding-y: .25rem;
+$breadcrumb-font-size: 16px;
+$breadcrumb-padding-y: 1rem;
 $breadcrumb-padding-x: 0;
-$breadcrumb-item-padding-x: .5rem;
+$breadcrumb-item-padding-x: 0;
 $breadcrumb-margin-bottom: 0;
-$breadcrumb-bg: null;
+$breadcrumb-bg: $white;
 $breadcrumb-divider-color: var(--#{$prefix}secondary-color);
 $breadcrumb-active-color: var(--#{$prefix}secondary-color);
-$breadcrumb-divider: "/";
+$breadcrumb-divider: "";
 $breadcrumb-divider-flipped: $breadcrumb-divider;
 $breadcrumb-border-radius: null;
 // scss-docs-end breadcrumb-variables

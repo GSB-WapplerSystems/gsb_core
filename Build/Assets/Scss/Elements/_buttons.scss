@@ -1,4 +1,4 @@
-@charset "utf-8";
+// buttons
 
 .btn {
   border-radius: 0 24px 24px;
@@ -144,5 +144,36 @@
       outline-color: $white !important;
       outline-offset: -2px;
     }
+  }
+}
+
+.btn-language-menu {
+  background: none;
+  border: 0;
+  border-radius: unset;
+  color: $bmas-grey;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 5px;
+  padding-left: 16px;
+  padding-top: 6px;
+}
+
+.btn-dropdown-icon {
+  &::after {
+    background-image: svg-load("../Images/Icons/icon-chevron-down.svg", fill=$bmas-grey);
+    background-position: right;
+    background-repeat: no-repeat;
+    border: none;
+    height: 20px;
+    position: relative;
+    top: 2px;
+    width: 20px;
+  }
+}
+
+.remove-after {
+  &::after {
+    display: none;
   }
 }

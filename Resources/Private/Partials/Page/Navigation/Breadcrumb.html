@@ -1,0 +1,30 @@
+<nav aria-label="Breadcrumb" class="container">
+    <ol class="breadcrumb">
+        <f:for as="item" each="{breadcrumbMenu}" iteration="iterator">
+            <li class="breadcrumb-item">
+                <f:if condition="{item.data.is_siteroot} == '1'">
+                    <f:then>
+                        <a class="breadcrumb-link" href="{item.link}" title="{item.title}">
+                            <span class="visually-hidden">{item.title}</span>
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{item.current} == '1'">
+                            <f:then>
+                                <strong class="breadcrumb-link">
+                                    <span>{item.title}</span>
+                                </strong>
+                            </f:then>
+                            <f:else>
+                                <a class="breadcrumb-link" href="{item.link}">
+                                    <span>{item.title}</span>
+                                </a>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </ol>
+</nav>
+
