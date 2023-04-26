@@ -1,5 +1,12 @@
 // metanav
 
+.meta-desktop {
+  .sticky & {
+    position: absolute;
+    top: -100px;
+  }
+}
+
 .main-meta {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +44,6 @@
 
 .language-menu,
 .metanav {
-  flex-wrap: nowrap;
   margin-bottom: 0;
 
   @include media-breakpoint-down(sm) {
