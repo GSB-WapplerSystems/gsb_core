@@ -30,13 +30,13 @@ services:
       - '@ITZBund\GsbTemplate\Configuration\PackageHelper'
     tags:
       - name: event.listener
-        identifier: 'gsb_template/add-typoscript-from-site-package'
+        identifier: 'gsb_core/add-typoscript-from-site-package'
 
   ITZBund\GsbTemplate\EventListener\ExtendsSiteConfigurationEvent:
     public: true
     tags:
       - name: event.listener
-        identifier: 'gsb_template/extends-site-configuration'
+        identifier: 'gsb_core/extends-site-configuration'
 
   ITZBund\GsbTemplate\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'

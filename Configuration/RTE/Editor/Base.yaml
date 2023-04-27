@@ -3,7 +3,7 @@
 editor:
   config:
     # the CSS file to be used inside the editor
-    contentsCss: 'EXT:gsb_template/Resources/Public/StyleSheets/ckeditor.css'
+    contentsCss: 'EXT:gsb_core/Resources/Public/StyleSheets/ckeditor.css'
     language:
       # will be overridden by the locale of the backend user
       ui: 'en'

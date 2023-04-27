@@ -17,12 +17,12 @@ defined('TYPO3') or die('Access denied.');
         (
             new ContainerConfiguration(
                 'ce_grid',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.description',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.title',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.description',
                 [
                     [
                         [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.elements',
+                            'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.elements',
                             'colPos' => 101,
                         ],
                     ],
@@ -30,7 +30,7 @@ defined('TYPO3') or die('Access denied.');
             )
         )
         ->setIcon('tx_grid')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
+        ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -42,12 +42,12 @@ defined('TYPO3') or die('Access denied.');
                         [
                             0 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.type.list',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.list',
                                     1 => 'ul',
                                 ],
                             1 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.type.container',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.container',
                                     1 => 'div',
                                 ],
                         ],
@@ -55,8 +55,8 @@ defined('TYPO3') or die('Access denied.');
                     'type' => 'select',
                 ],
             'exclude' => '0',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.type',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.type.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.description',
         ],
         'grid_columns' => [
             'config' =>
@@ -65,22 +65,22 @@ defined('TYPO3') or die('Access denied.');
                         [
                             0 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.onecol',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.onecol',
                                     1 => '1',
                                 ],
                             1 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.twocol',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.twocol',
                                     1 => '2',
                                 ],
                             2 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.threecol',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.threecol',
                                     1 => '3',
                                 ],
                             3 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.fourcol',
+                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.fourcol',
                                     1 => '4',
                                 ],
                         ],
@@ -88,12 +88,12 @@ defined('TYPO3') or die('Access denied.');
                     'type' => 'select',
                 ],
             'exclude' => '1',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.columns.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.description',
         ],
         'grid_bgcolor' => [
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor.description',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'color',
@@ -102,8 +102,8 @@ defined('TYPO3') or die('Access denied.');
         ],
         'grid_imgbg' => [
             'exclude' => '0',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -118,8 +118,8 @@ defined('TYPO3') or die('Access denied.');
         ],
         'grid_light' => [
             'exclude' => '0',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.light',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.light.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.light',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.light.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -141,12 +141,12 @@ defined('TYPO3') or die('Access denied.');
                     'minitems' => '0',
                 ],
             'exclude' => '1',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bgimage',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bgimage',
         ],
         'grid_bgfullsize' => [
             'exclude' => '0',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -161,8 +161,8 @@ defined('TYPO3') or die('Access denied.');
         ],
         'grid_container' => [
             'exclude' => '0',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.container',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.bg.container.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -196,7 +196,7 @@ defined('TYPO3') or die('Access denied.');
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
             --palette--;;header_config,subheader,
-        --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.title,
+        --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.title,
             --palette--;;grid_config,grid_container,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,

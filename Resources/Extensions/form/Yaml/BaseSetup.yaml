@@ -3,7 +3,7 @@ TYPO3:
     Form:
        persistenceManager:
               allowedExtensionPaths:
-                10: EXT:gsb_template/Resources/Extensions/form/Forms/
+                10: EXT:gsb_core/Resources/Extensions/form/Forms/
               allowSaveToExtensionPaths: true
               allowDeleteFromExtensionPaths: true
        prototypes:
@@ -12,8 +12,8 @@ TYPO3:
             Form:
               renderingOptions:
                 templateRootPaths:
-                  200: 'EXT:gsb_template/Resources/Extensions/form/Frontend/Templates/'
+                  200: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/'
                 partialRootPaths:
-                  200: 'EXT:gsb_template/Resources/Extensions/form/Frontend/Partials/'
+                  200: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Partials/'
                 layoutRootPaths:
-                  200: 'EXT:gsb_template/Resources/Extensions/form/Frontend/Layouts/'
+                  200: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Layouts/'

@@ -15,7 +15,7 @@ defined('TYPO3') || die();
         'tt_content',
         'CType',
         [
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
+            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
             'gsb_singleteaser',
             'tx_singleteaser',
             'default',
@@ -74,7 +74,7 @@ defined('TYPO3') || die();
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, header_kicker, header,
             --palette--;;header_config,subheader,
-        --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title,
+        --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title,
             --palette--;;image_config,
             --palette--;;link_config,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,

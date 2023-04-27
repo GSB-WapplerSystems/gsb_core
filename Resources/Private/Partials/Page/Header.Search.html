@@ -4,7 +4,7 @@
       data-namespace-typo3-fluid="true">
 
 <div class="indexedsearchbox">
-    <h2 class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'gsb_template')}</h2>
+    <h2 class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'gsb_core')}</h2>
     <f:form class="form-inline" pageUid="35" method="post" id="tx_indexedsearch_1" noCacheHash="true" absolute="0" action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search">
         <div class="hidden tx-indexedsearch-hidden-fields">
             <input name="tx_indexedsearch_pi2[search][_sections]" value="0" type="hidden">
@@ -22,10 +22,10 @@
             <input name="tx_indexedsearch_pi2[search][extendedSearch]" value="" type="hidden">
         </div>
         <div class="form-group">
-            <label for="searchbox" class="searchbox-label">{f:translate(key: 'header.search', extensionName: 'gsb_template')}</label>
-            <f:form.textfield name="search[sword]" value="" id="searchbox" class="form-control form-control-sm" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_template')}" />
+            <label for="searchbox" class="searchbox-label">{f:translate(key: 'header.search', extensionName: 'gsb_core')}</label>
+            <f:form.textfield name="search[sword]" value="" id="searchbox" class="form-control form-control-sm" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_core')}" />
         </div>
-        <input class="btn btn-primary btn-search" src="./typo3conf/ext/gsb_template/Resources/Public/Images/Icons/icon_search.svg" name="tx-indexedsearch-searchbox-button-submit" alt="{f:translate(key: 'header.magnifyingglass', extensionName: 'gsb_template')}" title="{f:translate(key: 'header.searching')}" type="image">
+        <input class="btn btn-primary btn-search" src="./typo3conf/ext/gsb_core/Resources/Public/Images/Icons/icon_search.svg" name="tx-indexedsearch-searchbox-button-submit" alt="{f:translate(key: 'header.magnifyingglass', extensionName: 'gsb_core')}" title="{f:translate(key: 'header.searching')}" type="image">
     </f:form>
 </div>
 

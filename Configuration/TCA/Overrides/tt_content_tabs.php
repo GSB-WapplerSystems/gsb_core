@@ -17,12 +17,12 @@ defined('TYPO3') or die('Access denied.');
         (
             new ContainerConfiguration(
                 'ce_tabs',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tabs.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tabs.description',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tabs.title',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tabs.description',
                 [
                     [
                         [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
+                            'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:content',
                             'colPos' => 101,
                         ],
                     ],
@@ -30,7 +30,7 @@ defined('TYPO3') or die('Access denied.');
             )
         )
         ->setIcon('tx_tabs')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
+        ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -39,7 +39,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
         --palette--;;header_config,subheader,
-    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tabs.title,container_tab_open,grid_container,
+    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tabs.title,container_tab_open,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -56,8 +56,8 @@ defined('TYPO3') or die('Access denied.');
 
     $tabOpen = [
         'container_tab_open' => [
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tabs.label.onload',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tabs.description.onload',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tabs.label.onload',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tabs.description.onload',
             'config' => [
                 'type' => 'input',
                 'size' => 1,

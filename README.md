@@ -3,19 +3,19 @@
 
 
 <!-- PROJECT SHIELDS -->
-[![pipeline status](https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/badges/main/pipeline.svg)][pipeline-url]
-[![Latest Release](https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/badges/release.svg)][release-url]
+[![pipeline status](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/badges/main/pipeline.svg)][pipeline-url]
+[![Latest Release](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/badges/release.svg)][release-url]
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template">
+  <a href="https://git.gsb-itzbund.de/gsb11extensions/gsb_core">
     <img src="https://produkt.gsb.bund.de/SiteGlobals/Frontend/Images/logo.png?__blob=normal&v=1" alt="Logo" width="300">
   </a>
 
-<h3 align="center">Government Side Builder (GSB) - Distribution</h3>
+<h3 align="center">Government Side Builder (GSB) - Core</h3>
 
   <p align="center">
     Die Content Management Lösung für die deutsche Bundesverwaltung - von der Verwaltung für die Verwaltung
@@ -113,7 +113,7 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    cp Public /opt/typo3/vendor/itzbund/gsb-template/Resources/Public
    ```
 
-1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen. Ab "V 12.2 mit vendor/bin/typo3 ..." arbeiten 
+1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen. Ab "V 12.2 mit vendor/bin/typo3 ..." arbeiten
    ```sh
    vendor/bin/typo3 setup --dbname=*DBNAME* --admin-username=*ADMIN* --admin-user-password=*PASSWORD*
    ```

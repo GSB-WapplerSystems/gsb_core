@@ -30,7 +30,7 @@ defined('TYPO3') || die();
               ],
             ],
           'exclude' => '1',
-          'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link',
+          'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link',
         ],
       'tx_link_layout' =>
         [
@@ -40,27 +40,27 @@ defined('TYPO3') || die();
                 [
                   0 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.0',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.0',
                       1 => 'btn btn-primary',
                     ],
                   1 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.1',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.1',
                       1 => 'btn btn-secondary',
                     ],
                   2 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.2',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.2',
                       1 => 'internal-link',
                     ],
                   3 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
                       1 => 'external-link',
                     ],
                   4 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.4',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.4',
                       1 => 'download',
                     ],
                 ],
@@ -68,7 +68,7 @@ defined('TYPO3') || die();
               'type' => 'select',
             ],
           'exclude' => '1',
-          'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout',
+          'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout',
         ],
       'tx_link_text' =>
         [
@@ -78,7 +78,7 @@ defined('TYPO3') || die();
               'type' => 'input',
             ],
           'exclude' => '1',
-          'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_text',
+          'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_text',
         ],
       'tx_link_position' =>
         [
@@ -88,17 +88,17 @@ defined('TYPO3') || die();
                 [
                   0 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.0',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.0',
                       1 => 'btn-center',
                     ],
                   1 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.1',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.1',
                       1 => 'btn-left',
                     ],
                   2 =>
                     [
-                      0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.2',
+                      0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.2',
                       1 => 'btn-right',
                     ],
                 ],
@@ -106,7 +106,7 @@ defined('TYPO3') || die();
               'type' => 'select',
             ],
           'exclude' => '1',
-          'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position',
+          'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position',
         ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $linkColumns);

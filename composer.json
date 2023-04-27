@@ -1,6 +1,6 @@
 {
-	"name": "itzbund/gsb-template",
-	"description": "GSB Template",
+	"name": "itzbund/gsb-core",
+	"description": "GSB ore",
 	"license": [
 		"GPL-2.0-or-later"
 	],
@@ -69,8 +69,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"ITZBund\\GsbTemplate\\": "Classes/",
-			"ITZBund\\GsbTemplate\\Tests\\": "Tests/"
+			"ITZBund\\GsbCore\\": "Classes/",
+			"ITZBund\\GsbCore\\Tests\\": "Tests/"
 		}
 	},
 	"config": {
@@ -86,7 +86,7 @@
 	"extra": {
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"extension-key": "gsb_template",
+			"extension-key": "gsb_core",
 			"web-dir": ".composer"
 		}
 	},

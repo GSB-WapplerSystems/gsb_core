@@ -1,8 +1,8 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers;
+namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers;
 
-use ITZBund\GsbTemplate\Tests\Fixtures\DummyViewHelperNode;
+use ITZBund\GsbCore\Tests\Fixtures\DummyViewHelperNode;
 use PHPUnit\Framework\MockObject\MockObject;
 use TYPO3\CMS\Backend\Controller\DummyController;
 use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
@@ -172,7 +172,7 @@ abstract class AbstractViewHelperTestCase extends AbstractTestCase
     protected function getViewHelperClassName(): string
     {
         $class = static::class;
-        $class = str_replace('ITZBund\\GsbTemplate\\Tests\\Unit\\', 'ITZBund\\GsbTemplate\\', $class);
+        $class = str_replace('ITZBund\\GsbCore\\Tests\\Unit\\', 'ITZBund\\GsbCore\\', $class);
         return substr($class, 0, -4);
     }
 

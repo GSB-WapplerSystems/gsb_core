@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 
 <li class="teaser-item col-12 col-md-6 {f:if(condition:'{iterator.isFirst}', then:' first')}{f:if(condition:'{iterator.isLast}', then:' last')}">
     <div class="teaser-item-wrapper">
@@ -40,7 +40,7 @@
 
             <p>
                 <f:link.typolink parameter="{page.link}" class="internal-link">
-                    {f:translate(key: 'content.readmore', extensionName: 'gsb_template')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
+                    {f:translate(key: 'content.readmore', extensionName: 'gsb_core')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
                 </f:link.typolink>
             </p>
         </div>

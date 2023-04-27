@@ -2,15 +2,15 @@ lib {
   containerContentElement =< lib.contentElement
   containerContentElement {
     layoutRootPaths {
-      0 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Layouts/
+      0 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Layouts/
       10 = {$plugin.containerContentElement.view.layoutRootPath}
     }
     partialRootPaths {
-      0 = EXT:gsb_template/Resources/Extensions/fluid_styled_content/Private/Partials/
+      0 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
       10 = {$plugin.containerContentElement.view.partialRootPath}
     }
     templateRootPaths {
-      0 = EXT:gsb_template/Resources/Private/Templates/Container/
+      0 = EXT:gsb_core/Resources/Private/Templates/Container/
       10 = {$plugin.containerContentElement.view.templateRootPath}
     }
     dataProcessing {

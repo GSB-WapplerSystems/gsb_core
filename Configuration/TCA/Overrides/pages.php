@@ -10,8 +10,8 @@ defined('TYPO3') || die();
     $visibleoptions = [
         'newsletter' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.NewsletterBox.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -28,8 +28,8 @@ defined('TYPO3') || die();
 
         'socialmedia' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.SocialmediaBar.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -46,8 +46,8 @@ defined('TYPO3') || die();
 
         'breadcrumb' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.Breadcrumb.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -63,8 +63,8 @@ defined('TYPO3') || die();
         ],
 
         'teaser_description' => [
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription.description',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 60,

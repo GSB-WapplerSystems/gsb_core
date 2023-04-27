@@ -1,2 +1,2 @@
-@import 'EXT:gsb_template/Configuration/TypoScript/Constants/Page/'
-@import 'EXT:gsb_template/Configuration/TypoScript/Constants/ContentElements/'
+@import 'EXT:gsb_core/Configuration/TypoScript/Constants/Page/'
+@import 'EXT:gsb_core/Configuration/TypoScript/Constants/ContentElements/'

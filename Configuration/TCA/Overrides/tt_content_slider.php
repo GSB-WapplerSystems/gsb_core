@@ -17,12 +17,12 @@ defined('TYPO3') || die();
         (
         new ContainerConfiguration(
             'ce_slider',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.title',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.description',
+            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_slider.title',
+            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_slider.description',
             [
                 [
                     [
-                        'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.elements',
+                        'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_slider.elements',
                         'colPos' => 101,
                     ],
                 ],
@@ -30,7 +30,7 @@ defined('TYPO3') || die();
         )
         )
             ->setIcon('tx_slider')
-            ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
+            ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
             ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -54,7 +54,7 @@ defined('TYPO3') || die();
                     'renderType' => 'selectSingle',
                     'type' => 'select',
                 ],
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:grid.slider.type',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.slider.type',
         ],
     ];
 
@@ -71,7 +71,7 @@ defined('TYPO3') || die();
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
-    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_slider.title,
+    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_slider.title,
         --palette--;;slider_config,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,

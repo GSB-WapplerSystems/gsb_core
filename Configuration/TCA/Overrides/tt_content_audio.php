@@ -20,7 +20,7 @@ defined('TYPO3') || die();
                         'minitems' => '0',
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_poster',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_poster',
             ],
         'tx_audio_audio' =>
             [
@@ -32,7 +32,7 @@ defined('TYPO3') || die();
                         'minitems' => '0',
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_audio',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_audio',
             ],
         'tx_audio_audiourl' =>
             [
@@ -61,13 +61,13 @@ defined('TYPO3') || die();
                             ],
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_audiourl',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_audio_audiourl',
             ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempAudioColumns);
 
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
-        'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.audio',
+        'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.audio',
         'audio',
         'tx_audio',
         'default',
