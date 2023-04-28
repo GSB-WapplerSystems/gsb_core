@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ITZBund\GsbTemplate\Preview\VideoPreviewRenderer;
+use ITZBund\GsbCore\Preview\VideoPreviewRenderer;
 use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -22,7 +22,7 @@ defined('TYPO3') || die();
                         'minitems' => 0,
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
             ],
         'tx_video_poster_image' =>
             [
@@ -48,7 +48,7 @@ defined('TYPO3') || die();
                         ],
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
             ],
         'tx_video_video' =>
             [
@@ -60,7 +60,7 @@ defined('TYPO3') || die();
                         'minitems' => 0,
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
             ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
@@ -74,7 +74,7 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['palettes'] += $videoPalettes;
 
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
-        'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.video',
+        'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.video',
         'video',
         'tx_video',
         'default',

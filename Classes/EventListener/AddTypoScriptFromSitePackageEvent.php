@@ -12,9 +12,9 @@ declare(strict_types=1);
  * Highly inspired by the "bolt" extension by b13.
  */
 
-namespace ITZBund\GsbTemplate\EventListener;
+namespace ITZBund\GsbCore\EventListener;
 
-use ITZBund\GsbTemplate\Configuration\PackageHelper;
+use ITZBund\GsbCore\Configuration\PackageHelper;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\TypoScript\IncludeTree\Event\AfterTemplatesHaveBeenDeterminedEvent;
 
@@ -91,7 +91,7 @@ final class AddTypoScriptFromSitePackageEvent
             'constants' => (string)$constants,
             'config' => (string)$setup,
             // Add a flag. This might be useful for other event listeners that may want to manipulate again.
-            'isExtGsbTemplateFakeRow' => true,
+            'isExtGsbCoreFakeRow' => true,
         ];
         // Set various "db" fields conditionally to be as robust as possible in case
         // core or some other loaded extension fiddles with them.

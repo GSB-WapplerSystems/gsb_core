@@ -1,6 +1,6 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Fixtures;
+namespace ITZBund\GsbCore\Tests\Fixtures;
 
 use TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode;
 use TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInterface;

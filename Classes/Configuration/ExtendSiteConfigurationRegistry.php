@@ -11,9 +11,9 @@ declare(strict_types=1);
  *
  */
 
-namespace ITZBund\GsbTemplate\Configuration;
+namespace ITZBund\GsbCore\Configuration;
 
-use ITZBund\GsbTemplate\Configuration\Discovery\ExtendSiteConfigurationLocator;
+use ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator;
 
 class ExtendSiteConfigurationRegistry
 {

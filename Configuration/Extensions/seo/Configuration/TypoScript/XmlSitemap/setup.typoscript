@@ -1,6 +1,6 @@
 plugin.tx_seo {
   config {
-    xslFile = EXT:gsb_template/Resources/Public/Seo/Sitemap.xsl
+    xslFile = EXT:gsb_core/Resources/Public/Seo/Sitemap.xsl
 
     xmlSitemap {
       sitemaps {

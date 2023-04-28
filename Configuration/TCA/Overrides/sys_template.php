@@ -8,7 +8,7 @@ defined('TYPO3') || die();
 
 (static function (): void {
     ExtensionManagementUtility::addStaticFile(
-        'gsb_template',
+        'gsb_core',
         'Configuration/TypoScript',
         'GSB Distribution Package'
     );

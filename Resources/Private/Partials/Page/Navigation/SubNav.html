@@ -1,7 +1,7 @@
 <f:if condition="{menuSub}">
 
   <nav aria-labelledby="submenu" class="d-none d-lg-block">
-    <h3 class="visually-hidden" id="submenu">{f:translate(key: 'supplement.areamenu', extensionName: 'gsb_template')}</h3>
+    <h3 class="visually-hidden" id="submenu">{f:translate(key: 'supplement.areamenu', extensionName: 'gsb_core')}</h3>
     <ul id="subnav" class="nav flex-column hidden-md-down">
       <f:for each="{menuSub}" as="mainItem" iteration="i">
         <li class="nav-item mb-1{f:if(condition:mainItem.active, then:' active')}">

@@ -17,12 +17,12 @@ defined('TYPO3') or die('Access denied.');
         (
         new ContainerConfiguration(
             'ce_accordion',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title',
-            'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description',
+            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title',
+            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description',
             [
                 [
                     [
-                        'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
+                        'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:content',
                         'colPos' => 101,
                     ],
                 ],
@@ -30,7 +30,7 @@ defined('TYPO3') or die('Access denied.');
         )
         )
         ->setIcon('tx_accordion')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
+        ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
@@ -39,7 +39,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
-    --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle_all,container_accordion_toggle,container_accordion_open,grid_container,
+    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle_all,container_accordion_toggle,container_accordion_open,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -61,7 +61,7 @@ defined('TYPO3') or die('Access denied.');
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
                                 1 => '1',
                             ],
                         1 =>
@@ -94,13 +94,13 @@ defined('TYPO3') or die('Access denied.');
                 'type' => 'select',
             ],
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
         ],
         'container_accordion_toggle' => [
             'exclude' => 1,
             'onChange' => 'reload',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.onload',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.onload',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onload',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onload',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -114,8 +114,8 @@ defined('TYPO3') or die('Access denied.');
             ],
         ],
         'container_accordion_open' => [
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.open',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.open',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.open',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.open',
             'config' => [
                 'type' => 'input',
                 'size' => 1,
@@ -134,8 +134,8 @@ defined('TYPO3') or die('Access denied.');
         ],
         'container_accordion_toggle_all' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
-            'description' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',

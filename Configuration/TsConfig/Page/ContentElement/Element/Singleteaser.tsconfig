@@ -2,8 +2,8 @@ mod.wizards.newContentElement.wizardItems.common {
   elements {
     gsb_singleteaser {
       iconIdentifier = tx_singleteaser
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.description
+      title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title
+      description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.description
       tt_content_defValues {
         CType = gsb_singleteaser
       }

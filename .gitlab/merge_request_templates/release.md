@@ -1,8 +1,8 @@
 # RELEASEBEGLEITBLATT
 
-## GSB TYPO3 Distribution Package
+## GSB TYPO3 Core Package
 
-Diese Version des GSB TYPO3 Distribution Package basiert auf TYPO3 12.2 und
+Diese Version des GSB TYPO3 Core Package basiert auf TYPO3 12.4 und
 PHP 8.1 und unterstützt folgende TYPO3-Module: Papierkorb, Workspaces, Planer.
 Zusätzlich beinhaltet sie die folgenden Inhaltselemente: Header, Text mit Bild,
 Bild, Text und Slider. Die Extension container von b13 wurde ebenfalls eingebunden.
@@ -21,7 +21,7 @@ Bekannte Fehler sind im Projekt-Jira erfasst.
 
 ### Systemanforderungen:
 
-* TYPO3 12.2
+* TYPO3 12.4
 * PHP 8.1
 * Node 18
 * Composer 2
@@ -47,11 +47,11 @@ Bekannte Fehler sind im Projekt-Jira erfasst.
 * TYPO3 Coding Guidelines https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/CodingGuidelines/Index.html
 * TYPO3 Security Guide https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Security/Index.html
 * Configuration https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Configuration/Index.html
-* GSB TYPO3 Distribution Package README https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/blob/main/README.md
+* GSB TYPO3 Core Package README https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/blob/main/README.md
 
 
 Bitte beachten Sie, dass diese Version eine Pre-Release-Version ist und
 möglicherweise noch nicht vollständig getestet wurde. Wir empfehlen, diese
 Version nicht in Produktionsumgebungen zu verwenden. Wir freuen uns jedoch über
-Feedback und Fehlerberichte, um das GSB TYPO3 Distribution Package weiter
+Feedback und Fehlerberichte, um das GSB TYPO3 Core Package weiter
 zu verbessern.

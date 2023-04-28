@@ -1,9 +1,9 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers\Format\Json;
+namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers\Format\Json;
 
-use ITZBund\GsbTemplate\Tests\Unit\ViewHelpers\AbstractViewHelperTestCase;
-use ITZBund\GsbTemplate\ViewHelpers\Format\Json\DecodeViewHelper;
+use ITZBund\GsbCore\Tests\Unit\ViewHelpers\AbstractViewHelperTestCase;
+use ITZBund\GsbCore\ViewHelpers\Format\Json\DecodeViewHelper;
 
 class DecodeViewHelperTest extends AbstractViewHelperTestCase
 {

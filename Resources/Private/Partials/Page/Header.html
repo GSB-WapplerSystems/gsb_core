@@ -6,7 +6,7 @@
 
 <div class="layer"></div>
 
-<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
+<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_core')}</h1>
 
 <header class="header-wrapper fixed-top">
     <div class="header-wrapper-bg">
@@ -22,7 +22,7 @@
                         </f:then>
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
+                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
                                     <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
                                 </f:link.page>

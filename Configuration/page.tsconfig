@@ -1,8 +1,8 @@
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/ContentElement/All.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/RTE.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/TCADefaults.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
-@import 'EXT:gsb_template/Configuration/TsConfig/Page/TCEFORM.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/ContentElement/All.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/RTE.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/TCADefaults.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/TCEMAIN.tsconfig'
+@import 'EXT:gsb_core/Configuration/TsConfig/Page/TCEFORM.tsconfig'
 
-templates.typo3/cms-backend.1643293191 = itzbund/gsb-template:Resources/Private/Backend/TemplateOverrides
+templates.typo3/cms-backend.1643293191 = itzbund/gsb-core:Resources/Private/Backend/TemplateOverrides

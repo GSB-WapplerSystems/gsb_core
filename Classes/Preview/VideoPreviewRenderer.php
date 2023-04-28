@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GsbTemplate\Preview;
+namespace ITZBund\GsbCore\Preview;
 
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\Utility\BackendUtility;

@@ -1,1 +1,1 @@
-@import 'EXT:gsb_template/Configuration/Extensions/fluid_styled_content/TypoScript/constants.typoscript'
+@import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/constants.typoscript'

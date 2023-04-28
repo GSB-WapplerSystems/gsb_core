@@ -11,9 +11,9 @@ declare(strict_types=1);
  *
  */
 
-namespace ITZBund\GsbTemplate\EventListener;
+namespace ITZBund\GsbCore\EventListener;
 
-use ITZBund\GsbTemplate\Configuration\ExtendSiteConfigurationRegistry;
+use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
 use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationLoadedEvent;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 use TYPO3\CMS\Core\Utility\ArrayUtility;

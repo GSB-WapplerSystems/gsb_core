@@ -1,6 +1,6 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Unit\Preview;
+namespace ITZBund\GsbCore\Tests\Unit\Preview;
 
 use Codeception\Test\Unit;
 use Psr\Container\ContainerInterface;

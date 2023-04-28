@@ -1,6 +1,6 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Unit\ViewHelpers;
+namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers;
 
 use FluidTYPO3\Flux\Form;
 use FluidTYPO3\Flux\Form\Field\Custom;

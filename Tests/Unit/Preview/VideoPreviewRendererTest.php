@@ -1,9 +1,9 @@
 <?php
 
-namespace ITZBund\GsbTemplate\Tests\Unit\Preview;
+namespace ITZBund\GsbCore\Tests\Unit\Preview;
 
 use Exception;
-use ITZBund\GsbTemplate\Preview\VideoPreviewRenderer;
+use ITZBund\GsbCore\Preview\VideoPreviewRenderer;
 
 class VideoPreviewRendererTest extends AbstractPreviewRendererTest
 {

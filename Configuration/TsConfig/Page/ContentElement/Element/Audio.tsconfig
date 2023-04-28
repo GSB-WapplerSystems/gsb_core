@@ -2,8 +2,8 @@ mod.wizards.newContentElement.wizardItems.common {
   elements {
     audio {
       iconIdentifier = tx_audio
-      title = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:audio.audio_title
-      description = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:audio.audio_description
+      title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:audio.audio_title
+      description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:audio.audio_description
       tt_content_defValues {
         CType = audio
       }
