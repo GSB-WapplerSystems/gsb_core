@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ITZBund\GsbTemplate\Preview\VideoPreviewRenderer;
+use ITZBund\GsbCore\Preview\VideoPreviewRenderer;
 use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 

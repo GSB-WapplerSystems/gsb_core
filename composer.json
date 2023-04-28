@@ -1,6 +1,6 @@
 {
 	"name": "itzbund/gsb-core",
-	"description": "GSB ore",
+	"description": "GSB Core",
 	"license": [
 		"GPL-2.0-or-later"
 	],
@@ -8,6 +8,7 @@
 	"require": {
 		"php": "^8.1",
 		"b13/container": "^2.2",
+		"b13/permission-sets": "dev-main",
 		"typo3/cms-adminpanel": "^12.4",
 		"typo3/cms-backend": "^12.4",
 		"typo3/cms-belog": "^12.4",

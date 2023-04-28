@@ -14,7 +14,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'config' => [
         'type' => 'select',
         'renderType' => 'selectSingle',
-        'itemsProcFunc' => \ITZBund\GsbTemplate\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
+        'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
 $GLOBALS['SiteConfiguration']['site']['palettes']['default']['showitem'] .= ',

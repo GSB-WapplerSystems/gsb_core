@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ITZBund\GsbTemplate\Preview\GalleryPreviewRenderer;
+use ITZBund\GsbCore\Preview\GalleryPreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
