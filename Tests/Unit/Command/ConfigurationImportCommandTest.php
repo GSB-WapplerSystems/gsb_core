@@ -25,7 +25,7 @@ class ConfigurationImportCommandTest extends Unit
 
         $package = $this->createStub(\TYPO3\CMS\Core\Package\Package::class);
         $package->method('getPackageKey')->willReturn('gsb_template');
-        $package->method('getPackagePath')->willReturn('/var/www/html/vendor/itzbund/gsb-template/');
+        $package->method('getPackagePath')->willReturn('/var/www/html/vendor/itzbund/gsb-core/');
 
         $packageManager->method('getActivePackages')->willReturn([$package]);
 

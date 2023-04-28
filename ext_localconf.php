@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the package itzbund/gsb-template.
+ * This file is part of the package itzbund/gsb-core.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.

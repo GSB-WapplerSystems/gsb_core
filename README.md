@@ -105,12 +105,12 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```
 1. Füge den GSB zu deinem Projekt hinzu
    ```sh
-   composer require itzbund/gsb-template
+   composer require itzbund/gsb-core
    ```
 
 1. (Temporär) Füge dem GSB-Template den Public Ordner hinzu. Public-Ordner kann über die Releases (GSB Distribution.zip) bezogen werden.
    ```sh
-   cp Public /opt/typo3/vendor/itzbund/gsb-template/Resources/Public
+   cp Public /opt/typo3/vendor/itzbund/gsb-core/Resources/Public
    ```
 
 1. TYPO3 installieren. Ggf frisch anlegen bzw. dropen. Ab "V 12.2 mit vendor/bin/typo3 ..." arbeiten
@@ -129,7 +129,7 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    ```
 1. (Temporär) _assets-Ordner unter public löschen und einmal composer install ausführen
    ```sh
-   rm -R public/_assets && cp distribution-package-gsb_template/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-template/Resources/ -R
+   rm -R public/_assets && cp distribution-package-gsb_template/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-core/Resources/ -R
    ```
 
 
