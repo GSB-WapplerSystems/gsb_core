@@ -56,5 +56,4 @@ defined('TYPO3') || die();
         'allow_download',
         'after:outline'
     );
-
 })();
