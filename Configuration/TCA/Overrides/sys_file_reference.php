@@ -5,7 +5,6 @@ declare(strict_types=1);
 defined('TYPO3') || die();
 
 (static function (): void {
-
     $GLOBALS['TCA']['sys_file_reference']['columns']['description']['config']['enableRichtext'] = true;
 
     $newColumns = [
@@ -34,24 +33,28 @@ defined('TYPO3') || die();
         'sys_file_reference',
         'imageoverlayPalette',
         'outline',
-        'after:title');
+        'after:title'
+    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'videoOverlayPalette',
         'outline',
-        'after:title');
+        'after:title'
+    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'filePalette',
         'outline',
-        'after:title');
+        'after:title'
+    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayPalette',
         'allow_download',
-        'after:outline');
+        'after:outline'
+    );
 
 })();
