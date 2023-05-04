@@ -686,6 +686,14 @@
 				<source>Gallery</source>
 				<target>Galerie</target>
 			</trans-unit>
+			<trans-unit id="sys_file_reference.outline" resname="sys_file_reference.outline" approved="yes">
+				<source>Show Outline</source>
+				<target>Outline anzeigen</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.allow_download" resname="sys_file_reference.allow_download" approved="yes">
+				<source>Allow download</source>
+				<target>Download erlauben</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
