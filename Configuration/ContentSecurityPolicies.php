@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\Directive;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\Mutation;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\MutationCollection;
@@ -11,9 +12,8 @@ use TYPO3\CMS\Core\Security\ContentSecurityPolicy\SourceKeyword;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\SourceScheme;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\UriValue;
 use TYPO3\CMS\Core\Type\Map;
-use TYPO3\CMS\Core\Configuration\Features;
 
-if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('cspForBitvTestTools')){
+if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('cspForBitvTestTools')) {
     $bitvTestFormMutation = new Mutation(
         MutationMode::Extend,
         Directive::FormAction,
@@ -50,7 +50,6 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         new UriValue('*.w3.org'),
     );
 }
-
 
 if (\TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()) {
     $inscureRequestMutation = new Mutation(
@@ -116,4 +115,3 @@ $cspCollection = new MutationCollection(
 return Map::fromEntries(
     [Scope::frontend(), $cspCollection]
 );
-
