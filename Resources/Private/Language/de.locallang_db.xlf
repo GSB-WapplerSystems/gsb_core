@@ -694,6 +694,14 @@
 				<source>Allow download</source>
 				<target>Download erlauben</target>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible" resname="sys_file_metadata.is_accessible">
+				<source>File is accessible</source>
+				<target>Datei ist Barrierefrei</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible.description" resname="sys_file_metadata.is_accessible.description">
+				<source>Please activate this option if the file (PDF) is accessible.</source>
+				<target>Bitte aktivieren Sie diese Option, wenn die Datei (PDF) Barrierefrei ist.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
