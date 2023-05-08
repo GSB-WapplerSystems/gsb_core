@@ -591,6 +591,12 @@
 			<trans-unit id="sys_file_reference.allow_download" resname="sys_file_reference.allow_download">
 				<source>Allow Download</source>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible" resname="sys_file_metadata.is_accessible">
+				<source>File is accessible</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible.description" resname="sys_file_metadata.is_accessible.description">
+				<source>Please activate this option if the file (PDF) is accessible.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

@@ -1,3 +1,8 @@
+CREATE TABLE sys_file_metadata
+(
+	is_accessible tinyint(4) unsigned DEFAULT '0' NOT NULL,
+);
+
 CREATE TABLE sys_file_reference
 (
 	longdesc varchar(1024) DEFAULT '' NOT NULL,
