@@ -11,9 +11,9 @@ declare(strict_types=1);
  *
  */
 
-namespace ITZBund\GsbTemplate\Configuration\Discovery;
+namespace ITZBund\GsbCore\Configuration\Discovery;
 
-use ITZBund\GsbTemplate\Configuration\ExtendSiteConfigurationRegistry;
+use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
 use Symfony\Component\Finder\Finder;
 use TYPO3\CMS\Core\Package\PackageManager;
 

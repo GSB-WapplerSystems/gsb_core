@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ITZBund\GsbTemplate\Preview\StagePreviewRenderer;
+use ITZBund\GsbCore\Preview\StagePreviewRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -21,7 +21,7 @@ defined('TYPO3') || die();
                         'minitems' => '0',
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
             ],
         'tx_stage_position' =>
             [
@@ -31,22 +31,22 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
                                         1 => 'stage-default',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
                                         1 => 'stage-top',
                                     ],
                                 2 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
                                         1 => 'stage-middle',
                                     ],
                                 3 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
                                         1 => 'stage-bottom',
                                     ],
                             ],
@@ -54,7 +54,7 @@ defined('TYPO3') || die();
                         'type' => 'select',
                     ],
                 'exclude' => '0',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position',
             ],
         'tx_stage_bgcolor' =>
             [
@@ -64,14 +64,14 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor.I.1',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor.I.1',
                                     ],
                             ],
                         'renderType' => 'checkboxToggle',
                         'type' => 'check',
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor',
             ],
         'tx_stage_bg' =>
             [
@@ -81,21 +81,21 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg.I.1',
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg.I.1',
                                     ],
                             ],
                         'renderType' => 'checkboxToggle',
                         'type' => 'check',
                     ],
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg',
             ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempStageColumns);
 
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
-        'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage',
+        'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage',
         'stage',
         'tx_stage',
         'default',
@@ -130,7 +130,7 @@ defined('TYPO3') || die();
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                   --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
                   --palette--;;header_config,subheader,
-              --div--;LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage,
+              --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage,
                   --palette--;;stagefile_config,
                   --palette--;;stageposition_config,
                   --palette--;;link_config,

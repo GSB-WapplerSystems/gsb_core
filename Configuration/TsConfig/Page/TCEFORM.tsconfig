@@ -19,23 +19,23 @@ TCEFORM {
   tt_content {
     header_layout {
       altLabels {
-        0 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.0
-        1 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.1
-        2 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.2
-        3 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.3
-        4 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.4
-        5 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.5
+        0 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.0
+        1 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.1
+        2 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.2
+        3 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.3
+        4 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.4
+        5 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.5
       }
       removeItems = 0
 
       addItems {
-        6 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.6
-        7 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.7
-        8 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.8
-        9 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.9
-        10 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.10
-        11 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.11
-        12 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:header_layout.12
+        6 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.6
+        7 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.7
+        8 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.8
+        9 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.9
+        10 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.10
+        11 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.11
+        12 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.12
       }
     }
     CType {
@@ -48,16 +48,16 @@ TCEFORM {
 
       }
       altLabels {
-        0 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.0
-        1 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.1
-        2 = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:layout.2
+        0 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:layout.0
+        1 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:layout.1
+        2 = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:layout.2
       }
     }
     frame_class {
       disabled = 1
       #removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
       addItems {
-        #text-2-columns = LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:frame_class.text-2-columns
+        #text-2-columns = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:frame_class.text-2-columns
       }
       altLabels {
 

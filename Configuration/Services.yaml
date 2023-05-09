@@ -4,40 +4,40 @@ services:
     autowire: true
     autoconfigure: true
 
-  ITZBund\GsbTemplate\:
+  ITZBund\GsbCore\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
-  ITZBund\GsbTemplate\Command\ConfigurationImportCommand:
+  ITZBund\GsbCore\Command\ConfigurationImportCommand:
     tags:
       - name: console.command
         schedulable: false
         command: 'gsbtemplate:configuration:import'
         description: 'A command that does import Configuration for Workspaces and Backend User Groups from yaml-Files.'
 
-  ITZBund\GsbTemplate\Configuration\PackageHelper:
+  ITZBund\GsbCore\Configuration\PackageHelper:
     public: true
 
-  ITZBund\GsbTemplate\Configuration\ExtendSiteConfigurationRegistry:
+  ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry:
     public: true
 
-  ITZBund\GsbTemplate\Configuration\Discovery\ExtendSiteConfigurationLocator:
+  ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator:
     public: true
 
-  ITZBund\GsbTemplate\EventListener\AddTypoScriptFromSitePackageEvent:
+  ITZBund\GsbCore\EventListener\AddTypoScriptFromSitePackageEvent:
     public: true
     arguments:
-      - '@ITZBund\GsbTemplate\Configuration\PackageHelper'
+      - '@ITZBund\GsbCore\Configuration\PackageHelper'
     tags:
       - name: event.listener
-        identifier: 'gsb_template/add-typoscript-from-site-package'
+        identifier: 'gsb_core/add-typoscript-from-site-package'
 
-  ITZBund\GsbTemplate\EventListener\ExtendsSiteConfigurationEvent:
+  ITZBund\GsbCore\EventListener\ExtendsSiteConfigurationEvent:
     public: true
     tags:
       - name: event.listener
-        identifier: 'gsb_template/extends-site-configuration'
+        identifier: 'gsb_core/extends-site-configuration'
 
-  ITZBund\GsbTemplate\ViewHelpers\:
+  ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true

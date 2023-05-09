@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
 
     <f:if condition="{data.header}">
@@ -91,6 +91,6 @@
 </div>
 </f:if>
 </div>
-<f:asset.script identifier="mediaelementsJS" src="EXT:gsb_template/Resources/Public/JavaScripts/mediaelements.js" />
-<f:asset.css identifier="mediaelementsCSS" href="EXT:gsb_template/Resources/Public/StyleSheets/mediaelements.css" />
+<f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js" />
+<f:asset.css identifier="mediaelementsCSS" href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" />
 </html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:gsb_template/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_template">
+    <file source-language="en" datatype="plaintext" original="EXT:gsb_core/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_core">
         <header/>
         <body>
 			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default">
@@ -585,6 +585,18 @@
             <trans-unit id="tt_content.CType.gallery" resname="tt_content.CType.gallery">
                 <source>Gallery</source>
             </trans-unit>
+			<trans-unit id="sys_file_reference.outline" resname="sys_file_reference.outline">
+				<source>Show Outline</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.allow_download" resname="sys_file_reference.allow_download">
+				<source>Allow Download</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible" resname="sys_file_metadata.is_accessible">
+				<source>File is accessible</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.is_accessible.description" resname="sys_file_metadata.is_accessible.description">
+				<source>Please activate this option if the file (PDF) is accessible.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

@@ -5,7 +5,7 @@
                 <f:if condition="{mainItem.children}">
                     <f:then>
                         <f:if condition="{mainItem.children}">
-                            <a aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" href="#" role="button" title="{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_template')}">
+                            <a aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" href="#" role="button" title="{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_core')}">
                                 <span class="txt">{mainItem.title} <span class="visually-hidden">öffnen</span></span>
                             </a>
                             <div class="dropdown-menu main-menu-desktop" id="menu-desktop-{mainItem.data.uid}">

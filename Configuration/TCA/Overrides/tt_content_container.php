@@ -16,12 +16,12 @@ defined('TYPO3') or die('Access denied.');
         (
             new ContainerConfiguration(
                 'ce_container',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:container.title',
-                'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:container.description',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:container.title',
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:container.description',
                 [
                     [
                         [
-                            'name' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:content',
+                            'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:content',
                             'colPos' => 101,
                         ],
                     ],
@@ -29,7 +29,7 @@ defined('TYPO3') or die('Access denied.');
             )
         )
         ->setIcon('tx_container')
-        ->setBackendTemplate('EXT:gsb_template/Resources/Private/Backend/Templates/Container.html')
+        ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );
 

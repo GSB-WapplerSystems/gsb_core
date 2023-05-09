@@ -1,9 +1,0 @@
-// accordion
-
-.accordion-button {
-  &:not(.collapsed) {
-    background-color: $gray-200;
-    color: $black;
-    font-weight: 700;
-  }
-}

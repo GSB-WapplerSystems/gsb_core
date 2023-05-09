@@ -1,14 +1,13 @@
 <html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
 <nav aria-labelledby="mainmenu" class="main-menu-layer dropdown flex-grow-0{f:if(condition: '{navType} == 0', then: ' d-lg-none')}" id="main-menu">
-    <button aria-controls="menu" aria-expanded="false" class="navbar-toggler" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_template')}" type="button">
+    <button aria-controls="menu" aria-expanded="false" class="navbar-toggler" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_core')}" type="button">
         <span class="line"></span>
-        <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_template')}</f:format.raw></span>
+        <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_core')}</f:format.raw></span>
     </button>
     <div class="dropdown-menu" id="menu">
-        <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_template')}</h2>
+        <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</h2>
         <div class="navbar-wrapper">
-            <div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
             <f:render arguments="{menuMain: menuMain}" partial="Navigation/MainNav"/>
         </div>
     </div>

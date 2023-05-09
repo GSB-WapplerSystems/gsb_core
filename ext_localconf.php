@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the package itzbund/gsb-template.
+ * This file is part of the package itzbund/gsb-core.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
@@ -22,8 +22,8 @@ defined('TYPO3') or die('Access denied.');
     /***************
      * Define TypoScript as content rendering template
      */
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/';
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_template/Configuration/TypoScript/ContentElement/';
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/ContentElement/';
 
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
@@ -31,14 +31,14 @@ defined('TYPO3') or die('Access denied.');
         module.tx_form {
             settings {
                 yamlConfigurations {
-                    110 = EXT:gsb_template/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
         plugin.tx_form {
             settings {
                 yamlConfigurations {
-                    110 = EXT:gsb_template/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
@@ -46,5 +46,5 @@ defined('TYPO3') or die('Access denied.');
     }
 
     // Add default RTE configuration for the template package
-    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_template/Configuration/RTE/Default.yaml';
+    //$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
 })();

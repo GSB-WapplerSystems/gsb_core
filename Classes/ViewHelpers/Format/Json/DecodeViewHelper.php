@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GsbTemplate\ViewHelpers\Format\Json;
+namespace ITZBund\GsbCore\ViewHelpers\Format\Json;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;

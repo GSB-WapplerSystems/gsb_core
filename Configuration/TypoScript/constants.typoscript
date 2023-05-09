@@ -1,5 +1,5 @@
-@import 'EXT:gsb_template/Configuration/TypoScript/Constants/constants.typoscript'
-@import 'EXT:gsb_template/Configuration/Extensions/constants.typoscript'
+@import 'EXT:gsb_core/Configuration/TypoScript/Constants/constants.typoscript'
+@import 'EXT:gsb_core/Configuration/Extensions/constants.typoscript'
 
 ## include only one file
 ## @import 'EXT:mysitepackage/Configuration/TypoScript/randomfile.typoscript'

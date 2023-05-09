@@ -1,8 +1,8 @@
 # Load default processing options
 imports:
-  - { resource: 'EXT:gsb_template/Configuration/RTE/Processing.yaml' }
-  - { resource: 'EXT:gsb_template/Configuration/RTE/Editor/Base.yaml' }
-  - { resource: 'EXT:gsb_template/Configuration/RTE/Editor/Plugins.yaml' }
+  - { resource: 'EXT:gsb_core/Configuration/RTE/Processing.yaml' }
+  - { resource: 'EXT:gsb_core/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:gsb_core/Configuration/RTE/Editor/Plugins.yaml' }
 
 # Add configuration for the editor
 # For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html

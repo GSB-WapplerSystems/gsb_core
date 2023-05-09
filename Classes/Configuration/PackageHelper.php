@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GsbTemplate\Configuration;
+namespace ITZBund\GsbCore\Configuration;
 
 /*
  * This file is part of TYPO3 CMS-based extension "gsb_template".
@@ -85,6 +85,6 @@ class PackageHelper
 
     public function isSitePackage(string $packageKey): bool
     {
-        return str_contains($packageKey, 'site') || $packageKey === 'gsb_template';
+        return str_contains($packageKey, 'site') || $packageKey === 'gsb_frontend';
     }
 }

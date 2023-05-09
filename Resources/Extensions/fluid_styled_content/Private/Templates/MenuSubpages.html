@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 
 <f:layout name="Default"/>
 
@@ -45,7 +45,7 @@
                             </f:if>
                             <p>
                                 <f:link.typolink class="internal-link" parameter="{page.link}">
-                                    {f:translate(key: 'content.readmore', extensionName: 'gsb_template')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
+                                    {f:translate(key: 'content.readmore', extensionName: 'gsb_core')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
                                 </f:link.typolink>
                             </p>
                         </div>

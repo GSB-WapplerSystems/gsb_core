@@ -10,7 +10,7 @@ defined('TYPO3') || die();
     $headerIntext = [
         'tx_header_inside' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.inside',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.inside',
             'config' => [
                 'type' => 'check',
             ],
@@ -29,7 +29,7 @@ defined('TYPO3') || die();
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
                                 1 => '',
                             ],
                         1 =>
@@ -62,7 +62,7 @@ defined('TYPO3') || die();
                 'type' => 'select',
             ],
             'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
         ],
     ];
 
@@ -81,7 +81,7 @@ defined('TYPO3') || die();
     $headerKicker = [
         'header_kicker' => [
             'l10n_mode' => 'prefixLangTitle',
-            'label' => 'LLL:EXT:gsb_template/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker',
             'config' => [
                 'type' => 'input',
                 'size' => 50,

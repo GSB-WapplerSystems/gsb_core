@@ -6,7 +6,7 @@
 
 <div class="layer"></div>
 
-<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_template')}</h1>
+<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_core')}</h1>
 
 <header class="header-wrapper fixed-top">
     <div class="header-wrapper-bg">
@@ -22,7 +22,7 @@
                         </f:then>
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_template')}">
+                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
                                     <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
                                 </f:link.page>
@@ -30,8 +30,8 @@
                         </f:else>
                     </f:if>
                 </div>
-                <div class="col meta-wrapper d-flex flex-wrap justify-content-end flex-grow-0">
-                    <div class="meta-desktop d-none d-lg-block">
+                <div class="col meta-wrapper d-flex flex-wrap justify-content-end">
+                    <div class="meta-desktop d-none d-lg-block w-100">
                         <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation}" partial="Navigation/MetaNavTop"/>
                     </div>
                     <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
@@ -45,7 +45,7 @@
         </div>
     </div>
 </header>
-
+<div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
 <f:if condition="{data.breadcrumb} != 1">
     <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
 </f:if>

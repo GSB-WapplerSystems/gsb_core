@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ITZBund\GsbTemplate\Command;
+namespace ITZBund\GsbCore\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

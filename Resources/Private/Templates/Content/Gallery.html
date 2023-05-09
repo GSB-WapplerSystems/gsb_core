@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbTemplate/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <f:if condition="{animationSettings}">
     <f:then>
         <f:asset.script identifier="aosJS"
@@ -92,7 +92,7 @@
                                 <p class="copyright">© {data_gallery_file.0.properties.copyright}</p>
                             </f:if>
                             <f:if condition="{data_gallery_file -> f:count()} > 1">
-                                <p class="count">{data_gallery_file -> f:count()} {f:translate(key:'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.images')}</p>
+                                <p class="count">{data_gallery_file -> f:count()} {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.images')}</p>
                             </f:if>
                         </f:link.typolink>
                     </figure>
@@ -142,8 +142,8 @@
                                 <h3 class="modal-title h3" id="modalLabel-{data.uid}">{data.header}</h3>
                             </div>
                             <div class="col-2 close text-end">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}">
-                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}">
+                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span>
                                 </button>
                             </div>
                         </div>
@@ -157,13 +157,13 @@
                                     <f:then>
                                         <li class="carousel-item active">
                                             <f:render section="GalleryOriginal" arguments="{_all}"/>
-                                            <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
+                                            <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
                                         </li>
                                     </f:then>
                                     <f:else>
                                         <li class="carousel-item">
                                             <f:render section="GalleryOriginal" arguments="{_all}"/>
-                                            <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
+                                            <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
                                         </li>
                                     </f:else>
                                 </f:if>
@@ -176,17 +176,17 @@
                                 <li>
                                     <a class="carousel-control-prev" href="#galleryCarousel-{data.uid}" role="button"
                                        data-bs-slide="prev"
-                                       title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}">
+                                       title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}</span>
+                                        <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a class="carousel-control-next" href="#galleryCarousel-{data.uid}" role="button"
                                        data-bs-slide="next"
-                                       title="{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}">
+                                       title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_template/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}</span>
+                                        <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -239,7 +239,7 @@
 </f:section>
 
 <f:if condition="{data.gallery_layout} == 'gallery-slider'">
-    <f:asset.script identifier="swiperJS" src="EXT:gsb_template/Resources/Public/JavaScripts/swiper.js"/>
-    <f:asset.css identifier="swiperCSS" href="EXT:gsb_template/Resources/Public/StyleSheets/swiper.css"/>
+    <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
+    <f:asset.css identifier="swiperCSS" href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css"/>
 </f:if>
 </html>
