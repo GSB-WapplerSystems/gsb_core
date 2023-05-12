@@ -23,8 +23,8 @@ defined('TYPO3') || die();
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $newColumns);
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_metadata',
-        '20',
+        '25',
         'is_accessible',
-        'after:alternative'
+        'after:caption'
     );
 })();
