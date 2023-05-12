@@ -85,6 +85,6 @@ class PackageHelper
 
     public function isSitePackage(string $packageKey): bool
     {
-        return str_contains($packageKey, 'site') || $packageKey === 'gsb_frontend';
+        return str_contains($packageKey, 'site') || $packageKey === 'gsb_core';
     }
 }

@@ -16,14 +16,12 @@
                     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
                         <f:then>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
                                 <f:render arguments="{_all}" partial="Header.Image"></f:render>
                             </div>
                         </f:then>
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:link.page additionalAttributes="{aria-label: 'Zur Startseite'}" pageUid="1" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
-                                    <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+                                <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
                                     <f:render arguments="{_all}" partial="Header.Image"></f:render>
                                 </f:link.page>
                             </div>
