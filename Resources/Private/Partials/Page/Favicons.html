@@ -1,32 +1,32 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
-    <link rel="apple-touch-icon" sizes="60x60" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-60x60.png')}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-76x76.png')}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-120x120.png')}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-152x152.png')}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-180x180.png')}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png')}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-16x16.png')}">
-    <link rel="manifest" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest')}">
-    <link rel="mask-icon" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/safari-pinned-tab.svg')}" color="#333333">
-    <link rel="shortcut icon" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico')}">
-    <meta name="apple-mobile-web-app-title" content="itzbund.de">
-    <meta name="application-name" content="itzbund.de">
-    <meta name="msapplication-TileColor" content="#333333">
-    <meta name="msapplication-config" content="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/browserconfig.xml')}">
-    <meta name="theme-color" content="#333333">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-60x60.png')}" rel="apple-touch-icon" sizes="60x60">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-76x76.png')}" rel="apple-touch-icon" sizes="76x76">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-120x120.png')}" rel="apple-touch-icon" sizes="120x120">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-152x152.png')}" rel="apple-touch-icon" sizes="152x152">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-180x180.png')}" rel="apple-touch-icon" sizes="180x180">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png')}" rel="icon" sizes="32x32" type="image/png">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-16x16.png')}" rel="icon" sizes="16x16" type="image/png">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest')}" rel="manifest">
+    <link color="#333333" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/safari-pinned-tab.svg')}" rel="mask-icon">
+    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico')}" rel="shortcut icon">
+    <meta content="itzbund.de" name="apple-mobile-web-app-title">
+    <meta content="itzbund.de" name="application-name">
+    <meta content="#333333" name="msapplication-TileColor">
+    <meta content="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/browserconfig.xml')}" name="msapplication-config">
+    <meta content="#333333" name="theme-color">
 
     <f:if condition="{data.keywords}">
-        <meta name="keywords" content="{data.keywords}">
+        <meta content="{data.keywords}" name="keywords">
     </f:if>
     <f:if condition="{data.lastUpdated}">
-        <meta name="last-modified" content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}">
+        <meta content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}" name="last-modified">
     </f:if>
     <f:if condition="{data.author}">
-        <meta name="author" content="{data.author}">
+        <meta content="{data.author}" name="author">
     </f:if>
     <f:if condition="{data.author_email}">
-        <meta name="email" content="{data.author_email}">
+        <meta content="{data.author_email}" name="email">
     </f:if>
 
 </html>

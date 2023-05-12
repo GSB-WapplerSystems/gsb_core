@@ -51,9 +51,6 @@
 </f:if>
 
 <f:section name="GalleryDiv">
-    <f:if condition="{data.image_zoom}">
-        <f:render partial="Media/Rendering/ImagePopup" arguments="{_all}" />
-    </f:if>
     <f:for each="{gallery.rows}" as="row" iteration="i">
         <f:for each="{row.columns}" as="column" iteration="iterator">
             <f:if condition="{column.media}">
@@ -66,9 +63,6 @@
 </f:section>
 
 <f:section name="GalleryList">
-    <f:if condition="{data.image_zoom}">
-        <f:render partial="Media/Rendering/ImagePopup" arguments="{_all}" />
-    </f:if>
     <ul class="ce-row row">
         <f:for each="{gallery.rows}" as="row" iteration="i">
             <f:for each="{row.columns}" as="column" iteration="iterator">

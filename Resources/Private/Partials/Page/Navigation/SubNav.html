@@ -2,8 +2,8 @@
 
   <nav aria-labelledby="submenu" class="d-none d-lg-block">
     <h3 class="visually-hidden" id="submenu">{f:translate(key: 'supplement.areamenu', extensionName: 'gsb_core')}</h3>
-    <ul id="subnav" class="nav flex-column hidden-md-down">
-      <f:for each="{menuSub}" as="mainItem" iteration="i">
+    <ul class="nav flex-column hidden-md-down" id="subnav">
+      <f:for as="mainItem" each="{menuSub}" iteration="i">
         <li class="nav-item mb-1{f:if(condition:mainItem.active, then:' active')}">
           <f:if condition="{mainItem.current}">
             <f:then>
@@ -12,15 +12,15 @@
               </strong>
             </f:then>
             <f:else>
-              <f:link.page pageUid="{mainItem.data.uid}" class="nav-link{f:if(condition:mainItem.active, then:' active')}{f:if(condition:mainItem.hasSubpages, then:' sub')}">
+              <f:link.page class="nav-link{f:if(condition:mainItem.active, then:' active')}{f:if(condition:mainItem.hasSubpages, then:' sub')}" pageUid="{mainItem.data.uid}">
                 {mainItem.title}
               </f:link.page>
             </f:else>
           </f:if>
           <f:if condition="{mainItem.children} && {mainItem.active}">
             <ul class="nav flex-column ps-2">
-              <f:for each="{mainItem.children}" as="mainChild">
-                <f:render section="submenu" arguments="{mainChild: mainChild}"/>
+              <f:for as="mainChild" each="{mainItem.children}">
+                <f:render arguments="{mainChild: mainChild}" section="submenu"/>
               </f:for>
             </ul>
           </f:if>
@@ -39,15 +39,15 @@
         </strong>
       </f:then>
       <f:else>
-        <f:link.page pageUid="{mainChild.data.uid}" class="nav-link{f:if(condition:mainChild.active, then:' active')}{f:if(condition:mainChild.hasSubpages, then:' sub')}">
+        <f:link.page class="nav-link{f:if(condition:mainChild.active, then:' active')}{f:if(condition:mainChild.hasSubpages, then:' sub')}" pageUid="{mainChild.data.uid}">
           {mainChild.title}
         </f:link.page>
       </f:else>
     </f:if>
     <f:if condition="{mainChild.children}">
       <ul class="list-unstyled ps-3" id="menu-{mainChild.data.uid}">
-        <f:for each="{mainChild.children}" as="mainChild" iteration="i">
-          <f:render section="submenu" arguments="{mainChild: mainChild}"/>
+        <f:for as="mainChild" each="{mainChild.children}" iteration="i">
+          <f:render arguments="{mainChild: mainChild}" section="submenu"/>
         </f:for>
       </ul>
     </f:if>

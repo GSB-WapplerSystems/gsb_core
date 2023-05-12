@@ -1,20 +1,10 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
-<f:if condition="{animationSettings}">
-    <f:then>
-        <f:asset.script identifier="aosJS"
-                        src="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos-3.0.0-beta-6.min.js"/>
-        <f:asset.script identifier="aosJS">
-            AOS.init();
-        </f:asset.script>
-        <f:asset.css href="EXT:content_animations/Resources/Public/JavaScript/Vendor/AOS/aos.css" identifier="aosCSS"/>
-    </f:then>
-</f:if>
 
-<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} gallery {data.gallery_layout} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.gallery_textcolor, then: ' gallery-text-white')}{f:if(condition: data.gallery_bg, then: ' gallery-bg-dark')}"{f:if(condition: animationSettings, then:' {animationSettings -> f:format.raw()}')}>
+<div class="frame frame-{data.frame_class} frame-type-{data.CType} gallery {data.gallery_layout} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.gallery_textcolor, then: ' gallery-text-white')}{f:if(condition: data.gallery_bg, then: ' gallery-bg-dark')}" id="c{data.uid}">
 
 <div class="gallery-content">
     <f:if condition="{data.header}">
-        <f:render partial="Header/All" arguments="{_all}"/>
+        <f:render arguments="{_all}" partial="Header/All"/>
     </f:if>
 
     <f:if condition="{data.bodytext}">
@@ -26,15 +16,15 @@
     <f:if condition="{data.gallery_layout} == 'gallery-single'">
         <div class="gallery-image row list-unstyled" id="gallery-single-{data.uid}">
             <div class="col-12 pb-3 pt-3">
-                <a href="#" class="popup" data-bs-toggle="modal" data-bs-target="#galleryModal-{data.uid}" role="button">
+                <a class="popup" data-bs-target="#galleryModal-{data.uid}" data-bs-toggle="modal" href="#" role="button">
                     <figure class="image">
                         <f:link.typolink parameter="{data_gallery_file.0.properties.link}"
                                          title="{data_gallery_file.0.properties.link.title}">
                             <f:alias map="{gsb:format.json.decode(json: data_gallery_file.0.properties.crop)}">
-                              <picture data-aspectratio-xl="{default.selectedRatio}"
-                                       data-aspectratio-lg="{large.selectedRatio}"
+                              <picture data-aspectratio-lg="{large.selectedRatio}"
                                        data-aspectratio-md="{medium.selectedRatio}"
                                        data-aspectratio-sm="{small.selectedRatio}"
+                                       data-aspectratio-xl="{default.selectedRatio}"
                                        data-aspectratio-xs="{xsmall.selectedRatio}">
                                   <source
                                       media="(min-width: 1220px)"
@@ -103,10 +93,10 @@
 
     <f:if condition="{data.gallery_layout} == 'gallery-tiles'">
         <ul class="gallery-image row list-unstyled" id="gallery-tiles-{data.uid}">
-            <f:for each="{data_gallery_file}" as="file" iteration="i">
-                <li data-count="{i.index}" class="col-6 col-md-4 col-lg-3 pb-3 pt-3">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal-{data.uid}" role="button">
-                        <f:render section="GallerySingle" arguments="{_all}"/>
+            <f:for as="file" each="{data_gallery_file}" iteration="i">
+                <li class="col-6 col-md-4 col-lg-3 pb-3 pt-3" data-count="{i.index}">
+                    <a data-bs-target="#galleryModal-{data.uid}" data-bs-toggle="modal" href="#" role="button">
+                        <f:render arguments="{_all}" section="GallerySingle"/>
                     </a>
                 </li>
             </f:for>
@@ -116,10 +106,10 @@
     <f:if condition="{data.gallery_layout} == 'gallery-slider'">
         <div class="swiper swiper-slide-col-4 swiper-gallery">
             <ul class="swiper-wrapper gallery-image list-unstyled" id="gallery-slider-{data.uid}">
-                <f:for each="{data_gallery_file}" as="file" iteration="i">
-                    <li data-count="{i.index}" class="swiper-slide">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal-{data.uid}" role="button">
-                            <f:render section="GallerySlide" arguments="{_all}"/>
+                <f:for as="file" each="{data_gallery_file}" iteration="i">
+                    <li class="swiper-slide" data-count="{i.index}">
+                        <a data-bs-target="#galleryModal-{data.uid}" data-bs-toggle="modal" href="#" role="button">
+                            <f:render arguments="{_all}" section="GallerySlide"/>
                         </a>
                     </li>
                 </f:for>
@@ -132,7 +122,7 @@
         </div>
     </f:if>
 
-    <div class="modal fade" id="galleryModal-{data.uid}" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="galleryModal-{data.uid}" tabindex="-1">
         <div class="modal-dialog modal-fullscreen" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -142,7 +132,7 @@
                                 <h3 class="modal-title h3" id="modalLabel-{data.uid}">{data.header}</h3>
                             </div>
                             <div class="col-2 close text-end">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}">
+                                <button class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}" type="button">
                                     <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span>
                                 </button>
                             </div>
@@ -150,19 +140,19 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <div id="galleryCarousel-{data.uid}" class="carousel carousel-dark slide carousel-fade" data-bs-pause="true" data-bs-ride="false" data-bs-interval="false">
+                    <div class="carousel carousel-dark slide carousel-fade" data-bs-interval="false" data-bs-pause="true" data-bs-ride="false" id="galleryCarousel-{data.uid}">
                         <ul class="carousel-inner list-unstyled">
-                            <f:for each="{data_gallery_file}" as="file" iteration="iterator">
+                            <f:for as="file" each="{data_gallery_file}" iteration="iterator">
                                 <f:if condition="{iterator.index} == 0">
                                     <f:then>
                                         <li class="carousel-item active">
-                                            <f:render section="GalleryOriginal" arguments="{_all}"/>
+                                            <f:render arguments="{_all}" section="GalleryOriginal"/>
                                             <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
                                         </li>
                                     </f:then>
                                     <f:else>
                                         <li class="carousel-item">
-                                            <f:render section="GalleryOriginal" arguments="{_all}"/>
+                                            <f:render arguments="{_all}" section="GalleryOriginal"/>
                                             <p class="carousel-iterator ">{iterator.cycle} {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_of')} {iterator.total}</p>
                                         </li>
                                     </f:else>
@@ -174,18 +164,18 @@
                         <nav aria-label="Galerie Navigation">
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="carousel-control-prev" href="#galleryCarousel-{data.uid}" role="button"
-                                       data-bs-slide="prev"
+                                    <a class="carousel-control-prev" data-bs-slide="prev" href="#galleryCarousel-{data.uid}"
+                                       role="button"
                                        title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                                         <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_previous')}</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="carousel-control-next" href="#galleryCarousel-{data.uid}" role="button"
-                                       data-bs-slide="next"
+                                    <a class="carousel-control-next" data-bs-slide="next" href="#galleryCarousel-{data.uid}"
+                                       role="button"
                                        title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span aria-hidden="true" class="carousel-control-next-icon"></span>
                                         <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_next')}</span>
                                     </a>
                                 </li>
@@ -201,13 +191,13 @@
 
 <f:section name="GallerySingle">
     <picture data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xl="1:1" data-aspectratio-xs="1:1">
-        <f:image src="{file.properties.uid}" maxWidth="600" maxHeight="600" width="600c" height="600c" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" height="600c" loading="lazy" maxHeight="600" maxWidth="600" src="{file.properties.uid}" treatIdAsReference="1" width="600c" />
     </picture>
 </f:section>
 
 <f:section name="GallerySlide">
     <picture data-aspectratio-lg="16:9" data-aspectratio-md="16:9" data-aspectratio-sm="16:9" data-aspectratio-xl="16:9" data-aspectratio-xs="16:9">
-        <f:image class="figure-img img-fluid" cropVariant="default" maxWidth="600" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" src="{file.properties.uid}" treatIdAsReference="1" loading="lazy"/>
+        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" loading="lazy" maxWidth="600" src="{file.properties.uid}" treatIdAsReference="1"/>
     </picture>
 </f:section>
 
@@ -240,6 +230,6 @@
 
 <f:if condition="{data.gallery_layout} == 'gallery-slider'">
     <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
-    <f:asset.css identifier="swiperCSS" href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css"/>
+    <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
 </f:if>
 </html>

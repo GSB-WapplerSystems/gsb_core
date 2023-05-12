@@ -1,70 +1,70 @@
-# Load default processing options
 imports:
-  - { resource: 'EXT:gsb_core/Configuration/RTE/Processing.yaml' }
-  - { resource: 'EXT:gsb_core/Configuration/RTE/Editor/Base.yaml' }
-  - { resource: 'EXT:gsb_core/Configuration/RTE/Editor/Plugins.yaml' }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
 
-# Add configuration for the editor
-# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
 editor:
+  externalPlugins:
   config:
-    toolbar:
-      items:
-        - clipboard
-        - '|'
-        - undo
-        - redo
-        - '|'
-        - style
-        - heading
-        # grouping separator
-        - '|'
-        - bold
-        - italic
-        - underline
-        - subscript
-        - superscript
-        - softhyphen
-        - '|'
-        - bulletedList
-        - numberedList
-        - blockQuote
-        - alignment
-        - '|'
-        - findAndReplace
-        - link
-        - '|'
-        - removeFormat
-        - undo
-        - redo
-        - '|'
-        - specialCharacters
-        - horizontalLine
-        - sourceEditing
+    contentsCss: ""
 
     heading:
       options:
         - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading1', view: 'h1', title: 'Heading 1' }
         - { model: 'heading2', view: 'h2', title: 'Heading 2' }
         - { model: 'heading3', view: 'h3', title: 'Heading 3' }
         - { model: 'heading4', view: 'h4', title: 'Heading 4' }
         - { model: 'heading5', view: 'h5', title: 'Heading 5' }
         - { model: 'heading6', view: 'h6', title: 'Heading 6' }
-        - { model: 'formatted', view: 'pre', title: 'Pre-Formatted Text' }
 
-    style:
-      definitions:
-        - { name: "Lead", element: "p", classes: [ 'lead' ] }
-        - { name: "Button Primary", element: "a", classes: [ 'btn btn-primary' ] }
-        - { name: "Small", element: "small", classes: [ 'small' ] }
-        - { name: "Muted", element: "span", classes: [ 'text-muted' ] }
+    stylesSet:
+      - { name: "Paragraph: Kicker", element: "p", attributes: { 'class': 'kicker' } }
+      - { name: "Paragraph: Subheader", element: "p", attributes: { 'class': 'lead' } }
 
-    alignment:
-      options:
-        - { name: 'left', className: 'text-start' }
-        - { name: 'center', className: 'text-center' }
-        - { name: 'right', className: 'text-end' }
-        - { name: 'justify', className: 'text-justify' }
+      - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
+      - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
+      - { name: "Button: Tertiary", element: "a", attributes: { 'class': 'btn btn-tertiary' } }
+
+      - { name: "Link: Internal", element: "a", attributes: { 'class': 'internal-link' } }
+      - { name: "Link: Download", element: "a", attributes: { 'class': 'download' } }
+      - { name: "Link: External", element: "a", attributes: { 'class': 'external-link' } }
+      - { name: "Link: Email", element: "a", attributes: { 'class': 'email' } }
+      - { name: "Link: Phone", element: "a", attributes: { 'class': 'phone' } }
+
+      - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
+      - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
+      - { name: "Text: Capitalized", element: "span", attributes: { 'class': 'text-capitalize' } }
+      - { name: "Text: Bold", element: "span", attributes: { 'class': 'bold' } }
+      - { name: "Text: Small", element: "span", attributes: { 'class': 'small' } }
+      - { name: "Text: Emphasize", element: "span", attributes: { 'class': 'em' } }
+      - { name: "Text: Hidden", element: "span", attributes: { 'class': 'hide visually-hidden' } }
+
+    toolbar:
+      items:
+        - heading
+        - style
+        - '|'
+        - bold
+        - italic
+        - link
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - alignment
+        - '|'
+        - undo
+        - redo
+        - removeFormat
+        - '|'
+        - insertTable
+        - superscript
+        - subscript
+        - horizontalLine
+        - '|'
+        - specialCharacters
+        - sourceEditing
+        - findAndReplace
 
     table:
       defaultHeadings: { rows: 1 }
@@ -74,3 +74,57 @@ editor:
         - mergeTableCells
         - tableProperties
         - tableCellProperties
+
+    language:
+      textPartLanguage:
+        - { title: 'Deutsch', languageCode: 'de' }
+        - { title: 'English', languageCode: 'en' }
+        - { title: 'Français', languageCode: 'fr' }
+
+    format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - autolink
+      - showblocks
+
+    removePlugins:
+      - image
+      - insertImage
+
+    removeButtons:
+      - Anchor
+      - Underline
+      - Strike
+
+classesAnchor:
+  page:
+    class: 'internal-link'
+    type: 'page'
+  folder:
+    class: 'internal-link'
+    type: 'folder'
+  file:
+    class: 'download'
+    type: 'file'
+  external:
+    class: 'external-link'
+    type: 'url'
+  mail:
+    class: 'email'
+    type: 'mail'
+  phone:
+    class: 'phone'
+    type: 'phone'
+
+buttons:
+  link:
+    properties:
+      class:
+        allowedClasses: 'internal-link, external-link, download, email, phone'

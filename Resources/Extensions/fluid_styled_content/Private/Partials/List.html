@@ -2,12 +2,12 @@
 
 <li class="teaser-item col-12 col-md-6 {f:if(condition:'{iterator.isFirst}', then:' first')}{f:if(condition:'{iterator.isLast}', then:' last')}">
     <div class="teaser-item-wrapper">
-        <f:for each="{page.files}" as="file" iteration="counter">
+        <f:for as="file" each="{page.files}" iteration="counter">
             <f:if condition="{counter.cycle} == 1">
                 <figure class="figure">
                     <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-                      <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                          <f:image src="{file.properties.uid}" maxWidth="650" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                      <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                          <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{file.properties.uid}" treatIdAsReference="1" />
                       </picture>
                     </f:alias>
                     <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">
@@ -30,16 +30,16 @@
             <f:if condition="{page.data.description} || {page.title}">
                 <h3>
                     <f:link.typolink parameter="{page.link}">
-                        <f:format.stripTags><f:format.raw><f:format.crop maxCharacters="30" respectWordBoundaries="true" respectHtml="true" append="...">{page.title}</f:format.crop></f:format.raw></f:format.stripTags>
+                        <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="30" respectHtml="true" respectWordBoundaries="true">{page.title}</f:format.crop></f:format.raw></f:format.stripTags>
                     </f:link.typolink>
                 </h3>
                 <p>
-                    <f:format.stripTags><f:format.raw><f:format.crop maxCharacters="150" respectWordBoundaries="true" respectHtml="true" append="...">{page.data.description}</f:format.crop></f:format.raw></f:format.stripTags>
+                    <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.description}</f:format.crop></f:format.raw></f:format.stripTags>
                 </p>
             </f:if>
 
             <p>
-                <f:link.typolink parameter="{page.link}" class="internal-link">
+                <f:link.typolink class="internal-link" parameter="{page.link}">
                     {f:translate(key: 'content.readmore', extensionName: 'gsb_core')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
                 </f:link.typolink>
             </p>

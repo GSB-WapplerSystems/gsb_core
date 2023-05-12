@@ -7,7 +7,7 @@
 
     <main class="main-wrapper" id="mainContent">
         <f:if condition="{data.is_siteroot} == 1">
-            <h1 class="visually-hidden">{f:translate(key: 'meta.homepage', extensionName: 'gsb_core')}: {f:cObject(typoscriptObjectPath: 'lib.headTitle')}</h1>
+            <h1 class="visually-hidden">{data.title}: {f:cObject(typoscriptObjectPath: 'lib.headTitle')}</h1>
         </f:if>
 
         <f:if condition="{top}">
@@ -24,7 +24,7 @@
                     <f:format.raw>{bottom}</f:format.raw>
                     <!--TYPO3SEARCH_end-->
                     <f:if condition="{data.socialmedia} != 1">
-                        <f:render partial="Footer.Share" arguments="{_all}"/>
+                        <f:render arguments="{_all}" partial="Footer.Share"/>
                     </f:if>
                 </div>
             </div>
