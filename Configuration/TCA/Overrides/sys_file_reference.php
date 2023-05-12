@@ -9,7 +9,6 @@ defined('TYPO3') || die();
 
     $newColumns = [
         'outline' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_reference.outline',
             'config' => [
                 'renderType' => 'checkboxToggle',
@@ -18,7 +17,6 @@ defined('TYPO3') || die();
             ],
         ],
         'allow_download' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_reference.allow_download',
             'config' => [
                 'renderType' => 'checkboxToggle',
@@ -29,31 +27,14 @@ defined('TYPO3') || die();
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_reference', $newColumns);
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-        'sys_file_reference',
-        'imageoverlayPalette',
-        'outline',
-        'after:title'
-    );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-        'sys_file_reference',
-        'videoOverlayPalette',
-        'outline',
-        'after:title'
-    );
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-        'sys_file_reference',
-        'filePalette',
-        'outline',
-        'after:title'
-    );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayPalette',
-        'allow_download',
-        'after:outline'
+        'outline,allow_download',
+        'after:title'
     );
+
+
 })();
