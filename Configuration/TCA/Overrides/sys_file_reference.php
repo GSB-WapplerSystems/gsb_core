@@ -28,13 +28,10 @@ defined('TYPO3') || die();
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_reference', $newColumns);
 
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayPalette',
         'outline,allow_download',
         'after:title'
     );
-
-
 })();
