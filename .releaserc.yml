@@ -9,7 +9,7 @@ plugins:
           type: package
         - path: Documentation/Release.md
           label: Release Notes
-        - url: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/blob/main/README.md
+        - url: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_core/-/blob/main/README.md
           label: README
 branches:
   - name: release
