@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of TYPO3 CMS-extension "gsb_template".
+ * This file is part of TYPO3 CMS-extension "gsb_core".
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -35,17 +35,17 @@ class ExtendSiteConfigurationRegistry
         $this->extendSiteConfigurations[$identifier][] = $extendSiteConfigurationPath;
     }
 
-    public function has(string $identifier): bool
-    {
-        return isset($this->extendSiteConfigurations[$identifier]);
-    }
-
     public function get(string $identifier): array
     {
         if ($this->has($identifier)) {
             return $this->extendSiteConfigurations[$identifier];
         }
         return [];
+    }
+
+    public function has(string $identifier): bool
+    {
+        return isset($this->extendSiteConfigurations[$identifier]);
     }
 
     public function getAll(): array
