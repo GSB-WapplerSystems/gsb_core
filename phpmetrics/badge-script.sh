@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # read the JSON file and extract the desired metric
-metric=$(jq '.packages[0].classes[0].methods[0].ccn' report.json)
+metric=$(jq '.packages[0].classes[0].methods[0].ccn' summary.json)
 
 # generate the SVG badge
 if [[ $metric -ge 10 ]]; then
