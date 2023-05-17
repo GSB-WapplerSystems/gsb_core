@@ -5,7 +5,8 @@
 <!-- PROJECT SHIELDS -->
 [![pipeline status](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/badges/main/pipeline.svg)][pipeline-url]
 [![Latest Release](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/badges/release.svg)][release-url]
-[![CCN](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/raw/main/badge.svg)](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/blob/main/report.json)
+[![LOC](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/raw/main/badge-loc.svg)](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/raw/main/badge-loc.svg)
+[![CCN](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/raw/main/badge-ccn.svg)](https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/raw/main/badge-ccn.svg)
 
 
 
