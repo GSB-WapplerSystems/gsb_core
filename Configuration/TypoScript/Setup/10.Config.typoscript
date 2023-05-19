@@ -27,7 +27,6 @@ config {
   htmlTag {
     attributes {
       class = no-js
-      data-bs-theme = light
     }
   }
   // Compression and concatenation of CSS and JS files

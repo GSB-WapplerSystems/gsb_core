@@ -45,6 +45,6 @@ defined('TYPO3') or die('Access denied.');
     }
 
     // Add default RTE configuration for the template package
-    // $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
+    $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
     // $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['gsb_frontend'] = 'EXT:gsb_frontend/Resources/Public/StyleSheets/ckeditor.css';
 })();
