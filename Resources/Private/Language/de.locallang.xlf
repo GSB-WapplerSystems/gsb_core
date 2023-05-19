@@ -352,8 +352,8 @@
 				<target>Nach oben springen</target>
 			</trans-unit>
 			<trans-unit id="is_accessible.0" resname="is_accessible.0">
-				<source>(nicht barrierefrei)</source>
-				<target>(not accessible)</target>
+				<source>(bot accessible)</source>
+				<target>(nicht barrierefrei)</target>
 			</trans-unit>
 		</body>
 	</file>
