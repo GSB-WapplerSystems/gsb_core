@@ -1,8 +1,8 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-  <a href="#galleryCarousel" role="button" data-bs-slide="next" title="Nächstes Bild">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+  <a data-bs-slide="next" href="#galleryCarousel" role="button" title="Nächstes Bild">
     <figure class="image">
-      <picture>
-        <f:image src="{file.uid}" treatIdAsReference="1" crop="false" maxWidth="1800" class="figure-img img-fluid"/>
+      <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}">
+        <f:image class="figure-img img-fluid" crop="false" maxWidth="1800" src="{file.uid}" treatIdAsReference="1"/>
       </picture>
       <f:if condition="{file.properties.caption}">
         <figcaption class="image-caption">
