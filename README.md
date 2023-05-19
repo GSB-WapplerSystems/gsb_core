@@ -131,7 +131,7 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    ```
 1. (Temporär) _assets-Ordner unter public löschen und einmal composer install ausführen
    ```sh
-   rm -R public/_assets && cp distribution-package-gsb_template/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-core/Resources/ -R
+   rm -R public/_assets && cp distribution-package-gsb_core/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-core/Resources/ -R
    ```
 
 
@@ -224,8 +224,8 @@ gsb@itzbund.de
 [jira-backlog-url]: https://jira.powerofone.de/jira/secure/RapidBoard.jspa?rapidView=2924&projectKey=ITZBUNDPHP&view=planning&issueLimit=100
 [jira-bug-url]: https://jira.powerofone.de/jira/secure/CreateIssue!default.jspa?pid=21636&issuetype=1
 [jira-story-url]: https://jira.powerofone.de/jira/secure/CreateIssue.jspa?pid=21636&issuetype=10
-[pipeline-url]: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/commits/main
-[release-url]: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/releases
+[pipeline-url]: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_core/-/commits/main
+[release-url]: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_core/-/releases
 [typo3-url]: https://get.typo3.org/
 [typo3-licenses-url]: https://typo3.org/project/licenses
 [typo3-requirements-url]: https://get.typo3.org/version/12#system-requirements

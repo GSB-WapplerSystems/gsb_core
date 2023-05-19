@@ -72,10 +72,10 @@ defined('TYPO3') || die();
                     ],
                 'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, header_kicker, header,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel, header_kicker, header,
             --palette--;;header_config,subheader,
         --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title,
-            --palette--;;image_config,
+            --palette--;;image_config, grid_bgcolor,
             --palette--;;link_config,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;

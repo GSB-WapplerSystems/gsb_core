@@ -22,7 +22,7 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
 
 /**
- * Contains a preview rendering for the page module of CType="textpic"
+ * Contains a preview rendering for the page module of CType="singleteaser"
  * @internal this is a concrete TYPO3 hook implementation and solely used for EXT:frontend and not part of TYPO3's Core API.
  */
 class SingleteaserPreviewRenderer extends StandardContentPreviewRenderer
@@ -35,9 +35,9 @@ class SingleteaserPreviewRenderer extends StandardContentPreviewRenderer
             if ($row['bodytext']) {
                 $content .= $this->linkEditContent('<div class="text-left">' . $row['bodytext'] . '</div>', $row);
             }
-            if ($row['tx_stage_file']) {
-                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'tx_stage_file'), $row);
-                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'tx_stage_file', $row);
+            if ($row['image']) {
+                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
+                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'image', $row);
                 if ($fileReferences !== []) {
                     // @codeCoverageIgnoreStart
                     $linkedContent = '';

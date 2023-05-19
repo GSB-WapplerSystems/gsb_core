@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of TYPO3 CMS-extension "gsb_template".
+ * This file is part of TYPO3 CMS-extension "gsb_core".
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -84,7 +84,7 @@ final class AddTypoScriptFromSitePackageEvent
         $fakeRow = [
             'uid' => $highestUid + 1,
             'pid' => $siteRootPageId,
-            'title' => 'Site extension include EXT:' . $package->getPackageKey() . ' by EXT:gsb_template',
+            'title' => 'Site extension include EXT:' . $package->getPackageKey() . ' by EXT:gsb_core',
             'root' => 1,
             'clear' => 3,
             'include_static_file' => null,

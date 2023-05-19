@@ -16,7 +16,7 @@ such as blindness or other impairments.
 Here too, the theme is simplified development for people with disabilities.
 
 ### The path to be able to develop
-1. Go to the level of the **gsb_template/Build** folder
+1. Go to the level of the **gsb_core/Build** folder
 2. Install node js
    ```sh
    npm install
