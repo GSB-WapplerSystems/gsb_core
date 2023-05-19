@@ -1,7 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
-	<f:debug>{files}</f:debug>
 	<f:if condition="{files}">
 		<div class="upload-files">
 			<ul class="ce-uploads list-unstyled">
@@ -20,7 +19,6 @@
 											<a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
 											<f:media file="{file}" width="150" class="figure-img img-fluid" alt="{file.properties.alternative}" />
 											</a>
-											<f:debug>{file}</f:debug>
 										</f:then>
 										<f:else>
 											<img class="figure-img img-fluid" src="{f:uri.resource(path: 'Icons/{file.extension}.svg', extensionName: 'frontend')}" alt="" loading="lazy">
@@ -48,6 +46,5 @@
 			</ul>
 		</div>
 	</f:if>
-
 </f:section>
 </html>
