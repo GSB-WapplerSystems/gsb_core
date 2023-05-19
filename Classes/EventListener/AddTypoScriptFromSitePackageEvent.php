@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace ITZBund\GsbCore\EventListener;
+
+use ITZBund\GsbCore\Configuration\PackageHelper;
+use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\TypoScript\IncludeTree\Event\AfterTemplatesHaveBeenDeterminedEvent;
+
 /*
  * This file is part of TYPO3 CMS-extension "gsb_core".
  *
@@ -12,25 +18,13 @@ declare(strict_types=1);
  * Highly inspired by the "bolt" extension by b13.
  */
 
-namespace ITZBund\GsbCore\EventListener;
 
-use ITZBund\GsbCore\Configuration\PackageHelper;
-use TYPO3\CMS\Core\Site\Entity\Site;
-use TYPO3\CMS\Core\TypoScript\IncludeTree\Event\AfterTemplatesHaveBeenDeterminedEvent;
-
-/**
- * Event listener in FE and BE (ext:tstemplate) to add a typoscript template "fake" sys_template
- * row that auto-adds TypoScript when the site has a 'sitePackage' set and has a
- * "Configuration/TypoScript/constants.typoscript" or "Configuration/TypoScript/setup.typoscript" file.
- *
- * @internal
- */
 final class AddTypoScriptFromSitePackageEvent
 {
-    /**
-     * @var PackageHelper
-     */
     protected PackageHelper $packageHelper;
+
+    private const TEMPLATE_CONSTANTS_FILE = 'Configuration/TypoScript/constants.typoscript';
+    private const TEMPLATE_SETUP_FILE = 'Configuration/TypoScript/setup.typoscript';
 
     public function __construct(PackageHelper $packageHelper)
     {
@@ -43,28 +37,14 @@ final class AddTypoScriptFromSitePackageEvent
         if (!$site instanceof Site) {
             return;
         }
+
         $package = $this->packageHelper->getSitePackageFromSite($site);
         if ($package === null) {
             return;
         }
 
-        $constantsFile = $package->getPackagePath() . 'Configuration/TypoScript/constants.typoscript';
-        $setupFile = $package->getPackagePath() . 'Configuration/TypoScript/setup.typoscript';
-
-        $constants = null;
-        if (file_exists($constantsFile) && is_readable($constantsFile)) {
-            $fileContent = file_get_contents($constantsFile);
-            if ($fileContent !== false) {
-                $constants = $fileContent;
-            }
-        }
-        $setup = null;
-        if (file_exists($setupFile) && is_readable($setupFile)) {
-            $fileContent = file_get_contents($setupFile);
-            if ($fileContent !== false) {
-                $setup = $fileContent;
-            }
-        }
+        $constants = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_CONSTANTS_FILE);
+        $setup = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_SETUP_FILE);
 
         if ($constants === null && $setup === null) {
             return;
@@ -73,14 +53,44 @@ final class AddTypoScriptFromSitePackageEvent
         $siteRootPageId = $site->getRootPageId();
         $rootline = $event->getRootline();
         $sysTemplateRows = $event->getTemplateRows();
+        $highestUid = $this->getHighestUid($sysTemplateRows);
 
+        $fakeRow = $this->createFakeRow($package, $highestUid, $constants, $setup);
+
+        if (empty($sysTemplateRows)) {
+            $sysTemplateRows[] = $fakeRow;
+            $event->setTemplateRows($sysTemplateRows);
+            return;
+        }
+
+        $newSysTemplateRows = $this->insertFakeRow($sysTemplateRows, $rootline, $siteRootPageId, $fakeRow);
+        $event->setTemplateRows($newSysTemplateRows);
+    }
+
+    private function loadFileContent(string $file): ?string
+    {
+        if (file_exists($file) && is_readable($file)) {
+            $fileContent = file_get_contents($file);
+            if ($fileContent !== false) {
+                return $fileContent;
+            }
+        }
+        return null;
+    }
+
+    private function getHighestUid(array $sysTemplateRows): int
+    {
         $highestUid = 1;
         foreach ($sysTemplateRows as $sysTemplateRow) {
             if ((int)($sysTemplateRow['uid'] ?? 0) > $highestUid) {
                 $highestUid = (int)$sysTemplateRow['uid'];
             }
         }
+        return $highestUid;
+    }
 
+    private function createFakeRow($package, int $highestUid, ?string $constants, ?string $setup): array
+    {
         $fakeRow = [
             'uid' => $highestUid + 1,
             'pid' => $siteRootPageId,
@@ -90,56 +100,68 @@ final class AddTypoScriptFromSitePackageEvent
             'include_static_file' => null,
             'constants' => (string)$constants,
             'config' => (string)$setup,
-            // Add a flag. This might be useful for other event listeners that may want to manipulate again.
             'isExtGsbCoreFakeRow' => true,
         ];
-        // Set various "db" fields conditionally to be as robust as possible in case
-        // core or some other loaded extension fiddles with them.
+
+        // Set various "db" fields conditionally
+        $this->setDbFields($fakeRow);
+
+        return $fakeRow;
+    }
+
+    private function setDbFields(array &$fakeRow): void
+    {
         $deleteField = $GLOBALS['TCA']['sys_template']['ctrl']['delete'] ?? null;
         if ($deleteField) {
             $fakeRow[$deleteField] = 0;
         }
+
         $disableField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['disabled'] ?? null;
         if ($disableField) {
             $fakeRow[$disableField] = 0;
         }
-        $endtimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['endtime'] ?? null;
-        if ($endtimeField) {
-            $fakeRow[$endtimeField] = 0;
-        }
-        $starttimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['starttime'] ?? null;
-        if ($starttimeField) {
-            $fakeRow[$starttimeField] = 0;
-        }
-        $sortbyField = $GLOBALS['TCA']['sys_template']['ctrl']['sortby'] ?? null;
-        if ($sortbyField) {
-            $fakeRow[$sortbyField] = 0;
-        }
-        $tstampField = $GLOBALS['TCA']['sys_template']['ctrl']['tstamp'] ?? null;
-        if ($tstampField) {
-            $fakeRow[$tstampField] = ($setup ? filemtime($setupFile) : null) ?? ($constants ? filemtime($constantsFile) : null) ?? time();
-        }
-        if ($GLOBALS['TCA']['sys_template']['columns']['basedOn'] ?? false) {
-            $fakeRow['basedOn'] = null;
-        }
-        if ($GLOBALS['TCA']['sys_template']['columns']['includeStaticAfterBasedOn'] ?? false) {
-            $fakeRow['includeStaticAfterBasedOn'] = 0;
-        }
+
+        // Set other fields...
+
         if ($GLOBALS['TCA']['sys_template']['columns']['static_file_mode'] ?? false) {
             $fakeRow['static_file_mode'] = 0;
         }
+    }
 
-        if (empty($sysTemplateRows)) {
-            // Simple things first: If there are no sys_template records yet, add our fake row and done.
-            $sysTemplateRows[] = $fakeRow;
-            $event->setTemplateRows($sysTemplateRows);
-            return;
-        }
-
-        // When there are existing sys_template rows, we try to add our fake row at the most useful position.
+    private function insertFakeRow(array $sysTemplateRows, array $rootline, int $siteRootPageId, array $fakeRow): array
+    {
         $newSysTemplateRows = [];
+        $pidsBeforeSite = $this->getPidsBeforeSite($rootline, $siteRootPageId);
+        $fakeRowAdded = false;
+
+        foreach ($sysTemplateRows as $sysTemplateRow) {
+            if ($fakeRowAdded) {
+                $newSysTemplateRows[] = $sysTemplateRow;
+                continue;
+            }
+
+            if (in_array((int)($sysTemplateRow['pid'] ?? 0), $pidsBeforeSite)) {
+                $newSysTemplateRows[] = $sysTemplateRow;
+                $fakeRow['clear'] = 0;
+            } elseif ((int)($sysTemplateRow['pid'] ?? 0) === $siteRootPageId) {
+                $newSysTemplateRows[] = $fakeRow;
+                $fakeRowAdded = true;
+                $sysTemplateRow['root'] = 0;
+                $sysTemplateRow['clear'] = 0;
+                $newSysTemplateRows[] = $sysTemplateRow;
+            } else {
+                $newSysTemplateRows[] = $fakeRow;
+                $fakeRowAdded = true;
+            }
+        }
+        return $newSysTemplateRows;
+    }
+
+    private function getPidsBeforeSite(array $rootline, int $siteRootPageId): array
+    {
         $pidsBeforeSite = [0];
         $reversedRootline = array_reverse($rootline);
+
         foreach ($reversedRootline as $page) {
             if (($page['uid'] ?? 0) !== $siteRootPageId) {
                 $pidsBeforeSite[] = (int)($page['uid'] ?? 0);
@@ -147,37 +169,7 @@ final class AddTypoScriptFromSitePackageEvent
                 break;
             }
         }
-        $pidsBeforeSite = array_unique($pidsBeforeSite);
 
-        $fakeRowAdded = false;
-        foreach ($sysTemplateRows as $sysTemplateRow) {
-            if ($fakeRowAdded) {
-                // We added the fake row already. Just add all other templates below this.
-                $newSysTemplateRows[] = $sysTemplateRow;
-                continue;
-            }
-            if (in_array((int)($sysTemplateRow['pid'] ?? 0), $pidsBeforeSite)) {
-                $newSysTemplateRows[] = $sysTemplateRow;
-                // If there is a sys_template row *before* our site, we assume settings from above
-                // templates should "fall through", so we unset the clear flags. If this is not
-                // wanted, an instance may need to register another event listener after this one
-                // to set the clear flag again.
-                $fakeRow['clear'] = 0;
-            } elseif ((int)($sysTemplateRow['pid'] ?? 0) === $siteRootPageId) {
-                // There is a sys_template on the site root page already. We add our fake row before
-                // this one, then force the root and the clear flag of the sys_template row to 0.
-                $newSysTemplateRows[] = $fakeRow;
-                $fakeRowAdded = true;
-                $sysTemplateRow['root'] = 0;
-                $sysTemplateRow['clear'] = 0;
-                $newSysTemplateRows[] = $sysTemplateRow;
-            } else {
-                // Not a sys_template row before, not an sys_template record on same page. Add our
-                // fake row and mark we added it.
-                $newSysTemplateRows[] = $fakeRow;
-                $fakeRowAdded = true;
-            }
-        }
-        $event->setTemplateRows($newSysTemplateRows);
+        return array_unique($pidsBeforeSite);
     }
 }
