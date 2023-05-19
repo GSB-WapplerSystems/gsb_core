@@ -32,7 +32,14 @@
                         <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
                     </f:then>
                     <f:else>
-                        <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
+                        <f:if condition="{link}">
+                            <f:then>
+                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
+                            </f:else>
+                        </f:if>
                     </f:else>
                 </f:if>
 			</h3>

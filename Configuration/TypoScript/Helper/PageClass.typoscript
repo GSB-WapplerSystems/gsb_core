@@ -12,7 +12,7 @@ lib.page.class {
   // Language
   20 = TEXT
   20 {
-    data = sitelanguage:hreflang
+    data = sitelanguage:iso-639-1
     noTrimWrap = | lang-||
   }
   // Backend layout
