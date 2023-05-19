@@ -694,7 +694,7 @@
 				<source>Allow download</source>
 				<target>Download erlauben</target>
 			</trans-unit>
-			<trans-unit id="sys_file_metadata.is_accessible" resname="sys_file_metadata.is_accessible">
+			<trans-unit id="sys_file_metadata.is_accessible.label" resname="sys_file_metadata.is_accessible.label">
 				<source>File is accessible</source>
 				<target>Datei ist Barrierefrei</target>
 			</trans-unit>
