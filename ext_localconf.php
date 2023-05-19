@@ -22,8 +22,7 @@ defined('TYPO3') or die('Access denied.');
     /***************
      * Define TypoScript as content rendering template
      */
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
-    $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/ContentElement/';
+    // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
 
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
@@ -46,5 +45,6 @@ defined('TYPO3') or die('Access denied.');
     }
 
     // Add default RTE configuration for the template package
-    //$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
+    // $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
+    // $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['gsb_frontend'] = 'EXT:gsb_frontend/Resources/Public/StyleSheets/ckeditor.css';
 })();

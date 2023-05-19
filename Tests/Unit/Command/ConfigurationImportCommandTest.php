@@ -24,7 +24,7 @@ class ConfigurationImportCommandTest extends Unit
         $command = new ConfigurationImportCommand($packageManager, $yamlFileLoader);
 
         $package = $this->createStub(\TYPO3\CMS\Core\Package\Package::class);
-        $package->method('getPackageKey')->willReturn('gsb_template');
+        $package->method('getPackageKey')->willReturn('gsb_core');
         $package->method('getPackagePath')->willReturn('/var/www/html/vendor/itzbund/gsb-core/');
 
         $packageManager->method('getActivePackages')->willReturn([$package]);
@@ -33,7 +33,7 @@ class ConfigurationImportCommandTest extends Unit
         $commandTester->execute([]);
 
         $output = $commandTester->getDisplay();
-        self::assertStringContainsString('Importing configuration for package gsb_template', $output);
+        self::assertStringContainsString('Importing configuration for package gsb_core', $output);
         // Add more assertions as needed
     }
 }

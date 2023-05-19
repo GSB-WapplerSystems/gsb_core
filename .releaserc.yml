@@ -4,14 +4,14 @@ plugins:
   - - "@semantic-release/gitlab"
     - gitlabUrl: https://git.gsb-itzbund.de
       assets:
-        - path: gsb-distribution.zip
-          label: GSB Distribution (zip)
+        - path: gsb-core.zip
+          label: GSB Core (zip)
           type: package
         - path: Documentation/Release.md
           label: Release Notes
         - path: phpmetrics/*
           label: php Metriken
-        - url: https://git.gsb-itzbund.de/gsb11/distribution-package-gsb_template/-/blob/main/README.md
+        - url: https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/blob/main/README.md
           label: README
 branches:
   - name: release
