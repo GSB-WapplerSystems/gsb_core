@@ -10,7 +10,7 @@ defined('TYPO3') || die();
     $newColumns = [
         'is_accessible' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata.is_accessible',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata.is_accessible.label',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata.is_accessible.description',
             'config' => [
                 'renderType' => 'checkboxToggle',

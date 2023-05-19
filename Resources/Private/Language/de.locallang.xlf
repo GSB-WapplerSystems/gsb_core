@@ -351,6 +351,10 @@
 				<source>Jump to top</source>
 				<target>Nach oben springen</target>
 			</trans-unit>
+			<trans-unit id="is_accessible.0" resname="is_accessible.0">
+				<source>(bot accessible)</source>
+				<target>(nicht barrierefrei)</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
