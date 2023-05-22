@@ -55,9 +55,9 @@
 				<source>Log in</source>
 				<target>Anmelden</target>
 			</trans-unit>
-			<trans-unit id="header.servicemenu" resname="header.servicemenu" approved="yes">
-				<source>Service menu</source>
-				<target>Servicemenü</target>
+			<trans-unit id="header.servicenavigation" resname="header.servicenavigation" approved="yes">
+				<source>Service navigation</source>
+				<target>Service-Navigation</target>
 			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
