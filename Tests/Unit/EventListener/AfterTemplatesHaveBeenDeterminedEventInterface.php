@@ -16,5 +16,4 @@ interface AfterTemplatesHaveBeenDeterminedEventInterface
     public function getTemplateRows(): array;
 
     public function getPidsBeforeSite(): array;
-
 }

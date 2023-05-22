@@ -2,8 +2,8 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\EventListener;
 
-use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Site\Entity\Site;
+
 interface SiteConfigurationLocatorInterface
 {
     /**

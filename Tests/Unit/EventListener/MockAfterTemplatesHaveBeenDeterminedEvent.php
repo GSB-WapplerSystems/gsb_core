@@ -5,7 +5,6 @@ namespace ITZBund\GsbCore\Tests\Unit\EventListener;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Site\Entity\Site;
 
-
 class MockAfterTemplatesHaveBeenDeterminedEvent implements AfterTemplatesHaveBeenDeterminedEventInterface
 {
     private array $rootline;

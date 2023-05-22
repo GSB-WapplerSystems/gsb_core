@@ -1,17 +1,14 @@
 <?php
+
 namespace ITZBund\GsbCore\Tests\Unit\EventListener;
 
-use Codeception\Test\Unit;
-use ITZBund\GsbCore\EventListener\ExtendsSiteConfigurationEvent;
-use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
 use ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator;
+use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
+use ITZBund\GsbCore\EventListener\ExtendsSiteConfigurationEvent;
 use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationLoadedEvent;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 use TYPO3\CMS\Core\Package\Package;
 use TYPO3\CMS\Core\Package\PackageManager;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class ExtendsSiteConfigurationEventTest extends UnitTestCase
@@ -36,21 +33,16 @@ class ExtendsSiteConfigurationEventTest extends UnitTestCase
         $packageManager = $this->createMock(PackageManager::class);
         $packageManager->method('getActivePackages')->willReturn([$package1]); // Set the return value for getActivePackages
 
-
-
         $locator = new ExtendSiteConfigurationLocator($packageManager);
         $this->registry = new ExtendSiteConfigurationRegistry($locator);
         $this->eventListener = new ExtendsSiteConfigurationEvent($this->registry);
-
     }
 
     protected function tearDown(): void
     {
         parent::tearDown();
         $this->resetSingletonInstances = true;
-
     }
-
 
     public function testInvokeWithSiteConfigExtends()
     {
@@ -64,17 +56,15 @@ class ExtendsSiteConfigurationEventTest extends UnitTestCase
         $mockedLoader = $this->getMockBuilder(YamlFileLoader::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $mockedLoader->expects($this->any())
+        $mockedLoader->expects(self::any())
             ->method('load')
             ->willReturn(['extended' => 'config from ' . $configFilePath]);
-
-
 
         $this->eventListener->__invoke($event);
 
         // Assert that the configuration has been extended
         $expectedConfiguration = array_merge($siteConfiguration, ['extended' => 'config from ' . $configFilePath]);
-        $this->assertEquals($expectedConfiguration, $event->getConfiguration());
+        self::assertEquals($expectedConfiguration, $event->getConfiguration());
     }
 
     public function testInvokeWithoutSiteConfigExtends()
@@ -87,8 +77,7 @@ class ExtendsSiteConfigurationEventTest extends UnitTestCase
         $this->eventListener->__invoke($event);
 
         // Assert that the configuration remains unchanged
-        $this->assertEquals($siteConfiguration, $event->getConfiguration());
+        self::assertEquals($siteConfiguration, $event->getConfiguration());
         $this->resetSingletonInstances = true;
-
     }
 }

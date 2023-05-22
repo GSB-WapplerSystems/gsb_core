@@ -128,6 +128,4 @@ class AddTypoScriptFromSitePackageEvent
         }
         return $newSysTemplateRows;
     }
-
-
 }

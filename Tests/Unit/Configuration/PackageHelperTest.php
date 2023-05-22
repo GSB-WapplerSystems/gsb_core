@@ -4,7 +4,6 @@ namespace ITZBund\GsbCore\Tests\Unit\Configuration;
 
 use Codeception\Test\Unit;
 use ITZBund\GsbCore\Configuration\PackageHelper;
-use TYPO3\CMS\Core\Package\Exception\UnknownPackageException;
 use TYPO3\CMS\Core\Package\PackageInterface;
 use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -33,8 +32,6 @@ class PackageHelperTest extends Unit
         return $site;
     }
 
-
-
     public function testGetSitePackageFromSiteWithUnknownPackageKey(): void
     {
         $packageKey = 'unknown_package';
@@ -45,12 +42,11 @@ class PackageHelperTest extends Unit
         $packageHelper = new PackageHelper($packageManager, $this->createMock(SiteFinder::class));
         $result = $packageHelper->getSitePackageFromSite($site);
 
-        $this->assertNull($result);
+        self::assertNull($result);
         $site = $this->createMockSite(['' => $packageKey]);
         $site->method('getConfiguration')->willReturn([]);
         $result = $packageHelper->getSitePackageFromSite($site);
-        $this->assertNull($result);
-
+        self::assertNull($result);
 
         $packageKey = 'unknown_package';
         $packageManager = $this->createMock(PackageManager::class);
@@ -59,9 +55,7 @@ class PackageHelperTest extends Unit
         $packageHelper = new PackageHelper($packageManager, $this->createMock(SiteFinder::class));
         $result = $packageHelper->getSitePackageFromSite($site);
 
-        $this->assertNull($result);
-
-
+        self::assertNull($result);
     }
 
     public function testGetSiteListForSiteModule(): void
@@ -92,7 +86,7 @@ class PackageHelperTest extends Unit
             [$packageKey3, $packageKey3],
         ];
 
-        $this->assertSame($expectedItems, $fieldDefinition['items']);
+        self::assertSame($expectedItems, $fieldDefinition['items']);
 
         $fieldDefinition = [
             'items' => [['foo', 'foo'], ['bar', 'bar']],
@@ -111,16 +105,15 @@ class PackageHelperTest extends Unit
             [$packageKey3, $packageKey3],
         ];
 
-        $this->assertSame($expectedItems, $fieldDefinition['items']);
+        self::assertSame($expectedItems, $fieldDefinition['items']);
     }
-
 
     public function testIsSitePackageWithSitePackageKey(): void
     {
         $packageKey = 'site_extension';
         $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
         $result = $packageHelper->isSitePackage($packageKey);
-        $this->assertTrue($result);
+        self::assertTrue($result);
     }
 
     public function testIsSitePackageWithGsbCorePackageKey(): void
@@ -128,7 +121,7 @@ class PackageHelperTest extends Unit
         $packageKey = 'gsb_core';
         $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
         $result = $packageHelper->isSitePackage($packageKey);
-        $this->assertTrue($result);
+        self::assertTrue($result);
     }
 
     public function testIsSitePackageWithNonSitePackageKey(): void
@@ -136,6 +129,6 @@ class PackageHelperTest extends Unit
         $packageKey = 'other_extension';
         $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
         $result = $packageHelper->isSitePackage($packageKey);
-        $this->assertFalse($result);
+        self::assertFalse($result);
     }
 }

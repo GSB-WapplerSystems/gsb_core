@@ -5,23 +5,14 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Tests\Unit\Command;
 
 use Codeception\Test\Unit;
-use Doctrine\DBAL\Driver\Connection;
 use ITZBund\GsbCore\Command\ConfigurationImportCommand;
-use PHPUnit\Framework\MockObject\MockObject;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\CommandTester;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
-use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Package\Package;
 use TYPO3\CMS\Core\Package\PackageManager;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 
 class ConfigurationImportCommandTest extends Unit
 {
-
     public function testExecute(): void
     {
         // Mock the package manager and yaml file loader
@@ -73,7 +64,6 @@ class ConfigurationImportCommandTest extends Unit
         // Assert the expected output
         $output = $commandTester->getDisplay();
         self::assertStringContainsString('', $output);
-
     }
 
     public function testDetermineTable(): void
@@ -101,5 +91,4 @@ class ConfigurationImportCommandTest extends Unit
         $table3 = $reflectionMethod->invoke($command, '/path/to/Other');
         self::assertSame('', $table3);
     }
-
 }
