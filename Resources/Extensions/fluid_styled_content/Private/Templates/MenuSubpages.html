@@ -24,21 +24,16 @@
                                 <div class="teaser-content ce-bodytext">
                                     <f:if condition="{page.data.description} || {page.title}">
                                         <h3>
-                                        <span>
-                                          <f:format.raw>{page.title}</f:format.raw>
-                                        </span>
+                                            <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
+                                                <span>
+                                                  <f:format.raw>{page.title}</f:format.raw>
+                                                </span>
+                                            </f:link.typolink>
                                         </h3>
                                         <p>
                                             <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.description}</f:format.crop></f:format.raw></f:format.stripTags>
                                         </p>
                                     </f:if>
-                                    <div class="ce-button ce-btn-left">
-                                        <f:link.typolink class="btn btn-primary stretched-link teaser-link" parameter="{page.link}">
-                                        <span>
-                                          {f:translate(key: 'content.readmore', extensionName: 'gsb_core')}<span class="visually-hidden">{f:if(condition:'{page.link}', then:': {page.title}')}</span>
-                                        </span>
-                                        </f:link.typolink>
-                                    </div>
                                 </div>
                             </div>
                         </article>
