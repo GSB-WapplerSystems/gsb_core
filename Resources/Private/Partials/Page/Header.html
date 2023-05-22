@@ -37,6 +37,7 @@
             </div>
             <f:if condition="{navType} == 0">
                 <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
+                    <h2 class="visually-hidden">{f:translate(key:'header.mainnavigation', extensionName:'gsb_core')}</h2>
                     <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
                 </nav>
             </f:if>

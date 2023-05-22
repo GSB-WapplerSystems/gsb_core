@@ -151,19 +151,25 @@
 					<source>Link position</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.0" resname="tt_content.tx_link_layout.I.0">
-					<source>Primary button</source>
+				<source>Primary button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.1" resname="tt_content.tx_link_layout.I.1">
-					<source>Secondary button</source>
+				<source>Secondary button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.2" resname="tt_content.tx_link_layout.I.2">
-					<source>Internal link</source>
+				<source>Tertiary button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3">
-					<source>External link</source>
+				<source>Quarterly button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4">
-					<source>Download</source>
+				<source>Internal link</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_link_layout.I.5" resname="tt_content.tx_link_layout.I.5">
+				<source>External link</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_link_layout.I.6" resname="tt_content.tx_link_layout.I.6">
+				<source>Download</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.0" resname="tt_content.tx_link_position.I.0">
 					<source>Middle</source>

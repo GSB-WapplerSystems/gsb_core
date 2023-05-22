@@ -1,7 +1,7 @@
 <f:if condition="{menuMainDesktop}">
     <ul class="list-unstyled d-flex mb-0" id="nav-desktop">
         <f:for as="mainItem" each="{menuMainDesktop}" iteration="iteration">
-            <li class="mainnav-desktop-item{f:if(condition:mainItem.data.shortcut, then:'shortcut')}">
+            <li class="mainnav-desktop-item{f:if(condition:'{mainItem.data.doktype} == 4', then:' shortcut')}">
                 <f:if condition="{mainItem.children}">
                     <f:then>
                         <f:if condition="{mainItem.children}">
@@ -44,7 +44,7 @@
 <f:section name="submenu">
     <f:if condition="{mainChild.children}">
         <f:then>
-            <li class="{f:if(condition:mainChild.data.shortcut, then:'shortcut')}">
+            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <a aria-controls="menu-desktop-{mainChild.data.uid}" aria-expanded="false" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" data-bs-target="#menu-desktop-{mainChild.data.uid}" data-bs-toggle="collapse" href="#" role="button">{mainChild.title}</a>
                 <ul class="list-unstyled collapse subnav-children" id="menu-desktop-{mainChild.data.uid}"{f:if(condition:mainItem.children, then:' data-bs-parent="#nav-desktop"')}>
                     <f:for as="mainChild" each="{mainChild.children}">
@@ -54,7 +54,7 @@
             </li>
         </f:then>
         <f:else>
-            <li class="{f:if(condition:mainChild.data.shortcut, then:'shortcut')}">
+            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <f:if condition="{mainChild.current}">
                     <f:then>
                         <f:link.page aria="{current: 'page'}" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">

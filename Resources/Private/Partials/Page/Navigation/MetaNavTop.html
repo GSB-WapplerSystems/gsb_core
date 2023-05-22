@@ -1,30 +1,30 @@
 <f:if condition="{menuMetaTop}">
-
-            <nav aria-label="Meta-Navigation" class="meta-item">
-                <ul class="metanav nav{f:if(condition: '{languagenavigation -> f:count()} > 1', then: ' flex-lg-nowrap justify-content-between justify-content-lg-end', else: ' justify-content-end')}">
-                    <f:if condition="{languagenavigation -> f:count()} > 1">
-                        <li class="nav-item">
-                            <f:render arguments="{languagenavigation: languagenavigation, site: site}" partial="Navigation/LanguageNavigation"/>
-                        </li>
+    <nav class="meta-item mb-3 mb-lg-0">
+        <h2 class="visually-hidden">{f:translate(key:'header.servicenavigation', extensionName:'gsb_core')}</h2>
+        <ul class="metanav nav{f:if(condition: '{languagenavigation -> f:count()} > 1', then: ' flex-lg-nowrap justify-content-between justify-content-lg-end', else: ' justify-content-end')}">
+            <f:if condition="{languagenavigation -> f:count()} > 1">
+                <li class="nav-item">
+                    <f:render arguments="{languagenavigation: languagenavigation, site: site}" partial="Navigation/LanguageNavigation"/>
+                </li>
+            </f:if>
+            <f:for as="mainItem" each="{menuMetaTop}" iteration="i">
+                <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
+                    <f:if condition="{mainItem.current}">
+                        <f:then>
+                            <f:link.page aria="{current: 'page'}"
+                                         class="nav-link {f:if(condition:mainItem.active, then:' current')}"
+                                         pageUid="{mainItem.data.uid}">
+                                <span>{mainItem.title}</span>
+                            </f:link.page>
+                        </f:then>
+                        <f:else>
+                            <f:link.page class="nav-link" pageUid="{mainItem.data.uid}">
+                                <span>{mainItem.title}</span>
+                            </f:link.page>
+                        </f:else>
                     </f:if>
-                    <f:for as="mainItem" each="{menuMetaTop}" iteration="i">
-                        <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
-                            <f:if condition="{mainItem.current}">
-                                <f:then>
-                                    <f:link.page aria="{current: 'page'}"
-                                                 class="nav-link {f:if(condition:mainItem.active, then:' current')}"
-                                                 pageUid="{mainItem.data.uid}">
-                                        <span>{mainItem.title}</span>
-                                    </f:link.page>
-                                </f:then>
-                                <f:else>
-                                    <f:link.page class="nav-link" pageUid="{mainItem.data.uid}">
-                                        <span>{mainItem.title}</span>
-                                    </f:link.page>
-                                </f:else>
-                            </f:if>
-                        </li>
-                    </f:for>
-                </ul>
-            </nav>
+                </li>
+            </f:for>
+        </ul>
+    </nav>
 </f:if>
