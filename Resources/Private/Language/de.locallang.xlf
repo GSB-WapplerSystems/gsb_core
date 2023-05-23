@@ -287,6 +287,10 @@
 				<source>Download</source>
 				<target>Herunterladen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now" approved="yes">
+				<source>Download now</source>
+				<target>Jetzt herunterladen</target>
+			</trans-unit>
 			<trans-unit id="gallery.close" resname="gallery.close" approved="yes">
 				<source>Close</source>
 				<target>Schließen</target>
