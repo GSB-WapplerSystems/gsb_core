@@ -24,6 +24,18 @@ defined('TYPO3') || die();
                 'default' => 0,
             ],
         ],
+        'is_accessible' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata.is_accessible.label',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata.is_accessible.description',
+            'config' => [
+                'renderType' => 'checkboxToggle',
+                'type' => 'check',
+                'placeholder' => '__row|uid_local|metadata|is_accessible',
+                'mode' => 'useOrOverridePlaceholder',
+                'default' => null,
+            ],
+        ],
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_reference', $newColumns);
@@ -32,6 +44,13 @@ defined('TYPO3') || die();
         'sys_file_reference',
         'imageoverlayPalette',
         'outline,allow_download',
+        'after:title'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'sys_file_reference',
+        'basicoverlayPalette',
+        'is_accessible',
         'after:title'
     );
 })();

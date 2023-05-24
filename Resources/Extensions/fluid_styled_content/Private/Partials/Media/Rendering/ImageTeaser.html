@@ -2,14 +2,14 @@
 <f:if condition="{data.imagewidth}">
     <f:then>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <picture class="{f:if(condition:'{file.properties.outline} == 1', then:' outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: data.imagewidth, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
@@ -25,22 +25,22 @@
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 700, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 700, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 700, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 700, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
@@ -53,64 +53,64 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <f:image src="{file.properties.uid}" maxWidth="{data.imagewidth}" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
+                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="{data.imagewidth}" src="{file.properties.uid}" treatIdAsReference="1"/>
             </picture>
         </f:alias>
     </f:then>
     <f:else>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1200, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1200, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 700, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 768px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 650, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'medium', maxWidth: 700, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 700, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 576px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 550, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'small', maxWidth: 700, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 600, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 0)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 600, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <f:image src="{file.properties.uid}" maxWidth="1920" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy"/>
+                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="1920" src="{file.properties.uid}" treatIdAsReference="1"/>
             </picture>
         </f:alias>
     </f:else>

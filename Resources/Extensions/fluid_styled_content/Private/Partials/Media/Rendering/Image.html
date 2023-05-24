@@ -2,14 +2,14 @@
 <f:if condition="{dimensions.width}">
     <f:then>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: dimensions.width, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
@@ -59,25 +59,25 @@
     </f:then>
     <f:else>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+            <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
-                    media="(min-width: 1220px)"
+                    media="(min-width: 1200px)"
                     srcset="{f:uri.image(image: file, cropVariant: 'default', maxWidth: 1920, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'webp')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1200, fileExtension: 'webp')}"
                     type="image/webp"
                 >
                 <source
                     media="(min-width: 992px)"
-                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1220, fileExtension: 'jpg')}"
+                    srcset="{f:uri.image(image: file, cropVariant: 'large', maxWidth: 1200, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
                 <source

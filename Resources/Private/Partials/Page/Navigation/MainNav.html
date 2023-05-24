@@ -3,7 +3,7 @@
         <div class="container-md">
             <ul class="main-menu list-unstyled row">
                 <f:for as="mainItem" each="{menuMain}">
-                    <li class="col">
+                    <li class="col{f:if(condition:'{mainItem.data.doktype} == 4', then:' shortcut')}">
                         <f:if condition="{mainItem.children}">
                             <f:then>
                                 <f:if condition="{mainItem.children}">
@@ -40,7 +40,7 @@
 <f:section name="submenu">
     <f:if condition="{mainChild.children}">
         <f:then>
-            <li>
+            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <a aria-controls="menu-{mainChild.data.uid}" aria-expanded="false" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" data-bs-target="#menu-{mainChild.data.uid}" data-bs-toggle="collapse" href="#" role="button">{mainChild.title}</a>
                 <ul class="list-unstyled collapse" id="menu-{mainChild.data.uid}">
                     <f:for as="mainChild" each="{mainChild.children}">
@@ -50,7 +50,7 @@
             </li>
         </f:then>
         <f:else>
-            <li>
+            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <f:if condition="{mainChild.current}">
                     <f:then>
                         <f:link.page aria="{current: 'page'}" class="sub dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">

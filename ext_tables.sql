@@ -8,6 +8,7 @@ CREATE TABLE sys_file_reference
 	longdesc varchar(1024) DEFAULT '' NOT NULL,
 	outline tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	allow_download tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    is_accessible tinyint(4) unsigned DEFAULT '0' NOT NULL,
 );
 
 CREATE TABLE tt_content

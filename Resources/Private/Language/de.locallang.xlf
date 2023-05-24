@@ -55,9 +55,9 @@
 				<source>Log in</source>
 				<target>Anmelden</target>
 			</trans-unit>
-			<trans-unit id="header.servicemenu" resname="header.servicemenu" approved="yes">
-				<source>Service menu</source>
-				<target>Servicemenü</target>
+			<trans-unit id="header.servicenavigation" resname="header.servicenavigation" approved="yes">
+				<source>Service navigation</source>
+				<target>Service-Navigation</target>
 			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
@@ -287,6 +287,10 @@
 				<source>Download</source>
 				<target>Herunterladen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now" approved="yes">
+				<source>Download now</source>
+				<target>Jetzt herunterladen</target>
+			</trans-unit>
 			<trans-unit id="gallery.close" resname="gallery.close" approved="yes">
 				<source>Close</source>
 				<target>Schließen</target>
@@ -350,6 +354,10 @@
 			<trans-unit id="tt_content.jumptotop" resname="tt_content.jumptotop" approved="yes">
 				<source>Jump to top</source>
 				<target>Nach oben springen</target>
+			</trans-unit>
+			<trans-unit id="is_accessible.0" resname="is_accessible.0">
+				<source>(bot accessible)</source>
+				<target>(nicht barrierefrei)</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -9,6 +9,8 @@ plugins:
           type: package
         - path: Documentation/Release.md
           label: Release Notes
+        - path: phpmetrics/*
+          label: php Metriken
         - url: https://git.gsb-itzbund.de/gsb11/extensions/gsb_core/-/blob/main/README.md
           label: README
 branches:

@@ -208,14 +208,22 @@
 				<target>Secondary Button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.2" resname="tt_content.tx_link_layout.I.2" approved="yes">
+				<source>Tertiary button</source>
+				<target>Tertiary Button</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3" approved="yes">
+				<source>Quarterly button</source>
+				<target>Quarterly Button</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4" approved="yes">
 				<source>Internal link</source>
 				<target>Interner Link</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3" approved="yes">
+			<trans-unit id="tt_content.tx_link_layout.I.5" resname="tt_content.tx_link_layout.I.5" approved="yes">
 				<source>External link</source>
 				<target>Externer Link</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4" approved="yes">
+			<trans-unit id="tt_content.tx_link_layout.I.6" resname="tt_content.tx_link_layout.I.6" approved="yes">
 				<source>Download</source>
 				<target>Download</target>
 			</trans-unit>
@@ -694,7 +702,7 @@
 				<source>Allow download</source>
 				<target>Download erlauben</target>
 			</trans-unit>
-			<trans-unit id="sys_file_metadata.is_accessible" resname="sys_file_metadata.is_accessible">
+			<trans-unit id="sys_file_metadata.is_accessible.label" resname="sys_file_metadata.is_accessible.label">
 				<source>File is accessible</source>
 				<target>Datei ist Barrierefrei</target>
 			</trans-unit>

@@ -42,8 +42,8 @@
 			<trans-unit id="header.login" resname="header.login">
 				<source>Log in</source>
 			</trans-unit>
-			<trans-unit id="header.servicemenu" resname="header.servicemenu">
-				<source>Service menu</source>
+			<trans-unit id="header.servicenavigation" resname="header.servicenavigation">
+				<source>Service navigation</source>
 			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation">
 				<source>Main navigation</source>
@@ -217,6 +217,9 @@
 			<trans-unit id="gallery.download" resname="gallery.download">
 				<source>Download</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now">
+				<source>Download now</source>
+			</trans-unit>
 			<trans-unit id="gallery.close" resname="gallery.close">
 				<source>Close</source>
 			</trans-unit>
@@ -261,6 +264,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.images.open" resname="tt_content.images.open">
 				<source>Open image gallery</source>
+			</trans-unit>
+			<trans-unit id="is_accessible.0" resname="is_accessible.0">
+				<source>(not accessible)</source>
 			</trans-unit>
 		</body>
     </file>

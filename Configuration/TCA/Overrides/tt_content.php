@@ -55,16 +55,26 @@ defined('TYPO3') || die();
                                 3 =>
                                     [
                                         0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.2',
-                                        1 => 'internal-link',
+                                        1 => 'btn btn-tertiary',
                                     ],
                                 4 =>
                                     [
                                         0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
-                                        1 => 'external-link',
+                                        1 => 'btn btn-quarterly',
                                     ],
                                 5 =>
                                     [
                                         0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.4',
+                                        1 => 'internal-link',
+                                    ],
+                                6 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.5',
+                                        1 => 'external-link',
+                                    ],
+                                7 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.6',
                                         1 => 'download',
                                     ],
                             ],
