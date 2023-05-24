@@ -9,7 +9,7 @@
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
                         <article class="frame frame-type-gsb_singleteaser frame-layout-0">
-                            <div class="teaser textpic topcenter" style="background-color:#e6f5fb">
+                            <div class="teaser textpic topcenter" style="background-color:#f3f7fb">
                                 <f:for as="file" each="{page.files}" iteration="counter">
                                     <f:if condition="{counter.cycle} == 1">
                                         <div class="teaser-image ce-gallery">
@@ -31,7 +31,7 @@
                                             </f:link.typolink>
                                         </h3>
                                         <p>
-                                            <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.description}</f:format.crop></f:format.raw></f:format.stripTags>
+                                            <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.teaser_description}</f:format.crop></f:format.raw></f:format.stripTags>
                                         </p>
                                     </f:if>
                                 </div>

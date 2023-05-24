@@ -4,7 +4,7 @@
 
 <f:section name="Main">
     <f:if condition="{children_101}">
-        <{data.grid_type} class="row row-cols-1 row-cols-md-2 row-cols-lg-{data.grid_columns}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
+        <{data.grid_type} class="row row-cols-1 row-cols-md-2{f:if(condition:'{data.grid_columns} == 4', then:' row-cols-lg-3', else: ' row-cols-lg-2')} row-cols-xl-{data.grid_columns}{f:if(condition:'{data.grid_type} == ul', then:' list-unstyled')}">
             <f:if condition="{children_101}">
                 <f:for each="{children_101}" as="child">
                     <{f:if(condition:'{data.grid_type} == ul', then:'li', else:'div')} class="col">
