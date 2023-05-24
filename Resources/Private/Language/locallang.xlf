@@ -217,6 +217,9 @@
 			<trans-unit id="gallery.download" resname="gallery.download">
 				<source>Download</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now">
+				<source>Download now</source>
+			</trans-unit>
 			<trans-unit id="gallery.close" resname="gallery.close">
 				<source>Close</source>
 			</trans-unit>
