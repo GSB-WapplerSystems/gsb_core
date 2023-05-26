@@ -64,7 +64,6 @@ final class AddTypoScriptFromSitePackageEvent
             }
         }
 
-
         $fakeRow = $this->getFakeRow($highestUid, $site, $package, $constants, $setup);
 
         if (empty($sysTemplateRows)) {
@@ -88,7 +87,10 @@ final class AddTypoScriptFromSitePackageEvent
         return null;
     }
 
-
+    /**
+     * @param array<string> $fakeRow
+     * @return void
+     */
     private function setDbFields(array &$fakeRow): void
     {
         $fields = [
@@ -125,12 +127,12 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param mixed $highestUid
+     * @param int $highestUid
      * @param Site $site
      * @param \TYPO3\CMS\Core\Package\PackageInterface $package
      * @param string|null $constants
      * @param string|null $setup
-     * @return array
+     * @return array<string,int>
      */
     public function getFakeRow(int $highestUid, Site $site, \TYPO3\CMS\Core\Package\PackageInterface $package, ?string $constants, ?string $setup): array
     {
@@ -156,7 +158,7 @@ final class AddTypoScriptFromSitePackageEvent
      * @param array $sysTemplateRows
      * @param array $fakeRow
      * @param Site $site
-     * @return array
+     * @return array<string,int>
      */
     public function getSysTemplateRows(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event, array $sysTemplateRows, array $fakeRow, Site $site): array
     {
