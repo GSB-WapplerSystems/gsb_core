@@ -18,7 +18,7 @@ use ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator;
 class ExtendSiteConfigurationRegistry
 {
     /**
-     * @var array[]
+     * @var array<string, string[]>
      */
     protected array $extendSiteConfigurations = [];
 
@@ -35,6 +35,10 @@ class ExtendSiteConfigurationRegistry
         $this->extendSiteConfigurations[$identifier][] = $extendSiteConfigurationPath;
     }
 
+    /**
+     * @param string $identifier
+     * @return array<string>
+     */
     public function get(string $identifier): array
     {
         if ($this->has($identifier)) {
@@ -48,6 +52,9 @@ class ExtendSiteConfigurationRegistry
         return isset($this->extendSiteConfigurations[$identifier]);
     }
 
+    /**
+     * @return array<string, string[]>
+     */
     public function getAll(): array
     {
         return $this->extendSiteConfigurations;

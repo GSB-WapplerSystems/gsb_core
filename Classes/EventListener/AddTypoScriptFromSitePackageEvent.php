@@ -89,7 +89,6 @@ final class AddTypoScriptFromSitePackageEvent
 
     /**
      * @param array<string> $fakeRow
-     * @return void
      */
     private function setDbFields(array &$fakeRow): void
     {
@@ -155,8 +154,8 @@ final class AddTypoScriptFromSitePackageEvent
 
     /**
      * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
-     * @param array $sysTemplateRows
-     * @param array $fakeRow
+     * @param array<string> $sysTemplateRows
+     * @param array<string, int> $fakeRow
      * @param Site $site
      * @return array<int<0,max>,mixed>
      */
@@ -167,35 +166,44 @@ final class AddTypoScriptFromSitePackageEvent
         $fakeRowAdded = false;
 
         foreach ($sysTemplateRows as $sysTemplateRow) {
-            if ($fakeRowAdded) {
-                // We added the fake row already. Just add all other templates below this.
-                $newSysTemplateRows[] = $sysTemplateRow;
-                continue;
-            }
-
-            $sysTemplateRowPid = (int)($sysTemplateRow['pid'] ?? 0);
-            if (in_array($sysTemplateRowPid, $pidsBeforeSite)) {
-                $newSysTemplateRows[] = $sysTemplateRow;
-                // If there is a sys_template row *before* our site, we assume settings from above
-                // templates should "fall through", so we unset the clear flags. If this is not
-                // wanted, an instance may need to register another event listener after this one
-                // to set the clear flag again.
-                $fakeRow['clear'] = 0;
-            } elseif ($sysTemplateRowPid === $site->getRootPageId()) {
-                // There is a sys_template on the site root page already. We add our fake row before
-                // this one, then force the root and the clear flag of the sys_template row to 0.
-                $newSysTemplateRows[] = $fakeRow;
-                $fakeRowAdded = true;
-                $sysTemplateRow['root'] = 0;
-                $sysTemplateRow['clear'] = 0;
-                $newSysTemplateRows[] = $sysTemplateRow;
-            } else {
-                // Not a sys_template row before, not an sys_template record on same page. Add our
-                // fake row and mark we added it.
-                $newSysTemplateRows[] = $fakeRow;
-                $fakeRowAdded = true;
-            }
+            list($newSysTemplateRows, $fakeRow, $fakeRowAdded) = $this->handleSysTemplateRow($sysTemplateRow, $fakeRow, $newSysTemplateRows, $pidsBeforeSite, $site, $fakeRowAdded);
         }
         return $newSysTemplateRows;
+    }
+
+    /**
+     * @param mixed $sysTemplateRow
+     * @param array<string, int> $fakeRow
+     * @param array<string> $newSysTemplateRows
+     * @param array<int> $pidsBeforeSite
+     * @param Site $site
+     * @param bool $fakeRowAdded
+     * @return array<int<0,max>,mixed>
+     */
+    private function handleSysTemplateRow(mixed $sysTemplateRow, array $fakeRow, array $newSysTemplateRows, array $pidsBeforeSite, Site $site, bool $fakeRowAdded): array
+    {
+        if ($fakeRowAdded) {
+            $newSysTemplateRows[] = $sysTemplateRow;
+            return [$newSysTemplateRows, $fakeRow, $fakeRowAdded];
+        }
+
+        $sysTemplateRowPid = (int)($sysTemplateRow['pid'] ?? 0);
+
+        if (in_array($sysTemplateRowPid, $pidsBeforeSite)) {
+            $newSysTemplateRows[] = $sysTemplateRow;
+            $fakeRow['clear'] = 0;
+            return [$newSysTemplateRows, $fakeRow, $fakeRowAdded];
+        }
+
+        if ($sysTemplateRowPid === $site->getRootPageId()) {
+            $newSysTemplateRows[] = $fakeRow;
+            $sysTemplateRow['root'] = 0;
+            $sysTemplateRow['clear'] = 0;
+            $newSysTemplateRows[] = $sysTemplateRow;
+            return [$newSysTemplateRows, $fakeRow, true];
+        }
+
+        $newSysTemplateRows[] = $fakeRow;
+        return [$newSysTemplateRows, $fakeRow, true];
     }
 }
