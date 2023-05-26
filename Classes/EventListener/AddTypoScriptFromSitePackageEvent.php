@@ -88,43 +88,40 @@ final class AddTypoScriptFromSitePackageEvent
         return null;
     }
 
+
     private function setDbFields(array &$fakeRow): void
     {
-        // Set various "db" fields conditionally to be as robust as possible in case
-        // core or some other loaded extension fiddles with them.
-        $deleteField = $GLOBALS['TCA']['sys_template']['ctrl']['delete'] ?? null;
-        if ($deleteField) {
-            $fakeRow[$deleteField] = 0;
+        $fields = [
+            ['sys_template', 'ctrl', 'delete'],
+            ['sys_template', 'ctrl', 'enablecolumns', 'disabled'],
+            ['sys_template', 'ctrl', 'enablecolumns', 'endtime'],
+            ['sys_template', 'ctrl', 'enablecolumns', 'starttime'],
+            ['sys_template', 'ctrl', 'sortby'],
+        ];
+
+        foreach ($fields as $fieldPath) {
+            $field = $GLOBALS['TCA'];
+            foreach ($fieldPath as $key) {
+                $field = $field[$key] ?? null;
+                if ($field === null) {
+                    break;
+                }
+            }
+            if ($field !== null) {
+                $fakeRow[$field] = 0;
+            }
         }
-        $disableField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['disabled'] ?? null;
-        if ($disableField) {
-            $fakeRow[$disableField] = 0;
+
+        $columnFields = ['basedOn', 'includeStaticAfterBasedOn', 'static_file_mode'];
+        foreach ($columnFields as $columnField) {
+            if ($GLOBALS['TCA']['sys_template']['columns'][$columnField] ?? false) {
+                $fakeRow[$columnField] = $columnField === 'basedOn' ? null : 0;
+            }
         }
-        $endtimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['endtime'] ?? null;
-        if ($endtimeField) {
-            $fakeRow[$endtimeField] = 0;
-        }
-        $starttimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['starttime'] ?? null;
-        if ($starttimeField) {
-            $fakeRow[$starttimeField] = 0;
-        }
-        $sortbyField = $GLOBALS['TCA']['sys_template']['ctrl']['sortby'] ?? null;
-        if ($sortbyField) {
-            $fakeRow[$sortbyField] = 0;
-        }
-        $tstampField = $GLOBALS['TCA']['sys_template']['ctrl']['tstamp'] ?? null;
-        /*if ($tstampField) {
+        /*$tstampField = $GLOBALS['TCA']['sys_template']['ctrl']['tstamp'] ?? null;
+        if ($tstampField) {
             $fakeRow[$tstampField] = ($setup ? filemtime($setupFile) : null) ?? ($constants ? filemtime($constantsFile) : null) ?? time();
         }*/
-        if ($GLOBALS['TCA']['sys_template']['columns']['basedOn'] ?? false) {
-            $fakeRow['basedOn'] = null;
-        }
-        if ($GLOBALS['TCA']['sys_template']['columns']['includeStaticAfterBasedOn'] ?? false) {
-            $fakeRow['includeStaticAfterBasedOn'] = 0;
-        }
-        if ($GLOBALS['TCA']['sys_template']['columns']['static_file_mode'] ?? false) {
-            $fakeRow['static_file_mode'] = 0;
-        }
     }
 
     /**
