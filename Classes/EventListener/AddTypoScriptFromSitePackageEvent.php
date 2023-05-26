@@ -56,16 +56,14 @@ final class AddTypoScriptFromSitePackageEvent
         }
 
         $sysTemplateRows = $event->getTemplateRows();
+
         $highestUid = 1;
-
-        $sysTemplateRows = array_map(function ($row) {
-            if (!isset($row['uid'])) {
-                $row['uid'] = 0;
+        foreach ($sysTemplateRows as $sysTemplateRow) {
+            if ((int)($sysTemplateRow['uid'] ?? 0) > $highestUid) {
+                $highestUid = (int)$sysTemplateRow['uid'];
             }
-            return $row;
-        }, $sysTemplateRows);
+        }
 
-        $highestUid = max(array_column($sysTemplateRows, 'uid') ?: [1]);
 
         $fakeRow = $this->getFakeRow($highestUid, $site, $package, $constants, $setup);
 
@@ -94,12 +92,39 @@ final class AddTypoScriptFromSitePackageEvent
     {
         // Set various "db" fields conditionally to be as robust as possible in case
         // core or some other loaded extension fiddles with them.
-        $GLOBALS['TCA']['sys_template']['ctrl']['delete'] && $fakeRow[$GLOBALS['TCA']['sys_template']['ctrl']['delete']] = 0;
-        $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['disabled'] && $fakeRow[$GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['disabled']] = 0;
-        $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['starttime'] && $fakeRow[$GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['starttime']] = 0;
-        $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['endtime'] && $fakeRow[$GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['endtime']] = 0;
-        $GLOBALS['TCA']['sys_template']['ctrl']['sortby'] && $fakeRow[$GLOBALS['TCA']['sys_template']['ctrl']['sortby']] = 0;
-        $GLOBALS['TCA']['sys_template']['columns']['static_file_mode'] && $fakeRow['static_file_mode'] = 0;
+        $deleteField = $GLOBALS['TCA']['sys_template']['ctrl']['delete'] ?? null;
+        if ($deleteField) {
+            $fakeRow[$deleteField] = 0;
+        }
+        $disableField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['disabled'] ?? null;
+        if ($disableField) {
+            $fakeRow[$disableField] = 0;
+        }
+        $endtimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['endtime'] ?? null;
+        if ($endtimeField) {
+            $fakeRow[$endtimeField] = 0;
+        }
+        $starttimeField = $GLOBALS['TCA']['sys_template']['ctrl']['enablecolumns']['starttime'] ?? null;
+        if ($starttimeField) {
+            $fakeRow[$starttimeField] = 0;
+        }
+        $sortbyField = $GLOBALS['TCA']['sys_template']['ctrl']['sortby'] ?? null;
+        if ($sortbyField) {
+            $fakeRow[$sortbyField] = 0;
+        }
+        $tstampField = $GLOBALS['TCA']['sys_template']['ctrl']['tstamp'] ?? null;
+        /*if ($tstampField) {
+            $fakeRow[$tstampField] = ($setup ? filemtime($setupFile) : null) ?? ($constants ? filemtime($constantsFile) : null) ?? time();
+        }*/
+        if ($GLOBALS['TCA']['sys_template']['columns']['basedOn'] ?? false) {
+            $fakeRow['basedOn'] = null;
+        }
+        if ($GLOBALS['TCA']['sys_template']['columns']['includeStaticAfterBasedOn'] ?? false) {
+            $fakeRow['includeStaticAfterBasedOn'] = 0;
+        }
+        if ($GLOBALS['TCA']['sys_template']['columns']['static_file_mode'] ?? false) {
+            $fakeRow['static_file_mode'] = 0;
+        }
     }
 
     /**
