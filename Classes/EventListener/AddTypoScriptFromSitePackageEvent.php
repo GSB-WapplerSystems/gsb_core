@@ -72,7 +72,6 @@ final class AddTypoScriptFromSitePackageEvent
     /**
      * @param array<array<string>> $sysTemplateRows
      */
-
     private function getHighestUid(array $sysTemplateRows): int
     {
         $highestUid = 1;
