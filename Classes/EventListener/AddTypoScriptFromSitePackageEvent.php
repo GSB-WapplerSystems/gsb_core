@@ -56,14 +56,7 @@ final class AddTypoScriptFromSitePackageEvent
         }
 
         $sysTemplateRows = $event->getTemplateRows();
-
-        $highestUid = 1;
-        foreach ($sysTemplateRows as $sysTemplateRow) {
-            if ((int)($sysTemplateRow['uid'] ?? 0) > $highestUid) {
-                $highestUid = (int)$sysTemplateRow['uid'];
-            }
-        }
-
+        $highestUid = $this->getHighestUid($sysTemplateRows);
         $fakeRow = $this->getFakeRow($highestUid, $site, $package, $constants, $setup);
 
         if (empty($sysTemplateRows)) {
@@ -74,6 +67,22 @@ final class AddTypoScriptFromSitePackageEvent
         $newSysTemplateRows = $this->getSysTemplateRows($event, $sysTemplateRows, $fakeRow, $site);
 
         $event->setTemplateRows($newSysTemplateRows);
+    }
+
+    /**
+     * @param array<array<string>> $sysTemplateRows
+     */
+
+    private function getHighestUid(array $sysTemplateRows): int
+    {
+        $highestUid = 1;
+        foreach ($sysTemplateRows as $sysTemplateRow) {
+            if ((int)($sysTemplateRow['uid'] ?? 0) > $highestUid) {
+                $highestUid = (int)$sysTemplateRow['uid'];
+            }
+        }
+
+        return $highestUid;
     }
 
     private function loadFileContent(string $file): ?string
