@@ -158,7 +158,7 @@ final class AddTypoScriptFromSitePackageEvent
      * @param array $sysTemplateRows
      * @param array $fakeRow
      * @param Site $site
-     * @return array<string,int>
+     * @return array<int<0,max>,mixed>
      */
     public function getSysTemplateRows(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event, array $sysTemplateRows, array $fakeRow, Site $site): array
     {
