@@ -6,21 +6,6 @@ parameters:
 			path: Classes/Command/ConfigurationImportCommand.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:get\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
-
-		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:getAll\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
-
-		-
-			message: "#^Property ITZBund\\\\GsbCore\\\\Configuration\\\\ExtendSiteConfigurationRegistry\\:\\:\\$extendSiteConfigurations type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Configuration/ExtendSiteConfigurationRegistry.php
-
-		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\Configuration\\\\PackageHelper\\:\\:getSiteListForSiteModule\\(\\) has parameter \\$fieldDefinition with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Configuration/PackageHelper.php
@@ -36,12 +21,13 @@ parameters:
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
 
 		-
-			message: "#^Only booleans are allowed in a ternary operator condition, string\\|null given\\.$#"
-			count: 2
-			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
+			message: "#^Casting to string something that's already string\\.$#"
+			count: 1
+			path: Classes/EventListener/ExtendsSiteConfigurationEvent.php
 
 		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
+
 

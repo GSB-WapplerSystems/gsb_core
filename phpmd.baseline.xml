@@ -1,15 +1,9 @@
 <?xml version="1.0"?>
 <phpmd-baseline>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/ConfigurationImportCommand.php"/>
-  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Command/ConfigurationImportCommand.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>
   <violation rule="PHPMD\Rule\Controversial\CamelCaseVariableName" file="Classes/Configuration/PackageHelper.php" method="getSitePackageFromSite"/>
-  <violation rule="PHPMD\Rule\CleanCode\ErrorControlOperator" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="__invoke"/>
-  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="__invoke"/>
-  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="__invoke"/>
-  <violation rule="PHPMD\Rule\Design\LongMethod" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="__invoke"/>
-  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="__invoke"/>
-  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php"/>
+  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="setDbFields"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
