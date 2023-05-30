@@ -7,6 +7,7 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
+    <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
