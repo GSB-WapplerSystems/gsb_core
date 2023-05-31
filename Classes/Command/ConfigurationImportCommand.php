@@ -86,24 +86,28 @@ class ConfigurationImportCommand extends Command
     {
         $mode = $config['mode'] ?? 'append';
         $conn = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
+
         if ($mode === 'replace') {
             $conn->truncate($table);
             $output->writeln('Emptied database table "' . $table . '"');
         }
+
         foreach ($config['entries'] ?? [] as $entry) {
-            if ($mode === 'update' && isset($entry['uid'])) {
-                $identifiers = ['uid' => $entry['uid']];
-                if ($conn->count('uid', $table, $identifiers) > 0) {
-                    $conn->update($table, $entry, $identifiers);
-                    $output->writeln('Updated (mode=update, entry has uid): ' . json_encode($entry) . ' to database table ' . $table);
-                } else {
-                    $conn->insert($table, $entry);
-                    $output->writeln('Added (mode=update, entry does not have uid): ' . json_encode($entry) . ' to database table ' . $table);
-                }
-            } else {
+            if ($mode !== 'update' || !isset($entry['uid'])) {
                 $conn->insert($table, $entry);
                 $output->writeln('Added ' . json_encode($entry) . ' to database table ' . $table);
+                continue;
             }
+
+            $identifiers = ['uid' => $entry['uid']];
+            if ($conn->count('uid', $table, $identifiers) === 0) {
+                $conn->insert($table, $entry);
+                $output->writeln('Added (mode=update, entry does not have uid): ' . json_encode($entry) . ' to database table ' . $table);
+                continue;
+            }
+
+            $conn->update($table, $entry, $identifiers);
+            $output->writeln('Updated (mode=update, entry has uid): ' . json_encode($entry) . ' to database table ' . $table);
         }
     }
 }
