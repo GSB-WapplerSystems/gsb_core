@@ -1,0 +1,68 @@
+mod.wizards.newContentElement.wizardItems.common {
+  elements {
+    gsb_banner {
+      iconIdentifier = tx_banner
+      title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.title
+      description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.description
+      tt_content_defValues {
+        CType = gsb_banner
+      }
+    }
+  }
+  show := addToList(gsb_banner)
+}
+
+TCEFORM {
+    tt_content {
+        tx_link_layout {
+            types {
+                gsb_banner {
+                    disabled = 1
+                }
+            }
+        }
+        tx_link_position {
+            types {
+                gsb_banner {
+                    disabled = 1
+                }
+            }
+        }
+        tx_header_style {
+            types {
+                gsb_banner {
+                    disabled = 0
+                }
+            }
+        }
+        frame_class {
+            types {
+                gsb_banner {
+                    disabled = 1
+                }
+            }
+        }
+        tx_header_inside {
+            types {
+                gsb_banner {
+                    disabled = 1
+                }
+            }
+        }
+        header_position {
+            types {
+                gsb_banner {
+                    disabled = 0
+                }
+            }
+        }
+        imageorient {
+            types {
+                gsb_banner {
+                    #remove 25 and 26 to get the left right option
+                    removeItems = 1,2,8,9,10,17,18
+                }
+            }
+        }
+    }
+}

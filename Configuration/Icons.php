@@ -11,6 +11,10 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Singleteaser.svg',
     ],
+    'tx_banner' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Banner.svg',
+    ],
     'tx_slider' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Slider.svg',

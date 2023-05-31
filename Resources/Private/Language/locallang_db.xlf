@@ -132,6 +132,12 @@
 			<trans-unit id="gsb_singleteaser.description" resname="gsb_singleteaser.description">
 				<source>Adds a teaser with headline, image, text and link element</source>
 			</trans-unit>
+			<trans-unit id="gsb_banner.title" resname="gsb_banner.title">
+				<source>Banner</source>
+			</trans-unit>
+			<trans-unit id="gsb_banner.description" resname="gsb_banner.description">
+				<source>Adds a banner element with optional image, link and background color</source>
+			</trans-unit>
 			<trans-unit id="gsb_slider.description" resname="gsb_slider.description">
 				<source>Container element for Slider</source>
 			</trans-unit>

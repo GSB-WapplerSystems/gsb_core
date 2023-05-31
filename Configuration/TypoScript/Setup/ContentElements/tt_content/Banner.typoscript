@@ -1,0 +1,21 @@
+tt_content.gsb_banner = FLUIDTEMPLATE
+tt_content.gsb_banner {
+  templateRootPaths {
+    200 = EXT:gsb_core/Resources/Private/Templates/Content
+  }
+  partialRootPaths {
+    200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+  }
+  templateName = Banner
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      if.isTrue.field = image
+      references {
+        fieldName = image
+        table = tt_content
+      }
+      as = files
+    }
+  }
+}
