@@ -220,8 +220,8 @@
 				<target>Tertiary Button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3" approved="yes">
-				<source>Quarterly button</source>
-				<target>Quarterly Button</target>
+				<source>Quaternary button</source>
+				<target>Quaternary Button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4" approved="yes">
 				<source>Internal link</source>

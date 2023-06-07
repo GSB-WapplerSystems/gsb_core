@@ -24,7 +24,7 @@ editor:
       - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
       - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
       - { name: "Button: Tertiary", element: "a", attributes: { 'class': 'btn btn-tertiary' } }
-      - { name: "Button: Quarterly", element: "a", attributes: { 'class': 'btn btn-quarterly' } }
+      - { name: "Button: Quaternary", element: "a", attributes: { 'class': 'btn btn-quaternary' } }
 
       - { name: "Link: Internal", element: "a", attributes: { 'class': 'internal-link' } }
       - { name: "Link: Download", element: "a", attributes: { 'class': 'download' } }
