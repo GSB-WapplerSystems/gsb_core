@@ -132,7 +132,7 @@
 				<target>Video</target>
 			</trans-unit>
 			<trans-unit id="video.video_description" resname="video.video_description" approved="yes">
-				<source>Puts a local or external youtube video on the page</source>
+				<source>Puts a local or external YouTube video on the page</source>
 				<target>Legt ein lokales Video oder ein externes YouTube Video an</target>
 			</trans-unit>
 			<trans-unit id="audio.audio_title" resname="audio.audio_title" approved="yes">
@@ -182,6 +182,14 @@
 			<trans-unit id="gsb_singleteaser.description" resname="gsb_singleteaser.description" approved="yes">
 				<source>Adds a teaser with headline, image, text and link element</source>
 				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
+			</trans-unit>
+			<trans-unit id="gsb_banner.title" resname="gsb_banner.title" approved="yes">
+				<source>Banner</source>
+				<target>Banner</target>
+			</trans-unit>
+			<trans-unit id="gsb_banner.description" resname="gsb_banner.description" approved="yes">
+				<source>Adds a banner element with optional image, link and background color</source>
+				<target>Fügt ein Banner Element mit optionalem Bild, Link und Hintergrundfarbe hinzu</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link" resname="tt_content.tx_link" approved="yes">
 				<source>Link</source>
