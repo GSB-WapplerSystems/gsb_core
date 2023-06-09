@@ -327,9 +327,25 @@
 				<source>Audio</source>
 				<target>Audio</target>
 			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch" approved="yes">
+				<source>Stage Type</source>
+				<target>Bühnen Typ</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_image" resname="stage.tx_stage_switch_image" approved="yes">
+				<source>Stage with image</source>
+				<target>Bühne mit Bild</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video" approved="yes">
+				<source>Stage with video</source>
+				<target>Bühne mit Video</target>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file" approved="yes">
-				<source>Stage Image/Video</source>
-				<target>Bühne Bild/Video</target>
+				<source>Stage Image</source>
+				<target>Bühne Bild</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video" approved="yes">
+				<source>Stage Video</source>
+				<target>Bühne Video</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg" approved="yes">
 				<source>Stage background</source>

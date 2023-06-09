@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\StagePreviewRenderer;
+use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -11,17 +12,67 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx_stage';
 
     $tempStageColumns = [
-        'tx_stage_file' =>
+        'tx_stage_switch' =>
+            [
+                'exclude' => 0,
+                'onChange' => 'reload',
+                'config' =>
+                    [
+                        'items' =>
+                            [
+                                0 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_image',
+                                        1 => '0',
+                                    ],
+                                1 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_video',
+                                        1 => '1',
+                                    ],
+                            ],
+                        'renderType' => 'selectSingle',
+                        'type' => 'select',
+                    ],
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch',
+            ],
+        'image' =>
+            [
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
+                'config' => [
+                    'type' => 'file',
+                    'maxitems' => 1,
+                    'allowed' => 'jpg,jpeg,svg,png,gif',
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                            ],
+                            AbstractFile::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                            ],
+                        ],
+                    ],
+                ],
+                'displayCond' => 'FIELD:tx_stage_switch:=:0',
+                'exclude' => '1',
+            ],
+        'tx_stage_video' =>
             [
                 'config' =>
                     [
                         'type' => 'file',
-                        'allowed' => 'png,jpg,jpeg,gif,svg,mp4',
-                        'maxitems' => '1',
-                        'minitems' => '0',
+                        'allowed' => 'mp4,webm,ogg',
+                        'maxitems' => 1,
+                        'minitems' => 0,
                     ],
+                'displayCond' => 'FIELD:tx_stage_switch:=:1',
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_video',
             ],
         'tx_stage_position' =>
             [
@@ -106,7 +157,7 @@ defined('TYPO3') || die();
             'showitem' => 'tx_stage_position,tx_stage_bg,tx_stage_bgcolor', 'canNotCollapse' => 1,
         ],
         'stagefile_config' => [
-            'showitem' => 'tx_stage_file,--linebreak--,bodytext', 'canNotCollapse' => 1,
+            'showitem' => 'tx_stage_switch,--linebreak--, tx_stage_video,--linebreak--,image,--linebreak--,video,--linebreak--,bodytext', 'canNotCollapse' => 1,
         ],
     ];
 
