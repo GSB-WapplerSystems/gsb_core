@@ -16,7 +16,7 @@
     <f:if condition="{data.header} || {data.bodytext}">
         <f:if condition="{data.header_layout} != 100">
             <div class="container stage-content-wrapper">
-                <div class="stage-content{f:if(condition: data.header_position, then: ' text-{data.header_position}')}">
+                <div class="stage-content{f:if(condition: data.header_position, then: ' text-{data.header_position}')} teaser">
                     <f:if condition="{data.header}">
                         <f:render arguments="{_all}" partial="Header/All"/>
                     </f:if>
@@ -27,7 +27,7 @@
                     </f:if>
                     <f:if condition="{data.tx_link}">
                         <p class="stage-link">
-                            <f:link.typolink class="{data.tx_link_layout} {data.tx_link_position}" parameter="{data.tx_link}">
+                            <f:link.typolink class="{data.tx_link_layout} {data.tx_link_position} stretched-link teaser-link" parameter="{data.tx_link}">
                                 {data.tx_link_text}
                                 <span class="visually-hidden">: {data.header}</span>
                             </f:link.typolink>
