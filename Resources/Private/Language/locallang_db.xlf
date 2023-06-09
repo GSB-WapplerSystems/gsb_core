@@ -166,7 +166,7 @@
 				<source>Tertiary button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3">
-				<source>Quarterly button</source>
+				<source>Quaternary button</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4">
 				<source>Internal link</source>

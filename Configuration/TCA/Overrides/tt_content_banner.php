@@ -48,13 +48,13 @@ defined('TYPO3') || die();
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $imageColumn);
 
-    $imagePalettes = [
-        'image_config' => [
+    $imageBannerPalettes = [
+        'image_banner_config' => [
             'showitem' => 'image,--linebreak--', 'canNotCollapse' => 1,
         ],
     ];
 
-    $GLOBALS['TCA']['tt_content']['palettes'] += $imagePalettes;
+    $GLOBALS['TCA']['tt_content']['palettes'] += $imageBannerPalettes;
 
     $bannerTypes = [
         'gsb_banner' =>
@@ -74,7 +74,7 @@ defined('TYPO3') || die();
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,header,
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
         --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.title,
-            --palette--;;image_config, grid_bgcolor, grid_light,
+            --palette--;;image_banner_config, grid_bgcolor, grid_light,
             --palette--;;link_config,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;

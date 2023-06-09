@@ -33,12 +33,12 @@ defined('TYPO3') || die();
                     'types' => [
                         '0' => [
                             'showitem' => '
-                                --palette--;;imageoverlayPalette,
+                                alternative,--linebreak--,crop,
                                 --palette--;;filePalette',
                         ],
                         AbstractFile::FILETYPE_IMAGE => [
                             'showitem' => '
-                                --palette--;;imageoverlayPalette,
+                                alternative,--linebreak--,crop,
                                 --palette--;;filePalette',
                         ],
                     ],

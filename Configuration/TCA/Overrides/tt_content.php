@@ -60,7 +60,7 @@ defined('TYPO3') || die();
                                 4 =>
                                     [
                                         0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
-                                        1 => 'btn btn-quarterly',
+                                        1 => 'btn btn-quaternary',
                                     ],
                                 5 =>
                                     [
