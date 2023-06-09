@@ -22,9 +22,9 @@ class VideoPreviewRenderer extends StandardContentPreviewRenderer
             if ($row['bodytext']) {
                 $content .= $this->linkEditContent('<div class="text-left">' . $row['bodytext'] . '</div>', $row);
             }
-            if ($row['tx_video_poster_image']) {
-                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'tx_video_poster_image'), $row);
-                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'tx_video_poster_image', $row);
+            if ($row['image']) {
+                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
+                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'image', $row);
                 if ($fileReferences !== []) {
                     // @codeCoverageIgnoreStart
                     $linkedContent = '';

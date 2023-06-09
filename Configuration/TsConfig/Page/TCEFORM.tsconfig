@@ -120,8 +120,15 @@ TCEFORM {
     imageborder {
       disabled = 1
     }
-    media.config.appearance.fileUploadAllowed = 0
+    media {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+        }
+      }
+    }
   }
+
   ## Default Image cropping
   sys_file_reference.crop.config.cropVariants {
     default {

@@ -5,11 +5,11 @@ tt_content.audio {
   templateName = Audio
   dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
   dataProcessing.10 {
-    if.isTrue.field = tx_audio_poster
+    if.isTrue.field = image_reduced
     references {
-      fieldName = tx_audio_poster
+      fieldName = image_reduced
       table = tt_content
     }
-    as = data_tx_audio_poster
+    as = files
   }
 }

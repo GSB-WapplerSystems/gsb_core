@@ -36,31 +36,6 @@ defined('TYPO3') || die();
                     ],
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch',
             ],
-        'image' =>
-            [
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
-                'config' => [
-                    'type' => 'file',
-                    'maxitems' => 1,
-                    'allowed' => 'jpg,jpeg,svg,png,gif',
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                            ],
-                            AbstractFile::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-                'displayCond' => 'FIELD:tx_stage_switch:=:0',
-                'exclude' => '1',
-            ],
         'tx_stage_video' =>
             [
                 'config' =>
@@ -174,6 +149,45 @@ defined('TYPO3') || die();
                                     [
                                         'richtextConfiguration' => 'default',
                                         'enableRichtext' => 1,
+                                    ],
+                            ],
+                        'image' =>
+                            [
+                                'config' =>
+                                    [
+                                        'maxitems' => 1,
+                                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                                        'overrideChildTca' => [
+                                            'columns' => [
+                                                'description' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'link' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'title' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'outline' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'allow_download' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                             ],
                     ],

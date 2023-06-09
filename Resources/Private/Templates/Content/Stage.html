@@ -1,10 +1,10 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <div class="frame frame-{data.frame_class} frame-type-{data.CType} stage {data.tx_stage_position} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.tx_stage_bg, then: ' stage-bg')}{f:if(condition: data.tx_stage_bgcolor, then: ' stage-bg-dark')}">
-    <f:if condition="{data_tx_stage_file}">
+    <f:if condition="{files}">
         <div class="stage-image">
-            <f:for as="file" each="{data_tx_stage_file}">
-                <f:render arguments="{_all}" partial="Media/Image"/>
+            <f:for as="file" each="{files}">
+                <f:render arguments="{_all}" partial="Media/Rendering/Image"/>
             </f:for>
         </div>
     </f:if>
@@ -27,7 +27,7 @@
                     </f:if>
                     <f:if condition="{data.tx_link}">
                         <p class="stage-link">
-                            <f:link.typolink parameter="{data.tx_link}" class="{data.tx_link_layout} {data.tx_link_position}">
+                            <f:link.typolink class="{data.tx_link_layout} {data.tx_link_position}" parameter="{data.tx_link}">
                                 {data.tx_link_text}
                                 <span class="visually-hidden">: {data.header}</span>
                             </f:link.typolink>

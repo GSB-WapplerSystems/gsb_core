@@ -22,32 +22,6 @@ defined('TYPO3') || die();
         ]
     );
 
-    $imageColumn = [
-        'image' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.image',
-            'config' => [
-                'type' => 'file',
-                'maxitems' => 1,
-                'allowed' => 'jpg,jpeg,svg,png,gif',
-                'overrideChildTca' => [
-                    'types' => [
-                        '0' => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                        ],
-                        AbstractFile::FILETYPE_IMAGE => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-    ];
-    ExtensionManagementUtility::addTCAcolumns('tt_content', $imageColumn);
-
     $imageBannerPalettes = [
         'image_banner_config' => [
             'showitem' => 'image,--linebreak--', 'canNotCollapse' => 1,
@@ -67,6 +41,45 @@ defined('TYPO3') || die();
                                     [
                                         'richtextConfiguration' => 'default',
                                         'enableRichtext' => 0,
+                                    ],
+                            ],
+                        'image' =>
+                            [
+                                'config' =>
+                                    [
+                                        'maxitems' => 1,
+                                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                                        'overrideChildTca' => [
+                                            'columns' => [
+                                                'description' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'link' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'title' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'outline' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                                'allow_download' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough'
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                             ],
                     ],

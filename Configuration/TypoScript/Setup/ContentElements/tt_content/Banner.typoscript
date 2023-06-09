@@ -10,9 +10,9 @@ tt_content.gsb_banner {
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
     10 {
-      if.isTrue.field = image
+      if.isTrue.field = tx_banner_image
       references {
-        fieldName = image
+        fieldName = tx_banner_image
         table = tt_content
       }
       as = files
