@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\StagePreviewRenderer;
-use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -161,29 +160,29 @@ defined('TYPO3') || die();
                                             'columns' => [
                                                 'description' => [
                                                     'config' => [
-                                                        'type' => 'passthrough'
+                                                        'type' => 'passthrough',
                                                     ],
                                                 ],
                                                 'link' => [
                                                     'config' => [
-                                                        'type' => 'passthrough'
+                                                        'type' => 'passthrough',
                                                     ],
                                                 ],
                                                 'title' => [
                                                     'config' => [
-                                                        'type' => 'passthrough'
+                                                        'type' => 'passthrough',
                                                     ],
                                                 ],
                                                 'outline' => [
                                                     'config' => [
                                                         'renderType' => 'passthrough',
-                                                        'type' => 'passthrough'
+                                                        'type' => 'passthrough',
                                                     ],
                                                 ],
                                                 'allow_download' => [
                                                     'config' => [
                                                         'renderType' => 'passthrough',
-                                                        'type' => 'passthrough'
+                                                        'type' => 'passthrough',
                                                     ],
                                                 ],
                                             ],
