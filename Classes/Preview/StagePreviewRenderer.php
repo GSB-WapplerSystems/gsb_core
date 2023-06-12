@@ -35,9 +35,9 @@ class StagePreviewRenderer extends StandardContentPreviewRenderer
             if ($row['bodytext']) {
                 $content .= $this->linkEditContent('<div class="text-left">' . $row['bodytext'] . '</div>', $row);
             }
-            if ($row['tx_stage_file']) {
-                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'tx_stage_file'), $row);
-                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'tx_stage_file', $row);
+            if ($row['image']) {
+                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
+                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'image', $row);
                 if ($fileReferences !== []) {
                     // @codeCoverageIgnoreStart
                     $linkedContent = '';

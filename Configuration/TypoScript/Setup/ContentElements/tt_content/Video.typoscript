@@ -7,12 +7,12 @@ tt_content.video {
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
     10 {
-      if.isTrue.field = tx_video_poster_image
+      if.isTrue.field = image
       references {
-        fieldName = tx_video_poster_image
+        fieldName = image
         table = tt_content
       }
-      as = data_tx_video_poster_image
+      as = files
     }
     20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
     20 {

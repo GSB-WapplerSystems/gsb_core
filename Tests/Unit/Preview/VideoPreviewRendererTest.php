@@ -9,12 +9,6 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
 {
     protected VideoPreviewRenderer $videoPreviewRenderer;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->videoPreviewRenderer = new VideoPreviewRenderer();
-    }
-
     /**
     * @throws Exception
     */
@@ -90,7 +84,7 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'accessibility_bypass' => 0,
             'accessibility_bypass_text' => '',
             'l18n_parent' => 0,
-            'l18n_diffsource' => '{"CType":"","colPos":"","tx_container_parent":"","header_kicker":"","header":"","header_layout":"","header_position":"","tx_header_style":"","subheader":"","bodytext":"","tx_video_video":"","tx_video_videourl":"","tx_video_poster_image":"","tx_video_caption":"","layout":"","space_before_class":"","space_after_class":"","sectionIndex":"","sys_language_uid":"","hidden":"","starttime":"","endtime":"","fe_group":"","editlock":"","categories":"","rowDescription":""}',
+            'l18n_diffsource' => '{"CType":"","colPos":"","tx_container_parent":"","header_kicker":"","header":"","header_layout":"","header_position":"","tx_header_style":"","subheader":"","bodytext":"","tx_video_video":"","tx_video_videourl":"","image":"","tx_video_caption":"","layout":"","space_before_class":"","space_after_class":"","sectionIndex":"","sys_language_uid":"","hidden":"","starttime":"","endtime":"","fe_group":"","editlock":"","categories":"","rowDescription":""}',
             'selected_categories' => '0',
             'category_field' => '',
             'categories' => 0,
@@ -138,7 +132,7 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'header_kicker' => 'Kicker',
             'tx_video_poster_video' => '',
             'tx_video_mainstage' => 0,
-            'tx_video_poster_image' => 1,
+            'image' => 1,
             'container_accordion_toggle_all' => 0,
             'container_headline' => '',
             'grid_parallax' => 0,
@@ -162,5 +156,11 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'tx_link_text' => '',
             'tx_link_position' => '',
         ];
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->videoPreviewRenderer = new VideoPreviewRenderer();
     }
 }

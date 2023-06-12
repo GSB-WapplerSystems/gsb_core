@@ -5,11 +5,11 @@ tt_content.stage {
   templateName = Stage
   dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
   dataProcessing.10 {
-    if.isTrue.field = tx_stage_file
+    if.isTrue.field = image
     references {
-      fieldName = tx_stage_file
+      fieldName = image
       table = tt_content
     }
-    as = data_tx_stage_file
+    as = files
   }
 }

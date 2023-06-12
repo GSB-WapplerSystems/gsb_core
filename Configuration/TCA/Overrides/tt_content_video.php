@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\VideoPreviewRenderer;
-use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -24,32 +23,6 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
             ],
-        'tx_video_poster_image' =>
-            [
-                'config' =>
-                    [
-                        'type' => 'file',
-                        'allowed' => 'jpg,jpeg,svg,png,gif',
-                        'maxitems' => 1,
-                        'minitems' => 0,
-                        'overrideChildTca' => [
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                                ],
-                                AbstractFile::FILETYPE_IMAGE => [
-                                    'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                                ],
-                            ],
-                        ],
-                    ],
-                'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_poster_image',
-            ],
         'tx_video_video' =>
             [
                 'config' =>
@@ -67,7 +40,7 @@ defined('TYPO3') || die();
 
     $videoPalettes = [
         'video_config' => [
-            'showitem' => 'tx_video_video,--linebreak--,tx_video_poster_image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
+            'showitem' => 'tx_video_video,--linebreak--,image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
         ],
     ];
 
@@ -91,6 +64,45 @@ defined('TYPO3') || die();
                                     [
                                         'richtextConfiguration' => 'default',
                                         'enableRichtext' => 1,
+                                    ],
+                            ],
+                        'image' =>
+                            [
+                                'config' =>
+                                    [
+                                        'maxitems' => 1,
+                                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                                        'overrideChildTca' => [
+                                            'columns' => [
+                                                'description' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'link' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'title' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'outline' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'allow_download' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
                                     ],
                             ],
                     ],

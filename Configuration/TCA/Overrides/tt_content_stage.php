@@ -11,17 +11,42 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx_stage';
 
     $tempStageColumns = [
-        'tx_stage_file' =>
+        'tx_stage_switch' =>
+            [
+                'exclude' => 0,
+                'onChange' => 'reload',
+                'config' =>
+                    [
+                        'items' =>
+                            [
+                                0 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_image',
+                                        1 => '0',
+                                    ],
+                                1 =>
+                                    [
+                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_video',
+                                        1 => '1',
+                                    ],
+                            ],
+                        'renderType' => 'selectSingle',
+                        'type' => 'select',
+                    ],
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch',
+            ],
+        'tx_stage_video' =>
             [
                 'config' =>
                     [
                         'type' => 'file',
-                        'allowed' => 'png,jpg,jpeg,gif,svg,mp4',
-                        'maxitems' => '1',
-                        'minitems' => '0',
+                        'allowed' => 'mp4,webm,ogg',
+                        'maxitems' => 1,
+                        'minitems' => 0,
                     ],
+                'displayCond' => 'FIELD:tx_stage_switch:=:1',
                 'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_file',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_video',
             ],
         'tx_stage_position' =>
             [
@@ -106,7 +131,7 @@ defined('TYPO3') || die();
             'showitem' => 'tx_stage_position,tx_stage_bg,tx_stage_bgcolor', 'canNotCollapse' => 1,
         ],
         'stagefile_config' => [
-            'showitem' => 'tx_stage_file,--linebreak--,bodytext', 'canNotCollapse' => 1,
+            'showitem' => 'tx_stage_switch,--linebreak--, tx_stage_video,--linebreak--,image,--linebreak--,video,--linebreak--,bodytext', 'canNotCollapse' => 1,
         ],
     ];
 
@@ -125,10 +150,49 @@ defined('TYPO3') || die();
                                         'enableRichtext' => 1,
                                     ],
                             ],
+                        'image' =>
+                            [
+                                'config' =>
+                                    [
+                                        'maxitems' => 1,
+                                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                                        'overrideChildTca' => [
+                                            'columns' => [
+                                                'description' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'link' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'title' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'outline' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'allow_download' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                            ],
                     ],
                 'showitem' => '
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                  --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+                  --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel, header_kicker,header,
                   --palette--;;header_config,subheader,
               --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage,
                   --palette--;;stagefile_config,

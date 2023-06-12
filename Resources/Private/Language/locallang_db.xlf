@@ -255,9 +255,21 @@
             <trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
                 <source>Audio</source>
             </trans-unit>
+			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch">
+				<source>Stage Type</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_image" resname="stage.tx_stage_switch_image">
+				<source>Stage with image</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video">
+				<source>Stage with video</source>
+			</trans-unit>
             <trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file">
-                <source>Stage Image/Video</source>
+                <source>Stage Image</source>
             </trans-unit>
+			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video">
+				<source>Stage Video</source>
+			</trans-unit>
             <trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg">
                 <source>Stage background</source>
             </trans-unit>
