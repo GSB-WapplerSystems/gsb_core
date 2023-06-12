@@ -11,3 +11,23 @@ mod.wizards.newContentElement.wizardItems.common {
   }
   show := addToList(stage)
 }
+
+TCEFORM {
+  tt_content {
+    tx_header_style {
+      types {
+        stage {
+          disabled = 1
+        }
+      }
+    }
+
+    tx_link_position {
+      types {
+        stage {
+          disabled = 0
+        }
+      }
+    }
+  }
+}

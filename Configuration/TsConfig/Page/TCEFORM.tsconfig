@@ -90,7 +90,7 @@ TCEFORM {
           disabled = 1
         }
         stage {
-          disabled = 1
+          disabled = 0
         }
         gallery {
           disabled = 1
