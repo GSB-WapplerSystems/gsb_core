@@ -14,13 +14,25 @@ tt_content.stage {
     as = files
   }
 
-  dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  dataProcessing.20 {
-    if.isTrue.field = tx_stage_video
-    references {
-      fieldName = tx_stage_video
-      table = tt_content
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      if.isTrue.field = image
+      references {
+        fieldName = image
+        table = tt_content
+      }
+      as = files
     }
-    as = video
+
+    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    20 {
+      if.isTrue.field = tx_stage_video
+      references {
+        fieldName = tx_stage_video
+        table = tt_content
+      }
+      as = video
+    }
   }
 }
