@@ -1,17 +1,26 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <div class="frame frame-{data.frame_class} frame-type-{data.CType} stage {data.tx_stage_position} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.tx_stage_bg, then: ' stage-bg')}{f:if(condition: data.tx_stage_bgcolor, then: ' stage-bg-dark')}">
-    <f:if condition="{files}">
-        <div class="stage-image">
-            <f:for as="file" each="{files}">
-                <f:render arguments="{_all}" partial="Media/Rendering/Image"/>
-            </f:for>
-        </div>
+
+
+    <f:if condition="{data.tx_stage_switch} == 0">
+        <f:then>
+            <f:if condition="{files}">
+                <div class="stage-image">
+                    <f:for as="file" each="{files}">
+                        <f:render arguments="{_all}" partial="Media/Rendering/Image"/>
+                    </f:for>
+                </div>
+            </f:if>
+        </f:then>
+        <f:else>
+                <div class="stage-video" data-aspectratio-lg="16:9" data-aspectratio-md="16:9" data-aspectratio-sm="16:9" data-aspectratio-xl="16:9" data-aspectratio-xs="16:9">
+                    <video autoplay class="img-fluid" muted poster="/fileadmin{files.0.properties.identifier}" src="/fileadmin{video.0.originalFile.properties.identifier}"></video>
+                </div>
+        </f:else>
     </f:if>
 
-    <f:if condition="{data.tx_stage_bg}">
-        <div class="overlay"></div>
-    </f:if>
+
 
     <f:if condition="{data.header} || {data.bodytext}">
         <f:if condition="{data.header_layout} != 100">
