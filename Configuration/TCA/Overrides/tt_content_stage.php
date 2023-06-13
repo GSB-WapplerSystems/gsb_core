@@ -98,23 +98,6 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor',
             ],
-        'tx_stage_bg' =>
-            [
-                'config' =>
-                    [
-                        'items' =>
-                            [
-                                0 =>
-                                    [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg.I.1',
-                                    ],
-                            ],
-                        'renderType' => 'checkboxToggle',
-                        'type' => 'check',
-                    ],
-                'exclude' => '1',
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bg',
-            ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempStageColumns);
@@ -128,7 +111,7 @@ defined('TYPO3') || die();
 
     $stagePositionPalettes = [
         'stageposition_config' => [
-            'showitem' => 'tx_stage_position,tx_stage_bg,tx_stage_bgcolor', 'canNotCollapse' => 1,
+            'showitem' => 'tx_stage_position,tx_stage_bgcolor', 'canNotCollapse' => 1,
         ],
         'stagefile_config' => [
             'showitem' => 'tx_stage_switch,--linebreak--, tx_stage_video,--linebreak--,image,--linebreak--,video,--linebreak--,bodytext', 'canNotCollapse' => 1,
