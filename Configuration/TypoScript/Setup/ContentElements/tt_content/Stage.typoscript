@@ -4,16 +4,6 @@ tt_content.stage {
   templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content
   templateName = Stage
 
-  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  dataProcessing.10 {
-    if.isTrue.field = image
-    references {
-      fieldName = image
-      table = tt_content
-    }
-    as = files
-  }
-
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
     10 {
