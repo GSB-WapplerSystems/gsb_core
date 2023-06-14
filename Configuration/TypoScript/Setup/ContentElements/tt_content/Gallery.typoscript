@@ -5,9 +5,9 @@ tt_content.gallery {
   templateName = Gallery
   dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
   dataProcessing.10 {
-    if.isTrue.field = image_reduced
+    if.isTrue.field = image
     references {
-      fieldName = image_reduced
+      fieldName = image
       table = tt_content
     }
     as = files
