@@ -24,14 +24,18 @@ editor:
       - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
       - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
       - { name: "Button: Tertiary", element: "a", attributes: { 'class': 'btn btn-tertiary' } }
-      - { name: "Button: Quaternary", element: "a", attributes: { 'class': 'btn btn-quaternary' } }
 
       - { name: "Link: Internal", element: "a", attributes: { 'class': 'internal-link' } }
       - { name: "Link: Download", element: "a", attributes: { 'class': 'download' } }
       - { name: "Link: External", element: "a", attributes: { 'class': 'external-link' } }
       - { name: "Link: Email", element: "a", attributes: { 'class': 'email' } }
       - { name: "Link: Phone", element: "a", attributes: { 'class': 'phone' } }
-
+      - { name: "Link: Audio", element: "a", attributes: { 'class': 'audio' } }
+      - { name: "Link: Video", element: "a", attributes: { 'class': 'video' } }
+      - { name: "Link: Glossary", element: "a", attributes: { 'class': 'glossary' } }
+      - { name: "Link: Public", element: "a", attributes: { 'class': 'public' } }
+      - { name: "Link: Legal", element: "a", attributes: { 'class': 'legal' } }
+      -
       - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
       - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
       - { name: "Text: Capitalized", element: "span", attributes: { 'class': 'text-capitalize' } }
