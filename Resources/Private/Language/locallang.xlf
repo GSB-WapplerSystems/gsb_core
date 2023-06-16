@@ -220,6 +220,12 @@
 			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now">
 				<source>Download now</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
+				<source>Long description</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture">
+				<source>Enlarge image</source>
+			</trans-unit>
 			<trans-unit id="gallery.close" resname="gallery.close">
 				<source>Close</source>
 			</trans-unit>
