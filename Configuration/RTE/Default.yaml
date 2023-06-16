@@ -10,7 +10,6 @@ editor:
     heading:
       options:
         - { model: 'paragraph', title: 'Paragraph' }
-        - { model: 'heading1', view: 'h1', title: 'Heading 1' }
         - { model: 'heading2', view: 'h2', title: 'Heading 2' }
         - { model: 'heading3', view: 'h3', title: 'Heading 3' }
         - { model: 'heading4', view: 'h4', title: 'Heading 4' }
@@ -35,7 +34,7 @@ editor:
       - { name: "Link: Glossary", element: "a", attributes: { 'class': 'glossary' } }
       - { name: "Link: Public", element: "a", attributes: { 'class': 'public' } }
       - { name: "Link: Legal", element: "a", attributes: { 'class': 'legal' } }
-      -
+
       - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
       - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
       - { name: "Text: Capitalized", element: "span", attributes: { 'class': 'text-capitalize' } }
