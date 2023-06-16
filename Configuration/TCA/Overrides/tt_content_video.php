@@ -40,7 +40,7 @@ defined('TYPO3') || die();
 
     $videoPalettes = [
         'video_config' => [
-            'showitem' => 'tx_video_video,--linebreak--,image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
+            'showitem' => 'tx_video_video,--linebreak--,imageorient,--linebreak--,image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
         ],
     ];
 
