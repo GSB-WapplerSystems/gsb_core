@@ -22,7 +22,7 @@ class BannerPreviewRendererTest extends AbstractPreviewRendererTest
             ]
         );
         $result = $this->BannerPreviewRenderer->renderPageModulePreviewContent($item);
-        self::assertEquals('<div class="text-left">bodytext</div>', $result);
+        self::assertEquals('<div class="text-left">link text</div>', $result);
     }
 
     protected function getDummyDataArray(): array
@@ -30,10 +30,11 @@ class BannerPreviewRendererTest extends AbstractPreviewRendererTest
         return [
             'uid' => 827,
             'pid' => 79,
-            'CType' => 'gsb_Banner',
+            'CType' => 'gsb_banner',
             'header' => 'header',
             'bodytext' => 'bodytext',
             'tx_stage_file'=>1,
+            'tx_link_text'=>"link text",
             'image'=>1,
             ];
     }
