@@ -6,6 +6,7 @@ imports:
 editor:
   config:
     contentsCss: ""
+    debug: false
 
     heading:
       options:
