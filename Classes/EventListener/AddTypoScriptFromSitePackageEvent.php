@@ -37,6 +37,7 @@ final class AddTypoScriptFromSitePackageEvent
         $this->packageHelper = $packageHelper;
     }
 
+    //@phpstan-ignore-next-line because of the eventtesting to allow moking of the event
     public function __invoke($event): void
     {
         $site = $event->getSite();
