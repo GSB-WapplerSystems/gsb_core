@@ -46,8 +46,8 @@ class ExtendsSiteConfigurationEventTest extends UnitTestCase
 
     protected function tearDown(): void
     {
-        parent::tearDown();
         $this->resetSingletonInstances = true;
+        parent::tearDown();
     }
 
     public function testInvokeWithSiteConfigExtends()
