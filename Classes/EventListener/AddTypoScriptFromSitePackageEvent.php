@@ -37,7 +37,8 @@ final class AddTypoScriptFromSitePackageEvent
         $this->packageHelper = $packageHelper;
     }
 
-    public function __invoke(AfterTemplatesHaveBeenDeterminedEvent $event): void
+    //@phpstan-ignore-next-line because of the eventtesting to allow moking of the event
+    public function __invoke($event): void
     {
         $site = $event->getSite();
         if (!$site instanceof Site) {
