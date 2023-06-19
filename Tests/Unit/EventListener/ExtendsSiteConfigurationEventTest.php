@@ -89,17 +89,17 @@ class ExtendsSiteConfigurationEventTest extends UnitTestCase
         // self::assertEquals($expectedConfiguration, $event->getConfiguration());
     }
 
-   /*  public function testInvokeWithoutSiteConfigExtends()
-    {
-        $siteIdentifier = 'gsb_frontend';
-        $siteConfiguration = ['existing' => 'config'];
+    /*  public function testInvokeWithoutSiteConfigExtends()
+     {
+         $siteIdentifier = 'gsb_frontend';
+         $siteConfiguration = ['existing' => 'config'];
 
-        $event = new SiteConfigurationLoadedEvent($siteIdentifier, $siteConfiguration);
+         $event = new SiteConfigurationLoadedEvent($siteIdentifier, $siteConfiguration);
 
-        $this->eventListener->__invoke($event);
+         $this->eventListener->__invoke($event);
 
-        // Assert that the configuration remains unchanged
-        self::assertEquals($siteConfiguration, $event->getConfiguration());
-        $this->resetSingletonInstances = true;
-    } */
+         // Assert that the configuration remains unchanged
+         self::assertEquals($siteConfiguration, $event->getConfiguration());
+         $this->resetSingletonInstances = true;
+     } */
 }
