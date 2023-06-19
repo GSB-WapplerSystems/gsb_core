@@ -37,7 +37,6 @@ final class AddTypoScriptFromSitePackageEvent
         $this->packageHelper = $packageHelper;
     }
 
-
     public function __invoke(AfterTemplatesHaveBeenDeterminedEvent $event): void
     {
         if (!$this->addTypoScriptFromSitePackage($event)) {
