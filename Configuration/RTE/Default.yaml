@@ -20,6 +20,7 @@ editor:
     stylesSet:
       - { name: "Paragraph: Kicker", element: "p", attributes: { 'class': 'kicker' } }
       - { name: "Paragraph: Subheader", element: "p", attributes: { 'class': 'lead' } }
+      - { name: "Blockquote: Quote", element: "blockquote", attributes: { 'class': 'quote-dot' } }
 
       - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
       - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
@@ -78,6 +79,7 @@ editor:
         - mergeTableCells
         - tableProperties
         - tableCellProperties
+        - toggleTableCaption
 
     language:
       textPartLanguage:
