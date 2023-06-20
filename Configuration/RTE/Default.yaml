@@ -36,6 +36,8 @@ editor:
       - { name: "Link: Glossary", element: "a", attributes: { 'class': 'glossary' } }
       - { name: "Link: Public", element: "a", attributes: { 'class': 'public' } }
       - { name: "Link: Legal", element: "a", attributes: { 'class': 'legal' } }
+      - { name: "Link: Galerie", element: "a", attributes: { 'class': 'gallery' } }
+      - { name: "Link: Chart", element: "a", attributes: { 'class': 'chart' } }
 
       - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
       - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
