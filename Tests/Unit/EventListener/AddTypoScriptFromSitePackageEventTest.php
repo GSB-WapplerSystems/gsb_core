@@ -55,9 +55,10 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         // Configure mocks
         $event->method('getSite')
             ->willReturn($site);
-
+        $packageHelper->method('getSitePackageFromSite')
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -79,13 +80,12 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         // Configure mocks
         $event->method('getSite')
             ->willReturn($site);
-        $packageHelper->expects(self::once())
-            ->method('getSitePackageFromSite')
-            ->with($site)
+
+        $packageHelper->method('getSitePackageFromSite')
             ->willReturn(null);
 
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -99,9 +99,12 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         // Configure mocks
         $event->method('getSite')
             ->willReturn($site);
-
+        $packageHelper->expects(self::once())
+            ->method('getSitePackageFromSite')
+            ->with($site)
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -124,7 +127,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
             ->willReturn('/path/to/package/');
 
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -147,7 +150,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
             ->willReturn(null);
 
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -170,7 +173,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
             ->willReturn('/path/to/package/');
 
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were modified correctly
         // Add your assertions here based on the modifications made by the listener
@@ -194,7 +197,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
             ->willReturn('/path/to/package/invalid_file');
 
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows were not modified
         self::assertEquals([], $event->getTemplateRows());
@@ -209,8 +212,11 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
             ->willReturn($site);
         $event->setTemplateRows([]);
 
+        $packageHelper->method('getSitePackageFromSite')
+            ->willReturn($package);
+
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows remain empty
         self::assertEquals([], $event->getTemplateRows());
@@ -228,9 +234,12 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         ]);
         $site->method('getRootPageId')
             ->willReturn(123); // Set the rootPageId to match the pid in sysTemplateRows
-
+        $packageHelper->expects(self::once())
+            ->method('getSitePackageFromSite')
+            ->with($site)
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
         // Assert that the template rows are modified as expected
         self::assertEquals([], $event->getTemplateRows());
     }
@@ -242,9 +251,12 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         // Configure mocks
         $event->method('getSite')
             ->willReturn(null);
-
+        $packageHelper->expects(self::once())
+            ->method('getSitePackageFromSite')
+            ->with($site)
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows remain unchanged
         self::assertEquals([], $event->getTemplateRows());
@@ -257,9 +269,12 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         // Configure mocks
         $event->method('getSite')
             ->willReturn($site);
-
+        $packageHelper->expects(self::once())
+            ->method('getSitePackageFromSite')
+            ->with($site)
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows remain unchanged
         self::assertEquals([], $event->getTemplateRows());
@@ -273,9 +288,10 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         $event->method('getSite')
             ->willReturn($site);
         $GLOBALS['TCA']['sys_template']['columns']['static_file_mode'] = null;
-
+        $packageHelper->method('getSitePackageFromSite')
+            ->willReturn($package);
         // Execute the event listener
-        $listener->__invoke($event);
+        $listener->addTypoScriptFromSitePackage($event);
 
         // Assert that the template rows remain unchanged
         self::assertEquals([], $event->getTemplateRows());
