@@ -1,3 +1,5 @@
+# Frontend-Build
+
 ## Frontend-Build meta information
 
 ### The most important packages
@@ -27,8 +29,8 @@ An example of the compiled files for the product system looks like this:
    ```sh
    npm run build
    ```
-
-5. After the example above has been executed, a folder is created under */Resources/Public/* with all relevant files.
+4. After the example above has been executed, a folder is created under */Resources/Public/* with all relevant files.
 The following folders should be there.
-**BackendLayouts**, **CKEditor**, **Favicons**, **Fonts**, **Forms**,
-**Icons***, **Images**, **JavaScript**, **Seo**, **StyleSheets**
+
+BackendLayouts, CKEditor, Favicons, Fonts, Forms,
+Icons, Images, avaScript, Seo, StyleSheets**
