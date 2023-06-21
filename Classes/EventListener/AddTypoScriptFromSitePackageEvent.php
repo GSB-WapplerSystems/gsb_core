@@ -139,7 +139,7 @@ final class AddTypoScriptFromSitePackageEvent
     /**
      * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
      * @param array<string> $sysTemplateRows
-     * @param array $fakeRow
+     * @param array<string> $fakeRow
      * @param Site $site
      * @return array<int<0,max>,mixed>
      */
@@ -157,7 +157,7 @@ final class AddTypoScriptFromSitePackageEvent
 
     /**
      * @param mixed $sysTemplateRow
-     * @param array $fakeRow
+     * @param array<string> $fakeRow
      * @param array<string> $newSysTemplateRows
      * @param array<int> $pidsBeforeSite
      * @param Site $site
