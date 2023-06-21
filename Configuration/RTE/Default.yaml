@@ -7,6 +7,8 @@ editor:
   config:
     contentsCss: ""
     debug: false
+    allowedContent: true
+    extraAllowedContent: "*(*)[data-*]; span(shy)"
 
     heading:
       options:
@@ -67,6 +69,7 @@ editor:
         - insertTable
         - superscript
         - subscript
+        - strikeThrough
         - horizontalLine
         - '|'
         - specialCharacters
@@ -89,7 +92,15 @@ editor:
         - { title: 'English', languageCode: 'en' }
         - { title: 'Français', languageCode: 'fr' }
 
-    format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
+    format_tags: "s;p;h1;h2;h3;h4;h5;h6;pre"
+
+    processing:
+      allow_tags:
+        - s
+        - figure
+        - figcaption
+        - i
+        - em
 
     justifyClasses:
       - text-left
@@ -108,7 +119,6 @@ editor:
 
     removeButtons:
       - Underline
-      - Strike
 
 classesAnchor:
   page:
