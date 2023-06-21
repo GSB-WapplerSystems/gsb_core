@@ -72,7 +72,7 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param array<string> $fakeRow
+     * @param array<string, int> $fakeRow
      */
     private function setDbFields(array &$fakeRow): void
     {
@@ -139,7 +139,7 @@ final class AddTypoScriptFromSitePackageEvent
     /**
      * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
      * @param array<string> $sysTemplateRows
-     * @param array $fakeRow
+     * @param array<string,int> $fakeRow
      * @param Site $site
      * @return array<int<0,max>,mixed>
      */
@@ -157,7 +157,7 @@ final class AddTypoScriptFromSitePackageEvent
 
     /**
      * @param mixed $sysTemplateRow
-     * @param array $fakeRow
+     * @param array<string, int> $fakeRow
      * @param array<string> $newSysTemplateRows
      * @param array<int> $pidsBeforeSite
      * @param Site $site
@@ -197,22 +197,21 @@ final class AddTypoScriptFromSitePackageEvent
      */
     public function addTypoScriptFromSitePackage(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event): bool
     {
-        $result = true;
-
         $site = $event->getSite();
+
         if (!$site instanceof Site) {
-            $result = false;
+            return  false;
         }
 
         $package = $this->packageHelper->getSitePackageFromSite($site);
         if ($package === null) {
-            $result = false;
+            return false;
         }
 
         $constants = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_CONSTANTS_FILE);
         $setup = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_SETUP_FILE);
         if ($constants === null && $setup === null) {
-            $result = false;
+            return false;
         }
 
         $sysTemplateRows = $event->getTemplateRows();
@@ -221,13 +220,13 @@ final class AddTypoScriptFromSitePackageEvent
 
         if (empty($sysTemplateRows)) {
             $event->setTemplateRows([$fakeRow]);
-            $result = false;
+            return false;
         }
 
         $newSysTemplateRows = $this->getSysTemplateRows($event, $sysTemplateRows, $fakeRow, $site);
 
         $event->setTemplateRows($newSysTemplateRows);
 
-        return $result;
+        return true;
     }
 }
