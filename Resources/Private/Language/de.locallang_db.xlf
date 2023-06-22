@@ -584,11 +584,11 @@
 			</trans-unit>
 			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall" approved="yes">
 				<source>Accordion toggle</source>
-				<target>Akkordion Toggle</target>
+				<target>Akkordeon Toggle</target>
 			</trans-unit>
 			<trans-unit id="accordion.description.onloadall" resname="accordion.description.onloadall" approved="yes">
 				<source>Accordions close when an accordion element is selected / Accordions stay open</source>
-				<target>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</target>
+				<target>Akkordeons schließen sich bei Auswahl eines Akkordeon Elementes / Akkordeons bleiben geöffnet</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.open" resname="accordion.label.open" approved="yes">
 				<source>Accordion tile</source>
