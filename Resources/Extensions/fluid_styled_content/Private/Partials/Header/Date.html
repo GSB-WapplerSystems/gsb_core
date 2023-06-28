@@ -1,7 +1,18 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<f:if condition="{date}">
+<f:if condition="{date} || {categories}">
 	<p class="date {positionClass}">
-		<f:format.date format="%e. %B %G">{date}</f:format.date>
+        <f:if condition="{date}">
+		    <span class="date-text"><f:format.date format="%e. %B %G">{date}</f:format.date></span>
+        </f:if>
+        <f:if condition="{categories}">
+            <f:for as="category" each="{categories}" iteration="i">
+                <f:if condition="{i.isFirst} && {date}"><span class="dot">•</span></f:if>
+                <f:if condition="{i.isLast}">
+                    <f:then>{category.data.title}</f:then>
+                    <f:else>{category.data.title}, </f:else>
+                </f:if>
+            </f:for>
+        </f:if>
 	</p>
 </f:if>
 </html>
