@@ -11,15 +11,15 @@
                 <f:if condition="{files.0}">
                     <f:then>
                         <video controls height="100%" poster="{f:uri.image(image: '{files.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" width="100%" src="{data_tx_video_video.0.publicUrl}">
-                            <f:if condition="{data.tx_video_caption}">
-                                <track default kind="subtitles" src="{data_tx_video_caption.0.publicUrl}" srclang="de">
+                            <f:if condition="{data_tx_video_caption.0}">
+                                <track label="Deutsch" kind="subtitles" srclang="de" src="/fileadmin{data_tx_video_caption.0.originalFile.properties.identifier}" />
                             </f:if>
                         </video>
                     </f:then>
                     <f:else>
                         <video controls preload="none" style="width:100%; height:100%;" src="{data_tx_video_video.0.publicUrl}">
-                            <f:if condition="{data_tx_video_caption.0.publicUrl}">
-                                <track default kind="subtitles" src="{data_tx_video_caption.0.publicUrl}" srclang="de">
+                            <f:if condition="{data_tx_video_caption.0}">
+                                <track label="Deutsch" kind="subtitles" srclang="de" src="/fileadmin{data_tx_video_caption.0.originalFile.properties.identifier}" />
                             </f:if>
                         </video>
                     </f:else>
