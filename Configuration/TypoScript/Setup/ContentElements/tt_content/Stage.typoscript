@@ -24,5 +24,15 @@ tt_content.stage {
       }
       as = video
     }
+
+    30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    30 {
+      table = sys_category
+      selectFields = uid, title
+      pidInList = 150
+      join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
+      where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+      as = contentCategories
+    }
   }
 }

@@ -1,65 +1,78 @@
-page.10.dataProcessing {
-  5 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
-  5 {
-    as = site
-  }
-  10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+page {
   10 {
-    references.data = levelmedia: -1, slide
-    as = media
-  }
-  20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  20 {
-    special = directory
-    special.value = 1
-    levels = 4
-    includeSpacer = 1
-    as = menuMain
-  }
-  30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  30 {
-    entryLevel = 1
-    expandAll = 0
-    levels = 6
-    as = menuSub
-  }
-  40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  40 {
-    special = directory
-    special.value = {$config.pids.Footer}
-    levels = 1
-    as = menuMeta
-  }
-  50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  50 {
-    special = directory
-    special.value = {$config.pids.Meta}
-    levels = 1
-    as = menuMetaTop
-  }
-  60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  60 {
-    special = directory
-    special.value = {$config.pids.MetaTop}
-    levels = 1
-    as = menuMetaMain
-  }
-  70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  70 {
-    special = directory
-    special.value = 1
-    levels = 4
-    includeSpacer = 1
-    as = menuMainDesktop
-  }
-  80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  80 {
-    as = breadcrumbMenu
-    special = rootline
-  }
-  90 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
-  90 {
-    languages = auto
-    as = languagenavigation
+    dataProcessing {
+      5 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+      5 {
+        as = site
+      }
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.data = levelmedia: -1, slide
+        as = media
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+        special = directory
+        special.value = 1
+        levels = 4
+        includeSpacer = 1
+        as = menuMain
+      }
+      30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      30 {
+        entryLevel = 1
+        expandAll = 0
+        levels = 6
+        as = menuSub
+      }
+      40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      40 {
+        special = directory
+        special.value = {$config.pids.Footer}
+        levels = 1
+        as = menuMeta
+      }
+      50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      50 {
+        special = directory
+        special.value = {$config.pids.Meta}
+        levels = 1
+        as = menuMetaTop
+      }
+      60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      60 {
+        special = directory
+        special.value = {$config.pids.MetaTop}
+        levels = 1
+        as = menuMetaMain
+      }
+      70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      70 {
+        special = directory
+        special.value = 1
+        levels = 4
+        includeSpacer = 1
+        as = menuMainDesktop
+      }
+      80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      80 {
+        as = breadcrumbMenu
+        special = rootline
+      }
+      90 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+      90 {
+        languages = auto
+        as = languagenavigation
+      }
+      100 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      100 {
+        table = sys_category
+        selectFields = uid, title
+        pidInList = 150
+        join = sys_category_record_mm ON uid = sys_category_record_mm.uid_local
+        where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+        as = contentCategories
+      }
+    }
   }
 }
