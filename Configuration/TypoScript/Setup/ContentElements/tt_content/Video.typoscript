@@ -1,38 +1,50 @@
-tt_content.video = FLUIDTEMPLATE
-tt_content.video {
-  partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-  templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
-  templateName = Video
+tt_content {
+  video = FLUIDTEMPLATE
+  video {
+    partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+    templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
+    templateName = Video
 
-  dataProcessing {
-    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    10 {
-      if.isTrue.field = image
-      references {
-        fieldName = image
-        table = tt_content
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        if.isTrue.field = image
+        references {
+          fieldName = image
+          table = tt_content
+        }
+        as = files
       }
-      as = files
-    }
 
-    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    20 {
-      if.isTrue.field = tx_video_video
-      references {
-        fieldName = tx_video_video
-        table = tt_content
+      20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      20 {
+        if.isTrue.field = tx_video_video
+        references {
+          fieldName = tx_video_video
+          table = tt_content
+        }
+        as = data_tx_video_video
       }
-      as = data_tx_video_video
-    }
 
-    30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-    30 {
-      if.isTrue.field = tx_video_caption
-      references {
-        fieldName = tx_video_caption
-        table = tt_content
+      30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      30 {
+        if.isTrue.field = tx_video_caption
+        references {
+          fieldName = tx_video_caption
+          table = tt_content
+        }
+        as = data_tx_video_caption
       }
-      as = data_tx_video_caption
+
+      40 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      40 {
+        table = sys_category
+        selectFields = uid, title
+        pidInList = {$config.pids.Categories}
+        join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
+        where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+        as = contentCategories
+      }
     }
   }
 }

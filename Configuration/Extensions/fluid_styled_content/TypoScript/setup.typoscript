@@ -3,7 +3,5 @@
 @import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/Helper/ParseFunc.typoscript'
 
 # Content elements
-@import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/Image.typoscript'
-@import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/MenuSubpages.typoscript'
-@import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/Uploads.typoscript'
+@import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/ContentElement/*.typoscript'
 
