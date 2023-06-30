@@ -9,7 +9,7 @@ tt_content {
         1.value = <div class="row"><div class="col-12 offset-xl-2 col-xl-8">|</div></div>
         2 = TEXT
         2.value = <div class="row"><div class="col-12 offset-xl-1 col-xl-10">|</div></div>
-        }
       }
     }
   }
+}
