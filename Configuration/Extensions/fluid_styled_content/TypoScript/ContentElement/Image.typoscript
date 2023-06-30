@@ -19,6 +19,15 @@ tt_content.image {
             borderWidth = {$styles.content.textmedia.borderWidth}
             borderPadding = {$styles.content.textmedia.borderPadding}
         }
+        30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        30 {
+          table = sys_category
+          selectFields = uid, title
+          pidInList = {$config.pids.Categories}
+          join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
+          where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+          as = contentCategories
+        }
     }
     stdWrap {
         editIcons = tt_content : image [imageorient|imagewidth|imageheight], [imagecols|imageborder], image_zoom

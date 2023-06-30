@@ -10,5 +10,7 @@ config {
     Footer = 25
     # cat=Default Templateset (ITZBund): advanced/160/140; type=text; label=Minimap-Sysfolder:PageID
     Minimap = 1
+    # cat=Default Categories (ITZBund): advanced/160/150; type=text; label=Categories-Sysfolder:PageID
+    Categories = 150
   }
 }
