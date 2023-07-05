@@ -1,47 +1,48 @@
 <html
-    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
-    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
-    data-namespace-typo3-fluid="true"
+        data-namespace-typo3-fluid="true"
+        xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+        xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 >
 
 <div class="scaffold-topbar t3js-scaffold-topbar" data-topbar-identifier="topbar">
     <div class="topbar">
         <div class="topbar-header t3js-topbar-header {f:if(condition: '{isInWorkspace}', then: 'typo3-in-workspace')}">
             <f:render
-                section="ToggleButton"
-                arguments="{
+                    arguments="{
                     icon: 'actions-menu',
                     enabled: '{hasModules}',
                     classes: 'topbar-button-modulemenu t3js-topbar-button-modulemenu',
                     title: '{f:translate(key: \'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.minMaxModuleMenu\')}'
                 }"
+                    section="ToggleButton"
             />
 
             <div class="topbar-header-site">
                 <a href="./" target="_top" title="{siteName} - {applicationVersion}">
                     <span class="topbar-header-site-logo">
-                        <img src="{logoUrl}" width="{logoWidth}" height="{logoHeight}" title="TYPO3 Content Management System" alt="" />
+                        <img alt="" height="{logoHeight}" src="{logoUrl}"
+                             title="TYPO3 Content Management System" width="{logoWidth}"/>
                     </span>
                     <span class="topbar-header-site-title">
                         <span class="topbar-header-site-name">{siteName}</span>
-                        <span class="topbar-header-site-version">TYPO3 {applicationVersion} - GSB 11.0.1</span>
+                        <span class="topbar-header-site-version">TYPO3 {applicationVersion} - GSB 11.0.2</span>
                     </span>
                 </a>
             </div>
             <button
-                class="topbar-button topbar-button-toolbar t3js-topbar-button-toolbar"
-                title="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.toolbarOpenClose')}"
-                aria-label="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.toolbarOpenClose')}"
+                    aria-label="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.toolbarOpenClose')}"
+                    class="topbar-button topbar-button-toolbar t3js-topbar-button-toolbar"
+                    title="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.toolbarOpenClose')}"
             >
-                <core:icon identifier="actions-system-extension-configure" alternativeMarkupIdentifier="inline" />
+                <core:icon alternativeMarkupIdentifier="inline" identifier="actions-system-extension-configure"/>
             </button>
             <button
-                class="topbar-button topbar-button-search t3js-topbar-button-search"
-                title="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.searchbarOpenClose')}"
-                aria-label="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.searchbarOpenClose')}"
+                    aria-label="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.searchbarOpenClose')}"
+                    class="topbar-button topbar-button-search t3js-topbar-button-search"
+                    title="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:toolbarItems.searchbarOpenClose')}"
             >
-                <core:icon identifier="actions-search" alternativeMarkupIdentifier="inline" />
+                <core:icon alternativeMarkupIdentifier="inline" identifier="actions-search"/>
             </button>
         </div>
     </div>
@@ -49,11 +50,12 @@
 <div class="scaffold-toolbar t3js-scaffold-toolbar" data-toolbar-identifier="toolbar">
     <div class="toolbar t3js-topbar-toolbar">
         <ul class="toolbar-list" data-typo3-role="typo3-module-menu">
-            <f:for each="{toolbarItems}" as="toolbarItem">
-                <li {be:toolbar.attributes(class: toolbarItem) -> f:format.raw()}>
+            <f:for as="toolbarItem" each="{toolbarItems}">
+                <li - toolbarItem) {be:toolbar.attributes(class:> f:format.raw()}>
                     <be:toolbar.ifHasDropdown class="{toolbarItem}">
                         <f:then>
-                            <a href="#" class="toolbar-item-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-offset="0,0">
+                            <a class="toolbar-item-link dropdown-toggle" data-bs-offset="0,0" data-bs-toggle="dropdown"
+                               href="#">
                                 {toolbarItem.item -> f:format.raw()}
                             </a>
                             <div class="dropdown-menu" role="menu">
@@ -71,18 +73,18 @@
 </div>
 
 <f:section name="ToggleButton">
-    <f:variable name="disabled" value="{f:if(condition: '!{enabled}', then: 1, else: 0)}" />
-    <f:variable name="disabledAttr" value="{f:if(condition: '{disabled}', then: 'disabled')}" />
+    <f:variable name="disabled" value="{f:if(condition: '!{enabled}', then: 1, else: 0)}"/>
+    <f:variable name="disabledAttr" value="{f:if(condition: '{disabled}', then: 'disabled')}"/>
 
-    <button {disabledAttr} class="topbar-button {classes}" title="{title}" aria-label="{title}">
-        <f:render section="Icon" arguments="{identifier: icon, disabled: disabled}" />
+    <button aria-label="{title}" class="topbar-button {classes}" title="{title}" {disabledAttr}>
+        <f:render arguments="{identifier: icon, disabled: disabled}" section="Icon"/>
     </button>
 </f:section>
 
 <f:section name="Icon">
-    <f:variable name="overlay" value="{f:if(condition: '{disabled}', then: 'overlay-readonly', else: null)}" />
+    <f:variable name="overlay" value="{f:if(condition: '{disabled}', then: 'overlay-readonly', else: null)}"/>
 
-    <core:icon identifier="{identifier}" alternativeMarkupIdentifier="inline" overlay="{overlay}" />
+    <core:icon alternativeMarkupIdentifier="inline" identifier="{identifier}" overlay="{overlay}"/>
 </f:section>
 
 </html>
