@@ -35,6 +35,42 @@ defined('TYPO3') or die('Access denied.');
     );
 
     $grid = [
+        'columnsOverrides' =>
+            [
+                'image' =>
+                    [
+                        'config' =>
+                            [
+                                'maxitems' => 1,
+                                'allowed' => 'jpg,jpeg,svg,png,gif',
+                                'overrideChildTca' => [
+                                    'columns' => [
+                                        'description' => [
+                                            'config' => [
+                                                'type' => 'passthrough',
+                                            ],
+                                        ],
+                                        'link' => [
+                                            'config' => [
+                                                'type' => 'passthrough',
+                                            ],
+                                        ],
+                                        'title' => [
+                                            'config' => [
+                                                'type' => 'passthrough',
+                                            ],
+                                        ],
+                                        'allow_download' => [
+                                            'config' => [
+                                                'renderType' => 'passthrough',
+                                                'type' => 'passthrough',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                    ],
+            ],
         'grid_type' => [
             'config' =>
                 [
@@ -132,17 +168,6 @@ defined('TYPO3') or die('Access denied.');
                 'default' => '0',
             ],
         ],
-        'grid_bgimage' => [
-            'config' =>
-                [
-                    'type' => 'file',
-                    'allowed' => 'jpg,jpeg,svg,png,gif',
-                    'maxitems' => '1',
-                    'minitems' => '0',
-                ],
-            'exclude' => '1',
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bgimage',
-        ],
         'grid_bgfullsize' => [
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
@@ -182,7 +207,7 @@ defined('TYPO3') or die('Access denied.');
             'showitem' => 'grid_type,grid_columns', 'canNotCollapse' => 1,
         ],
         'grid_bg' => [
-            'showitem' => 'grid_bgcolor,grid_imgbg,grid_light', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgcolor,grid_light,--linebreak--,image', 'canNotCollapse' => 1,
         ],
         'grid_container_pallet' => [
             'showitem' => 'grid_bgfullsize,grid_container', 'canNotCollapse' => 1,

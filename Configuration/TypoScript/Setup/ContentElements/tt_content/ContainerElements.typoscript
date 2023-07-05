@@ -17,12 +17,12 @@ lib {
       1597060000 = B13\Container\DataProcessing\ContainerProcessor
       100 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
       100 {
-        if.isTrue.field = grid_bgimage
+        if.isTrue.field = image
         references {
-          fieldName = grid_bgimage
+          fieldName = image
           table = tt_content
         }
-        as = data_bgimage
+        as = files
       }
     }
   }
