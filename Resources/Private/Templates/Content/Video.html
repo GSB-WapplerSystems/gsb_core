@@ -1,5 +1,4 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-
     <f:if condition="{data_tx_video_video.0.originalFile.properties.mime_type} == 'video/mp4'">
         <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
             <f:if condition="{data.header}">
@@ -9,18 +8,18 @@
                 <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
             </f:if>
             <div class="video video-local">
-                <f:if condition="{data_tx_video_poster_image.0}">
+                <f:if condition="{files.0}">
                     <f:then>
-                        <video controls height="100%" poster="{f:uri.image(image: '{data_tx_video_poster_image.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" width="100%" src="{data_tx_video_video.0.publicUrl}">
-                            <f:if condition="{data.tx_video_caption}">
-                                <track default kind="subtitles" src="{data_tx_video_caption.0.publicUrl}" srclang="de">
+                        <video controls height="100%" poster="{f:uri.image(image: '{files.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" width="100%" src="{data_tx_video_video.0.publicUrl}">
+                            <f:if condition="{data_tx_video_caption.0}">
+                                <track label="Deutsch" kind="subtitles" srclang="de" src="/fileadmin{data_tx_video_caption.0.originalFile.properties.identifier}" />
                             </f:if>
                         </video>
                     </f:then>
                     <f:else>
                         <video controls preload="none" style="width:100%; height:100%;" src="{data_tx_video_video.0.publicUrl}">
-                            <f:if condition="{data_tx_video_caption.0.publicUrl}">
-                                <track default kind="subtitles" src="{data_tx_video_caption.0.publicUrl}" srclang="de">
+                            <f:if condition="{data_tx_video_caption.0}">
+                                <track label="Deutsch" kind="subtitles" srclang="de" src="/fileadmin{data_tx_video_caption.0.originalFile.properties.identifier}" />
                             </f:if>
                         </video>
                     </f:else>
@@ -38,9 +37,9 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </f:if>
             <div class="video video-youtube">
-                <f:if condition="{data_tx_video_poster_image}">
+                <f:if condition="{files}">
                     <f:then>
-                        <div class="dsgvo" style="background:url('{f:uri.image(image: data_tx_video_poster_image.0, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{data_tx_video_video.0.publicUrl}" data-caption="{data_tx_video_caption.0.publicUrl}">
+                        <div class="dsgvo" style="background:url('{f:uri.image(image: files.0, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{data_tx_video_video.0.publicUrl}" data-caption="{data_tx_video_caption.0.publicUrl}">
                     </f:then>
                     <f:else>
                         <div class="dsgvo" style="background-color:#efefef;" data-src="{data_tx_video_video.0.publicUrl}" data-caption="{data_tx_video_caption.0.publicUrl}">

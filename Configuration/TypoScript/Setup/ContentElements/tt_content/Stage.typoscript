@@ -1,15 +1,40 @@
-tt_content.stage = FLUIDTEMPLATE
-tt_content.stage {
-  partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-  templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content
-  templateName = Stage
-  dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-  dataProcessing.10 {
-    if.isTrue.field = tx_stage_file
-    references {
-      fieldName = tx_stage_file
-      table = tt_content
+tt_content {
+  stage = FLUIDTEMPLATE
+  stage {
+    partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+    templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content
+    templateName = Stage
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        if.isTrue.field = image
+        references {
+          fieldName = image
+          table = tt_content
+        }
+        as = files
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      20 {
+        if.isTrue.field = tx_stage_video
+        references {
+          fieldName = tx_stage_video
+          table = tt_content
+        }
+        as = video
+      }
+
+      30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      30 {
+        table = sys_category
+        selectFields = uid, title
+        pidInList = {$config.pids.Categories}
+        join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
+        where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+        as = contentCategories
+      }
     }
-    as = data_tx_stage_file
   }
 }

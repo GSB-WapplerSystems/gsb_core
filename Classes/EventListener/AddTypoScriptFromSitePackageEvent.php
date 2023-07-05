@@ -39,38 +39,14 @@ final class AddTypoScriptFromSitePackageEvent
 
     public function __invoke(AfterTemplatesHaveBeenDeterminedEvent $event): void
     {
-        $site = $event->getSite();
-        if (!$site instanceof Site) {
+        if (!$this->addTypoScriptFromSitePackage($event)) {
             return;
         }
-
-        $package = $this->packageHelper->getSitePackageFromSite($site);
-        if ($package === null) {
-            return;
-        }
-
-        $constants = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_CONSTANTS_FILE);
-        $setup = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_SETUP_FILE);
-        if ($constants === null && $setup === null) {
-            return;
-        }
-
-        $sysTemplateRows = $event->getTemplateRows();
-        $highestUid = $this->getHighestUid($sysTemplateRows);
-        $fakeRow = $this->getFakeRow($highestUid, $site, $package, $constants, $setup);
-
-        if (empty($sysTemplateRows)) {
-            $event->setTemplateRows([$fakeRow]);
-            return;
-        }
-
-        $newSysTemplateRows = $this->getSysTemplateRows($event, $sysTemplateRows, $fakeRow, $site);
-
-        $event->setTemplateRows($newSysTemplateRows);
     }
 
     /**
      * @param array<array<string>> $sysTemplateRows
+     * @return int
      */
     private function getHighestUid(array $sysTemplateRows): int
     {
@@ -96,7 +72,7 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param array<string> $fakeRow
+     * @param array<string, int> $fakeRow
      */
     private function setDbFields(array &$fakeRow): void
     {
@@ -163,7 +139,7 @@ final class AddTypoScriptFromSitePackageEvent
     /**
      * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
      * @param array<string> $sysTemplateRows
-     * @param array<string, int> $fakeRow
+     * @param array<string,int> $fakeRow
      * @param Site $site
      * @return array<int<0,max>,mixed>
      */
@@ -213,5 +189,44 @@ final class AddTypoScriptFromSitePackageEvent
 
         $newSysTemplateRows[] = $fakeRow;
         return [$newSysTemplateRows, $fakeRow, true];
+    }
+
+    /**
+     * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
+     * @return bool
+     */
+    public function addTypoScriptFromSitePackage(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event): bool
+    {
+        $site = $event->getSite();
+
+        if (!$site instanceof Site) {
+            return  false;
+        }
+
+        $package = $this->packageHelper->getSitePackageFromSite($site);
+        if ($package === null) {
+            return false;
+        }
+
+        $constants = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_CONSTANTS_FILE);
+        $setup = $this->loadFileContent($package->getPackagePath() . self::TEMPLATE_SETUP_FILE);
+        if ($constants === null && $setup === null) {
+            return false;
+        }
+
+        $sysTemplateRows = $event->getTemplateRows();
+        $highestUid = $this->getHighestUid($sysTemplateRows);
+        $fakeRow = $this->getFakeRow($highestUid, $site, $package, $constants, $setup);
+
+        if (empty($sysTemplateRows)) {
+            $event->setTemplateRows([$fakeRow]);
+            return false;
+        }
+
+        $newSysTemplateRows = $this->getSysTemplateRows($event, $sysTemplateRows, $fakeRow, $site);
+
+        $event->setTemplateRows($newSysTemplateRows);
+
+        return true;
     }
 }

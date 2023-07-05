@@ -40,6 +40,7 @@ class StagePreviewRendererTest extends AbstractPreviewRendererTest
             'header' => 'header',
             'bodytext' => 'bodytext',
             'tx_stage_file'=>1,
+            'image' => 'image.jpg',
             ];
     }
 }

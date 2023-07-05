@@ -90,7 +90,7 @@ TCEFORM {
           disabled = 1
         }
         stage {
-          disabled = 1
+          disabled = 0
         }
         gallery {
           disabled = 1
@@ -115,13 +115,23 @@ TCEFORM {
         textpic {
           removeItems = 1,2,9,10
         }
+        video {
+            removeItems = 1,2,9,10,17,18,25,26
+        }
       }
     }
     imageborder {
       disabled = 1
     }
-    media.config.appearance.fileUploadAllowed = 0
+    media {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+        }
+      }
+    }
   }
+
   ## Default Image cropping
   sys_file_reference.crop.config.cropVariants {
     default {

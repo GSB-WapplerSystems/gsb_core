@@ -1,17 +1,17 @@
-# Text and Images:
-# Text with images.
+# Text & Media:
+# Any number of media wrapped right around a regular text element.
 #
-# CType: textpic
+# CType: textmedia
 
-tt_content.textpic =< lib.contentElement
-tt_content.textpic {
-    templateName = Textpic
+tt_content.textmedia =< lib.contentElement
+tt_content.textmedia {
+    templateName = Textmedia
     dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 = files
         10 {
-            references.fieldName = image
+            references.fieldName = assets
         }
-        20 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
+        20 = gallery
         20 {
             maxGalleryWidth = {$styles.content.textmedia.maxW}
             maxGalleryWidthInText = {$styles.content.textmedia.maxWInText}
@@ -27,12 +27,6 @@ tt_content.textpic {
           join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
           where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
           as = contentCategories
-        }
-    }
-    stdWrap {
-        editIcons = tt_content: header [header_layout], bodytext, image [imageorient|imagewidth|imageheight], [imagecols|imageborder], image_zoom
-        editIcons {
-            iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
         }
     }
 }

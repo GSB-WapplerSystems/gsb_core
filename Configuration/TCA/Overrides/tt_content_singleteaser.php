@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\SingleteaserPreviewRenderer;
-use TYPO3\CMS\Core\Resource\AbstractFile;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -21,32 +20,6 @@ defined('TYPO3') || die();
             'default',
         ]
     );
-
-    $imageColumn = [
-        'image' => [
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.image',
-            'config' => [
-                'type' => 'file',
-                'maxitems' => 1,
-                'allowed' => 'jpg,jpeg,svg,png,gif',
-                'overrideChildTca' => [
-                    'types' => [
-                        '0' => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                        ],
-                        AbstractFile::FILETYPE_IMAGE => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-    ];
-    ExtensionManagementUtility::addTCAcolumns('tt_content', $imageColumn);
 
     $imagePalettes = [
         'image_config' => [
@@ -69,6 +42,39 @@ defined('TYPO3') || die();
                                         'enableRichtext' => 1,
                                     ],
                             ],
+                        'image' =>
+                            [
+                                'config' =>
+                                    [
+                                        'maxitems' => 1,
+                                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                                        'overrideChildTca' => [
+                                            'columns' => [
+                                                'description' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'link' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'title' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                                'allow_download' => [
+                                                    'config' => [
+                                                        'renderType' => 'passthrough',
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                            ],
                     ],
                 'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -86,6 +92,8 @@ defined('TYPO3') || die();
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
         --palette--;;hidden,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+        --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
             ],

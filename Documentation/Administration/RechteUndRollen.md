@@ -1,15 +1,15 @@
-# Rechte und Rollen
+# Rechte
 
 Die Distrubtion liefert bei der ersten Installation folgende Gruppen für TYPO3-Backend aus:
-- [ROLE] Site Administrator:innen
-- [ROLE] Chefredakteur:innen
-- [ROLE] Redakteur:innen
-- [PAGEACCESS] Base
-- [FM] Base
-- [DBM] Base
-- [DBM] Spielwiese
+- "[ROLE] Site Administrator:innen"
+- "[ROLE] Chefredakteur:innen"
+- "[ROLE] Redakteur:innen"
+- "[PAGEACCESS] Base"
+- "[FM] Base"
+- "[DBM] Base"
+- "[DBM] Spielwiese"
 
-FM = File Mount, DBM = Database Mount
+_FM = File Mount, DBM = Database Mount_
 
 ## Rollen
 

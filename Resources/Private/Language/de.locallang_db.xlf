@@ -220,8 +220,8 @@
 				<target>Tertiary Button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.3" resname="tt_content.tx_link_layout.I.3" approved="yes">
-				<source>Quarterly button</source>
-				<target>Quarterly Button</target>
+				<source>Quaternary button</source>
+				<target>Quaternary Button</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.4" resname="tt_content.tx_link_layout.I.4" approved="yes">
 				<source>Internal link</source>
@@ -327,9 +327,25 @@
 				<source>Audio</source>
 				<target>Audio</target>
 			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch" approved="yes">
+				<source>Stage Type</source>
+				<target>Bühnen Typ</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_image" resname="stage.tx_stage_switch_image" approved="yes">
+				<source>Stage with image</source>
+				<target>Bühne mit Bild</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video" approved="yes">
+				<source>Stage with video</source>
+				<target>Bühne mit Video</target>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file" approved="yes">
-				<source>Stage Image/Video</source>
-				<target>Bühne Bild/Video</target>
+				<source>Stage Image</source>
+				<target>Bühne Bild</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video" approved="yes">
+				<source>Stage Video</source>
+				<target>Bühne Video</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg" approved="yes">
 				<source>Stage background</source>
@@ -568,11 +584,11 @@
 			</trans-unit>
 			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall" approved="yes">
 				<source>Accordion toggle</source>
-				<target>Akkordion Toggle</target>
+				<target>Akkordeon Toggle</target>
 			</trans-unit>
 			<trans-unit id="accordion.description.onloadall" resname="accordion.description.onloadall" approved="yes">
 				<source>Accordions close when an accordion element is selected / Accordions stay open</source>
-				<target>Akkordions schließen sich bei Auswahl eines Akkordion Elementes / Akkordions bleiben geöffnet</target>
+				<target>Akkordeons schließen sich bei Auswahl eines Akkordeon Elementes / Akkordeons bleiben geöffnet</target>
 			</trans-unit>
 			<trans-unit id="accordion.label.open" resname="accordion.label.open" approved="yes">
 				<source>Accordion tile</source>

@@ -1,4 +1,4 @@
-## Singleteaser
+# Singleteaser
 
 This is the technical documentation for the Singleteaser. The next steps describe where the Singleteaser Teaser is located and where you can edit it.
 
@@ -29,4 +29,4 @@ Resources/Private/Partials/Content/Media/Button.html
 
 All these files are in rellation to the **Button.html**.
 
-#### To learn more about Fluid and TypoScript we refer to the TYPO3 documentation. It is important to use the correct documentation for the given TYPO3 version.
+**To learn more about Fluid and TypoScript we refer to the TYPO3 documentation. It is important to use the correct documentation for the given TYPO3 version.**

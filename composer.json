@@ -52,6 +52,7 @@
 		"friendsofphp/php-cs-fixer": "^3.14",
 		"helmich/typo3-typoscript-lint": "^3.1",
 		"michielroos/typo3scan": "^1.7",
+		"mockery/mockery": "^1.6",
 		"php-coveralls/php-coveralls": "^2.5",
 		"phpmd/phpmd": "^2.13",
 		"phpstan/extension-installer": "^1.2",
