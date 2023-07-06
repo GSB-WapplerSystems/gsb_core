@@ -426,10 +426,10 @@
             <trans-unit id="grid.type.container" resname="grid.type.container">
                 <source>Container</source>
             </trans-unit>
-            <trans-unit id="grid.bgimage" resname="grid.bgimage">
+            <trans-unit id="grid.icon" resname="grid.bgimage">
                 <source>Container Icon</source>
             </trans-unit>
-			<trans-unit id="grid.bgimage.description" resname="grid.bgimage.description" >
+			<trans-unit id="grid.icon.description" resname="grid.bgimage.description" >
 				<source>Insert icon at the top left of the container</source>
 			</trans-unit>
             <trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg">

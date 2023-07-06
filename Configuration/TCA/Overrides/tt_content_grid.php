@@ -35,42 +35,6 @@ defined('TYPO3') or die('Access denied.');
     );
 
     $grid = [
-        'columnsOverrides' =>
-            [
-                'image' =>
-                    [
-                        'config' =>
-                            [
-                                'maxitems' => 1,
-                                'allowed' => 'jpg,jpeg,svg,png,gif',
-                                'overrideChildTca' => [
-                                    'columns' => [
-                                        'description' => [
-                                            'config' => [
-                                                'type' => 'passthrough',
-                                            ],
-                                        ],
-                                        'link' => [
-                                            'config' => [
-                                                'type' => 'passthrough',
-                                            ],
-                                        ],
-                                        'title' => [
-                                            'config' => [
-                                                'type' => 'passthrough',
-                                            ],
-                                        ],
-                                        'allow_download' => [
-                                            'config' => [
-                                                'renderType' => 'passthrough',
-                                                'type' => 'passthrough',
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                    ],
-            ],
         'grid_type' => [
             'config' =>
                 [
@@ -134,6 +98,85 @@ defined('TYPO3') or die('Access denied.');
                 'type' => 'input',
                 'renderType' => 'color',
                 'size' => 10,
+            ],
+        ],
+        'grid_icon' => [
+            'exclude' => '0',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon.description',
+            'config' => [
+                'type' => 'file',
+                'allowed' => 'jpg,jpeg,svg,png,gif',
+                'maxitems' => 1,
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'showPossibleLocalizationRecords' => true,
+                ],
+                // custom configuration for displaying fields in the overlay/reference table
+                // to use the imageoverlayPalette instead of the basicoverlayPalette
+                'overrideChildTca' => [
+                    'columns' => [
+                        'description' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'link' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'title' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'outline' => [
+                            'config' => [
+                                'renderType' => 'passthrough',
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'allow_download' => [
+                            'config' => [
+                                'renderType' => 'passthrough',
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                    ],
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                    ],
+                ],
             ],
         ],
         'grid_imgbg' => [
@@ -207,7 +250,7 @@ defined('TYPO3') or die('Access denied.');
             'showitem' => 'grid_type,grid_columns', 'canNotCollapse' => 1,
         ],
         'grid_bg' => [
-            'showitem' => 'grid_bgcolor,grid_light,--linebreak--,image', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgcolor,grid_light,--linebreak--,grid_icon', 'canNotCollapse' => 1,
         ],
         'grid_container_pallet' => [
             'showitem' => 'grid_bgfullsize,grid_container', 'canNotCollapse' => 1,
