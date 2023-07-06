@@ -474,9 +474,13 @@
 				<source>Container</source>
 				<target>Container</target>
 			</trans-unit>
-			<trans-unit id="grid.bgimage" resname="grid.bgimage" approved="yes">
-				<source>Background image</source>
-				<target>Hintergrundbild</target>
+			<trans-unit id="grid.icon" resname="grid.bgimage" approved="yes">
+				<source>Container Icon</source>
+				<target>Container Icon (Bild)</target>
+			</trans-unit>
+			<trans-unit id="grid.icon.description" resname="grid.bgimage.description" approved="yes">
+				<source>Insert icon at the top left of the container</source>
+				<target>Icon oben links am Container einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg" approved="yes">
 				<source>Color layer</source>

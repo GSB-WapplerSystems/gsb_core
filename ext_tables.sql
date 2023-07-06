@@ -41,7 +41,7 @@ CREATE TABLE tt_content
 	slider_columns                 tinytext,
 	grid_type                      tinytext,
 	grid_columns                   tinytext,
-	grid_bgimage                   int(11) unsigned DEFAULT '0' NOT NULL,
+	grid_icon                   int(11) unsigned DEFAULT '0' NOT NULL,
 	grid_parallax                  tinyint(4)       DEFAULT '0' NOT NULL,
 	grid_imgbg                     tinyint(4)       DEFAULT '0' NOT NULL,
 	grid_bottom_image              tinytext,

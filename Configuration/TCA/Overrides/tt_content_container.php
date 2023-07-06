@@ -39,7 +39,7 @@ defined('TYPO3') or die('Access denied.');
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;Header Config;header_config,subheader,
     --div--;Container,
-        --palette--;;grid_bg,grid_bgimage,
+        --palette--;;grid_bg,
         --palette--;;grid_container_pallet,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
