@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (static function (): void {
@@ -36,18 +38,28 @@ defined('TYPO3') || die();
                 'default' => null,
             ],
         ],
+        'link' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
+        'title' => [
+            'config' => [
+                'type' => 'passthrough',
+            ],
+        ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_reference', $newColumns);
+    ExtensionManagementUtility::addTCAcolumns('sys_file_reference', $newColumns);
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayPalette',
         'outline,allow_download',
         'after:title'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'basicoverlayPalette',
         'is_accessible',
