@@ -71,6 +71,11 @@ defined('TYPO3') || die();
                                                         'type' => 'passthrough',
                                                     ],
                                                 ],
+                                                'caption' => [
+                                                    'config' => [
+                                                        'type' => 'passthrough',
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                     ],

@@ -143,6 +143,11 @@ defined('TYPO3') or die('Access denied.');
                                 'type' => 'passthrough',
                             ],
                         ],
+                        'caption' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
                     ],
                     'types' => [
                         '0' => [
