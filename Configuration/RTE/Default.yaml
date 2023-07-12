@@ -8,7 +8,14 @@ editor:
     contentsCss: ""
     debug: false
     allowedContent: true
-    extraAllowedContent: "*(*)[data-*]; span(shy)"
+    defaultContentLanguage: "de"
+    defaultLanguage: "de"
+    extraAllowedContent:
+      - code
+      - div
+      - span
+      - "*(*)"
+      - "*[data-*]"
 
     heading:
       options:
@@ -87,6 +94,7 @@ editor:
         - toggleTableCaption
 
     language:
+      ui: "de"
       textPartLanguage:
         - { title: 'Deutsch', languageCode: 'de' }
         - { title: 'English', languageCode: 'en' }
