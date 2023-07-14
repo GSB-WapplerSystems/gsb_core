@@ -101,9 +101,10 @@ defined('TYPO3') or die('Access denied.');
             ],
         ],
         'grid_icon' => [
-            'exclude' => '0',
+            'exclude' => '1',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:1',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'jpg,jpeg,svg,png,gif',
@@ -188,6 +189,7 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg.description',
+            'onChange' => 'reload',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -220,6 +222,7 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:0',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -236,6 +239,7 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:0',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -255,7 +259,7 @@ defined('TYPO3') or die('Access denied.');
             'showitem' => 'grid_type,grid_columns', 'canNotCollapse' => 1,
         ],
         'grid_bg' => [
-            'showitem' => 'grid_bgcolor,grid_light,--linebreak--,grid_icon', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgcolor,grid_light,grid_imgbg,--linebreak--,grid_icon', 'canNotCollapse' => 1,
         ],
         'grid_container_pallet' => [
             'showitem' => 'grid_bgfullsize,grid_container', 'canNotCollapse' => 1,
