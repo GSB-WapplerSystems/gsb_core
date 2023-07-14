@@ -56,7 +56,6 @@ defined('TYPO3') || die();
         'title' => [
             'config' => [
                 'type' => 'passthrough',
-
             ],
         ],
     ];

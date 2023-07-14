@@ -37,12 +37,6 @@ renderables:
       -
         label: Inhaltselement
         properties:
-          contentElementUid: '1680'
-        type: ContentElement
-        identifier: contentelement-3
-      -
-        label: Inhaltselement
-        properties:
           contentElementUid: '355'
         type: ContentElement
         identifier: contentelement-2
@@ -51,7 +45,7 @@ renderables:
         identifier: fieldset-1
         label: ''
         properties:
-          elementClassAttribute: 'form-bg'
+          elementClassAttribute: form-bg
         renderables:
           -
             type: GridRow
@@ -511,16 +505,3 @@ renderables:
             validators:
               -
                 identifier: NotEmpty
-      -
-        label: Inhaltselement
-        properties:
-          contentElementUid: '258'
-        type: ContentElement
-        identifier: contentelement-1
-  -
-    renderingOptions:
-      previousButtonLabel: 'Vorherige Seite'
-      nextButtonLabel: 'Nächste Seite'
-    identifier: summarypage
-    label: Zusammenfassung
-    type: SummaryPage

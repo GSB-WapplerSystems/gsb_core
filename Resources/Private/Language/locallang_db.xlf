@@ -433,10 +433,10 @@
 				<source>Insert icon at the top left of the container</source>
 			</trans-unit>
             <trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg">
-                <source>Color layer</source>
+                <source>Move out element</source>
             </trans-unit>
             <trans-unit id="grid.bg.imgbg.description" resname="grid.bg.imgbg.description">
-                <source>Insert color layer over image</source>
+                <source>Move out element and add optional icon</source>
             </trans-unit>
             <trans-unit id="grid.bg.wave" resname="grid.bg.wave">
                 <source>Conclusion image</source>
