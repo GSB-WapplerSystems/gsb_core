@@ -100,10 +100,96 @@ defined('TYPO3') or die('Access denied.');
                 'size' => 10,
             ],
         ],
+        'grid_icon' => [
+            'exclude' => '1',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.icon.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:1',
+            'config' => [
+                'type' => 'file',
+                'allowed' => 'jpg,jpeg,svg,png,gif',
+                'maxitems' => 1,
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                    'showPossibleLocalizationRecords' => true,
+                ],
+                // custom configuration for displaying fields in the overlay/reference table
+                // to use the imageoverlayPalette instead of the basicoverlayPalette
+                'overrideChildTca' => [
+                    'columns' => [
+                        'description' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'link' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'title' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'outline' => [
+                            'config' => [
+                                'renderType' => 'passthrough',
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'allow_download' => [
+                            'config' => [
+                                'renderType' => 'passthrough',
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                        'caption' => [
+                            'config' => [
+                                'type' => 'passthrough',
+                            ],
+                        ],
+                    ],
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'grid_imgbg' => [
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg.description',
+            'onChange' => 'reload',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -132,21 +218,11 @@ defined('TYPO3') or die('Access denied.');
                 'default' => '0',
             ],
         ],
-        'grid_bgimage' => [
-            'config' =>
-                [
-                    'type' => 'file',
-                    'allowed' => 'jpg,jpeg,svg,png,gif',
-                    'maxitems' => '1',
-                    'minitems' => '0',
-                ],
-            'exclude' => '1',
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bgimage',
-        ],
         'grid_bgfullsize' => [
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:0',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -163,6 +239,7 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => '0',
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container.description',
+            'displayCond' => 'FIELD:grid_imgbg:=:0',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -182,7 +259,7 @@ defined('TYPO3') or die('Access denied.');
             'showitem' => 'grid_type,grid_columns', 'canNotCollapse' => 1,
         ],
         'grid_bg' => [
-            'showitem' => 'grid_bgcolor,grid_imgbg,grid_light', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgcolor,grid_light,grid_imgbg,--linebreak--,grid_icon', 'canNotCollapse' => 1,
         ],
         'grid_container_pallet' => [
             'showitem' => 'grid_bgfullsize,grid_container', 'canNotCollapse' => 1,

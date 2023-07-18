@@ -3,23 +3,35 @@
     <f:if condition="{file.link}">
         <f:then>
             <f:link.typolink parameter="{file.link}" title="{file.link.title}">
-                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
+                <f:render
+                        arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}"
+                        partial="Media/Rendering/Image"/>
             </f:link.typolink>
         </f:then>
         <f:else>
-            <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
+            <f:render
+                    arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}"
+                    partial="Media/Rendering/Image"/>
         </f:else>
     </f:if>
-    <f:if condition="{file.originalFile.properties.description} || {file.properties.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption} || {file.properties.allow_download} || {data.image_zoom}">
+    <f:if condition="{file.originalFile.properties.description} || {file.properties.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption} || {file.properties.caption} || {file.properties.allow_download} || {data.image_zoom}">
         <figcaption class="figure-caption">
-            <f:if condition="{file.originalFile.properties.caption}">
-                <p class="caption mb-0">{file.originalFile.properties.caption}</p>
+            <f:if condition="{file.properties.caption}">
+                <f:then>
+                    <p class="caption mb-0">{file.properties.caption}</p>
+                </f:then>
+                <f:else>
+                    <f:if condition="{file.originalFile.properties.caption}">
+                        <p class="caption mb-0">{file.originalFile.properties.caption}</p>
+                    </f:if>
+                </f:else>
             </f:if>
             <f:if condition="{file.originalFile.properties.description} || {file.properties.description} || {file.originalFile.properties.copyright} || {file.properties.allow_download} || {data.image_zoom}">
                 <ul class="image-buttons d-flex list-unstyled">
                     <f:if condition="{file.originalFile.properties.copyright}">
                         <li class="btn-group dropstart">
-                            <button aria-expanded="false" class="btn btn-image btn-copyright" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
+                            <button aria-expanded="false" class="btn btn-image btn-copyright"
+                                    data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
                                 <span class="visually-hidden">Copyright</span>
                             </button>
                             <div class="dropdown-menu dropdown-copyright p-0">
@@ -29,21 +41,29 @@
                     </f:if>
                     <f:if condition="{file.properties.allow_download}">
                         <li class="btn-group dropstart">
-                            <button aria-expanded="false" class="btn btn-image btn-download" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
+                            <button aria-expanded="false" class="btn btn-image btn-download"
+                                    data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
                                 <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}</span>
                             </button>
                             <div class="dropdown-menu dropdown-copyright p-0">
-                                <f:link.file class="btn btn-image btn-download" download="true" file="{file.originalFile}" filename="{file.originalFile.name}"><span>{file.originalFile.size -> f:format.bytes()} ({file.originalFile.extension -> f:format.case(mode: 'upper')})</span> | {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}</f:link.file>
+                                <f:link.file class="btn btn-image btn-download" download="true"
+                                             file="{file.originalFile}" filename="{file.originalFile.name}"><span>{file.originalFile.size -> f:format.bytes()} ({file.originalFile.extension -> f:format.case(mode: 'upper')})</span>
+                                    | {f:translate(key:
+                                    'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}
+                                </f:link.file>
                             </div>
                         </li>
                     </f:if>
                     <f:if condition="{file.originalFile.properties.description} || {file.properties.description}">
                         <li>
-                            <button class="btn btn-image btn-info" data-bs-target="#modal-description-{data.uid}" data-bs-toggle="modal" type="button">
+                            <button class="btn btn-image btn-info" data-bs-target="#modal-description-{data.uid}"
+                                    data-bs-toggle="modal" type="button">
                                 <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_picture_longdescription')}</span>
                             </button>
-                            <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="modal-description-{data.uid}" tabindex="-1">
-                                <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered" role="document">
+                            <div aria-hidden="true" class="modal fade" data-bs-backdrop="static"
+                                 id="modal-description-{data.uid}" tabindex="-1">
+                                <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered"
+                                     role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="container">
@@ -52,7 +72,10 @@
 
                                                     </div>
                                                     <div class="col-2 close text-end">
-                                                        <button class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}" type="button"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span></button>
+                                                        <button class="btn-close" data-bs-dismiss="modal"
+                                                                title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}"
+                                                                type="button"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -64,7 +87,8 @@
                                                 </f:then>
                                                 <f:else>
                                                     <f:if condition="{file.originalFile.properties.description}">
-                                                        <f:format.html>{file.originalFile.properties.description}</f:format.html>
+                                                        <f:format.html>{file.originalFile.properties.description}
+                                                        </f:format.html>
                                                     </f:if>
                                                 </f:else>
                                             </f:if>
@@ -76,20 +100,30 @@
                     </f:if>
                     <f:if condition="{data.image_zoom}">
                         <li>
-                            <a class="btn btn-image btn-zoom" data-bs-target="#Modal-{data.uid}" data-bs-toggle="modal" href="/fileadmin{file.properties.identifier}" role="button">
+                            <a class="btn btn-image btn-zoom" data-bs-target="#Modal-{data.uid}" data-bs-toggle="modal"
+                               href="/fileadmin{file.properties.identifier}" role="button">
                                 <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_enlarge_picture')}</span>
                             </a>
-                            <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="Modal-{data.uid}" tabindex="-1">
+                            <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="Modal-{data.uid}"
+                                 tabindex="-1">
                                 <div class="modal-dialog modal-fullscreen" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="container">
                                                 <div class="row g-0">
                                                     <div class="col-10 title">
-                                                        <f:link.file class="btn btn-image btn-download" download="true" file="{file.originalFile}" filename="{file.originalFile.name}"><span>{file.originalFile.size -> f:format.bytes()} ({file.originalFile.extension -> f:format.case(mode: 'upper')})</span> | {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}</f:link.file>
+                                                        <f:link.file class="btn btn-image btn-download" download="true"
+                                                                     file="{file.originalFile}"
+                                                                     filename="{file.originalFile.name}"><span>{file.originalFile.size -> f:format.bytes()} ({file.originalFile.extension -> f:format.case(mode: 'upper')})</span>
+                                                            | {f:translate(key:
+                                                            'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}
+                                                        </f:link.file>
                                                     </div>
                                                     <div class="col-2 close text-end">
-                                                        <button class="btn-close" data-bs-dismiss="modal" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}" type="button"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span></button>
+                                                        <button class="btn-close" data-bs-dismiss="modal"
+                                                                title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}"
+                                                                type="button"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_close')}</span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +131,9 @@
                                         <div class="modal-body">
                                             <figure class="image">
                                                 <picture>
-                                                    <f:image class="figure-img img-fluid" crop="false" loading="lazy" maxWidth="1320" src="{file.properties.uid}" treatIdAsReference="1" />
+                                                    <f:image class="figure-img img-fluid" crop="false" loading="lazy"
+                                                             maxWidth="1320" src="{file.properties.uid}"
+                                                             treatIdAsReference="1"/>
                                                 </picture>
                                             </figure>
                                         </div>

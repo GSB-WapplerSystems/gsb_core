@@ -51,7 +51,7 @@
     <div class="toolbar t3js-topbar-toolbar">
         <ul class="toolbar-list" data-typo3-role="typo3-module-menu">
             <f:for as="toolbarItem" each="{toolbarItems}">
-                <li - toolbarItem) {be:toolbar.attributes(class:> f:format.raw()}>
+                <li {be:toolbar.attributes(class: toolbarItem) -> f:format.raw()}>
                     <be:toolbar.ifHasDropdown class="{toolbarItem}">
                         <f:then>
                             <a class="toolbar-item-link dropdown-toggle" data-bs-offset="0,0" data-bs-toggle="dropdown"
