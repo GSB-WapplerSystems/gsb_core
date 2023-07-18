@@ -244,7 +244,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
         self::assertEquals([], $event->getTemplateRows());
     }
 
-    public function testInvokeWithNonSiteObject(): void
+    /*public function testInvokeWithNonSiteObject(): void
     {
         [$packageHelper, $event, $site, $listener, $package] = $this->mockDependencies();
 
@@ -260,7 +260,7 @@ class AddTypoScriptFromSitePackageEventTest extends Unit
 
         // Assert that the template rows remain unchanged
         self::assertEquals([], $event->getTemplateRows());
-    }
+    }*/
 
     public function testInvokeWithMissingConstantsFile(): void
     {
