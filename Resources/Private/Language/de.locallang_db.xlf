@@ -738,6 +738,98 @@
 				<source>Please activate this option if the file (PDF) is accessible.</source>
 				<target>Bitte aktivieren Sie diese Option, wenn die Datei (PDF) Barrierefrei ist.</target>
 			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms" resname="tx_gsbcore_forms">
+				<source>Form Values</source>
+				<target>Formular Eingaben</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.firstname" resname="tx_gsbcore_forms.firstname">
+				<source>Firstname</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.lastname" resname="tx_gsbcore_forms.lastname">
+				<source>Lastname</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.email" resname="tx_gsbcore_forms.email">
+				<source>E-Mail</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.data_privacy" resname="tx_gsbcore_forms.data_privacy">
+				<source>Data Privacy</source>
+				<target>Datenschutzerklärung</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.data_privacy.checked" resname="tx_gsbcore_forms.data_privacy.checked">
+				<source>Checked</source>
+				<target>Akzeptiert</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.data_privacy.unchecked" resname="tx_gsbcore_forms.data_privacy.unchecked">
+				<source>Unchecked</source>
+				<target>Nicht Akzeptiert</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.message" resname="tx_gsbcore_forms.message">
+				<source>Message</source>
+				<target>Nachricht</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value1">
+				<source>Value 1</source>
+				<target>Wert 1</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value2">
+				<source>Value 2</source>
+				<target>Wert 2</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value3">
+				<source>Value 3</source>
+				<target>Wert 3</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value4">
+				<source>Value 4</source>
+				<target>Wert 4</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value5">
+				<source>Value 5</source>
+				<target>Wert 5</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value6">
+				<source>Value 6</source>
+				<target>Wert 6</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value7">
+				<source>Value 7</source>
+				<target>Wert 7</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value8">
+				<source>Value 8</source>
+				<target>Wert 8</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value9">
+				<source>Value 9</source>
+				<target>Wert 9</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value10">
+				<source>Value 10</source>
+				<target>Wert 10</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value11">
+				<source>Value 11</source>
+				<target>Wert 11</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value12">
+				<source>Value 12</source>
+				<target>Wert 12</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value13">
+				<source>Value 13</source>
+				<target>Wert 13</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value14">
+				<source>Value 14</source>
+				<target>Wert 14</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value15">
+				<source>Value 15</source>
+				<target>Wert 15</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

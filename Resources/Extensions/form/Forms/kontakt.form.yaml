@@ -25,6 +25,29 @@ finishers:
       pageUid: '53'
       additionalParameters: ''
     identifier: Redirect
+  -
+    options:
+      table: 'tx_gsbcore_forms'
+      mode: insert
+      databaseColumnMappings:
+        tstamp:
+          value: '{__currentTimestamp}'
+        pid:
+          value: '27'
+      elements:
+        text-1:
+          mapOnDatabaseColumn: 'firstname'
+        name:
+          mapOnDatabaseColumn: 'lastname'
+        email:
+          mapOnDatabaseColumn: 'email'
+        message:
+          mapOnDatabaseColumn: 'message'
+        multicheckbox-1:
+          mapOnDatabaseColumn: 'value-1'
+        checkbox-1:
+          mapOnDatabaseColumn: 'data_privacy'
+    identifier: SaveToDatabase
 renderables:
   -
     renderingOptions:
