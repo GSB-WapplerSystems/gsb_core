@@ -21,13 +21,13 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_image',
-                                        1 => '0',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_image',
+                                        'value' => '0',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_video',
-                                        1 => '1',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_switch_video',
+                                        'value' => '1',
                                     ],
                             ],
                         'renderType' => 'selectSingle',
@@ -56,23 +56,23 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
-                                        1 => 'stage-default',
+                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
+                                        'value' => 'stage-default',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
-                                        1 => 'stage-top',
+                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
+                                        'value' => 'stage-top',
                                     ],
                                 2 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
-                                        1 => 'stage-middle',
+                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
+                                        'value' => 'stage-middle',
                                     ],
                                 3 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
-                                        1 => 'stage-bottom',
+                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
+                                        'value' => 'stage-bottom',
                                     ],
                             ],
                         'renderType' => 'selectSingle',
@@ -89,7 +89,9 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor.I.1',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_bgcolor.I.1',
+                                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                                     ],
                             ],
                         'renderType' => 'checkboxToggle',

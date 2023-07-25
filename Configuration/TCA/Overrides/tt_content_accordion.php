@@ -62,33 +62,33 @@ defined('TYPO3') or die('Access denied.');
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                1 => '1',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                'value' => '1',
                             ],
                         1 =>
                             [
-                                0 => 'H2',
-                                1 => '2',
+                                'label' => 'H2',
+                                'value' => '2',
                             ],
                         2 =>
                             [
-                                0 => 'H3',
-                                1 => '3',
+                                'label' => 'H3',
+                                'value' => '3',
                             ],
                         3 =>
                             [
-                                0 => 'H4',
-                                1 => '4',
+                                'label' => 'H4',
+                                'value' => '4',
                             ],
                         4 =>
                             [
-                                0 => 'H5',
-                                1 => '5',
+                                'label' => 'H5',
+                                'value' => '5',
                             ],
                         5 =>
                             [
-                                0 => 'H6',
-                                1 => '6',
+                                'label' => 'H6',
+                                'value' => '6',
                             ],
                     ],
                 'renderType' => 'selectSingle',
@@ -107,8 +107,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',
@@ -142,8 +142,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',

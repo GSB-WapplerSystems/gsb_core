@@ -42,13 +42,13 @@ defined('TYPO3') || die();
                         [
                             0 =>
                                 [
-                                    0 => 'Slide',
-                                    1 => 'slide',
+                                    'label' => 'Slide',
+                                    'value' => 'slide',
                                 ],
                             1 =>
                                 [
-                                    0 => 'Fade',
-                                    1 => 'fade',
+                                    'label' => 'Fade',
+                                    'value' => 'fade',
                                 ],
                         ],
                     'renderType' => 'selectSingle',

@@ -42,13 +42,13 @@ defined('TYPO3') or die('Access denied.');
                         [
                             0 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.list',
-                                    1 => 'ul',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.list',
+                                    'value' => 'ul',
                                 ],
                             1 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.container',
-                                    1 => 'div',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.type.container',
+                                    'value' => 'div',
                                 ],
                         ],
                     'renderType' => 'selectSingle',
@@ -65,23 +65,23 @@ defined('TYPO3') or die('Access denied.');
                         [
                             0 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.onecol',
-                                    1 => '1',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.onecol',
+                                    'value' => '1',
                                 ],
                             1 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.twocol',
-                                    1 => '2',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.twocol',
+                                    'value' => '2',
                                 ],
                             2 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.threecol',
-                                    1 => '3',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.threecol',
+                                    'value' => '3',
                                 ],
                             3 =>
                                 [
-                                    0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.fourcol',
-                                    1 => '4',
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.columns.fourcol',
+                                    'value' => '4',
                                 ],
                         ],
                     'renderType' => 'selectSingle',
@@ -195,8 +195,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',
@@ -211,8 +211,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',
@@ -228,8 +228,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',
@@ -245,8 +245,8 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '0',
-                        1 => '1',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
                 'default' => '0',

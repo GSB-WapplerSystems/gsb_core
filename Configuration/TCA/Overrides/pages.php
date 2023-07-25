@@ -17,10 +17,8 @@ defined('TYPO3') || die();
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '',
-                        1 => 'enabled',
-                        'labelChecked' => 'Enabled',
-                        'labelUnchecked' => 'Disabled',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
             ],
@@ -35,10 +33,8 @@ defined('TYPO3') || die();
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '',
-                        1 => 'enabled',
-                        'labelChecked' => 'Enabled',
-                        'labelUnchecked' => 'Disabled',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
             ],
@@ -53,10 +49,8 @@ defined('TYPO3') || die();
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        0 => '',
-                        1 => 'enabled',
-                        'labelChecked' => 'Enabled',
-                        'labelUnchecked' => 'Disabled',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
                 ],
             ],

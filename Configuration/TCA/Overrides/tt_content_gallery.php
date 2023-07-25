@@ -31,18 +31,18 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.0',
-                                        1 => 'gallery-single',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.0',
+                                        'value' => 'gallery-single',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.1',
-                                        1 => 'gallery-tiles',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.1',
+                                        'value' => 'gallery-tiles',
                                     ],
                                 2 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.2',
-                                        1 => 'gallery-slider',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.2',
+                                        'value' => 'gallery-slider',
                                     ],
                             ],
                         'renderType' => 'selectSingle',
@@ -57,10 +57,11 @@ defined('TYPO3') || die();
                     [
                         'items' =>
                             [
-                                0 =>
-                                    [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_bg.I.1',
-                                    ],
+                                [
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_bg.I.1',
+                                    'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                                    'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
+                                ],
                             ],
                         'renderType' => 'checkboxToggle',
                         'type' => 'check',
@@ -74,10 +75,11 @@ defined('TYPO3') || die();
                     [
                         'items' =>
                             [
-                                0 =>
-                                    [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_textcolor.I.1',
-                                    ],
+                                [
+                                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_textcolor.I.1',
+                                    'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                                    'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
+                                ],
                             ],
                         'renderType' => 'checkboxToggle',
                         'type' => 'check',
