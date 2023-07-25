@@ -774,59 +774,59 @@
 				<source>Value 1</source>
 				<target>Wert 1</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value2">
+			<trans-unit id="tx_gsbcore_forms.value2" resname="tx_gsbcore_forms.value2">
 				<source>Value 2</source>
 				<target>Wert 2</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value3">
+			<trans-unit id="tx_gsbcore_forms.value3" resname="tx_gsbcore_forms.value3">
 				<source>Value 3</source>
 				<target>Wert 3</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value4">
+			<trans-unit id="tx_gsbcore_forms.value4" resname="tx_gsbcore_forms.value4">
 				<source>Value 4</source>
 				<target>Wert 4</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value5">
+			<trans-unit id="tx_gsbcore_forms.value5" resname="tx_gsbcore_forms.value5">
 				<source>Value 5</source>
 				<target>Wert 5</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value6">
+			<trans-unit id="tx_gsbcore_forms.value6" resname="tx_gsbcore_forms.value6">
 				<source>Value 6</source>
 				<target>Wert 6</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value7">
+			<trans-unit id="tx_gsbcore_forms.value7" resname="tx_gsbcore_forms.value7">
 				<source>Value 7</source>
 				<target>Wert 7</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value8">
+			<trans-unit id="tx_gsbcore_forms.value8" resname="tx_gsbcore_forms.value8">
 				<source>Value 8</source>
 				<target>Wert 8</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value9">
+			<trans-unit id="tx_gsbcore_forms.value9" resname="tx_gsbcore_forms.value9">
 				<source>Value 9</source>
 				<target>Wert 9</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value10">
+			<trans-unit id="tx_gsbcore_forms.value10" resname="tx_gsbcore_forms.value10">
 				<source>Value 10</source>
 				<target>Wert 10</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value11">
+			<trans-unit id="tx_gsbcore_forms.value11" resname="tx_gsbcore_forms.value11">
 				<source>Value 11</source>
 				<target>Wert 11</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value12">
+			<trans-unit id="tx_gsbcore_forms.value12" resname="tx_gsbcore_forms.value12">
 				<source>Value 12</source>
 				<target>Wert 12</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value13">
+			<trans-unit id="tx_gsbcore_forms.value13" resname="tx_gsbcore_forms.value13">
 				<source>Value 13</source>
 				<target>Wert 13</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value14">
+			<trans-unit id="tx_gsbcore_forms.value14" resname="tx_gsbcore_forms.value14">
 				<source>Value 14</source>
 				<target>Wert 14</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_forms.value1" resname="tx_gsbcore_forms.value15">
+			<trans-unit id="tx_gsbcore_forms.value15" resname="tx_gsbcore_forms.value15">
 				<source>Value 15</source>
 				<target>Wert 15</target>
 			</trans-unit>
