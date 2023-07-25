@@ -25,19 +25,13 @@ return [
             ],
         ],
         'crdate' => [
-            'label' => 'crdate',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
+                'type' => 'passthrough',
             ],
         ],
         'tstamp' => [
-            'label' => 'tstamp',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
+                'type' => 'passthrough',
             ],
         ],
         'firstname' => [
@@ -65,7 +59,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,email',
+                'eval' => 'trim',
                 'required' => true,
                 'readOnly' => true,
             ],

@@ -28,12 +28,9 @@ finishers:
   -
     options:
       table: 'tx_gsbcore_forms'
-      mode: insert
       databaseColumnMappings:
-        tstamp:
-          value: '{__currentTimestamp}'
         pid:
-          value: '27'
+          value: 27
       elements:
         text-1:
           mapOnDatabaseColumn: 'firstname'
@@ -41,16 +38,6 @@ finishers:
           mapOnDatabaseColumn: 'lastname'
         email:
           mapOnDatabaseColumn: 'email'
-        multicheckbox-1:
-          mapOnDatabaseColumn: 'value-1'
-        radiobutton-1:
-          mapOnDatabaseColumn: 'value-2'
-        singleselect-1:
-          mapOnDatabaseColumn: 'value-3'
-        multiselect-1:
-          mapOnDatabaseColumn: 'value-4'
-        checkbox-1:
-          mapOnDatabaseColumn: 'data_privacy'
     identifier: SaveToDatabase
 
 renderables:
