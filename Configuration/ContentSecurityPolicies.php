@@ -110,6 +110,16 @@ $cspCollection = new MutationCollection(
         Directive::ManifestSrc,
         SourceKeyword::self,
     ),
+    new Mutation(
+        MutationMode::Extend,
+        Directive::MediaSrc,
+        new UriValue('https://www.youtube.com'),
+    ),
+    new Mutation(
+        MutationMode::Extend,
+        Directive::ScriptSrcElem,
+        new UriValue('https://www.youtube.com'),
+    )
 );
 
 return Map::fromEntries(
