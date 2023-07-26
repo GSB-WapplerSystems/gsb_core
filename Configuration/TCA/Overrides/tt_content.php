@@ -39,43 +39,43 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                        1 => '',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                        'value' => '',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.0',
-                                        1 => 'btn btn-primary',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.0',
+                                        'value' => 'btn btn-primary',
                                     ],
                                 2 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.1',
-                                        1 => 'btn btn-secondary',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.1',
+                                        'value' => 'btn btn-secondary',
                                     ],
                                 3 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.2',
-                                        1 => 'btn btn-tertiary',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.2',
+                                        'value' => 'btn btn-tertiary',
                                     ],
                                 4 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
-                                        1 => 'btn btn-quaternary',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.3',
+                                        'value' => 'btn btn-quaternary',
                                     ],
                                 5 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.4',
-                                        1 => 'internal-link',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.4',
+                                        'value' => 'internal-link',
                                     ],
                                 6 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.5',
-                                        1 => 'external-link',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.5',
+                                        'value' => 'external-link',
                                     ],
                                 7 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.6',
-                                        1 => 'download',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_layout.I.6',
+                                        'value' => 'download',
                                     ],
                             ],
                         'renderType' => 'selectSingle',
@@ -102,23 +102,23 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                        1 => '',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                        'value' => '',
                                     ],
                                 1 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.0',
-                                        1 => 'btn-center',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.0',
+                                        'value' => 'btn-center',
                                     ],
                                 2 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.1',
-                                        1 => 'btn-left',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.1',
+                                        'value' => 'btn-left',
                                     ],
                                 3 =>
                                     [
-                                        0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.2',
-                                        1 => 'btn-right',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position.I.2',
+                                        'value' => 'btn-right',
                                     ],
                             ],
                         'renderType' => 'selectSingle',
