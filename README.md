@@ -120,6 +120,14 @@ Nutze den GSB in deinem nächsten Projekt. Schnell und einfach mit Composer.
    ```
 1. .htaccess im Public-Ordner anlegen
 Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/root-htaccess als Basis für die .htaccess Datei
+
+1. .htaccess Datei modifizieren
+Nach `RewriteEngine On:` müssen die folgenden zwei Zeilen eingefügt werden:
+    ```sh
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+    ```
+
 1. Rechte setzen. Je nach Linux-Distribution bitte entsprechend anpassen.
     ```sh
    chown x:x -R config/ var/ public/typo3temp/ public/fileadmin/
@@ -132,7 +140,11 @@ Nutze die Datei https://github.com/TYPO3/typo3/blob/main/typo3/sysext/install/Re
    ```sh
    rm -R public/_assets && cp distribution-package-gsb_core/Resources/Public/ /opt/typo3/vendor/itzbund/gsb-core/Resources/ -R
    ```
-
+1. Erweitern der Site-Konfiguration
+   ```sh
+     imports:
+       - { resource: "EXT:nnrestapi/Configuration/Yaml/default.yaml" }
+   ```
 
 <!-- GETTING STARTED -->
 ## Erste Schritte mit DDEV
