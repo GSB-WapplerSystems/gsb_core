@@ -60,13 +60,14 @@
         <f:for as="record" each="{children_101}" iteration="iterator">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button aria-controls="panelsStayOpen-collapseOne" aria-expanded="true" class="accordion-button"
-                            data-bs-target="#panelsStayOpen-collapseOne" data-bs-toggle="collapse"
+                    <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
+                            class="accordion-button collapsed"
+                            data-bs-target="#panelsStayOpen-{record.uid}" data-bs-toggle="collapse"
                             type="button">
                         {record.header}
                     </button>
                 </h2>
-                <div class="accordion-collapse collapse show" id="panelsStayOpen-collapseOne">
+                <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
                     <div class="accordion-body">
                         <f:format.html>{record.bodytext}</f:format.html>
                     </div>
