@@ -195,6 +195,7 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.imgbg',
                         'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
                         'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
@@ -211,6 +212,7 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.light',
                         'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
                         'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
@@ -228,6 +230,7 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgfullsize',
                         'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
                         'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
@@ -245,6 +248,7 @@ defined('TYPO3') or die('Access denied.');
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.container',
                         'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
                         'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
                     ],
