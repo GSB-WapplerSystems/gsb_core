@@ -41,20 +41,20 @@
                             </f:switch>
                         </f:then>
                         <f:else>
-    </div>
-    </f:else>
-    </f:if>
-    <div id="accordion-{record.uid}"
-         class="accordion-collapse collapse{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} == {data.container_accordion_open}', then: ' show')}"
-         aria-labelledby="heading-{record.uid}"
-         data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
-        <div class="accordion-body accordion-body-overwrite">
-            {f:cObject(typoscriptObjectPath: 'lib.gsbContainer.renderContent', data: record)}
-        </div>
-    </div>
-    </li>
-    </f:for>
-    </ul>
+                            </div>
+                        </f:else>
+                    </f:if>
+                    <div id="accordion-{record.uid}"
+                         class="accordion-collapse collapse{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} == {data.container_accordion_open}', then: ' show')}"
+                         aria-labelledby="heading-{record.uid}"
+                         data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
+                        <div class="accordion-body accordion-body-overwrite">
+                            {f:cObject(typoscriptObjectPath: 'lib.gsbContainer.renderContent', data: record)}
+                        </div>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
     </div>
 </f:section>
 
