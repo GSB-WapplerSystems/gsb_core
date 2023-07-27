@@ -34,7 +34,6 @@ CREATE TABLE tt_content
 	tx_banner_image                int(11) unsigned DEFAULT '0' NOT NULL,
 	container_tab_open             int(11) unsigned DEFAULT '1' NOT NULL,
 	container_accordion_toggle_all int(11) unsigned DEFAULT '0' NOT NULL,
-	container_accordion_toggle     int(11) unsigned DEFAULT '0' NOT NULL,
 	container_accordion_open       int(11) unsigned DEFAULT '1' NOT NULL,
 	container_headline             tinytext,
 	slider                         tinyint(4)       DEFAULT '0' NOT NULL,

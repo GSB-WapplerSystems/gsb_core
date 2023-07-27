@@ -117,7 +117,6 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'tx_header_style' => '',
             'tx_container_parent' => 0,
             'container_tab_open' => 1,
-            'container_accordion_toggle' => 0,
             'container_accordion_open' => 1,
             'slider' => 0,
             'slider_type' => '',
