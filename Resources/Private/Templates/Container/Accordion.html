@@ -24,7 +24,6 @@
                     <a href="#accordion-{record.uid}" class="accordion-button accordion-button-overwrite {f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} != {data.container_accordion_open}', then: 'collapsed')}{f:if(condition: '{data.container_accordion_toggle} == 0', then: ' collapsed')}"
                        data-bs-toggle="collapse"
                        data-bs-target="#accordion-{record.uid}"
-                       data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}"
                        aria-expanded="{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle}=={data.container_accordion_open}', then: 'true', else: 'false')}"
                        aria-controls="accordion-{record.uid}"
                        role="button"
