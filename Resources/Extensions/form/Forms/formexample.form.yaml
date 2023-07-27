@@ -34,13 +34,13 @@ finishers:
         email:
           mapOnDatabaseColumn: 'email'
         multicheckbox-1:
-          mapOnDatabaseColumn: 'value-1'
+          mapOnDatabaseColumn: 'value_1'
         radiobutton-1:
-          mapOnDatabaseColumn: 'value-2'
+          mapOnDatabaseColumn: 'value_2'
         singleselect-1:
-          mapOnDatabaseColumn: 'value-3'
+          mapOnDatabaseColumn: 'value_3'
         multiselect-1:
-          mapOnDatabaseColumn: 'value-4'
+          mapOnDatabaseColumn: 'value_4'
         checkbox-1:
           mapOnDatabaseColumn: 'data_privacy'
     identifier: SaveToDatabase

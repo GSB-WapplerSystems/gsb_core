@@ -36,7 +36,7 @@ finishers:
         message:
           mapOnDatabaseColumn: 'message'
         multicheckbox-1:
-          mapOnDatabaseColumn: 'value-1'
+          mapOnDatabaseColumn: 'value_1'
         checkbox-1:
           mapOnDatabaseColumn: 'data_privacy'
     identifier: SaveToDatabase
