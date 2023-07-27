@@ -3,59 +3,6 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
-    <!--    <div class="accordion-wrapper">
-            <ul class="accordion accordion-overwrite list-unstyled" id="accordion-{data.uid}">
-                <f:for each="{children_101}" as="record" iteration="iterator">
-                    <li class="accordion-item accordion-item-overwrite">
-                        <f:if condition="{data.container_headline} > 1">
-                            <f:then>
-                                <f:switch expression="{data.container_headline}">
-                                    <f:case value="2"><h2 class="accordion-header accordion-header-overwrite" id="heading-{record.uid}"></f:case>
-                                    <f:case value="3"><h3 class="accordion-header accordion-header-overwrite" id="heading-{record.uid}"></f:case>
-                                    <f:case value="4"><h4 class="accordion-header accordion-header-overwrite" id="heading-{record.uid}"></f:case>
-                                    <f:case value="5"><h5 class="accordion-header accordion-header-overwrite" id="heading-{record.uid}"></f:case>
-                                    <f:case value="6"><h6 class="accordion-header accordion-header-overwrite" id="heading-{record.uid}"></f:case>
-                                </f:switch>
-                            </f:then>
-                            <f:else>
-                                <div class="accordion-header accordion-header-overwrite" id="heading-{record.uid}">
-                            </f:else>
-                        </f:if>
-                        <a href="#accordion-{record.uid}" class="accordion-button accordion-button-overwrite {f:if(condition: '{iterator.cycle} != {data.container_accordion_open}', then: 'collapsed')}"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#accordion-{record.uid}"
-                           aria-expanded="{f:if(condition: '{iterator.cycle}=={data.container_accordion_open}', then: 'true', else: 'false')}"
-                           aria-controls="accordion-{record.uid}"
-                           role="button"
-                        >{record.header}</a>
-                        <f:if condition="{data.container_headline} > 1">
-                            <f:then>
-                                <f:switch expression="{data.container_headline}">
-                                    <f:case value="2"></h2></f:case>
-                                    <f:case value="3"></h3></f:case>
-                                    <f:case value="4"></h4></f:case>
-                                    <f:case value="5"></h5></f:case>
-                                    <f:case value="6"></h6></f:case>
-                                    <f:defaultCase></span></f:defaultCase>
-                                </f:switch>
-                            </f:then>
-                            <f:else>
-                                </div>
-                            </f:else>
-                        </f:if>
-                        <div id="accordion-{record.uid}"
-                             class="accordion-collapse collapse"
-                             aria-labelledby="heading-{record.uid}"
-                             data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
-                            <div class="accordion-body accordion-body-overwrite">
-                                {f:cObject(typoscriptObjectPath: 'lib.gsbContainer.renderContent', data: record)}
-                            </div>
-                        </div>
-                    </li>
-                </f:for>
-            </ul>
-        </div>-->
-
     <div class="accordion" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
             <div class="accordion-item">
@@ -64,12 +11,17 @@
                             class="accordion-button collapsed"
                             data-bs-target="#panelsStayOpen-{record.uid}" data-bs-toggle="collapse"
                             type="button">
-                        {record.header}
+                        <f:if condition="{record.header}">
+                            <f:format.html>{record.header}</f:format.html>
+                        </f:if>
                     </button>
                 </h2>
                 <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
                     <div class="accordion-body">
-                        <f:format.html>{record.bodytext}</f:format.html>
+                        <f:if condition="{record.bodytext}">
+                            <f:format.html>{record.bodytext}</f:format.html>
+                            <f:comment>task to load images from the textimage element</f:comment>
+                        </f:if>
                     </div>
                 </div>
             </div>
