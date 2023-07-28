@@ -1,16 +1,16 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:layout name="Default"/>
 <f:section name="Main">
-    <div class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
+    <ul class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
-            <div class="accordion-item accordion-item-overwrite">
+            <li class="accordion-item accordion-item-overwrite">
                 <h2 class="accordion-header accordion-header-overwrite">
                     <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
                             class="accordion-button accordion-button-overwrite collapsed"
                             data-bs-target="#panelsStayOpen-{record.uid}" data-bs-toggle="collapse"
                             type="button">
                         <f:if condition="{record.header}">
-                            <f:format.html>{record.header}</f:format.html>
+                            <f:format.raw>{record.header}</f:format.raw>
                         </f:if>
                     </button>
                 </h2>
@@ -21,8 +21,8 @@
                         </f:if>
                     </div>
                 </div>
-            </div>
+            </li>
         </f:for>
-    </div>
+    </ul>
 </f:section>
 </html>
