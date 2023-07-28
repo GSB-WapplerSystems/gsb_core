@@ -3,17 +3,14 @@
 <f:section name="Main">
     <ul class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
-            <li class="accordion-item accordion-item-overwrite">
-                <h2 class="accordion-header accordion-header-overwrite">
-                    <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
-                            class="accordion-button accordion-button-overwrite collapsed"
-                            data-bs-target="#panelsStayOpen-{record.uid}" data-bs-toggle="collapse"
-                            type="button">
-                        <f:if condition="{record.header}">
-                            <f:format.raw>{record.header}</f:format.raw>
-                        </f:if>
-                    </button>
-                </h2>
+            <li class="accordion-item accordion-item-overwrite accordion-header accordion-header-overwrite">
+                <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
+                        aria-label="{record.header}"
+                        class="accordion-button accordion-button-overwrite collapsed"
+                        data-bs-target="#panelsStayOpen-{record.uid}"
+                        data-bs-toggle="collapse" type="button">
+                    <f:format.raw>{record.header}</f:format.raw>
+                </button>
                 <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
                     <div class="accordion-body accordion-body-overwrite">
                         <f:if condition="{record.renderedContent}">
