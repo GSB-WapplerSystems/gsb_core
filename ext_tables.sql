@@ -75,7 +75,7 @@ CREATE TABLE tx_gsbcore_forms
 	firstname                   varchar(255) DEFAULT '' NOT NULL,
 	lastname                    varchar(255) DEFAULT '' NOT NULL,
 	email                       varchar(255) DEFAULT '' NOT NULL,
-	data_privacy                tinyint(1)   DEFAULT '0' NOT NULL,
+	data_privacy                tinyint(1)   DEFAULT '1' NOT NULL,
 	message                     text,
 	value1											text,
 	value2											text,
