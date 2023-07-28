@@ -3,12 +3,12 @@
 <f:layout name="Default"/>
 
 <f:section name="Main">
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
+            <div class="accordion-item accordion-item-overwrite">
+                <h2 class="accordion-header accordion-header-overwrite">
                     <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
-                            class="accordion-button collapsed"
+                            class="accordion-button accordion-button-overwrite collapsed"
                             data-bs-target="#panelsStayOpen-{record.uid}" data-bs-toggle="collapse"
                             type="button">
                         <f:if condition="{record.header}">
@@ -17,7 +17,7 @@
                     </button>
                 </h2>
                 <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
-                    <div class="accordion-body">
+                    <div class="accordion-body accordion-body-overwrite">
                         <f:if condition="{record.bodytext}">
                             <f:format.html>{record.bodytext}</f:format.html>
                             <f:comment>task to load images from the textimage element</f:comment>
