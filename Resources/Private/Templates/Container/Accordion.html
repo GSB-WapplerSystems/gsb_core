@@ -1,7 +1,5 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-
 <f:layout name="Default"/>
-
 <f:section name="Main">
     <div class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
@@ -18,9 +16,8 @@
                 </h2>
                 <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
                     <div class="accordion-body accordion-body-overwrite">
-                        <f:if condition="{record.bodytext}">
-                            <f:format.html>{record.bodytext}</f:format.html>
-                            <f:comment>task to load images from the textimage element</f:comment>
+                        <f:if condition="{record.renderedContent}">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
                         </f:if>
                     </div>
                 </div>
@@ -28,5 +25,4 @@
         </f:for>
     </div>
 </f:section>
-
 </html>
