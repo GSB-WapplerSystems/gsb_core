@@ -33,6 +33,8 @@ finishers:
           mapOnDatabaseColumn: 'lastname'
         email:
           mapOnDatabaseColumn: 'email'
+        message:
+          mapOnDatabaseColumn: 'message'
         multicheckbox-1:
           mapOnDatabaseColumn: 'value1'
         radiobutton-1:
