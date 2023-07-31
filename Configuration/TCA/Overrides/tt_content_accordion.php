@@ -40,7 +40,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
-    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle_all,container_accordion_toggle,container_accordion_open,grid_container,
+    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle,container_accordion_open,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -133,23 +133,6 @@ defined('TYPO3') or die('Access denied.');
                 ],
             ],
             'displayCond' => 'FIELD:container_accordion_toggle:=:1',
-        ],
-        'container_accordion_toggle_all' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
-                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
-                    ],
-                ],
-                'default' => '0',
-            ],
         ],
     ];
 
