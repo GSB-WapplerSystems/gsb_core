@@ -55,7 +55,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended;'
     ;
 
-    $accordionOpen = [
+    $newColumns = [
         'container_headline' => [
             'config' => [
                 'items' =>
@@ -101,7 +101,7 @@ defined('TYPO3') or die('Access denied.');
 
     ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
-        $accordionOpen
+        $newColumns
     );
 
 })();
