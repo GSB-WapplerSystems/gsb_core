@@ -104,9 +104,4 @@ defined('TYPO3') or die('Access denied.');
         $accordionOpen
     );
 
-    ExtensionManagementUtility::addFieldsToPalette(
-        'tt_content',
-        'container',
-        'container_accordion_toggle, container_accordion_open, --linebreak--'
-    );
 })();
