@@ -31,6 +31,11 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
     );
+    $bitvTestScriptSrcElmMutation = new Mutation(
+        MutationMode::Extend,
+        Directive::ScriptSrcElem,
+        new UriValue('cdn.jsdelivr.net'),
+    );
 } else {
     $bitvTestFormMutation = new Mutation(
         MutationMode::Reduce,
@@ -48,6 +53,11 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         MutationMode::Reduce,
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
+    );
+    $bitvTestScriptSrcElmMutation = new Mutation(
+        MutationMode::Reduce,
+        Directive::ScriptSrcElem,
+        new UriValue('cdn.jsdelivr.net'),
     );
 }
 
@@ -68,6 +78,7 @@ $cspCollection = new MutationCollection(
     $bitvTestFormMutation,
     $bitvTestDefaultMutation,
     $bitvTestFrameMutation,
+    $bitvTestScriptSrcElmMutation,
     new Mutation(
         MutationMode::Set,
         Directive::BaseUri,
@@ -110,6 +121,16 @@ $cspCollection = new MutationCollection(
         Directive::ManifestSrc,
         SourceKeyword::self,
     ),
+    new Mutation(
+        MutationMode::Extend,
+        Directive::MediaSrc,
+        new UriValue('https://www.youtube.com'),
+    ),
+    new Mutation(
+        MutationMode::Extend,
+        Directive::ScriptSrcElem,
+        new UriValue('https://www.youtube.com'),
+    )
 );
 
 return Map::fromEntries(

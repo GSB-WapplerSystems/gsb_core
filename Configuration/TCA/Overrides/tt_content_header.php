@@ -29,33 +29,33 @@ defined('TYPO3') || die();
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                1 => '',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                'value' => '',
                             ],
                         1 =>
                             [
-                                0 => 'H2',
-                                1 => 'h2',
+                                'label' => 'H2',
+                                'value' => 'h2',
                             ],
                         2 =>
                             [
-                                0 => 'H3',
-                                1 => 'h3',
+                                'label' => 'H3',
+                                'value' => 'h3',
                             ],
                         3 =>
                             [
-                                0 => 'H4',
-                                1 => 'h4',
+                                'label' => 'H4',
+                                'value' => 'h4',
                             ],
                         4 =>
                             [
-                                0 => 'H5',
-                                1 => 'h5',
+                                'label' => 'H5',
+                                'value' => 'h5',
                             ],
                         5 =>
                             [
-                                0 => 'H6',
-                                1 => 'h6',
+                                'label' => 'H6',
+                                'value' => 'h6',
                             ],
                     ],
                 'renderType' => 'selectSingle',

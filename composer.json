@@ -9,6 +9,8 @@
 		"php": "^8.1",
 		"b13/container": "^2.2",
 		"b13/permission-sets": "dev-main",
+		"ichhabrecht/content-defender": "^3.4.0",
+		"nng/nnrestapi": "^2.0",
 		"typo3/cms-adminpanel": "^12.4",
 		"typo3/cms-backend": "^12.4",
 		"typo3/cms-belog": "^12.4",

@@ -6,7 +6,7 @@ CREATE TABLE sys_file_metadata
 CREATE TABLE sys_file_reference
 (
 	longdesc varchar(1024) DEFAULT '' NOT NULL,
-    caption varchar(1024) DEFAULT '' NOT NULL,
+  caption varchar(1024) DEFAULT '' NOT NULL,
 	outline tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	allow_download tinyint(4) unsigned DEFAULT '0' NOT NULL,
   is_accessible tinyint(4) unsigned DEFAULT '0' NOT NULL,
@@ -33,9 +33,6 @@ CREATE TABLE tt_content
 	tx_stage_salutation            int(11)          DEFAULT '0' NOT NULL,
 	tx_banner_image                int(11) unsigned DEFAULT '0' NOT NULL,
 	container_tab_open             int(11) unsigned DEFAULT '1' NOT NULL,
-	container_accordion_toggle_all int(11) unsigned DEFAULT '0' NOT NULL,
-	container_accordion_toggle     int(11) unsigned DEFAULT '0' NOT NULL,
-	container_accordion_open       int(11) unsigned DEFAULT '1' NOT NULL,
 	container_headline             tinytext,
 	slider                         tinyint(4)       DEFAULT '0' NOT NULL,
 	slider_type                    tinytext,
@@ -57,7 +54,7 @@ CREATE TABLE tt_content
 	tx_link                        tinytext,
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
-	tx_link_position               tinytext
+	tx_link_position               tinytext,
 );
 
 CREATE TABLE pages
@@ -67,5 +64,29 @@ CREATE TABLE pages
 	breadcrumb                  varchar(255) DEFAULT ''  NOT NULL,
 	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
-	category_title              text
+	category_title              text,
+);
+
+CREATE TABLE tx_gsbcore_forms
+(
+	firstname                   varchar(255) DEFAULT '' NOT NULL,
+	lastname                    varchar(255) DEFAULT '' NOT NULL,
+	email                       varchar(255) DEFAULT '' NOT NULL,
+	data_privacy                tinyint(1)   DEFAULT '1' NOT NULL,
+	message                     text,
+	value1											text,
+	value2											text,
+	value3											text,
+	value4											text,
+	value5											text,
+	value6											text,
+	value7											text,
+	value8											text,
+	value9											text,
+	value10											text,
+	value11											text,
+	value12											text,
+	value13											text,
+	value14											text,
+	value15											text,
 );

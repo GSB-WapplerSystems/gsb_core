@@ -133,8 +133,6 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'tx_video_poster_video' => '',
             'tx_video_mainstage' => 0,
             'image' => 1,
-            'container_accordion_toggle_all' => 0,
-            'container_headline' => '',
             'grid_parallax' => 0,
             'grid_bottom_image' => null,
             'grid_bgcolor' => null,

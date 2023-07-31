@@ -22,6 +22,26 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
+      table: 'tx_gsbcore_forms'
+      databaseColumnMappings:
+        pid:
+          value: 27
+      elements:
+        text-1:
+          mapOnDatabaseColumn: 'firstname'
+        name:
+          mapOnDatabaseColumn: 'lastname'
+        email:
+          mapOnDatabaseColumn: 'email'
+        message:
+          mapOnDatabaseColumn: 'message'
+        multicheckbox-1:
+          mapOnDatabaseColumn: 'value1'
+        checkbox-1:
+          mapOnDatabaseColumn: 'data_privacy'
+    identifier: SaveToDatabase
+  -
+    options:
       pageUid: '53'
       additionalParameters: ''
     identifier: Redirect

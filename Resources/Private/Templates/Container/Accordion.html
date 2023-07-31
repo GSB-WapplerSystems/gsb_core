@@ -1,62 +1,54 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-
-<f:layout name="Container" />
-
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="Default"/>
 <f:section name="Main">
-    <div class="accordion-wrapper">
-        <ul class="accordion list-unstyled" id="accordion-{data.uid}">
-            <f:for each="{children_101}" as="record" iteration="iterator">
-                <li class="accordion-item">
-                    <f:if condition="{data.container_headline} > 1">
-                        <f:then>
-                            <f:switch expression="{data.container_headline}">
-                                <f:case value="2"><h2 class="accordion-header" id="heading-{record.uid}"></f:case>
-                                <f:case value="3"><h3 class="accordion-header" id="heading-{record.uid}"></f:case>
-                                <f:case value="4"><h4 class="accordion-header" id="heading-{record.uid}"></f:case>
-                                <f:case value="5"><h5 class="accordion-header" id="heading-{record.uid}"></f:case>
-                                <f:case value="6"><h6 class="accordion-header" id="heading-{record.uid}"></f:case>
-                            </f:switch>
-                        </f:then>
-                        <f:else>
-                            <div class="accordion-header" id="heading-{record.uid}">
-                        </f:else>
-                    </f:if>
-                    <a href="#accordion-{record.uid}" class="accordion-button {f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} != {data.container_accordion_open}', then: ' collapsed')}{f:if(condition: '{data.container_accordion_toggle} == 0', then: ' collapsed')}"
-                       data-bs-toggle="collapse"
-                       data-bs-target="#accordion-{record.uid}"
-                       data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}"
-                       aria-expanded="{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle}=={data.container_accordion_open}', then: 'true', else: 'false')}"
-                       aria-controls="accordion-{record.uid}"
-                       role="button"
-                    >{record.header}</a>
-                    <f:if condition="{data.container_headline} > 1">
-                        <f:then>
-                            <f:switch expression="{data.container_headline}">
-                                <f:case value="2"></h2></f:case>
-                                <f:case value="3"></h3></f:case>
-                                <f:case value="4"></h4></f:case>
-                                <f:case value="5"></h5></f:case>
-                                <f:case value="6"></h6></f:case>
-                                <f:defaultCase></span></f:defaultCase>
-                            </f:switch>
-                        </f:then>
-                        <f:else>
-                            </div>
-                        </f:else>
-                    </f:if>
-
-                    <div id="accordion-{record.uid}"
-                         class="accordion-collapse collapse{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} == {data.container_accordion_open}', then: ' show')}"
-                         aria-labelledby="heading-{record.uid}"
-                         data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
-                        <div class="accordion-body">
-                            {f:cObject(typoscriptObjectPath: 'lib.gsbContainer.renderContent', data: record)}
+    <ul class="accordion accordion-overwrite{f:if(condition:'{data.grid_container} != 1', then:' container')}" id="accordionPanelsStayOpenExample">
+        <f:for as="record" each="{children_101}" iteration="iterator">
+            <li class="accordion-item accordion-item-overwrite accordion-header accordion-header-overwrite">
+                <f:if condition="{data.container_headline} > 1">
+                    <f:then>
+                        <f:switch expression="{data.container_headline}">
+                            <f:case value="2"><h2 class="accordion-header" id="heading-{record.uid}"></f:case>
+                            <f:case value="3"><h3 class="accordion-header" id="heading-{record.uid}"></f:case>
+                            <f:case value="4"><h4 class="accordion-header" id="heading-{record.uid}"></f:case>
+                            <f:case value="5"><h5 class="accordion-header" id="heading-{record.uid}"></f:case>
+                            <f:case value="6"><h6 class="accordion-header" id="heading-{record.uid}"></f:case>
+                        </f:switch>
+                    </f:then>
+                    <f:else>
+                        <div class="accordion-header" id="heading-{record.uid}">
+                    </f:else>
+                </f:if>
+                <button aria-controls="panelsStayOpen-{record.uid}" aria-expanded="true"
+                        aria-label="{record.header}"
+                        class="accordion-button accordion-button-overwrite collapsed"
+                        data-bs-target="#panelsStayOpen-{record.uid}"
+                        data-bs-toggle="collapse" type="button">
+                    <f:format.raw>{record.header}</f:format.raw>
+                </button>
+                <f:if condition="{data.container_headline} > 1">
+                    <f:then>
+                        <f:switch expression="{data.container_headline}">
+                            <f:case value="2"></h2></f:case>
+                            <f:case value="3"></h3></f:case>
+                            <f:case value="4"></h4></f:case>
+                            <f:case value="5"></h5></f:case>
+                            <f:case value="6"></h6></f:case>
+                            <f:defaultCase></span></f:defaultCase>
+                        </f:switch>
+                    </f:then>
+                    <f:else>
                         </div>
+                    </f:else>
+                </f:if>
+                <div class="accordion-collapse collapse" id="panelsStayOpen-{record.uid}">
+                    <div class="accordion-body accordion-body-overwrite">
+                        <f:if condition="{record.renderedContent}">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </f:if>
                     </div>
-                </li>
-            </f:for>
-        </ul>
-    </div>
+                </div>
+            </li>
+        </f:for>
+    </ul>
 </f:section>
-
 </html>

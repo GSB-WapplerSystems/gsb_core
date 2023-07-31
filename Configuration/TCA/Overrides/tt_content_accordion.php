@@ -24,14 +24,15 @@ defined('TYPO3') or die('Access denied.');
                     [
                         'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:content',
                         'colPos' => 101,
+                        'allowed' => ['CType' => 'header, text, textpic'],
                     ],
                 ],
             ]
         )
         )
-        ->setIcon('tx_accordion')
-        ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
-        ->setSaveAndCloseInNewContentElementWizard(true)
+            ->setIcon('tx_accordion')
+            ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
+            ->setSaveAndCloseInNewContentElementWizard(true)
     );
 
     // override default settings
@@ -39,7 +40,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
-    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,container_accordion_toggle_all,container_accordion_toggle,container_accordion_open,grid_container,
+    --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,grid_container,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -54,40 +55,40 @@ defined('TYPO3') or die('Access denied.');
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended;'
     ;
 
-    $accordionOpen = [
+    $newColumns = [
         'container_headline' => [
             'config' => [
                 'items' =>
                     [
                         0 =>
                             [
-                                0 => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
-                                1 => '1',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style.default',
+                                'value' => '1',
                             ],
                         1 =>
                             [
-                                0 => 'H2',
-                                1 => '2',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.2',
+                                'value' => '2',
                             ],
                         2 =>
                             [
-                                0 => 'H3',
-                                1 => '3',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.3',
+                                'value' => '3',
                             ],
                         3 =>
                             [
-                                0 => 'H4',
-                                1 => '4',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.4',
+                                'value' => '4',
                             ],
                         4 =>
                             [
-                                0 => 'H5',
-                                1 => '5',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.5',
+                                'value' => '5',
                             ],
                         5 =>
                             [
-                                0 => 'H6',
-                                1 => '6',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.6',
+                                'value' => '6',
                             ],
                     ],
                 'renderType' => 'selectSingle',
@@ -96,68 +97,10 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => 1,
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
         ],
-        'container_accordion_toggle' => [
-            'exclude' => 1,
-            'onChange' => 'reload',
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onload',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onload',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '0',
-                        1 => '1',
-                    ],
-                ],
-                'default' => '0',
-            ],
-        ],
-        'container_accordion_open' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.open',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.open',
-            'config' => [
-                'type' => 'input',
-                'size' => 1,
-                'eval' => 'trim,number',
-                'range' => [
-                    'lower' => 1,
-                    'upper' => 50,
-                ],
-                'default' => 1,
-                'slider' => [
-                    'step' => 1,
-                    'width' => 200,
-                ],
-            ],
-            'displayCond' => 'FIELD:container_accordion_toggle:=:1',
-        ],
-        'container_accordion_toggle_all' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onloadall',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onloadall',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '0',
-                        1 => '1',
-                    ],
-                ],
-                'default' => '0',
-            ],
-        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
-        $accordionOpen
-    );
-
-    ExtensionManagementUtility::addFieldsToPalette(
-        'tt_content',
-        'container',
-        'container_accordion_toggle, container_accordion_open, --linebreak--'
+        $newColumns
     );
 })();
