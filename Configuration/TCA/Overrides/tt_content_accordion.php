@@ -67,27 +67,27 @@ defined('TYPO3') or die('Access denied.');
                             ],
                         1 =>
                             [
-                                'label' => 'H2',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.2',
                                 'value' => '2',
                             ],
                         2 =>
                             [
-                                'label' => 'H3',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.3',
                                 'value' => '3',
                             ],
                         3 =>
                             [
-                                'label' => 'H4',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.4',
                                 'value' => '4',
                             ],
                         4 =>
                             [
-                                'label' => 'H5',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.5',
                                 'value' => '5',
                             ],
                         5 =>
                             [
-                                'label' => 'H6',
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:header_layout.6',
                                 'value' => '6',
                             ],
                     ],
