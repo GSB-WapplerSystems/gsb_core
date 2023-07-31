@@ -1,7 +1,7 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:layout name="Default"/>
 <f:section name="Main">
-    <ul class="accordion accordion-overwrite" id="accordionPanelsStayOpenExample">
+    <ul class="accordion accordion-overwrite{f:if(condition:'{data.grid_container} != 1', then:' container')}" id="accordionPanelsStayOpenExample">
         <f:for as="record" each="{children_101}" iteration="iterator">
             <li class="accordion-item accordion-item-overwrite accordion-header accordion-header-overwrite">
                 <f:if condition="{data.container_headline} > 1">
