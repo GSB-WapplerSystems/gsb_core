@@ -41,6 +41,7 @@ defined('TYPO3') or die('Access denied.');
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
     --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,grid_container,
+    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -106,6 +107,6 @@ defined('TYPO3') or die('Access denied.');
     ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'container',
-        '--linebreak--'
+        'container_accordion_toggle, container_accordion_open, --linebreak--'
     );
 })();
