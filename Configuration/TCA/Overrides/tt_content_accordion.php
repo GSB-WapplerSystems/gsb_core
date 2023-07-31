@@ -41,7 +41,6 @@ defined('TYPO3') or die('Access denied.');
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
         --palette--;;header_config,subheader,
     --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.title,container_headline,grid_container,
-    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
@@ -97,43 +96,6 @@ defined('TYPO3') or die('Access denied.');
             'exclude' => 1,
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_style',
         ],
-        'container_accordion_toggle' => [
-            'exclude' => 1,
-            'onChange' => 'reload',
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onload',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.onload',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.onload',
-                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
-                    ],
-                ],
-                'default' => '0',
-            ],
-        ],
-        'container_accordion_open' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.label.open',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:accordion.description.open',
-            'config' => [
-                'type' => 'input',
-                'size' => 1,
-                'eval' => 'trim,number',
-                'range' => [
-                    'lower' => 1,
-                    'upper' => 50,
-                ],
-                'default' => 1,
-                'slider' => [
-                    'step' => 1,
-                    'width' => 200,
-                ],
-            ],
-            'displayCond' => 'FIELD:container_accordion_toggle:=:1',
-        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns(
@@ -144,6 +106,6 @@ defined('TYPO3') or die('Access denied.');
     ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'container',
-        'container_accordion_toggle, container_accordion_open, --linebreak--'
+        '--linebreak--'
     );
 })();
