@@ -35,6 +35,13 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         MutationMode::Extend,
         Directive::ScriptSrcElem,
         new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
+    );
+    $bitvTestStyleSrcElemMutation = new Mutation(
+        MutationMode::Extend,
+        Directive::StyleSrcElem,
+        new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
     );
 } else {
     $bitvTestFormMutation = new Mutation(
@@ -58,6 +65,13 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         MutationMode::Reduce,
         Directive::ScriptSrcElem,
         new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
+    );
+    $bitvTestStyleSrcElemMutation = new Mutation(
+        MutationMode::Reduce,
+        Directive::StyleSrcElem,
+        new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
     );
 }
 
@@ -79,6 +93,7 @@ $cspCollection = new MutationCollection(
     $bitvTestDefaultMutation,
     $bitvTestFrameMutation,
     $bitvTestScriptSrcElmMutation,
+    $bitvTestStyleSrcElemMutation,
     new Mutation(
         MutationMode::Set,
         Directive::BaseUri,
