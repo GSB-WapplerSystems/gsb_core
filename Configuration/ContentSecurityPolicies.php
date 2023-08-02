@@ -40,6 +40,7 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
     $bitvTestStyleSrcElemMutation = new Mutation(
         MutationMode::Extend,
         Directive::StyleSrcElem,
+        SourceKeyword::unsafeInline,
         new UriValue('cdn.jsdelivr.net'),
         new UriValue('ajax.googleapis.com'),
     );
@@ -70,6 +71,7 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
     $bitvTestStyleSrcElemMutation = new Mutation(
         MutationMode::Reduce,
         Directive::StyleSrcElem,
+        SourceKeyword::unsafeInline,
         new UriValue('cdn.jsdelivr.net'),
         new UriValue('ajax.googleapis.com'),
     );
