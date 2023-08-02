@@ -3,6 +3,22 @@
 #################
 TCEFORM {
   #--------------
+  # be_users
+  #--------------
+  be_users {
+    TSconfig {
+      disabled = 1
+    }
+  }
+  #--------------
+  # be_groups
+  #--------------
+  be_groups {
+    TSconfig {
+      disabled = 1
+    }
+  }
+  #--------------
   #    Pages
   #--------------
   pages {
