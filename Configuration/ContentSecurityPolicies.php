@@ -31,6 +31,11 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
     );
+    $bitvTestScriptSrcMutation = new Mutation(
+        MutationMode::Extend,
+        Directive::ScriptSrc,
+        new UriValue('ajax.googleapis.com'),
+    );
     $bitvTestScriptSrcElmMutation = new Mutation(
         MutationMode::Extend,
         Directive::ScriptSrcElem,
@@ -61,6 +66,11 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         MutationMode::Reduce,
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
+    );
+    $bitvTestScriptSrcMutation = new Mutation(
+        MutationMode::Reduce,
+        Directive::ScriptSrc,
+        new UriValue('ajax.googleapis.com'),
     );
     $bitvTestScriptSrcElmMutation = new Mutation(
         MutationMode::Reduce,
@@ -94,6 +104,7 @@ $cspCollection = new MutationCollection(
     $bitvTestFormMutation,
     $bitvTestDefaultMutation,
     $bitvTestFrameMutation,
+    $bitvTestScriptSrcMutation,
     $bitvTestScriptSrcElmMutation,
     $bitvTestStyleSrcElemMutation,
     new Mutation(
