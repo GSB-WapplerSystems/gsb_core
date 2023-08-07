@@ -22,29 +22,31 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
-      table: 'tx_gsbcore_forms'
+      table: tx_gsbcore_forms
       databaseColumnMappings:
         pid:
           value: 27
       elements:
         text-1:
-          mapOnDatabaseColumn: 'firstname'
+          mapOnDatabaseColumn: firstname
         name:
-          mapOnDatabaseColumn: 'lastname'
+          mapOnDatabaseColumn: lastname
         email:
-          mapOnDatabaseColumn: 'email'
+          mapOnDatabaseColumn: email
         message:
-          mapOnDatabaseColumn: 'message'
+          mapOnDatabaseColumn: message
         multicheckbox-1:
-          mapOnDatabaseColumn: 'value1'
+          mapOnDatabaseColumn: value1
         checkbox-1:
-          mapOnDatabaseColumn: 'data_privacy'
+          mapOnDatabaseColumn: data_privacy
     identifier: SaveToDatabase
   -
     options:
       pageUid: '53'
       additionalParameters: ''
     identifier: Redirect
+  -
+    identifier: DeleteUploads
 renderables:
   -
     renderingOptions:
@@ -245,6 +247,22 @@ renderables:
               maximum: '2000'
             identifier: StringLength
       -
+        properties:
+          saveToFileMount: '2:/formupload/'
+          allowedMimeTypes:
+            - application/pdf
+            - image/jpeg
+            - image/png
+        type: FileUpload
+        identifier: fileupload-1
+        label: Dateiupload
+        validators:
+          -
+            options:
+              minimum: 1K
+              maximum: 2M
+            identifier: FileSize
+      -
         defaultValue: ''
         type: Text
         identifier: text-2
@@ -308,7 +326,7 @@ renderables:
   -
     renderingOptions:
       previousButtonLabel: 'Vorherige Seite'
-      nextButtonLabel: 'Nächste Seite'
-    identifier: summarypage
-    label: Zusammenfassung
+      nextButtonLabel: 'Nächster Schritt'
     type: SummaryPage
+    identifier: summarypage-1
+    label: Zusammenfassung
