@@ -225,7 +225,6 @@
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_download_now.button" resname="tt_content.gallery_download_now.button">
 				<source>Show/hide download link</source>
-				<target>Herunterladen-Link ein-/ausklappen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
 				<source>Open long description</source>
