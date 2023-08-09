@@ -10,7 +10,11 @@
                 <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
             </f:else>
         </f:if>
-        <f:if condition="{file.originalFile.properties.description} || {file.properties.description} || {file.originalFile.properties.copyright} || {file.properties.allow_download} || {data.image_zoom}">
+        <f:if condition="{file.originalFile.properties.description}
+        || {file.properties.description}
+        || {file.originalFile.properties.copyright}
+        || {file.properties.allow_download}
+        || {data.image_zoom}">
             <ul class="image-buttons d-flex list-unstyled">
                 <f:if condition="{file.originalFile.properties.copyright}">
                     <li class="btn-group dropstart">
