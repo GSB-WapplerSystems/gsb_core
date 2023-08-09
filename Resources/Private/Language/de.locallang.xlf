@@ -283,6 +283,10 @@
 				<source>posts</source>
 				<target>Beiträge</target>
 			</trans-unit>
+			<trans-unit id="gallery.copyright.button" resname="gallery.copyright.button" approved="yes">
+				<source>Show/hide copyright text</source>
+				<target>Copyright-Text ein-/ausklappen</target>
+			</trans-unit>
 			<trans-unit id="gallery.download" resname="gallery.download" approved="yes">
 				<source>Download</source>
 				<target>Herunterladen</target>
@@ -291,9 +295,13 @@
 				<source>Download now</source>
 				<target>Jetzt herunterladen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now.button" resname="tt_content.gallery_download_now.button" approved="yes">
+				<source>Show/hide download link</source>
+				<target>Herunterladen-Link ein-/ausklappen</target>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription" approved="yes">
-				<source>Long description</source>
-				<target>Langbeschreibung</target>
+				<source>Open long description</source>
+				<target>Öffne Langbeschreibung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture" approved="yes">
 				<source>Enlarge image</source>

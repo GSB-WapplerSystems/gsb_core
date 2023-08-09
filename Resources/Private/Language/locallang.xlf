@@ -214,14 +214,20 @@
 			<trans-unit id="medpub.header.counter" resname="medpub.header.counter">
 				<source>posts</source>
 			</trans-unit>
+			<trans-unit id="gallery.copyright.button" resname="gallery.copyright.button">
+				<source>Show/hide copyright text</source>
+			</trans-unit>
 			<trans-unit id="gallery.download" resname="gallery.download">
 				<source>Download</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now">
 				<source>Download now</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now.button" resname="tt_content.gallery_download_now.button">
+				<source>Show/hide download link</source>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
-				<source>Long description</source>
+				<source>Open long description</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture">
 				<source>Enlarge image</source>
