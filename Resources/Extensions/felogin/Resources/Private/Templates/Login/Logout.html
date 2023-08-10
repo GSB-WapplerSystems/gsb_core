@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<h2>
+    <f:render partial="RenderLabelOrMessage" arguments="{key: 'status_header'}"/>
+</h2>
+<p>
+    <f:render partial="RenderLabelOrMessage" arguments="{key: 'status_message'}"/>
+</p>
+
+<f:form action="login" actionUri="{actionUri}" target="_top" fieldNamePrefix="">
+    <fieldset>
+        <legend>
+            <f:translate key="logout"/>
+        </legend>
+        <div class="mb-3">
+            <label for="tx-felogin-input-logout">
+                <f:translate key="username"/>
+            </label>
+            {user.username}
+        </div>
+        <div class="mb-3">
+            <f:form.submit class="btn btn-primary" value="{f:translate(key: 'logout')}" name="submit" id="tx-felogin-input-logout"/>
+        </div>
+
+        <div class="felogin-hidden">
+            <f:form.hidden name="logintype" value="logout"/>
+        </div>
+    </fieldset>
+</f:form>
+</html>

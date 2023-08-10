@@ -59,6 +59,10 @@
 				<source>Service navigation</source>
 				<target>Service-Navigation</target>
 			</trans-unit>
+			<trans-unit id="header.languageswitcher" resname="header.languageswitcher" approved="yes">
+				<source>Language switcher</source>
+				<target>Sprachumschalter</target>
+			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
 				<target>Hauptnavigation</target>
