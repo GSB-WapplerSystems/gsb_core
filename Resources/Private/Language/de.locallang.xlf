@@ -248,8 +248,8 @@
 				<target>Teile auf Facebook</target>
 			</trans-unit>
 			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter" approved="yes">
-				<source>Share on Twittter</source>
-				<target>Teile auf Twittter</target>
+				<source>Share on X (Twittter)</source>
+				<target>Teile auf X (Twittter)</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit" approved="yes">
 				<source>Share on Reddit</source>

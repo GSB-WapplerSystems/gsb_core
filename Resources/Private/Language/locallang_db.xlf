@@ -510,6 +510,12 @@
             <trans-unit id="accordion.description.onload" resname="accordion.description.onload">
                 <source>Open a specific accordion tile when loading</source>
             </trans-unit>
+			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall">
+				<source>Accordion toggle</source>
+			</trans-unit>
+			<trans-unit id="accordion.description.onloadall" resname="accordion.description.onloadall">
+				<source>Accordions close when an accordion element is selected / Accordions stay open</source>
+			</trans-unit>
             <trans-unit id="accordion.label.open" resname="accordion.label.open">
                 <source>Accordion tile</source>
             </trans-unit>
