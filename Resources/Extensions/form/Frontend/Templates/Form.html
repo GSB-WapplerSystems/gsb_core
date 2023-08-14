@@ -16,9 +16,7 @@
             section="{form.identifier}"
     >
         <f:render arguments="{page: form.currentPage}" partial="{form.currentPage.templateName}"/>
-        <div class="{form.renderingOptions.formNavigation.navigationWrapperClassAttribute} container nav-btn-spacing">
-            <f:render arguments="{form: form}" partial="Form/Navigation"/>
-        </div>
+        <f:render arguments="{form: form}" partial="Form/Navigation"/>
     </formvh:form>
 </formvh:renderRenderable>
 </html>
