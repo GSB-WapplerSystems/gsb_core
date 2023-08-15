@@ -40,8 +40,8 @@ class GalleryPreviewRendererTest extends AbstractPreviewRendererTest
             'CType' => 'gallery',
             'header' => 'header',
             'bodytext' => 'bodytext',
-            'gallery_layout'=>'gallery-single',
-            'gallery_file'=>1,
+            'gallery_layout' => 'gallery-single',
+            'gallery_file' => 1,
             ];
     }
 }
