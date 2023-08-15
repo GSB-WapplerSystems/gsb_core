@@ -259,6 +259,21 @@ renderables:
                 identifier: Count
           -
             properties:
+              saveToFileMount: '2:/formupload/'
+              allowedMimeTypes:
+                - application/pdf
+                - image/jpeg
+                - image/png
+              type: FileUpload
+              identifier: fileupload-1
+              label: Dateiupload
+              validators:
+                - options:
+                    minimum: 1K
+                    maximum: 2M
+                  identifier: FileSize
+          -
+            properties:
               options:
                 Erstens: Erstens
                 Zweitens: Zweitens

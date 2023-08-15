@@ -14,7 +14,7 @@ class DecodeViewHelperTest extends AbstractViewHelperTestCase
     {
         $result = DecodeViewHelper::renderStatic([''], function () {}, $this->renderingContext);
         self::assertEquals('', $result);
-        $result = DecodeViewHelper::renderStatic(['json'=>''], function () {}, $this->renderingContext);
+        $result = DecodeViewHelper::renderStatic(['json' => ''], function () {}, $this->renderingContext);
         self::assertEquals('', $result);
     }
 

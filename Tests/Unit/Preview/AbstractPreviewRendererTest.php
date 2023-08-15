@@ -24,8 +24,8 @@ class AbstractPreviewRendererTest extends Unit
                 //'getRecord' => $this->getDummyDataArray(),
             ]
         );
-        $GLOBALS['BE_USER']=$beuser;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['IconFactory']['recordStatusMapping'] =[
+        $GLOBALS['BE_USER'] = $beuser;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['IconFactory']['recordStatusMapping'] = [
             'hidden' => 'overlay-hidden',
             'fe_group' => 'overlay-restricted',
             'starttime' => 'overlay-scheduled',
@@ -37,7 +37,7 @@ class AbstractPreviewRendererTest extends Unit
             'translated' => 'overlay-translated',
             'protectedSection' => 'overlay-includes-subpages',
         ];
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['IconFactory']['overlayPriorities']=[
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['IconFactory']['overlayPriorities'] = [
             'hidden',
             'starttime',
             'endtime',

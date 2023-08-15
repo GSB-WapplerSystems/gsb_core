@@ -31,10 +31,23 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
     );
+    $bitvTestScriptSrcMutation = new Mutation(
+        MutationMode::Extend,
+        Directive::ScriptSrc,
+        new UriValue('ajax.googleapis.com'),
+    );
     $bitvTestScriptSrcElmMutation = new Mutation(
         MutationMode::Extend,
         Directive::ScriptSrcElem,
         new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
+    );
+    $bitvTestStyleSrcElemMutation = new Mutation(
+        MutationMode::Extend,
+        Directive::StyleSrcElem,
+        SourceKeyword::unsafeInline,
+        new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
     );
 } else {
     $bitvTestFormMutation = new Mutation(
@@ -54,10 +67,23 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
         Directive::FrameSrc,
         new UriValue('*.w3.org'),
     );
+    $bitvTestScriptSrcMutation = new Mutation(
+        MutationMode::Reduce,
+        Directive::ScriptSrc,
+        new UriValue('ajax.googleapis.com'),
+    );
     $bitvTestScriptSrcElmMutation = new Mutation(
         MutationMode::Reduce,
         Directive::ScriptSrcElem,
         new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
+    );
+    $bitvTestStyleSrcElemMutation = new Mutation(
+        MutationMode::Reduce,
+        Directive::StyleSrcElem,
+        SourceKeyword::unsafeInline,
+        new UriValue('cdn.jsdelivr.net'),
+        new UriValue('ajax.googleapis.com'),
     );
 }
 
@@ -78,7 +104,9 @@ $cspCollection = new MutationCollection(
     $bitvTestFormMutation,
     $bitvTestDefaultMutation,
     $bitvTestFrameMutation,
+    $bitvTestScriptSrcMutation,
     $bitvTestScriptSrcElmMutation,
+    $bitvTestStyleSrcElemMutation,
     new Mutation(
         MutationMode::Set,
         Directive::BaseUri,

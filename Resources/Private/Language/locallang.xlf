@@ -45,6 +45,9 @@
 			<trans-unit id="header.servicenavigation" resname="header.servicenavigation">
 				<source>Service navigation</source>
 			</trans-unit>
+			<trans-unit id="header.languageswitcher" resname="header.languageswitcher">
+				<source>Language switcher</source>
+			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation">
 				<source>Main navigation</source>
 			</trans-unit>
@@ -185,7 +188,7 @@
 				<source>Share on Facebook</source>
 			</trans-unit>
 			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter">
-				<source>Share on Twittter</source>
+				<source>Share on X (Twittter)</source>
 			</trans-unit>
 			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit">
 				<source>Share on Reddit</source>
@@ -214,14 +217,20 @@
 			<trans-unit id="medpub.header.counter" resname="medpub.header.counter">
 				<source>posts</source>
 			</trans-unit>
+			<trans-unit id="gallery.copyright.button" resname="gallery.copyright.button">
+				<source>Show/hide copyright text</source>
+			</trans-unit>
 			<trans-unit id="gallery.download" resname="gallery.download">
 				<source>Download</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_download_now" resname="tt_content.gallery_download_now">
 				<source>Download now</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now.button" resname="tt_content.gallery_download_now.button">
+				<source>Show/hide download link</source>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
-				<source>Long description</source>
+				<source>Open long description</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture">
 				<source>Enlarge image</source>

@@ -59,6 +59,10 @@
 				<source>Service navigation</source>
 				<target>Service-Navigation</target>
 			</trans-unit>
+			<trans-unit id="header.languageswitcher" resname="header.languageswitcher" approved="yes">
+				<source>Language switcher</source>
+				<target>Sprachumschalter</target>
+			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
 				<target>Hauptnavigation</target>
@@ -244,8 +248,8 @@
 				<target>Teile auf Facebook</target>
 			</trans-unit>
 			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter" approved="yes">
-				<source>Share on Twittter</source>
-				<target>Teile auf Twittter</target>
+				<source>Share on X (Twittter)</source>
+				<target>Teile auf X (Twittter)</target>
 			</trans-unit>
 			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit" approved="yes">
 				<source>Share on Reddit</source>
@@ -283,6 +287,10 @@
 				<source>posts</source>
 				<target>Beiträge</target>
 			</trans-unit>
+			<trans-unit id="gallery.copyright.button" resname="gallery.copyright.button" approved="yes">
+				<source>Show/hide copyright text</source>
+				<target>Copyright-Text ein-/ausklappen</target>
+			</trans-unit>
 			<trans-unit id="gallery.download" resname="gallery.download" approved="yes">
 				<source>Download</source>
 				<target>Herunterladen</target>
@@ -291,9 +299,13 @@
 				<source>Download now</source>
 				<target>Jetzt herunterladen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_download_now.button" resname="tt_content.gallery_download_now.button" approved="yes">
+				<source>Show/hide download link</source>
+				<target>Herunterladen-Link ein-/ausklappen</target>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription" approved="yes">
-				<source>Long description</source>
-				<target>Langbeschreibung</target>
+				<source>Open long description</source>
+				<target>Öffne Langbeschreibung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture" approved="yes">
 				<source>Enlarge image</source>

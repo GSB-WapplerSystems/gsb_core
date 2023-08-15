@@ -1,14 +1,41 @@
 TYPO3:
   CMS:
     Form:
-       persistenceManager:
-              allowedExtensionPaths:
-                10: EXT:gsb_core/Resources/Extensions/form/Forms/
-              allowSaveToExtensionPaths: true
-              allowDeleteFromExtensionPaths: true
-       prototypes:
+      persistenceManager:
+        allowedFileMounts:
+          10: 1:/form_definitions/
+          20: 2:/formupload/
+        allowedExtensionPaths:
+          10: EXT:gsb_core/Resources/Extensions/form/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: false
+      prototypes:
         standard:
           formElementsDefinition:
+            FileUpload:
+              formEditor:
+                predefinedDefaults:
+                  properties:
+                    saveToFileMount: '2:/formupload/'
+                editors:
+                  400:
+                    selectOptions:
+                      10:
+                        value: '2:/formupload/'
+                        label: '2:/formupload/'
+              properties:
+                saveToFileMount: '2:/formupload/'
+            ImageUpload:
+              formEditor:
+                predefinedDefaults:
+                  properties:
+                    saveToFileMount: '2:/formupload/'
+                editors:
+                  400:
+                    selectOptions:
+                      10:
+                        value: '2:/formupload/'
+                        label: '2:/formupload/'
             Form:
               renderingOptions:
                 templateRootPaths:
