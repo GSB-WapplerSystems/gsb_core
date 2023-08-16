@@ -2,7 +2,7 @@
 renderingOptions:
   submitButtonLabel: Absenden
 identifier: kontaktformular
-label: Kontakformular
+label: Kontaktformular
 type: Form
 prototypeName: standard
 finishers:
@@ -221,19 +221,22 @@ renderables:
               -
                 options:
                   minimum: '10'
-                  maximum: '3000'
+                  maximum: '2000'
                 identifier: StringLength
-          - properties:
+          -
+            properties:
               saveToFileMount: '2:/formupload/'
               allowedMimeTypes:
                 - application/pdf
                 - image/jpeg
                 - image/png
+              elementDescription: 'PDF, JPG oder PNG (max. 2MB)'
             type: FileUpload
             identifier: fileupload-1
             label: Dateiupload
             validators:
-              - options:
+              -
+                options:
                   minimum: 1K
                   maximum: 2M
                 identifier: FileSize

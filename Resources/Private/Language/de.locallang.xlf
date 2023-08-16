@@ -375,9 +375,13 @@
 				<source>Jump to top</source>
 				<target>Nach oben springen</target>
 			</trans-unit>
-			<trans-unit id="is_accessible.0" resname="is_accessible.0">
+			<trans-unit id="is_accessible.0" resname="is_accessible.0" approved="yes">
 				<source>(bot accessible)</source>
 				<target>(nicht barrierefrei)</target>
+			</trans-unit>
+			<trans-unit id="form.uploaded.file" resname="form.uploaded.file" approved="yes">
+				<source>Uploaded file that will be sent</source>
+				<target>Hochgeladene Datei die versendet wird</target>
 			</trans-unit>
 		</body>
 	</file>
