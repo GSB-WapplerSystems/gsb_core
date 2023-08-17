@@ -20,9 +20,9 @@
                 property="{element.identifier}"
             >
                 <f:if condition="{resource}">
-                    <div id="{element.uniqueIdentifier}-preview">
-                        {resource.originalResource.originalFile.name}
-                    </div>
+                    <p id="{element.uniqueIdentifier}-preview" class="fw-bold">
+                        <em>{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:form.uploaded.file')}: {resource.originalResource.originalFile.name}</em>
+                    </p>
                 </f:if>
             </formvh:form.uploadedResource>
         </f:render>

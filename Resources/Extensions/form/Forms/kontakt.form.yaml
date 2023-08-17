@@ -1,8 +1,8 @@
 
 renderingOptions:
   submitButtonLabel: Absenden
-identifier: kontaktformular
-label: Kontakformular
+identifier: vorlagekontakt
+label: Vorlage (Kontaktformular)
 type: Form
 prototypeName: standard
 finishers:
@@ -221,19 +221,23 @@ renderables:
               -
                 options:
                   minimum: '10'
-                  maximum: '3000'
+                  maximum: '2000'
                 identifier: StringLength
-          - properties:
+          -
+            properties:
               saveToFileMount: '2:/formupload/'
               allowedMimeTypes:
                 - application/pdf
                 - image/jpeg
                 - image/png
+                - text/plain
+              elementDescription: 'In dieses Feld kann eine Datei hochgeladen oder ersetzt werden. Dateigröße maximal 2 MB. Erlaubte Dateitypen: pdf, txt, jpg, png.'
             type: FileUpload
             identifier: fileupload-1
             label: Dateiupload
             validators:
-              - options:
+              -
+                options:
                   minimum: 1K
                   maximum: 2M
                 identifier: FileSize
