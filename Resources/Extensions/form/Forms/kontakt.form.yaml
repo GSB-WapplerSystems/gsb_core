@@ -1,8 +1,8 @@
 
 renderingOptions:
   submitButtonLabel: Absenden
-identifier: kontaktformular
-label: Kontaktformular
+identifier: vorlagekontakt
+label: Vorlage (Kontaktformular)
 type: Form
 prototypeName: standard
 finishers:
