@@ -5,11 +5,6 @@ imports:
 
 editor:
   config:
-    importModules:
-      - '@gsb/sitepackage/gsb-adjustment'
-      - '@gsb/sitepackage/gsb-add-abbr-tag'
-      - '@gsb/sitepackage/gsb-add-lang-tag'
-
     contentsCss: ""
     debug: false
     allowedContent: true
