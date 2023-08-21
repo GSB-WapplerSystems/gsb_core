@@ -23,8 +23,6 @@ import { Bold, Italic, Subscript, Superscript, Strikethrough, Underline } from '
 import { SpecialCharacters, SpecialCharactersEssentials } from '@ckeditor/ckeditor5-special-characters/src';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line/src';
 import { WordCount } from '@ckeditor/ckeditor5-word-count/src';
-
-// Fehlende Imports aus dem ersten Code-Abschnitt
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import DataSchema from '@ckeditor/ckeditor5-html-support/src/dataschema.js';
@@ -40,6 +38,7 @@ import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-character
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js';
 import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption.js';
 import TableColumnResize from '@ckeditor/ckeditor5-table/src/tablecolumnresize.js';
+import { TextPartLanguage } from "@ckeditor/ckeditor5-language/src";
 
 export const CKEditor5Plugins = {
   Alignment,
@@ -70,6 +69,7 @@ export const CKEditor5Plugins = {
   TableProperties,
   TableCellProperties,
   TextTransformation,
+  TextPartLanguage,
   Underline,
   WordCount,
   Autoformat,

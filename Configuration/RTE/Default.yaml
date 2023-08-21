@@ -61,6 +61,8 @@ editor:
         - heading
         - style
         - '|'
+        - textPartLanguage
+        - '|'
         - bold
         - italic
         - link
