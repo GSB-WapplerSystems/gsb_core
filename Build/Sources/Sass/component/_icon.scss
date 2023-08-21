@@ -1,0 +1,85 @@
+@import "../../../node_modules/@typo3/icons/dist/icons.scss";
+@import "../../../node_modules/@typo3/icons/dist/icons-bootstrap.scss";
+
+//
+// Mixins
+//
+@mixin icon-background($icon, $iconColor: $white) {
+    content: '';
+    vertical-align: middle;
+    mask: escape-svg($icon);
+    background-color: $iconColor;
+    background-size: contain;
+    display: inline-block;
+}
+
+//
+// Icon alignment
+//
+.icon {
+    vertical-align: -22%;
+}
+
+//
+// Special icons
+//
+.icon-actions-edit-copy-release,
+.icon-actions-edit-cut-release,
+.icon-status-status-current,
+.icon-status-dialog-error,
+.icon-status-status-permission-denied {
+    --icon-color-primary: #{$danger};
+}
+
+.icon-status-status-sorting-light-asc,
+.icon-status-status-sorting-light-desc {
+    --icon-color-primary: #fff;
+}
+
+.icon-status-status-sorting-asc,
+.icon-status-status-sorting-desc {
+    --icon-color-primary: #{$gray-600};
+}
+
+.icon-status-dialog-information {
+    --icon-color-primary: #{$info};
+}
+
+.icon-status-dialog-ok,
+.icon-status-status-permission-granted {
+    --icon-color-primary: #{$success};
+}
+
+.icon-status-dialog-notification {
+    --icon-color-primary: #{$notice};
+}
+
+.icon-status-dialog-warning {
+    --icon-color-primary: #{$warning};
+}
+
+//
+// Emphasized
+//
+.icon-emphasized {
+    --icon-emphasized-color: #313131;
+    --icon-emphasized-bg: #fff;
+    color: var(--icon-emphasized-color);
+    background-color: var(--icon-emphasized-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+
+    .alert & {
+        --icon-emphasized-color: var(--#{$prefix}alert-color);
+        --icon-emphasized-bg: var(--#{$prefix}alert-border-color);
+    }
+
+    .callout & {
+        --icon-emphasized-color: var(--callout-color);
+        --icon-emphasized-bg: var(--callout-border-color);
+    }
+}

@@ -1,0 +1,278 @@
+//
+// Default table styling
+//
+.table {
+    .table {
+        + .table {
+            margin-top: 6px;
+        }
+        margin: 0;
+    }
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th {
+                white-space: nowrap;
+                vertical-align: middle;
+            }
+
+            > td {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    > thead > tr {
+        th.col-checkbox {
+            + th.col-title {
+                label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        th,
+        td {
+            i {
+                font-weight: normal;
+            }
+        }
+    }
+
+    > tbody > tr {
+        border-color: $gray-400;
+    }
+
+    .pagination {
+        margin: 0;
+    }
+
+    th,
+    td {
+        &:first-child {
+            padding-left: var(--typo3-component-padding-x);
+        }
+
+        &:last-child {
+            padding-right: var(--typo3-component-padding-x);
+        }
+    }
+
+    .col-icon,
+    .col-checkbox,
+    .col-avatar {
+        padding-right: 0;
+    }
+
+    .col-title,
+    .col-task {
+        width: 99%;
+    }
+
+    .col-checkbox,
+    .col-icon {
+        width: 16px;
+        min-width: 16px;
+        box-sizing: content-box;
+    }
+
+    .col-time {
+        width: 8ch;
+        white-space: nowrap;
+        box-sizing: content-box;
+    }
+
+    .col-datetime {
+        width: 14ch;
+        white-space: nowrap;
+        box-sizing: content-box;
+    }
+
+    .col-avatar {
+        width: 32px;
+        box-sizing: content-box;
+    }
+
+    .col-state {
+        min-width: 120px;
+    }
+
+    .col-task {
+        min-width: 400px;
+    }
+
+    .col-nowrap,
+    .col-control,
+    .col-clipboard {
+        white-space: nowrap !important;
+    }
+
+    .col-control,
+    .col-clipboard {
+        text-align: right;
+    }
+
+    .col-border-left {
+        border-left: 1px solid var(--bs-table-border-color);
+    }
+
+    .col-min {
+        min-width: 150px;
+    }
+
+    // Column contents are cut off with an ellipsis if they get too large.
+    .col-responsive {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .col-word-break {
+        @include media-breakpoint-up('md') {
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+}
+
+//
+// States
+//
+@each $state, $value in $table-variants {
+    table.#{$state},
+    tr.#{$state},
+    td.#{$state} {
+        @extend .table-#{$state};
+    }
+}
+
+//
+// Options
+//
+.table-transparent {
+    --bs-table-bg: transparent;
+}
+
+.table-vertical-top {
+    th,
+    td {
+        vertical-align: top !important;
+    }
+}
+
+.table-center {
+    th,
+    td {
+        text-align: center !important;
+    }
+}
+
+//
+// Map active state
+//
+tr.active,
+td.active {
+    @extend .table-primary;
+    @extend .table-active;
+}
+
+tr.selected,
+td.selected {
+    @extend .table-info;
+}
+
+//
+// Fits the table in the viewport and makes overflow possible
+//
+.table-fit {
+    width: 100%;
+    border-radius: var(--typo3-component-border-radius);
+    box-shadow: var(--typo3-component-box-shadow);
+    margin-bottom: var(--typo3-spacing);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table-border-color;
+
+    .table-bordered {
+        > :not(caption) > * {
+            border-width: 0;
+
+            > * {
+                border-top: 0;
+                border-width: $table-border-width;
+            }
+        }
+    }
+
+    caption {
+        border-top: $table-border-width solid $table-border-color;
+        padding-left: var(--typo3-component-padding-x);
+        padding-right: var(--typo3-component-padding-x);
+    }
+
+    .caption-top {
+        caption {
+            border-top: 0;
+            border-bottom: $table-border-width solid $table-border-color;
+        }
+    }
+
+    > .table {
+        margin-bottom: 0;
+
+        colgroup:first-child + tbody,
+        tbody:first-child {
+            tr:first-child {
+                th,
+                td {
+                    border-top: 0 !important;
+                }
+            }
+        }
+
+        tr {
+            > th:first-child,
+            > td:first-child {
+                border-left: 0 !important;
+            }
+
+            > th:last-child,
+            > td:last-child {
+                border-right: 0 !important;
+            }
+        }
+
+        tbody:last-child,
+        tfoot:last-child {
+            tr:last-child {
+                th,
+                td {
+                    border-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+.table-fit-wrap {
+    th,
+    td {
+        white-space: normal;
+    }
+}
+
+.table-fit-inline-block {
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+    margin: 0;
+
+    > .table {
+        width: auto;
+    }
+}

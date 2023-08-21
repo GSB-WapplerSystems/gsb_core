@@ -1,0 +1,79 @@
+//
+// TYPO3 styles for basic elements
+//
+video {
+    background-color: #000;
+}
+
+//
+// Various classes
+//
+.nowrap {
+    white-space: nowrap;
+}
+
+.nowrap-disabled {
+    white-space: normal !important;
+}
+
+//
+// Various classes
+//
+.section {
+    margin-bottom: 15px;
+}
+
+.diff-r {
+    color: red;
+}
+
+div.diff-r {
+    background-color: red;
+    color: black;
+}
+
+.diff-g {
+    color: green;
+}
+
+div.diff-g {
+    background-color: green;
+    color: black;
+}
+
+div.diff-r,
+div.diff-g {
+    padding: 3px;
+}
+
+// used in the admin tools => DB check
+.t3-overview-list dt {
+    font-weight: bold;
+}
+
+.media-gallery__list {
+    .media-gallery__item {
+        display: inline-block;
+        float: none;
+        margin-bottom: 15px;
+        margin-right: -4px;
+        vertical-align: top;
+
+        .media-object {
+            max-height: 158px;
+            overflow: hidden;
+        }
+
+        img.thumbnail {
+            height: auto;
+            margin-bottom: 0;
+            max-height: 150px;
+            max-width: 100%;
+        }
+
+        span.thumbnail {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
+}

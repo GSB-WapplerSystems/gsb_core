@@ -1,0 +1,10 @@
+//
+// CSS for custom element:
+// typo3-backend-editable-page-title
+//
+typo3-backend-editable-page-title {
+    @extend h1;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
