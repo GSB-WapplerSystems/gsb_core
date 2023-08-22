@@ -75,7 +75,6 @@ export const CKEditor5Plugins = {
   CloudServices,
   DataSchema,
   IndentBlock,
-  ListProperties,
   PageBreak,
   SelectAll,
   ShowBlocks,
