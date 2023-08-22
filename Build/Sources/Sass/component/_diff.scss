@@ -1,0 +1,86 @@
+//
+// Diff
+// ====
+// Used for comparision of records
+//
+//
+// Example Usage
+// -------------
+//
+// <div class="diff">
+//   <div class="div-item">
+//     <div class="diff-title">
+//       ...
+//     </div>
+//     <div class="diff-result">
+//       ...
+//     </div>
+//   </div>
+// </div>
+//
+
+//
+// Variables
+//
+$diff-bgcolor: #fff;
+$diff-border: #ccc;
+$diff-color-remove: $danger;
+$diff-color-add: $success;
+$diff-padding: 10px;
+$diff-title-bgcolor: #fafafa;
+
+//
+// Component
+//
+.diff {
+    background-color: $diff-bgcolor;
+    border: 1px solid $diff-border;
+    display: table;
+
+    .diff-item-title,
+    .diff-item-result {
+        padding: $diff-padding;
+        display: table-cell;
+    }
+
+    .diff-item {
+        display: table-row;
+
+        + .diff-item {
+            border-top: 1px solid $diff-border;
+        }
+    }
+}
+
+.diff-item-title {
+    background-color: $diff-title-bgcolor;
+    padding-right: 10px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.diff-item-result {
+    font-family: var(--typo3-font-family-monospace);
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    word-wrap: break-word;
+
+    del {
+        color: $diff-color-remove;
+        background-color: shift-color($diff-color-remove, -85%);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    ins {
+        color: $diff-color-add;
+        background-color: shift-color($diff-color-add, -85%);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    &.diff-item-result-inline {
+        white-space: normal;
+    }
+}
