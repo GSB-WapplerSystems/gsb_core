@@ -27,7 +27,6 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import DataSchema from '@ckeditor/ckeditor5-html-support/src/dataschema.js';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock.js';
-import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
 import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak.js';
 import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall.js';
 import ShowBlocks from '@ckeditor/ckeditor5-show-blocks/src/showblocks.js';
