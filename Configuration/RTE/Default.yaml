@@ -68,6 +68,10 @@ editor:
         - link
         - bulletedList
         - numberedList
+        - '|'
+        - outdent
+        - indent
+        - '|'
         - blockQuote
         - alignment
         - '|'
