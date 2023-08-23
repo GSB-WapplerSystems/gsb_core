@@ -1,0 +1,11 @@
+/.env
+/composer.json
+/composer.lock
+/config/*
+!/config/system
+/config/system/*
+!/config/system/additional.php.dist
+/local
+/public
+/var
+/vendor

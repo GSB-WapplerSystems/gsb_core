@@ -1,0 +1,1196 @@
+//
+// Form Framework
+// ===========
+// Contains all needed styles of the TYPO3 Form Framework.
+//
+
+//
+// Load global variables
+//
+@import "../../node_modules/@typo3/icons/dist/scss/icons-variables-actions.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables/main";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+//
+// Variables
+//
+$stage-max-width: 800px;
+$stage-abstract-element-height: 62px;
+$stage-abstract-element-toolbar-height: 35px;
+$stage-icon-container-width: 40px;
+$stage-validation-list-width: 100px;
+$stage-validation-transition-time-in: .2s;
+$stage-validation-transition-time-out: .3s;
+$navigation-bg: $gray-100;
+$tree-indentation: 20px;
+$tree-line-height: 20px;
+
+//
+// Mixins
+//
+@mixin fade-out-gradient-effect-bottom($color, $gradient-start-height, $gradient-height) {
+    &:before,
+    &:after {
+        z-index: 1;
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    &:before {
+        height: $gradient-start-height;
+        background: $color;
+    }
+
+    &:after {
+        bottom: $gradient-start-height;
+        height: $gradient-height;
+        background: linear-gradient(to bottom, rgba(red($color), green($color), blue($color), 0) 0%, $color 100%);
+    }
+}
+
+@mixin selected-button-style-primary() {
+    .btn {
+        background-color: #fff;
+        border-color: #fff;
+
+        &:hover,
+        &:focus,
+        &.active {
+            background-color: lighten($info, 30%);
+        }
+
+        .icon {
+            svg path {
+                fill: $primary;
+            }
+        }
+    }
+}
+
+@mixin collapsed-icon-animation() {
+    transform: rotate(0deg);
+    transition: transform .2s;
+}
+
+@mixin expanded-icon-animation() {
+    transform: rotate(90deg);
+    transition: transform .2s;
+}
+
+.form-editor {
+    padding: 0 .5em;
+}
+
+.form-control-wrap {
+    margin: 0;
+    padding: .5rem 0;
+}
+
+.form-group-select {
+    padding-bottom: .5rem;
+
+    .form-control-wrap {
+        padding: 0;
+    }
+
+    .t3-form-add-collection-element {
+        padding-bottom: 0;
+    }
+
+    .form-select {
+        margin-top: .5rem;
+    }
+}
+
+//
+// X-Component
+//
+.t3-form-x-component {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    line-height: inherit;
+    background: $navigation-bg;
+
+    a {
+        text-decoration: none;
+    }
+
+    ol,
+    ul:not(.dropdown-menu) {
+        list-style: none;
+        padding: 0;
+    }
+
+    .form-sortable-ghost {
+        outline-offset: -1px !important;
+    }
+}
+
+.t3-form-x-component-inner-wrapper {
+    position: relative;
+    padding: 1.5em;
+}
+
+//
+// Structure Tree
+//
+#t3-form-navigation-component {
+    overflow: hidden;
+    left: 0;
+}
+
+#t3-form-structure-panel {
+    overflow: auto;
+    padding-top: var(--module-docheader-height);
+    height: 100%;
+
+    .icon {
+        z-index: 1;
+    }
+
+    #t3-form-navigation-component-tree-root-container,
+    .tree li > div {
+        border: 1px solid transparent;
+        cursor: pointer;
+    }
+
+    .tree {
+        .svg-wrapper {
+            svg {
+                overflow: visible;
+                position: relative;
+                top: -1em;
+                left: .6em;
+            }
+
+            path {
+                fill: none;
+                shape-rendering: crispEdges;
+                stroke: rgb(221, 221, 221);
+                stroke-width: 1;
+            }
+        }
+
+        li {
+            white-space: nowrap;
+
+            &.mjs-nestedSortable-collapsed {
+                > ol {
+                    display: none;
+                }
+
+                & > div {
+                    & > span[data-identifier="treeExpander"] {
+                        @include collapsed-icon-animation();
+                    }
+                }
+            }
+
+            &.mjs-nestedSortable-expanded {
+                & > div {
+                    & > span[data-identifier="treeExpander"] {
+                        @include expanded-icon-animation();
+                    }
+                }
+            }
+
+            small {
+                padding-left: .5em;
+                font-size: 80%;
+            }
+        }
+
+        .t3-form-icon {
+            margin-right: .5em;
+            margin-left: .5em;
+        }
+
+        .t3-form-element-has-children > div .t3-form-icon {
+            margin-left: .1em;
+        }
+
+        .sortable-hover {
+            outline: 1px solid darken($panel-default-heading-bg, 20%);
+        }
+    }
+
+    .icon {
+        margin-top: 1px;
+    }
+
+    .tree li > div,
+    #t3-form-navigation-component-tree-root-container {
+        height: $tree-line-height;
+
+        > span {
+            display: inline-block;
+            vertical-align: top;
+            line-height: $tree-line-height;
+        }
+    }
+
+    #t3-form-navigation-component-tree-root {
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tree li > div:hover,
+    .t3-form-form-element-selected,
+    #t3-form-navigation-component-tree-root-container:hover,
+    .t3-form-root-element-selected {
+        background-color: darken($navigation-bg, 1%);
+        border-color: darken($navigation-bg, 10%);
+        border-radius: 2px;
+        margin-left: -$tree-indentation;
+        padding-left: $tree-indentation;
+        margin-right: -1.3em;
+    }
+
+    .tree li > .t3-form-form-element-selected,
+    .tree li > .t3-form-form-element-selected:hover,
+    #t3-form-navigation-component-tree-root-container.t3-form-root-element-selected,
+    #t3-form-navigation-component-tree-root-container.t3-form-root-element-selected:hover {
+        background-color: #fff;
+        border-color: darken($navigation-bg, 10%);
+    }
+
+    .t3-form-x-component-inner-wrapper {
+        padding-top: 2.5em;
+    }
+
+    .form-sortable-drag {
+        > div:hover,
+        .t3-form-form-element-selected,
+        #t3-form-navigation-component-tree-root-container:hover,
+        .t3-form-root-element-selected {
+            background-color: transparent !important;
+            border-color: transparent !important;
+        }
+
+        svg {
+            opacity: 0;
+        }
+    }
+
+    .mjs-nestedSortable-branch {
+        span[data-identifier="treeExpander"] {
+            margin-left: -1.7em;
+            margin-top: -2px;
+        }
+    }
+
+    .mjs-nestedSortable-leaf {
+        span.t3-form-icon {
+            margin-left: initial;
+        }
+    }
+}
+
+//
+// Inspector
+//
+.form-group.t3-form-collection-element-remove-button,
+.t3-form-inspector-finishers-editor-removeButton,
+.form-group.t3-form-inspector-validators-editor-removeButton {
+    margin: 0 !important;
+    font-size: 0;
+}
+
+#t3-form-inspector-panels-container {
+    overflow: hidden;
+    right: 0;
+    padding-top: var(--module-docheader-height);
+}
+
+#t3-form-inspector-panels {
+    overflow: auto;
+    height: 100%;
+}
+
+#t3-form-inspector {
+    padding: 1em 0;
+
+    h2,
+    h3,
+    h4 {
+        margin: 0;
+        padding: .1em .2em .2em .5em;
+        border-top: 1px solid var(--module-docheader-border);
+        clear: both;
+        font: inherit;
+        font-weight: bold;
+    }
+
+    h2 {
+        padding-bottom: 1em;
+        border: none;
+        border-bottom: 1px solid var(--module-docheader-border);
+    }
+
+    > h2:first-child {
+        border-top: none;
+    }
+
+    h3 {
+        padding-top: .3em;
+        border: none;
+    }
+
+    h4 {
+        padding: .8em 3.5em .8em 2.8em;
+        font-weight: 500;
+        background-color: $panel-default-heading-bg;
+
+        span[data-template-property="label"] {
+            vertical-align: top;
+        }
+    }
+
+    .form-section-headline {
+        padding: 0;
+    }
+
+    .icon-size-small {
+        line-height: $line-height-base;
+    }
+
+    .input-group {
+        .t3-form-controls {
+            flex: 1 1 auto;
+        }
+    }
+
+    > .t3-form-remove-element-button {
+        padding-top: 1rem;
+        border-top: 1px solid var(--module-docheader-border);
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    &-validators.sortable + .t3-form-remove-element-button {
+        margin-top: .25rem;
+    }
+
+    .t3-form-inspector-finishers-editor-removeButton,
+    .t3-form-inspector-validators-editor-removeButton {
+        .btn {
+            padding: .25rem .5rem;
+            font-size: .65625rem;
+        }
+
+        .t3-form-remove-element-button-label {
+            display: none;
+        }
+    }
+
+    .t3-form-control-group,
+    .t3-form-add-collection-element {
+        clear: both;
+    }
+
+    .t3-form-control-group.form-group {
+        #t3-form-add-finisher.t3-form-add-collection-element,
+        #t3-form-add-validator.t3-form-add-collection-element {
+            margin: initial;
+        }
+    }
+
+    .t3-form-inspector-editor-requiredValidator {
+        label {
+            cursor: pointer;
+        }
+    }
+
+    .t3-form-dropdown-buttons.open {
+        position: static;
+
+        .dropdown-menu {
+            width: 100%;
+
+            a {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+//
+// Inspector Collection
+//
+.t3-form-add-collection-element {
+    padding-bottom: .5rem;
+}
+
+.t3-form-collection-container {
+    margin-top: -1em;
+    padding: .5em;
+
+    .form-sortable-handle {
+        cursor: auto;
+    }
+
+    h4 {
+        cursor: move;
+    }
+
+    .t3-form-control-group {
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+}
+
+.t3-form-collection-element {
+    position: relative;
+    margin-bottom: .5em;
+    border: 1px solid var(--module-docheader-border);
+    border-top: none;
+    background: $navigation-bg;
+
+    .t3-form-collection-element-remove-button {
+        position: absolute;
+        right: .5em;
+        top: .5em;
+    }
+
+    h4 {
+        > .icon {
+            position: absolute;
+            left: 1em;
+        }
+    }
+
+    .form-editor {
+        padding: 0;
+    }
+
+    .panel-collapse {
+        .form-editor {
+            &:first-child {
+                margin-top: 1em;
+            }
+        }
+    }
+}
+
+.t3-form-validator-editor {
+    .collapsed {
+        .icon-actions-view-table-expand {
+            @include collapsed-icon-animation();
+        }
+    }
+
+    .icon-actions-view-table-expand {
+        @include expanded-icon-animation();
+    }
+}
+
+//
+// Inspector Property Grid
+//
+.property-grid {
+    .form-control {
+        min-width: auto;
+        font-size: .9em;
+    }
+
+    .table {
+        th {
+            font-size: .9em;
+        }
+
+        > tbody > tr {
+            cursor: pointer;
+            background-color: $table-bg;
+
+            &:last-child {
+                cursor: auto;
+            }
+
+            > td {
+                padding: .6em .3em;
+                text-align: center;
+
+                &:first-child {
+                    width: 35px;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: 75px;
+                }
+
+                &:nth-child(4) {
+                    width: 65px;
+                }
+
+                &:nth-child(5) {
+                    width: 35px;
+                }
+            }
+        }
+    }
+
+    .sort-row-field {
+        cursor: move;
+    }
+
+    .form-sortable-drag {
+        td {
+            border: none;
+        }
+    }
+
+    .form-sortable-ghost {
+        height: 45px;
+        border-left: 1px solid var(--module-docheader-border) !important;
+        border-right: 1px solid var(--module-docheader-border) !important;
+        outline-offset: -5px !important;
+    }
+}
+
+//
+// Stage
+//
+#t3-form-stage-inner-container {
+    position: relative;
+    left: -5px;
+    display: inline-block;
+    width: 90%;
+    max-width: $stage-max-width;
+    text-align: left;
+}
+
+#t3-form-stage-container {
+    overflow: auto;
+    position: relative;
+    height: calc(100% - #{var(--module-docheader-height)});
+    max-height: 100%;
+    text-align: center;
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    .form-section {
+        border: none;
+    }
+
+    .panel-heading {
+        button {
+            outline: none;
+        }
+
+        .paginiation-label {
+            margin-right: 1em;
+        }
+    }
+
+    .t3-form-new-element-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $stage-abstract-element-height;
+        border: 1px dashed $panel-default-heading-bg;
+    }
+
+    // Abstract
+    &.t3-form-stage-viewmode-abstract {
+        .t3-form-page-title {
+            margin: 0 0 .5em;
+        }
+
+        #t3-form-stage-inner-container {
+            overflow: hidden;
+        }
+
+        .t3-form-element-composit {
+            &:not(.t3-form-element-toplevel) {
+                margin-bottom: 1em;
+                padding-bottom: 1px;
+                outline: 1px solid #ddd;
+                outline-offset: -1px;
+            }
+
+            .sortable-hover {
+                outline-color: darken($panel-default-heading-bg, 40%);
+            }
+
+            .t3-form-form-composit-element-selected {
+                outline-color: $primary;
+            }
+
+            & > .form-sortable-handle {
+                margin: 0;
+
+                div.t3-form-form-element-body {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .t3-form-element-composit.sortable-hover > .form-sortable-handle,
+        .form-sortable-handle:hover {
+            border-color: darken($panel-default-heading-bg, 40%);
+
+            .t3-form-icon-container {
+                background-color: darken($panel-default-heading-bg, 40%);
+            }
+        }
+
+        .form-sortable-handle {
+            position: relative;
+            height: $stage-abstract-element-height;
+            margin-bottom: 1em;
+            border: 1px solid $panel-default-heading-bg;
+            background-color: #fff;
+
+            &:first-of-type {
+                margin-top: 1em;
+            }
+
+            &:hover {
+                .t3-form-validator-list {
+                    right: 0;
+                    transition: right $stage-validation-transition-time-in;
+                }
+
+                .t3-form-element-info .element-content {
+                    span,
+                    div {
+                        color: $gray-700;
+                    }
+                }
+
+                .t3-form-validator-info .t3-form-icon {
+                    margin-right: ($stage-validation-list-width - 25);
+                    transition: margin $stage-validation-transition-time-in;
+                }
+            }
+        }
+
+        .ui-state-disabled {
+            cursor: auto;
+
+            &:hover {
+                background: none;
+            }
+        }
+
+        .form-sortable-ghost {
+            margin-bottom: 1em;
+        }
+
+        .t3-form-icon-container {
+            float: left;
+            width: $stage-icon-container-width;
+            height: 100%;
+            padding: 1em;
+            cursor: move;
+            background-color: $panel-default-heading-bg;
+
+            .t3-form-icon {
+                height: 100%;
+            }
+        }
+
+        .t3-form-form-element-body {
+            height: 100%;
+        }
+
+        .t3-form-element-info {
+            position: relative;
+            float: left;
+            width: 55%;
+            height: 100%;
+            padding-left: 1em;
+
+            @include fade-out-gradient-effect-bottom(#fff, .8em, 1em);
+
+            .element-label-container {
+                float: left;
+                position: relative;
+                width: 45%;
+                height: 100%;
+
+                .element-label {
+                    overflow: hidden;
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .element-content {
+                padding-top: 1em;
+                white-space: nowrap;
+                font-size: .8em;
+
+                span,
+                div {
+                    color: $panel-default-heading-bg;
+                }
+            }
+        }
+
+        .t3-form-validator-info {
+            position: relative;
+            overflow: hidden;
+            float: right;
+            height: 100%;
+
+            .t3-form-icon {
+                height: 100%;
+                z-index: 1;
+                margin-left: 1em;
+                transition: margin $stage-validation-transition-time-out;
+                filter: grayscale(100%);
+            }
+
+            .t3-form-validator-list {
+                @include fade-out-gradient-effect-bottom($panel-default-heading-bg, 1em, 1em);
+                position: absolute;
+                top: 0;
+                right: -$stage-validation-list-width;
+                width: $stage-validation-list-width;
+                height: 100%;
+                padding: 1em 1em 1em ($stage-validation-list-width - 65);
+                font-size: .8em;
+                transition: right $stage-validation-transition-time-out;
+                background-color: $panel-default-heading-bg;
+            }
+
+            .validator-label {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: $gray-700;
+            }
+        }
+
+        #t3-form-stage .t3-form-form-element-selected {
+            position: relative;
+            padding-top: $stage-abstract-element-toolbar-height;
+            height: $stage-abstract-element-height + $stage-abstract-element-toolbar-height;
+            border: none;
+
+            .t3-form-form-element-body {
+                border: 1px solid $primary;
+            }
+
+            .t3-form-icon-container {
+                background-color: $primary;
+            }
+
+            .t3-form-element-info .element-content {
+                span,
+                div {
+                    color: $gray-700;
+                }
+            }
+
+            .t3-form-validator-list {
+                $validation-list-background: lighten($info, 30%);
+                right: 0;
+                transition: none;
+                background-color: $validation-list-background;
+
+                &:before {
+                    background-color: $validation-list-background;
+                }
+
+                &:after {
+                    background: linear-gradient(to bottom, rgba(red($validation-list-background), green($validation-list-background), blue($validation-list-background), 0) 0%, $validation-list-background 100%);
+                }
+            }
+
+            .t3-form-validator-info .t3-form-icon {
+                margin-right: ($stage-validation-list-width - 25);
+                filter: none;
+            }
+
+            .btn-toolbar-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: $stage-abstract-element-toolbar-height;
+                border: 1px solid $primary;
+                background-color: $primary;
+                padding-right: .7em;
+                padding-top: .4em;
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    content: ' ';
+                    background-color: $primary;
+                }
+
+                &:before {
+                    left: -1px;
+                }
+
+                &:after {
+                    right: -1px;
+                }
+
+                .caret {
+                    color: $primary;
+                }
+
+                .t3-form-dropdown-buttons {
+                    .icon {
+                        margin-right: .5em;
+                    }
+                }
+
+                .btn-toolbar {
+                    float: right;
+
+                    @include selected-button-style-primary();
+                }
+            }
+
+            .meta-label {
+                display: inline-block;
+                top: 1em;
+                left: 5em;
+                bottom: auto;
+                font-size: .9em;
+                color: #fff;
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+
+        .panel.t3-form-form-stage-selected {
+            border-color: $primary;
+
+            > .panel-heading {
+                background-color: $primary;
+                border-color: $primary;
+                color: #fff;
+
+                @include selected-button-style-primary();
+            }
+        }
+    }
+
+    // Preview
+    &.t3-form-stage-viewmode-preview {
+        #t3-form-stage-inner-container {
+            @include media-breakpoint-down('xl') {
+                width: 600px;
+            }
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        textarea,
+        select {
+            color: #000;
+            background-color: lighten($panel-default-heading-bg, 3%);
+        }
+
+        ::placeholder {
+            color: $gray-600;
+            font-style: italic;
+        }
+
+        input[type="date"] {
+            display: block;
+            width: 100%;
+            height: 32px;
+            padding: .6em;
+            font-size: 12px;
+            line-height: $line-height-base;
+            background-image: none;
+            border: 1px solid var(--module-docheader-border);
+            border-radius: 2px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        select[multiple="multiple"] {
+            height: auto;
+            min-height: 32px;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        .container {
+            width: auto;
+        }
+
+        legend.t3-form-form-element-selected {
+            border-color: var(--module-docheader-border);
+        }
+
+        .form-navigation {
+            .btn-group {
+                span,
+                button {
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+            }
+        }
+
+        .preview-table-first-col {
+            width: 30%;
+        }
+
+        .t3-form-element-preview {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .t3-form-new-element-container {
+            display: none;
+        }
+    }
+
+    #t3-form-stage {
+        margin-bottom: 0;
+        padding-top: .5em;
+
+        > ol,
+        > ol > li > ol {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .t3-form-element-toplevel {
+            > .t3-form-form-element-selected {
+                height: auto;
+                padding-top: 0;
+            }
+
+            > .t3-form-form-element-selected .btn-toolbar-container {
+                display: none;
+            }
+        }
+    }
+}
+
+.meta-label {
+    z-index: 2;
+    position: absolute;
+    bottom: 1em;
+    left: 5.5em;
+    display: none;
+    color: $primary;
+    line-height: 1.6;
+    font-size: .8em;
+
+    .form-sortable-handle:hover > & {
+        display: inline-block;
+    }
+}
+
+.form-sortable-ghost,
+.t3-form-element-composit.form-sortable-ghost {
+    z-index: 1;
+    position: relative;
+    background-color: #fff !important;
+    border: none !important;
+    outline: 1px dashed lighten($success, 30%) !important;
+    outline-offset: -2px !important;
+    visibility: visible !important;
+}
+
+.form-sortable-ghost.mjs-nestedSortable-error {
+    outline: 1px dashed #c83c3c !important;
+}
+
+//
+// Icons
+//
+.t3-form-icon {
+    margin-right: 1em;
+}
+
+//
+// Validation Errors
+//
+.t3-form-validation-child-has-error {
+    color: $danger;
+}
+
+.t3-form-validation-errors {
+    #t3-form-navigation-component &,
+    #t3-form-stage-container & {
+        position: relative;
+        color: $danger;
+
+        &:before {
+            z-index: 1;
+            position: absolute;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: none;
+        }
+    }
+
+    #t3-form-navigation-component & {
+        &:before {
+            content: '';
+            vertical-align: middle;
+            mask: escape-svg($icon-actions-exclamation-circle);
+            background-color: $danger;
+            background-size: contain;
+            display: inline-block;
+            margin-top: .2em;
+        }
+    }
+
+    &#t3-form-navigation-component-tree-root:before {
+        left: -2em !important;
+        margin-top: .1em;
+    }
+
+    #t3-form-stage-container &.form-sortable-handle {
+        border-color: $danger;
+
+        &:before {
+            content: '';
+            vertical-align: middle;
+            mask: escape-svg($icon-actions-exclamation-circle);
+            background-color: $danger;
+            background-size: contain;
+            display: inline-block;
+            left: 4.5em;
+            margin-top: 1.9em;
+        }
+
+        .element-label {
+            padding-left: 1.5em;
+        }
+    }
+
+    #t3-form-inspector-panels .t3-form-collection-element & {
+        display: inline-block;
+        color: #fff;
+        font-size: .8em;
+        font-weight: 700;
+        background-color: $danger;
+        margin-bottom: .5em;
+        padding: .1em .5em;
+        border-radius: 2px;
+    }
+
+    #t3-form-inspector-panels &.t3-form-collection-element {
+        border-color: $danger;
+
+        h4 {
+            border-color: $danger;
+            background-color: $danger;
+            color: #fff;
+
+            path {
+                fill: #fff;
+            }
+        }
+
+        .t3-form-collection-element-remove-button {
+            background: #fff;
+            border-color: transparent;
+
+            path {
+                fill: $danger;
+            }
+
+            &:hover {
+                background: lighten($danger, 30%);
+            }
+        }
+    }
+}
+
+#t3-form-inspector-panels {
+    span.t3-form-validation-errors {
+        display: inline-block;
+        color: #fff;
+        font-size: .8em;
+        font-weight: 700;
+        margin-bottom: .5em;
+        padding: .1em .5em;
+        border-radius: 2px;
+        line-height: 1.5em;
+    }
+
+    span.t3-form-validation-errors {
+        background-color: $danger;
+    }
+}
+
+//
+// Loading Editor Spinner
+//
+.form-editor-loading-spinner {
+    width: 150px;
+    margin: 5em auto 0;
+    text-align: center;
+}
+
+.form-sortable-handle {
+    cursor: pointer;
+}
+
+//
+// Module
+//
+.module.web_FormFormbuilder_FormEditor {
+    overflow: hidden;
+
+    .module-body,
+    div[data-identifier="moduleWrapper"] {
+        height: 100%;
+    }
+
+    .module-body {
+        padding-bottom: .5em;
+    }
+
+    .module-docheader-bar-column-left {
+        button {
+            &,
+            &:focus,
+            &:active {
+                outline: initial initial 0;
+            }
+        }
+    }
+}
+
+.t3-form-element-new-page-button {
+    position: absolute;
+    left: .5em;
+}

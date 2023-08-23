@@ -1,0 +1,32 @@
+$fieldset-padding: $padding-small-vertical;
+$option-margin-bottom: $padding-small-horizontal;
+
+.localization-wizard {
+    .option {
+        margin-bottom: $option-margin-bottom;
+    }
+}
+
+[data-bs-slide="localize-summary"] {
+    .input-group {
+        margin-bottom: $option-margin-bottom;
+
+        .form-control {
+            height: auto;
+            font-weight: normal;
+            margin: 0;
+        }
+    }
+
+    .localization-fieldset {
+        margin-bottom: $padding-large-vertical;
+
+        > label {
+            padding: 0 $fieldset-padding;
+
+            input[type="checkbox"] {
+                margin: 0 $padding-base-horizontal;
+            }
+        }
+    }
+}
