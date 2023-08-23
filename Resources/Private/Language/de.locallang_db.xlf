@@ -375,6 +375,14 @@
 				<source>Top</source>
 				<target>Oben</target>
 			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2" approved="yes">
+				<source>Middle</source>
+				<target>Mitte</target>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3" approved="yes">
+				<source>Bottom</source>
+				<target>Unten</target>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0" approved="yes">
 				<source>Hide</source>
 				<target>Verborgen</target>
@@ -382,13 +390,6 @@
 			<trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1" approved="yes">
 				<source>Show</source>
 				<target>Anzeigen</target>
-			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2" approved="yes">
-				<source>Middle</source>
-			</trans-unit>
-			<trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3" approved="yes">
-				<source>Bottom</source>
-				<target>Unten</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_textcolor.I.0" resname="stage.tx_stage_textcolor.I.0" approved="yes">
 				<source>Black</source>
