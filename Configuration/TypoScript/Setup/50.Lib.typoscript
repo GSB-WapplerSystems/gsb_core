@@ -106,16 +106,20 @@ lib {
               10 {
                 noTrimWrap = | title="Download: |" |
                 data = file:current:download_name // file:current:name
-                stdWrap.dataWrap = |.{file:current:extension}
-                stdWrap.dataWrap.if.isTrue.data = file:current:download_name
+                stdWrap {
+                  dataWrap = |.{file:current:extension}
+                  dataWrap.if.isTrue.data = file:current:download_name
+                }
               }
               // add download name or other attributes
               20 = TEXT
               20 {
                 noTrimWrap = | download="|" |
                 data = file:current:download_name // file:current:name
-                stdWrap.dataWrap = |.{file:current:extension}
-                stdWrap.dataWrap.if.isTrue.data = file:current:download_name
+                stdWrap {
+                  dataWrap = |.{file:current:extension}
+                  dataWrap.if.isTrue.data = file:current:download_name
+                }
               }
             }
           }
