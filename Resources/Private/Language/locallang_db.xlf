@@ -291,17 +291,17 @@
             <trans-unit id="stage.tx_stage_position.I.1" resname="stage.tx_stage_position.I.1">
                 <source>Top</source>
             </trans-unit>
-            <trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0">
-                <source>Hide</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1">
-                <source>Show</source>
-            </trans-unit>
             <trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2">
                 <source>Middle</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3">
                 <source>Bottom</source>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0">
+                <source>Hide</source>
+            </trans-unit>
+            <trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1">
+                <source>Show</source>
             </trans-unit>
             <trans-unit id="stage.tx_stage_textcolor.I.0" resname="stage.tx_stage_textcolor.I.0">
                 <source>Black</source>

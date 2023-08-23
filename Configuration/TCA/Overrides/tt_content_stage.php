@@ -56,22 +56,22 @@ defined('TYPO3') || die();
                             [
                                 0 =>
                                     [
-                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.0',
                                         'value' => 'stage-default',
                                     ],
                                 1 =>
                                     [
-                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.1',
                                         'value' => 'stage-top',
                                     ],
                                 2 =>
                                     [
-                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.2',
                                         'value' => 'stage-middle',
                                     ],
                                 3 =>
                                     [
-                                        'lable' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_position.I.3',
                                         'value' => 'stage-bottom',
                                     ],
                             ],
