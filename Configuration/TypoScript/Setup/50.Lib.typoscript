@@ -65,7 +65,7 @@ lib {
               10 {
                 data = file:current:extension
                 stdWrap.case = upper
-                noTrimWrap = | (|
+                noTrimWrap = | [|
               }
               20 = TEXT
               20 {
@@ -73,7 +73,7 @@ lib {
                 insertData = 1
                 bytes = 1
                 bytes.labels = "B|KB|MB|GB"
-                noTrimWrap = |, |)|
+                noTrimWrap = |, |]|
               }
             }
           }
