@@ -1055,7 +1055,7 @@ module.exports = function (grunt) {
    * - minifies svg files
    * - compiles TypeScript files
    */
-  grunt.registerTask('default', ['clear-build', 'clean', 'update', 'concurrent:copy_static', 'concurrent:compile_flags', 'concurrent:compile_assets', 'concurrent:minify_assets']);
+  grunt.registerTask('default', ['clear-build', 'clean', 'update', 'concurrent:copy_static', 'concurrent:compile_flags', 'concurrent:minify_assets']);
 
   /**
    * grunt build task (legacy, for those used to it). Use `grunt default` instead.
