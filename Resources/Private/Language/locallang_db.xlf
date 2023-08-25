@@ -34,7 +34,7 @@
 				<source>Remove socialmedia bar</source>
 			</trans-unit>
 			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb">
-				<source>You are here</source>
+				<source>Breadcrumb</source>
 			</trans-unit>
 			<trans-unit id="pages.Breadcrumb.description" resname="pages.Breadcrumb.description">
 				<source>Remove breadcrumb</source>

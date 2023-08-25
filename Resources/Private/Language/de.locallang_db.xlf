@@ -44,8 +44,8 @@
 				<target>Socialmedia-Leiste entfernen</target>
 			</trans-unit>
 			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb" approved="yes">
-				<source>You are here</source>
-				<target>Sie sind hier</target>
+				<source>Breadcrumb</source>
+				<target>Breadcrumb</target>
 			</trans-unit>
 			<trans-unit id="pages.Breadcrumb.description" resname="pages.Breadcrumb.description" approved="yes">
 				<source>Remove breadcrumb</source>
