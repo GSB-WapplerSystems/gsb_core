@@ -1,8 +1,8 @@
 
 renderingOptions:
   submitButtonLabel: Absenden
-identifier: Beispiel
-label: Beispiel
+identifier: vorlagekomplett
+label: Vorlage (Komplett)
 type: Form
 prototypeName: standard
 finishers:
@@ -22,7 +22,7 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
-      table: 'tx_gsbcore_forms'
+      table: tx_gsbcore_forms
       databaseColumnMappings:
         pid:
           value: 27

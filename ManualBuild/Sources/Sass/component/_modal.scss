@@ -1,0 +1,316 @@
+//
+// Modals
+//
+
+@import "../cropper/variables";
+
+//
+// Variables
+//
+$modal-sidebar-sm: 250px;
+$modal-sidebar-md: 300px;
+$modal-sidebar-button-space: $padding-small-vertical;
+//
+// Component
+//
+.modal {
+    .close {
+        background: transparent;
+        border: none;
+        color: inherit;
+        padding: 0;
+        margin: 0;
+        text-shadow: rgba(0, 0, 0, .5) 0 0 3px;
+        opacity: .5;
+        user-select: none;
+
+        &:hover,
+        &:active {
+            box-shadow: none;
+            outline: none;
+            background: none;
+            opacity: 1;
+        }
+    }
+}
+
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: 0 auto !important;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    max-width: calc(100vw - 40px);
+}
+
+.modal-body {
+    overflow-y: auto;
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.modal-header,
+.modal-footer {
+    padding: calc(var(--#{$prefix}modal-padding) / 2) var(--#{$prefix}modal-padding);
+}
+
+.modal-footer {
+    .btn {
+        margin-right: 0;
+        padding-left: 1em;
+        padding-right: 1em;
+        display: inline-flex;
+        align-items: center;
+
+        typo3-backend-icon {
+            margin-left: -2px;
+            margin-right: 4px;
+        }
+    }
+
+    .progress {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .modal-btn-group {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.modal-content {
+    transition: margin-top .1s ease-in;
+    border: none;
+
+    .modal-loading {
+        height: 100%;
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+//
+// Image manipulation
+//
+.modal-image-manipulation {
+    .modal-body {
+        padding: 0;
+
+        @include media-breakpoint-up('md') {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .modal-panel-main {
+        overflow: visible;
+        background-image: url("../Images/cropper-background.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        // Required to make the CropperJs container responsive
+        // so we do not need to fiddle around using js resize
+        // event to adjust the image width to the current view port
+        width: 100%;
+
+        @include media-breakpoint-up('md') {
+            width: calc(100% - #{$modal-sidebar-sm});
+        }
+
+        @include media-breakpoint-up('lg') {
+            width: calc(100% - #{$modal-sidebar-md});
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
+    }
+
+    .modal-panel-sidebar {
+        padding: 15px;
+        flex-shrink: 0;
+        border-left: 1px solid rgba(0, 0, 0, .25);
+        position: relative;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+
+        @include media-breakpoint-up('md') {
+            width: $modal-sidebar-sm;
+        }
+
+        @include media-breakpoint-up('lg') {
+            width: $modal-sidebar-md;
+        }
+    }
+
+    .panel-heading {
+        .is-active {
+            // Disable pointer events to make
+            // sure the active panel stays open
+            pointer-events: none;
+        }
+    }
+
+    .panel {
+        margin-bottom: 0;
+    }
+
+    .panel-body {
+        border-left: 2px solid $color-orange;
+    }
+}
+
+//
+// Iframe
+//
+.modal-type-iframe {
+    padding: 0;
+
+    .modal-body {
+        padding: 0;
+    }
+}
+
+.modal-iframe {
+    display: block;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+//
+// Size
+//
+.modal-size-small {
+    .modal-content {
+        width: 440px;
+    }
+}
+
+.modal-size-default {
+    .modal-content {
+        width: 600px;
+    }
+}
+
+.modal-size-medium {
+    .modal-content {
+        width: 800px;
+        height: 520px;
+    }
+}
+
+.modal-size-large {
+    .modal-content {
+        width: 1000px;
+        height: 800px;
+    }
+}
+
+.modal-size-full {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//
+// Severity
+//
+@each $state, $value in $theme-colors {
+    .modal-severity-#{$state} {
+        .modal-header {
+            background-color: $value;
+            color: color-contrast($value);
+            border-bottom-color: shade-color($value, 10%);
+        }
+    }
+}
+
+//
+// Variant
+//
+.modal-style-dark {
+    color: #fff;
+
+    .modal-header {
+        color: #fff;
+        background-color: #484848;
+        border-bottom-color: #000;
+    }
+
+    .modal-content {
+        overflow: hidden;
+        background-color: #292929;
+    }
+
+    .modal-body,
+    .modal-footer {
+        background-color: #292929;
+        color: #fff;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #000;
+    }
+}
+
+//
+// MultiStepWizard-Modal
+//
+.modal-multi-step-wizard {
+    .modal-body {
+        .carousel {
+            &.slide {
+                min-height: 21em;
+            }
+        }
+
+        .carousel-inner {
+            // fix cropped input outlines due to overflow:hidden
+            width: auto;
+            margin: 0 -5px;
+            padding: 0 5px;
+        }
+    }
+
+    .modal-footer {
+        .btn + .btn {
+            margin-left: .5em;
+        }
+
+        .progress-bar {
+            &.inactive {
+                background: none;
+                color: $body-color;
+            }
+        }
+    }
+}

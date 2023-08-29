@@ -1,4 +1,5 @@
-<nav aria-label="Breadcrumb" class="container d-none d-sm-block">
+<nav aria-labelledby="breadcrumb" class="container d-none d-sm-block">
+    <h2 class="visually-hidden" id="breadcrumb">{f:translate(key:'pages.fe.Breadcrumb', extensionName:'gsb_core')}</h2>
     <ol class="breadcrumb">
         <f:for as="item" each="{breadcrumbMenu}" iteration="iterator">
             <f:if condition="{item.data.is_siteroot} == '1'">

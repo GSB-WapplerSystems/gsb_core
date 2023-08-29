@@ -1,0 +1,102 @@
+//
+// Backend
+// =======
+// Contains all needed styles for the TYPO3 backend.
+//
+
+//
+// Load minimal Setup including variables
+//
+@import "minimal";
+
+//
+// Include chosen CSS file
+//
+@import "libs/chosen";
+
+//
+// Image Manipulation Wizard base styles
+//
+@import "cropper/cropper";
+
+//
+// Sortable.js
+//
+@import "libs/sortable";
+
+//
+// tablesort.js
+//
+@import "libs/tablesort";
+
+//
+// NProgress
+//
+@import "nprogress/nprogress";
+
+//
+// Components
+//
+@import "component/colorpicker";
+@import "component/datetimepicker";
+@import "component/svgtree";
+@import "component/elementbrowser";
+@import "component/table";
+@import "component/media";
+@import "component/modal";
+@import "component/note";
+@import "component/card";
+@import "component/form";
+@import "component/contextmenu";
+@import "component/livesearch";
+@import "component/recordlist";
+@import "component/resources";
+@import "component/recordsearchbox";
+@import "component/treelist";
+@import "component/indent";
+@import "component/pagination";
+
+//
+// Elements
+//
+@import "element/typo3-backend-draggable-resizable";
+@import "element/typo3-backend-editable-page-title";
+@import "element/typo3-backend-new-content-element-wizard";
+@import "element/typo3-notification-message";
+
+//
+// TYPO3 Backend Components
+//
+@import "typo3/element_animation";
+@import "typo3/element_cropper";
+@import "typo3/element_slider";
+@import "typo3/element_tab";
+@import "typo3/element_tceforms";
+@import "typo3/element_tree";
+@import "typo3/element_uiblock";
+@import "typo3/element_pagination";
+@import "typo3/element_draguploader";
+@import "typo3/install";
+@import "typo3/history";
+@import "typo3/login_screen";
+@import "typo3/main_content";
+@import "typo3/main_backend_layout_wizard";
+@import "typo3/main_form";
+@import "typo3/wizard_localization";
+@import "typo3/structure/module_file_filelist";
+@import "typo3/visual/element_typoscript";
+
+//
+// Modules
+//
+@import "module/access";
+@import "module/extensionmanager";
+@import "module/help";
+@import "module/info";
+@import "module/install";
+@import "module/page";
+@import "module/recycler";
+@import "module/scheduler";
+@import "module/usersettings";
+@import "module/viewpage";
+@import "module/workspaces";

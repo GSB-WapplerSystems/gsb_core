@@ -35,6 +35,9 @@ editor:
       - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
       - { name: "Button: Tertiary", element: "a", attributes: { 'class': 'btn btn-tertiary' } }
 
+      - { name: "List: Unstyled", element: "li", attributes: { 'class': 'list-unstyled' } }
+      - { name: "List: Scroll", element: "li", attributes: { 'class': 'list-scroll' } }
+
       - { name: "Link: Internal", element: "a", attributes: { 'class': 'internal-link' } }
       - { name: "Link: Download", element: "a", attributes: { 'class': 'download' } }
       - { name: "Link: External", element: "a", attributes: { 'class': 'external-link' } }
@@ -61,11 +64,17 @@ editor:
         - heading
         - style
         - '|'
+        - textPartLanguage
+        - '|'
         - bold
         - italic
         - link
         - bulletedList
         - numberedList
+        - '|'
+        - outdent
+        - indent
+        - '|'
         - blockQuote
         - alignment
         - '|'
