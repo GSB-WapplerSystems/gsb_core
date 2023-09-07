@@ -151,7 +151,7 @@ TCEFORM {
   ## Default Image cropping
   sys_file_reference.crop.config.cropVariants {
     default {
-      title = Default
+      title = xLarge (> 1140)
       selectedRatio = NaN
       allowedAspectRatios {
         NaN {
@@ -189,7 +189,7 @@ TCEFORM {
       }
     }
     large {
-      title = Large
+      title = Large (> 960)
       selectedRatio = NaN
       allowedAspectRatios {
         NaN {
@@ -227,7 +227,7 @@ TCEFORM {
       }
     }
     medium {
-      title = Medium
+      title = Medium (> 720)
       selectedRatio = NaN
       allowedAspectRatios {
         NaN {
@@ -265,7 +265,7 @@ TCEFORM {
       }
     }
     small {
-      title = Small
+      title = Small (> 540)
       selectedRatio = NaN
       allowedAspectRatios {
         NaN {
@@ -303,7 +303,7 @@ TCEFORM {
       }
     }
     xsmall {
-      title = Xsmall
+      title = xSmall (> 0)
       selectedRatio = NaN
       allowedAspectRatios {
         NaN {
