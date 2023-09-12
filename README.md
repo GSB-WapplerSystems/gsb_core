@@ -242,4 +242,3 @@ gsb@itzbund.de
 [typo3-requirements-url]: https://get.typo3.org/version/12#system-requirements
 [typo3-coding-guidelines-url]: https://docs.typo3.org/m/typo3/reference-coreapi/master/en-us/CodingGuidelines/Index.html
 [psr12-url]: https://www.php-fig.org/psr/psr-12/
-
