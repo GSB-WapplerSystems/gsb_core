@@ -1,5 +1,5 @@
 <span class="header-image">
-  <span class="visually-hidden">{site.configuration.websiteTitle}</span>
+  <span class="visually-hidden">{site.configuration.websiteTitle}{f:if(condition: '{site.configuration.rootPageId} != {data.uid}', then: ' - {f:translate(key: "header.text", extensionName: "gsb_core")}')}</span>
   <svg data-name="eagle" height="21.78" id="eagle" viewBox="0 0 23.35 21.78" width="23.35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <rect width="23.35" height="21.78" fill="#fff"/>
     <g data-name="eagle" id="eagle-2">
