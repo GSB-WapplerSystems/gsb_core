@@ -75,9 +75,9 @@
                 </f:if>
                 <f:if condition="{data.image_zoom}">
                     <li>
-                        <a class="btn btn-image btn-zoom" data-bs-target="#Modal-{data.uid}" data-bs-toggle="modal" href="/fileadmin{file.properties.identifier}" role="button">
+                        <button class="btn btn-image btn-zoom" data-bs-target="#Modal-{data.uid}" data-bs-toggle="modal" type="button">
                             <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_enlarge_picture')}</span>
-                        </a>
+                        </button>
                         <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="Modal-{data.uid}" tabindex="-1">
                             <div class="modal-dialog modal-fullscreen" role="document">
                                 <div class="modal-content">

@@ -24,7 +24,7 @@ defined('TYPO3') or die('Access denied.');
                     [
                         'name' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:content',
                         'colPos' => 101,
-                        'allowed' => ['CType' => 'header, text, textpic'],
+                        'allowed' => ['CType' => 'header, text, textpic, ce_accordion, ce_container'],
                     ],
                 ],
             ]

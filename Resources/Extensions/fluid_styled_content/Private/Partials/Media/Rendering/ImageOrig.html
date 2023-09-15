@@ -2,7 +2,7 @@
   <a data-bs-slide="next" href="#galleryCarousel" role="button" title="Nächstes Bild">
     <figure class="image">
       <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}">
-        <f:image class="figure-img img-fluid" crop="false" maxWidth="1800" src="{file.uid}" treatIdAsReference="1"/>
+        <f:image class="figure-img img-fluid" crop="false" maxWidth="1800" src="{file.uid}" alt="" treatIdAsReference="1"/>
       </picture>
       <f:if condition="{file.properties.caption}">
         <figcaption class="image-caption">
