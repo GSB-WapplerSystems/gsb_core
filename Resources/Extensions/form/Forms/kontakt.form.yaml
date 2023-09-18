@@ -21,17 +21,17 @@ finishers:
         no-reply@gsb-itzbund.de: ''
     identifier: EmailToReceiver
   - options:
-    subject: '{text-6}'
-    recipients:
-    '{email}': '{email}'
-    senderAddress: no-reply@gsb-itzbund.de
-    senderName: no-reply@gsb-itzbund.de
-    carbonCopyRecipients:
-    christian.rath-ulrich@digitaspixelpark.de: christian.rath-ulrich@digitaspixelpark.de
-    kai-ole.hartwig.ext@digitaspixelpark.com: kai-ole.hartwig.ext@digitaspixelpark.com
-    addHtmlPart: true
-    attachUploads: true
-    title: ''
+      subject: '{text-6}'
+      recipients:
+      '{email}': '{email}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: no-reply@gsb-itzbund.de
+      carbonCopyRecipients:
+      christian.rath-ulrich@digitaspixelpark.de: christian.rath-ulrich@digitaspixelpark.de
+      kai-ole.hartwig.ext@digitaspixelpark.com: kai-ole.hartwig.ext@digitaspixelpark.com
+      addHtmlPart: true
+      attachUploads: true
+      title: ''
     identifier: EmailToSender
   -
     options:
