@@ -2,7 +2,7 @@
 renderingOptions:
   submitButtonLabel: Absenden
 identifier: vorlagekontakt
-label: Vorlage (Kontaktformular)
+label: 'Vorlage (Kontaktformular)'
 type: Form
 prototypeName: standard
 finishers:
@@ -15,10 +15,10 @@ finishers:
       translation:
         language: default
       recipients:
-        no-reply@itzbund.de: itzbund.de
+        no-reply@gsb-itzbund.de: gsb-itzbund.de
       addHtmlPart: true
       replyToRecipients:
-        no-reply@itzbund.de: ''
+        no-reply@gsb-itzbund.de: ''
     identifier: EmailToReceiver
   -
     options:
@@ -307,3 +307,10 @@ renderables:
             validators:
               -
                 identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Zurück'
+      nextButtonLabel: 'Weiter'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Summary step'
