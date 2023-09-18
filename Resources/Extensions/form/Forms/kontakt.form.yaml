@@ -9,7 +9,7 @@ finishers:
   -
     options:
       subject: 'E-Mail von itzbund.de: {text-1}'
-      senderAddress: '{email}'
+      senderAddress: 'no-reply@gsb-itzbund.de'
       senderName: '{text-1}'
       attachUploads: true
       translation:
@@ -20,6 +20,19 @@ finishers:
       replyToRecipients:
         no-reply@gsb-itzbund.de: ''
     identifier: EmailToReceiver
+  - options:
+      subject: '{text-6}'
+      recipients:
+      '{email}': '{email}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: no-reply@gsb-itzbund.de
+      carbonCopyRecipients:
+      christian.rath-ulrich@digitaspixelpark.de: christian.rath-ulrich@digitaspixelpark.de
+      kai-ole.hartwig.ext@digitaspixelpark.com: kai-ole.hartwig.ext@digitaspixelpark.com
+      addHtmlPart: true
+      attachUploads: true
+      title: ''
+    identifier: EmailToSender
   -
     options:
       table: tx_gsbcore_forms
