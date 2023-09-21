@@ -5,12 +5,12 @@
                 <f:render arguments="{_all}" partial="Header/All" />
             </f:if>
             <f:if condition="{data.bodytext}">
-                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                <f:format.html>{data.bodytext}</f:format.html>
             </f:if>
             <div class="video video-local">
                 <f:if condition="{files.0}">
                     <f:then>
-                        <video controls height="100%" poster="{f:uri.image(image: '{files.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" width="100%" src="{data_tx_video_video.0.publicUrl}">
+                        <video controls poster="{f:uri.image(image: '{files.0}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" src="{data_tx_video_video.0.publicUrl}">
                             <f:if condition="{data_tx_video_caption.0}">
                                 <track label="Deutsch" kind="subtitles" srclang="de" src="/fileadmin{data_tx_video_caption.0.originalFile.properties.identifier}" />
                             </f:if>
@@ -53,10 +53,10 @@
                         <p><f:format.raw>{f:translate(key: 'videoyoutube.link', extensionName: 'gsb_core')}</f:format.raw></p>
                     </div>
                 </div></div>
-            </div>
+        </div>
         </div>
     </f:if>
 
-<f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
-<f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
+    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
+    <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
 </html>
