@@ -5,9 +5,9 @@
                 <f:if condition="{mainItem.children}">
                     <f:then>
                         <f:if condition="{mainItem.children}">
-                            <a aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" href="#" role="button" title="{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_core')}">
-                                <span class="txt">{mainItem.title} <span class="visually-hidden">{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_core')}</span></span>
-                            </a>
+                            <button aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_core')}">
+                                <span class="txt">{mainItem.title}</span>
+                            </button>
                             <div class="dropdown-menu main-menu-desktop" id="menu-desktop-{mainItem.data.uid}">
                                 <div class="container d-flex justify-content-end pt-3 pb-3" style="height: 5.5rem !important">
                                     <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle" type="button"></button>
@@ -45,7 +45,7 @@
     <f:if condition="{mainChild.children}">
         <f:then>
             <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
-                <a aria-controls="menu-desktop-{mainChild.data.uid}" aria-expanded="false" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" data-bs-target="#menu-desktop-{mainChild.data.uid}" data-bs-toggle="collapse" href="#" role="button">{mainChild.title}</a>
+                <button aria-controls="menu-desktop-{mainChild.data.uid}" aria-expanded="false" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" data-bs-target="#menu-desktop-{mainChild.data.uid}" data-bs-toggle="collapse" type="button">{mainChild.title}</button>
                 <ul class="list-unstyled collapse subnav-children" id="menu-desktop-{mainChild.data.uid}"{f:if(condition:mainItem.children, then:' data-bs-parent="#nav-desktop"')}>
                     <f:for as="mainChild" each="{mainChild.children}">
                         <f:render arguments="{mainChild: mainChild}" section="submenu"/>

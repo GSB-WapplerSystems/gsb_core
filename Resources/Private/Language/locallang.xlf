@@ -118,7 +118,7 @@
 				<source>Play video</source>
 			</trans-unit>
 			<trans-unit id="videoyoutube.link" resname="videoyoutube.link">
-				<source>To activate the video you need to click on the button. After activating the button, <![CDATA[<a href="https://policies.google.com/privacy?hl=en&gl=ZZ" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">Google's privacy policy</a>]]> applies.</source>
+				<source>By clicking on the button, you accept the transfer of your data (including IP address) to YouTube. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49 (1) a) DSGVO. You can find more information in the <![CDATA[<a href="/privacy-policy"><u>privacy policy</u></a>.]]>.</source>
 			</trans-unit>
 			<trans-unit id="audio.play" resname="audio.play">
 				<source>Play audio</source>

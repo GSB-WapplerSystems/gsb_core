@@ -1,9 +1,23 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
     <f:if condition="{form.previousPage}">
         <f:form.hidden property="__currentPage" respectSubmittedDataValue="false" value="{form.previousPage.index}"/>
-        <f:form.button class="{form.renderingOptions.formNavigation.btnPreviousClassAttribute} btn btn-primary"
+        <f:asset.script identifier="form-navigation" useNonce="true">
+            document.addEventListener('DOMContentLoaded', function() {
+                var buttons = document.querySelectorAll('.form button.previous');
+
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function(event) {
+                        var form = event.target.closest('form');
+                        if (form) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        </f:asset.script>
+        <f:form.button class="{form.renderingOptions.formNavigation.btnPreviousClassAttribute} previous btn btn-primary"
                        formnovalidate="formnovalidate"
-                       onclick="document.forms['{form.formDefinition.identifier}'].submit();" type="button">
+                       type="button">
             {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}
         </f:form.button>
     </f:if>
