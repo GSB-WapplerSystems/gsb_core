@@ -44,7 +44,7 @@ class PackageHelper
         $packageKey = (string)$configuration['sitePackage'];
         try {
             return $this->packageManager->getPackage($packageKey);
-        } catch (UnknownPackageException $_) {
+        } catch (UnknownPackageException $exception) {
             return null;
         }
     }
