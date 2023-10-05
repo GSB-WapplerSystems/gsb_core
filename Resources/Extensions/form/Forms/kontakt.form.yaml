@@ -15,7 +15,7 @@ finishers:
       translation:
         language: default
       recipients:
-        no-reply@gsb-itzbund.de: gsb-itzbund.de
+        no-reply@gsb-itzbund.de: 'no-reply@gsb-itzbund.de'
       addHtmlPart: true
       replyToRecipients:
         no-reply@gsb-itzbund.de: ''
@@ -24,11 +24,11 @@ finishers:
       subject: '{text-6}'
       recipients:
       '{email}': '{email}'
-      senderAddress: no-reply@gsb-itzbund.de
-      senderName: no-reply@gsb-itzbund.de
+      senderAddress: 'no-reply@gsb-itzbund.de'
+      senderName: 'no-reply@gsb-itzbund.de'
       carbonCopyRecipients:
-      christian.rath-ulrich@digitaspixelpark.de: christian.rath-ulrich@digitaspixelpark.de
-      kai-ole.hartwig.ext@digitaspixelpark.com: kai-ole.hartwig.ext@digitaspixelpark.com
+        christian.rath-ulrich@digitaspixelpark.com: 'christian.rath-ulrich@digitaspixelpark.com'
+        kai-ole.hartwig.ext@digitaspixelpark.com: 'kai-ole.hartwig.ext@digitaspixelpark.com'
       addHtmlPart: true
       attachUploads: true
       title: ''
