@@ -1,4 +1,4 @@
 .composer
 composer.lock
 .DS_Store
-/Build/node_modules/
+/ManualBuild/node_modules/
