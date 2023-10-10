@@ -21,12 +21,13 @@
                             <div class="accordion-header" id="heading-{record.uid}">
                         </f:else>
                     </f:if>
-                    <a href="#accordion-{record.uid}" class="accordion-button {f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} != {data.container_accordion_open}', then: ' collapsed')}{f:if(condition: '{data.container_accordion_toggle} == 0', then: ' collapsed')}"
+                    <a href="#c{record.uid}"
+                       class="accordion-button {f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} != {data.container_accordion_open}', then: ' collapsed')}{f:if(condition: '{data.container_accordion_toggle} == 0', then: ' collapsed')}"
                        data-bs-toggle="collapse"
-                       data-bs-target="#accordion-{record.uid}"
+                       data-bs-target="#c{record.uid}"
                        data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}"
                        aria-expanded="{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle}=={data.container_accordion_open}', then: 'true', else: 'false')}"
-                       aria-controls="accordion-{record.uid}"
+                       aria-controls="c{record.uid}"
                        role="button"
                     >{record.header}</a>
                     <f:if condition="{data.container_headline} > 1">
@@ -45,7 +46,7 @@
     </f:else>
     </f:if>
 
-    <div id="accordion-{record.uid}"
+    <div id="c{record.uid}"
          class="accordion-collapse collapse{f:if(condition: '{data.container_accordion_toggle} == 1 && {iterator.cycle} == {data.container_accordion_open}', then: ' show')}"
          aria-labelledby="heading-{record.uid}"
          data-bs-parent="{f:if(condition: '{data.container_accordion_toggle_all} != 1', then: '#accordion-{data.uid}')}">
