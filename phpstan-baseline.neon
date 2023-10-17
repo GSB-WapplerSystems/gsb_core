@@ -26,6 +26,31 @@ parameters:
 			path: Classes/EventListener/ExtendsSiteConfigurationEvent.php
 
 		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\:\\:writeLog\\(\\) has invalid return type ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\WriterInterface\\.$#"
+			count: 1
+			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\:\\:writeLog\\(\\) should return ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\WriterInterface but returns \\$this\\(ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\)\\.$#"
+			count: 1
+			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
+			message: "#^Return type \\(ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\WriterInterface\\) of method ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\:\\:writeLog\\(\\) should be covariant with return type \\(TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\WriterInterface\\) of method TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\FileWriter\\:\\:writeLog\\(\\)$#"
+			count: 1
+			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
+			message: "#^Return type \\(ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\WriterInterface\\) of method ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\:\\:writeLog\\(\\) should be covariant with return type \\(TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\WriterInterface\\) of method TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\WriterInterface\\:\\:writeLog\\(\\)$#"
+			count: 1
+			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php
