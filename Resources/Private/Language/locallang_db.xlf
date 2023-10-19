@@ -315,6 +315,9 @@
             <trans-unit id="stage.CType.stage" resname="stage.CType.stage">
                 <source>Stage</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.stage" resname="tt_content.CType.stage">
+                <source>Stage</source>
+            </trans-unit>
             <trans-unit id="with_frame" resname="with_frame">
                 <source>With frame</source>
             </trans-unit>
