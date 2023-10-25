@@ -19,6 +19,23 @@ defined('TYPO3') || die();
                         'allowed' => 'vtt',
                         'maxitems' => 1,
                         'minitems' => 0,
+                        'fieldInformation' => [
+                            'elementInformationText' => [
+                                'renderType' => 'elementInformationText',
+                                'options' => [
+                                    'texts' => [
+                                        [
+                                            'text' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
+                                            'bold' => true,
+                                        ],
+                                        [
+                                            'text' => '<- that text is from translation',
+                                            'italic' => true
+                                        ]
+                                    ]
+                                ]
+                            ],
+                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
@@ -135,4 +152,25 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['types'] += $tempVideoTypes;
 
     $GLOBALS['TCA']['tt_content']['types']['video']['previewRenderer'] = VideoPreviewRenderer::class;
+
+    $GLOBALS['TCA']['tt_content']['ctrl']['container']['outerWrapContainer']['video'] = [
+        'fieldInformation' => [
+            'videoElementInformationText' => [
+                'renderType' => 'elementInformationText',
+                'options' => [
+                    'texts' => [
+                        [
+                            'text' => 'CTYPE Video',
+                            'bold' => true,
+                        ],
+                        [
+                            'text' => 'this is video element link',
+                            'italic' => true,
+                            'link' => 'https://google.bg'
+                        ]
+                    ]
+                ]
+            ],
+        ]
+    ];
 })();

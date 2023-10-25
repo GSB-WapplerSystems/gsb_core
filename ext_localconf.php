@@ -47,4 +47,19 @@ defined('TYPO3') or die('Access denied.');
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
     // $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['gsb_frontend'] = 'EXT:gsb_frontend/Resources/Public/StyleSheets/ckeditor.css';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1696931020] = [
+        'nodeName' => 'elementInformationText',
+        'priority' => 70,
+        'class' => \ITZBund\GsbCore\Backend\ElementInformationText::class
+    ];
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\FilesControlContainer::class] = [
+        'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
+    ];
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\OuterWrapContainer::class] = [
+        'className' => \ITZBund\GsbCore\Backend\Form\Container\OuterWrapContainer::class,
+    ];
+
 })();
