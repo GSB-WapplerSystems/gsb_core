@@ -2,8 +2,6 @@
 
 namespace ITZBund\GsbCore\Backend\Form\Container;
 
-use TYPO3\CMS\Core\Utility\ArrayUtility;
-
 class OuterWrapContainer extends \TYPO3\CMS\Backend\Form\Container\OuterWrapContainer
 {
     /**
