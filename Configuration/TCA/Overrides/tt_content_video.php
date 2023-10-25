@@ -30,10 +30,10 @@ defined('TYPO3') || die();
                                         ],
                                         [
                                             'text' => '<- that text is from translation',
-                                            'italic' => true
-                                        ]
-                                    ]
-                                ]
+                                            'italic' => true,
+                                        ],
+                                    ],
+                                ],
                             ],
                         ],
                     ],
@@ -166,11 +166,11 @@ defined('TYPO3') || die();
                         [
                             'text' => 'this is video element link',
                             'italic' => true,
-                            'link' => 'https://google.bg'
-                        ]
-                    ]
-                ]
+                            'link' => 'https://google.bg',
+                        ],
+                    ],
+                ],
             ],
-        ]
+        ],
     ];
 })();

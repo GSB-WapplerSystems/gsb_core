@@ -51,7 +51,7 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1696931020] = [
         'nodeName' => 'elementInformationText',
         'priority' => 70,
-        'class' => \ITZBund\GsbCore\Backend\ElementInformationText::class
+        'class' => \ITZBund\GsbCore\Backend\ElementInformationText::class,
     ];
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\FilesControlContainer::class] = [
@@ -61,5 +61,4 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\OuterWrapContainer::class] = [
         'className' => \ITZBund\GsbCore\Backend\Form\Container\OuterWrapContainer::class,
     ];
-
 })();

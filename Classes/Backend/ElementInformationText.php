@@ -7,29 +7,36 @@ use TYPO3\CMS\Core\Localization\LanguageService;
 
 class ElementInformationText extends AbstractNode
 {
-    public function render()
+    /**
+     * @return array<mixed>
+     */
+    public function render(): array
     {
         $languageService = $this->getLanguageService();
 
         $texts = [];
         foreach ((array)($this->data['renderData']['fieldInformationOptions']['texts'] ?? []) as $textConfiguration) {
             $text = htmlspecialchars($languageService->sL($textConfiguration['text']));
-            if (!empty($textConfiguration['italic'])) {
+
+            if (array_key_exists('italic', $textConfiguration) && $textConfiguration['italic']) {
                 $text = '<em>' . $text . '</em>';
             }
-            if (!empty($textConfiguration['bold'])) {
+
+            if (array_key_exists('bold', $textConfiguration) && $textConfiguration['bold']) {
                 $text = '<strong>' . $text . '</strong>';
             }
-            if (!empty($textConfiguration['link'])) {
+
+            if (array_key_exists('link', $textConfiguration)) {
                 $text = '<a href="' . $textConfiguration['link'] . '" target="_blank">' . $text . '</a>';
             }
+
             $texts[] = $text;
         }
 
         return [
             'html' => '<div class="form-control-wrap">'
                 . implode(' ', $texts)
-                . '</div>'
+                . '</div>',
         ];
     }
 
