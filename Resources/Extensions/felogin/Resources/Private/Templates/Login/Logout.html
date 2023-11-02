@@ -1,30 +1,40 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<h2>
-    <f:render partial="RenderLabelOrMessage" arguments="{key: 'status_header'}"/>
-</h2>
-<p>
-    <f:render partial="RenderLabelOrMessage" arguments="{key: 'status_message'}"/>
-</p>
+<div class="frame frame-default frame-type-ce_container frame-layout-0">
+    <h1 class="ce-headline-center "><span><f:render partial="RenderLabelOrMessage" arguments="{key: 'status_header'}"/></span></h1>
+    <div class="container-wrapper default frame-space-before-large frame-space-after-large">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 offset-xl-1 col-xl-10">
+                    <div class="row">
+                        <div class="frame frame-default frame-type-ce_container frame-layout-2 grid-cols col-12 offset-xl-1 col-xl-10">
+                            <div class="container-wrapper default">
+                                <div class="grid-bg" style="background-color:var(--bs-lightblue); height: 100%; position: absolute; width: 100%; left: 0; top: 0;"></div>
+                                <picture class="img-icon" data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xl="1:1" data-aspectratio-xs="1:1">
+                                    <img class="figure-img img-fluid" loading="lazy" src="/fileadmin/user_upload/Icons/Login.svg" width="120" height="120" alt="">
+                                </picture>
+                                <div class="container">
+                                    <div class="frame frame-default frame-type-felogin_login frame-layout-0">
+                                        <p class="message"><f:render partial="RenderLabelOrMessage" arguments="{key: 'status_message'}"/></p>
+                                        <f:form action="login" actionUri="{actionUri}" target="_top" fieldNamePrefix="">
+                                            <dl class="mb-3">
+                                                <dd>{f:translate(key: 'felogin.username.loggedin', extensionName: 'gsb_core')}:</dd>
+                                                <dt>{user.username}</dt>
+                                            </dl>
+                                            <f:form.submit class="btn btn-primary mb-3" value="{f:translate(key: 'logout')}" name="submit" id="tx-felogin-input-logout"/>
+                                            <div class="felogin-hidden">
+                                                <f:form.hidden name="logintype" value="logout"/>
+                                            </div>
+                                        </f:form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<f:form action="login" actionUri="{actionUri}" target="_top" fieldNamePrefix="">
-    <fieldset>
-        <legend>
-            <f:translate key="logout"/>
-        </legend>
-        <div class="mb-3">
-            <label for="tx-felogin-input-logout">
-                <f:translate key="username"/>
-            </label>
-            {user.username}
-        </div>
-        <div class="mb-3">
-            <f:form.submit class="btn btn-primary" value="{f:translate(key: 'logout')}" name="submit" id="tx-felogin-input-logout"/>
-        </div>
-
-        <div class="felogin-hidden">
-            <f:form.hidden name="logintype" value="logout"/>
-        </div>
-    </fieldset>
-</f:form>
 </html>

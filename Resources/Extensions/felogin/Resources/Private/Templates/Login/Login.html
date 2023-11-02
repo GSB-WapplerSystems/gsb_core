@@ -2,87 +2,112 @@
 
 <f:flashMessages/>
 
-<f:if condition="{messageKey}">
-    <h2>
-        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_header'}"/>
-    </h2>
-    <p>
-        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
-    </p>
-</f:if>
+<div class="frame frame-default frame-type-ce_container frame-layout-0">
+    <h1 class="ce-headline-center "><span><f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_header'}"/></span></h1>
+    <div class="container-wrapper default frame-space-before-large frame-space-after-large">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 offset-xl-1 col-xl-10">
+                    <div class="row">
+                        <div class="frame frame-default frame-type-ce_container frame-layout-2 grid-cols col-12 offset-xl-1 col-xl-10">
+                            <div class="container-wrapper default">
+                                <div class="grid-bg" style="background-color:var(--bs-lightblue); height: 100%; position: absolute; width: 100%; left: 0; top: 0;"></div>
+                                <picture class="img-icon" data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xl="1:1" data-aspectratio-xs="1:1">
+                                    <img class="figure-img img-fluid" loading="lazy" src="/fileadmin/user_upload/Icons/Login.svg" width="120" height="120" alt="">
+                                </picture>
+                                <div class="container">
+                                    <div class="frame frame-default frame-type-felogin_login frame-layout-0">
+                                        <f:if condition="{messageKey}">
+                                            <f:if condition="{messageKey} == 'error'">
+                                                <f:then>
+                                                    <p class="error">
+                                                        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
+                                                    </p>
+                                                </f:then>
+                                                <f:else>
+                                                    <p class="message">
+                                                        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
+                                                    </p>
+                                                </f:else>
+                                            </f:if>
+                                        </f:if>
+                                        <p>{f:translate(key: 'element.pflichtfeld.properties.text.detail', extensionName: 'gsb_core')}</p>
+                                        <f:form target="_top" fieldNamePrefix="" action="login" requestToken="{requestToken}" additionalAttributes="{spellcheck: 'false'}">
+                                            <f:render section="content" arguments="{_all}"/>
+                                        </f:form>
 
-<f:form target="_top" fieldNamePrefix="" action="login" requestToken="{requestToken}" additionalAttributes="{spellcheck: 'false'}">
-    <f:render section="content" arguments="{_all}"/>
-</f:form>
-
-<f:if condition="{settings.showForgotPassword}">
-    <div class="mb-3">
-        <f:link.action action="recovery" controller="PasswordRecovery">
-            <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
-        </f:link.action>
+                                        <f:if condition="{settings.showForgotPassword}">
+                                            <div class="mb-3">
+                                                <f:link.action action="recovery" controller="PasswordRecovery">
+                                                    <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
+                                                </f:link.action>
+                                            </div>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</f:if>
+</div>
 
 <f:section name="content">
-    <fieldset>
-        <legend>
-            <f:translate key="login"/>
-        </legend>
+    <div class="mb-3">
+        <label for="tx-felogin-input-username" class="form-label">{f:translate(key: 'felogin.username', extensionName: 'gsb_core')} <dfn class="required" title="{f:translate(key: 'element.pflichtfeld.properties.text', extensionName: 'gsb_core')}">*</dfn></label>
+        <f:form.textfield name="user" required="true" class="form-control" id="tx-felogin-input-username" additionalAttributes="{autocomplete: 'username'}"/>
+    </div>
 
+    <div class="mb-3">
+        <label for="tx-felogin-input-password" class="form-label"><f:translate key="password"/> <dfn class="required" title="{f:translate(key: 'element.pflichtfeld.properties.text', extensionName: 'gsb_core')}">*</dfn></label>
+        <f:form.password name="pass" additionalAttributes="{required: 'required', autocomplete: 'current-password'}" class="form-control" id="tx-felogin-input-password"/>
+    </div>
+
+    <f:if condition="{permaloginStatus} > -1">
         <div class="mb-3">
-            <label for="tx-felogin-input-username" class="form-label"><f:translate key="username"/></label>
-            <f:form.textfield name="user" required="true" class="form-control" id="tx-felogin-input-username" additionalAttributes="{autocomplete: 'username'}"/>
+            <f:if condition="{permaloginStatus} == 1">
+                <f:then>
+                    <f:form.hidden name="permalogin" value="0" additionalAttributes="{disabled: 'disabled'}"/>
+                    <div class="form-check">
+                        <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1" checked="checked"/>
+                        <label class="form-check-label" for="permalogin">
+                            <f:translate id="permalogin"/>
+                        </label>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:form.hidden name="permalogin" value="0"/>
+                    <div class="form-check">
+                        <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1" checked="checked"/>
+                        <label class="form-check-label" for="permalogin">
+                            <f:translate id="permalogin"/>
+                        </label>
+                    </div>
+                </f:else>
+            </f:if>
         </div>
+    </f:if>
 
-        <div class="mb-3">
-            <label for="tx-felogin-input-password" class="form-label"><f:translate key="password"/></label>
-            <f:form.password name="pass" additionalAttributes="{required: 'required', autocomplete: 'current-password'}" class="form-control" id="tx-felogin-input-password"/>
-        </div>
+    <div class="mb-3">
+        <f:form.submit value="{f:translate(key: 'login')}" class="btn btn-primary" name="submit"/>
+    </div>
 
-        <f:if condition="{permaloginStatus} > -1">
-            <div class="mb-3">
-                <f:if condition="{permaloginStatus} == 1">
-                    <f:then>
-                        <f:form.hidden name="permalogin" value="0" additionalAttributes="{disabled: 'disabled'}"/>
-                        <div class="form-check">
-                            <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1" checked="checked"/>
-                            <label class="form-check-label" for="permalogin">
-                                <f:translate id="permalogin"/>
-                            </label>
-                        </div>
-                    </f:then>
-                    <f:else>
-                        <f:form.hidden name="permalogin" value="0"/>
-                        <div class="form-check">
-                            <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1" checked="checked"/>
-                            <label class="form-check-label" for="permalogin">
-                                <f:translate id="permalogin"/>
-                            </label>
-                        </div>
-                    </f:else>
-                </f:if>
-            </div>
+    <div class="felogin-hidden">
+        <f:form.hidden name="logintype" value="login"/>
+        <f:if condition="{redirectURL}!=''">
+            <f:form.hidden name="redirect_url" value="{redirectURL}" />
         </f:if>
-
-        <div class="mb-3">
-            <f:form.submit value="{f:translate(key: 'login')}" class="btn btn-primary" name="submit"/>
-        </div>
-
-        <div class="felogin-hidden">
-            <f:form.hidden name="logintype" value="login"/>
-            <f:if condition="{redirectURL}!=''">
-                <f:form.hidden name="redirect_url" value="{redirectURL}" />
-            </f:if>
-            <f:if condition="{referer}!=''">
-                <f:form.hidden name="referer" value="{referer}" />
-            </f:if>
-            <f:if condition="{redirectReferrer}!=''">
-                <f:form.hidden name="redirectReferrer" value="off" />
-            </f:if>
-            <f:if condition="{noRedirect}!=''">
-                <f:form.hidden name="noredirect" value="1" />
-            </f:if>
-        </div>
-    </fieldset>
+        <f:if condition="{referer}!=''">
+            <f:form.hidden name="referer" value="{referer}" />
+        </f:if>
+        <f:if condition="{redirectReferrer}!=''">
+            <f:form.hidden name="redirectReferrer" value="off" />
+        </f:if>
+        <f:if condition="{noRedirect}!=''">
+            <f:form.hidden name="noredirect" value="1" />
+        </f:if>
+    </div>
 </f:section>
 </html>
