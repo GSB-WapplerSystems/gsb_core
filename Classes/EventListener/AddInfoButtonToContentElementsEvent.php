@@ -37,7 +37,16 @@ final class AddInfoButtonToContentElementsEvent
         }
 
         $cType = $this->getContentTypeByContentUid($elementUid);
-        $contentInfo = $this->getContentInfoByType($cType);
+
+        if (!array_key_exists($cType, $GLOBALS['TCA']['tt_content']['types'])) {
+            return;
+        }
+
+        if (!array_key_exists('infoButton', $GLOBALS['TCA']['tt_content']['types'][$cType])) {
+            return;
+        }
+
+        $contentInfo = $GLOBALS['TCA']['tt_content']['types'][$cType]['infoButton'];
 
         if (!$contentInfo) {
             return;
@@ -74,23 +83,6 @@ final class AddInfoButtonToContentElementsEvent
     protected function getRequest(): ServerRequestInterface
     {
         return $GLOBALS['TYPO3_REQUEST'];
-    }
-
-    /**
-     * @param string $cType
-     * @return array<string>|null
-     */
-    protected function getContentInfoByType(string $cType): ?array
-    {
-        if (!array_key_exists($cType, $GLOBALS['TCA']['tt_content']['types'])) {
-            return null;
-        }
-
-        if (!array_key_exists('infoButton', $GLOBALS['TCA']['tt_content']['types'][$cType])) {
-            return null;
-        }
-
-        return $GLOBALS['TCA']['tt_content']['types'][$cType]['infoButton'];
     }
 
     /**
