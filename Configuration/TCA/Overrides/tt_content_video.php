@@ -155,6 +155,6 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['types']['video']['infoButton'] = [
         'title' => 'this is video element',
-        'link' => 'https://google.bg'
+        'link' => 'https://google.bg',
     ];
 })();

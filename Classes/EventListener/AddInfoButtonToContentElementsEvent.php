@@ -13,9 +13,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 final class AddInfoButtonToContentElementsEvent
 {
     public function __construct(
-        protected readonly IconFactory $iconFactory
-    ) {
-    }
+        protected readonly IconFactory $iconFactory,
+        protected readonly ConnectionPool $connectionPool
+    ) {}
 
     public function __invoke(ModifyButtonBarEvent $event): void
     {
@@ -76,7 +76,11 @@ final class AddInfoButtonToContentElementsEvent
         return $GLOBALS['TYPO3_REQUEST'];
     }
 
-    protected function getContentInfoByType($cType): ?array
+    /**
+     * @param string $cType
+     * @return array<string>|null
+     */
+    protected function getContentInfoByType(string $cType): ?array
     {
         if (!array_key_exists($cType, $GLOBALS['TCA']['tt_content']['types'])) {
             return null;
@@ -95,9 +99,7 @@ final class AddInfoButtonToContentElementsEvent
      */
     protected function getContentTypeByContentUid(int $uid): string
     {
-        $connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
-
-        $queryBuilder = $connectionPool->getQueryBuilderForTable('tt_content');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
 
         return $queryBuilder
             ->select('CType')
