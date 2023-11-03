@@ -153,24 +153,8 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['types']['video']['previewRenderer'] = VideoPreviewRenderer::class;
 
-    $GLOBALS['TCA']['tt_content']['ctrl']['container']['outerWrapContainer']['video'] = [
-        'fieldInformation' => [
-            'videoElementInformationText' => [
-                'renderType' => 'elementInformationText',
-                'options' => [
-                    'texts' => [
-                        [
-                            'text' => 'CTYPE Video',
-                            'bold' => true,
-                        ],
-                        [
-                            'text' => 'this is video element link',
-                            'italic' => true,
-                            'link' => 'https://google.bg',
-                        ],
-                    ],
-                ],
-            ],
-        ],
+    $GLOBALS['TCA']['tt_content']['types']['video']['infoButton'] = [
+        'title' => 'this is video element',
+        'link' => 'https://google.bg'
     ];
 })();

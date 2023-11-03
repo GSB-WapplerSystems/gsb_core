@@ -57,8 +57,4 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\FilesControlContainer::class] = [
         'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
     ];
-
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\OuterWrapContainer::class] = [
-        'className' => \ITZBund\GsbCore\Backend\Form\Container\OuterWrapContainer::class,
-    ];
 })();
