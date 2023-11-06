@@ -831,6 +831,22 @@
 				<source>Value 15</source>
 				<target>Wert 15</target>
 			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent" resname="tx_gsbcore_consent" approved="true">
+				<source>Consent layer</source>
+				<target>Consent popup</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.header" resname="tx_gsbcore_consent.header" approved="true">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.body" resname="tx_gsbcore_consent.body" approved="true">
+				<source>Body</source>
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept" approved="true">
+				<source>Show accept button</source>
+				<target>Annehmen Button anzeigen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

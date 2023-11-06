@@ -93,3 +93,10 @@ CREATE TABLE tx_gsbcore_forms
 	value14											text,
 	value15											text,
 );
+
+CREATE TABLE tx_gsbcore_consent
+(
+	header varchar(255) DEFAULT '' NOT NULL,
+	body TEXT,
+	show_accept tinyint(1) DEFAULT '1' NOT NULL
+);

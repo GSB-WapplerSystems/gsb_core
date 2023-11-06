@@ -1,0 +1,17 @@
+consentlayer = PAGE
+consentlayer.typeNum = 1698966471
+consentlayer {
+  10 = FLUIDTEMPLATE
+  10 {
+    file = EXT:gsb_core/Resources/Private/Templates/Consent/Consentlayer.html
+    dataProcessing {
+      10 = database-query
+      10 {
+        table = tx_gsbcore_consent
+        pidInList.data = site:rootPageId
+        max = 1
+        as = consentcontent
+      }
+    }
+  }
+}

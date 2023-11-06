@@ -1,0 +1,8 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+<f:for each="{consentcontent}" as="consent">
+    <h1>{consent.data.header}</h1>
+    <f:format.html>{consent.data.body}</f:format.html>
+    <f:if condition="{consent.data.show_accept}">
+        [BIG FAT ACCEPT BUTTON]
+    </f:if>
+</f:for>
