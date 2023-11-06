@@ -1,6 +1,6 @@
 consentlayer = PAGE
-consentlayer.typeNum = 1698966471
 consentlayer {
+  typeNum = 1698966471
   10 = FLUIDTEMPLATE
   10 {
     file = EXT:gsb_core/Resources/Private/Templates/Consent/Consentlayer.html
