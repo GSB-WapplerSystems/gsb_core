@@ -18,7 +18,7 @@ return [
         'transOrigPointerField' => 'l18n_parent',
         'tstamp' => 'tstamp',
         'typeicon_classes' => [
-            'default' => 'content-info'
+            'default' => 'content-info',
         ],
         'versioningWS' => 1,
     ],
@@ -34,7 +34,7 @@ return [
                 'size' => 200,
                 'eval' => 'trim',
                 'required' => true,
-            ]
+            ],
         ],
         'body' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_consent.body',
@@ -42,8 +42,8 @@ return [
                 'type' => 'text',
                 'enableRichtext' => true,
                 'eval' => 'trim',
-                'required' => true
-            ]
+                'required' => true,
+            ],
         ],
         'show_accept' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_consent.show_accept',
@@ -58,12 +58,12 @@ return [
                         'labelUnchecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_consent.show_accept.hide',
                     ],
                 ],
-            ]
+            ],
         ],
         'sys_language_uid' => [
             'config' => [
-                'type' => 'language'
-             ]
-        ]
-    ]
+                'type' => 'language',
+             ],
+        ],
+    ],
 ];
