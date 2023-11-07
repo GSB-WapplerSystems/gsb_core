@@ -24,7 +24,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'header, show_accept, body'],
+            'showitem' => 'header, show_accept, accept_button_label, body'],
     ],
     'columns' => [
         'header' => [
@@ -58,6 +58,15 @@ return [
                         'labelUnchecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_consent.show_accept.hide',
                     ],
                 ],
+            ],
+        ],
+        'accept_button_label' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_consent.accept_button_label',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'eval' => 'trim',
+                'required' => true,
             ],
         ],
         'sys_language_uid' => [

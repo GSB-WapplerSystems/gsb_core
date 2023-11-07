@@ -1,8 +1,9 @@
 <html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+<f:comment><!--
+    The real template is in gsb_frontend
+--></f:comment>
 <f:for each="{consentcontent}" as="consent">
     <h1>{consent.data.header}</h1>
     <f:format.html>{consent.data.body}</f:format.html>
-    <f:if condition="{consent.data.show_accept}">
-        [BIG FAT ACCEPT BUTTON]
-    </f:if>
+    <f:if condition="{consent.data.show_accept}"><button type="button">{consent.data.accept_button_label}</button></f:if>
 </f:for>

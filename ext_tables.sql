@@ -97,6 +97,7 @@ CREATE TABLE tx_gsbcore_forms
 CREATE TABLE tx_gsbcore_consent
 (
 	header varchar(255) DEFAULT '' NOT NULL,
+	accept_button_label varchar(255) DEFAULT '' NOT NULL,
 	body TEXT,
-	show_accept tinyint(1) DEFAULT '1' NOT NULL
+	show_accept tinyint(1) DEFAULT '1' NOT NULL,
 );
