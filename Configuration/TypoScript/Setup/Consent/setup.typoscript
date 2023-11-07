@@ -1,9 +1,12 @@
 consentlayer = PAGE
 consentlayer {
+  config {
+    disableAllHeaderCode = 1
+  }
   typeNum = 1698966471
   10 = FLUIDTEMPLATE
   10 {
-    templateName = ConsentLayerDummy
+    templateName = ConsentLayer
     layoutRootPaths {
       10 = EXT:gsb_core/Resources/Private/Layouts/Consent/
     }
@@ -22,27 +25,5 @@ consentlayer {
         as = consentcontent
       }
     }
-  }
-}
-
-page {
-  includeJSFooter {
-    consent (
-      const xhr = new XMLHttpRequest();
-        const method = "GET";
-        const url = "/consent.html";
-
-        xhr.open(method, url, true);
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                const status = xhr.status;
-                if (status === 0 || (status >= 200 && status < 400)) {
-                console.log(xhr.responseText);
-                } else {
-                }
-            }
-        };
-        xhr.send();
-    )
   }
 }
