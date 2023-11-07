@@ -24,6 +24,9 @@
 			<trans-unit id="element.pflichtfeld.properties.text" resname="element.pflichtfeld.properties.text">
 				<source>Required</source>
 			</trans-unit>
+			<trans-unit id="element.pflichtfeld.properties.text.detail" resname="element.pflichtfeld.properties.text.detail">
+				<source>All fields marked with * are mandatory.</source>
+			</trans-unit>
 			<trans-unit id="opens" resname="opens">
 				<source>Opens</source>
 			</trans-unit>
@@ -288,6 +291,12 @@
 			</trans-unit>
 			<trans-unit id="form.uploaded.file" resname="form.uploaded.file">
 				<source>Uploaded file that will be sent</source>
+			</trans-unit>
+			<trans-unit id="felogin.username" resname="felogin.username">
+				<source>Email address</source>
+			</trans-unit>
+			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin">
+				<source>Logged in with Email address</source>
 			</trans-unit>
 		</body>
     </file>

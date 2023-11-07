@@ -31,6 +31,10 @@
 				<source>Required</source>
 				<target>Pflichtfeld</target>
 			</trans-unit>
+			<trans-unit id="element.pflichtfeld.properties.text.detail" resname="element.pflichtfeld.properties.text.detail" approved="yes">
+				<source>All fields marked with * are mandatory.</source>
+				<target>Alle mit * markierten Felder sind Pfichtfelder.</target>
+			</trans-unit>
 			<trans-unit id="opens" resname="opens" approved="yes">
 				<source>Opens</source>
 				<target>Öffnet</target>
@@ -386,6 +390,14 @@
 			<trans-unit id="form.uploaded.file" resname="form.uploaded.file" approved="yes">
 				<source>Uploaded file that will be sent</source>
 				<target>Hochgeladene Datei die versendet wird</target>
+			</trans-unit>
+			<trans-unit id="felogin.username" resname="felogin.username" approved="yes">
+				<source>Email address</source>
+				<target>E-Mail Adresse</target>
+			</trans-unit>
+			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin" approved="yes">
+				<source>Logged in with Email address</source>
+				<target>Eingeloggt mit E-Mail Adresse</target>
 			</trans-unit>
 		</body>
 	</file>
