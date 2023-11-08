@@ -11,4 +11,10 @@ TCAdefaults {
     layout.types.uploads = 1
     imagecols = 1
   }
+  tx_gsbcore_consent {
+    header = Hinweis zur Verwendung von Cookies
+    body = Die Bundesbehörde speichert keine personenbezogenen Daten der Webseitenbesuchenden. Detail in unserer Datenschutzerklärung
+    show_accept = 1
+    accept_button_label = Verstanden
+  }
 }

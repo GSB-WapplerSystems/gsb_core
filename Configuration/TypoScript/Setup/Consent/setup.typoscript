@@ -1,0 +1,29 @@
+consentlayer = PAGE
+consentlayer {
+  config {
+    disableAllHeaderCode = 1
+  }
+  typeNum = 1698966471
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName = ConsentLayer
+    layoutRootPaths {
+      10 = EXT:gsb_core/Resources/Private/Layouts/Consent/
+    }
+    partialRootPaths {
+      10 = EXT:gsb_core/Resources/Private/Partials/Consent/
+    }
+    templateRootPaths {
+      10 = EXT:gsb_core/Resources/Private/Templates/Consent/
+    }
+    dataProcessing {
+      10 = database-query
+      10 {
+        table = tx_gsbcore_consent
+        pidInList.data = site:rootPageId
+        max = 1
+        as = consentcontent
+      }
+    }
+  }
+}

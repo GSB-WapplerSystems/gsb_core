@@ -17,6 +17,15 @@ use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
 use Symfony\Component\Finder\Finder;
 use TYPO3\CMS\Core\Package\PackageManager;
 
+/**
+ * Site configuration building is extended by hooking into the `\TYPO3\CMS\Core\Configuration\Event\SiteConfigurationLoadedEvent` event.
+ *
+ * Site configuration yaml fragments in `Configuration\SiteConfiguration\Extends\SITEIDENTIFIER\` will be merged into the site configuration `SITEIDENTIFIER`.
+ *
+ * Drawbacks
+ *
+ * Currently lacking a mechanism to add to *all* site configurations. You have to know the site identifier.
+ */
 final class ExtendSiteConfigurationLocator
 {
     private PackageManager $packageManager;
