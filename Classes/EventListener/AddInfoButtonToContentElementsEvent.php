@@ -30,7 +30,7 @@ final class AddInfoButtonToContentElementsEvent
             return;
         }
 
-        $elementUid = array_key_first($queryParams['edit']['tt_content']);
+        $elementUid = array_key_first($queryParams['edit']['tt_content']) ?? false;
 
         if (!$elementUid) {
             return;
@@ -46,7 +46,7 @@ final class AddInfoButtonToContentElementsEvent
             return;
         }
 
-        $contentInfo = $GLOBALS['TCA']['tt_content']['types'][$cType]['infoButton'];
+        $contentInfo = $GLOBALS['TCA']['tt_content']['types'][$cType]['infoButton'] ?? false;
 
         if (!$contentInfo) {
             return;
@@ -56,7 +56,8 @@ final class AddInfoButtonToContentElementsEvent
 
         $buttons[ButtonBar::BUTTON_POSITION_RIGHT][95][] = $this->generateInfoButton(
             $contentInfo['title'],
-            $contentInfo['link']
+            $contentInfo['link'],
+            array_key_exists('linkTarget', $contentInfo) ? $contentInfo['linkTarget'] : '_blank'
         );
 
         $event->setButtons($buttons);
@@ -65,14 +66,15 @@ final class AddInfoButtonToContentElementsEvent
     /**
      * @param string $title
      * @param string $link
+     * @param string $linkTarget
      * @return GenericButton
      */
-    private function generateInfoButton(string $title, string $link): GenericButton
+    private function generateInfoButton(string $title, string $link, string $linkTarget): GenericButton
     {
         return GeneralUtility::makeInstance(GenericButton::class)
             ->setTag('a')
             ->setHref($link)
-            ->setAttributes(['target' => '_blank'])
+            ->setAttributes(['target' => $linkTarget])
             ->setTitle($title)
             ->setIcon($this->iconFactory->getIcon('module-help'));
     }

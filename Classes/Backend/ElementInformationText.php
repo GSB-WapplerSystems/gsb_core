@@ -27,7 +27,8 @@ class ElementInformationText extends AbstractNode
             }
 
             if (array_key_exists('link', $textConfiguration)) {
-                $text = '<a href="' . $textConfiguration['link'] . '" target="_blank">' . $text . '</a>';
+                $linkTarget = array_key_exists('linkTarget', $textConfiguration) ? $textConfiguration['linkTarget'] : '_blank';
+                $text = '<a href="' . $textConfiguration['link'] . '" target="' . $linkTarget . '">' . $text . '</a>';
             }
 
             $texts[] = $text;
