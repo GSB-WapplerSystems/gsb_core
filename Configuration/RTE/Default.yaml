@@ -12,6 +12,7 @@ editor:
     defaultLanguage: "de"
 
     importModules:
+      - { module: '@ckeditor/ckeditor5-language-translation-de.js', exports: ['germanTranslationForLanguagePlugin'] }
       - { module: '@ckeditor/ckeditor5-language', exports: ['TextPartLanguage'] }
 
     heading:
