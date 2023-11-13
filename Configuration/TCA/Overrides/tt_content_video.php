@@ -135,10 +135,4 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['types'] += $tempVideoTypes;
 
     $GLOBALS['TCA']['tt_content']['types']['video']['previewRenderer'] = VideoPreviewRenderer::class;
-
-    $GLOBALS['TCA']['tt_content']['types']['video']['infoButton'] = [
-        'title' => 'this is video element',
-        'link' => 'https://google.bg',
-        'linkTarget' => '_blank',
-    ];
 })();
