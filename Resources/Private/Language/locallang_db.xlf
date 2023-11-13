@@ -315,6 +315,9 @@
             <trans-unit id="stage.CType.stage" resname="stage.CType.stage">
                 <source>Stage</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.stage" resname="tt_content.CType.stage">
+                <source>Stage</source>
+            </trans-unit>
             <trans-unit id="with_frame" resname="with_frame">
                 <source>With frame</source>
             </trans-unit>
@@ -692,6 +695,24 @@
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_forms.value15" resname="tx_gsbcore_forms.value15">
 				<source>Value 15</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent" resname="tx_gsbcore_consent">
+				<source>Consent layer</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.header" resname="tx_gsbcore_consent.header">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.body" resname="tx_gsbcore_consent.body">
+				<source>Body</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept">
+				<source>Show accept button</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.show_accept.show" resname="tx_gsbcore_consent.show_accept.show">
+				<source>Show</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.show_accept.hide" resname="tx_gsbcore_consent.show_accept.hide">
+				<source>Hide</source>
 			</trans-unit>
         </body>
     </file>

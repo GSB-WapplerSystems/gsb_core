@@ -2,12 +2,15 @@
 <phpmd-baseline>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/ConfigurationImportCommand.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>
-  <violation rule="PHPMD\Rule\Controversial\CamelCaseVariableName" file="Classes/Configuration/PackageHelper.php" method="getSitePackageFromSite"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="setDbFields"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Backend/ElementInformationText.php" method="getLanguageService"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="getRequest"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="__invoke"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>

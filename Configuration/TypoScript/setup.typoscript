@@ -6,3 +6,4 @@
 @import 'EXT:gsb_core/Configuration/Extensions/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/TypoScript/Setup/ContentElements/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/TypoScript/Setup/50.Lib.typoscript'
+@import 'EXT:gsb_core/Configuration/TypoScript/Setup/Consent/setup.typoscript'
