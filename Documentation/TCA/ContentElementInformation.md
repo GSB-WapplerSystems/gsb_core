@@ -1,6 +1,9 @@
-# Content element information field.
+# Content element information field
+
 Additional information can be added to existing content elements.
+
 ## Configuration
+
 New fieldInformation type was created "elementInformationText" witch takes texts array to display information.
 
 Texts field options :
@@ -9,38 +12,41 @@ Texts field options :
 - italic (optional: boolean)
 - link (string optional: this will make the text a link)
 - linkTarget (string optional: this is the link target. By default, this is set to "_blank")
+
 ## Example
+
 ```php
-//gsb_core/Configuration/TCA/Overrides/tt_content_video.php
+//EXT:gsb_core/Configuration/TCA/Overrides/tt_content_video.php
+
 'tx_video_caption' =>
+    [
+        'config' =>
             [
-                'config' =>
-                    [
-                        //...
-                        'fieldInformation' => [
-                            'elementInformationText' => [
-                                'renderType' => 'elementInformationText',
-                                'options' => [
-                                    'texts' => [
-                                        [
-                                            'text' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
-                                            'bold' => true,
-                                        ],
-                                        [
-                                            'text' => 'Simple text',
-                                            'italic' => true,
-                                        ],
-                                        [
-                                            'text' => 'Link text',
-                                            'link' => 'http://google.com',
-                                            'linkTarget' => '_self'
-                                        ],
-                                    ],
+                //...
+                'fieldInformation' => [
+                    'elementInformationText' => [
+                        'renderType' => 'elementInformationText',
+                        'options' => [
+                            'texts' => [
+                                [
+                                    'text' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
+                                    'bold' => true,
+                                ],
+                                [
+                                    'text' => 'Simple text',
+                                    'italic' => true,
+                                ],
+                                [
+                                    'text' => 'Link text',
+                                    'link' => 'http://google.com',
+                                    'linkTarget' => '_self'
                                 ],
                             ],
                         ],
-                        //...
                     ],
+                ],
                 //...
             ],
+        //...
+    ],
 ```

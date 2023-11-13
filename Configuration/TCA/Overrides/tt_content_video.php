@@ -19,23 +19,6 @@ defined('TYPO3') || die();
                         'allowed' => 'vtt',
                         'maxitems' => 1,
                         'minitems' => 0,
-                        'fieldInformation' => [
-                            'elementInformationText' => [
-                                'renderType' => 'elementInformationText',
-                                'options' => [
-                                    'texts' => [
-                                        [
-                                            'text' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
-                                            'bold' => true,
-                                        ],
-                                        [
-                                            'text' => '<- that text is from translation',
-                                            'italic' => true,
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_caption',
