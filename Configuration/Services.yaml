@@ -38,6 +38,12 @@ services:
       - name: event.listener
         identifier: 'gsb_core/extends-site-configuration'
 
+  ITZBund\GsbCore\EventListener\AddInfoButtonToContentElementsEvent:
+    public: true
+    tags:
+      - name: event.listener
+        identifier: 'gsb_core/add-info-button-to-content-elements'
+
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true
