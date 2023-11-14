@@ -16,7 +16,7 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_video_caption']['config']['fieldInf
                 [
                     'text' => 'Link text',
                     'link' => 'https://www.google.com',
-                    'linkTarget' => '_self'
+                    'linkTarget' => '_self',
                 ],
             ],
         ],
