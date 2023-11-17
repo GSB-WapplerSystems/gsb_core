@@ -89,6 +89,9 @@
 		"vendor-dir": ".composer/vendor"
 	},
 	"extra": {
+		"branch-alias": {
+			"dev-main": "1.x-dev"
+		},
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"extension-key": "gsb_core",
