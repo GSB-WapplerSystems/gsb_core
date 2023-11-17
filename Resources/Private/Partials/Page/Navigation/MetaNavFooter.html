@@ -15,15 +15,15 @@
                         <h2 class="visually-hidden" id="meta">{f:translate(key: 'footer.metanav', extensionName: 'gsb_core')}</h2>
                         <ul class="footer-nav nav footer-nav-mobile justify-content-end">
                             <f:for each="{menuMeta}" as="mainItem">
-                                <li class="nav-item pt-0 pb-4">
+                                <li class="nav-item footer-nav-item-distances">
                                     <f:if condition="{mainItem.current}">
                                         <f:then>
-                                            <f:link.page aria="{current: 'page'}" pageUid="{mainItem.data.uid}" class="nav-link fw-bold current">
+                                            <f:link.page aria="{current: 'page'}" pageUid="{mainItem.data.uid}" class="nav-link footer-nav-link-distances current">
                                                 {mainItem.title}
                                             </f:link.page>
                                         </f:then>
                                         <f:else>
-                                            <f:link.page pageUid="{mainItem.data.uid}" class="nav-link fw-bold pt-0 pb-0">
+                                            <f:link.page pageUid="{mainItem.data.uid}" class="nav-link footer-nav-link-distances">
                                                 {mainItem.title}
                                             </f:link.page>
                                         </f:else>
