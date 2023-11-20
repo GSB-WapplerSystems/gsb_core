@@ -234,7 +234,7 @@ renderables:
               -
                 options:
                   minimum: '10'
-                  maximum: '2000'
+                  maximum: '3000'
                 identifier: StringLength
           -
             properties:
