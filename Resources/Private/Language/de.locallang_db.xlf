@@ -845,7 +845,11 @@
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept" approved="yes">
 				<source>Show accept button</source>
-				<target>Annehmen Button anzeigen</target>
+				<target>Annehmen-Button anzeigen</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.accept_button_label" resname="tx_gsbcore_consent.accept_button_label" approved="yes">
+				<source>Accept button label</source>
+				<target>Annehmen-Button-Beschriftung</target>
 			</trans-unit>
 		</body>
 	</file>
