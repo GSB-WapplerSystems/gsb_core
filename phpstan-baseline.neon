@@ -1,12 +1,12 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Cannot access offset 'address' on array\\|false\\.$#"
+			message: "#^Cannot access offset 0 on array\\|false\\.$#"
 			count: 2
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
 
 		-
-			message: "#^Cannot access offset 'port' on array\\|false\\.$#"
+			message: "#^Cannot access offset 1 on array\\|false\\.$#"
 			count: 2
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
 

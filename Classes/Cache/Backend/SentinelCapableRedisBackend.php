@@ -67,9 +67,9 @@ class SentinelCapableRedisBackend extends RedisBackend
                     ]);
                 $sentinelMaster = $this->redisSentinel->getMasterAddrByName($this->sentinelMasterName);
                 if ($this->persistentConnection) {
-                    $this->connected = $this->redis->pconnect($sentinelMaster['address'], $sentinelMaster['port'], $this->connectionTimeout, (string)$this->database);
+                    $this->connected = $this->redis->pconnect($sentinelMaster[0], $sentinelMaster[1], $this->connectionTimeout, (string)$this->database);
                 } else {
-                    $this->connected = $this->redis->connect($sentinelMaster['address'], $sentinelMaster['port'], $this->connectionTimeout);
+                    $this->connected = $this->redis->connect($sentinelMaster[0], $sentinelMaster[1], $this->connectionTimeout);
                 }
             } else {
                 if ($this->persistentConnection) {
