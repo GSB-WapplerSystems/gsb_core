@@ -1,6 +1,21 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Cannot access offset 'address' on array\\|false\\.$#"
+			count: 2
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Cannot access offset 'port' on array\\|false\\.$#"
+			count: 2
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\Command\\\\ConfigurationImportCommand\\:\\:importTables\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Command/ConfigurationImportCommand.php
