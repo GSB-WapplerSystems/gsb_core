@@ -66,6 +66,9 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'connectTimeout' => $this->connectionTimeout,
                     ]);
                 $sentinelMaster = $this->redisSentinel->getMasterAddrByName($this->sentinelMasterName);
+                if ($sentinelMaster === false) {
+                    throw new Exception('The given sentinel master "' . $this->sentinelMasterName . '" could not be found.', 1279765144);
+                }
                 if ($this->persistentConnection) {
                     $this->connected = $this->redis->pconnect($sentinelMaster[0], $sentinelMaster[1], $this->connectionTimeout, (string)$this->database);
                 } else {
