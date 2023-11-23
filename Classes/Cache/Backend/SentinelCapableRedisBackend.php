@@ -44,13 +44,6 @@ class SentinelCapableRedisBackend extends RedisBackend
     protected $isSentinel = false;
 
     /**
-     * Sentinel master name
-     *
-     * @var string
-     */
-    protected string $sentinelMasterName = 'mymaster';
-
-    /**
      * Initializes the redis backend
      *
      * @throws Exception if access to redis with password is denied or if database selection fails
@@ -60,19 +53,20 @@ class SentinelCapableRedisBackend extends RedisBackend
         $this->redis = new \Redis();
         try {
             if ($this->isSentinel) {
+                $this->logger->error('Sentinel: Host '. $this->hostname . ' Port: ' . $this->port . ' SentinelMasterName: ' . $this->sentinelMasterName);
                 $this->redisSentinel = new \RedisSentinel([
                     'host' => $this->hostname,
                     'port' => $this->port,
                     'connectTimeout' => $this->connectionTimeout,
                     ]);
-                $sentinelMaster = $this->redisSentinel->getMasterAddrByName($this->sentinelMasterName);
+                $sentinelMaster = $this->redisSentinel->masters();
                 if ($sentinelMaster === false) {
-                    throw new Exception('The given sentinel master "' . $this->sentinelMasterName . '" could not be found.', 1279765144);
+                    throw new Exception('Could not get master from sentinel.', 1279765134);
                 }
                 if ($this->persistentConnection) {
-                    $this->connected = $this->redis->pconnect($sentinelMaster[0], $sentinelMaster[1], $this->connectionTimeout, (string)$this->database);
+                    $this->connected = $this->redis->pconnect($sentinelMaster[0]['ip'], $sentinelMaster[0]['port'], $this->connectionTimeout, (string)$this->database);
                 } else {
-                    $this->connected = $this->redis->connect($sentinelMaster[0], $sentinelMaster[1], $this->connectionTimeout);
+                    $this->connected = $this->redis->connect($sentinelMaster[0]['ip'], $sentinelMaster[0]['port'], $this->connectionTimeout);
                 }
             } else {
                 if ($this->persistentConnection) {
@@ -108,15 +102,5 @@ class SentinelCapableRedisBackend extends RedisBackend
     public function setIsSentinel(bool $isSentinel): void
     {
         $this->isSentinel = $isSentinel;
-    }
-
-    /**
-     * Set the sentinel master name
-     *
-     * @param string $sentinelMasterName
-     */
-    public function setSentinelMasterName(string $sentinelMasterName): void
-    {
-        $this->sentinelMasterName = $sentinelMasterName;
     }
 }
