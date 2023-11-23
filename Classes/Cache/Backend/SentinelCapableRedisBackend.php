@@ -60,7 +60,11 @@ class SentinelCapableRedisBackend extends RedisBackend
         $this->redis = new \Redis();
         try {
             if ($this->isSentinel) {
-                $this->redisSentinel = new \RedisSentinel($this->hostname, $this->port, $this->connectionTimeout);
+                $this->redisSentinel = new \RedisSentinel([
+                    'host' => $this->hostname,
+                    'port' => $this->port,
+                    'connectTimeout' => $this->connectionTimeout,
+                    ]);
                 $sentinelMaster = $this->redisSentinel->getMasterAddrByName($this->sentinelMasterName);
                 if ($this->persistentConnection) {
                     $this->connected = $this->redis->pconnect($sentinelMaster['address'], $sentinelMaster['port'], $this->connectionTimeout, (string)$this->database);
