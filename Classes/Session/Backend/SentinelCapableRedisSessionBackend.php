@@ -3,196 +3,101 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
+ * This file is part of the GSB 11 project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
  * of the License, or any later version.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
 
-namespace TYPO3\CMS\Core\Session\Backend;
+namespace ITZBund\GsbCore\Session\Backend;
 
-use Psr\Log\LoggerAwareInterface;
-use Psr\Log\LoggerAwareTrait;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotCreatedException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotFoundException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotUpdatedException;
+use TYPO3\CMS\Core\Session\Backend\RedisSessionBackend;
 
 /**
- * Class RedisSessionBackend
+ * Class SentinelCapableRedisSessionBackend
  *
  * This session backend takes these optional configuration options: 'hostname' (default '127.0.0.1'),
- * 'database' (default 0), 'port' (default 3679) and 'password' (no default value).
+ * 'database' (default 0), 'port' (default 3679) and 'password' (no default value), 'isSentinel' (default false),
+ * .'persistentConnection' (default false), 'connectionTimeout' (default 0.0)
+ *
+ * Fails gracefully if redis is not available.
  */
-class RedisSessionBackend implements SessionBackendInterface, HashableSessionBackendInterface, LoggerAwareInterface
+class SentinelCapableRedisSessionBackend extends RedisSessionBackend
 {
-    use LoggerAwareTrait;
-
     /**
-     * @var array
+     * @var \RedisSentinel
      */
-    protected $configuration = [];
+    protected ?\RedisSentinel $redisSentinel = null;
 
     /**
-     * Indicates whether the server is connected
-     *
-     * @var bool
-     */
-    protected $connected = false;
-
-    /**
-     * Used as instance independent identifier
-     * (e.g. if multiple installations write into the same database)
-     *
-     * @var string
-     */
-    protected $applicationIdentifier = '';
-
-    /**
-     * Instance of the PHP redis class
-     *
-     * @var \Redis
-     */
-    protected $redis;
-
-    /**
-     * @var string
-     */
-    protected $identifier;
-
-    /**
-     * Initializes the session backend
-     *
-     * @param string $identifier Name of the session type, e.g. FE or BE
-     * @internal To be used only by SessionManager
-     */
-    public function initialize(string $identifier, array $configuration)
-    {
-        $this->redis = new \Redis();
-
-        $this->configuration = $configuration;
-        $this->identifier = $identifier;
-        $this->applicationIdentifier = 'typo3_ses_'
-            . $identifier . '_'
-            . sha1($GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey']) . '_';
-    }
-
-    /**
-     * Checks if the configuration is valid
-     *
-     * @throws \InvalidArgumentException
-     * @internal To be used only by SessionManager
-     */
-    public function validateConfiguration()
-    {
-        if (!extension_loaded('redis')) {
-            throw new \RuntimeException(
-                'The PHP extension "redis" must be installed and loaded in order to use the redis session backend.',
-                1481269826
-            );
-        }
-
-        if (isset($this->configuration['database'])) {
-            if (!is_int($this->configuration['database'])) {
-                throw new \InvalidArgumentException(
-                    'The specified database number is of type "' . gettype($this->configuration['database']) .
-                    '" but an integer is expected.',
-                    1481270871
-                );
-            }
-
-            if ($this->configuration['database'] < 0) {
-                throw new \InvalidArgumentException(
-                    'The specified database "' . $this->configuration['database'] . '" must be greater or equal than zero.',
-                    1481270923
-                );
-            }
-        }
-    }
-
-    public function hash(string $sessionId): string
-    {
-        // The sha1 hash ensures we have good length for the key.
-        $key = sha1($GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] . 'core-session-backend');
-        return hash_hmac('sha256', $sessionId, $key);
-    }
-
-    /**
-     * Read session data
+     * Read session data, fail gracefully if redis is not available
      *
      * @return array Returns the session data
      * @throws SessionNotFoundException
      */
     public function get(string $sessionId): array
     {
-        $this->initializeConnection();
-
-        $hashedSessionId = $this->hash($sessionId);
-        $rawData = $this->redis->get($this->getSessionKeyName($hashedSessionId));
-        if ($rawData !== false) {
-            $decodedValue = json_decode($rawData, true);
-            if (is_array($decodedValue)) {
-                return $decodedValue;
-            }
+        try {
+            return parent::get($sessionId);
+        } catch (\Throwable $e) {
+            $this->logger->critical('Could not fetch session from redis', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
         }
-        throw new SessionNotFoundException('Session could not be fetched from redis', 1481885583);
+        return [];
     }
 
     /**
-     * Delete a session record
+     * Delete a session record, fail gracefully if redis is not available
      */
     public function remove(string $sessionId): bool
     {
-        $this->initializeConnection();
-
-        $deleteResult = $this->redis->del($this->getSessionKeyName($this->hash($sessionId)));
-
-        // Redis delete result is either `int`, `false` or a `\Redis` multi mode object, where delete state cannot get
-        // determined. Multi mode is not even supported by this session backend at all, therefore we handle this case as
-        // "not successful".
-        return is_int($deleteResult) && $deleteResult >= 1;
+        try {
+            return parent::remove($sessionId);
+        } catch (\Throwable $e) {
+            $this->logger->critical('Could not remove session from redis', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
+        }
+        return false;
     }
 
     /**
      * Write session data. This method prevents overriding existing session data.
      * ses_id will always be set to $sessionId and overwritten if existing in $sessionData
      * This method updates ses_tstamp automatically
+     * This method will fail gracefully if redis is not available
      *
      * @return array The newly created session record.
      * @throws SessionNotCreatedException
      */
     public function set(string $sessionId, array $sessionData): array
     {
-        $this->initializeConnection();
-
-        $hashedSessionId = $this->hash($sessionId);
-        $sessionData['ses_id'] = $hashedSessionId;
-        $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
-
-        // nx will not allow overwriting existing keys
-        $jsonString = json_encode($sessionData);
-        $wasSet = is_string($jsonString) && $this->redis->set(
-            $this->getSessionKeyName($hashedSessionId),
-            $jsonString,
-            ['nx']
-        );
-
-        if (!$wasSet) {
-            throw new SessionNotCreatedException('Session could not be written to Redis', 1481895647);
+        try {
+            return parent::set($sessionId, $sessionData);
+        } catch (\Throwable $e) {
+            $this->logger->critical('Could not write session to redis', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
         }
-
-        return $sessionData;
+        return [];
     }
 
     /**
      * Updates the session data.
      * ses_id will always be set to $sessionId and overwritten if existing in $sessionData
      * This method updates ses_tstamp automatically
+     * This method will fail gracefully if redis is not available
      *
      * @param array $sessionData The session data to update. Data may be partial.
      * @return array $sessionData The newly updated session record.
@@ -200,65 +105,88 @@ class RedisSessionBackend implements SessionBackendInterface, HashableSessionBac
      */
     public function update(string $sessionId, array $sessionData): array
     {
-        $hashedSessionId = $this->hash($sessionId);
         try {
-            $sessionData = array_merge($this->get($sessionId), $sessionData);
-        } catch (SessionNotFoundException $e) {
-            throw new SessionNotUpdatedException('Cannot update non-existing record', 1484389971, $e);
+            return parent::update($sessionId, $sessionData);
+        } catch (\Throwable $e) {
+            $this->logger->critical('Could not update session in redis', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
         }
-        $sessionData['ses_id'] = $hashedSessionId;
-        $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
-
-        $key = $this->getSessionKeyName($hashedSessionId);
-        $jsonString = json_encode($sessionData);
-        $wasSet = is_string($jsonString) && $this->redis->set($key, $jsonString);
-
-        if (!$wasSet) {
-            throw new SessionNotUpdatedException('Session could not be updated in Redis', 1481896383);
-        }
-
-        return $sessionData;
+        return [];
     }
 
     /**
-     * Garbage Collection
+     * Garbage Collection, fail gracefully if redis is not available
      *
      * @param int $maximumLifetime maximum lifetime of authenticated user sessions, in seconds.
      * @param int $maximumAnonymousLifetime maximum lifetime of non-authenticated user sessions, in seconds. If set to 0, nothing is collected.
      */
-    public function collectGarbage(int $maximumLifetime, int $maximumAnonymousLifetime = 0)
+    public function collectGarbage(int $maximumLifetime, int $maximumAnonymousLifetime = 0): void
     {
-        foreach ($this->getAll() as $sessionRecord) {
-            if (!($sessionRecord['ses_userid'] ?? false)) {
-                if ($maximumAnonymousLifetime > 0 && ($sessionRecord['ses_tstamp'] + $maximumAnonymousLifetime) < $GLOBALS['EXEC_TIME']) {
-                    $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
-                }
-            } else {
-                if (($sessionRecord['ses_tstamp'] + $maximumLifetime) < $GLOBALS['EXEC_TIME']) {
-                    $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
-                }
-            }
+        try {
+            parent::collectGarbage($maximumLifetime, $maximumAnonymousLifetime);
+        } catch (\Throwable $e) {
+            $this->logger->critical('Could not collect garbage in redis', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
         }
     }
 
     /**
-     * Initializes the redis backend
+     * Initializes the redis backend, fail gracefully if redis is not available
      *
      * @throws \RuntimeException if access to redis with password is denied or if database selection fails
      */
-    protected function initializeConnection()
+    protected function initializeConnection(): void
     {
         if ($this->connected) {
             return;
         }
 
         try {
-            $this->connected = $this->redis->pconnect(
-                $this->configuration['hostname'] ?? '127.0.0.1',
-                $this->configuration['port'] ?? 6379,
-                0.0,
-                $this->identifier
-            );
+            if ($this->configuration['isSentinel']) {
+                $this->redisSentinel = new \RedisSentinel([
+                    'host' => $this->configuration['hostname'] ?? '127.0.0.1',
+                    'port' => $this->configuration['port'] ?? 26379,
+                    'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
+                    'persistent' => ($this->configuration['persistentConnection'] === true) ? $this->identifier : null,
+                ]);
+                $sentinelMaster = $this->redisSentinel->masters();
+                if ($sentinelMaster === false) {
+                    throw new Exception('Could not get master from sentinel.', 1279765134);
+                }
+                if ($this->configuration['persistentConnection']) {
+                    $this->connected = $this->redis->pconnect(
+                        (string)$sentinelMaster[0]['ip'],
+                        (int)$sentinelMaster[0]['port'],
+                        $this->configuration['connectionTimeout'] ?? 0.0,
+                        $this->configuration['database'] ?? 0
+                    );
+                } else {
+                    $this->connected = $this->redis->connect(
+                        (string)$sentinelMaster[0]['ip'],
+                        (int)$sentinelMaster[0]['port'],
+                        $this->configuration['connectionTimeout'] ?? 0.0
+                    );
+                }
+            } else {
+                if ($this->configuration['persistentConnection']) {
+                    $this->connected = $this->redis->pconnect(
+                        $this->configuration['hostname'] ?? '127.0.0.1',
+                        $this->configuration['port'] ?? 6379,
+                        $this->configuration['connectionTimeout'] ?? 0.0,
+                        $this->configuration['database'] ?? 0
+                    );
+                } else {
+                    $this->connected = $this->redis->connect(
+                        $this->configuration['hostname'] ?? '127.0.0.1',
+                        $this->configuration['port'] ?? 6379,
+                        $this->configuration['connectionTimeout'] ?? 0.0,
+                    );
+                }
+            }
         } catch (\RedisException $e) {
             $this->logger->alert('Could not connect to redis server.', ['exception' => $e]);
         }
@@ -328,15 +256,5 @@ class RedisSessionBackend implements SessionBackendInterface, HashableSessionBac
         }
 
         return $sessions;
-    }
-
-    protected function getSessionKeyName(string $sessionId): string
-    {
-        return $this->applicationIdentifier . $sessionId;
-    }
-
-    protected function getSessionTimeout(): int
-    {
-        return (int)($GLOBALS['TYPO3_CONF_VARS'][$this->identifier]['sessionTimeout'] ?? 86400);
     }
 }

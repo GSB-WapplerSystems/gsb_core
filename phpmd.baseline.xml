@@ -10,6 +10,13 @@
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="getRequest"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="setDbFields"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
+  <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="__construct"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="getPriority"/>
+  <violation rule="PHPMD\Rule\CleanCode\IfStatementAssignment" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="acquire"/>
+  <violation rule="PHPMD\Rule\CleanCode\BooleanArgumentFlag" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>
@@ -18,6 +25,11 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
 </phpmd-baseline>
