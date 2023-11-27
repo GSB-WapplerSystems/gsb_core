@@ -388,9 +388,9 @@ class SentinelCapableRedisBackend extends RedisBackend
     private function retryOperation(callable $operation, int $retryCount = 3, int $delay = 100): mixed
     {
         for ($attempt = 0; $attempt < $retryCount; $attempt++) {
-            #try {
+            try {
                 return $operation();
-            /*} catch (\RedisException $e) {
+            } catch (\RedisException $e) {
                 if ($this->isPermanentException($e)) {
                     throw $e;
                 }
@@ -399,7 +399,7 @@ class SentinelCapableRedisBackend extends RedisBackend
                 }
                 // Wait for a while before retrying
                 usleep($delay * ($attempt + 1));
-            }*/
+            }
         }
         return null;
     }
