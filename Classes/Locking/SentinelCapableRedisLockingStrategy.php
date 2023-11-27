@@ -80,6 +80,11 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
     private int $ttl = 30;
 
     /**
+     * @var array
+     */
+    private array $configuration = [];
+
+    /**
      * @inheritdoc
      */
     public function __construct($subject)
@@ -116,73 +121,72 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         $this->name = sprintf('%s:lock:name:%s', $redisKeyPrefix, $subject);
         $this->mutexName = sprintf('%s:lock:mutex:%s', $redisKeyPrefix, $subject);
         $this->value = uniqid();
+        $this->configuration = $configuration;
+        $this->initializeWrite();
+    }
 
-        try {
-            $this->backend = $this->connectBackend($configuration);
-        } catch (\Throwable $e) {
-            $this->logger->critical('Could not connect to redis', [
-                'message' => $e->getMessage(),
-                'exception' => $e,
-            ]);
-        }
+    private function initializeRead(): void
+    {
+        $this->retryOperation(function () {
+            $this->backend = $this->initializeConnection(false);
+        });
+    }
+
+    private function initializeWrite(): void
+    {
+        $this->retryOperation(function () {
+            $this->backend = $this->initializeConnection(true);
+        });
     }
 
     /**
-     * Set up redis backend.
+     * Set up redis connection.
      *
-     * @param $configuration
+     * @param bool $useWriteConnection
      * @return \Redis
      */
-    private function connectBackend($configuration): \Redis
+    private function initializeConnection(bool $useWriteConnection): \Redis
     {
         $backend = new \Redis();
+        $host = $this->configuration['hostname'] ?? '127.0.0.1';
+        $port = $this->configuration['port'] ?? 6379;
 
-        if ($configuration['isSentinel']) {
+        if (array_key_exists('isSentinel', $this->configuration) &&  $this->configuration['isSentinel'] && $useWriteConnection) {
             $redisSentinel = new \RedisSentinel([
-                'host' => $configuration['hostname'] ?? '127.0.0.1',
-                'port' => $configuration['port'] ?? 26379,
-                'connectTimeout' => $configuration['connectionTimeout'] ?? 0.0,
-                'persistent' => ($configuration['persistentConnection'] === true) ? 'lock' : null,
+                'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
+                'port' => $this->configuration['sentinelPort'] ?? 26379,
+                'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
+                'persistent' => ($this->configuration['persistentConnection'] === true) ? 'lock' : null,
+                'auth' => $this->configuration['sentinelPassword'] ?? null,
             ]);
             $sentinelMaster = $redisSentinel->masters();
             if ($sentinelMaster === false) {
                 throw new Exception('Could not get master from sentinel.', 1279765134);
             }
-            if ($configuration['persistentConnection']) {
-                $backend->pconnect(
-                    (string)$sentinelMaster[0]['ip'],
-                    (int)$sentinelMaster[0]['port'],
-                    $configuration['connectionTimeout'] ?? 0.0,
-                    $configuration['database'] ?? 0
-                );
-            } else {
-                $backend->connect(
-                    (string)$sentinelMaster[0]['ip'],
-                    (int)$sentinelMaster[0]['port'],
-                    $configuration['connectionTimeout'] ?? 0.0
-                );
-            }
-        } else {
-            if ($configuration['persistentConnection']) {
-                $backend->pconnect(
-                    $configuration['hostname'] ?? '127.0.0.1',
-                    $configuration['port'] ?? 6379,
-                    $configuration['connectionTimeout'] ?? 0.0,
-                    $configuration['database'] ?? 0
-                );
-            } else {
-                $backend->connect(
-                    $configuration['hostname'] ?? '127.0.0.1',
-                    $configuration['port'] ?? 6379,
-                    $configuration['connectionTimeout'] ?? 0.0,
-                );
-            }
+
+            $host = $sentinelMaster[0]['ip'];
+            $port = $sentinelMaster[0]['port'];
         }
 
-        if (!empty($configuration['password'])) {
-            $backend->auth($configuration['password']);
+        if ($this->configuration['persistentConnection']) {
+            $backend->pconnect(
+                $host,
+                $port,
+                $this->configuration['connectionTimeout'] ?? 0.0,
+                $this->configuration['database'] ?? 0
+            );
+        } else {
+            $backend->connect(
+                $host,
+                $port,
+                $this->configuration['connectionTimeout'] ?? 0.0,
+            );
         }
-        $backend->select((int)$configuration['database']);
+
+        if (!empty($this->configuration['password'])) {
+            $backend->auth($this->configuration['password']);
+        }
+        $backend->select((int)$this->configuration['database']);
         return $backend;
     }
 
@@ -209,9 +213,12 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
     }
 
     /**
-     * @inheritdoc
+     * @param $mode
+     * @return bool
+     * @throws LockAcquireException
+     * @throws LockAcquireWouldBlockException
      */
-    public function acquire($mode = self::LOCK_CAPABILITY_EXCLUSIVE)
+    public function acquire($mode = self::LOCK_CAPABILITY_EXCLUSIVE): bool
     {
         if ($this->isAcquired) {
             return true;
@@ -352,6 +359,57 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
                 'exception' => $e,
             ]);
         }
+        return false;
+    }
+
+    /**
+     * Retry the given operation a few times before giving up, maybe the redis server is failing over
+     * or the connection is lost for a short time.
+     * @param callable $operation
+     * @param int $retryCount
+     * @param int $delay
+     * @return mixed
+     * @throws \RedisException
+     */
+    private function retryOperation(callable $operation, int $retryCount = 3, int $delay = 100): mixed
+    {
+        for ($attempt = 0; $attempt < $retryCount; $attempt++) {
+            try {
+                return $operation();
+            } catch (\RedisException $e) {
+                if ($this->isPermanentException($e)) {
+                    throw $e;
+                }
+                if ($attempt === $retryCount - 1) {
+                    throw $e;
+                }
+                // Wait for a while before retrying
+                usleep($delay * ($attempt + 1));
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Check if the given exception is permanent or temporary
+     * @param \RedisException $e
+     * @return bool
+     */
+    private function isPermanentException(\RedisException $e): bool
+    {
+        // Check for authentification errors
+        if (str_contains($e->getMessage(), 'AUTH')) {
+            return true; // Authentification errors are permanent
+        }
+
+        // Check for configuration errors
+        $configurationErrors = ['host', 'port', 'database'];
+        foreach ($configurationErrors as $errorString) {
+            if (str_contains($e->getMessage(), $errorString)) {
+                return true; // Configuration errors are permanent
+            }
+        }
+
         return false;
     }
 }
