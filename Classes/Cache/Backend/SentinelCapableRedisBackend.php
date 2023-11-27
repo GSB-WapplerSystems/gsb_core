@@ -54,7 +54,6 @@ class SentinelCapableRedisBackend extends RedisBackend
         $this->redis = new \Redis();
         try {
             if ($this->isSentinel) {
-                $this->logger->log(LogLevel::ERROR, 'Sentinel: Host ' . $this->hostname . ' Port: ' . $this->port . ' SentinelMasterName: ' . $this->sentinelMasterName);
                 $this->redisSentinel = new \RedisSentinel([
                     'host' => $this->hostname,
                     'port' => $this->port,
@@ -64,6 +63,7 @@ class SentinelCapableRedisBackend extends RedisBackend
                 if ($sentinelMaster === false) {
                     throw new Exception('Could not get master from sentinel.', 1279765134);
                 }
+                $this->logger->log(LogLevel::ERROR, 'Resolved redis config', [$this->hostname, $this->port, $sentinelMaster[0]]);
                 if ($this->persistentConnection) {
                     $this->connected = $this->redis->pconnect($sentinelMaster[0]['ip'], $sentinelMaster[0]['port'], $this->connectionTimeout, (string)$this->database);
                 } else {
