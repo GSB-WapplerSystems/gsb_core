@@ -13,6 +13,7 @@
 
 namespace ITZBund\GsbCore\Cache\Backend;
 
+use Psr\Log\LogLevel;
 use TYPO3\CMS\Core\Cache\Backend\RedisBackend;
 use TYPO3\CMS\Core\Cache\Exception;
 
@@ -53,7 +54,7 @@ class SentinelCapableRedisBackend extends RedisBackend
         $this->redis = new \Redis();
         try {
             if ($this->isSentinel) {
-                $this->logger->error('Sentinel: Host '. $this->hostname . ' Port: ' . $this->port . ' SentinelMasterName: ' . $this->sentinelMasterName);
+                $this->logger->log(LogLevel::ERROR, 'Sentinel: Host ' . $this->hostname . ' Port: ' . $this->port . ' SentinelMasterName: ' . $this->sentinelMasterName);
                 $this->redisSentinel = new \RedisSentinel([
                     'host' => $this->hostname,
                     'port' => $this->port,
@@ -76,7 +77,7 @@ class SentinelCapableRedisBackend extends RedisBackend
                 }
             }
         } catch (\Exception $e) {
-            $this->logger->alert('Could not connect to redis server.', ['exception' => $e]);
+            $this->logger->log(LogLevel::ALERT, 'Could not connect to redis server.', ['exception' => $e]);
         }
         if ($this->connected) {
             if ($this->password !== '') {
