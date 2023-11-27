@@ -2,8 +2,23 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
-<div class="solr-header">
-    <h2 class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'gsb_core')}</h2>
-</div>
+<li class="mainnav-desktop-item">
+    <button aria-controls="search" aria-expanded="false" class="first-nav btn-search" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.search', extensionName: 'gsb_core')}">
+        {f:translate(key: 'header.search', extensionName: 'gsb_core')}
+    </button>
+    <div class="dropdown-menu main-menu-desktop" id="search">
+        <div class="container d-flex justify-content-end pt-3 pb-3" style="height: 5.5rem !important">
+            <button aria-label="Schließen" class="btn-close rounded-circle" type="button"></button>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input required="required" placeholder="Suchbegriff eingeben" class=" form-control form-control-lg" id="search-word" type="text" name="search" value="">
+                    <button class="btn btn-primary" type="submit" name="search-button" value="1">Suchen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
 
 </html>

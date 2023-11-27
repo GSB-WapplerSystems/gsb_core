@@ -1,6 +1,9 @@
 <html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
 <nav aria-labelledby="mainmenu" class="main-menu-layer dropdown flex-grow-0{f:if(condition: '{navType} == 0', then: ' d-lg-none')}" id="main-menu">
+    <f:if condition="{site.configuration.search} == 1">
+        <f:render arguments="{_all}" partial="Header.Search"/>
+    </f:if>
     <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</h2>
     <button aria-controls="menu" aria-expanded="false" class="navbar-toggler" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_core')}" type="button">
         <span class="line"></span>

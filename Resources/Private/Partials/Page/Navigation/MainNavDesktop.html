@@ -37,6 +37,9 @@
                 </f:if>
             </li>
         </f:for>
+        <f:if condition="{site.configuration.search} == 1">
+            <f:render arguments="{_all}" partial="Header.Search"/>
+        </f:if>
     </ul>
 
 </f:if>
