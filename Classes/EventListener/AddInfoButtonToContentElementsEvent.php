@@ -38,7 +38,7 @@ final class AddInfoButtonToContentElementsEvent
             return;
         }
 
-        $type = $this->getTypeByTableAndUid($table, $elementUid);
+        $type = $this->getTypeByTableAndUid($table, (int)$elementUid);
 
         if ($type == null) {
             return;

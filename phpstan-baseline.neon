@@ -1,18 +1,8 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Cannot access offset 0 on array\\|false\\.$#"
+			message: "#^Cannot call method log\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
 			count: 2
-			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
-
-		-
-			message: "#^Cannot access offset 1 on array\\|false\\.$#"
-			count: 2
-			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
-
-		-
-			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
-			count: 1
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
 
 		-
