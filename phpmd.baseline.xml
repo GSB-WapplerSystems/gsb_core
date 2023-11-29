@@ -11,6 +11,8 @@
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="__invoke"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="getRequest"/>
+  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="getTypeByTableAndUid"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddTypoScriptFromSitePackageEvent.php" method="setDbFields"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
   <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
