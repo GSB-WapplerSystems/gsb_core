@@ -1,3 +1,7 @@
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+# (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+# Licensed under the GPL 2.0 License.
+
 config.additionalHeaders {
   10.header = strict-transport-security:max-age=31536000
   20.header = X-Frame-Options:SAMEORIGIN
