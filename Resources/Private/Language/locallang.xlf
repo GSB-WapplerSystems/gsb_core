@@ -81,6 +81,9 @@
 			<trans-unit id="header.searching" resname="header.searching">
 				<source>Search</source>
 			</trans-unit>
+			<trans-unit id="header.search.add" resname="header.search.add">
+				<source>Enter search term(s)</source>
+			</trans-unit>#
 			<trans-unit id="header.searchterm" resname="header.searchterm">
 				<source>Searchterm</source>
 			</trans-unit>
