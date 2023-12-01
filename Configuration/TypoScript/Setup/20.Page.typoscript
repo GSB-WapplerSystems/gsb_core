@@ -97,6 +97,7 @@ page {
       headtitle = < lib.headTitle
       headertitle = < lib.headerTitle
       headerDescription = < lib.headerDescription
+      search = < lib.search
 
       # Top
       top < styles.content.get
