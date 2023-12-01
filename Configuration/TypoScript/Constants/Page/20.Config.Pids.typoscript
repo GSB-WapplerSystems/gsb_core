@@ -12,7 +12,7 @@ config {
     Minimap = 1
     # cat=Default Categories (ITZBund): advanced/160/150; type=text; label=Categories-Sysfolder:PageID
     Categories = 150
-    # cat=Default Searchpage (ITZBund): advanced/160/150; type=text; label=Searchpage:PageID
+    # cat=Default Searchpage (ITZBund): advanced/160/160; type=text; label=Searchpage:PageID
     Search = 35
   }
 }
