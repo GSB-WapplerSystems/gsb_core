@@ -11,7 +11,7 @@
             <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" title="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle dropdown-item" type="button"></button>
         </div>
         <div class="container tx-solr-search-form">
-            <form method="get" id="tx-solr-search-form-pi-results" action="{f:uri.typolink(parameter: '35')}" data-suggest="{f:uri.typolink(parameter: '35')}?type=7384" accept-charset="utf-8">
+            <form method="get" id="tx-solr-search-form-pi-results" action="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}" data-suggest="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}?type=7384" accept-charset="utf-8">
                 <div class="input-group">
                     <label class="visually-hidden" for="solr-main">{f:translate(key: 'header.search.add', extensionName: 'gsb_core')}</label>
                     <input type="text" class="tx-solr-q js-solr-q tx-solr-suggest tx-solr-suggest-focus form-control dropdown-item" name="tx_solr[q]" id="solr-main" value="" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_core')}">
