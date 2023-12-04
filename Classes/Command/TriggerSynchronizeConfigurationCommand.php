@@ -11,7 +11,7 @@ use TYPO3\CMS\Core\Crypto\Random;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Used to trigger
+ * Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions
  */
 class TriggerSynchronizeConfigurationCommand extends Command
 {

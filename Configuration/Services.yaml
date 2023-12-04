@@ -20,7 +20,7 @@ services:
       - name: console.command
         schedulable: false
         command: 'gsbcore:triggersynchronize'
-        description: 'Bla bla.'
+        description: 'Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions to get around readonly filesystem woes'
 
 
   ITZBund\GsbCore\Configuration\PackageHelper:
