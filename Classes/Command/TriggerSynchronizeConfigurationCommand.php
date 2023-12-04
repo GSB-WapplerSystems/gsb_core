@@ -10,6 +10,9 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Crypto\Random;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+/**
+ * Used to trigger
+ */
 class TriggerSynchronizeConfigurationCommand extends Command
 {
     public function __construct(private readonly ExtensionConfiguration $extensionConfiguration)
@@ -19,12 +22,8 @@ class TriggerSynchronizeConfigurationCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        try {
-            $this->extensionConfiguration->get(GeneralUtility::makeInstance(Random::class)->generateRandomHexString(64));
-        } catch (ExtensionConfigurationExtensionNotConfiguredException $exence) {
-            return Command::SUCCESS;
-        }
-        return Command::FAILURE;
+        $this->extensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions(true);
+        return Command::SUCCESS;
     }
 
 }
