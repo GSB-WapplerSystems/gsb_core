@@ -8,6 +8,7 @@
   <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/ConfigurationImportCommand.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/TriggerSynchronizeConfigurationCommand.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="__invoke"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php" method="getRequest"/>

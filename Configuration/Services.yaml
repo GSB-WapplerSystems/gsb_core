@@ -15,6 +15,14 @@ services:
         command: 'gsbtemplate:configuration:import'
         description: 'A command that does import Configuration for Workspaces and Backend User Groups from yaml-Files.'
 
+  ITZBund\GsbCore\Command\TriggerSynchronizeConfigurationCommand:
+    tags:
+      - name: console.command
+        schedulable: false
+        command: 'gsbcore:triggersynchronize'
+        description: 'Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions to get around readonly filesystem woes'
+
+
   ITZBund\GsbCore\Configuration\PackageHelper:
     public: true
 
