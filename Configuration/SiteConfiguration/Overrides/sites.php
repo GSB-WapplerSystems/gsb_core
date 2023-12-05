@@ -9,14 +9,26 @@
  */
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
-    'label' => 'Site package of this site',
-    'description' => '[EXT:gsb_core] Attached site extension with TypoScript entry points',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.description',
     'config' => [
         'type' => 'select',
         'renderType' => 'selectSingle',
         'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
+
+// Build searchbox toggle
+$GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search.description',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
+
 $GLOBALS['SiteConfiguration']['site']['palettes']['default']['showitem'] .= ',
-    sitePackage,
+    sitePackage, search
 ';

@@ -6,9 +6,8 @@
 
 <div class="layer"></div>
 
-<h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_core')}</h1>
-
 <header class="header-wrapper fixed-top">
+    <h1 class="visually-hidden">{f:translate(key: 'meta.NavigationSection', extensionName: 'gsb_core')}</h1>
     <div class="header-wrapper-bg">
         <div class="container-md">
             <div class="row">
@@ -32,13 +31,13 @@
                     <div class="meta-desktop d-none d-lg-block w-100">
                         <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation, site: site}" partial="Navigation/MetaNavTop"/>
                     </div>
-                    <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType}" partial="Header.Mainnav"/>
+                    <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType, site: site}" partial="Header.Mainnav"/>
                 </div>
             </div>
             <f:if condition="{navType} == 0">
                 <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}">
                     <h2 class="visually-hidden">{f:translate(key:'header.mainnavigation', extensionName:'gsb_core')}</h2>
-                    <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType}" partial="Navigation/MainNavDesktop"/>
+                    <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType, site: site}" partial="Navigation/MainNavDesktop"/>
                 </nav>
             </f:if>
         </div>

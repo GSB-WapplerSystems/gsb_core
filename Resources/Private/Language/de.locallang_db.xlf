@@ -627,38 +627,6 @@
 				<source>Container covering the entire page or screen width</source>
 				<target>Container, der sich über die gesamte Seiten- oder Bildschirmbreite erstreckt</target>
 			</trans-unit>
-			<trans-unit id="silhouette.0" resname="silhouette.0" approved="yes">
-				<source>Default</source>
-				<target>Standard</target>
-			</trans-unit>
-			<trans-unit id="silhouette.1" resname="silhouette.1" approved="yes">
-				<source>Silhouette 1</source>
-				<target>Silhouette 1</target>
-			</trans-unit>
-			<trans-unit id="silhouette.2" resname="silhouette.2" approved="yes">
-				<source>Silhouette 2</source>
-				<target>Silhouette 2</target>
-			</trans-unit>
-			<trans-unit id="silhouette.3" resname="silhouette.3" approved="yes">
-				<source>Silhouette 3</source>
-				<target>Silhouette 3</target>
-			</trans-unit>
-			<trans-unit id="silhouette.4" resname="silhouette.4" approved="yes">
-				<source>Silhouette 4</source>
-				<target>Silhouette 4</target>
-			</trans-unit>
-			<trans-unit id="silhouette.5" resname="silhouette.5" approved="yes">
-				<source>Silhouette 5</source>
-				<target>Silhouette 5</target>
-			</trans-unit>
-			<trans-unit id="silhouette.6" resname="silhouette.6" approved="yes">
-				<source>Silhouette 6</source>
-				<target>Silhouette 6</target>
-			</trans-unit>
-			<trans-unit id="silhouette.7" resname="silhouette.7" approved="yes">
-				<source>Silhouette 7</source>
-				<target>Silhouette 7</target>
-			</trans-unit>
 			<trans-unit id="tt_content.file" resname="tt_content.file" approved="yes">
 				<source>Gallery Image</source>
 				<target>Galerie Bild</target>
@@ -845,7 +813,27 @@
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept" approved="yes">
 				<source>Show accept button</source>
-				<target>Annehmen Button anzeigen</target>
+				<target>Annehmen-Button anzeigen</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.accept_button_label" resname="tx_gsbcore_consent.accept_button_label" approved="yes">
+				<source>Accept button label</source>
+				<target>Annehmen-Button-Beschriftung</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.search" resname="page.configuration.search" approved="yes">
+				<source>Use search</source>
+				<target>Suche nutzen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description" approved="yes">
+				<source>Use the Search on the website. Adds a searchfield to the header.</source>
+				<target>Verwenden Sie die Suche auf der Webseite. Fügt ein Suchfeld in der Kopfzeile hinzu.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage" approved="yes">
+				<source>Site package of this site</source>
+				<target>Website-Paket dieser Seite</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.description" resname="page.configuration.sitepackage.description" approved="yes">
+				<source>[EXT:gsb_core] Attached site extension with TypoScript entry points</source>
+				<target>[EXT:gsb_core] Angehängte Website-Erweiterung mit TypoScript-Einstiegspunkten</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -714,6 +714,21 @@
 			<trans-unit id="tx_gsbcore_consent.show_accept.hide" resname="tx_gsbcore_consent.show_accept.hide">
 				<source>Hide</source>
 			</trans-unit>
+			<trans-unit id="tx_gsbcore_consent.accept_button_label" resname="tx_gsbcore_consent.accept_button_label">
+				<source>Accept button label</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.search" resname="page.configuration.search">
+				<source>Use search</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description">
+				<source>Use the Search on the website. Adds a searchfield to the header.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage">
+				<source>Site package of this site</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.description" resname="page.configuration.sitepackage.description">
+				<source>[EXT:gsb_core] Attached site extension with TypoScript entry points</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

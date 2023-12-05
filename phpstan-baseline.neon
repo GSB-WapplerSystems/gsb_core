@@ -1,6 +1,36 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Cannot call method critical\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
+			count: 9
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Class RedisSentinel constructor invoked with 1 parameter, 2\\-6 required\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Left side of && is always true\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Cache\\\\Backend\\\\SentinelCapableRedisBackend\\:\\:findIdentifiersByTag\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Cache\\\\Backend\\\\SentinelCapableRedisBackend\\:\\:set\\(\\) has parameter \\$tags with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
+			message: "#^Parameter \\#1 \\$host of class RedisSentinel constructor expects string, array\\<string, int\\|string\\|null\\> given\\.$#"
+			count: 1
+			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\Command\\\\ConfigurationImportCommand\\:\\:importTables\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Command/ConfigurationImportCommand.php
@@ -26,6 +56,91 @@ parameters:
 			path: Classes/EventListener/ExtendsSiteConfigurationEvent.php
 
 		-
+			message: "#^Cannot call method critical\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
+			count: 3
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Class RedisSentinel constructor invoked with 1 parameter, 2\\-6 required\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Instantiated class ITZBund\\\\GsbCore\\\\Locking\\\\Exception not found\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:destroy\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:initializeRead\\(\\) is unused\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:wait\\(\\) should return string but returns false\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Negated boolean expression is always true\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, string given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int\\<0, 1\\> given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int\\<0, 4\\> given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Parameter \\#1 \\$host of class RedisSentinel constructor expects string, array\\<string, mixed\\> given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Parameter \\#2 \\$timeout_or_key of method Redis\\:\\:blPop\\(\\) expects float\\|int\\|string, int\\<1, max\\>\\|Redis given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:\\$configuration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:\\$redisSentinel is never read, only written\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:\\$subject is never read, only written\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
+			message: "#^Throwing object of an unknown class ITZBund\\\\GsbCore\\\\Locking\\\\Exception\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
 			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
 			count: 1
 			path: Classes/Log/Writer/JsonFileWriter.php
@@ -49,6 +164,76 @@ parameters:
 			message: "#^Return type \\(ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\WriterInterface\\) of method ITZBund\\\\GsbCore\\\\Log\\\\Writer\\\\JsonFileWriter\\:\\:writeLog\\(\\) should be covariant with return type \\(TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\WriterInterface\\) of method TYPO3\\\\CMS\\\\Core\\\\Log\\\\Writer\\\\WriterInterface\\:\\:writeLog\\(\\)$#"
 			count: 1
 			path: Classes/Log/Writer/JsonFileWriter.php
+
+		-
+			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Cannot call method critical\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
+			count: 5
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Class RedisSentinel constructor invoked with 1 parameter, 2\\-6 required\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:get\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:getAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:initialize\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:initialize\\(\\) has parameter \\$configuration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:set\\(\\) has parameter \\$sessionData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:set\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:update\\(\\) has parameter \\$sessionData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:update\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, mixed given\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Parameter \\#1 \\$host of class RedisSentinel constructor expects string, array\\<string, mixed\\> given\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
+
+		-
+			message: "#^Property ITZBund\\\\GsbCore\\\\Session\\\\Backend\\\\SentinelCapableRedisSessionBackend\\:\\:\\$configuration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
 
 		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
