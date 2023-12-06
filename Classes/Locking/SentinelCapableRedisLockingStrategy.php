@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Locking;
 
 /*
- * This file is part of the GSB 11 Project.
- * Highly inspired by TYPO3 CMS-based extension "distributed_locks" by b13.
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+ *
+ * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
