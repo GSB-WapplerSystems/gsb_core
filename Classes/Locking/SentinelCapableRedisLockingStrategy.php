@@ -15,6 +15,9 @@ namespace ITZBund\GsbCore\Locking;
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
+ *
+ * Highly inspired by TYPO3 CMS-based extension "distributed_locks" by b13.
+ *
  */
 
 use Psr\Log\LoggerAwareInterface;
