@@ -2,17 +2,26 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
-<f:comment>
-    <!--
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
- * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
- * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
- * Licensed under the GPL 2.0 License.
- -->
-</f:comment>
-
-<div class="solr-header">
-    <h2 class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'gsb_core')}</h2>
-</div>
+<li class="mainnav-desktop-item">
+    <button aria-controls="search" id="solr-button" aria-expanded="false" class="first-nav btn-search" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.search', extensionName: 'gsb_core')}">
+        {f:translate(key: 'header.search', extensionName: 'gsb_core')}
+    </button>
+    <div class="dropdown-menu main-menu-desktop" id="search">
+        <div class="container d-flex justify-content-end pt-3 pb-3" style="height: 5.5rem !important">
+            <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" title="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle dropdown-item" type="button"></button>
+        </div>
+        <div class="container tx-solr-search-form">
+            <form method="get" id="tx-solr-search-form-pi-results" action="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}" data-suggest="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}?type=7384" accept-charset="utf-8">
+                <div class="input-group">
+                    <label class="visually-hidden" for="solr-main">{f:translate(key: 'header.search.add', extensionName: 'gsb_core')}</label>
+                    <input type="text" class="tx-solr-q js-solr-q tx-solr-suggest tx-solr-suggest-focus form-control dropdown-item" name="tx_solr[q]" id="solr-main" value="" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_core')}">
+                    <button class="btn btn-primary tx-solr-submit" type="submit" title="{f:translate(key: 'header.searching', extensionName: 'gsb_core')}">
+                        <span>{f:translate(key: 'header.searching', extensionName: 'gsb_core')}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</li>
 
 </html>

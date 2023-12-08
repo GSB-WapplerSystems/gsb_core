@@ -19,6 +19,9 @@ lib {
   home = TEXT
   home.value = {$config.pids.Home}
 
+  search = TEXT
+  search.value = {$config.pids.Search}
+
   parseFunc_RTE {
     externalBlocks {
       table {

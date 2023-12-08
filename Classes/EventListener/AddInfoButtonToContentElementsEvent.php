@@ -19,6 +19,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\Components\Buttons\GenericButton;
 use TYPO3\CMS\Backend\Template\Components\ModifyButtonBarEvent;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -39,27 +40,24 @@ final class AddInfoButtonToContentElementsEvent
             return;
         }
 
-        if (!array_key_exists('tt_content', $queryParams['edit'])) {
+        if (!is_array($queryParams['edit']) || count($queryParams['edit']) == 0) {
             return;
         }
 
-        $elementUid = array_key_first($queryParams['edit']['tt_content']) ?? false;
+        $table = array_key_first($queryParams['edit']);
+        $elementUid = array_key_first($queryParams['edit'][$table]) ?? false;
 
-        if (!$elementUid) {
+        if (!$elementUid || !is_numeric($elementUid)) {
             return;
         }
 
-        $cType = $this->getContentTypeByContentUid($elementUid);
+        $type = $this->getTypeByTableAndUid($table, (int)$elementUid);
 
-        if (!array_key_exists($cType, $GLOBALS['TCA']['tt_content']['types'])) {
+        if ($type == null) {
             return;
         }
 
-        if (!array_key_exists('infoButton', $GLOBALS['TCA']['tt_content']['types'][$cType])) {
-            return;
-        }
-
-        $contentInfo = $GLOBALS['TCA']['tt_content']['types'][$cType]['infoButton'] ?? false;
+        $contentInfo = $GLOBALS['TCA'][$table]['types'][$type]['infoButton'] ?? false;
 
         if (!$contentInfo) {
             return;
@@ -101,20 +99,18 @@ final class AddInfoButtonToContentElementsEvent
     }
 
     /**
-     * @param int $uid
-     * @return string
+     * Get the record type for this record
      */
-    protected function getContentTypeByContentUid(int $uid): string
+    protected function getTypeByTableAndUid(string $table, int $uid): ?string
     {
-        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
+        $typeField = $GLOBALS['TCA'][$table]['ctrl']['type'] ?? false;
+        if ($typeField) {
+            $record = BackendUtility::getRecord($table, $uid);
+            if (isset($record[$typeField])) {
+                return (string)$record[$typeField];
+            }
+        }
 
-        return $queryBuilder
-            ->select('CType')
-            ->from('tt_content')
-            ->where(
-                $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid))
-            )
-            ->executeQuery()
-            ->fetchOne();
+        return null;
     }
 }

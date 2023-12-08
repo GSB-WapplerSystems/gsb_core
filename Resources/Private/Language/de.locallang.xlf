@@ -107,6 +107,10 @@
 				<source>Search</source>
 				<target>Suchen</target>
 			</trans-unit>
+			<trans-unit id="header.search.add" resname="header.search.add" approved="yes">
+				<source>Enter search term(s)</source>
+				<target>Suchbegriff(e) eingeben</target>
+			</trans-unit>
 			<trans-unit id="header.searchterm" resname="header.searchterm" approved="yes">
 				<source>Searchterm</source>
 				<target>Suchbegriff</target>
