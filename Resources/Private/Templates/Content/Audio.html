@@ -1,4 +1,14 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
+
+<f:comment>
+    <!--
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+ * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+ * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+ * Licensed under the GPL 2.0 License.
+ -->
+</f:comment>
+
 <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
 
     <f:if condition="{data.header}">
