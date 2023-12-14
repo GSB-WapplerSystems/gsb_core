@@ -403,6 +403,10 @@
 				<source>Logged in with Email address</source>
 				<target>Eingeloggt mit E-Mail Adresse</target>
 			</trans-unit>
+			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
+				<source>Published on</source>
+				<target>Veröffentlicht am</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
