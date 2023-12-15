@@ -301,6 +301,9 @@
 			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin">
 				<source>Logged in with Email address</source>
 			</trans-unit>
+			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
+				<source>Published on</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>
