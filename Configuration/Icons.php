@@ -5,6 +5,7 @@
  *
  * (c) Ole Hartwig <o.hartwig@moselwal.de> 2023
  * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2023
+ * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2

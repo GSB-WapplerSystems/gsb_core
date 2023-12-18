@@ -5,7 +5,7 @@
 *
 * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2023
 * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
-* (c) Matthias Pelzer <matthias.pelzer@digitaspixelpark.com> 2023
+* (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
 * (c) Luchezar Chakardzhiyan <luchesar.chakardzhiyan.ext@digitaspixelpark.com> 2023
 *
 * It is free software; you can redistribute it and/or modify it under
