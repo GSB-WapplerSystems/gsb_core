@@ -20,7 +20,7 @@ services:
     tags:
       - name: console.command
         schedulable: false
-        command: 'gsbtemplate:configuration:import'
+        command: 'gsbcore:configuration:import'
         description: 'A command that does import Configuration for Workspaces and Backend User Groups from yaml-Files.'
 
   ITZBund\GsbCore\Command\TriggerSynchronizeConfigurationCommand:

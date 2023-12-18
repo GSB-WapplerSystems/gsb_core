@@ -5,9 +5,11 @@
 # of the License, or any later version.
 # For the full copyright and license information, please read the
 # LICENSE file that was distributed with this source code.
+imports:
+  - { resource: "acl-fm-base.yaml"}
+  - { resource: "acl-dbm-base.yaml"}
 
-
-label: "[GSB Distribution][ACL] Editor"
+label: "[GSB][ACL] Editor"
 
 modules:
   dashboard:
@@ -24,16 +26,20 @@ modules:
     - 'user_setup'
 
 widgets:
-  - 'docGettingStarted'
-  - 'failedLogins'
-  - 'seo-pagesWithoutMetaDescription'
+  - '*'
 
 resources:
   pages:
     permissions: ['read', 'write']
     fields: '*'
-    types: [1, 3, 4, 6]
+    types: '*'
+  sys_category:
+    permissions: ['read']
+    fields: '*'
   sys_file:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file_collection:
     permissions: ['read', 'write']
     fields: '*'
   sys_file_metadata:
@@ -43,6 +49,9 @@ resources:
     permissions: ['read', 'write']
     fields: '*'
   sys_file_storage:
+    permissions: ['read']
+    fields: '*'
+  backend_layout:
     permissions: ['read']
     fields: '*'
   sys_redirect:
@@ -55,35 +64,22 @@ resources:
     permissions: ['read', 'write']
     fields: '*'
     types:
-      - "ce_container"
-      - "ce_grid"
-      - "ce_tabs"
-      - "form_formframework"
-      - "gsb_singleteaser"
-      - "header"
-      - "image"
-      - "shortcut"
-      - "stage"
-      - "text"
-      - "textpic"
-      - "video"
-
-files:
-  # file-related permissions
-  - readFile
-  - writeFile
-  - addFile
-  - renameFile
-  - moveFile
-  - copyFile
-  # folder-related permissions
-  - readFolder
-  - writeFolder
-  - addFolder
-  - renameFolder
-  - moveFolder
-  - copyFolder
-
-settings:
-  TCEMAIN:
-    permissions.groupid: 1
+      - '*'
+  tx_gsbcore_consent:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_gsbcore_forms:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_link:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_news:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_tag:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_be_shortcuts:
+    permissions: ['read', 'write']
+    fields: '*'
