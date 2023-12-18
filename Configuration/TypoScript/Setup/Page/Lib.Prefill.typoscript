@@ -1,6 +1,6 @@
 # This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
 # (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
-# (c) Matthias Pelzer <matthias.pelzer@digitaspixelpark.com> 2023
+# (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
 # Licensed under the GPL 2.0 License.
 
 lib {
@@ -15,5 +15,59 @@ lib {
   currentURL = TEXT
   currentURL {
     data = getIndpEnv:TYPO3_REQUEST_URL
+  }
+  parseFunc {
+    tags {
+      link {
+        typolink {
+          wrap = <span class="icon"></span>|
+          ATagBeforeWrap = 1
+        }
+      }
+      a {
+        typolink {
+          wrap = <span class="icon"></span>|
+          ATagBeforeWrap = 1
+        }
+      }
+    }
+  }
+  parseFunc_RTE {
+    tags {
+      link {
+        typolink {
+          wrap = <span class="icon"></span>|
+          ATagBeforeWrap = 1
+        }
+      }
+      a {
+        typolink {
+          wrap = <span class="icon"></span>|
+          ATagBeforeWrap = 1
+        }
+      }
+    }
+    externalBlocks {
+      pre {
+        stdWrap {
+          parseFunc {
+            tags {
+              link {
+                typolink {
+                  wrap = <span class="icon"></span>|
+                  ATagBeforeWrap = 1
+                }
+              }
+              a {
+                typolink {
+                  wrap = <span class="icon"></span>|
+                  ATagBeforeWrap = 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
