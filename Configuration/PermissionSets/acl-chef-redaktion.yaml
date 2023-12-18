@@ -6,21 +6,10 @@
 # For the full copyright and license information, please read the
 # LICENSE file that was distributed with this source code.
 
-imports:
-  - { resource: "acl-editor-in-chief.yaml" }
-
-label: "[GSB Distribution][ACL] Site Administator"
-modules:
-  workspaces:
-    - 'workspaces_admin'
+label: "[GSB][ACL] Chef Redaktion"
+modules: '*'
 
 resources:
-  tt_content:
+  sys_category:
     permissions: ['read', 'write']
     fields: '*'
-    types: ["html"]
-
-widgets:
-  - 'sysLogErrors'
-  - 'typeOfUsers'
-  - 't3securityAdvisories'

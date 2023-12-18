@@ -16,7 +16,9 @@
 * LICENSE file that was distributed with this source code.
 */
 
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') or die('Access denied.');
 
@@ -66,4 +68,12 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Form\Container\FilesControlContainer::class] = [
         'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
     ];
+
+    $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+    // Only include user.tsconfig if TYPO3 version is below 13 so that it is not imported twice.
+    if ($versionInformation->getMajorVersion() < 13) {
+        ExtensionManagementUtility::addUserTSConfig(
+            '@import "EXT:gsb_core/Configuration/user.tsconfig"'
+        );
+    }
 })();

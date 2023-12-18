@@ -17,9 +17,9 @@ TCEFORM {
     }
   }
   #--------------
-  # be_groups
+  # fe_users
   #--------------
-  be_groups {
+  fe_users {
     TSconfig {
       disabled = 1
     }
@@ -33,6 +33,9 @@ TCEFORM {
       altLabels {
         0 = Standard
       }
+    }
+    TSconfig {
+      disabled = 1
     }
   }
   #--------------

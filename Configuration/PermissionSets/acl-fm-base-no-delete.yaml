@@ -6,27 +6,18 @@
 # For the full copyright and license information, please read the
 # LICENSE file that was distributed with this source code.
 
-
-imports:
-  - { resource: "acl-editor.yaml" }
-
-label: "[GSB Distribution][ACL] Editor in Chief"
-modules:
-  web:
-    - 'web_linkvalidator'
-    - 'web_RecyclerRecycler'
-  site:
-    - 'site_redirects'
-
-resources:
-  sys_redirect:
-    permissions: ['read', 'write']
-    fields: '*'
-
+label: "[GSB][ACL][FM] Base Permissions - Kein Löschen"
 files:
   # file-related permissions
-  - replaceFile
-  - deleteFile
+  - readFile
+  - writeFile
+  - addFile
+  - renameFile
+  - moveFile
+  - copyFile
   # folder-related permissions
-  - deleteFolder
-  - recursiveDeleteFolder
+  - readFolder
+  - writeFolder
+  - addFolder
+  - moveFolder
+  - copyFolder
