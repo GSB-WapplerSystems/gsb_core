@@ -1,0 +1,22 @@
+page.TCEFORM {
+  fe_users {
+    nnrestapi_apikey.config.readOnly = 1
+    nnrestapi_admin.config.readOnly = 1
+    tx_extbase_type.config.readOnly = 1
+    company.config.readOnly = 1
+    title.config.readOnly = 1
+    name.config.readOnly = 1
+    first_name.config.readOnly = 1
+    middle_name.config.readOnly = 1
+    last_name.config.readOnly = 1
+    address.config.readOnly = 1
+    zip.config.readOnly = 1
+    city.config.readOnly = 1
+    country.config.readOnly = 1
+    telephone.config.readOnly = 1
+    fax.config.readOnly = 1
+    email.config.readOnly = 1
+    www.config.readOnly = 1
+    image.config.readOnly = 1
+  }
+}

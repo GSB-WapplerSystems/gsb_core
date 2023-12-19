@@ -1,6 +1,6 @@
 {
 	"name": "itzbund/gsb-core",
-	"description": "GSB Core",
+	"description": "GSB Core. This is Part of the Goverment Site Build (GSB) 11. Der GSB 11 ist eine Maßnahme der Dienstekonsolidierung Bund (DKB) des Bundesministeriums des Innern und für Heimat (BMI) und wird im Auftrag des Informationstechnikzentrums Bund (ITZBund) durchgeführt.",
 	"license": [
 		"GPL-2.0-or-later"
 	],
@@ -8,13 +8,23 @@
 	"authors": [
 		{
 			"name": "Kai Ole Hartwig",
-			"email": "o.hartwig@moselwal.de",
-			"role": "Developer"
+			"email": "o.hartwig@moselwal.de"
 		},
 		{
-			"name": "Matthias Peltzer",
-			"email": "matthias.peltzer@digitaspixelpark.com",
-			"role": "Developer"
+			"name": "Matthias Pelzer",
+			"email": "matthias.pelzer@digitaspixelpark.com"
+		},
+		{
+			"name": "Michael Max Busch",
+			"email": "m.busch@moselwal.de"
+		},
+		{
+			"name": "Patrick Schriner",
+			"email": "patrick.schriner@diemedialen.de"
+		},
+		{
+			"name": "Christian Rath-Ulrich",
+			"email": "christian.rath-ulrich@digitaspixelpark.com"
 		}
 	],
 	"require": {

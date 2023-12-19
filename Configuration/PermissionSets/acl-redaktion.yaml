@@ -1,0 +1,85 @@
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+# (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+# It is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License, either version 2
+# of the License, or any later version.
+# For the full copyright and license information, please read the
+# LICENSE file that was distributed with this source code.
+imports:
+  - { resource: "acl-fm-base.yaml"}
+  - { resource: "acl-dbm-base.yaml"}
+
+label: "[GSB][ACL] Editor"
+
+modules:
+  dashboard:
+    - '*'
+  web:
+    - 'web_layout'
+    - 'web_ViewpageView'
+    - 'web_list'
+  workspaces:
+    - 'workspaces_admin'
+  file:
+    - 'file_FilelistList'
+  user:
+    - 'user_setup'
+
+widgets:
+  - '*'
+
+resources:
+  pages:
+    permissions: ['read', 'write']
+    fields: '*'
+    types: '*'
+  sys_category:
+    permissions: ['read']
+    fields: '*'
+  sys_file:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file_collection:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file_metadata:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file_reference:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file_storage:
+    permissions: ['read']
+    fields: '*'
+  backend_layout:
+    permissions: ['read']
+    fields: '*'
+  sys_redirect:
+    permissions: [ 'read', 'write' ]
+    fields: '*'
+  sys_note:
+    permissions: ['read', 'write']
+    fields: '*'
+  tt_content:
+    permissions: ['read', 'write']
+    fields: '*'
+    types:
+      - '*'
+  tx_gsbcore_consent:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_gsbcore_forms:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_link:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_news:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_news_domain_model_tag:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_be_shortcuts:
+    permissions: ['read', 'write']
+    fields: '*'

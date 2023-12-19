@@ -1,3 +1,7 @@
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+# (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+# Licensed under the GPL 2.0 License.
+
 tt_content {
   gsb_banner = FLUIDTEMPLATE
   gsb_banner {

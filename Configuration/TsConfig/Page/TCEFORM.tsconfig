@@ -1,3 +1,9 @@
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+# (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+# (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+# (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2023
+# Licensed under the GPL 2.0 License.
+
 #################
 #### TCEFORM ####
 #################
@@ -11,9 +17,9 @@ TCEFORM {
     }
   }
   #--------------
-  # be_groups
+  # fe_users
   #--------------
-  be_groups {
+  fe_users {
     TSconfig {
       disabled = 1
     }
@@ -27,6 +33,9 @@ TCEFORM {
       altLabels {
         0 = Standard
       }
+    }
+    TSconfig {
+      disabled = 1
     }
   }
   #--------------

@@ -1,44 +1,58 @@
+
+<f:comment>
+    <!--
+     * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
+     * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+     * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+     * Licensed under the GPL 2.0 License.
+     -->
+</f:comment>
+
 <html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
-<!--<aside aria-label="{f:translate(key:'aside.socialmedia', extensionName:'gsb_core')}">
-    <div class="row">
-        <div class="col-12 offset-xl-2 col-xl-8">
-            <h2 class="visually-hidden">{f:translate(key:'aside.sharepage', extensionName:'gsb_core')}</h2>
-            <p>{f:translate(key:'shariff.social', extensionName:'gsb_core')}</p>
-            <ul class="row g-0 list-unstyled share">
-                <li class="col facebook">
-                    <a aria-label="{f:translate(key:'aside.shareonfacebook', extensionName:'gsb_core')}" class="popup-window" href="https://www.facebook.com/sharer/sharer.php?u={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonfacebook', extensionName:'gsb_core')}">
-                        <span class="icon-share icon-facebook"></span>
-                        <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
-                    </a>
-                </li>
-                <li class="col twitter">
-                    <a aria-label="{f:translate(key:'aside.shareontwitter', extensionName:'gsb_core')}" class="popup-window" href="https://twitter.com/intent/tweet?text={headertitle -> f:format.urlencode()}&amp;url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}&amp;via={f:cObject(typoscriptObjectPath: 'lib.prefillUrl') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareontwitter', extensionName:'gsb_core')}">
-                        <span class="icon-share icon-twitter"></span>
-                        <span class="visually-hidden">{f:translate(key:'aside.tweet', extensionName:'gsb_core')}</span>
-                    </a>
-                </li>
-                <li class="col xing">
-                    <a aria-label="{f:translate(key:'aside.shareonxing', extensionName:'gsb_core')}" class="popup-window" href="https://www.xing.com/spi/shares/new?url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonxing', extensionName:'gsb_core')}">
-                        <span class="icon-share icon-xing"></span>
-                        <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
-                    </a>
-                </li>
-                <li class="col linkedin">
-                    <a aria-label="{f:translate(key:'aside.shareonlinkedin', extensionName:'gsb_core')}" class="popup-window" href="https://www.linkedin.com/shareArticle?url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonlinkedin', extensionName:'gsb_core')}">
-                        <span class="icon-share icon-linkedin"></span>
-                        <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
-                    </a>
-                </li>
-                <li class="col whatsapp">
-                    <a aria-label="{f:translate(key:'aside.shareonwhatsapp', extensionName:'gsb_core')}" href="whatsapp://send?text={headertitle -> f:format.urlencode()}%0A%0A{f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonwhatsapp', extensionName:'gsb_core')}">
-                        <span class="icon-share icon-whatsapp"></span>
-                        <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
-                    </a>
-                </li>
-            </ul>
+<f:comment>
+    <!--
+    <aside aria-label="{f:translate(key:'aside.socialmedia', extensionName:'gsb_core')}">
+        <div class="row">
+            <div class="col-12 offset-xl-2 col-xl-8">
+                <h2 class="visually-hidden">{f:translate(key:'aside.sharepage', extensionName:'gsb_core')}</h2>
+                <p>{f:translate(key:'shariff.social', extensionName:'gsb_core')}</p>
+                <ul class="row g-0 list-unstyled share">
+                    <li class="col facebook">
+                        <a aria-label="{f:translate(key:'aside.shareonfacebook', extensionName:'gsb_core')}" class="popup-window" href="https://www.facebook.com/sharer/sharer.php?u={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonfacebook', extensionName:'gsb_core')}">
+                            <span class="icon-share icon-facebook"></span>
+                            <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
+                        </a>
+                    </li>
+                    <li class="col twitter">
+                        <a aria-label="{f:translate(key:'aside.shareontwitter', extensionName:'gsb_core')}" class="popup-window" href="https://twitter.com/intent/tweet?text={headertitle -> f:format.urlencode()}&amp;url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}&amp;via={f:cObject(typoscriptObjectPath: 'lib.prefillUrl') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareontwitter', extensionName:'gsb_core')}">
+                            <span class="icon-share icon-twitter"></span>
+                            <span class="visually-hidden">{f:translate(key:'aside.tweet', extensionName:'gsb_core')}</span>
+                        </a>
+                    </li>
+                    <li class="col xing">
+                        <a aria-label="{f:translate(key:'aside.shareonxing', extensionName:'gsb_core')}" class="popup-window" href="https://www.xing.com/spi/shares/new?url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonxing', extensionName:'gsb_core')}">
+                            <span class="icon-share icon-xing"></span>
+                            <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
+                        </a>
+                    </li>
+                    <li class="col linkedin">
+                        <a aria-label="{f:translate(key:'aside.shareonlinkedin', extensionName:'gsb_core')}" class="popup-window" href="https://www.linkedin.com/shareArticle?url={f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonlinkedin', extensionName:'gsb_core')}">
+                            <span class="icon-share icon-linkedin"></span>
+                            <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
+                        </a>
+                    </li>
+                    <li class="col whatsapp">
+                        <a aria-label="{f:translate(key:'aside.shareonwhatsapp', extensionName:'gsb_core')}" href="whatsapp://send?text={headertitle -> f:format.urlencode()}%0A%0A{f:cObject(typoscriptObjectPath: 'lib.prefillUrl', data: '{data.uid}') -> f:format.urlencode()}" rel="nofollow" role="button" title="{f:translate(key:'aside.shareonwhatsapp', extensionName:'gsb_core')}">
+                            <span class="icon-share icon-whatsapp"></span>
+                            <span class="visually-hidden">{f:translate(key:'aside.share', extensionName:'gsb_core')}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</aside>-->
+    </aside>
+    -->
+</f:comment>
 
 </html>
