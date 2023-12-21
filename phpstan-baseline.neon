@@ -11,11 +11,6 @@ parameters:
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
 
 		-
-			message: "#^Left side of && is always true\\.$#"
-			count: 1
-			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
-
-		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\Cache\\\\Backend\\\\SentinelCapableRedisBackend\\:\\:findIdentifiersByTag\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php

@@ -155,14 +155,19 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         $host = $this->configuration['hostname'] ?? '127.0.0.1';
         $port = $this->configuration['port'] ?? 6379;
 
-        if (array_key_exists('isSentinel', $this->configuration) &&  $this->configuration['isSentinel'] && $useWriteConnection) {
-            $redisSentinel = new \RedisSentinel([
+        if (array_key_exists('isSentinel', $this->configuration) && $this->configuration['isSentinel'] && $useWriteConnection) {
+            $sentinelConfig = [
                 'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
                 'port' => $this->configuration['sentinelPort'] ?? 26379,
                 'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
                 'persistent' => ($this->configuration['persistentConnection'] === true) ? 'lock' : null,
-                'auth' => $this->configuration['sentinelPassword'] ?? null,
-            ]);
+            ];
+
+            if ($this->configuration['sentinelPassword'] !== null) {
+                $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
+            }
+
+            $redisSentinel = new \RedisSentinel($sentinelConfig);
             $sentinelMaster = $redisSentinel->masters();
             if ($sentinelMaster === false) {
                 throw new Exception('Could not get master from sentinel.', 1279765134);
@@ -381,10 +386,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
             try {
                 return $operation();
             } catch (\RedisException $e) {
-                if ($this->isPermanentException($e)) {
-                    throw $e;
-                }
-                if ($attempt === $retryCount - 1) {
+                if ($this->isPermanentException($e) || $attempt === $retryCount - 1) {
                     throw $e;
                 }
                 // Wait for a while before retrying
