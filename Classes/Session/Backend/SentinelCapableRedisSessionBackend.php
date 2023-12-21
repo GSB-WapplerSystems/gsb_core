@@ -341,7 +341,6 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             $port = $this->configuration['port'] ?? 6379;
 
             if (array_key_exists('isSentinel', $this->configuration)  && $this->configuration['isSentinel'] && $useWriteConnection) {
-
                 $sentinelConfig = [
                     'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
                     'port' => $this->configuration['sentinelPort'] ?? 26379,
@@ -350,7 +349,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 ];
 
                 if ($this->configuration['sentinelPassword'] !== null) {
-                    $sentinelConfig['auth'] = $this->configuration['sentinelPassword'] ?? null;
+                    $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
                 }
 
                 $this->redisSentinel = new \RedisSentinel($sentinelConfig);
