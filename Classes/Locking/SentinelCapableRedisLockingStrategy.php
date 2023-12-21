@@ -155,14 +155,19 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         $host = $this->configuration['hostname'] ?? '127.0.0.1';
         $port = $this->configuration['port'] ?? 6379;
 
-        if (array_key_exists('isSentinel', $this->configuration) &&  $this->configuration['isSentinel'] && $useWriteConnection) {
-            $redisSentinel = new \RedisSentinel([
+        if (array_key_exists('isSentinel', $this->configuration) && $this->configuration['isSentinel'] && $useWriteConnection) {
+            $sentinelConfiguration = [
                 'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
                 'port' => $this->configuration['sentinelPort'] ?? 26379,
                 'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
                 'persistent' => ($this->configuration['persistentConnection'] === true) ? 'lock' : null,
-                'auth' => $this->configuration['sentinelPassword'] ?? null,
-            ]);
+            ];
+
+            if (null !== $this->configuration['sentinelPassword']) {
+                $sentinelConfiguration['auth'] = $this->configuration['sentinelPassword'];
+            }
+
+            $redisSentinel = new \RedisSentinel($sentinelConfiguration);
             $sentinelMaster = $redisSentinel->masters();
             if ($sentinelMaster === false) {
                 throw new Exception('Could not get master from sentinel.', 1279765134);
