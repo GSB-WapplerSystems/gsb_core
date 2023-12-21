@@ -341,13 +341,19 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             $port = $this->configuration['port'] ?? 6379;
 
             if (array_key_exists('isSentinel', $this->configuration)  && $this->configuration['isSentinel'] && $useWriteConnection) {
-                $this->redisSentinel = new \RedisSentinel([
+
+                $sentinelConfig = [
                     'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
                     'port' => $this->configuration['sentinelPort'] ?? 26379,
                     'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
                     'persistent' => ($this->configuration['persistentConnection'] === true) ? $this->identifier : null,
-                    'auth' => $this->configuration['sentinelPassword'] ?? null,
-                ]);
+                ];
+
+                if ($this->configuration['sentinelPassword'] !== null) {
+                    $sentinelConfig['auth'] = $this->configuration['sentinelPassword'] ?? null;
+                }
+
+                $this->redisSentinel = new \RedisSentinel($sentinelConfig);
                 $sentinelMaster = $this->redisSentinel->masters();
                 if ($sentinelMaster === false) {
                     throw new Exception('Could not get master from sentinel.', 1279765134);
