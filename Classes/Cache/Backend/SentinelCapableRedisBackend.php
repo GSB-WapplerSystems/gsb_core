@@ -96,7 +96,6 @@ class SentinelCapableRedisBackend extends RedisBackend
             $host = $this->hostname;
             $port = $this->port;
 
-
             if ($this->isSentinel) {
                 $sentinelConfig = [
                     'host' => $this->sentinelHostname,
