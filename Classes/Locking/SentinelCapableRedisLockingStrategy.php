@@ -386,10 +386,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
             try {
                 return $operation();
             } catch (\RedisException $e) {
-                if ($this->isPermanentException($e)) {
-                    throw $e;
-                }
-                if ($attempt === $retryCount - 1) {
+                if ($this->isPermanentException($e) || $attempt === $retryCount - 1) {
                     throw $e;
                 }
                 // Wait for a while before retrying
