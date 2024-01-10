@@ -1,1 +1,1 @@
-options.hideModules := addToList(system_config,system_dbint)
+options.hideModules = system_config,system_dbint,system_feusermanagement
