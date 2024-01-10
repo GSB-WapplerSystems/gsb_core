@@ -1,1 +1,1 @@
-options.hideModules := addToList(backend_user_management,system_feusermanagement)
+options.hideModules = backend_user_management,system_feusermanagement
