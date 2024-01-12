@@ -1,4 +1,5 @@
-<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
 <f:comment>
     <!--
@@ -9,11 +10,28 @@
  -->
 </f:comment>
 
-<f:comment><!--
-    The real template is in gsb_frontend
---></f:comment>
-<f:for each="{consentcontent}" as="consent">
-    <h1>{consent.data.header}</h1>
-    <f:format.html>{consent.data.body}</f:format.html>
-    <f:if condition="{consent.data.show_accept}"><button type="button">{consent.data.accept_button_label}</button></f:if>
-</f:for>
+<f:if condition="{consentcontent->f:count()} > 0">
+    <f:variable name="firstConsentData" value="{consentcontent.0.data}"/>
+    <div class="consent-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 consent-content">
+                    <div class="icon icon-security-lock"></div>
+                    <div class="text-box">
+                        <h1 tabindex="-1" class="consent-header">{firstConsentData.header}</h1>
+                        <f:format.html>{firstConsentData.body}</f:format.html>
+                    </div>
+                </div>
+                <div class="col-lg-4 content-btn-position">
+                    <f:if condition="{firstConsentData.show_accept}">
+                        <button class="btn btn-tertiary btn-distances" data-type="button">
+                            {firstConsentData.accept_button_label}
+                        </button>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:if>
+
+</html>
