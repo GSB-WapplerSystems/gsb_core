@@ -10,16 +10,3 @@ include:
   - project: 'gsb11/gitlab-scripts'
     ref: main
     file: 'default-extension.yml'
-
-trigger:demoVM:build:
-  stage: trigger
-  rules:
-    - if: $CI_COMMIT_REF_NAME == 'release' && $CI_PIPELINE_SOURCE != 'merge_request_event'
-      allow_failure: false
-  variables:
-    TRIGGER_BUILD_IMAGE: 'demoVM'
-  trigger:
-    project: gsb11/devops/container
-    forward:
-      yaml_variables: true
-      pipeline_variables: true

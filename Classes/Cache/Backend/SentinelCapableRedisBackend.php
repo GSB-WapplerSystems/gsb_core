@@ -96,14 +96,19 @@ class SentinelCapableRedisBackend extends RedisBackend
             $host = $this->hostname;
             $port = $this->port;
 
-            if (true && $this->isSentinel) {
-                $redisSentinel = new \RedisSentinel([
+            if ($this->isSentinel) {
+                $sentinelConfig = [
                     'host' => $this->sentinelHostname,
                     'port' => $this->sentinelPort,
                     'connectTimeout' => $this->connectionTimeout,
                     'persistent' => ($this->persistentConnection === true) ? 'cachebackend' : null,
-                    'auth' => $this->sentinelPassword,
-                ]);
+                ];
+
+                if ($this->sentinelPassword !== null) {
+                    $sentinelConfig['auth'] = $this->sentinelPassword;
+                }
+
+                $redisSentinel = new \RedisSentinel($sentinelConfig);
                 $sentinelMaster = $redisSentinel->masters();
                 if ($sentinelMaster === false) {
                     throw new Exception('Could not get master from sentinel.', 1279765134);

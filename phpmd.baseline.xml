@@ -3,6 +3,7 @@
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Backend/ElementInformationText.php" method="getLanguageService"/>
   <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php" method="initializeConnection"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
@@ -25,6 +26,7 @@
   <violation rule="PHPMD\Rule\CleanCode\IfStatementAssignment" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="acquire"/>
   <violation rule="PHPMD\Rule\CleanCode\BooleanArgumentFlag" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>

@@ -6,5 +6,8 @@
 page.headerData.2039 = FLUIDTEMPLATE
 page.headerData.2039 {
   file = EXT:gsb_core/Resources/Private/Partials/Page/Favicons.html
-  extbase.controllerExtensionName = MpTemplate
+  # set extension name
+  extbase {
+    controllerExtensionName = gsb_core
+  }
 }

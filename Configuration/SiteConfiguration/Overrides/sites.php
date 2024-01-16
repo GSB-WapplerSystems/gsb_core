@@ -34,6 +34,22 @@ $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     ],
 ];
 
+$GLOBALS['SiteConfiguration']['site']['columns']['styles'] = [
+    'label' => 'Styles',
+    'description' => 'Passen Sie hier mit CSS-Variablen das Aussehen der Seite an.',
+    'config' => [
+        'type' => 'text',
+        'placeholder' => '',
+        'rows' => 5,
+        'cols' => 30,
+        'max' => 5000,
+    ],
+];
+
 $GLOBALS['SiteConfiguration']['site']['palettes']['default']['showitem'] .= ',
     sitePackage, search
+';
+
+$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= '
+    ,--div--;Aussehen anpassen, styles
 ';
