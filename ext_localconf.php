@@ -74,6 +74,11 @@ defined('TYPO3') or die('Access denied.');
         'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class,
     ];
 
+    // override vimeo helper to support offline mode
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper::class] = [
+        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
+    ];
+
 
 
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
