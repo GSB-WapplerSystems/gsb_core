@@ -79,7 +79,16 @@ defined('TYPO3') or die('Access denied.');
         'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
     ];
 
+    // xclass core update service to respect offline mode
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Install\Service\CoreUpdateService::class] = [
 
+        'className' => \ITZBund\GsbCore\Xclass\CoreUpdateService::class,
+    ];
+
+    // xclass Core Version Service to respect offline mode
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Install\Service\CoreVersionService::class] = [
+        'className' => \ITZBund\GsbCore\Xclass\CoreVersionService::class,
+    ];
 
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
     // Only include user.tsconfig if TYPO3 version is below 13 so that it is not imported twice.

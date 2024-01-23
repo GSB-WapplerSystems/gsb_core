@@ -2,7 +2,4 @@
 
 namespace ITZBund\GsbCore\Xclass;
 
-class CoreUpdateService
-{
-
-}
+class CoreUpdateService extends \TYPO3\CMS\Install\Service\CoreUpdateService {}
