@@ -22,7 +22,7 @@ class OverrideYouTubeHelper extends YouTubeHelper
         return parent::getPreviewImage($file);
     }
 
-    private function isOfflineMode():bool
+    private function isOfflineMode(): bool
     {
         return $GLOBALS['TYPO3_CONF_VARS']['offlineMode'];
     }
