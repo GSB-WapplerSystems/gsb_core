@@ -1,7 +1,7 @@
 page.TCEFORM {
   fe_users {
-    nnrestapi_apikey.config.readOnly = 1
-    nnrestapi_admin.config.readOnly = 1
+    // nnrestapi_apikey.config.readOnly = 1
+    // nnrestapi_admin.config.readOnly = 1
     tx_extbase_type.config.readOnly = 1
     company.config.readOnly = 1
     title.config.readOnly = 1
