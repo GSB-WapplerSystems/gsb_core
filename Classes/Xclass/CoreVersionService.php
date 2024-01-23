@@ -9,7 +9,6 @@ class CoreVersionService extends \TYPO3\CMS\Install\Service\CoreVersionService
 {
     public function getMaintenanceWindow(): \TYPO3\CMS\Install\CoreVersion\MaintenanceWindow
     {
-        die('fooo');
         if ($this->isOfflineMode()) {
             $response = [
                 'maintained_until' => 00,
@@ -30,7 +29,6 @@ class CoreVersionService extends \TYPO3\CMS\Install\Service\CoreVersionService
      */
     protected function fetchFromRemote(string $url): array
     {
-        die('bar');
         $url = $this->apiBaseUrl . $url;
         $json = GeneralUtility::getUrl($url);
 
