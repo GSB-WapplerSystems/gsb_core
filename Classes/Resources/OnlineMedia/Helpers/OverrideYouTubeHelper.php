@@ -17,9 +17,7 @@ class OverrideYouTubeHelper extends YouTubeHelper
         $temporaryFileName = $this->getTempFolderPath() . 'youtube_' . md5($videoId) . '.jpg';
 
         if ($this->isOfflineMode()) {
-            file_put_contents($temporaryFileName, GeneralUtility::getUrl(
-                $url.'/fileadmin/dummy_video_thumbnail.jpg'
-            ));
+            file_put_contents($temporaryFileName, file_get_contents(Environment::getProjectPath()."/vendor/itzbund/gsb-core/Resources/Public/Images/video.png"));
             GeneralUtility::fixPermissions($temporaryFileName);
             return $temporaryFileName;
         }
