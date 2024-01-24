@@ -8,27 +8,23 @@ prototypeName: standard
 finishers:
   -
     options:
-      subject: 'E-Mail von itzbund.de: {text-1}'
-      senderAddress: 'no-reply@gsb-itzbund.de'
-      senderName: '{text-1}'
+      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: '{name}'
       attachUploads: true
       translation:
         language: default
       recipients:
-        no-reply@gsb-itzbund.de: 'no-reply@gsb-itzbund.de'
+        no-reply@itzbund.de: itzbund.de
       addHtmlPart: true
-      replyToRecipients:
-        no-reply@gsb-itzbund.de: ''
     identifier: EmailToReceiver
-  - options:
-      subject: '{text-6}'
+  -
+    options:
+      subject: 'E-Mail von ITZBund: {text-1} {name}'
       recipients:
-      '{email}': '{email}'
-      senderAddress: 'no-reply@gsb-itzbund.de'
-      senderName: 'no-reply@gsb-itzbund.de'
-      carbonCopyRecipients:
-        christian.rath-ulrich@digitaspixelpark.com: 'christian.rath-ulrich@digitaspixelpark.com'
-        kai-ole.hartwig.ext@digitaspixelpark.com: 'kai-ole.hartwig.ext@digitaspixelpark.com'
+        '{email}': '{email}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: 'GSB 11'
       addHtmlPart: true
       attachUploads: true
       title: ''
