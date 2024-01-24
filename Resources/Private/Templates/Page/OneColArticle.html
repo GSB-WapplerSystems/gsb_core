@@ -17,6 +17,20 @@
         <article class="main-article">
           <f:if condition="{top}">
             <div class="top-container">
+                <f:debug>{_all}</f:debug>
+                <f:if condition="{data.lastUpdated} > {data.tstamp}">
+                    <f:then>
+                        <f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                    </f:then>
+                    <f:else>
+                        <f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                    </f:else>
+                </f:if>
+                <f:if condition="{pageCategories}">
+                    <f:for as="category" each="{pageCategories}" iteration="i">
+                            <span class="dot" aria-hidden="true">•</span>{category.data.title}
+                    </f:for>
+                </f:if>
               <f:format.raw>{top}</f:format.raw>
             </div>
           </f:if>
