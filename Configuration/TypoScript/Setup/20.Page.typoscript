@@ -142,7 +142,7 @@ lib {
   categories {
     table = sys_category
     select {
-      pidInList = 135
+      pidInList = root
       selectFields = title
       join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
       where {
