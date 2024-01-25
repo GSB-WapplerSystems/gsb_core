@@ -12,28 +12,39 @@
 
 <f:section name="Main">
     <f:render arguments="{_all}" partial="Header"/>
-
     <main class="main-wrapper" id="mainContent">
         <article class="main-article">
-          <f:if condition="{top}">
             <div class="top-container">
-                <f:debug>{_all}</f:debug>
-                <f:if condition="{data.lastUpdated} > {data.tstamp}">
+                <f:if condition="{data.starttime}">
                     <f:then>
-                        <f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                        <f:format.date format="%e. %B %G">{data.starttime}</f:format.date>
                     </f:then>
                     <f:else>
-                        <f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                        <f:if condition="{data.lastUpdated} > {data.tstamp}">
+                            <f:then>
+                                <f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                            </f:then>
+                            <f:else>
+                                <f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                            </f:else>
+                        </f:if>
                     </f:else>
                 </f:if>
+
+                <f:variable name="pageCategories">Gesetz</f:variable>
                 <f:if condition="{pageCategories}">
-                    <f:for as="category" each="{pageCategories}" iteration="i">
-                            <span class="dot" aria-hidden="true">•</span>{category.data.title}
-                    </f:for>
+                    <span class="dot" aria-hidden="true">•</span> {pageCategories}
+                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
+                            <f:for each="{childCategories}" as="child" key="key">
+                                <p class="kicker {positionClass}">
+                                    <span>{child}</span>
+                                </p>
+                            </f:for>
+
+                    </f:alias>
                 </f:if>
-              <f:format.raw>{top}</f:format.raw>
+                <f:format.raw>{top}</f:format.raw>
             </div>
-          </f:if>
 
           <div class="main-container container">
             <div class="row">
