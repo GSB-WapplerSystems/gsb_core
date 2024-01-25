@@ -34,13 +34,15 @@
                 <f:variable name="pageCategories">Gesetz</f:variable>
                 <f:if condition="{pageCategories}">
                     <span class="dot" aria-hidden="true">•</span> {pageCategories}
-                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
-                            <f:for each="{childCategories}" as="child" key="key">
-                                <p class="kicker {positionClass}">
-                                    <span>{child}</span>
-                                </p>
-                            </f:for>
 
+                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
+                        <ul class="list-unstyled list-group list-group-horizontal">
+                            <f:for each="{childCategories}" as="child" key="key">
+                                <li class="kicker list-group-item  border-0">
+                                    <span>{child}</span>
+                                </li>
+                            </f:for>
+                        </ul>
                     </f:alias>
                 </f:if>
                 <f:format.raw>{top}</f:format.raw>
