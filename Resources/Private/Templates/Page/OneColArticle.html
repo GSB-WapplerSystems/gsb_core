@@ -12,14 +12,40 @@
 
 <f:section name="Main">
     <f:render arguments="{_all}" partial="Header"/>
-
     <main class="main-wrapper" id="mainContent">
         <article class="main-article">
-          <f:if condition="{top}">
             <div class="top-container">
-              <f:format.raw>{top}</f:format.raw>
+                <f:if condition="{data.starttime}">
+                    <f:then>
+                        <f:format.date format="%e. %B %G">{data.starttime}</f:format.date>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{data.lastUpdated} > {data.tstamp}">
+                            <f:then>
+                                <f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                            </f:then>
+                            <f:else>
+                                <f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+
+                <f:variable name="pageCategories">Gesetz</f:variable>
+                <f:if condition="{pageCategories}">
+                    <span class="dot" aria-hidden="true">•</span> {pageCategories}
+                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
+                        <ul class="list-group list-group-horizontal liststyle-none">
+                            <f:for each="{childCategories}" as="child" key="key">
+                                <li class="list-group-item border-0 ps-0 kicker">
+                                    <span>{child}</span>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:alias>
+                </f:if>
+                <f:format.raw>{top}</f:format.raw>
             </div>
-          </f:if>
 
           <div class="main-container container">
             <div class="row">
