@@ -36,16 +36,6 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Controller\\\\ReportController\\:\\:addShortcutButton\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Controller/ReportController.php
-
-		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
-			count: 1
-			path: Classes/Controller/ReportController.php
-
-		-
 			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
 			count: 1
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
