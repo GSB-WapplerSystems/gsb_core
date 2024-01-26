@@ -26,6 +26,7 @@ class OverrideYouTubeHelper extends YouTubeHelper
      * Get OEmbed data
      *
      * @param string $mediaId
+     *  @return array|null
      */
     protected function getOEmbedData($mediaId)
     {

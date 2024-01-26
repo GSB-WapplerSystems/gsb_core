@@ -26,6 +26,7 @@ class OverrideVimeoHelper extends VimeoHelper
      * Get OEmbed data
      *
      * @param string $mediaId
+     * @return array|null
      */
     protected function getOEmbedData($mediaId)
     {
