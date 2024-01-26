@@ -161,6 +161,36 @@ parameters:
 			path: Classes/Log/Writer/JsonFileWriter.php
 
 		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideVimeoHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideVimeoHelper\\:\\:getOEmbedData\\(\\) should return array\\|null but return statement is missing\\.$#"
+			count: 1
+			path: Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) should return array\\|null but return statement is missing\\.$#"
+			count: 1
+			path: Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\Service\\\\CoreVersionService\\:\\:fetchFromRemote\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Service/CoreVersionService.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: Classes/Service/CoreVersionService.php
+
+		-
 			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
 			count: 1
 			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
