@@ -69,6 +69,16 @@ defined('TYPO3') or die('Access denied.');
         'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
     ];
 
+    // override youtube helper to support offline mode
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\YouTubeHelper::class] = [
+        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class,
+    ];
+
+    // override vimeo helper to support offline mode
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper::class] = [
+        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
+    ];
+
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
     // Only include user.tsconfig if TYPO3 version is below 13 so that it is not imported twice.
     if ($versionInformation->getMajorVersion() < 13) {

@@ -5,4 +5,4 @@
 
 @import 'EXT:gsb_core/Configuration/TypoScript/Constants/Page/'
 @import 'EXT:gsb_core/Configuration/TypoScript/Constants/ContentElements/'
-@import 'EXT:gsb_core/Configuration/TypoScript/Constants/Extensions/'
+// @import 'EXT:gsb_core/Configuration/TypoScript/Constants/Extensions/'
