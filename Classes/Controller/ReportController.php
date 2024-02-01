@@ -36,10 +36,10 @@ use TYPO3\CMS\Reports\RequestAwareReportInterface;
 class ReportController
 {
     public function __construct(
-        protected readonly UriBuilder $uriBuilder,
-        protected readonly ModuleTemplateFactory $moduleTemplateFactory,
-        protected readonly IconRegistry $iconRegistry,
-        protected readonly ReportRegistry $reportRegistry
+        protected readonly UriBuilder            $uriBuilder,
+        protected readonly ModuleTemplateFactory $mTemplateFactory,
+        protected readonly IconRegistry          $iconRegistry,
+        protected readonly ReportRegistry        $reportRegistry
     ) {}
 
     /**
@@ -60,19 +60,19 @@ class ReportController
         }
 
         // For fallbacks if backendUser->uc() pointer is invalid or called first time.
-        $firstReportIdentifier = array_keys($allReports)[0];
-        $reportIdentifier = $request->getQueryParams()['report'] ?? $backendUserUc['report'] ?? $firstReportIdentifier;
-        if (!$this->reportRegistry->hasReport($reportIdentifier)) {
+        $firstReportId = array_keys($allReports)[0];
+        $reportId = $request->getQueryParams()['report'] ?? $backendUserUc['report'] ?? $firstReportId;
+        if (!$this->reportRegistry->hasReport($reportId)) {
             // If a selected report has been removed meanwhile (e.g. extension deleted), fall back to first one.
-            $reportIdentifier = $firstReportIdentifier;
+            $reportId = $firstReportId;
         }
         if (($backendUserUc['action'] ?? '') !== 'detail'
-            || ($backendUserUc['report'] ?? '') !== $reportIdentifier
+            || ($backendUserUc['report'] ?? '') !== $reportId
         ) {
             // Update uc if view changed to render same view on next call.
-            $this->updateBackendUserUc('detail', $reportIdentifier);
+            $this->updateBackendUserUc('detail', $reportId);
         }
-        return $this->detailAction($request, $reportIdentifier);
+        return $this->detailAction($request, $reportId);
     }
 
     /**
@@ -82,7 +82,7 @@ class ReportController
     {
         $languageService = $this->getLanguageService();
 
-        $view = $this->moduleTemplateFactory->create($request);
+        $view = $this->mTemplateFactory->create($request);
         $view->assignMultiple([
             'reports' => $this->reportRegistry->getReports(),
         ]);
@@ -109,7 +109,7 @@ class ReportController
 
         if ($report == 'status' && $this->isOfflineMode()) {
             $content = $reportInstance instanceof RequestAwareReportInterface ? $reportInstance->getReport($request) : $reportInstance->getReport();
-            $view = $this->moduleTemplateFactory->create($request);
+            $view = $this->mTemplateFactory->create($request);
             $view->assignMultiple([
                 'content' => $content,
                 'report' => $reportInstance,
@@ -134,7 +134,7 @@ class ReportController
 
         $content = $reportInstance instanceof RequestAwareReportInterface ? $reportInstance->getReport($request) : $reportInstance->getReport();
 
-        $view = $this->moduleTemplateFactory->create($request);
+        $view = $this->mTemplateFactory->create($request);
         $view->assignMultiple([
             'content' => $content,
             'report' => $reportInstance,
@@ -157,7 +157,7 @@ class ReportController
         return $view->renderResponse('Report/Detail');
     }
 
-    protected function addMainMenu(ModuleTemplate $view, string $activeReportIdentifier = ''): void
+    protected function addMainMenu(ModuleTemplate $view, string $activeReportId = ''): void
     {
         $languageService = $this->getLanguageService();
         $menu = $view->getDocHeaderComponent()->getMenuRegistry()->makeMenu();
@@ -175,7 +175,7 @@ class ReportController
                     ['action' => 'detail', 'report' => $report->getIdentifier()]
                 ))
                 ->setTitle($this->getLanguageService()->sL($report->getTitle()));
-            if ($activeReportIdentifier === $report->getIdentifier()) {
+            if ($activeReportId === $report->getIdentifier()) {
                 $menuItem->setActive(true);
             }
             $menu->addMenuItem($menuItem);
@@ -183,6 +183,12 @@ class ReportController
         $view->getDocHeaderComponent()->getMenuRegistry()->addMenu($menu);
     }
 
+    /**
+     * @param ModuleTemplate $view
+     * @param string $title
+     * @param array<string> $arguments
+     * @return void
+     */
     protected function addShortcutButton(ModuleTemplate $view, string $title, array $arguments): void
     {
         $buttonBar = $view->getDocHeaderComponent()->getButtonBar();
