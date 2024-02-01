@@ -104,11 +104,10 @@ class ReportController
      */
     protected function detailAction(ServerRequestInterface $request, string $report): ResponseInterface
     {
-
         $languageService = $this->getLanguageService();
         $reportInstance = $this->reportRegistry->getReport($report);
 
-        if ($report == "status" && $this->isOfflineMode()) {
+        if ($report == 'status' && $this->isOfflineMode()) {
             $content = $reportInstance instanceof RequestAwareReportInterface ? $reportInstance->getReport($request) : $reportInstance->getReport();
             $view = $this->moduleTemplateFactory->create($request);
             $view->assignMultiple([

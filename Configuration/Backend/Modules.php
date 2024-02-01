@@ -1,6 +1,5 @@
 <?php
 
-
 use ITZBund\GsbCore\Controller\ReportController;
 
 return [
@@ -17,5 +16,3 @@ return [
         ],
     ],
 ];
-
-
