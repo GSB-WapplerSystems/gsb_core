@@ -36,10 +36,10 @@ use TYPO3\CMS\Reports\RequestAwareReportInterface;
 class ReportController
 {
     public function __construct(
-        protected readonly UriBuilder            $uriBuilder,
+        protected readonly UriBuilder $uriBuilder,
         protected readonly ModuleTemplateFactory $mTemplateFactory,
-        protected readonly IconRegistry          $iconRegistry,
-        protected readonly ReportRegistry        $reportRegistry
+        protected readonly IconRegistry $iconRegistry,
+        protected readonly ReportRegistry $reportRegistry
     ) {}
 
     /**
@@ -187,7 +187,6 @@ class ReportController
      * @param ModuleTemplate $view
      * @param string $title
      * @param array<string> $arguments
-     * @return void
      */
     protected function addShortcutButton(ModuleTemplate $view, string $title, array $arguments): void
     {
