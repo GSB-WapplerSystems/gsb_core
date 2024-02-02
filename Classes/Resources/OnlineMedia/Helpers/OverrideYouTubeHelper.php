@@ -33,7 +33,7 @@ class OverrideYouTubeHelper extends YouTubeHelper
         if ($this->isOfflineMode()) {
             return null;
         }
-        parent::getOEmbedData($mediaId);
+        return parent::getOEmbedData($mediaId);
     }
 
     private function isOfflineMode(): bool
