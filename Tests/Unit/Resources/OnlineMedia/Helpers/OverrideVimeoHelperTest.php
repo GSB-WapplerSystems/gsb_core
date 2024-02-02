@@ -15,7 +15,6 @@ class OverrideVimeoHelperTest extends Unit
      */
     protected $overrideVimeoHelper;
 
-
     protected function _before()
     {
         $metaDataRepository = $this->makeEmpty(MetaDataRepository::class);
@@ -39,14 +38,14 @@ class OverrideVimeoHelperTest extends Unit
         // Create a mock File object with a specific online media ID and Storage
         $file = $this->make(File::class, [
             'getProperty' => '123456',
-            'getStorage' => $resourceStorage
+            'getStorage' => $resourceStorage,
         ]);
 
         // Call the method and retrieve the temporary file name
         $previewImage = $this->overrideVimeoHelper->getPreviewImage($file);
 
         // Check if the temporary file name has the expected format
-        $this->assertMatchesRegularExpression('/^.*vimeo_[a-f0-9]{32}\.jpg$/', $previewImage);
+        self::assertMatchesRegularExpression('/^.*vimeo_[a-f0-9]{32}\.jpg$/', $previewImage);
     }
 
     public function getPreviewImageReturnsParentResultInOnlineMode()
@@ -61,13 +60,13 @@ class OverrideVimeoHelperTest extends Unit
         // Create a mock File object with a specific online media ID and Storage
         $file = $this->make(File::class, [
             'getProperty' => '123456',
-            'getStorage' => $resourceStorage
+            'getStorage' => $resourceStorage,
         ]);
 
         // Call the method and retrieve the temporary file name
         $previewImage = $this->overrideVimeoHelper->getPreviewImage($file);
 
         // Check if the result is the same as the parent class method
-        $this->assertSame((new VimeoHelper($storageRepository))->getPreviewImage($file), $previewImage);
+        self::assertSame((new VimeoHelper($storageRepository))->getPreviewImage($file), $previewImage);
     }
 }

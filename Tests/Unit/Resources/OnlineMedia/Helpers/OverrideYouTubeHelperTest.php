@@ -15,7 +15,6 @@ class OverrideYouTubeHelperTest extends Unit
      */
     protected $overrideYouTubeHelper;
 
-
     protected function _before()
     {
         $metaDataRepository = $this->makeEmpty(MetaDataRepository::class);
@@ -33,37 +32,30 @@ class OverrideYouTubeHelperTest extends Unit
 
         $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-
         $file = $this->make(File::class, [
             'getProperty' => '123456',
-            'getStorage' => $resourceStorage
+            'getStorage' => $resourceStorage,
         ]);
-
 
         $previewImage = $this->overrideYouTubeHelper->getPreviewImage($file);
 
-
-        $this->assertMatchesRegularExpression('/^.*YouTube_[a-f0-9]{32}\.jpg$/', $previewImage);
+        self::assertMatchesRegularExpression('/^.*YouTube_[a-f0-9]{32}\.jpg$/', $previewImage);
     }
 
     public function getPreviewImageReturnsParentResultInOnlineMode()
     {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] = false;
 
-
         $storageRepository = $this->makeEmpty(StorageRepository::class);
         $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-
         $file = $this->make(File::class, [
             'getProperty' => '123456',
-            'getStorage' => $resourceStorage
+            'getStorage' => $resourceStorage,
         ]);
-
 
         $previewImage = $this->overrideYouTubeHelper->getPreviewImage($file);
 
-
-        $this->assertSame((new YouTubeHelper($storageRepository))->getPreviewImage($file), $previewImage);
+        self::assertSame((new YouTubeHelper($storageRepository))->getPreviewImage($file), $previewImage);
     }
 }

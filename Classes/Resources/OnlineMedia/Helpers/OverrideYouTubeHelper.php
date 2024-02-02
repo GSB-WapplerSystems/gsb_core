@@ -26,9 +26,9 @@ class OverrideYouTubeHelper extends YouTubeHelper
      * Get OEmbed data
      *
      * @param string $mediaId
-     *  @return array|null
+     * @return array|null
      */
-    protected function getOEmbedData($mediaId)
+    protected function getOEmbedData($mediaId): ?array
     {
         if ($this->isOfflineMode()) {
             return null;
