@@ -3,6 +3,12 @@
     <file source-language="en" datatype="plaintext" original="EXT:gsb_core/Resources/Private/Language/locallang.xlf" date="2022-12-11T09:48:17" product-name="gsb_core">
         <header />
 		<body>
+			<trans-unit id="offlineModeReport.headline" resname="offlineModeReport.headline">
+				<source>Offline Mode Active</source>
+			</trans-unit>
+			<trans-unit id="offlineModeReport.massage" resname="offlineModeReport.massage">
+				<source>Your system is currently in offline mode, therefore the requested information cannot be retrieved.</source>
+			</trans-unit>
 			<trans-unit id="meta.homepage" resname="meta.homepage">
 				<source>Homepage</source>
 			</trans-unit>

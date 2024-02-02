@@ -26,18 +26,18 @@ class OverrideYouTubeHelper extends YouTubeHelper
      * Get OEmbed data
      *
      * @param string $mediaId
-     *  @return array|null
+     * @return array|null
      */
-    protected function getOEmbedData($mediaId)
+    protected function getOEmbedData($mediaId): ?array
     {
         if ($this->isOfflineMode()) {
             return null;
         }
-        parent::getOEmbedData($mediaId);
+        return parent::getOEmbedData($mediaId);
     }
 
     private function isOfflineMode(): bool
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['offlineMode'];
+        return $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'];
     }
 }
