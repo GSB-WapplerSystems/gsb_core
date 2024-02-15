@@ -19,6 +19,10 @@
 				<source>Navigation section</source>
 				<target>Navigationsbereich</target>
 			</trans-unit>
+			<trans-unit id="meta.HeaderSection" resname="meta.HeaderSection" approved="yes">
+				<source>Header area</source>
+				<target>Kopfbereich</target>
+			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection" approved="yes">
 				<source>Service section</source>
 				<target>Servicebereich</target>
@@ -148,8 +152,8 @@
 				<target>Zusatzinformationen</target>
 			</trans-unit>
 			<trans-unit id="footer.metanav" resname="footer.metanav" approved="yes">
-				<source>Meta navigation</source>
-				<target>Metanavigation</target>
+				<source>Service navigation</source>
+				<target>Service-Navigation</target>
 			</trans-unit>
 			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader" approved="yes">
 				<source>Follow us at</source>
