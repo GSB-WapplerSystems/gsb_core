@@ -15,6 +15,9 @@
 			<trans-unit id="meta.NavigationSection" resname="meta.NavigationSection">
 				<source>Navigation section</source>
 			</trans-unit>
+			<trans-unit id="meta.HeaderSection" resname="meta.HeaderSection">
+				<source>Header area</source>
+			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection">
 				<source>Service section</source>
 			</trans-unit>
@@ -112,7 +115,7 @@
 				<source>Additional information</source>
 			</trans-unit>
 			<trans-unit id="footer.metanav" resname="footer.metanav">
-				<source>Meta navigation</source>
+				<source>Service navigation</source>
 			</trans-unit>
 			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader">
 				<source>Follow us at</source>

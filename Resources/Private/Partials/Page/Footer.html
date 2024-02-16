@@ -8,9 +8,9 @@
  -->
 </f:comment>
 
-<footer class="fw-bold bg-secondary text-gray-600 pt-5 border-top border-2 position-relative">
+<footer class="fw-bold bg-secondary text-gray-600 pt-5 border-top border-2 position-relative" aria-labelledby="footerID">
+    <div class="visually-hidden" id="footerID" role="heading" aria-level="1">{f:translate(key: 'meta.ServiceSection', extensionName: 'gsb_core')}</div>
     <div class="container pt-5 pb-3">
-        <h1 class="visually-hidden">{f:translate(key: 'meta.ServiceSection', extensionName: 'gsb_core')}</h1>
         <f:render arguments="{_all}" partial="Footer.SocialMedia"/>
         <f:render arguments="{menuMeta: menuMeta, copyright: copyright, navlanguage: navlanguage}" partial="Navigation/MetaNavFooter"/>
         <a aria-label="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}" class="totop" href="#top" role="button" title="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}">
