@@ -103,7 +103,6 @@ page {
       headertitle = < lib.headerTitle
       headerDescription = < lib.headerDescription
       search = < lib.search
-      #categories = < lib.categories
 
       # Top
       top < styles.content.get
