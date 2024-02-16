@@ -189,6 +189,9 @@
             <trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
                 <source>Kicker</source>
             </trans-unit>
+			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
+				<source>override categories by Kicker</source>
+			</trans-unit>
             <trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
                 <source>Intext</source>
             </trans-unit>

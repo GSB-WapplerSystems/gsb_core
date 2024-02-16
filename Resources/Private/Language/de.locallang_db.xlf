@@ -251,6 +251,10 @@
 				<source>Kicker</source>
 				<target>Dachzeile</target>
 			</trans-unit>
+			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
+				<source>override categories by Kicker</source>
+				<target>Kategorien mit Dachzeile Überschreiben</target>
+			</trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside" approved="yes">
 				<source>Intext</source>
 				<target>Im Text</target>

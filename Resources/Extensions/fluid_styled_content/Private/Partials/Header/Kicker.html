@@ -9,46 +9,57 @@
  -->
 </f:comment>
 
-<f:if condition="{kicker}">
+<f:if condition="{categories} && !{dontShow}">
+    <ul class="list-group list-group-horizontal liststyle-none">
+        <f:for as="category" each="{categories}" iteration="i">
+            <li class="list-group-item border-0 ps-0 kicker">
+                <span>
+                    {category.title}
+                </span>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+<f:if condition="{kicker} && {dontShow}">
     <f:switch expression="{layout}">
         <f:case value="1">
             <p class="kicker {positionClass}">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="2">
             <p class="kicker {positionClass}">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="3">
             <p class="kicker {positionClass}">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="4">
             <p class="kicker {positionClass}">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="5">
             <p class="kicker {positionClass}">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="6">
             <p class="visually-hidden">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="7">
             <p class="visually-hidden">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:case value="8">
             <p class="visually-hidden">
-                <f:format.raw><span>{kicker}</span></f:format.raw>
+                <span>{kicker}</span>
             </p>
         </f:case>
         <f:defaultCase>

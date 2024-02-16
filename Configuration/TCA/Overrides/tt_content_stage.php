@@ -23,7 +23,6 @@ defined('TYPO3') || die();
 
 (static function (): void {
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx_stage';
-
     $tempStageColumns = [
         'tx_stage_switch' =>
             [
