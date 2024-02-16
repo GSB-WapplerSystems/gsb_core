@@ -82,9 +82,18 @@ defined('TYPO3') || die();
                 'rows' => 10,
             ],
         ],
-    ];
 
+        'main_category' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.categories2',
+            'config' => [
+                'type' => 'category',
+                'maxitems' => 1,
+                'relationship' => 'oneToOne',
+            ],
+        ],
+    ];
     ExtensionManagementUtility::addTCAcolumns('pages', $visibleoptions);
     ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb', 'after:newUntil');
     ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');
+    ExtensionManagementUtility::addFieldsToPalette('pages', 'access', '--linebreak--,main_category', 'after:categories');
 })();

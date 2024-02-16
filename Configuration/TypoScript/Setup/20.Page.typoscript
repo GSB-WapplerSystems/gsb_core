@@ -103,6 +103,7 @@ page {
       headertitle = < lib.headerTitle
       headerDescription = < lib.headerDescription
       search = < lib.search
+      #categories = < lib.categories
 
       # Top
       top < styles.content.get
@@ -134,27 +135,5 @@ page {
     # Google
     google = {$page.meta.google}
     google-site-verification = {$page.meta.google-site-verification}
-  }
-}
-
-lib {
-  categories = CONTENT
-  categories {
-    table = sys_category
-    select {
-      pidInList = root
-      selectFields = title
-      join = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
-      where {
-        data = field:recordUid
-        interval = 1
-        wrap = uid_foreign=|
-      }
-    }
-    renderObj = COA
-    renderObj {
-      1 = TEXT
-      1.field = title
-    }
   }
 }

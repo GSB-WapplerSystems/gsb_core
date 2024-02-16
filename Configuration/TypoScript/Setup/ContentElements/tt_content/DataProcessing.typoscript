@@ -70,13 +70,9 @@ page {
         languages = auto
         as = languagenavigation
       }
-      100 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      100 = ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor
       100 {
-        table = sys_category
-        selectFields = sys_category.uid, sys_category.title
-        pidInList = root
-        join = sys_category_record_mm ON uid = sys_category_record_mm.uid_local = sys_category.uid
-        where.dataWrap = sys_category_record_mm.tablenames = 'pages' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
+        field = pages
         as = pageCategories
       }
     }

@@ -30,19 +30,19 @@
                         </f:if>
                     </f:else>
                 </f:if>
+                <f:if condition="{mainCategory}">
+                    <span class="dot" aria-hidden="true">•</span> {mainCategory}
+                </f:if>
 
-                <f:variable name="pageCategories">Gesetz</f:variable>
+
                 <f:if condition="{pageCategories}">
-                    <span class="dot" aria-hidden="true">•</span> {pageCategories}
-                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
                         <ul class="list-group list-group-horizontal liststyle-none">
-                            <f:for each="{childCategories}" as="child" key="key">
+                            <f:for each="{pageCategories}" as="category" key="key">
                                 <li class="list-group-item border-0 ps-0 kicker">
-                                    <span>{child}</span>
+                                    <span>{category.title}</span>
                                 </li>
                             </f:for>
                         </ul>
-                    </f:alias>
                 </f:if>
                 <f:format.raw>{top}</f:format.raw>
             </div>
