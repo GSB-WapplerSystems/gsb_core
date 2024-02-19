@@ -24,6 +24,12 @@
 			<trans-unit id="pages.NewsletterBox" resname="pages.NewsletterBox">
 				<source>Newsletter Box</source>
 			</trans-unit>
+			<trans-unit id="pages.main_category" resname="pages.main_category">
+				<source>Main Category</source>
+			</trans-unit>
+			<trans-unit id="pages.sub_category" resname="pages.sub_category">
+				<source>Sub Category</source>
+			</trans-unit>
 			<trans-unit id="pages.NewsletterBox.description" resname="pages.NewsletterBox.description">
 				<source>Remove newsletter box</source>
 			</trans-unit>

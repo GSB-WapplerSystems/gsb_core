@@ -59,6 +59,14 @@
 				<source>Short text that can be displayed in teasers to this page</source>
 				<target>Kurztext der in Teasern zu dieser Seite angezeigt werden kann</target>
 			</trans-unit>
+			<trans-unit id="pages.main_category" resname="pages.main_category">
+				<source>Main Category</source>
+				<target>Hauptthema</target>
+			</trans-unit>
+			<trans-unit id="pages.sub_category" resname="pages.sub_category">
+				<source>Sub Category</source>
+				<target>Unterthemen</target>
+			</trans-unit>
 			<trans-unit id="header_layout.0" resname="header_layout.0" approved="yes">
 				<source>Default</source>
 				<target>Standard</target>

@@ -84,16 +84,35 @@ defined('TYPO3') || die();
         ],
 
         'main_category' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.categories2',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.main_category',
             'config' => [
+                'treeConfig' => [
+                    'startingPoints' => '###SITE:categories.root###',
+                    'appearance' => [
+                        'nonSelectableLevels' => '0,1',
+                    ],
+                ],
                 'type' => 'category',
                 'maxitems' => 1,
                 'relationship' => 'oneToOne',
+            ],
+        ],
+        'categories' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.sub_category',
+            'config' => [
+                'treeConfig' => [
+                    'startingPoints' => '###SITE:categories.root###',
+                    'appearance' => [
+                        'nonSelectableLevels' => '0,1',
+                    ],
+                ],
+                'type' => 'category',
             ],
         ],
     ];
     ExtensionManagementUtility::addTCAcolumns('pages', $visibleoptions);
     ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb', 'after:newUntil');
     ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');
-    ExtensionManagementUtility::addFieldsToPalette('pages', 'access', '--linebreak--,main_category', 'after:categories');
+    ExtensionManagementUtility::addToAllTCAtypes('pages', 'main_category', '', 'before:categories');
+    #ExtensionManagementUtility::addFieldsToPalette('pages', 'categories', '--linebreak--,main_category', 'after:categories');
 })();
