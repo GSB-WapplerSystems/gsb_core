@@ -34,9 +34,9 @@ class CustomContendCategoryProcessor extends AbstractCategoryProcessor implement
             $pid = preg_replace('/t3:\/\/page\?uid=/', '', $processedData['data']['tx_link']);
             $languageId = $processedData['data']['sys_language_uid'];
 
-            $processedData['pageCategories'] = $this->getPageCategories($languageId, 'pages', $pid);
+            $processedData['pageCategories'] = $this->getPageCategories($languageId, 'pages', (int)$pid);
 
-            $processedData['mainCategory'] = $this->getMainCategoryTitle($languageId, $pid);
+            $processedData['mainCategory'] = $this->getMainCategoryTitle($languageId, (int)$pid);
         }
         return $processedData;
     }

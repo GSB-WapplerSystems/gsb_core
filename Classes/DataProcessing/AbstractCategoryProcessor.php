@@ -25,10 +25,10 @@ class AbstractCategoryProcessor
      * @param mixed $languageId
      * @param $field
      * @param int $uid
-     * @return array|null
+     * @return array<int, string>|null
      * @throws Exception
      */
-    protected function getPageCategories(mixed $languageId, $field, int $uid): ?array
+    protected function getPageCategories(mixed $languageId,string $field, int $uid): ?array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
         $resultPageCategories = $queryBuilder
@@ -57,23 +57,23 @@ class AbstractCategoryProcessor
             ->executeQuery()
             ->fetchAllAssociative();
         $pageCategories = [];
-        foreach ($resultPageCategories as $resultPageCategory) {
-            if ($resultPageCategory) {
-                $pageCategories[] = $resultPageCategory['localized_title'] ?: $resultPageCategory['title'];
+        if (count($resultPageCategories) > 0) {
+            foreach ($resultPageCategories as $resultPageCategory) {
+                    $pageCategories[] = $resultPageCategory['localized_title'] ?? $resultPageCategory['title'];
             }
         }
-
         return $pageCategories;
     }
 
     /**
      * @param mixed $languageId
-     * @param $mainCategory
-     * @return mixed
+     * @param int $mainCategory
+     * @return string
      * @throws Exception
      */
-    protected function getMainCategoryTitle(mixed $languageId, $mainCategory): mixed
+    protected function getMainCategoryTitle(mixed $languageId,int $mainCategory): string
     {
+        $mainCategoryTitle = "";
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
         $resultMainCategory = $queryBuilder
             ->select('sys_category.title', 'sys_category_l10n.title as localized_title')
@@ -92,9 +92,8 @@ class AbstractCategoryProcessor
             )
             ->executeQuery()
             ->fetchAssociative();
-        $mainCategoryTitle = [];
-        if ($resultMainCategory) {
-            $mainCategoryTitle = $resultMainCategory['localized_title'] ?: $resultMainCategory['title'];
+        if (is_array($resultMainCategory)) {
+            $mainCategoryTitle = $resultMainCategory['localized_title'] ?? $resultMainCategory['title'];
         }
 
         return $mainCategoryTitle;
