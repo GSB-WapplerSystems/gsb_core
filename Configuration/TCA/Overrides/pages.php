@@ -114,5 +114,4 @@ defined('TYPO3') || die();
     ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb', 'after:newUntil');
     ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');
     ExtensionManagementUtility::addToAllTCAtypes('pages', 'main_category', '', 'before:categories');
-    #ExtensionManagementUtility::addFieldsToPalette('pages', 'categories', '--linebreak--,main_category', 'after:categories');
 })();
