@@ -28,7 +28,7 @@ class AbstractCategoryProcessor
      * @return array<int, string>|null
      * @throws Exception
      */
-    protected function getPageCategories(mixed $languageId,string $field, int $uid): ?array
+    protected function getPageCategories(mixed $languageId, string $field, int $uid): ?array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
         $resultPageCategories = $queryBuilder
@@ -59,7 +59,7 @@ class AbstractCategoryProcessor
         $pageCategories = [];
         if (count($resultPageCategories) > 0) {
             foreach ($resultPageCategories as $resultPageCategory) {
-                    $pageCategories[] = $resultPageCategory['localized_title'] ?? $resultPageCategory['title'];
+                $pageCategories[] = $resultPageCategory['localized_title'] ?? $resultPageCategory['title'];
             }
         }
         return $pageCategories;
@@ -71,9 +71,9 @@ class AbstractCategoryProcessor
      * @return string
      * @throws Exception
      */
-    protected function getMainCategoryTitle(mixed $languageId,int $mainCategory): string
+    protected function getMainCategoryTitle(mixed $languageId, int $mainCategory): string
     {
-        $mainCategoryTitle = "";
+        $mainCategoryTitle = '';
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
         $resultMainCategory = $queryBuilder
             ->select('sys_category.title', 'sys_category_l10n.title as localized_title')
