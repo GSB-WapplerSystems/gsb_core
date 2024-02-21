@@ -34,12 +34,11 @@
                     <span class="dot" aria-hidden="true">•</span> {mainCategory}
                 </f:if>
 
-
                 <f:if condition="{pageCategories}">
                         <ul class="list-group list-group-horizontal liststyle-none">
-                            <f:for each="{pageCategories}" as="category" key="key">
+                            <f:for each="{pageCategories}" as="category">
                                 <li class="list-group-item border-0 ps-0 kicker">
-                                    <span>{category.title}</span>
+                                    <span>{category}</span>
                                 </li>
                             </f:for>
                         </ul>

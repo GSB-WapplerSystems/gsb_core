@@ -82,15 +82,11 @@ defined('TYPO3') || die();
                 'rows' => 10,
             ],
         ],
-
         'main_category' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.main_category',
             'config' => [
                 'treeConfig' => [
                     'startingPoints' => '###SITE:categories.root###',
-                    'appearance' => [
-                        'nonSelectableLevels' => '0,1',
-                    ],
                 ],
                 'type' => 'category',
                 'maxitems' => 1,
@@ -102,9 +98,6 @@ defined('TYPO3') || die();
             'config' => [
                 'treeConfig' => [
                     'startingPoints' => '###SITE:categories.root###',
-                    'appearance' => [
-                        'nonSelectableLevels' => '0,1',
-                    ],
                 ],
                 'type' => 'category',
             ],
