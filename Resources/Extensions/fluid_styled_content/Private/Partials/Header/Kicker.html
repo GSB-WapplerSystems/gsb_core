@@ -9,7 +9,7 @@
  -->
 </f:comment>
 
-<f:if condition="{categories} && !{dontShow}">
+<f:if condition="{categories} && !{dontShowCategories}">
     <ul class="list-group list-group-horizontal liststyle-none">
         <f:for as="category" each="{categories}" iteration="i">
             <li class="list-group-item border-0 ps-0 kicker">
@@ -20,7 +20,7 @@
         </f:for>
     </ul>
 </f:if>
-<f:if condition="{kicker} && {dontShow}">
+<f:if condition="{kicker} && {dontShowCategories}">
     <f:switch expression="{layout}">
         <f:case value="1">
             <p class="kicker {positionClass}">

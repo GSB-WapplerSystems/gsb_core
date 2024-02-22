@@ -19,7 +19,7 @@ use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class AbstractCategoryProcessor
+abstract class AbstractCategoryProcessor
 {
     /**
      * @param mixed $languageId
@@ -44,14 +44,14 @@ class AbstractCategoryProcessor
                 'sys_category',
                 'sys_category',
                 'sys_category_l10n',
-                $queryBuilder->expr()->andX(
+                $queryBuilder->expr()->and(
                     $queryBuilder->expr()->eq('sys_category_l10n.l10n_parent', $queryBuilder->quoteIdentifier('sys_category.uid')),
                     $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, \PDO::PARAM_INT))
                 )
             )
             ->where(
-                $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter($field)),
-                $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories')),
+                $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter($field, \PDO::PARAM_STR)),
+                $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories', \PDO::PARAM_STR)),
                 $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT))
             )
             ->executeQuery()
@@ -82,7 +82,7 @@ class AbstractCategoryProcessor
                 'sys_category',
                 'sys_category',
                 'sys_category_l10n',
-                $queryBuilder->expr()->andX(
+                $queryBuilder->expr()->and(
                     $queryBuilder->expr()->eq('sys_category_l10n.l10n_parent', $queryBuilder->quoteIdentifier('sys_category.uid')),
                     $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, \PDO::PARAM_INT))
                 )
