@@ -69,6 +69,7 @@ CREATE TABLE pages
 	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
 	category_title              text,
+	main_category               tinyint(1) DEFAULT '0' NOT NULL
 );
 
 CREATE TABLE tx_gsbcore_forms
