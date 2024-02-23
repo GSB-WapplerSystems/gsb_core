@@ -209,8 +209,6 @@ defined('TYPO3') || die();
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                   --palette--;;hidden,
                   --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-              --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-              --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
               --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
             ],
