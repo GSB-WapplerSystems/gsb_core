@@ -21,7 +21,7 @@ Here too, the theme is simplified development for people with disabilities.
 1. Go to the level of the **gsb_core/Build** folder
 2. Install node js
    ```sh
-   npm install
+   npm ci
    ```
 3. Check the package.json in the build folder to see which scripts you can use to assemble the js and the SCSS/CSS.
 There are different possibilities.

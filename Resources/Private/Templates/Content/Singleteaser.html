@@ -11,7 +11,7 @@
 
 <article id="c{data.uid}" class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
     <div class="teaser{f:if(condition:'{data.imageorient} == 0', then:' textpic topcenter')}{f:if(condition:'{data.imageorient} == 25', then:' textpic nexttotext-right d-md-flex')}{f:if(condition:'{data.imageorient} == 26', then:' textpic nexttotext-left d-lg-flex')}"{f:if(condition: data.grid_bgcolor, then: ' style="background-color:{data.grid_bgcolor}"')}>
-        <f:if condition="{files}">
+    <f:if condition="{files}">
             <div class="teaser-image ce-gallery d-flex">
                 <f:for each="{files}" as="file">
                     <f:render partial="Media/Rendering/ImageTeaser" arguments="{_all}"/>

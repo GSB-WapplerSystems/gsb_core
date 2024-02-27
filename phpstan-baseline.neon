@@ -36,6 +36,46 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$processedData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$processorConfiguration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) has parameter \\$processedData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) has parameter \\$processorConfiguration with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
+
+		-
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
+
+		-
 			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
 			count: 1
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
@@ -166,17 +206,7 @@ parameters:
 			path: Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideVimeoHelper\\:\\:getOEmbedData\\(\\) should return array\\|null but return statement is missing\\.$#"
-			count: 1
-			path: Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php
-
-		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php
-
-		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) should return array\\|null but return statement is missing\\.$#"
 			count: 1
 			path: Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php
 

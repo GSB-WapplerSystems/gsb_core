@@ -9,8 +9,8 @@
 </f:comment>
 
 <f:if condition="{menuMetaTop}">
-    <nav class="meta-item mb-3 mb-lg-0">
-        <h2 class="visually-hidden">{f:translate(key:'header.servicenavigation', extensionName:'gsb_core')}</h2>
+    <nav class="meta-item mb-3 mb-lg-0" aria-labelledby="metaItem">
+        <h2 class="visually-hidden" id="metaItem">{f:translate(key:'header.servicenavigation', extensionName:'gsb_core')}</h2>
         <ul class="metanav nav{f:if(condition: '{languagenavigation -> f:count()} > 1', then: ' flex-lg-nowrap justify-content-between justify-content-lg-end', else: ' justify-content-end')}">
             <f:if condition="{languagenavigation -> f:count()} > 1">
                 <li class="nav-item">

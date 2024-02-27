@@ -9,10 +9,10 @@
 </f:comment>
 
 <f:if condition="{socialLinks-Facebook} || {socialLinks-YouTube} || {socialLinks-Instagram} || {socialLinks-Twitter}">
-    <aside class="row">
+    <aside class="row" aria-labelledby="SocialFooter">
         <div class="col-12">
             <div class="social-media justify-content-lg-end d-sm-flex align-items-center">
-                <h2 class="fs-3 fs-lg-2 fw-normal mt-4 mt-sm-0 mb-0 me-4">{f:translate(key: 'footer.socialmediaheader',extensionName:'gsb_core')}</h2>
+                <h2 class="fs-3 fs-lg-2 fw-normal mt-4 mt-sm-0 mb-0 me-4" id="SocialFooter">{f:translate(key: 'footer.socialmediaheader',extensionName:'gsb_core')}</h2>
                 <ul class="mb-4 mt-4 list-unstyled d-flex gap-4">
                     <f:if condition="{socialLinks-Facebook}">
                         <li>

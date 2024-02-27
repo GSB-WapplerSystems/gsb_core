@@ -17,6 +17,7 @@ CREATE TABLE tt_content
 	tx_header_inside               tinyint(4)       DEFAULT '0' NOT NULL,
 	tx_header_style                tinytext,
 	header_kicker                  tinytext,
+	header_kicker_toggle           tinyint(4)       DEFAULT '0' NOT NULL,
 	tx_video_caption               tinytext,
 	tx_video_poster_video          tinytext,
 	tx_video_video                 tinytext,
@@ -68,6 +69,7 @@ CREATE TABLE pages
 	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
 	category_title              text,
+	main_category               tinyint(1) DEFAULT '0' NOT NULL
 );
 
 CREATE TABLE tx_gsbcore_forms

@@ -63,3 +63,6 @@ services:
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true
+
+  ITZBund\GsbCore\Controller\ReportController:
+    tags: ['backend.controller']
