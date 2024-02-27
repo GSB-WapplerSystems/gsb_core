@@ -33,7 +33,7 @@ defined('TYPO3') or die('Access denied.');
 
     // Branded backend login screen
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['brandingBackendLogin'] ??= false;
-    if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('brandingBackendLogin')) {
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('brandingBackendLogin')) {
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendFavicon'] = 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png';
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendLogo'] = 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico';
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginBackgroundImage'] = 'EXT:gsb_core/Resources/Public/Images/bg.jpg';
