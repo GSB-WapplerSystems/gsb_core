@@ -12,7 +12,7 @@
 <f:if condition="{header}">
 	<f:switch expression="{layout}">
 		<f:case value="1">
-			<h1 class="{positionClass}">
+			<h1 class="{positionClass}" id="headerMain">
                 <f:if condition="{linkText}">
                     <f:then>
                         <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
@@ -126,7 +126,7 @@
 			</h6>
 		</f:case>
 		<f:case value="7">
-			<h1 class="visually-hidden">
+			<h1 class="visually-hidden" id="headerMain">
 				{header}
 			</h1>
 		</f:case>

@@ -10,7 +10,7 @@
 </f:comment>
 
 <nav aria-labelledby="mainmenu" class="main-menu-layer dropdown flex-grow-0{f:if(condition: '{navType} == 0', then: ' d-lg-none')}" id="main-menu">
-    <h2 class="visually-hidden" id="mainmenu">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</h2>
+    <div class="visually-hidden" id="mainmenu" role="heading" aria-level="2">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</div>
     <f:if condition="{site.configuration.search} == 1">
         <button id="solr-button-simple" aria-controls="search" aria-expanded="false" class="first-nav btn-search" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.search', extensionName: 'gsb_core')}">
             <span class="visually-hidden">{f:translate(key: 'header.search', extensionName: 'gsb_core')}</span>

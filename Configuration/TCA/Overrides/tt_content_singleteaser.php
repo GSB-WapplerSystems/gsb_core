@@ -43,8 +43,29 @@ defined('TYPO3') || die();
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $imagePalettes;
-
+    $singleteaser = [
+        'header_kicker' => [
+            'displayCond' => 'FIELD:header_kicker_toggle:REQ:true',
+            'l10n_mode' => 'prefixLangTitle',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+            ],
+        ],
+        'header_kicker_toggle' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker.toggle',
+            'onChange' => 'reload',
+            'config' => [
+                'renderType' => 'checkboxToggle',
+                'type' => 'check',
+                'default' => 0,
+            ],
+        ],
+    ];
     $singleteaserTypes = [
+
         'gsb_singleteaser' =>
             [
                 'columnsOverrides' =>
@@ -98,7 +119,7 @@ defined('TYPO3') || die();
                     ],
                 'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel, header_kicker, header,
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general, date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel, header_kicker_toggle, header_kicker, header,
             --palette--;;header_config,subheader,
         --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title,
             --palette--;;image_config, grid_bgcolor,
@@ -112,14 +133,15 @@ defined('TYPO3') || die();
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
         --palette--;;hidden,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-        --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
             ],
     ];
 
     $GLOBALS['TCA']['tt_content']['types'] += $singleteaserTypes;
-
+    ExtensionManagementUtility::addTCAcolumns(
+        'tt_content',
+        $singleteaser
+    );
     $GLOBALS['TCA']['tt_content']['types']['gsb_singleteaser']['previewRenderer'] = SingleteaserPreviewRenderer::class;
 })();

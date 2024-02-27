@@ -12,7 +12,7 @@
 
 <f:section name="Main">
     <f:render arguments="{_all}" partial="Header"/>
-    <main class="main-wrapper" id="mainContent">
+    <main class="main-wrapper" id="mainContent" aria-labelledby="headerMain">
         <article class="main-article">
             <div class="top-container">
                 <f:if condition="{data.starttime}">
@@ -30,19 +30,18 @@
                         </f:if>
                     </f:else>
                 </f:if>
+                <f:if condition="{mainCategory}">
+                    <span class="dot" aria-hidden="true">•</span> {mainCategory}
+                </f:if>
 
-                <f:variable name="pageCategories">Gesetz</f:variable>
                 <f:if condition="{pageCategories}">
-                    <span class="dot" aria-hidden="true">•</span> {pageCategories}
-                    <f:alias map="{childCategories: {0: 'Arbeitsrecht',1: 'Strafrecht'}}">
                         <ul class="list-group list-group-horizontal liststyle-none">
-                            <f:for each="{childCategories}" as="child" key="key">
+                            <f:for each="{pageCategories}" as="category">
                                 <li class="list-group-item border-0 ps-0 kicker">
-                                    <span>{child}</span>
+                                    <span>{category}</span>
                                 </li>
                             </f:for>
                         </ul>
-                    </f:alias>
                 </f:if>
                 <f:format.raw>{top}</f:format.raw>
             </div>

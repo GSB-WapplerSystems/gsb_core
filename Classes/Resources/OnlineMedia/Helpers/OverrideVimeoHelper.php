@@ -1,5 +1,18 @@
 <?php
 
+/*
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+ *
+ * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 namespace ITZBund\GsbCore\Resources\OnlineMedia\Helpers;
 
 use TYPO3\CMS\Core\Core\Environment;
@@ -28,16 +41,16 @@ class OverrideVimeoHelper extends VimeoHelper
      * @param string $mediaId
      * @return array|null
      */
-    protected function getOEmbedData($mediaId)
+    protected function getOEmbedData($mediaId): ?array
     {
         if ($this->isOfflineMode()) {
             return null;
         }
-        parent::getOEmbedData($mediaId);
+        return parent::getOEmbedData($mediaId);
     }
 
     private function isOfflineMode(): bool
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['offlineMode'];
+        return $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'];
     }
 }

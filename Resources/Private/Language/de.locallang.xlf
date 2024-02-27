@@ -3,6 +3,14 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Resources/Private/Language/locallang.xlf" date="2022-12-11T09:48:17" product-name="gsb_core">
 		<header />
 		<body>
+			<trans-unit id="offlineModeReport.headline" resname="offlineModeReport.headline">
+				<source>Offline Mode Active</source>
+				<target>Offline Modus Aktiv</target>
+			</trans-unit>
+			<trans-unit id="offlineModeReport.massage" resname="offlineModeReport.massage">
+				<source>Your system is currently in offline mode, therefore the requested information cannot be retrieved.</source>
+				<target>Ihr System befindet sich derzeit im Offline-Modus, daher können die angeforderten Informationen nicht abgerufen werden.</target>
+			</trans-unit>
 			<trans-unit id="meta.homepage" resname="meta.homepage" approved="yes">
 				<source>Homepage</source>
 				<target>Startseite</target>
@@ -10,6 +18,10 @@
 			<trans-unit id="meta.NavigationSection" resname="meta.NavigationSection" approved="yes">
 				<source>Navigation section</source>
 				<target>Navigationsbereich</target>
+			</trans-unit>
+			<trans-unit id="meta.HeaderSection" resname="meta.HeaderSection" approved="yes">
+				<source>Header area</source>
+				<target>Kopfbereich</target>
 			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection" approved="yes">
 				<source>Service section</source>
@@ -140,8 +152,8 @@
 				<target>Zusatzinformationen</target>
 			</trans-unit>
 			<trans-unit id="footer.metanav" resname="footer.metanav" approved="yes">
-				<source>Meta navigation</source>
-				<target>Metanavigation</target>
+				<source>Service navigation</source>
+				<target>Service-Navigation</target>
 			</trans-unit>
 			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader" approved="yes">
 				<source>Follow us at</source>
