@@ -27,6 +27,7 @@ plugin.tx_solr {
       created = timestampToIsoDate
       endtime = timestampToUtcIsoDate
       rootline = pageUidToHierarchy
+      lastUpdated_dateS = timestampToIsoDate
     }
 
     queue {
@@ -55,9 +56,24 @@ plugin.tx_solr {
 
         fields {
           sortSubTitle_stringS = subtitle
+
+          lastUpdated_intS = lastUpdated
+          lastUpdated_dateS = lastUpdated
+
+          mainCategory_intS = SOLR_RELATION
+          mainCategory_intS {
+            foreignLabelField = uid
+            localField = main_category
+          }
+
+          categories_intM = SOLR_RELATION
+          categories_intM {
+            foreignLabelField = uid
+            localField = categories
+            multiValue = 1
+          }
         }
       }
-
     }
   }
 
