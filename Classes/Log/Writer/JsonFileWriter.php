@@ -68,7 +68,17 @@ class JsonFileWriter extends FileWriter
         /* we don't want to stumble over warnings like undefined keys */
         $oldReporting = (int)ini_get('error_reporting');
         error_reporting(E_ERROR);
-        $jsonString = $serializer->serialize($payload, 'json');
+        try {
+            $jsonString = $serializer->serialize($payload, 'json');
+        } catch (\Exception $e) {
+            $safePayload = $payload;
+            $safePayload['context'] = [];
+            if ($context['exception']) {
+                $safePayload['context']['exception'] = $context['exception'];
+            }
+            $jsonString = $serializer->serialize($safePayload, 'json');
+        }
+
         error_reporting($oldReporting);
 
         if (fwrite(self::$logFileHandles[$this->logFile], $jsonString . LF) === false) {
