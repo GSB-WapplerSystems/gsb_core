@@ -100,6 +100,12 @@
 	"suggest": {
 		"ext-redis": "*"
 	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://git.gsb-itzbund.de/api/v4/group/6/-/packages/composer/packages.json"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"ITZBund\\GsbCore\\": "Classes/",
@@ -155,9 +161,5 @@
 		"phpstan:generatebaseline": "Generate baseline for PHPStan",
 		"typoscript:lint": "Lint TypoScript files",
 		"yaml:lint": "Lint YAML files"
-	},
-	"repositories": [{
-			"type": "composer",
-			"url": "https://git.gsb-itzbund.de/api/v4/group/6/-/packages/composer/packages.json"
-		}]
+	}
 }
