@@ -31,7 +31,7 @@ tt_content {
         as = video
       }
 
-      100 = ITZBund\GsbCore\DataProcessing\CustomContendCategoryProcessor
+      100 = ITZBund\GsbCore\DataProcessing\CustomContentCategoryProcessor
       100 {
         field = stage
       }
