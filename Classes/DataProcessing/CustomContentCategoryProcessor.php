@@ -19,7 +19,7 @@ use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class CustomContendCategoryProcessor extends AbstractCategoryProcessor implements DataProcessorInterface
+class CustomContentCategoryProcessor extends AbstractCategoryProcessor implements DataProcessorInterface
 {
     /**
      * @throws Exception

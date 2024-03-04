@@ -25,7 +25,7 @@ tt_content {
         as = files
       }
 
-      100 = ITZBund\GsbCore\DataProcessing\CustomContendCategoryProcessor
+      100 = ITZBund\GsbCore\DataProcessing\CustomContentCategoryProcessor
       100 {
         field = gsb_singleteaser
       }
