@@ -8,5 +8,5 @@ stages:
 
 include:
   - project: 'gsb11/gitlab-scripts'
-    ref: main
+    ref: ITZBUNDPHP-2637
     file: 'default-extension.yml'
