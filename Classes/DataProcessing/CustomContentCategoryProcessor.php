@@ -30,8 +30,8 @@ class CustomContentCategoryProcessor extends AbstractCategoryProcessor implement
         array $processorConfiguration,
         array $processedData
     ): array {
-        if (str_contains($processedData['data']['tx_link'], 't3://page?uid=')) {
-            $pid = preg_replace('/t3:\/\/page\?uid=/', '', $processedData['data']['tx_link']);
+        if (str_contains((string)($processedData['data']['tx_link'] ?? ''), 't3://page?uid=')) {
+            $pid = preg_replace('/t3:\/\/page\?uid=/', '', (string)($processedData['data']['tx_link'] ?? ''));
             $languageId = $processedData['data']['sys_language_uid'];
 
             $processedData['pageCategories'] = $this->getPageCategories($languageId, 'pages', (int)$pid);
