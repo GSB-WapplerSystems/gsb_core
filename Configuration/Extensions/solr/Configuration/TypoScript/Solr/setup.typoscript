@@ -27,6 +27,7 @@ plugin.tx_solr {
       created = timestampToIsoDate
       endtime = timestampToUtcIsoDate
       rootline = pageUidToHierarchy
+      lastUpdated_dateS = timestampToIsoDate
     }
 
     queue {
@@ -55,9 +56,24 @@ plugin.tx_solr {
 
         fields {
           sortSubTitle_stringS = subtitle
+
+          lastUpdated_intS = lastUpdated
+          lastUpdated_dateS = lastUpdated
+
+          mainCategory_intS = SOLR_RELATION
+          mainCategory_intS {
+            foreignLabelField = uid
+            localField = main_category
+          }
+
+          categories_intM = SOLR_RELATION
+          categories_intM {
+            foreignLabelField = uid
+            localField = categories
+            multiValue = 1
+          }
         }
       }
-
     }
   }
 
@@ -232,35 +248,16 @@ plugin.tx_solr {
       cacheLifetime = 86400
     }
 
-    sorting = 0
+    sorting = 1
     sorting {
       defaultOrder = asc
 
       options {
-        relevance {
-          field = relevance
-          label = Relevance
-        }
+        title >
 
-        title {
-          field = sortTitle
-          label = Title
-        }
+        type >
 
-        type {
-          field = type
-          label = Type
-        }
-
-        author {
-          field = sortAuthor
-          label = Author
-        }
-
-        created {
-          field = created
-          label = Creation Date
-        }
+        author >
       }
     }
 
@@ -431,4 +428,34 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 }
+
+
+# 0 = German
+[siteLanguage("languageId") == 0]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Relevanz
+    }
+    created {
+      field = created
+      label = Datum
+      defaultOrder = desc
+    }
+  }
+[global]
+# 1 = English
+[siteLanguage("languageId") == 1]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Relevance
+    }
+    created {
+      field = created
+      label = Date
+      defaultOrder = desc
+    }
+  }
+[global]
 

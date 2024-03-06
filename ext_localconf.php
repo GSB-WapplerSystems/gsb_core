@@ -16,6 +16,7 @@
 * LICENSE file that was distributed with this source code.
 */
 
+use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -29,6 +30,18 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginEmbedderPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginOpenerPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginResourcePolicy'] ??= false;
+
+    // Branded backend login screen
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['brandingBackendLogin'] ??= false;
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('brandingBackendLogin')) {
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendFavicon'] = 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendLogo'] = 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginBackgroundImage'] = 'EXT:gsb_core/Resources/Public/Images/bg.jpg';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginFootnote'] = '© GSB - ITZBund';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginHighlightColor'] = '#004b76';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginLogo'] = 'EXT:gsb_core/Resources/Public/Favicons/android-chrome-192x192.png';
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginLogoAlt'] = 'GSB - ITZBund';
+    }
 
     /***************
      * Define TypoScript as content rendering template

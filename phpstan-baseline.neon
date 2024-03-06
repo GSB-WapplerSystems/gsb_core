@@ -36,24 +36,24 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$processedData with no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) has parameter \\$processedData with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) has parameter \\$processorConfiguration with no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) has parameter \\$processorConfiguration with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContendCategoryProcessor\\:\\:process\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/DataProcessing/CustomContendCategoryProcessor.php
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
 
 		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
@@ -74,6 +74,11 @@ parameters:
 			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
+
+		-
+			message: "#^Class ITZBund\\\\GsbCore\\\\Domain\\\\Repository\\\\CategoryRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/CategoryRepository.php
 
 		-
 			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
