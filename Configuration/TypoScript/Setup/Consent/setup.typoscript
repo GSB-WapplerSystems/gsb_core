@@ -10,7 +10,7 @@ consentlayer {
   typeNum = 1698966471
   10 = FLUIDTEMPLATE
   10 {
-    templateName = ConsentLayer
+    file = EXT:gsb_core/Resources/Private/Templates/Consent/Consentlayer.html
     layoutRootPaths {
       10 = EXT:gsb_core/Resources/Private/Layouts/Consent/
     }
