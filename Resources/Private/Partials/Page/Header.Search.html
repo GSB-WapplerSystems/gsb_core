@@ -3,19 +3,19 @@
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
 
 <li class="mainnav-desktop-item">
-    <button aria-controls="search" id="solr-button" aria-expanded="false" class="first-nav btn-search" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.search', extensionName: 'gsb_core')}">
+    <button aria-controls="search" aria-expanded="false" class="first-nav btn-search" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="solr-button" title="{f:translate(key: 'header.search', extensionName: 'gsb_core')}" type="button">
         {f:translate(key: 'header.search', extensionName: 'gsb_core')}
     </button>
     <div class="dropdown-menu main-menu-desktop" id="search">
         <div class="container d-flex justify-content-end pt-3 pb-3" style="height: 5.5rem !important">
-            <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" title="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle dropdown-item" type="button"></button>
+            <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle dropdown-item" title="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" type="button"></button>
         </div>
         <div class="container tx-solr-search-form">
-            <form method="get" id="tx-solr-search-form-pi-results" action="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}" data-suggest="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}?type=7384" accept-charset="utf-8">
+            <form accept-charset="utf-8" action="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}" data-suggest="{f:uri.typolink(parameter: '{f:cObject(typoscriptObjectPath: \'lib.search\')}')}?type=7384" id="tx-solr-search-form-pi-results-top" method="get">
                 <div class="input-group">
                     <label class="visually-hidden" for="solr-main">{f:translate(key: 'header.search.add', extensionName: 'gsb_core')}</label>
-                    <input type="text" class="tx-solr-q js-solr-q tx-solr-suggest tx-solr-suggest-focus form-control dropdown-item" name="tx_solr[q]" id="solr-main" value="" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_core')}">
-                    <button class="btn btn-primary tx-solr-submit" type="submit" title="{f:translate(key: 'header.searching', extensionName: 'gsb_core')}">
+                    <input class="tx-solr-q js-solr-q tx-solr-suggest tx-solr-suggest-focus form-control dropdown-item" id="solr-main" name="tx_solr[q]" placeholder="{f:translate(key: 'header.searchterm', extensionName: 'gsb_core')}" type="text" value="">
+                    <button class="btn btn-primary tx-solr-submit" title="{f:translate(key: 'header.searching', extensionName: 'gsb_core')}" type="submit">
                         <span>{f:translate(key: 'header.searching', extensionName: 'gsb_core')}</span>
                     </button>
                 </div>

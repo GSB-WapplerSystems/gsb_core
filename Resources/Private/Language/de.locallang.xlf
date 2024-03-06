@@ -228,8 +228,8 @@
 				<target>%Y</target>
 			</trans-unit>
 			<trans-unit id="date.daymonthyear" resname="date.daymonthyear" approved="yes">
-				<source>%d %b %Y</source>
-				<target>%d. %b %Y</target>
+				<source>%d %B %Y</source>
+				<target>%d. %B %Y</target>
 			</trans-unit>
 			<trans-unit id="date.daymonthyearfull" resname="date.daymonthyearfull" approved="yes">
 				<source>%A, %d %B %Y, %H:%M</source>
@@ -415,9 +415,25 @@
 				<source>Logged in with Email address</source>
 				<target>Eingeloggt mit E-Mail Adresse</target>
 			</trans-unit>
-			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
+			<trans-unit id="contentElement.header.date" resname="contentElement.header.date" approved="yes">
 				<source>Published on</source>
 				<target>Veröffentlicht am</target>
+			</trans-unit>
+			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff" approved="yes">
+				<source>Show filters</source>
+				<target>Filter einblenden</target>
+			</trans-unit>
+			<trans-unit id="button.readMore" resname="button.readMore" approved="yes">
+				<source>Read more</source>
+				<target>Mehr erfahren</target>
+			</trans-unit>
+			<trans-unit id="solr.relevance" resname="solr.relevance" approved="yes">
+				<source>Relevance</source>
+				<target>Relevanz</target>
+			</trans-unit>
+			<trans-unit id="solr.created" resname="solr.created" approved="yes">
+				<source>Date</source>
+				<target>Datum</target>
 			</trans-unit>
 		</body>
 	</file>

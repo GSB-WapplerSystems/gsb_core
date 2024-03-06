@@ -248,35 +248,16 @@ plugin.tx_solr {
       cacheLifetime = 86400
     }
 
-    sorting = 0
+    sorting = 1
     sorting {
       defaultOrder = asc
 
       options {
-        relevance {
-          field = relevance
-          label = Relevance
-        }
+        title >
 
-        title {
-          field = sortTitle
-          label = Title
-        }
+        type >
 
-        type {
-          field = type
-          label = Type
-        }
-
-        author {
-          field = sortAuthor
-          label = Author
-        }
-
-        created {
-          field = created
-          label = Creation Date
-        }
+        author >
       }
     }
 
@@ -447,4 +428,34 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 }
+
+
+# 0 = German
+[siteLanguage("languageId") == 0]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Relevanz
+    }
+    created {
+      field = created
+      label = Datum
+      defaultOrder = desc
+    }
+  }
+[global]
+# 1 = English
+[siteLanguage("languageId") == 1]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Relevance
+    }
+    created {
+      field = created
+      label = Date
+      defaultOrder = desc
+    }
+  }
+[global]
 

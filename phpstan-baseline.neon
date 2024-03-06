@@ -76,6 +76,11 @@ parameters:
 			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
 
 		-
+			message: "#^Class ITZBund\\\\GsbCore\\\\Domain\\\\Repository\\\\CategoryRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/CategoryRepository.php
+
+		-
 			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
 			count: 1
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php

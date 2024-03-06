@@ -313,6 +313,18 @@
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
 				<source>Published on</source>
 			</trans-unit>
+			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff">
+				<source>Show filters</source>
+			</trans-unit>
+			<trans-unit id="button.readMore" resname="button.readMore">
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="solr.relevance" resname="solr.relevance">
+				<source>Relevance</source>
+			</trans-unit>
+			<trans-unit id="solr.created" resname="solr.created">
+				<source>Date</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>

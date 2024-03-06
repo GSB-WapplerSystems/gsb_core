@@ -1,6 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
 	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
 	xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+    xmlns:gsbcore="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers"
 	data-namespace-typo3-fluid="true"
 >
 
@@ -14,8 +15,7 @@
 </f:comment>
 
 <f:section name="Document">
-
-	<li class="list-group-item search-result results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
+	<li class="search-result results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
 			data-document-score="{document.score}"
 			data-document-id="{document.id}"
 			data-document-url="{document.url}"
@@ -24,14 +24,47 @@
 			<div class="results-elevated-label"><f:translate key="sponsored" extensionName="solr"/></div>
 		</f:if>
 
+
+
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-12">
 				<h3 class="results-topic"><a href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}">{document.title}</a></h3>
 			</div>
-			<div class="col-md-2">
-				<f:render partial="Result/RelevanceBar" section="RelevanceBar" arguments="{resultSet:resultSet, document:document}" />
-			</div>
 		</div>
+
+        <div class="row">
+            <div class="col-12 text-left">
+                <f:if condition="{document.fields.lastUpdated_intS} != 0">
+                    <f:then>
+                        <span class="date-text"><span class="visually-hidden">{f:translate(key: 'article.detail.published', extensionName: 'gsb_core')} </span> <f:format.date format="{f:translate(key: 'date.daymonthyear', extensionName: 'gsb_core')}">{document.fields.lastUpdated_dateS}</f:format.date></span>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{document.fields.changed} > {document.fields.created}">
+                            <f:then>
+                                <span class="date-text"><span class="visually-hidden">{f:translate(key: 'article.detail.published', extensionName: 'gsb_core')} </span> <f:format.date format="{f:translate(key: 'date.daymonthyear', extensionName: 'gsb_core')}">{document.fields.changed}</f:format.date></span>
+                            </f:then>
+                            <f:else>
+                                <span class="date-text"><span class="visually-hidden">{f:translate(key: 'article.detail.published', extensionName: 'gsb_core')} </span> <f:format.date format="{f:translate(key: 'date.daymonthyear', extensionName: 'gsb_core')}">{document.fields.created}</f:format.date></span>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+                <f:if condition="{document.fields.mainCategory_intS}">
+                    <gsbcore:Category category="{document.fields.mainCategory_intS}" as="mainCategory" />
+                    <span class="dot" aria-hidden="true">•</span> {mainCategory.title}
+                </f:if>
+                <f:if condition="{document.fields.categories_intM}">
+                    <ul class="list-group list-group-horizontal list-unstyled justify-content-start">
+                        <f:for each="{document.fields.categories_intM}" as="category">
+                            <gsbcore:Category category="{category}" as="sideCategory" />
+                            <li class="list-group-item border-0 ps-0 kicker">
+                                <span>{sideCategory.title}</span>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+            </div>
+        </div>
 
 		<div class="results-teaser">
 			<p class="result-content">
@@ -55,7 +88,6 @@
 				</p>
 			</f:if>
 
-			<f:variable name="documentScoreAnalyze"><s:debug.documentScoreAnalyzer document="{document}" /></f:variable>
 			<f:if condition="{documentScoreAnalyze}">
 				<div class="query-debug alert alert-info" role="alert"><f:format.raw>{documentScoreAnalyze}</f:format.raw></div>
 			</f:if>

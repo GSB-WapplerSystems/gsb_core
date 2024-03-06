@@ -7,6 +7,6 @@ lib {
   jumpNav = TEXT
   jumpNav {
     data = getIndpEnv:TYPO3_REQUEST_URL
-    dataWrap = <div class="skipnav" aria-label="{lll:EXT:gsb_core/Resources/Private/Language/locallang.xlf:header.jumpto}"><a href=" | #mainContent">{lll:EXT:gsb_core/Resources/Private/Language/locallang.xlf:header.jumptocontent}</a></div>
+    dataWrap = <div class="skipnav"><a href=" | #mainContent">{lll:EXT:gsb_core/Resources/Private/Language/locallang.xlf:header.jumptocontent}</a></div>
   }
 }
