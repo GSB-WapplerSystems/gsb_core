@@ -48,7 +48,7 @@
                     <span class="dot" aria-hidden="true">•</span> {mainCategory.title}
                 </f:if>
                 <f:if condition="{document.fields.categories_intM}">
-                    <ul class="list-group list-group-horizontal list-unstyled justify-content-start">
+                    <ul class="list-group list-group-horizontal list-unstyled justify-content-start flex-wrap">
                         <f:for each="{document.fields.categories_intM}" as="category">
                             <gsbcore:Category category="{category}" as="sideCategory" />
                             <li class="list-group-item border-0 ps-0 kicker">
