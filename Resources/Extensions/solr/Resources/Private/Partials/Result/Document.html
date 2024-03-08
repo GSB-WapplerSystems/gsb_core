@@ -15,7 +15,7 @@
 </f:comment>
 
 <f:section name="Document">
-	<li class="search-result results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
+	<li class="search-result text-left results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
 			data-document-score="{document.score}"
 			data-document-id="{document.id}"
 			data-document-url="{document.url}"
@@ -23,17 +23,11 @@
 		<f:if condition="{document.isElevated}">
 			<div class="results-elevated-label"><f:translate key="sponsored" extensionName="solr"/></div>
 		</f:if>
-
-
-
-		<div class="row">
-			<div class="col-12">
-				<h3 class="results-topic"><a href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}">{document.title}</a></h3>
-			</div>
-		</div>
-
-        <div class="row">
-            <div class="col-12 text-left">
+        <div class="d-flex flex-column">
+            <div class="order-1">
+                <h3 class="results-topic"><a href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}">{document.title}</a></h3>
+            </div>
+            <div class="order-0">
                 <f:if condition="{document.fields.lastUpdated_intS} != 0">
                     <f:then>
                         <span class="date-text"><span class="visually-hidden">{f:translate(key: 'article.detail.published', extensionName: 'gsb_core')} </span> <f:format.date format="{f:translate(key: 'date.daymonthyear', extensionName: 'gsb_core')}">{document.fields.lastUpdated_dateS}</f:format.date></span>
@@ -65,35 +59,30 @@
                 </f:if>
             </div>
         </div>
+        <p class="result-content">
+            <f:format.crop maxCharacters="500" respectWordBoundaries="true" respectHtml="true">{s:document.highlightResult(resultSet:resultSet, document:document, fieldName:'content')}</f:format.crop>
+        </p>
+        <f:if condition="{document.type} == 'tx_solr_file'">
+            <p>
+                <f:translate key="file_mimetype" extensionName="solr"/>: {document.fileMimeType}<br />
+                <f:translate key="file_referenced" extensionName="solr"/>:
 
-		<div class="results-teaser">
-			<p class="result-content">
-                <f:format.crop maxCharacters="500" respectWordBoundaries="true" respectHtml="true">{s:document.highlightResult(resultSet:resultSet, document:document, fieldName:'content')}</f:format.crop>
+                <ul class="references">
+                    <f:if condition="{document.fileReferenceUrl}">
+                        <li><f:link.typolink title="{document.fileReferenceTitle}" parameter="{document.fileReferenceUrl}">{document.fileReferenceTitle}</f:link.typolink></li>
+                    </f:if>
+                    <f:if condition="{document.variants}">
+                        <f:for each="{document.variants}" as="variant">
+                            <li><f:link.typolink title="{variant.fileReferenceTitle}" parameter="{variant.fileReferenceUrl}">{variant.fileReferenceTitle}</f:link.typolink></li>
+                        </f:for>
+                    </f:if>
+                </ul>
             </p>
-			<f:if condition="{document.type} == 'tx_solr_file'">
-				<p>
-					<f:translate key="file_mimetype" extensionName="solr"/>: {document.fileMimeType}<br />
-					<f:translate key="file_referenced" extensionName="solr"/>:
-
-					<ul class="references">
-						<f:if condition="{document.fileReferenceUrl}">
-							<li><f:link.typolink title="{document.fileReferenceTitle}" parameter="{document.fileReferenceUrl}">{document.fileReferenceTitle}</f:link.typolink></li>
-						</f:if>
-						<f:if condition="{document.variants}">
-							<f:for each="{document.variants}" as="variant">
-								<li><f:link.typolink title="{variant.fileReferenceTitle}" parameter="{variant.fileReferenceUrl}">{variant.fileReferenceTitle}</f:link.typolink></li>
-							</f:for>
-						</f:if>
-					</ul>
-				</p>
-			</f:if>
-
-			<f:if condition="{documentScoreAnalyze}">
-				<div class="query-debug alert alert-info" role="alert"><f:format.raw>{documentScoreAnalyze}</f:format.raw></div>
-			</f:if>
-		</div>
+        </f:if>
+        <f:if condition="{documentScoreAnalyze}">
+            <div class="query-debug alert alert-info" role="alert"><f:format.raw>{documentScoreAnalyze}</f:format.raw></div>
+        </f:if>
 	</li>
-
 </f:section>
 
 </html>
