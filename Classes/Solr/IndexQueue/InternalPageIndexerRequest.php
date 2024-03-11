@@ -21,6 +21,7 @@ namespace ITZBund\GsbCore\Solr\IndexQueue;
 
 use ApacheSolrForTypo3\Solr\IndexQueue\PageIndexerRequest;
 use Exception;
+use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -33,16 +34,19 @@ use TYPO3\CMS\Frontend\Http\Application;
 /**
  * "Internal" Index Queue Page Indexer request that does not use an actual request but
  * uses a seperate application request
+ *
+ * This is used to circumvent firewall issues in our deployment scenario where we might not be able to access the proper page via HTTP request
  */
 class InternalPageIndexerRequest extends PageIndexerRequest
 {
     /**
-     * Fetches a page by sending the configured headers.
+     * Fetches a page by sending the configured headers. Uses an internal request
      *
      * @throws Exception
      */
     protected function getUrl(string $url, array $headers, float $timeout): ResponseInterface
     {
+        $subResponse = new Response(500);
         try {
             $subRequest = ServerRequestFactory::fromGlobals();
             foreach ($headers as $k => $v) {
