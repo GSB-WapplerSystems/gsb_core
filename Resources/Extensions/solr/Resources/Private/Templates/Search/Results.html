@@ -69,11 +69,9 @@
 
         <div class="accordion filter-accordion">
             <div class="accordion-item filter-accordion-item">
-                <h2 class="accordion-header filter-accordion-header">
-                    <button aria-controls="filter" aria-expanded="false" class="accordion-button filter-accordion-button collapsed" data-bs-target="#filter" data-bs-toggle="collapse" id="filterCollapse" type="button">
-                        <f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:solr.filterButtonOff" />
-                    </button>
-                </h2>
+                <button aria-controls="filter" aria-expanded="false" class="accordion-button filter-accordion-button collapsed" data-bs-target="#filter" data-bs-toggle="collapse" id="filterCollapse" type="button">
+                    <f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:solr.filterButtonOff" />
+                </button>
                 <div class="accordion-collapse filter-accordion-collapse collapse" id="filter">
 
                     <f:if condition="{resultSet.hasSearched}">
