@@ -15,7 +15,7 @@
 </f:comment>
 
 <f:section name="Document">
-	<li class="search-result text-left results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
+	<li class="search-result teaser text-left results-entry{f:if(condition:document.isElevated, then: ' results-elevated')}"
 			data-document-score="{document.score}"
 			data-document-id="{document.id}"
 			data-document-url="{document.url}"
@@ -25,7 +25,7 @@
 		</f:if>
         <div class="d-flex flex-column">
             <div class="order-1">
-                <h3 class="results-topic"><a href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}">{document.title}</a></h3>
+                <h2 class="results-topic"><a class="stretched-link teaser-link" href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}"><span>{document.title}</span></a></h2>
             </div>
             <div class="order-0">
                 <f:if condition="{document.fields.lastUpdated_intS} != 0">

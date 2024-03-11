@@ -325,6 +325,9 @@
 			<trans-unit id="solr.created" resname="solr.created">
 				<source>Date</source>
 			</trans-unit>
+			<trans-unit id="solr.pagination" resname="solr.pagination">
+				<source>Search results navigation</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>

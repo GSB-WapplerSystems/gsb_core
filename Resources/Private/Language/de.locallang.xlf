@@ -435,6 +435,10 @@
 				<source>Date</source>
 				<target>Datum</target>
 			</trans-unit>
+			<trans-unit id="solr.pagination" resname="solr.pagination" approved="yes">
+				<source>Search results navigation</source>
+				<target>Suchergebnisse Navigation</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
