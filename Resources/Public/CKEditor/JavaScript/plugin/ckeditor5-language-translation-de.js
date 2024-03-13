@@ -1,1 +1,0 @@
-(function (d) { const l = d['de'] = d['de'] || {}; l.dictionary = Object.assign(l.dictionary || {}, { "Choose language": "Sprache auswählen", "Remove language": "Sprache entfernen", "Language": "Sprache" }); l.getPluralForm = function (n) { return (n != 1); }; })(window.CKEDITOR_TRANSLATIONS || (window.CKEDITOR_TRANSLATIONS = {}));
