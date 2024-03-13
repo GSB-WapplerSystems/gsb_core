@@ -23,7 +23,7 @@ editor:
     defaultLanguage: "de"
 
     importModules:
-      - { module: '@ckeditor/ckeditor5-language-translation-de.js', exports: [] }
+      - { module: '@ckeditor/ckeditor5-language-translations.js', exports: [] }
       - { module: '@ckeditor/ckeditor5-language', exports: ['TextPartLanguage'] }
 
     heading:
