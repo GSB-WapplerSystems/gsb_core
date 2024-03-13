@@ -59,12 +59,6 @@
   <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="getSessionTimeout"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
-  <violation rule="PHPMD\Rule\Design\CouplingBetweenObjects" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php"/>
-  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php"/>
-  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php"/>
-  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php"/>
-  <violation rule="PHPMD\Rule\UnusedLocalVariable" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php"/>
-  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Solr/IndexQueue/InternalPageIndexerRequest.php" method="stashEnvironment"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
