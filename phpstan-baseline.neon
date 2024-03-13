@@ -286,11 +286,6 @@ parameters:
 			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Solr\\\\IndexQueue\\\\InternalPageIndexerRequest\\:\\:getUrl\\(\\) has parameter \\$headers with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: Classes/Solr/IndexQueue/InternalPageIndexerRequest.php
-
-		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\ViewHelpers\\\\Format\\\\Json\\\\DecodeViewHelper\\:\\:renderStatic\\(\\) has parameter \\$arguments with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/ViewHelpers/Format/Json/DecodeViewHelper.php

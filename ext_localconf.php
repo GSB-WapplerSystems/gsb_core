@@ -17,7 +17,6 @@
 * LICENSE file that was distributed with this source code.
 */
 
-use ITZBund\GsbCore\Solr\IndexQueue\InternalPageIndexerRequest;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -93,12 +92,6 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper::class] = [
         'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
     ];
-
-    if (class_exists(\ApacheSolrForTypo3\Solr\IndexQueue\PageIndexerRequest::class)) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\ApacheSolrForTypo3\Solr\IndexQueue\PageIndexerRequest::class] = [
-            'className' => InternalPageIndexerRequest::class,
-        ];
-    }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
 
