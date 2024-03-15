@@ -222,9 +222,6 @@
             <trans-unit id="tt_content.tx_video_caption" resname="tt_content.tx_video_caption">
                 <source>Caption</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_video_poster_image" resname="tt_content.tx_video_poster_image">
-                <source>Poster Image</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_video" resname="tt_content.tx_video">
                 <source>Video</source>
             </trans-unit>
@@ -273,9 +270,6 @@
 			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video">
 				<source>Stage with video</source>
 			</trans-unit>
-            <trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file">
-                <source>Stage Image</source>
-            </trans-unit>
 			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video">
 				<source>Stage Video</source>
 			</trans-unit>

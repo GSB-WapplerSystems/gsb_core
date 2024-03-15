@@ -295,10 +295,6 @@
 				<source>Caption</source>
 				<target>Untertitel</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_poster_image" resname="tt_content.tx_video_poster_image" approved="yes">
-				<source>Poster Image</source>
-				<target>Hintergrundbild</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_video" resname="tt_content.tx_video" approved="yes">
 				<source>Video</source>
 				<target>Video</target>
@@ -350,10 +346,6 @@
 			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video" approved="yes">
 				<source>Stage with video</source>
 				<target>Bühne mit Video</target>
-			</trans-unit>
-			<trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file" approved="yes">
-				<source>Stage Image</source>
-				<target>Bühne Bild</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video" approved="yes">
 				<source>Stage Video</source>
