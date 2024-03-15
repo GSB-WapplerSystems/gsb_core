@@ -139,7 +139,6 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'grid_bgfullsize' => 0,
             'grid_container' => 0,
             'grid_light' => 0,
-            'tx_stage_file' => 0,
             'tx_stage_bgcolor' => 0,
             'tx_stage_position' => '',
             'tx_stage_bg' => 0,

@@ -39,7 +39,6 @@ class SingleteaserPreviewRendererTest extends AbstractPreviewRendererTest
             'CType' => 'gsb_singleteaser',
             'header' => 'header',
             'bodytext' => 'bodytext',
-            'tx_stage_file' => 1,
             'image' => 1,
             ];
     }
