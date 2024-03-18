@@ -192,13 +192,23 @@
 								</f:for>
 							</f:for>
 						</f:then>
-						<f:else if="{resultSet.allResultCount}">
-							<ol class="results-list list-unstyled" data-start="{pagination.startRecordNumber}">
-								<f:for as="document" each="{resultSet.searchResults}">
-									<f:render arguments="{resultSet: resultSet, document: document}" partial="Result/Document" section="Document" />
-								</f:for>
-							</ol>
-							<f:render arguments="{resultSet: resultSet, pagination: pagination, currentPage: currentPage}" partial="Result/Pagination" section="Pagination"/>
+						<f:else>
+                            <f:if condition="{resultSet.allResultCount}">
+                                <f:then>
+                                    <ol class="results-list list-unstyled" data-start="{pagination.startRecordNumber}">
+                                        <f:for as="document" each="{resultSet.searchResults}">
+                                            <f:render arguments="{resultSet: resultSet, document: document}" partial="Result/Document" section="Document" />
+                                        </f:for>
+                                    </ol>
+                                    <f:render arguments="{resultSet: resultSet, pagination: pagination, currentPage: currentPage}" partial="Result/Pagination" section="Pagination"/>
+                                </f:then>
+                                <f:else>
+                                    <f:comment><!-- defined in Typoscript only --></f:comment>
+                                    <f:translate extensionName="solr" key="results_found_nothing">
+                                        Es wurden keine Suchergebnisse gefunden. Überprüfen Sie, ob alle Wörter richtig geschrieben sind.
+                                        Versuchen Sie allgemeinere Suchbegriffe.</f:translate>
+                                </f:else>
+                            </f:if>
 						</f:else>
 					</f:if>
 				</f:if>
