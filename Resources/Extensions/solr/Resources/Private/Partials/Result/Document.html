@@ -58,9 +58,14 @@
                     </ul>
                 </f:if>
             </div>
+            <f:if condition="{document.fields.media_intS}"><!-- TODO -->
+            <div class="order-2">
+                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" width="300c" src="{document.fields.media_intS}" treatIdAsReference="1" />
+            </div>
+            </f:if>
         </div>
         <p class="result-content">
-            <f:format.crop maxCharacters="500" respectWordBoundaries="true" respectHtml="true">{s:document.highlightResult(resultSet:resultSet, document:document, fieldName:'content')}</f:format.crop>
+            <f:format.crop maxCharacters="{settings.result.crop.maxCharacters}" respectWordBoundaries="true" respectHtml="true">{s:document.highlightResult(resultSet:resultSet, document:document, fieldName:'content')}</f:format.crop>
         </p>
         <f:if condition="{document.type} == 'tx_solr_file'">
             <p>
