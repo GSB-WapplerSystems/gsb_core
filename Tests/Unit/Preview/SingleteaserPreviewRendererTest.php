@@ -40,6 +40,6 @@ class SingleteaserPreviewRendererTest extends AbstractPreviewRendererTest
             'header' => 'header',
             'bodytext' => 'bodytext',
             'image' => 1,
-            ];
+        ];
     }
 }
