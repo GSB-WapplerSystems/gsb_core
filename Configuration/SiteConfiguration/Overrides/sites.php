@@ -48,4 +48,3 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
     ,--div--;GSB,sitePackage, search, copyright
 ';
-
