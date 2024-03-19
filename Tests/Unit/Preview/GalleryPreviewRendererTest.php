@@ -42,6 +42,6 @@ class GalleryPreviewRendererTest extends AbstractPreviewRendererTest
             'bodytext' => 'bodytext',
             'gallery_layout' => 'gallery-single',
             'gallery_file' => 1,
-            ];
+        ];
     }
 }
