@@ -35,7 +35,7 @@ class BannerPreviewRendererTest extends AbstractPreviewRendererTest
             'bodytext' => 'bodytext',
             'tx_link_text' => 'link text',
             'image' => 1,
-            ];
+        ];
     }
 
     protected function setUp(): void
