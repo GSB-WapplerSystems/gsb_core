@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+	xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers"
+    xmlns:c="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
+    <div class="col-12 col-lg-4 mb-3">
+        <div class="dropdown">
+            <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
+                {facet.label}
+            </button>
+            <ul class="dropdown-menu w-100">
+                <f:for each="{facet.options}" as="option" iteration="iteration">
+                <li><a class="dropdown-item" href="{s:uri.facet.addFacetItem(facet: facet, facetItem: option)}"><f:render section="label" arguments="{_all}" /></a></li>
+            </f:for>
+            </ul>
+        </div>
+    </div>
+
+    <f:section name="label">
+        <f:if condition="{facet.configuration.subtype} == 'sys_category'">
+            <f:then><c:category as="label">{option.label}</c:category>{label.title}</f:then>
+            <f:else>{option.label}</f:else>
+        </f:if>
+    </f:section>
+
+</html>
