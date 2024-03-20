@@ -4,6 +4,7 @@
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
  * (c) Ole Hartwig <o.hartwig@moselwal.de> 2023
+ * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -23,7 +24,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     ],
 ];
 
-// Build searchbox toggle
+// ITZBUNDPHP-2872 Build searchbox toggle
 $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search.description',
@@ -34,6 +35,16 @@ $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['palettes']['default']['showitem'] .= ',
-    sitePackage, search
+// ITZBUNDPHP-2873 Copyright-Text
+$GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.copyright',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.copyright.description',
+    'config' => [
+        'type' => 'text',
+        'renderType' => 'input',
+    ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
+    ,--div--;GSB,sitePackage, search, copyright
 ';

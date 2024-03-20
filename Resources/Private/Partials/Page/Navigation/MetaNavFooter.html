@@ -1,8 +1,8 @@
-
 <f:comment>
     <!--
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
  * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+ * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
  * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
  * Licensed under the GPL 2.0 License.
  -->
@@ -14,9 +14,14 @@
             <hr aria-hidden="true">
             <div class="row align-items-start py-4">
                 <div class="col-12 col-lg-4">
-                    <f:if condition="{copyright}">
+                    <f:if condition="{copyrightYear}">
                         <p class="footer-copyright-distances footer-copyright-font-properties">
-                            <f:format.raw>{copyright}</f:format.raw>
+                            ©
+                            <f:if condition="{site.configuration.copyright}">
+                                <f:then>{site.configuration.copyright}</f:then>
+                                <f:else>ITZBund</f:else>
+                            </f:if>
+                            {copyrightYear}
                         </p>
                     </f:if>
                 </div>
