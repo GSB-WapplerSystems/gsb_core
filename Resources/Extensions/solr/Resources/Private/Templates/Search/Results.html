@@ -25,20 +25,20 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 d-flex">
 				<f:if condition="{resultSet.isAutoCorrected}">
 					<f:then>
-					<span class="searched-for">
-						<f:translate arguments="{0: resultSet.initialQueryString}" extensionName="solr" key="no_results_nothing_found">Nothing found for "%s".</f:translate>
+					<p class="searched-for text-break mb-0">
+						<f:translate arguments="{0: resultSet.initialQueryString}" extensionName="solr" key="no_results_nothing_found">Nothing found for "%s". </f:translate>
 						<f:translate arguments="{0: resultSet.correctedQueryString}" extensionName="solr" key="no_results_showing_results_suggestion">Showing results for "%s".</f:translate>
-					</span>
+					</p>
 					</f:then>
 
 					<f:else>
 						<f:if condition="{resultSet.usedQuery.query}">
-						<span class="searched-for">
+						<p class="searched-for text-break mb-0">
 							<f:translate arguments="{0: resultSet.usedQuery.query}" extensionName="solr" key="results_searched_for">Searched for "%s"</f:translate>
-						</span>
+						</p>
 						</f:if>
 					</f:else>
 				</f:if>
@@ -53,7 +53,7 @@
 				</f:if>
 
 				<f:if condition="{resultSet.allResultCount}">
-					<span class="result-found">
+					<p class="result-found text-uppercase ms-3 mb-0">
 						<f:if condition="{resultSet.allResultCount} == 1">
 							<f:then>
 								<f:translate arguments="{0: resultSet.usedSearch.queryTime}" extensionName="solr" key="results_found.singular">Found 1 result.</f:translate>
@@ -62,7 +62,7 @@
 								<f:translate arguments="{0: resultSet.allResultCount, 1: resultSet.usedSearch.queryTime}" extensionName="solr" key="results_found">Found %d results.</f:translate>
 							</f:else>
 						</f:if>
-					</span>
+					</p>
 				</f:if>
 			</div>
 		</div>
@@ -204,9 +204,9 @@
                                 </f:then>
                                 <f:else>
                                     <f:comment><!-- defined in Typoscript only --></f:comment>
-                                    <f:translate extensionName="solr" key="results_found_nothing">
-                                        Es wurden keine Suchergebnisse gefunden. Überprüfen Sie, ob alle Wörter richtig geschrieben sind.
-                                        Versuchen Sie allgemeinere Suchbegriffe.</f:translate>
+                                    <div class="ce-bodytext">
+                                        <f:format.html><f:translate extensionName="solr" key="results_found_nothing">Es wurden keine Suchergebnisse gefunden. Überprüfen Sie, ob alle Wörter richtig geschrieben sind. Versuchen Sie allgemeinere Suchbegriffe.</f:translate></f:format.html>
+                                    </div>
                                 </f:else>
                             </f:if>
 						</f:else>
