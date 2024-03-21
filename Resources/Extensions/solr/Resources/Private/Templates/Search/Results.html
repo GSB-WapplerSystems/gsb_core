@@ -28,17 +28,17 @@
 			<div class="col-md-12">
 				<f:if condition="{resultSet.isAutoCorrected}">
 					<f:then>
-					<b class="searched-for">
+					<p class="searched-for text-break">
 						<f:translate arguments="{0: resultSet.initialQueryString}" extensionName="solr" key="no_results_nothing_found">Nothing found for "%s". </f:translate>
 						<f:translate arguments="{0: resultSet.correctedQueryString}" extensionName="solr" key="no_results_showing_results_suggestion">Showing results for "%s".</f:translate>
-					</b>
+					</p>
 					</f:then>
 
 					<f:else>
 						<f:if condition="{resultSet.usedQuery.query}">
-						<b class="searched-for">
+						<p class="searched-for text-break">
 							<f:translate arguments="{0: resultSet.usedQuery.query}" extensionName="solr" key="results_searched_for">Searched for "%s"</f:translate>
-						</b>
+						</p>
 						</f:if>
 					</f:else>
 				</f:if>
