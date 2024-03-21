@@ -841,11 +841,11 @@
 			</trans-unit>
 			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
 				<source>Copyright notice</source>
-				<target>Urhebderrechtshinweis</target>
+				<target>Urheberrechtshinweis</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.copyright.description" resname="page.configuration.copyright.description">
 				<source>The copyright notice will ben shown in the footer after the current year</source>
-				<target>Der Hinweis wird im footer nach dem aktuellen jahr ausgespielt</target>
+				<target>Der Hinweis wird im footer nach dem aktuellen Jahr ausgespielt</target>
 			</trans-unit>
 		</body>
 	</file>
