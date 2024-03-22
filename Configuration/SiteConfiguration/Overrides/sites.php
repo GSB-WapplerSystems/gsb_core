@@ -14,6 +14,15 @@
  * LICENSE file that was distributed with this source code.
  */
 
+$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
+    ,--div--;GSB,sitePackage, search, copyright, --palette--;;favicon
+';
+
+$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
+$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.pallet.description';
+
+$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-16x16,favicon-32x32,apple-touch-icon-60x60,apple-touch-icon-76x76,apple-touch-icon-120x120,apple-touch-icon-152x152,apple-touch-icon-180x180,safari-pinned-tab,shortcut-icon,webmanifest,browserconfig';
+
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.description',
@@ -45,6 +54,113 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
     ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, copyright
-';
+// favicons
+
+$GLOBALS['SiteConfiguration']['site']['columns']['favicon-16x16'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-16x16',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-16x16',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['favicon-32x32'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-32x32',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-32x32',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-60x60'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-60x60',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-60x60',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-76x76'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-76x76',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-76x76',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-120x120'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-120x120',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-120x120',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-152x152'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-152x152',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-152x152',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-180x180'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-180x180',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-180x180',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['safari-pinned-tab'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.safari-pinned-tab',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.safari-pinned-tab',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['shortcut-icon'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.shortcut-icon',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.shortcut-icon',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['webmanifest'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.webmanifest',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.webmanifest',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.browserconfig',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.browserconfig',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
