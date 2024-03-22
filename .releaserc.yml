@@ -1,6 +1,40 @@
 plugins:
-  - "@semantic-release/commit-analyzer"
-  - "@semantic-release/release-notes-generator"
+  - - "@semantic-release/commit-analyzer"
+    - preset: 'conventionalcommits'
+      releaseRules:
+        - type: 'chore'
+          release: 'patch'
+  - - "@semantic-release/release-notes-generator"
+    - preset: 'conventionalcommits'
+      presetConfig:
+        types:
+          - type: 'feat'
+            section: ':sparkles: Features'
+            hidden: false
+          - type: 'fix'
+            section: ':bug: Fixes'
+            hidden: false
+          - type: 'docs'
+            section: ':memo: Documentation'
+            hidden: false
+          - type: 'style'
+            section: ':barber: Styles'
+            hidden: false
+          - type: 'refactor'
+            section: ':zap: Refactor'
+            hidden: false
+          - type: 'perf'
+            section: ':fast_forward: Performance'
+            hidden: false
+          - type: 'test'
+            section: ':white_check_mark: Tests'
+            hidden: false
+          - type: 'ci'
+            section: ':repeat: Continuous Integrations'
+            hidden: false
+          - type: 'chore'
+            section: ':repeat: Chores'
+            hidden: false
   - - "@semantic-release/gitlab"
     - gitlabUrl: https://git.gsb-itzbund.de
       assets:
