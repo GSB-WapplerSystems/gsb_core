@@ -295,10 +295,6 @@
 				<source>Caption</source>
 				<target>Untertitel</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_poster_image" resname="tt_content.tx_video_poster_image" approved="yes">
-				<source>Poster Image</source>
-				<target>Hintergrundbild</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_video" resname="tt_content.tx_video" approved="yes">
 				<source>Video</source>
 				<target>Video</target>
@@ -350,10 +346,6 @@
 			<trans-unit id="stage.tx_stage_switch_video" resname="stage.tx_stage_switch_video" approved="yes">
 				<source>Stage with video</source>
 				<target>Bühne mit Video</target>
-			</trans-unit>
-			<trans-unit id="stage.tx_stage_file" resname="stage.tx_stage_file" approved="yes">
-				<source>Stage Image</source>
-				<target>Bühne Bild</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video" approved="yes">
 				<source>Stage Video</source>
@@ -844,8 +836,116 @@
 				<target>Website-Paket dieser Seite</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.description" resname="page.configuration.sitepackage.description" approved="yes">
-				<source>[EXT:gsb_core] Attached site extension with TypoScript entry points</source>
-				<target>[EXT:gsb_core] Angehängte Website-Erweiterung mit TypoScript-Einstiegspunkten</target>
+				<source>Attached site extension with TypoScript entry points</source>
+				<target>Angehängte Website-Erweiterung mit TypoScript-Einstiegspunkten</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
+				<source>Copyright notice</source>
+				<target>Urheberrechtshinweis</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.copyright.description" resname="page.configuration.copyright.description">
+				<source>In the footer, the copyright notice is displayed with the current year.</source>
+				<target>Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.sitepackage.favicon.pallet.description" resname="page.configuration.sitepackage.favicon.pallet.description">
+				<source>Favicons can be configured here.</source>
+				<target>Favicons können hier konfiguriert werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.favicon-16x16" resname="page.configuration.favicon-16x16">
+				<source>favicon-16x16</source>
+				<target>favicon-16x16</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.favicon-16x16" resname="page.configuration.description.favicon-16x16">
+				<source>The favicon file must be named favicon-16x16.png.</source>
+				<target>Die Favicon-Datei muss zwingend als favicon-16x16.png benannt sein.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.favicon-32x32" resname="page.configuration.favicon-32x32">
+				<source>favicon-32x32</source>
+				<target>favicon-32x32</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.favicon-32x32" resname="page.configuration.description.favicon-32x32">
+				<source>The favicon file must be named favicon-32x32.png.</source>
+				<target>Die Favicon-Datei muss zwingend als favicon-32x32.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.apple-touch-icon-60x60" resname="page.configuration.apple-touch-icon-60x60">
+				<source>apple-touch-icon-60x60</source>
+				<target>apple-touch-icon-60x60</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.apple-touch-icon-60x60" resname="page.configuration.description.apple-touch-icon-60x60">
+				<source>The apple touch icon file must be named apple-touch-icon-60x60.png.</source>
+				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-60x60.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.apple-touch-icon-76x76" resname="page.configuration.apple-touch-icon-76x76">
+				<source>apple-touch-icon-76x76</source>
+				<target>apple-touch-icon-76x76</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.apple-touch-icon-76x76" resname="page.configuration.description.apple-touch-icon-76x76">
+				<source>The apple touch icon file must be named apple-touch-icon-76x76.png.</source>
+				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-76x76.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.apple-touch-icon-120x120" resname="page.configuration.apple-touch-icon-120x120">
+				<source>apple-touch-icon-120x120</source>
+				<target>apple-touch-icon-120x120</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.apple-touch-icon-120x120" resname="page.configuration.description.apple-touch-icon-120x120">
+				<source>The apple touch icon file must be named apple-touch-icon-120x120.png.</source>
+				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-120x120.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.apple-touch-icon-152x152" resname="page.configuration.apple-touch-icon-152x152">
+				<source>apple-touch-icon-152x152</source>
+				<target>apple-touch-icon-152x152</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.apple-touch-icon-152x152" resname="page.configuration.description.apple-touch-icon-152x152">
+				<source>The apple touch icon file must be named apple-touch-icon-152x152.png.</source>
+				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-152x152.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.apple-touch-icon-180x180" resname="page.configuration.apple-touch-icon-180x180">
+				<source>apple-touch-icon-180x180</source>
+				<target>apple-touch-icon-180x180</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.apple-touch-icon-180x180" resname="page.configuration.description.apple-touch-icon-180x180">
+				<source>The apple touch icon file must be named apple-touch-icon-180x180.png.</source>
+				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-180x180.png benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.safari-pinned-tab" resname="page.configuration.safari-pinned-tab">
+				<source>safari-pinned-tab</source>
+				<target>safari-pinned-tab</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.safari-pinned-tab" resname="page.configuration.description.safari-pinned-tab">
+				<source>The safari pinned tab icon file must be named safari-pinned-tab.svg.</source>
+				<target>Das Safari-Pinned-Tab-Icon muss zwingend als safari-pinned-tab.svg benannt sein.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.shortcut-icon" resname="page.configuration.shortcut-icon">
+				<source>favicon.ico</source>
+				<target>favicon.ico</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.shortcut-icon" resname="page.configuration.description.shortcut-icon">
+				<source>The favicon icon file must be named favicon.ico.</source>
+				<target>Das Favicon-Icon muss zwingend als favicon.ico benannt sein.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.webmanifest" resname="page.configuration.webmanifest">
+				<source>site.webmanifest</source>
+				<target>site.webmanifest</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.webmanifest" resname="page.configuration.description.webmanifest">
+				<source>link to site.webmanifest</source>
+				<target>Link zum site.webmanifest.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.browserconfig" resname="page.configuration.browserconfig">
+				<source>browserconfig</source>
+				<target>Browserconfig</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
+				<source>link to browserconfig.xml</source>
+				<target>Link zur browserconfig.xml.</target>
 			</trans-unit>
 		</body>
 	</file>

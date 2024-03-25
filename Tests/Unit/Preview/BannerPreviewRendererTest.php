@@ -33,10 +33,9 @@ class BannerPreviewRendererTest extends AbstractPreviewRendererTest
             'CType' => 'gsb_banner',
             'header' => 'header',
             'bodytext' => 'bodytext',
-            'tx_stage_file' => 1,
             'tx_link_text' => 'link text',
             'image' => 1,
-            ];
+        ];
     }
 
     protected function setUp(): void

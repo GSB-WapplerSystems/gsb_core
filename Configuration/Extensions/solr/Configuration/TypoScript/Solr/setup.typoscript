@@ -72,6 +72,23 @@ plugin.tx_solr {
             localField = categories
             multiValue = 1
           }
+
+          media_intS = CONTENT
+          media_intS {
+            table = sys_file_reference
+            select {
+              selectFields = sys_file_reference.uid
+              max = 1
+              orderBy = sorting_foreign
+              where = sys_file_reference.tablenames = "pages" AND sys_file_reference.fieldname = "media" AND sys_file_reference.uid_local IN (SELECT uid FROM sys_file)
+              pidInList = {field:uid}
+              pidInList.insertData = 1
+              andWhere = sys_file_reference.uid_foreign = {field:uid}
+              andWhere.insertData = 1
+            }
+            renderObj = TEXT
+            renderObj.field = uid
+          }
         }
       }
     }
@@ -198,7 +215,7 @@ plugin.tx_solr {
       resultsHighlighting = 1
       resultsHighlighting {
         highlightFields = content
-        fragmentSize = 200
+        fragmentSize = 300
         fragmentSeparator = [...]
 
         wrap = <span class="highlighted">|</span>
@@ -380,9 +397,10 @@ plugin.tx_solr {
   }
 
   settings {
-  faceting {
-    limit = {$plugin.tx_solr.search.faceting.limit}
-  }
+    faceting {
+      limit = {$plugin.tx_solr.search.faceting.limit}
+    }
+    result.crop.maxCharacters = 300
   }
 }
 
@@ -429,7 +447,6 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
   }
 }
 
-
 # 0 = German
 [siteLanguage("languageId") == 0]
   plugin.tx_solr.search.sorting.options {
@@ -458,4 +475,30 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 [global]
+# 2 = Française
+[siteLanguage("languageId") == 2]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Pertinence
+    }
+    created {
+      field = created
+      label = Date
+      defaultOrder = desc
+    }
+  }
+[global]
 
+# Translations
+plugin.tx_solr._LOCAL_LANG.default.results_found = %s results
+plugin.tx_solr._LOCAL_LANG.default.results_found.singular = 1 result
+plugin.tx_solr._LOCAL_LANG.default.results_found_nothing = <h2>No results found.</h2><ul class="pb-5"><li>Please check if all words are spelled correctly.</li><li>Use more general search words.</li></ul>
+
+plugin.tx_solr._LOCAL_LANG.de.results_found = %s Ergebnisse
+plugin.tx_solr._LOCAL_LANG.de.results_found.singular = 1 Ergebnis
+plugin.tx_solr._LOCAL_LANG.de.results_found_nothing = <h2>Keine Suchergebnisse gefunden.</h2><ul class="pb-5"><li>Überprüfen Sie, ob alle Wörter richtig geschrieben sind.</li><li>Versuchen Sie allgemeinere Suchbegriffe.</li></ul>
+
+plugin.tx_solr._LOCAL_LANG.fr.results_found = %s résultats
+plugin.tx_solr._LOCAL_LANG.fr.results_found.singular = 1 résultats
+plugin.tx_solr._LOCAL_LANG.fr.results_found_nothing = <h2>Aucun résultat de recherche n'a été trouvé.</h2><ul class="pb-5"><li>Vérifiez que tous les mots sont correctement orthographiés.</li><li>Essayez des termes de recherche plus généraux.</li></ul>

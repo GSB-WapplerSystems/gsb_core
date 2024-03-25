@@ -28,6 +28,12 @@ TCEFORM {
   #    Pages
   #--------------
   pages {
+    author {
+      disabled = 1
+    }
+    author_email {
+      disabled = 1
+    }
     layout {
       removeItems = 1, 2, 3, 4
       altLabels {

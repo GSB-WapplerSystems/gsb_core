@@ -85,7 +85,7 @@ return [
         'sys_language_uid' => [
             'config' => [
                 'type' => 'language',
-             ],
+            ],
         ],
     ],
 ];
