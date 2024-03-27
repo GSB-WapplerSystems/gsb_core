@@ -15,12 +15,11 @@
  */
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, copyright, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, facets, copyright, --palette--;;favicon
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.pallet.description';
-
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-16x16,favicon-32x32,apple-touch-icon-60x60,apple-touch-icon-76x76,apple-touch-icon-120x120,apple-touch-icon-152x152,apple-touch-icon-180x180,safari-pinned-tab,shortcut-icon,webmanifest,browserconfig';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
@@ -33,6 +32,8 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     ],
 ];
 
+
+
 // ITZBUNDPHP-2872 Build searchbox toggle
 $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
@@ -41,6 +42,17 @@ $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
         'renderType' => 'checkboxToggle',
         'type' => 'check',
         'default' => 0,
+    ],
+];
+
+// /ITZBUNDPHP-2973-facet-toggle
+$GLOBALS['SiteConfiguration']['site']['columns']['facets'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets.description',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 1,
     ],
 ];
 
@@ -164,3 +176,5 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
             'allowedTypes' => ['file'],
         ],
 ];
+
+

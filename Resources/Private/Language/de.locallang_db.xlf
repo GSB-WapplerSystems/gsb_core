@@ -831,6 +831,18 @@
 				<source>Use the Search on the website. Adds a searchfield to the header.</source>
 				<target>Verwenden Sie die Suche auf der Webseite. Fügt ein Suchfeld in der Kopfzeile hinzu.</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.search.pallet.lable" resname="page.configuration.sitepackage.search.pallet.lable">
+				<source>Favicons can be configured here.</source>
+				<target>Faceten nutzen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
+				<source>Use facets</source>
+				<target>Faceten nutzen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
+				<source>adds facets to search in frontend</source>
+				<target>Verwenden Sie Faceten für die Suche auf der Webseite.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage" approved="yes">
 				<source>Site package of this site</source>
 				<target>Website-Paket dieser Seite</target>
