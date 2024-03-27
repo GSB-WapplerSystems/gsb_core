@@ -29,3 +29,5 @@ To get started, have a look at our [detailed contribution walkthrough](https://g
 [gsb11-readme-url]: https://git.gsb-itzbund.de/gsb11/extensions
 [kickstarter-url]: https://git.gsb-itzbund.de/gsb11/extensions/gsb_sitepackage
 [typo3-docs-url]: https://docs.typo3.org/c/typo3/cms-dashboard/10.4/en-us/Editor/Index.html
+
+

@@ -473,7 +473,6 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
   }
 }
 
-
 # 0 = German
 [siteLanguage("languageId") == 0]
   plugin.tx_solr.search.sorting.options {
@@ -502,18 +501,33 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 [global]
+# 2 = Française
+[siteLanguage("languageId") == 2]
+  plugin.tx_solr.search.sorting.options {
+    relevance {
+      field = relevance
+      label = Pertinence
+    }
+    created {
+      field = created
+      label = Date
+      defaultOrder = desc
+    }
+  }
+[global]
 
 # Translations
-plugin.tx_solr._LOCAL_LANG.default.results_found = Found %s results.
-plugin.tx_solr._LOCAL_LANG.default.results_found.singular = Found 1 result.
-plugin.tx_solr._LOCAL_LANG.default.results_found_nothing = No results found. Please check if all words are spelled correctly. Use more general search words.
+plugin.tx_solr._LOCAL_LANG.default.results_found = %s results
+plugin.tx_solr._LOCAL_LANG.default.results_found.singular = 1 result
+plugin.tx_solr._LOCAL_LANG.default.results_found_nothing = <h2>No results found.</h2><ul class="pb-5"><li>Please check if all words are spelled correctly.</li><li>Use more general search words.</li></ul>
 
-plugin.tx_solr._LOCAL_LANG.de.results_found = Es wurden %s Ergebnisse gefunden.
-plugin.tx_solr._LOCAL_LANG.de.results_found.singular = Es wurde 1 Ergebnis gefunden.
-plugin.tx_solr._LOCAL_LANG.de.results_found_nothing = Es wurden keine Suchergebnisse gefunden. Überprüfen Sie, ob alle Wörter richtig geschrieben sind. Versuchen Sie allgemeinere Suchbegriffe.
 plugin.tx_solr._LOCAL_LANG.de.faceting_resultsNarrowedBy = Gefiltert nach
 plugin.tx_solr._LOCAL_LANG.de.faceting_removeAllFilters = Filter zurücksetzen
 
-plugin.tx_solr._LOCAL_LANG.fr.results_found = %s résultats ont été trouvés.
-plugin.tx_solr._LOCAL_LANG.fr.results_found.singular = 1 résultats ont été trouvés.
-plugin.tx_solr._LOCAL_LANG.fr.results_found_nothing = Aucun résultat de recherche n'a été trouvé. Vérifiez que tous les mots sont correctement orthographiés. Essayez des termes de recherche plus généraux.
+plugin.tx_solr._LOCAL_LANG.de.results_found = %s Ergebnisse
+plugin.tx_solr._LOCAL_LANG.de.results_found.singular = 1 Ergebnis
+plugin.tx_solr._LOCAL_LANG.de.results_found_nothing = <h2>Keine Suchergebnisse gefunden.</h2><ul class="pb-5"><li>Überprüfen Sie, ob alle Wörter richtig geschrieben sind.</li><li>Versuchen Sie allgemeinere Suchbegriffe.</li></ul>
+
+plugin.tx_solr._LOCAL_LANG.fr.results_found = %s résultats
+plugin.tx_solr._LOCAL_LANG.fr.results_found.singular = 1 résultats
+plugin.tx_solr._LOCAL_LANG.fr.results_found_nothing = <h2>Aucun résultat de recherche n'a été trouvé.</h2><ul class="pb-5"><li>Vérifiez que tous les mots sont correctement orthographiés.</li><li>Essayez des termes de recherche plus généraux.</li></ul>

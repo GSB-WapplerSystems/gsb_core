@@ -4,25 +4,104 @@
     <!--
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
  * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+ * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
  * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
  * Licensed under the GPL 2.0 License.
  -->
 </f:comment>
 
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-60x60.png')}" rel="apple-touch-icon" sizes="60x60">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-76x76.png')}" rel="apple-touch-icon" sizes="76x76">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-120x120.png')}" rel="apple-touch-icon" sizes="120x120">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-152x152.png')}" rel="apple-touch-icon" sizes="152x152">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-180x180.png')}" rel="apple-touch-icon" sizes="180x180">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png')}" rel="icon" sizes="32x32" type="image/png">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-16x16.png')}" rel="icon" sizes="16x16" type="image/png">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest')}" rel="manifest">
-    <link color="#333333" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/safari-pinned-tab.svg')}" rel="mask-icon">
-    <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico')}" rel="shortcut icon">
-    <meta content="itzbund.de" name="apple-mobile-web-app-title">
-    <meta content="itzbund.de" name="application-name">
+    <f:if condition="{site.configuration.apple-touch-icon-60x60}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon-60x60}')}" rel="apple-touch-icon" sizes="60x60">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-60x60.png')}" rel="apple-touch-icon" sizes="60x60">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.apple-touch-icon-76x76}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon-76x76}')}" rel="apple-touch-icon" sizes="76x76">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-76x76.png')}" rel="apple-touch-icon" sizes="76x76">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.apple-touch-icon-120x120}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon-120x120}')}" rel="apple-touch-icon" sizes="120x120">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-120x120.png')}" rel="apple-touch-icon" sizes="120x120">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.apple-touch-icon-152x152}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon-152x152}')}" rel="apple-touch-icon" sizes="152x152">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-152x152.png')}" rel="apple-touch-icon" sizes="152x152">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.apple-touch-icon-180x180}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon-180x180}')}" rel="apple-touch-icon" sizes="180x180">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-180x180.png')}" rel="apple-touch-icon" sizes="180x180">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.favicon-32x32}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.favicon-32x32}')}" rel="icon" sizes="32x32">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png')}" rel="icon" sizes="32x32">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.favicon-16x16}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.favicon-16x16}')}" rel="icon" sizes="16x16">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-16x16.png')}" rel="icon" sizes="16x16">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.safari-pinned-tab}">
+        <f:then>
+            <link color="#333333" href="{f:uri.image(src: '{site.configuration.safari-pinned-tab.svg}')}" rel="mask-icon">
+        </f:then>
+        <f:else>
+            <link color="#333333" href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/safari-pinned-tab.svg')}" rel="mask-icon">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.favicon}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.favicon}')}" rel="shortcut icon">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico')}" rel="shortcut icon">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.webmanifest}">
+        <f:then>
+            <link href="{f:uri.image(src: '{site.configuration.webmanifest}')}" rel="manifest">
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest')}" rel="manifest">
+        </f:else>
+    </f:if>
+    <f:if condition="{site.configuration.browserconfig}">
+        <f:then>
+            <meta content="{f:uri.image(src: '{site.configuration.browserconfig}')}" name="msapplication-config">
+        </f:then>
+        <f:else>
+            <meta content="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/browserconfig.xml')}" name="msapplication-config">
+        </f:else>
+    </f:if>
+
+    <meta content="{site.configuration.websiteTitle}" name="apple-mobile-web-app-title">
+    <meta content="{site.configuration.websiteTitle}" name="application-name">
     <meta content="#333333" name="msapplication-TileColor">
-    <meta content="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/browserconfig.xml')}" name="msapplication-config">
     <meta content="#333333" name="theme-color">
 
     <f:if condition="{data.keywords}">
@@ -31,11 +110,4 @@
     <f:if condition="{data.lastUpdated}">
         <meta content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}" name="last-modified">
     </f:if>
-    <f:if condition="{data.author}">
-        <meta content="{data.author}" name="author">
-    </f:if>
-    <f:if condition="{data.author_email}">
-        <meta content="{data.author_email}" name="email">
-    </f:if>
-
 </html>
