@@ -19,7 +19,7 @@ Nothing to do.
 
 
 ## Contribute
-As with TYPO3, we encourage you to join the project by submitting changes. Development of the GSB&nbsp;11 happens mainly in the GSB&nbsp;11 TYPO3 extension repositories.
+As with TYPO3, we encourage you to join the project by submitting changes. Development of the GSB&nbsp;11 mainly happens in the GSB&nbsp;11 TYPO3 extension repositories.
 
 To get started, have a look at our [detailed contribution walkthrough](https://git.gsb-itzbund.de/gsb11/extensions/gitlab-profile/-/blob/main/CONTRIBUTING.md).
 
