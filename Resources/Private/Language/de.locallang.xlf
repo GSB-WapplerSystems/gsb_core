@@ -423,6 +423,10 @@
 				<source>Show filters</source>
 				<target>Filter einblenden</target>
 			</trans-unit>
+			<trans-unit id="solr.filterSearchResults" resname="solr.filterSearchResults" approved="yes">
+				<source>Filter search results</source>
+				<target>Suchergebnisse filtern</target>
+			</trans-unit>
 			<trans-unit id="button.readMore" resname="button.readMore" approved="yes">
 				<source>Read more</source>
 				<target>Mehr erfahren</target>

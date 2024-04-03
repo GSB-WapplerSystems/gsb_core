@@ -316,6 +316,9 @@
 			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff">
 				<source>Show filters</source>
 			</trans-unit>
+			<trans-unit id="solr.filterSearchResults" resname="solr.filterSearchResults">
+				<source>Filter search results</source>
+			</trans-unit>
 			<trans-unit id="button.readMore" resname="button.readMore">
 				<source>Read more</source>
 			</trans-unit>
