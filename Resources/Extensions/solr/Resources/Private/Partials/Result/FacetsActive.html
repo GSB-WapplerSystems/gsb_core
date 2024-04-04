@@ -7,21 +7,19 @@
 
 <f:section name="FacetsActive">
     <f:if condition="{resultSet.facets.used -> f:count()}">
-        <div class="col-12">
-            <h3 class="mb-3"><f:translate key="faceting_resultsNarrowedBy" extensionName="solr">Narrowed by</f:translate>:</h3>
-            <ul class="list-inline">
-                <f:for each="{resultSet.facets.used}" as="facet">
-                    <f:for each="{facet.allFacetItems.selected}" as="item">
-                        <a href="{s:uri.facet.removeFacetItem(facet: facet, facetItem: item)}" class="btn btn-close-facet d-inline-block">
-                            {facet.label}: <f:render section="label" arguments="{_all}" />
-                        </a>
-                    </f:for>
+        <h3 class="mb-3"><f:translate key="faceting_resultsNarrowedBy" extensionName="solr">Narrowed by</f:translate>:</h3>
+        <ul class="list-inline pb-3">
+            <f:for each="{resultSet.facets.used}" as="facet">
+                <f:for each="{facet.allFacetItems.selected}" as="item">
+                    <a href="{s:uri.facet.removeFacetItem(facet: facet, facetItem: item)}" class="btn btn-close-facet d-inline-block">
+                        {facet.label}: <f:render section="label" arguments="{_all}" />
+                    </a>
                 </f:for>
-            </ul>
-            <a href="{s:uri.facet.removeAllFacets()}" class="btn btn-tertiary m-0 mt-3 float-end">
-                <f:translate key="faceting_removeAllFilters" extensionName="solr">Remove all filters</f:translate>
-            </a>
-        </div>
+            </f:for>
+        </ul>
+        <a href="{s:uri.facet.removeAllFacets()}" class="btn btn-tertiary m-0 mt-3 ms-auto">
+            <f:translate key="faceting_removeAllFilters" extensionName="solr">Remove all filters</f:translate>
+        </a>
     </f:if>
 </f:section>
 
