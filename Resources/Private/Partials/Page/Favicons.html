@@ -10,7 +10,7 @@
  -->
 </f:comment>
 
-<f:variable name="metaConfig" value="{
+    <f:variable name="metaConfig" value="{
         0: {
             'identifier': 'apple-touch-icon-60x60',
             'type': 'link',
@@ -107,34 +107,32 @@
                 'name': 'msapplication-config'
             }
         }
-    }"/>
+    }" />
 
-<f:for each="{metaConfig}" as="config">
-    <f:variable
-        name="linkAttribute"
-        value="{f:if(condition: '{config.type} == \'meta\'', then: 'content', else: 'href')}"
-    ></f:variable>
-    <f:variable
-        name="linkTarget"
-        value="{f:if(condition: '{site.configuration.{config.identifier}}', then: '{site.configuration.{config.identifier}}', else: '{config.default}')}"
-    />
+    <f:for each="{metaConfig}" as="config">
+        <f:variable
+            name="linkAttribute"
+            value="{f:if(condition: '{config.type} == \'meta\'', then: 'content', else: 'href')}"
+        ></f:variable>
+        <f:variable
+            name="linkTarget"
+            value="{f:if(condition: '{site.configuration.{config.identifier}}', then: '{site.configuration.{config.identifier}}', else: '{config.default}')}"
+        />
 
-    <{config.type} {linkAttribute}="{f:uri.image(src: '{linkTarget}')}"
-    <f:for each="{config.props}" key="prop" as="value">
-        <f:if condition="config.{prop}">{prop}="{value}"</f:if>
+        <{config.type} {linkAttribute}="{f:uri.image(src: '{linkTarget}')}"
+            <f:for each="{config.props}" key="prop" as="value"><f:if condition="config.{prop}">{prop}="{value}" </f:if></f:for>
+        >
     </f:for>
-    >
-</f:for>
 
-<meta content="{site.configuration.websiteTitle}" name="apple-mobile-web-app-title">
-<meta content="{site.configuration.websiteTitle}" name="application-name">
-<meta content="#333333" name="msapplication-TileColor">
-<meta content="#333333" name="theme-color">
+    <meta content="{site.configuration.websiteTitle}" name="apple-mobile-web-app-title">
+    <meta content="{site.configuration.websiteTitle}" name="application-name">
+    <meta content="#333333" name="msapplication-TileColor">
+    <meta content="#333333" name="theme-color">
 
-<f:if condition="{data.keywords}">
-    <meta content="{data.keywords}" name="keywords">
-</f:if>
-<f:if condition="{data.lastUpdated}">
-    <meta content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}" name="last-modified">
-</f:if>
+    <f:if condition="{data.keywords}">
+        <meta content="{data.keywords}" name="keywords">
+    </f:if>
+    <f:if condition="{data.lastUpdated}">
+        <meta content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}" name="last-modified">
+    </f:if>
 </html>
