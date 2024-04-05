@@ -15,18 +15,18 @@
                     <li>
                         <f:if condition="{sorting.isResetOption}">
                             <f:then>
-                                <a class="dropdown-item {f:if(condition: '{sorting.selected}', then: 'active')}" href="{s:uri.sorting.removeSorting()}">{sorting.label}</a>
+                                <a class="dropdown-item{f:if(condition: '{sorting.selected}', then: ' checked')}" href="{s:uri.sorting.removeSorting()}">{sorting.label}</a>
                             </f:then>
                             <f:else>
                                 <f:if condition="{sorting.selected}">
                                     <f:then>
-                                        <a class="dropdown-item active d-flex justify-content-between" href="{s:uri.sorting.setSorting(sortingName: sorting.name, sortingDirection: sorting.oppositeDirection)}">
+                                        <a class="dropdown-item d-flex justify-content-between{f:if(condition:'{sorting.selected} == TRUE', then:' checked-bg')}" href="{s:uri.sorting.setSorting(sortingName: sorting.name, sortingDirection: sorting.oppositeDirection)}">
                                             {sorting.label}
-                                            <span class="bi bi-sort-{f:if(condition: '{sorting.isAscDirection}', then: 'up', else: 'down')}"></span>
+                                            <span class="sort-{f:if(condition: '{sorting.isAscDirection}', then: 'up', else: 'down')}"></span>
                                         </a>
                                     </f:then>
                                     <f:else>
-                                        <a class="dropdown-item" href="{s:uri.sorting.setSorting(sortingName: sorting.name, sortingDirection: sorting.direction)}">{sorting.label}</a>
+                                        <a class="dropdown-item{f:if(condition:'{sorting.selected} == TRUE', then:' checked')}" href="{s:uri.sorting.setSorting(sortingName: sorting.name, sortingDirection: sorting.direction)}">{sorting.label}</a>
                                     </f:else>
                                 </f:if>
                             </f:else>

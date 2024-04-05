@@ -10,10 +10,13 @@
             <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
                 {facet.label}
             </button>
+
             <ul class="dropdown-menu w-100">
                 <f:for each="{facet.options}" as="option" iteration="iteration">
-                <li><a class="dropdown-item" href="{s:uri.facet.addFacetItem(facet: facet, facetItem: option)}"><f:render section="label" arguments="{_all}" /></a></li>
-            </f:for>
+                    <li>
+                        <a class="dropdown-item{f:if(condition:'{option.selected} == TRUE', then:' checked')}" href="{s:uri.facet.addFacetItem(facet: facet, facetItem: option)}"><f:render section="label" arguments="{_all}" /></a>
+                    </li>
+                </f:for>
             </ul>
         </div>
     </div>
