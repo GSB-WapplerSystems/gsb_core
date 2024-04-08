@@ -7,7 +7,7 @@
 
     <div class="col-12 col-lg-4 mb-3">
         <div class="dropdown">
-            <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
+            <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button" {f:if(condition: facet.options, then:'', else:'disabled')}>
                 {facet.label}
             </button>
 
@@ -26,6 +26,7 @@
             <f:then><c:category as="label">{option.label}</c:category>{label.title}</f:then>
             <f:else>{option.label}</f:else>
         </f:if>
+        ({option.documentCount})
     </f:section>
 
 </html>

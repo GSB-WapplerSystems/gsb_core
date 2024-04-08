@@ -5,7 +5,7 @@
 >
 
 <f:section name="Facets">
-    <s:facet.area.group groupName="main" facets="{resultSet.facets.available}">
+    <s:facet.area.group groupName="main" facets="{resultSet.facets}">
         <f:for each="{areaFacets}" as="facet">
             <f:render partial="Facets/{facet.partialName}" arguments="{resultSet:resultSet, facet:facet}"/>
         </f:for>
