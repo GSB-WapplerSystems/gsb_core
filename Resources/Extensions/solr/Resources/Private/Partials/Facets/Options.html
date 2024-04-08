@@ -13,7 +13,7 @@
 
             <ul class="dropdown-menu w-100">
                 <f:for each="{facet.options}" as="option" iteration="iteration">
-                    <li>
+                    <li class="{f:if(condition:'{option.selected} == TRUE', then:'faced-checked')}">
                         <a class="dropdown-item{f:if(condition:'{option.selected} == TRUE', then:' checked')}" href="{s:uri.facet.addFacetItem(facet: facet, facetItem: option)}"><f:render section="label" arguments="{_all}" /></a>
                     </li>
                 </f:for>
