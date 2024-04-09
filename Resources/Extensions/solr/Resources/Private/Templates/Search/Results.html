@@ -80,7 +80,7 @@
                 <div class="accordion-collapse filter-accordion-collapse collapse" id="filter">
 
                     <f:if condition="{resultSet.hasSearched}">
-                        <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
+
                             <div class="accordion-body ps-0 pe-0">
                                 <h3 class="mb-3"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:solr.filterSearchResults" />:</h3>
                                  <div class="row" id="tx-solr-facets-in-use">
@@ -92,22 +92,19 @@
                                     </div>
                                 </f:if>
                             </div>
-                        </f:if>
-                    </f:if>
 
-                        <f:if condition="{resultSet.hasSearched}">
                             <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
                                 <f:render arguments="{resultSet:resultSet}" partial="Result/Facets" section="Facets" />
                             </f:if>
-                        </f:if>
+                    </f:if>
 
-                        <f:if condition="{resultSet.facets.used -> f:count()}">
-                            <div class="row">
-                                <div class="col-12">
-                                    <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
-                                </div>
+                    <f:if condition="{resultSet.facets.used -> f:count()}">
+                        <div class="row">
+                            <div class="col-12">
+                                <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
                             </div>
-                        </f:if>
+                        </div>
+                    </f:if>
 
                         <div class="accordion-body ps-0 pe-0">
                             <h3 class="mb-3">Suchergebnisse filtern:</h3>
