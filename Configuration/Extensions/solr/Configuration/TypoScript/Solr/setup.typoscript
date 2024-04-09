@@ -471,7 +471,7 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
   }
 }
 
-#deactivate faceting if use facet toggel is deactivated
+#deactivate faceting if use facet toggle is deactivated
 [site("configuration")["solr_enabled_facets"] == 0]
   plugin.tx_solr.search.faceting = 0
 [GLOBAL]
