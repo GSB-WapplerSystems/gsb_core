@@ -82,10 +82,8 @@
                                     <f:render arguments="{resultSet:resultSet}" partial="Result/Facets" section="Facets" />
                                 </div>
                                 <f:if condition="{resultSet.facets.used -> f:count()}">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
-                                        </div>
+                                    <div class="facets-filter">
+                                        <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
                                     </div>
                                 </f:if>
                             </div>
