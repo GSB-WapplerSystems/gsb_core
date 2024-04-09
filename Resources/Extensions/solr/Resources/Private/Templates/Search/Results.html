@@ -66,106 +66,113 @@
 				</f:if>
 			</div>
 		</div>
+        <f:comment>
+            <!--
+         * deactivate faceting if use facet toggle is deactivated
+         -->
+        </f:comment>
+        <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
+            <div class="accordion filter-accordion">
+                <div class="accordion-item filter-accordion-item">
+                    <button aria-controls="filter" aria-expanded="false" class="accordion-button filter-accordion-button collapsed" data-bs-target="#filter" data-bs-toggle="collapse" id="filterCollapse" type="button">
+                        <f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:solr.filterButtonOff" />
+                    </button>
+                    <div class="accordion-collapse filter-accordion-collapse collapse" id="filter">
 
-        <div class="accordion filter-accordion">
-            <div class="accordion-item filter-accordion-item">
-                <button aria-controls="filter" aria-expanded="false" class="accordion-button filter-accordion-button collapsed" data-bs-target="#filter" data-bs-toggle="collapse" id="filterCollapse" type="button">
-                    <f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:solr.filterButtonOff" />
-                </button>
-                <div class="accordion-collapse filter-accordion-collapse collapse" id="filter">
-
-                    <f:if condition="{resultSet.hasSearched}">
-                        <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
-                            <f:render arguments="{resultSet:resultSet}" partial="Result/Facets" section="Facets" />
+                        <f:if condition="{resultSet.hasSearched}">
+                            <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchFaceting}">
+                                <f:render arguments="{resultSet:resultSet}" partial="Result/Facets" section="Facets" />
+                            </f:if>
                         </f:if>
-                    </f:if>
 
-                    <f:if condition="{resultSet.facets.used -> f:count()}">
-                        <div class="row">
-                            <div class="col-12">
-                                <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
-                            </div>
-                        </div>
-                    </f:if>
-
-                    <div class="accordion-body ps-0 pe-0">
-                        <h3 class="mb-3">Suchergebnisse filtern:</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-4 mb-3">
-                                <div class="dropdown">
-                                    <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
-                                        Thema
-                                    </button>
-                                    <ul class="dropdown-menu w-100">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+                        <f:if condition="{resultSet.facets.used -> f:count()}">
+                            <div class="row">
+                                <div class="col-12">
+                                    <f:render arguments="{resultSet:resultSet}" partial="Result/FacetsActive" section="FacetsActive" />
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-4 mb-3">
-                                <div class="dropdown">
-                                    <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
-                                        Seitentyp
-                                    </button>
-                                    <ul class="dropdown-menu w-100">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-4 mb-3">
-                                <div class="dropdown">
-                                    <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
-                                        Erscheinungsjahr
-                                    </button>
-                                    <ul class="dropdown-menu w-100">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <h3 class="mb-3">Gefiltert nach:</h3>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 1</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 2</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 3</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 4</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 5</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 6</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 7</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 8</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 9</a>
-                                    </li>
-                                </ul>
+                        </f:if>
 
-                                <a class="btn btn-primary w-100 m-0 mb-3 mt-3" href="#">Filter zurücksetzen</a>
+                        <div class="accordion-body ps-0 pe-0">
+                            <h3 class="mb-3">Suchergebnisse filtern:</h3>
+                            <div class="row">
+                                <div class="col-12 col-lg-4 mb-3">
+                                    <div class="dropdown">
+                                        <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
+                                            Thema
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
+                                    <div class="dropdown">
+                                        <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
+                                            Seitentyp
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
+                                    <div class="dropdown">
+                                        <button aria-expanded="false" class="btn btn-toggle dropdown-toggle w-100 m-0" data-bs-toggle="dropdown" type="button">
+                                            Erscheinungsjahr
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <h3 class="mb-3">Gefiltert nach:</h3>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 1</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 2</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 3</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 4</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 5</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 6</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 7</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 8</a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="alert alert-success alert-dismissible d-inline-block" href="#">Thema 9</a>
+                                        </li>
+                                    </ul>
+
+                                    <a class="btn btn-primary w-100 m-0 mb-3 mt-3" href="#">Filter zurücksetzen</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </f:if>
+
 
         <f:if condition="{resultSet.hasSearched}">
             <f:if condition="{resultSet.usedSearchRequest.contextTypoScriptConfiguration.searchSorting}">
