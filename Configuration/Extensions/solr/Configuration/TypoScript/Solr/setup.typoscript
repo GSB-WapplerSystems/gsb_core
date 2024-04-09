@@ -319,6 +319,7 @@ plugin.tx_solr {
           label = Erscheinungsjahr
           field = year_intS
           type = option
+          showEvenWhenEmpty = 1
         }
       }
 
