@@ -7,7 +7,6 @@
 # LICENSE file that was distributed with this source code.
 
 plugin.tx_solr {
-
   enabled = {$plugin.tx_solr.enabled}
 
   enableDebugMode = 0
@@ -356,7 +355,6 @@ plugin.tx_solr {
 
   view {
     pluginNamespace = tx_solr
-
     templateRootPaths {
       0 = EXT:solr/Resources/Private/Templates/
       10 = {$plugin.tx_solr.view.templateRootPath}
@@ -472,6 +470,11 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 }
+
+#deactivate faceting if use facet toggel is deactivated
+[site("configuration")["solr_enabled_facets"] == 0]
+  plugin.tx_solr.search.faceting = 0
+[GLOBAL]
 
 # 0 = German
 [siteLanguage("languageId") == 0]
