@@ -32,8 +32,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     ],
 ];
 
-
-
 // ITZBUNDPHP-2872 Build searchbox toggle
 $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
@@ -181,5 +179,3 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
             'allowedTypes' => ['file'],
         ],
 ];
-
-
