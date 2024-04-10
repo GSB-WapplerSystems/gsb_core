@@ -726,6 +726,12 @@
 			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description">
 				<source>Use the Search on the website. Adds a searchfield to the header.</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
+				<source>Use facets</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
+				<source>adds facets to search in frontend</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage">
 				<source>Site package of this site</source>
 			</trans-unit>
