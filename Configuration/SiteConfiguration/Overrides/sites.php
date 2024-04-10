@@ -1,19 +1,5 @@
 <?php
 
-/*
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
- *
- * (c) Ole Hartwig <o.hartwig@moselwal.de> 2023
- * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
- */
-
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
     ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;favicon
 ';
