@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Locking;
 
 /*
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
- *
- * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
- *
- * Highly inspired by TYPO3 CMS-based extension "distributed_locks" by b13.
- *
- */
+  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+  *
+  * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+  * BMI/ITZBund. Author: Ole Hartwig
+  *
+  * It is free software; you can redistribute it and/or modify it under
+  * the terms of the GNU General Public License, either version 2
+  * of the License, or any later version.
+  *
+  * For the full copyright and license information, please read the
+  * LICENSE file that was distributed with this source code.
+  *
+  * Highly inspired by TYPO3 CMS-based extension "distributed_locks" by b13.
+  */
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;

@@ -1,17 +1,18 @@
 <?php
 
 /*
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
- *
- * (c)  Luchezar Chakardzhiyan <luchesar.chakardzhiyan.ext@digitaspixelpark.com> 2023
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
- */
+  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+  *
+  * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+  * BMI/ITZBund. Author: Luchezar Chakardzhiyan
+  *
+  * It is free software; you can redistribute it and/or modify it under
+  * the terms of the GNU General Public License, either version 2
+  * of the License, or any later version.
+  *
+  * For the full copyright and license information, please read the
+  * LICENSE file that was distributed with this source code.
+  */
 
 namespace ITZBund\GsbCore\EventListener;
 

@@ -1,11 +1,14 @@
-# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
-# (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+#
+# Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+# BMI/ITZBund. Author: Ole Hartwig
+#
 # It is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License, either version 2
 # of the License, or any later version.
+#
 # For the full copyright and license information, please read the
 # LICENSE file that was distributed with this source code.
-
 
 @import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/constants.typoscript'
 @import 'EXT:gsb_core/Configuration/Extensions/felogin/Configuration/TypoScript/constants.typoscript'
