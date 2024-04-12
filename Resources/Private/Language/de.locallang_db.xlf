@@ -859,7 +859,14 @@
 				<source>In the footer, the copyright notice is displayed with the current year.</source>
 				<target>Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt.</target>
 			</trans-unit>
-
+			<trans-unit id="page.configuration.logo-text" resname="page.configuration.logo-text">
+				<source>logo trademark</source>
+				<target>Logo Textmarke</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.logo-text" resname="page.configuration.description.logo-text">
+				<source>The text mark of the logo can be replaced here, the file must be an SVG with the corresponding text path.</source>
+				<target>Hier kann die Textmarke des Logos ersetzt werden, die Datei muss ein SVG mit dem entsprechenden Textpfad sein.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.favicon.pallet.description" resname="page.configuration.sitepackage.favicon.pallet.description">
 				<source>Favicons can be configured here.</source>
 				<target>Favicons können hier konfiguriert werden.</target>
