@@ -311,12 +311,14 @@ plugin.tx_solr {
           field = categories_intM
           type = option
           subtype = sys_category
+          showEvenWhenEmpty = 1
         }
         mainCategory {
           label = Seitentyp
           field = mainCategory_intS
           type = option
           subtype = sys_category
+          showEvenWhenEmpty = 1
         }
         year {
           label = Erscheinungsjahr
