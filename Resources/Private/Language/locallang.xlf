@@ -248,7 +248,10 @@
 				<source>Show/hide download link</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
-				<source>Open long description</source>
+				<source>Open description</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_picture_description" resname="tt_content.gallery_picture_description">
+				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture">
 				<source>Enlarge image</source>
