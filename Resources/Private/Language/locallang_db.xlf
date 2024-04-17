@@ -721,13 +721,13 @@
 				<source>Use search</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description">
-				<source>Use the Search on the website. Adds a searchfield to the header.</source>
+				<source>By disabling this toggle, the "Search" menu item will be hidden in the navigation.</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
 				<source>Use facets</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
-				<source>adds facets to search in frontend</source>
+				<source>By deactivating this toggle the facets in the search will be hidden.</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage">
 				<source>Site package of this site</source>
