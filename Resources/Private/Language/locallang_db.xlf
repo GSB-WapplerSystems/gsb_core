@@ -741,7 +741,12 @@
 			<trans-unit id="page.configuration.copyright.description" resname="page.configuration.copyright.description">
 				<source>The copyright notice will ben shown in the footer after the current year</source>
 			</trans-unit>
-
+			<trans-unit id="page.configuration.logo-text" resname="page.configuration.logo-text">
+				<source>logo trademark</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.logo-text" resname="page.configuration.description.logo-text">
+				<source>The text mark of the logo can be replaced here, the file must be an SVG with the corresponding text path.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.favicon.pallet.description" resname="page.configuration.sitepackage.favicon.pallet.description">
 				<source>Favicons can be configured here.</source>
 			</trans-unit>

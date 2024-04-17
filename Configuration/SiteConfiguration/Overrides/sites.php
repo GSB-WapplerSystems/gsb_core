@@ -1,11 +1,26 @@
 <?php
 
+/*
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+ *
+ * (c) Ole Hartwig <o.hartwig@moselwal.de> 2023
+ * (c) Christian Rath-Ulrich <christian.rath-ulrich@digitaspixelpark.com> 2024
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, logo-text, --palette--;;favicon
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.pallet.description';
+
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-16x16,favicon-32x32,apple-touch-icon-60x60,apple-touch-icon-76x76,apple-touch-icon-120x120,apple-touch-icon-152x152,apple-touch-icon-180x180,safari-pinned-tab,shortcut-icon,webmanifest,browserconfig';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
@@ -39,12 +54,14 @@ $GLOBALS['SiteConfiguration']['site']['columns']['solr_enabled_facets'] = [
         'default' => 1,
     ],
 ];
+
 //$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',solr_enabled_facets,';
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = str_replace(
     'solr_enabled_read',
     'solr_enabled_facets, solr_enabled_read ',
     $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem']
 );
+
 // ITZBUNDPHP-2873 Copyright-Text
 $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.copyright',
@@ -53,6 +70,17 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
         'type' => 'text',
         'renderType' => 'input',
     ],
+];
+
+// ITZBUNDPHP-2869 Logo Textmarke
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-text',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-text',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
 ];
 
 // favicons
