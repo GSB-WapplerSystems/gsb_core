@@ -252,9 +252,6 @@
             <trans-unit id="tt_content.tx_audio" resname="tt_content.tx_audio">
                 <source>Audio</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_audio_audiourl" resname="tt_content.tx_audio_audiourl">
-                <source>Audio URL</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_audio_audio" resname="tt_content.tx_audio_audio">
                 <source>Audio (File)</source>
             </trans-unit>

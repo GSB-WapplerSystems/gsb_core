@@ -323,10 +323,6 @@
 				<source>Audio</source>
 				<target>Audio</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_audio_audiourl" resname="tt_content.tx_audio_audiourl" approved="yes">
-				<source>Audio URL</source>
-				<target>Audio URL</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_audio_audio" resname="tt_content.tx_audio_audio" approved="yes">
 				<source>Audio (File)</source>
 				<target>Audio (Datei)</target>
