@@ -22,7 +22,7 @@
                             <f:for each="{row.columns}" as="column">
                                 <f:if condition="{column.media}">
                                     <li class="carousel-item{f:if(condition: '{column.media.properties.sorting_foreign} == 1', then: ' active')}">
-                                        <a class="download" target="_blank" title="Herunterladen" href="/fileadmin{column.media.properties.identifier}"><span class="visually-hidden">Herunterladen</span></a>
+                                        <a class="download" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.download')}" href="{f:uri.image(image: column.media)}"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.download')}</span></a>
                                         <f:if condition="{files -> f:count()} > 1">
                                             <a href="#Carousel-{data.uid}" role="button" data-bs-slide="next" title="Nächstes Bild">
                                         </f:if>
