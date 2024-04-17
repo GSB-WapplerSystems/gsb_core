@@ -113,7 +113,6 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
             'tx_video_videourl' => '',
             'tx_audio_poster' => 0,
             'tx_audio_audio' => null,
-            'tx_audio_audiourl' => null,
             'tx_header_style' => '',
             'tx_container_parent' => 0,
             'container_tab_open' => 1,
