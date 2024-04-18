@@ -447,6 +447,10 @@
 				<source>Search results navigation</source>
 				<target>Suchergebnisse Navigation</target>
 			</trans-unit>
+			<trans-unit id="solr.delete" resname="solr.delete" approved="yes">
+				<source>. Deselect.</source>
+				<target>. Abwählen.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

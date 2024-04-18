@@ -334,6 +334,9 @@
 			<trans-unit id="solr.pagination" resname="solr.pagination">
 				<source>Search results navigation</source>
 			</trans-unit>
+			<trans-unit id="solr.delete" resname="solr.delete">
+				<source>. Deselect.</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>
