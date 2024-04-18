@@ -824,8 +824,8 @@
 				<target>Suche nutzen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description" approved="yes">
-				<source>Use the Search on the website. Adds a searchfield to the header.</source>
-				<target>Verwenden Sie die Suche auf der Webseite. Fügt ein Suchfeld in der Kopfzeile hinzu.</target>
+				<source>By disabling this toggle, the "Search" menu item will be hidden in the navigation.</source>
+				<target>Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.search.pallet.lable" resname="page.configuration.sitepackage.search.pallet.lable">
 				<source>Favicons can be configured here.</source>
@@ -833,11 +833,11 @@
 			</trans-unit>
 			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
 				<source>Use facets</source>
-				<target>Faceten nutzen</target>
+				<target>Facetten nutzen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
-				<source>adds facets to search in frontend</source>
-				<target>Verwenden Sie Faceten für die Suche auf der Webseite.</target>
+				<source>By deactivating this toggle the facets in the search will be hidden.</source>
+				<target>Das Deaktivieren dieses Toggles blendet die Facettierung der Suche aus.</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage" approved="yes">
 				<source>Site package of this site</source>
