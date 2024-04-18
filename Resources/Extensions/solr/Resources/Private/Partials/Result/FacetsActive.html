@@ -12,7 +12,7 @@
             <f:for each="{resultSet.facets.used}" as="facet">
                 <f:for each="{facet.allFacetItems.selected}" as="item">
                     <a href="{s:uri.facet.removeFacetItem(facet: facet, facetItem: item)}" class="btn btn-close-facet d-inline-block">
-                        {facet.label}: <f:render section="label" arguments="{_all}" />
+                        {facet.label}: <f:render section="label" arguments="{_all}" /><span class="visually-hidden"> {f:translate(key: 'article.detail.published', extensionName: 'gsb_core')}</span>
                     </a>
                 </f:for>
             </f:for>
