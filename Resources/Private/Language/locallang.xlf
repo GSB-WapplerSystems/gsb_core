@@ -308,10 +308,10 @@
 				<source>Uploaded file that will be sent</source>
 			</trans-unit>
 			<trans-unit id="felogin.username" resname="felogin.username">
-				<source>Email address</source>
+				<source>Username</source>
 			</trans-unit>
 			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin">
-				<source>Logged in with Email address</source>
+				<source>Logged in with Username</source>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
 				<source>Published on</source>

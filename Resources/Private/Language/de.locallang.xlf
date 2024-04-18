@@ -412,12 +412,12 @@
 				<target>Hochgeladene Datei die versendet wird</target>
 			</trans-unit>
 			<trans-unit id="felogin.username" resname="felogin.username" approved="yes">
-				<source>Email address</source>
-				<target>E-Mail Adresse</target>
+				<source>Username</source>
+				<target>Benutzername</target>
 			</trans-unit>
 			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin" approved="yes">
-				<source>Logged in with Email address</source>
-				<target>Eingeloggt mit E-Mail Adresse</target>
+				<source>Logged in with Username</source>
+				<target>Eingeloggt mit Benutzername</target>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date" approved="yes">
 				<source>Published on</source>
