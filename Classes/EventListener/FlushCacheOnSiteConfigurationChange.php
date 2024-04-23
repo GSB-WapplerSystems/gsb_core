@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -19,17 +20,17 @@ namespace ITZBund\GsbCore\EventListener;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationBeforeWriteEvent;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This event listener is used to trigger cache flushes when the site configuration has changed
  */
 final class FlushCacheOnSiteConfigurationChange
 {
+    public function __construct(private readonly CacheManager $cacheManager) {}
+
     public function __invoke(SiteConfigurationBeforeWriteEvent $siteConfigurationBeforeWriteEvent): void
     {
         // we play "stupid" and simply clear all caches in the pages group
-        $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
-        $cacheManager->flushCachesInGroup('pages');
+        $this->cacheManager->flushCachesInGroup('pages');
     }
 }
