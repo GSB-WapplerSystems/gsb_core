@@ -1,34 +1,41 @@
-# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
-# (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
-# (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
-# Licensed under the GPL 2.0 License.
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+#
+# Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+# BMI/ITZBund. Author: Ole Hartwig, Matthias Peltzer
+#
+# It is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License, either version 2
+# of the License, or any later version.
+#
+# For the full copyright and license information, please read the
+# LICENSE file that was distributed with this source code.
 
-tt_content {
-  audio = FLUIDTEMPLATE
-  audio {
-    partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
-    templateName = Audio
-    dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-      10 {
-        if.isTrue.field = image
-        references {
-          fieldName = image
-          table = tt_content
-        }
-        as = files
+tt_content.audio = FLUIDTEMPLATE
+tt_content.audio {
+  partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+  templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
+  templateName = Audio
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      if.isTrue.field = image
+      references {
+        fieldName = image
+        table = tt_content
       }
 
-      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-      20 {
-        table = sys_category
-        selectFields = uid, title
-        pidInList = {$config.pids.Categories}
-        join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
-        where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
-        as = contentCategories
+      as = files
+    }
+
+    20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    20 {
+      if.isTrue.field = tx_audio_audio
+      references {
+        fieldName = tx_audio_audio
+        table = tt_content
       }
+
+      as = audio
     }
   }
 }

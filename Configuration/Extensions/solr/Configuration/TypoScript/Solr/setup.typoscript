@@ -1,13 +1,16 @@
-# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
-# (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+#
+# Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+# BMI/ITZBund. Author: Matthias Peltzer
+#
 # It is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License, either version 2
 # of the License, or any later version.
+#
 # For the full copyright and license information, please read the
 # LICENSE file that was distributed with this source code.
 
 plugin.tx_solr {
-
   enabled = {$plugin.tx_solr.enabled}
 
   enableDebugMode = 0
@@ -308,17 +311,20 @@ plugin.tx_solr {
           field = categories_intM
           type = option
           subtype = sys_category
+          showEvenWhenEmpty = 1
         }
         mainCategory {
           label = Seitentyp
           field = mainCategory_intS
           type = option
           subtype = sys_category
+          showEvenWhenEmpty = 1
         }
         year {
           label = Erscheinungsjahr
           field = year_intS
           type = option
+          showEvenWhenEmpty = 1
         }
       }
 
@@ -356,7 +362,6 @@ plugin.tx_solr {
 
   view {
     pluginNamespace = tx_solr
-
     templateRootPaths {
       0 = EXT:solr/Resources/Private/Templates/
       10 = {$plugin.tx_solr.view.templateRootPath}
@@ -472,6 +477,11 @@ plugin.tx_solr_PiFrequentSearches_FrequentSearches {
     }
   }
 }
+
+#deactivate faceting if use facet toggle is deactivated
+[site("configuration")["solr_enabled_facets"] == 0]
+  plugin.tx_solr.search.faceting = 0
+[GLOBAL]
 
 # 0 = German
 [siteLanguage("languageId") == 0]

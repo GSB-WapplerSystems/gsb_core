@@ -328,8 +328,12 @@
 				<target>Herunterladen-Link ein-/ausklappen</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription" approved="yes">
-				<source>Open long description</source>
-				<target>Öffne Langbeschreibung</target>
+				<source>Open description</source>
+				<target>Öffne Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_picture_description" resname="tt_content.gallery_picture_description" approved="yes">
+				<source>Description</source>
+				<target>Beschreibung</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture" approved="yes">
 				<source>Enlarge image</source>
@@ -408,12 +412,12 @@
 				<target>Hochgeladene Datei die versendet wird</target>
 			</trans-unit>
 			<trans-unit id="felogin.username" resname="felogin.username" approved="yes">
-				<source>Email address</source>
-				<target>E-Mail Adresse</target>
+				<source>Username</source>
+				<target>Benutzername</target>
 			</trans-unit>
 			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin" approved="yes">
-				<source>Logged in with Email address</source>
-				<target>Eingeloggt mit E-Mail Adresse</target>
+				<source>Logged in with Username</source>
+				<target>Eingeloggt mit Benutzername</target>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date" approved="yes">
 				<source>Published on</source>
@@ -442,6 +446,10 @@
 			<trans-unit id="solr.pagination" resname="solr.pagination" approved="yes">
 				<source>Search results navigation</source>
 				<target>Suchergebnisse Navigation</target>
+			</trans-unit>
+			<trans-unit id="solr.delete" resname="solr.delete" approved="yes">
+				<source>. Deselect.</source>
+				<target>. Abwählen.</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -248,7 +248,10 @@
 				<source>Show/hide download link</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_picture_longdescription" resname="tt_content.gallery_picture_longdescription">
-				<source>Open long description</source>
+				<source>Open description</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_picture_description" resname="tt_content.gallery_picture_description">
+				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_enlarge_picture" resname="tt_content.gallery_enlarge_picture">
 				<source>Enlarge image</source>
@@ -305,10 +308,10 @@
 				<source>Uploaded file that will be sent</source>
 			</trans-unit>
 			<trans-unit id="felogin.username" resname="felogin.username">
-				<source>Email address</source>
+				<source>Username</source>
 			</trans-unit>
 			<trans-unit id="felogin.username.loggedin" resname="felogin.username.loggedin">
-				<source>Logged in with Email address</source>
+				<source>Logged in with Username</source>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
 				<source>Published on</source>
@@ -330,6 +333,9 @@
 			</trans-unit>
 			<trans-unit id="solr.pagination" resname="solr.pagination">
 				<source>Search results navigation</source>
+			</trans-unit>
+			<trans-unit id="solr.delete" resname="solr.delete">
+				<source>. Deselect.</source>
 			</trans-unit>
 		</body>
     </file>

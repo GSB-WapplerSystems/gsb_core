@@ -1,14 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:comment>
-    <!--
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
- * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
- * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
- * Licensed under the GPL 2.0 License.
- -->
-</f:comment>
-
 <div id="c{data.uid}" class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
     <div class="banner grid-fullsize{f:if(condition: data.grid_light, then: ' grid-light')}{f:if(condition:'{data.imageorient} == 0', then:' textpic topcenter')}{f:if(condition:'{data.imageorient} == 25', then:' textpic nexttotext-right d-md-flex')}{f:if(condition:'{data.imageorient} == 26', then:' textpic nexttotext-left d-lg-flex')}"{f:if(condition: data.grid_bgcolor, then: ' style="background-color:{data.grid_bgcolor}"')}>
 

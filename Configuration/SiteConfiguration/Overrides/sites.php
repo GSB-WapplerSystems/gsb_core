@@ -15,7 +15,7 @@
  */
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, copyright, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, logo-text, --palette--;;favicon
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -44,6 +44,24 @@ $GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
     ],
 ];
 
+// /ITZBUNDPHP-2973-facet-toggle
+$GLOBALS['SiteConfiguration']['site']['columns']['solr_enabled_facets'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets.description',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 1,
+    ],
+];
+
+//$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',solr_enabled_facets,';
+$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = str_replace(
+    'solr_enabled_read',
+    'solr_enabled_facets, solr_enabled_read ',
+    $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem']
+);
+
 // ITZBUNDPHP-2873 Copyright-Text
 $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.copyright',
@@ -52,6 +70,17 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
         'type' => 'text',
         'renderType' => 'input',
     ],
+];
+
+// ITZBUNDPHP-2869 Logo Textmarke
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-text',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-text',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
 ];
 
 // favicons

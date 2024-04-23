@@ -1,14 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:comment>
-    <!--
- * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund
- * (c) Matthias Peltzer <matthias.peltzer@digitaspixelpark.com> 2023
- * (c) Kai Ole Hartwig <o.hartwig@moselwal.de> 2023
- * Licensed under the GPL 2.0 License.
- -->
-</f:comment>
-
 <div class="modal fade" id="Modal-{data.uid}" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen" role="document">
         <div class="modal-content">
@@ -31,7 +22,7 @@
                             <f:for each="{row.columns}" as="column">
                                 <f:if condition="{column.media}">
                                     <li class="carousel-item{f:if(condition: '{column.media.properties.sorting_foreign} == 1', then: ' active')}">
-                                        <a class="download" target="_blank" title="Herunterladen" href="/fileadmin{column.media.properties.identifier}"><span class="visually-hidden">Herunterladen</span></a>
+                                        <a class="download" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.download')}" href="{f:uri.image(image: column.media)}"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.download')}</span></a>
                                         <f:if condition="{files -> f:count()} > 1">
                                             <a href="#Carousel-{data.uid}" role="button" data-bs-slide="next" title="Nächstes Bild">
                                         </f:if>
