@@ -32,6 +32,12 @@ services:
   ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator:
     public: true
 
+  ITZBund\GsbCore\EventListener\AddInfoButtonToContentElementsEvent:
+    public: true
+    tags:
+      - name: event.listener
+        identifier: 'gsb_core/add-info-button-to-content-elements'
+
   ITZBund\GsbCore\EventListener\AddTypoScriptFromSitePackageEvent:
     public: true
     arguments:
@@ -46,11 +52,12 @@ services:
       - name: event.listener
         identifier: 'gsb_core/extends-site-configuration'
 
-  ITZBund\GsbCore\EventListener\AddInfoButtonToContentElementsEvent:
+
+  ITZBund\GsbCore\EventListener\FlushCacheOnSiteConfigurationChange:
     public: true
     tags:
       - name: event.listener
-        identifier: 'gsb_core/add-info-button-to-content-elements'
+        identifier: 'gsb_core/flush-cache-on-site-configuration-change'
 
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
