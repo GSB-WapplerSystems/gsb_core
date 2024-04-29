@@ -10,18 +10,7 @@
                     <li class="col">
                         <article class="frame frame-type-gsb_singleteaser frame-layout-0">
                             <div class="teaser textpic topcenter" style="background-color:#f3f7fb">
-                                <f:for as="file" each="{page.files}" iteration="counter">
-                                    <f:if condition="{counter.cycle} == 1">
-                                        <div class="teaser-image ce-gallery">
-                                            <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-                                                <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                                                    <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{file.properties.uid}" treatIdAsReference="1" />
-                                                </picture>
-                                            </f:alias>
-                                        </div>
-                                    </f:if>
-                                </f:for>
-                                <div class="teaser-content ce-bodytext">
+                                <div class="teaser-content ce-bodytext order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
                                         <h3>
                                             <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
@@ -35,6 +24,17 @@
                                         </p>
                                     </f:if>
                                 </div>
+                                <f:for as="file" each="{page.files}" iteration="counter">
+                                    <f:if condition="{counter.cycle} == 1">
+                                        <div class="teaser-image ce-gallery order-0">
+                                            <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+                                                <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                                                    <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{file.properties.uid}" treatIdAsReference="1" />
+                                                </picture>
+                                            </f:alias>
+                                        </div>
+                                    </f:if>
+                                </f:for>
                             </div>
                         </article>
                     </li>

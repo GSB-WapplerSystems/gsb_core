@@ -9,15 +9,27 @@
             <div class="top-container">
                 <f:if condition="{data.starttime}">
                     <f:then>
-                        <f:format.date format="%e. %B %G">{data.starttime}</f:format.date>
+                        <p class="date ">
+                            <span class="date-text">
+                               <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.starttime}</f:format.date>
+                            </span>
+                        </p>
                     </f:then>
                     <f:else>
                         <f:if condition="{data.lastUpdated} > {data.tstamp}">
                             <f:then>
-                                <f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                                <p class="date ">
+                                    <span class="date-text">
+                                        <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
+                                    </span>
+                                </p>
                             </f:then>
                             <f:else>
-                                <f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                                <p class="date ">
+                                    <span class="date-text">
+                                        <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
+                                    </span>
+                                </p>
                             </f:else>
                         </f:if>
                     </f:else>
@@ -25,15 +37,14 @@
                 <f:if condition="{mainCategory}">
                     <span class="dot" aria-hidden="true">•</span> {mainCategory}
                 </f:if>
-
                 <f:if condition="{pageCategories}">
-                        <ul class="list-group list-group-horizontal liststyle-none">
-                            <f:for each="{pageCategories}" as="category">
-                                <li class="list-group-item border-0 ps-0 kicker">
-                                    <span>{category}</span>
-                                </li>
-                            </f:for>
-                        </ul>
+                    <ul class="list-group list-group-horizontal liststyle-none">
+                        <f:for each="{pageCategories}" as="category">
+                            <li class="list-group-item border-0 ps-0 kicker">
+                                <span>{category}</span>
+                            </li>
+                        </f:for>
+                    </ul>
                 </f:if>
                 <f:format.raw>{top}</f:format.raw>
             </div>

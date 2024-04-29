@@ -14,10 +14,8 @@
         <div class="row">
             <div class="col-12{f:if(condition: '{document.fields.media_intS}', then: ' col-lg-8')}">
                 <div class="d-flex flex-column">
-                    <div class="order-1">
-                        <h2 class="results-topic"><a class="stretched-link teaser-link" href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}"><span>{document.title}</span></a></h2>
-                    </div>
-                    <div class="order-0">
+                    <h2 class="results-topic"><a class="stretched-link teaser-link" href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}"><span>{document.title}</span></a></h2>
+                    <p class="mb-0">
                         <f:if condition="{document.fields.lastUpdated_intS} != 0">
                             <f:then>
                                 <span class="date-text"><span class="visually-hidden">{f:translate(key: 'article.detail.published', extensionName: 'gsb_core')} </span> <f:format.date format="{f:translate(key: 'date.daymonthyear', extensionName: 'gsb_core')}">{document.fields.lastUpdated_dateS}</f:format.date></span>
@@ -37,17 +35,17 @@
                             <gsbcore:Category category="{document.fields.mainCategory_intS}" as="mainCategory" />
                             <span class="dot" aria-hidden="true">•</span> {mainCategory.title}
                         </f:if>
-                        <f:if condition="{document.fields.categories_intM}">
-                            <ul class="list-group list-group-horizontal list-unstyled justify-content-start flex-wrap">
-                                <f:for each="{document.fields.categories_intM}" as="category">
-                                    <gsbcore:Category category="{category}" as="sideCategory" />
-                                    <li class="list-group-item border-0 ps-0 kicker">
-                                        <span>{sideCategory.title}</span>
-                                    </li>
-                                </f:for>
-                            </ul>
-                        </f:if>
-                    </div>
+                    </p>
+                    <f:if condition="{document.fields.categories_intM}">
+                        <ul class="list-group list-group-horizontal list-unstyled justify-content-start flex-wrap">
+                            <f:for each="{document.fields.categories_intM}" as="category">
+                                <gsbcore:Category category="{category}" as="sideCategory" />
+                                <li class="list-group-item border-0 ps-0 kicker">
+                                    <span>{sideCategory.title}</span>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:if>
                 </div>
                 <f:if condition="{document.isElevated}">
                     <div class="results-elevated-label"><f:translate key="sponsored" extensionName="solr"/></div>
