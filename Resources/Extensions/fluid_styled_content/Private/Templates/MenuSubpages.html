@@ -9,7 +9,7 @@
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
                         <article class="frame frame-type-gsb_singleteaser frame-layout-0">
-                            <div class="teaser textpic topcenter" style="background-color:#f3f7fb">
+                            <div class="teaser textpic topcenter d-flex flex-wrap" style="background-color:#f3f7fb">
                                 <div class="teaser-content ce-bodytext order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
                                         <h3>
@@ -24,17 +24,15 @@
                                         </p>
                                     </f:if>
                                 </div>
-                                <f:for as="file" each="{page.files}" iteration="counter">
-                                    <f:if condition="{counter.cycle} == 1">
-                                        <div class="teaser-image ce-gallery order-0">
-                                            <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
-                                                <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                                                    <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{file.properties.uid}" treatIdAsReference="1" />
-                                                </picture>
-                                            </f:alias>
-                                        </div>
-                                    </f:if>
-                                </f:for>
+                                <f:if condition="{page.files}">
+                                    <div class="teaser-image ce-gallery order-0">
+                                        <f:alias map="{gsb:format.json.decode(json: page.files.0.properties.crop)}">
+                                            <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
+                                                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{page.files.0.properties.uid}" treatIdAsReference="1" />
+                                            </picture>
+                                        </f:alias>
+                                    </div>
+                                </f:if>
                             </div>
                         </article>
                     </li>
