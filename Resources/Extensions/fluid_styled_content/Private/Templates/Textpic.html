@@ -42,6 +42,7 @@
 
 <f:section name="TopCenter">
     <div class="textpic topcenter">
+        <f:render arguments="{_all}" partial="Media/Gallery"/>
         <f:if condition="{data.bodytext} || {data.header}">
             <div class="ce-bodytext">
                 <f:if condition="{data.tx_header_inside} = 1">
@@ -50,7 +51,6 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </div>
         </f:if>
-        <f:render arguments="{_all}" partial="Media/Gallery"/>
     </div>
 </f:section>
 
@@ -71,6 +71,7 @@
 <f:section name="InTextRight">
     <div class="textpic intext-right">
         <f:if condition="{data.bodytext} || {data.header}">
+            <f:render arguments="{_all}" partial="Media/Gallery"/>
             <div class="ce-bodytext">
                 <f:if condition="{data.tx_header_inside} = 1">
                     <f:render arguments="{_all}" partial="Header/All"/>
@@ -78,12 +79,12 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </div>
         </f:if>
-        <f:render arguments="{_all}" partial="Media/Gallery"/>
     </div>
 </f:section>
 
 <f:section name="InTextLeft">
     <div class="textpic intext-left">
+        <f:render arguments="{_all}" partial="Media/Gallery"/>
         <f:if condition="{data.bodytext} || {data.header}">
             <div class="ce-bodytext">
                 <f:if condition="{data.tx_header_inside} = 1">
@@ -92,12 +93,12 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </div>
         </f:if>
-        <f:render arguments="{_all}" partial="Media/Gallery"/>
     </div>
 </f:section>
 
 <f:section name="NextToTextRight">
     <div class="textpic nexttotext-right d-lg-flex">
+        <f:render arguments="{_all}" partial="Media/Gallery"/>
         <f:if condition="{data.bodytext} || {data.header}">
             <div class="ce-bodytext">
                 <f:if condition="{data.tx_header_inside} = 1">
@@ -106,12 +107,12 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </div>
         </f:if>
-        <f:render arguments="{_all}" partial="Media/Gallery"/>
     </div>
 </f:section>
 
 <f:section name="NextToTextLeft">
     <div class="textpic nexttotext-left d-lg-flex">
+        <f:render arguments="{_all}" partial="Media/Gallery"/>
         <f:if condition="{data.bodytext} || {data.header}">
             <div class="ce-bodytext">
                 <f:if condition="{data.tx_header_inside} = 1">
@@ -120,7 +121,6 @@
                 <f:format.html>{data.bodytext}</f:format.html>
             </div>
         </f:if>
-        <f:render arguments="{_all}" partial="Media/Gallery"/>
     </div>
 </f:section>
 
