@@ -22,9 +22,7 @@
         </div>
         <f:if condition="{files}">
             <div class="teaser-image ce-gallery {f:if(condition:'{data.imageorient} == 0', then:' order-0 m-auto text-center flex-shrink-1')}{f:if(condition:'{data.imageorient} == 26', then:' order-0')}">
-                <f:for each="{files}" as="file">
-                    <f:render partial="Media/Rendering/ImageTeaser" arguments="{_all}"/>
-                </f:for>
+                <f:render partial="Media/Rendering/ImageTeaser" arguments="{_all}"/>
             </div>
         </f:if>
     </div>
