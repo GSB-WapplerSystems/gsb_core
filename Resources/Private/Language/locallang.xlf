@@ -63,6 +63,9 @@
 			<trans-unit id="header.languageswitcher" resname="header.languageswitcher">
 				<source>Language switcher</source>
 			</trans-unit>
+			<trans-unit id="header.language" resname="header.language">
+				<source>Language</source>
+			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation">
 				<source>Main navigation</source>
 			</trans-unit>

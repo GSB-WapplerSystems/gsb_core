@@ -83,6 +83,10 @@
 				<source>Language switcher</source>
 				<target>Sprachumschalter</target>
 			</trans-unit>
+			<trans-unit id="header.language" resname="header.language" approved="yes">
+				<source>Language</source>
+				<target>Sprache</target>
+			</trans-unit>
 			<trans-unit id="header.mainnavigation" resname="header.mainnavigation" approved="yes">
 				<source>Main navigation</source>
 				<target>Hauptnavigation</target>
