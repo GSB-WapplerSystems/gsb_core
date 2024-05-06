@@ -74,7 +74,7 @@
             }
         },
         8: {
-            'identifier': 'favicon',
+            'identifier': 'shortcut-icon',
             'type': 'link',
             'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico',
             'props': {
@@ -98,7 +98,23 @@
             }
         }
     }" />
+    <!--
+     Iterate through the config array and set an HTML tag for each entry according to the config.type key.
+        Also set link attribute and linked path.
+        Then iterate through the probs subarray to set these as attributes of the tag.
+        example array:
+        8: {
+            'identifier': 'shortcut-icon',
+            'type': 'link',
+            'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico',
+            'props': {
+                'rel': 'shortcut icon'
+            }
+        },
+        example output:
+        <link href="/fileadmin/Favicons/favicon.ico" rel="shortcut icon">
 
+     -->
     <f:for each="{metaConfig}" as="config">
         <f:variable
             name="linkAttribute"
