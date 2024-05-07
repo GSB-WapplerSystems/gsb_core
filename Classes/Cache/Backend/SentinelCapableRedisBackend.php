@@ -197,6 +197,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -223,6 +225,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -251,6 +255,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
         return [];
     }
@@ -280,6 +286,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -306,6 +314,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -334,6 +344,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -356,6 +368,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -381,6 +395,8 @@ class SentinelCapableRedisBackend extends RedisBackend
                     'exception' => $e,
                 ]);
             }
+        } else {
+            $this->logger->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 

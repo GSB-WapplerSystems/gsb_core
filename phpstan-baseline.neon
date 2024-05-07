@@ -2,7 +2,7 @@ parameters:
 	ignoreErrors:
 		-
 			message: "#^Cannot call method critical\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
-			count: 9
+			count: 17
 			path: Classes/Cache/Backend/SentinelCapableRedisBackend.php
 
 		-
