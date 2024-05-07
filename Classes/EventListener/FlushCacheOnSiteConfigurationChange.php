@@ -31,8 +31,8 @@ final class FlushCacheOnSiteConfigurationChange
     public function __invoke(SiteConfigurationBeforeWriteEvent $siteConfigurationBeforeWriteEvent): void
     {
         // we play "stupid" and simply clear all caches in the pages group
-        $this->cacheManager->flushCachesInGroup('pages');
-        $this->cacheManager->flushCachesInGroup('system');
         $this->cacheManager->flushCachesInGroup('all');
+        $this->cacheManager->flushCachesInGroup('system');
+        $this->cacheManager->flushCachesInGroup('pages');
     }
 }
