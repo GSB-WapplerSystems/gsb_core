@@ -15,13 +15,16 @@
   */
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, logo-text, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
-$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.pallet.description';
-
+$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.palette.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-16x16,favicon-32x32,apple-touch-icon-60x60,apple-touch-icon-76x76,apple-touch-icon-120x120,apple-touch-icon-152x152,apple-touch-icon-180x180,safari-pinned-tab,shortcut-icon,webmanifest,browserconfig';
+
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -76,6 +79,41 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-text',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-text',
+    'displayCond' => 'FIELD:logo-complete-toggle:REQ:false',
+
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+//ITZBUNDPHP-2903 Logo komplett austauschen
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-toggle'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle.description',
+    'onChange' => 'reload',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-big'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-big',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-big',
+    'displayCond' => 'FIELD:logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-small'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-small',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-small',
+    'displayCond' => 'FIELD:logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'link',
