@@ -6,14 +6,15 @@
             <legend>{formvh:translateElementProperty(element: page, property: 'label')}</legend>
         </f:if>
         <div class="{page.renderingOptions.listClassAttribute}">
-            <formvh:renderAllFormValues renderable="{page.rootForm}" as="formValue">
-
-                <f:if condition="{formValue.isSection}">
-                    <f:then>
+            <f:if condition="{formValue.isSection}">
+                <f:then>
+                    <formvh:renderAllFormValues renderable="{page.rootForm}" as="formValue">
                         <p><b>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</b></p>
-                    </f:then>
-                    <f:else>
-                        <dl class="{page.renderingOptions.listRowClassAttribute}">
+                    </formvh:renderAllFormValues>
+                </f:then>
+                <f:else>
+                    <dl class="{page.renderingOptions.listRowClassAttribute}">
+                        <formvh:renderAllFormValues renderable="{page.rootForm}" as="formValue">
                             <dt class="{page.renderingOptions.labelWrapperClassAttribute}">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</dt>
                             <dd class="{page.renderingOptions.valueWrapperClassAttribute}">
                                 <f:if condition="{formValue.value}">
@@ -43,10 +44,10 @@
                                     </f:else>
                                 </f:if>
                             </dd>
-                        </dl>
-                    </f:else>
-                </f:if>
-            </formvh:renderAllFormValues>
+                        </formvh:renderAllFormValues>
+                    </dl>
+                </f:else>
+            </f:if>
         </div>
     </fieldset>
 </formvh:renderRenderable>
