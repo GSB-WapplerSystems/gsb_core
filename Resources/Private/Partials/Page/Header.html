@@ -23,7 +23,9 @@
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
                                 <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
-                                    <f:render section="header-logo"  arguments="{_all}"></f:render>
+                                    <span class="header-image">
+                                        <f:render section="header-logo" arguments="{_all}"></f:render>
+                                    </span>
                                 </f:link.page>
                             </div>
                         </f:else>
