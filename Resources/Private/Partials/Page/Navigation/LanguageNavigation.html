@@ -18,9 +18,12 @@
                 <li aria-hidden="{f:if(condition: item.active, then: 'true', else: 'false')}" class="nav-item{f:if(condition: item.active, then: ' active')}">
                     <f:if condition="{item.active} == 1">
                         <f:then>
-                            <span class="dropdown-item nav-link pb-0">
+                            <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"
+                               aria-current="true"
+                               href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                               hreflang="{item.twoLetterIsoCode}">
                                 <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
-                            </span>
+                            </a>
                         </f:then>
                         <f:else>
                             <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"
