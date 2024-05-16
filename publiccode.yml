@@ -46,14 +46,13 @@ description:
 
       ## Erweiterung: gsb\_core
 
-      Die Extension gsb\_core ist die Hauptstütze der verschiedenen GSB 11
+      Die Extension gsb\_core ist die Kern-Extension der verschiedenen GSB 11
       Extensions. Die Extension konfiguriert TYPO3 und erweitert es mit
       ausgewählten Extensions, um besser strukturierte und ansprechende Inhalte
       zu liefern und die Barrierefreiheit zu optimieren.
 
     features:
-      - feature 1
-      - feature 2
+      - Inhaltselemente
     documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/documentation'
   en:
     genericName: content-management-system
@@ -75,8 +74,7 @@ description:
       accessibility.
 
     features:
-      - feature 1
-      - feature 2
+      - Content Elements
     documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/documentation'
 dependsOn:
   open:
