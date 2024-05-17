@@ -1,5 +1,27 @@
+imports:
+  - { resource: "acl-redaktion.yaml"}
+
 label: "[GSB][ACL] Chef Redaktion"
-modules: '*'
+
+modules:
+  dashboard:
+    - '*'
+  web:
+    - 'web_layout'
+    - 'web_ViewpageView'
+    - 'web_list'
+    - 'web_form'
+  workspaces:
+    - 'workspaces_admin'
+  file:
+    - 'file_FilelistList'
+  user:
+    - 'user_setup'
+  system:
+    - 'BelogLog'
+  site:
+    - 'redirects'
+
 
 resources:
   sys_category:
