@@ -53,7 +53,7 @@ description:
 
     features:
       - Inhaltselemente
-    documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/documentation'
+    documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core'
   en:
     genericName: content-management-system
     shortDescription: GSB 11 - gsb_core
@@ -75,7 +75,7 @@ description:
 
     features:
       - Content Elements
-    documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/documentation'
+    documentation: 'https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core'
 dependsOn:
   open:
     - name: TYPO3
