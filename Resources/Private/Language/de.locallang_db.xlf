@@ -827,7 +827,7 @@
 				<source>By disabling this toggle, the "Search" menu item will be hidden in the navigation.</source>
 				<target>Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.sitepackage.search.pallet.lable" resname="page.configuration.sitepackage.search.pallet.lable">
+			<trans-unit id="page.configuration.sitepackage.search.palette.lable" resname="page.configuration.sitepackage.search.palette.lable">
 				<source>Favicons can be configured here.</source>
 				<target>Faceten nutzen</target>
 			</trans-unit>
@@ -863,7 +863,40 @@
 				<source>The text mark of the logo can be replaced here, the file must be an SVG with the corresponding text path.</source>
 				<target>Hier kann die Textmarke des Logos ersetzt werden, die Datei muss ein SVG mit dem entsprechenden Textpfad sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.sitepackage.favicon.pallet.description" resname="page.configuration.sitepackage.favicon.pallet.description">
+
+
+			<trans-unit id="page.configuration.sitepackage.logos.palette.description" resname="page.configuration.sitepackage.logo.palette.description">
+				<source>Configuration for the logo in the header of the web site</source>
+				<target>Konfiguration des Logos im Headerbereich des Webauftritts</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.logo-complete-toggle" resname="page.configuration.logo-complete-toggle">
+				<source>Change the complete logo</source>
+				<target>Gesamtes Logo tauschen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.logo-complete-toggle" resname="page.configuration.description.logo-complete-toggle">
+				<source>Activate if you want the complete logo</source>
+				<target>Aktivieren, um das gesamte Logo auszutauschen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.logo-complete-big" resname="page.configuration.logo-complete-big">
+				<source>Link to the large logo (optional)</source>
+				<target>Link zum großen Logo (optional)</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.logo-complete-big" resname="page.configuration.description.logo-complete-bi">
+				<source>Adjust the logo displayed in the desktop version of the header</source>
+				<target>Anpassung der Desktop-Version des Logos</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.logo-complete-small" resname="page.configuration.logo-complete-small">
+				<source>Link to the small logo</source>
+				<target>Link zum kleinen Logo</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.logo-complete-small" resname="page.configuration.description.logo-complete-small">
+				<source>Adjust the logo displayed in the mobile version of the header</source>
+				<target>Anpassung der mobilen Version des Logos</target>
+			</trans-unit>
+
+
+			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>Favicons can be configured here.</source>
 				<target>Favicons können hier konfiguriert werden.</target>
 			</trans-unit>

@@ -1,12 +1,11 @@
-
 <footer class="fw-bold bg-secondary text-gray-600 pt-5 border-top border-2 position-relative" aria-labelledby="footerID">
     <div class="visually-hidden" id="footerID" role="heading" aria-level="1">{f:translate(key: 'meta.ServiceSection', extensionName: 'gsb_core')}</div>
     <div class="container pt-5 pb-3">
         <f:render arguments="{_all}" partial="Footer.SocialMedia"/>
         <f:render arguments="{menuMeta: menuMeta, copyrightYear: copyrightYear, navlanguage: navlanguage, site: site}" partial="Navigation/MetaNavFooter"/>
-        <a aria-label="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}" class="totop" href="#top" role="button" title="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}">
-            <div class="ol"></div>
-            <div class="bg"></div>
-        </a>
     </div>
+    <a href="#top" class="totop shadow" aria-label="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}" title="{f:translate(key: 'tt_content.jumptotop', extensionName: 'gsb_core')}">
+        <div class="ol"></div>
+        <div class="bg"></div>
+    </a>
 </footer>

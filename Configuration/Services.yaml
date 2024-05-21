@@ -52,13 +52,6 @@ services:
       - name: event.listener
         identifier: 'gsb_core/extends-site-configuration'
 
-
-  ITZBund\GsbCore\EventListener\FlushCacheOnSiteConfigurationChange:
-    public: true
-    tags:
-      - name: event.listener
-        identifier: 'gsb_core/flush-cache-on-site-configuration-change'
-
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true

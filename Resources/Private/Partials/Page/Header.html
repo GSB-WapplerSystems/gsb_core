@@ -15,13 +15,17 @@
                     <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
                         <f:then>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:render arguments="{_all}" partial="Header.Image"></f:render>
+                                <span class="header-image">
+                                    <f:render section="header-logo" arguments="{_all}"></f:render>
+                                </span>
                             </div>
                         </f:then>
                         <f:else>
                             <div class="logo lh-1 h-100 d-flex align-items-center">
                                 <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
-                                    <f:render arguments="{_all}" partial="Header.Image"></f:render>
+                                    <span class="header-image">
+                                        <f:render section="header-logo" arguments="{_all}"></f:render>
+                                    </span>
                                 </f:link.page>
                             </div>
                         </f:else>
@@ -48,4 +52,28 @@
     <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
 </f:if>
 
+
+
+<f:section name="header-logo">
+    <span class="visually-hidden">{site.configuration.websiteTitle}{f:if(condition: '{site.configuration.rootPageId} != {data.uid}', then: ' - {f:translate(key: "header.text", extensionName: "gsb_core")}')}</span>
+    <f:if condition="{site.configuration.logo-complete-toggle}">
+        <f:then>
+            <f:if condition="{site.configuration.logo-complete-big}">
+                <span class="logo-complete-big">
+                  <f:image src="{site.configuration.logo-complete-big}" class="img-fluid" alt="" title=""></f:image>
+                </span>
+            </f:if>
+            <f:if condition="{site.configuration.logo-complete-small}">
+                <span class="logo-complete-small">
+                  <f:image src="{site.configuration.logo-complete-small}" class="img-fluid" alt="" title=""></f:image>
+                </span>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:render arguments="{_all}" partial="Header.Image-Trademark"></f:render>
+        </f:else>
+    </f:if>
+</f:section>
+
 </html>
+
