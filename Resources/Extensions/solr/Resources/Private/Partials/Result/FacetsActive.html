@@ -4,7 +4,13 @@
       xmlns:c="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers"
       data-namespace-typo3-fluid="true"
 >
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
 <f:section name="FacetsActive">
     <f:if condition="{resultSet.facets.used -> f:count()}">
         <h3 class="mb-3"><f:translate key="faceting_resultsNarrowedBy" extensionName="solr">Narrowed by</f:translate>:</h3>

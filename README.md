@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <!-- PROJECT SHIELDS -->
 [![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
 
@@ -18,7 +24,7 @@ In a composer-based TYPO3 installation you can install the extension EXT:gsb_cor
 
 ```sh
 composer config -g gitlab-domains gitlab.opencode.de && \
-composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core
+composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core.git
 ```
 
 ```sh

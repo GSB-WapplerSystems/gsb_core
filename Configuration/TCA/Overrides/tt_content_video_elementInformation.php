@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 $GLOBALS['TCA']['tt_content']['columns']['tx_video_caption']['config']['fieldInformation'] = [
     'elementInformationText' => [
         'renderType' => 'elementInformationText',

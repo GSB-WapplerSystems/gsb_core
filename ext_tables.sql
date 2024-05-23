@@ -1,3 +1,7 @@
+-- SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+--
+-- SPDX-License-Identifier: GPL-3.0-or-later
+
 CREATE TABLE sys_file_metadata
 (
 	is_accessible tinyint(4) unsigned DEFAULT '0' NOT NULL,
