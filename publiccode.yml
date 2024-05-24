@@ -3,7 +3,7 @@
 # More info at https://github.com/italia/publiccode.yml
 
 publiccodeYmlVersion: '0.2'
-name: gsb_core
+name: Government Site Builder 11 - Extension:gsb_core
 applicationSuite: Government Site Builder 11
 url: 'https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core'
 releaseDate: '2024-05-07'
@@ -44,7 +44,7 @@ description:
       veröffentlicht wurde.**
 
 
-      ## Erweiterung: gsb\_core
+      ## Government Site Builder 11 - Erweiterung: gsb\_core
 
       Die Extension gsb\_core ist die Kern-Extension der verschiedenen GSB 11
       Extensions. Die Extension konfiguriert TYPO3 und erweitert es mit
@@ -66,7 +66,7 @@ description:
       quarterly release or a security update.**
 
 
-      ## Extension: gsb\_core
+      ## Government Site Builder 11 - Extension: gsb\_core
 
       The extension gsb\_core is the mainstay of the various GSB 11 extensions.
       The extension configures TYPO3 and enhances it with selected extensions to
