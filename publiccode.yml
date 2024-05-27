@@ -5,6 +5,7 @@
 publiccodeYmlVersion: '0.2'
 name: Government Site Builder 11 - Extension:gsb_core
 applicationSuite: Government Site Builder 11
+logo: 'https://produkt.gsb.bund.de/SiteGlobals/Frontend/Images/logo.png'
 url: 'https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core'
 releaseDate: '2024-05-07'
 developmentStatus: development
@@ -43,6 +44,10 @@ description:
       die mit dem vierteljährlichen Release oder einem Sicherheitsupdate
       veröffentlicht wurde.**
 
+      **Um die aktuelle freigegebene Releaseversion des GSB11 zu erhalten, die
+      künftig quartalsweise Abnahmetests unterzogen wird, wenden Sie sich bitte an
+      gsb11-entwicklung@itzbund.de.**
+
 
       ## Government Site Builder 11 - Erweiterung: gsb\_core
 
@@ -65,6 +70,9 @@ description:
       an acceptance test. Please use the version that was published with the
       quarterly release or a security update.**
 
+      **To obtain the current approved release version of the GSB11, which will be
+      subject to quarterly acceptance tests in the future, please contact
+      gsb11-entwicklung@itzbund.de.**
 
       ## Government Site Builder 11 - Extension: gsb\_core
 
