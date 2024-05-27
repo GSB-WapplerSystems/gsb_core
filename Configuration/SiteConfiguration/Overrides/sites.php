@@ -28,7 +28,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favi
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo-complete-big, second-logo-complete-small';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -124,6 +124,41 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-small'] = [
             'allowedTypes' => ['file'],
         ],
 ];
+
+//ITZBUNDPHP-2870 Zweites Logo
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-toggle'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-toggle',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-toggle.description',
+    'onChange' => 'reload',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-big'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-big',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-big',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-small'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-small',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-small',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+
 
 // favicons
 
