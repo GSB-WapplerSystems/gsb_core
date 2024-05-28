@@ -28,7 +28,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favi
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo-complete-big, second-logo-complete-small';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo, second-logo-link';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -137,9 +137,9 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-toggle'] 
     ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-big'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-big',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-big',
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo',
     'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
     'config' =>
         [
@@ -147,14 +147,14 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-big'] = [
             'allowedTypes' => ['file'],
         ],
 ];
-$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-small'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-small',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-small',
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-link',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-link',
     'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'link',
-            'allowedTypes' => ['file'],
+            'allowedTypes' => ['url'],
         ],
 ];
 

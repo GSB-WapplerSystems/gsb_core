@@ -15,18 +15,35 @@
 <header class="header-wrapper fixed-top" aria-labelledby="metaNavigationSection">
     <div id="metaNavigationSection" class="visually-hidden" role="heading" aria-level="1">{f:translate(key: 'meta.HeaderSection', extensionName: 'gsb_core')}</div>
     <div class="header-wrapper-bg d-flex flex-wrap">
-        <div class="header-logo-additional container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="logo-additional-border d-flex">
-                        <div class="logo-initiative" role="heading" aria-level="2">Eine Initiative von:</div>
-                        <a href="#" class="d-inline-block">
-                            <img class="img-fluid logo-additional" src="/fileadmin/user_upload/Icons/Denkfabrik.svg" width="386" height="92" alt="Denkfabrik">
-                        </a>
+        <f:if condition="{site.configuration.second-logo-complete-toggle}">
+            <f:then>
+                <div class="header-logo-additional container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="logo-additional-border d-flex">
+                                <div class="logo-initiative" role="heading" aria-level="2">Eine Initiative von:</div>
+                                <f:if condition="{site.configuration.second-logo-link} && {site.configuration.second-logo}">
+                                    <f:then>
+                                        <a href="{site.configuration.second-logo-link}" class="d-inline-block">
+                                            <f:if condition="{site.configuration.second-logo}">
+                                                <f:image src="{site.configuration.second-logo-complete-big}" class="img-fluid logo-additional" alt="" title=""></f:image>
+                                            </f:if>
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{site.configuration.second-logo}">
+                                            <span class="d-inline-block">
+                                                <f:image src="{site.configuration.second-logo-complete-big}" class="img-fluid logo-additional" alt="" title=""></f:image>
+                                            </span>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </f:then>
+        </f:if>
         <div class="container-md">
             <div class="row">
                 <div class="col-9 col-lg-5 col-xxl-4 logo-wrapper">
@@ -48,25 +65,6 @@
                             </div>
                         </f:else>
                     </f:if>
-                    <f:if condition="{site.configuration.second-logo-complete-toggle}">
-                        <f:then>
-                            <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <span class="header-image">
-                                    <f:if condition="{site.configuration.second-logo-complete-big}">
-                                        <span class="second-logo-complete-big">
-                                          <f:image src="{site.configuration.second-logo-complete-big}" class="img-fluid" alt="" title=""></f:image>
-                                        </span>
-                                    </f:if>
-                                    <f:if condition="{site.configuration.second-logo-complete-small}">
-                                        <span class="second-logo-complete-small">
-                                          <f:image src="{site.configuration.second-logo-complete-small}" class="img-fluid" alt="" title=""></f:image>
-                                        </span>
-                                    </f:if>
-                                </span>
-                            </div>
-                        </f:then>
-                    </f:if>
-
                 </div>
                 <div class="col-3 col-lg-7 col-xxl-8 meta-wrapper d-flex flex-wrap justify-content-end">
                     <div class="meta-desktop d-none d-lg-block w-100">

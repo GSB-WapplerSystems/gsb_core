@@ -895,7 +895,7 @@
 				<target>Anpassung der mobilen Version des Logos</target>
 			</trans-unit>
 
-			<trans-unit id="page.configuration.second-logo-complete-toggle" resname="page.configuration.logo-complete-toggle">
+			<trans-unit id="page.configuration.second-logo" resname="page.configuration.second-logo">
 				<source>Second logo</source>
 				<target>Zweites Logo</target>
 			</trans-unit>
@@ -903,21 +903,18 @@
 				<source>Activate if you want a second logo</source>
 				<target>Aktivieren, um ein zweites Logo zu verwenden.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.second-logo-complete-big" resname="page.configuration.logo-complete-big">
-				<source>Link to the large second logo (optional)</source>
-				<target>Link zum großen zweiten Logo (optional)</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.description.second-logo-complete-big" resname="page.configuration.description.logo-complete-big">
+
+			<trans-unit id="page.configuration.description.second-logo" resname="page.configuration.description.second-logo">
 				<source>Adjust the second logo displayed in the desktop version of the header</source>
 				<target>Anpassung der Desktop-Version des zweiten Logos</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.second-logo-complete-small" resname="page.configuration.logo-complete-small">
-				<source>Link to the small second logo</source>
-				<target>Link zum kleinen zweiten Logo</target>
+			<trans-unit id="page.configuration.second-logo-link" resname="page.configuration.second-logo-link">
+				<source>Link target for sponsor logo</source>
+				<target>Link ziel des zweiten Logos</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.second-logo-complete-small" resname="page.configuration.description.logo-complete-small">
-				<source>Adjust the second logo displayed in the mobile version of the header</source>
-				<target>Anpassung der mobilen Version des zweiten Logos</target>
+				<source>Adjust the Link target for sponsor logo</source>
+				<target>Anpassung des Linkziels des zweiten Logos</target>
 			</trans-unit>
 
 
