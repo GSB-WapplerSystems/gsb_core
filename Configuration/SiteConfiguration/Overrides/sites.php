@@ -158,8 +158,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-small'] =
         ],
 ];
 
-
-
 // favicons
 
 $GLOBALS['SiteConfiguration']['site']['columns']['favicon-16x16'] = [
