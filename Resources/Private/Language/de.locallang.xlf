@@ -383,6 +383,10 @@
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_view" resname="tt_content.gallery_view" approved="yes">
+				<source>Enlarge image</source>
+				<target>Großansicht Bild</target>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_download" resname="tt_content.gallery_download" approved="yes">
 				<source>Download</source>
 				<target>Herunterladen</target>
