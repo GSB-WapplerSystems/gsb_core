@@ -56,6 +56,6 @@ class OverrideYouTubeHelper extends YouTubeHelper
 
     private function isOfflineMode(): bool
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false;
+        return (bool)($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false);
     }
 }

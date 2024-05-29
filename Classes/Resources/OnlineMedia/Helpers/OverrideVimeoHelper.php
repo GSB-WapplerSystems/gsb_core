@@ -56,6 +56,6 @@ class OverrideVimeoHelper extends VimeoHelper
 
     private function isOfflineMode(): bool
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'];
+        return (bool)($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false);
     }
 }
