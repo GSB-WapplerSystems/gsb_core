@@ -40,7 +40,7 @@ lib.contentElement {
     settings {
         media {
             popup {
-                bodyTag = <body style="margin:0; background:#fff;">
+                bodyTag = <body class="popup">
                 wrap = <a href="javascript:close();"> | </a>
                 width = {$styles.content.textmedia.linkWrap.width}
                 //height = {$styles.content.textmedia.linkWrap.height}
