@@ -185,6 +185,5 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFea
     return Map::fromEntries(
         [Scope::frontend(), $cspCollection]
     );
-} else {
-    return new Map();
 }
+return new Map();
