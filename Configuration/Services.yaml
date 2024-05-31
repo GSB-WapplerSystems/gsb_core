@@ -26,6 +26,8 @@ services:
         command: 'gsbcore:triggersynchronize'
         description: 'Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions to get around readonly filesystem woes'
 
+  ITZBund\GsbCore\UserFunc\ColorPickerValueItems:
+    public: true
 
   ITZBund\GsbCore\Configuration\PackageHelper:
     public: true

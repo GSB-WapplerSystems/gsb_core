@@ -19,7 +19,7 @@
   */
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -29,6 +29,10 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favi
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small';
+
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.label';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.description';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_1, label_color_1, color_2, label_color_2, color_3, label_color_3, color_4, label_color_4, color_5, label_color_5, color_6, label_color_6';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -235,3 +239,23 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
             'allowedTypes' => ['file'],
         ],
 ];
+
+// add more color fields
+for ($i = 0; $i <= 6; $i++) {
+    $GLOBALS['SiteConfiguration']['site']['columns']["label_color_{$i}"] = [
+        'label' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}_label.label",
+        'description' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}_label.description",
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+    $GLOBALS['SiteConfiguration']['site']['columns']["color_{$i}"] = [
+        'label' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.label",
+        'description' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.description",
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+}
