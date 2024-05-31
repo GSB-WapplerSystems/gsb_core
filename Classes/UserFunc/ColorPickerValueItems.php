@@ -24,14 +24,9 @@ namespace ITZBund\GsbCore\UserFunc;
 
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Site\Entity\Site;
-use TYPO3\CMS\Core\Site\SiteFinder;
 
 class ColorPickerValueItems
 {
-    public function __construct(
-        private readonly SiteFinder $siteFinder,
-    ) {}
-
     public function getItems(array &$config): void
     {
         /** @var Site $site */
@@ -49,7 +44,7 @@ class ColorPickerValueItems
 
         foreach ($colors as $key => $color) {
             $label = $color;
-            if (!empty($configuration['label_color_' . substr($key, -1)])) {
+            if (isset($configuration['label_color_' . substr($key, -1)]) && $configuration['label_color_' . substr($key, -1)] !== '') {
                 $label = $configuration['label_color_' . substr($key, -1)];
             }
 
