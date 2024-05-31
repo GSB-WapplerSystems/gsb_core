@@ -51,7 +51,7 @@ class ColorPickerValueItems
                 $label = $configuration['label_color_' . substr($key, -1)];
             }
 
-            $items[] = [$label, $color];
+            $items[] = [$label, $key];
         }
 
         $config['items'] = $items;

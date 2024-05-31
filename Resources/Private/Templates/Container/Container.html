@@ -11,12 +11,23 @@
 <f:section name="Main">
     <f:if condition="{children_101}">
 
-        <f:variable name="colorCode" value="{data.grid_bgcolor -> f:format.trim(characters: '#')}" />
+        <f:if condition="{data.grid_bgcolor}">
 
-        <f:if condition="{colorCode}">
-            <f:asset.css identifier="cssIdentifierContainer-{colorCode}">
+            <f:variable name="colorCode" value="{data.grid_bgcolor -> f:format.trim(characters: '#')}" />
+            <f:variable name="isHex" value="{data.grid_bgcolor -> f:format.crop(maxCharacters: 1, append: '')}" />
+
+            <f:if condition="# == {isHex}">
+                <f:then>
+                    <f:variable name="bgColorValue" value="{data.grid_bgcolor}" />
+                </f:then>
+                <f:else>
+                    <f:variable name="bgColorValue" value="var(--gsb-{data.grid_bgcolor})" />
+                </f:else>
+            </f:if>
+
+            <f:asset.css identifier="cssIdentifierContainer-{colorCode}" useNonce="true">
                 .containerBackgroundClass-{colorCode} <f:format.raw>{</f:format.raw>
-                    background-color: {data.grid_bgcolor}
+                background-color: {bgColorValue};
                 <f:format.raw>}</f:format.raw>
             </f:asset.css>
         </f:if>
