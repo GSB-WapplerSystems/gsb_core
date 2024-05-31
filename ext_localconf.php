@@ -33,7 +33,7 @@ defined('TYPO3') or die('Access denied.');
 
 (function () {
     // @todo Check after implementation of  Feature https://forge.typo3.org/issues/100056
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= true;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= false;
     // Future Security Headers
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginEmbedderPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginOpenerPolicy'] ??= false;
