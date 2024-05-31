@@ -139,6 +139,7 @@ renderables:
                 -
                   code: 1221559976
                   message: 'Bitte eine gültige E-Mail-Adresse eintragen'
+              elementDescription: 'Bitte geben Sie eine E-Mail-Adresse im Format name@domain.de an.'
             validators:
               -
                 identifier: NotEmpty
@@ -227,6 +228,7 @@ renderables:
                 -
                   code: 1238108069
                   message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+              elementDescription: 'Mindestens 10 Zeichen, maximal 3000 Zeichen möglich.'
             validators:
               -
                 identifier: NotEmpty
@@ -282,7 +284,7 @@ renderables:
               elementDescription: 'Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. '
             type: RadioButton
             identifier: radiobutton-1
-            label: 'Sind Sie damit einverstanden?'
+            label: 'Sind Sie mit der Weiterleitung an eine nachgeordnete Behörde des BMAS einverstanden?'
             validators:
               -
                 identifier: NotEmpty
@@ -315,7 +317,7 @@ renderables:
                   message: 'Bitte eine Option wählen'
             type: RadioButton
             identifier: radiobutton-2
-            label: 'Sind Sie damit einverstanden?'
+            label: 'Sind Sie mit der Weiterleitung an das BMAS einverstanden?'
             validators:
               -
                 identifier: NotEmpty
