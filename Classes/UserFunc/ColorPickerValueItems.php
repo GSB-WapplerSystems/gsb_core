@@ -10,7 +10,7 @@ declare(strict_types=1);
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
  * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
- * BMI/ITZBund. Author: Ole Hartwig
+ * BMI/ITZBund. Author: Willi Wehmeier
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 3
@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\UserFunc;
 
 use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\SiteFinder;
 
 class ColorPickerValueItems
@@ -33,9 +34,8 @@ class ColorPickerValueItems
 
     public function getItems(array &$config): void
     {
-        $siteIdentifier = 'gsb';
-
-        $site = $this->siteFinder->getSiteByIdentifier($siteIdentifier);
+        /** @var Site $site */
+        $site = $config['site'];
         $items = [
             [
                 $this->getLanguageService()->sL('LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label'),
