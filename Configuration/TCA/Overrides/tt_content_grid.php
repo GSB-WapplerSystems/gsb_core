@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
+use ITZBund\GsbCore\UserFunc\ColorPickerValueItems;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -99,9 +100,10 @@ defined('TYPO3') or die('Access denied.');
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bg.bgcolor.description',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'color',
-                'size' => 10,
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [],
+                'itemsProcFunc' => ColorPickerValueItems::class . '->getItems',
             ],
         ],
         'grid_icon' => [
