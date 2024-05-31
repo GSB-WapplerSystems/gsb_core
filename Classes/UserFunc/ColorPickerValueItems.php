@@ -27,6 +27,9 @@ use TYPO3\CMS\Core\Site\Entity\Site;
 
 class ColorPickerValueItems
 {
+    /**
+     * @param array<string,mixed> $config
+     */
     public function getItems(array &$config): void
     {
         /** @var Site $site */
