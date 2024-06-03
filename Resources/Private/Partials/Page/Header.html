@@ -14,7 +14,10 @@
 
 <header class="header-wrapper fixed-top" aria-labelledby="metaNavigationSection">
     <div id="metaNavigationSection" class="visually-hidden" role="heading" aria-level="1">{f:translate(key: 'meta.HeaderSection', extensionName: 'gsb_core')}</div>
-    <div class="header-wrapper-bg">
+    <div class="header-wrapper-bg d-flex flex-wrap">
+        <f:if condition="{site.configuration.second-logo-complete-toggle}">
+            <f:render section="header-second-logo" arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt}" />
+        </f:if>
         <div class="container-md">
             <div class="row">
                 <div class="col-9 col-lg-5 col-xxl-4 logo-wrapper">
@@ -46,7 +49,7 @@
             </div>
             <f:if condition="{navType} == 0">
                 <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}" aria-labelledby="mainnavDesktop">
-                    <h2 class="visually-hidden" id="mainnavDesktop">{f:translate(key:'header.mainnavigation', extensionName:'gsb_core')}</h2>
+                    <div id="mainnavDesktop" class="visually-hidden" role="heading" aria-level="2">{f:translate(key:'header.mainnavigation', extensionName:'gsb_core')}</div>
                     <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType, site: site}" partial="Navigation/MainNavDesktop"/>
                 </nav>
             </f:if>
@@ -54,11 +57,10 @@
     </div>
 </header>
 <div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
+
 <f:if condition="{data.breadcrumb} != 1">
     <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
 </f:if>
-
-
 
 <f:section name="header-logo">
     <span class="visually-hidden">{site.configuration.websiteTitle}{f:if(condition: '{site.configuration.rootPageId} != {data.uid}', then: ' - {f:translate(key: "header.text", extensionName: "gsb_core")}')}</span>
@@ -79,6 +81,34 @@
             <f:render arguments="{_all}" partial="Header.Image-Trademark"></f:render>
         </f:else>
     </f:if>
+</f:section>
+
+<f:section name="header-second-logo">
+    <div class="header-logo-additional container">
+        <div class="row">
+            <div class="col-12">
+                <div class="logo-additional-border d-flex">
+                    <div class="logo-initiative" role="heading" aria-level="2">{f:translate(key: 'meta.HeaderInitiative', extensionName: 'gsb_core')}</div>
+                    <f:if condition="{link} && {logo}">
+                        <f:then>
+                            <a href="{link}" class="d-inline-block">
+                                <f:if condition="{logo}">
+                                    <f:image src="{logo}" class="img-fluid logo-additional" alt="{alt}" />
+                                </f:if>
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{logo}">
+                                <span class="d-inline-block">
+                                    <f:image src="{logo}" class="img-fluid logo-additional" alt="{alt}" />
+                                </span>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
 </f:section>
 
 </html>

@@ -23,6 +23,10 @@
 				<source>Header area</source>
 				<target>Kopfbereich</target>
 			</trans-unit>
+			<trans-unit id="meta.HeaderInitiative" resname="meta.HeaderInitiative" approved="yes">
+				<source>An initiative by:</source>
+				<target>Eine Initiative von:</target>
+			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection" approved="yes">
 				<source>Service section</source>
 				<target>Servicebereich</target>
