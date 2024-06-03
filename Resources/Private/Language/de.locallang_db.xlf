@@ -896,14 +896,17 @@
 			</trans-unit>
 
 			<trans-unit id="page.configuration.second-logo-complete-toggle" resname="page.configuration.second-logo-complete-toggle">
-				<source>Second logo</source>
-				<target>Zweites Logo</target>
+				<source>Add second logo</source>
+				<target>Zweites Logo hinzufügen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.second-logo-complete-toggle" resname="page.configuration.description.second-logo-complete-toggle">
 				<source>Activate if you want a second logo.</source>
 				<target>Aktivieren, um ein zweites Logo zu verwenden.</target>
 			</trans-unit>
-
+			<trans-unit id="page.configuration.second-logo" resname="page.configuration.second-logo">
+				<source>Second logo</source>
+				<target>Zweites Logo</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.description.second-logo" resname="page.configuration.description.second-logo">
 				<source>Adjust the second logo displayed in the desktop version of the header.</source>
 				<target>Anpassung der Desktop-Version des zweiten Logos.</target>
