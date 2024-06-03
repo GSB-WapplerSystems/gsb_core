@@ -37,7 +37,7 @@
                     <f:if condition="{files}">
                         <f:then>
                             <f:if condition="{data.grid_bgcolor}">
-                                <div class="grid-bg{f:if(condition:'{data.grid_bgcolor}', then:' {containerBackgroundClass}')}"></div>
+                                <div class="grid-bg{containerBackgroundClass}"></div>
                             </f:if>
                             <f:for each="{files}" as="file">
                                 <f:render partial="Media/Rendering/ImageIcon" arguments="{_all}"/>
