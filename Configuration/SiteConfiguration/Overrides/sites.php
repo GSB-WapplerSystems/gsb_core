@@ -28,7 +28,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favi
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo, second-logo-link';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo, second-logo-alt, second-logo-link';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -95,7 +95,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
 //ITZBUNDPHP-2903 Logo komplett austauschen
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-toggle'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle.description',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-toggle',
     'onChange' => 'reload',
     'config' => [
         'renderType' => 'checkboxToggle',
@@ -128,7 +128,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-small'] = [
 //ITZBUNDPHP-2870 Zweites Logo
 $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-toggle'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-toggle',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-toggle.description',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-toggle',
     'onChange' => 'reload',
     'config' => [
         'renderType' => 'checkboxToggle',
@@ -145,6 +145,16 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo'] = [
         [
             'type' => 'link',
             'allowedTypes' => ['file'],
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-alt'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-alt',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-alt',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'text',
+            'renderType' => 'input',
         ],
 ];
 $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
