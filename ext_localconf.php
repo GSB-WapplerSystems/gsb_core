@@ -90,15 +90,12 @@ defined('TYPO3') or die('Access denied.');
         'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
     ];
 
-    // override youtube helper to support offline mode
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\YouTubeHelper::class] = [
-        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class,
-    ];
-
-    // override vimeo helper to support offline mode
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper::class] = [
-        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
-    ];
+    if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['youtube'] =
+            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['vimeo'] =
+            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class;
+    }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
 

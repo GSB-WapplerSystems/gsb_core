@@ -27,17 +27,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class OverrideVimeoHelper extends VimeoHelper
 {
-    public function getPreviewImage(File $file)
+    public function getPreviewImage(File $file): string
     {
         $videoId = $this->getOnlineMediaId($file);
         $temporaryFileName = $this->getTempFolderPath() . 'vimeo_' . md5($videoId) . '.jpg';
 
-        if ($this->isOfflineMode()) {
-            file_put_contents($temporaryFileName, file_get_contents(Environment::getProjectPath() . '/vendor/itzbund/gsb-core/Resources/Public/Images/video.png'));
-            GeneralUtility::fixPermissions($temporaryFileName);
-            return $temporaryFileName;
-        }
-        return parent::getPreviewImage($file);
+        file_put_contents($temporaryFileName, file_get_contents(Environment::getProjectPath() . '/vendor/itzbund/gsb-core/Resources/Public/Images/video.png'));
+        GeneralUtility::fixPermissions($temporaryFileName);
+        return $temporaryFileName;
     }
 
     /**
@@ -48,14 +45,6 @@ class OverrideVimeoHelper extends VimeoHelper
      */
     protected function getOEmbedData($mediaId): ?array
     {
-        if ($this->isOfflineMode()) {
-            return null;
-        }
-        return parent::getOEmbedData($mediaId);
-    }
-
-    private function isOfflineMode(): bool
-    {
-        return (bool)($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false);
+        return null;
     }
 }
