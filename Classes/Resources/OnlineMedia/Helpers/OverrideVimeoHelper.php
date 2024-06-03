@@ -20,7 +20,6 @@
 
 namespace ITZBund\GsbCore\Resources\OnlineMedia\Helpers;
 
-use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -30,10 +29,15 @@ class OverrideVimeoHelper extends VimeoHelper
     public function getPreviewImage(File $file): string
     {
         $videoId = $this->getOnlineMediaId($file);
-        $temporaryFileName = $this->getTempFolderPath() . 'vimeo_' . md5($videoId) . '.jpg';
-
-        file_put_contents($temporaryFileName, file_get_contents(Environment::getProjectPath() . '/vendor/itzbund/gsb-core/Resources/Public/Images/video.png'));
-        GeneralUtility::fixPermissions($temporaryFileName);
+        $temporaryFileName = $this->getTempFolderPath() . 'vimeo_' . md5($videoId) . '.png';
+        if (!file_exists($temporaryFileName)) {
+            $source = GeneralUtility::getFileAbsFileName('EXT:gsb_core/Resources/Public/Images/video.png');
+            if ($source == '') {
+                return '';
+            }
+            copy($source, $temporaryFileName);
+            GeneralUtility::fixPermissions($temporaryFileName);
+        }
         return $temporaryFileName;
     }
 
