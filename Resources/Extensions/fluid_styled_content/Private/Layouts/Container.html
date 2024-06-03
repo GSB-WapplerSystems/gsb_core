@@ -11,6 +11,7 @@
 
     <f:variable name="colorCode" value="{data.grid_bgcolor -> f:format.trim(characters: '#')}" />
     <f:variable name="isHex" value="{data.grid_bgcolor -> f:format.crop(maxCharacters: 1, append: '')}" />
+    <f:variable name="containerBackgroundClass"> containerBackgroundClass-{colorCode}</f:variable>
 
     <f:if condition="# == {isHex}">
         <f:then>
@@ -36,7 +37,7 @@
                     <f:if condition="{files}">
                         <f:then>
                             <f:if condition="{data.grid_bgcolor}">
-                                <div class="grid-bg{f:if(condition:'{data.grid_bgcolor}', then:' containerBackgroundClass-{colorCode}')}"></div>
+                                <div class="grid-bg{f:if(condition:'{data.grid_bgcolor}', then:' {containerBackgroundClass}')}"></div>
                             </f:if>
                             <f:for each="{files}" as="file">
                                 <f:render partial="Media/Rendering/ImageIcon" arguments="{_all}"/>
@@ -44,7 +45,7 @@
                         </f:then>
                         <f:else>
                             <f:if condition="{data.grid_bgcolor}">
-                                <div class="grid-bg{f:if(condition:'{data.grid_bgcolor}', then:' containerBackgroundClass-{colorCode}')}"></div>
+                                <div class="grid-bg{f:if(condition:'{data.grid_bgcolor}', then:' {containerBackgroundClass}')}"></div>
                             </f:if>
                         </f:else>
                     </f:if>
