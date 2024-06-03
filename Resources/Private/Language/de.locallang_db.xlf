@@ -1020,6 +1020,123 @@
 				<source>link to browserconfig.xml</source>
 				<target>Link zur browserconfig.xml.</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color.label">
+				<source>Background colors</source>
+				<target>Hintergrundfarben</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color.description">
+				<source>Here, up to six color values can be defined, which will then shape the corporate design (CD) of the website. These colors will then be available for selection in content elements where a background color can be set. The "Color Name" field is intended to assign a custom name or label to a specific color value. Instead of remembering complicated hex codes, the editorial team can assign an easily understandable name to the color, such as "Dove Blue" or "Accent Color."</source>
+				<target>Hier können bis zu sechs Farbwerte definiert werden, die dann das Corporate Design (CD) des Webauftritts prägen. Diese Farben stehen dann zur Auswahl in Inhaltselementen, bei denen eine Hintergrundfarbe festgelegt werden kann. Das feld "Farbwertname" soll einen benutzerdefinierten Namen oder eine Bezeichnung für einen bestimmten Farbwert zu vergeben. Anstatt sich an komplizierte Hex-Codes zu erinnern, kann die Redaktion einen leicht verständlichen Namen für die Farbe vergeben, wie z.B. "Taubenblau" oder "Akzentfarbe".</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_0.label">
+				<source>No background color</source>
+				<target>Keine Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1.label">
+				<source>Color #1</source>
+				<target>Farbe #1</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1.description">
+				<source>Configure the Color #1 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #1 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_2.label">
+				<source>Color #2</source>
+				<target>Farbe #2</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_2.description">
+				<source>Configure the Color #2 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #2 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_3.label">
+				<source>Color #3</source>
+				<target>Farbe #3</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_3.description">
+				<source>Configure the Color #3 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #3 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_4.label">
+				<source>Color #4</source>
+				<target>Farbe #4</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_4.description">
+				<source>Configure the Color #4 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #4 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_5.label">
+				<source>Color #5</source>
+				<target>Farbe #5</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_5.description">
+				<source>Configure the Color #5 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6.label">
+				<source>Color #6</source>
+				<target>Farbe #6</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6.description">
+				<source>Configure the Color #6 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1_label.label">
+				<source>Color Value Label #1</source>
+				<target>Farbwertname #1</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_2_label.label">
+				<source>Color Value Label #2</source>
+				<target>Farbwertname #2</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_2_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_3_label.label">
+				<source>Color Value Label #3</source>
+				<target>Farbwertname #3</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_3_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_4_label.label">
+				<source>Color Value Label #4</source>
+				<target>Farbwertname #4</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_4_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_5_label.label">
+				<source>Color Value Label #5</source>
+				<target>Farbwertname #5</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_5_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_6_label.label">
+				<source>Color Value Label #6</source>
+				<target>Farbwertname #6</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

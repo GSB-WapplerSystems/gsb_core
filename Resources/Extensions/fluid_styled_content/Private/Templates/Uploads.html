@@ -37,7 +37,7 @@
 						<a class="download" href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
 						<f:if condition="{file.properties.description}">
 							<f:if condition="{data.uploads_description}">
-								<f:format.raw>{file.properties.description}</f:format.raw>
+								<f:format.html>{file.properties.description}</f:format.html>
 							</f:if>
 						</f:if>
 						<span>

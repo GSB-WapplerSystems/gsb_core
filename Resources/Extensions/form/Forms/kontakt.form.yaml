@@ -139,6 +139,7 @@ renderables:
                 -
                   code: 1221559976
                   message: 'Bitte eine gültige E-Mail-Adresse eintragen'
+              elementDescription: 'Bitte geben Sie eine E-Mail-Adresse im Format name@domain.de an.'
             validators:
               -
                 identifier: NotEmpty
@@ -227,6 +228,7 @@ renderables:
                 -
                   code: 1238108069
                   message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+              elementDescription: 'Mindestens 10 Zeichen, maximal 3000 Zeichen möglich.'
             validators:
               -
                 identifier: NotEmpty
@@ -255,7 +257,7 @@ renderables:
                 identifier: FileSize
           -
             properties:
-              text: "Wenn sich Ihr Anliegen auf eine bestimmte nachgeordnete Behörde des BMAS (z.B. Arbeitsagentur, Rentenversicherung) bezieht, kann es sinnvoll sein, Ihre Daten an die betreffende Behörde weiterzuleiten.\n\nDie Weiterleitung erfolgt allein zu dem Zweck, Ihr Anliegen umfassend zu bewerten und zu beantworten. Von der Weiterleitung sind die von Ihnen übermittelten personenbezogenen Daten betroffen. Es können auch sogenannte besondere Kategorien personenbezogener Daten wie Gesundheitsdaten umfasst sein."
+              text: "Wenn sich Ihr Anliegen auf eine bestimmte nachgeordnete Behörde des ITZBund (z.B. Arbeitsagentur, Rentenversicherung) bezieht, kann es sinnvoll sein, Ihre Daten an die betreffende Behörde weiterzuleiten.\n\nDie Weiterleitung erfolgt allein zu dem Zweck, Ihr Anliegen umfassend zu bewerten und zu beantworten. Von der Weiterleitung sind die von Ihnen übermittelten personenbezogenen Daten betroffen. Es können auch sogenannte besondere Kategorien personenbezogener Daten wie Gesundheitsdaten umfasst sein."
             type: StaticText
             identifier: statictext-1
             label: ''
@@ -282,13 +284,13 @@ renderables:
               elementDescription: 'Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. '
             type: RadioButton
             identifier: radiobutton-1
-            label: 'Sind Sie damit einverstanden?'
+            label: 'Sind Sie mit der Weiterleitung an eine nachgeordnete Behörde des ITZBund einverstanden?'
             validators:
               -
                 identifier: NotEmpty
           -
             properties:
-              text: "Wenn sich Ihr Anliegen (auch) auf einen Sachverhalt bezieht, für welches das BMAS nicht zuständig ist, kann das BMAS eine Weiterleitung an die zuständige Behörde (z.B. ein anderes Bundesministerium) übernehmen.\n\nDie Weiterleitung erfolgt zu dem Zweck, Ihr Anliegen von den zuständigen Behörden zügiger bearbeiten und beantworten zu lassen. Von der Weiterleitung sind die von Ihnen übermittelten personenbezogenen Daten betroffen. Es können auch sogenannte besondere Kategorien personenbezogener Daten wie Gesundheitsdaten umfasst sein."
+              text: "Wenn sich Ihr Anliegen (auch) auf einen Sachverhalt bezieht, für welches das ITZBund nicht zuständig ist, kann das ITZBund eine Weiterleitung an die zuständige Behörde (z.B. ein anderes Bundesministerium) übernehmen.\n\nDie Weiterleitung erfolgt zu dem Zweck, Ihr Anliegen von den zuständigen Behörden zügiger bearbeiten und beantworten zu lassen. Von der Weiterleitung sind die von Ihnen übermittelten personenbezogenen Daten betroffen. Es können auch sogenannte besondere Kategorien personenbezogener Daten wie Gesundheitsdaten umfasst sein."
             type: StaticText
             identifier: statictext-2
             label: ''
@@ -315,7 +317,7 @@ renderables:
                   message: 'Bitte eine Option wählen'
             type: RadioButton
             identifier: radiobutton-2
-            label: 'Sind Sie damit einverstanden?'
+            label: 'Sind Sie mit der Weiterleitung an das ITZBund einverstanden?'
             validators:
               -
                 identifier: NotEmpty

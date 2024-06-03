@@ -292,6 +292,9 @@
 			<trans-unit id="tt_content.gallery_close" resname="tt_content.gallery_close">
 				<source>Close</source>
 			</trans-unit>
+			<trans-unit id="tt_content.gallery_view" resname="tt_content.gallery_view">
+				<source>Enlarge image</source>
+			</trans-unit>
 			<trans-unit id="tt_content.gallery_download" resname="tt_content.gallery_download">
 				<source>Download</source>
 			</trans-unit>
