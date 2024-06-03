@@ -771,7 +771,7 @@
 				<source>Adjust the logo displayed in the mobile version of the header</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.second-logo-complete-toggle" resname="page.configuration.second-logo-complete-toggle">
-				<source>Second logo</source>
+				<source>Add Second logo</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.second-logo-complete-toggle" resname="page.configuration.description.second-logo-complete-toggle">
 				<source>Activate if you want a second logo</source>
