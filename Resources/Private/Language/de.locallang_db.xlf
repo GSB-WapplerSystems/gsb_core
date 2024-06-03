@@ -875,7 +875,7 @@
 				<target>Gesamtes Logo tauschen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.logo-complete-toggle" resname="page.configuration.description.logo-complete-toggle">
-				<source>Activate if you want the complete logo</source>
+				<source>Activate if you want to overwrite the whole logo</source>
 				<target>Aktivieren, um das gesamte Logo auszutauschen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.logo-complete-big" resname="page.configuration.logo-complete-big">
@@ -895,7 +895,38 @@
 				<target>Anpassung der mobilen Version des Logos</target>
 			</trans-unit>
 
-
+			<trans-unit id="page.configuration.second-logo-complete-toggle" resname="page.configuration.second-logo-complete-toggle">
+				<source>Add second logo</source>
+				<target>Zweites Logo hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo-complete-toggle" resname="page.configuration.description.second-logo-complete-toggle">
+				<source>Activate if you want a second logo.</source>
+				<target>Aktivieren, um ein zweites Logo zu verwenden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.second-logo" resname="page.configuration.second-logo">
+				<source>Second logo</source>
+				<target>Zweites Logo</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo" resname="page.configuration.description.second-logo">
+				<source>Adjust the second logo displayed in the desktop version of the header.</source>
+				<target>Anpassung der Desktop-Version des zweiten Logos.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.second-logo-alt" resname="page.configuration.second-logo-alt">
+				<source>Second logo alt text</source>
+				<target>Alternativ Text 2. Logo</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo-alt" resname="page.configuration.description.second-logo-alt">
+				<source>Set an alternative text for the logo for visually impaired users.</source>
+				<target>Alternativ Text für das zweite Logo für visuell beeinträchtigte Webseiten-Besucher.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.second-logo-link" resname="page.configuration.second-logo-link">
+				<source>Link target for sponsor logo</source>
+				<target>Link ziel des zweiten Logos</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo-link" resname="page.configuration.description.second-logo-link">
+				<source>Set/Change the optional link for the second logo.</source>
+				<target>Optionaler Link, mit dem das zweite Logo versehen werden kann.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>Favicons can be configured here.</source>
 				<target>Favicons können hier konfiguriert werden.</target>
@@ -994,6 +1025,123 @@
 			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
 				<source>link to browserconfig.xml</source>
 				<target>Link zur browserconfig.xml.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color.label">
+				<source>Background colors</source>
+				<target>Hintergrundfarben</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color.description">
+				<source>Here, up to six color values can be defined, which will then shape the corporate design (CD) of the website. These colors will then be available for selection in content elements where a background color can be set. The "Color Name" field is intended to assign a custom name or label to a specific color value. Instead of remembering complicated hex codes, the editorial team can assign an easily understandable name to the color, such as "Dove Blue" or "Accent Color."</source>
+				<target>Hier können bis zu sechs Farbwerte definiert werden, die dann das Corporate Design (CD) des Webauftritts prägen. Diese Farben stehen dann zur Auswahl in Inhaltselementen, bei denen eine Hintergrundfarbe festgelegt werden kann. Das feld "Farbwertname" soll einen benutzerdefinierten Namen oder eine Bezeichnung für einen bestimmten Farbwert zu vergeben. Anstatt sich an komplizierte Hex-Codes zu erinnern, kann die Redaktion einen leicht verständlichen Namen für die Farbe vergeben, wie z.B. "Taubenblau" oder "Akzentfarbe".</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_0.label">
+				<source>No background color</source>
+				<target>Keine Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1.label">
+				<source>Color #1</source>
+				<target>Farbe #1</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1.description">
+				<source>Configure the Color #1 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #1 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_2.label">
+				<source>Color #2</source>
+				<target>Farbe #2</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_2.description">
+				<source>Configure the Color #2 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #2 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_3.label">
+				<source>Color #3</source>
+				<target>Farbe #3</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_3.description">
+				<source>Configure the Color #3 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #3 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_4.label">
+				<source>Color #4</source>
+				<target>Farbe #4</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_4.description">
+				<source>Configure the Color #4 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #4 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_5.label">
+				<source>Color #5</source>
+				<target>Farbe #5</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_5.description">
+				<source>Configure the Color #5 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6.label">
+				<source>Color #6</source>
+				<target>Farbe #6</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6.description">
+				<source>Configure the Color #6 as hex value, example #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1_label.label">
+				<source>Color Value Label #1</source>
+				<target>Farbwertname #1</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_1_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_2_label.label">
+				<source>Color Value Label #2</source>
+				<target>Farbwertname #2</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_2_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_3_label.label">
+				<source>Color Value Label #3</source>
+				<target>Farbwertname #3</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_3_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_4_label.label">
+				<source>Color Value Label #4</source>
+				<target>Farbwertname #4</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_4_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_5_label.label">
+				<source>Color Value Label #5</source>
+				<target>Farbwertname #5</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_5_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_6_label.label">
+				<source>Color Value Label #6</source>
+				<target>Farbwertname #6</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_6_label.description">
+				<source>Here you can assign a name for the color value.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
 			</trans-unit>
 		</body>
 	</file>

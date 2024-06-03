@@ -1,5 +1,11 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
     <figure class="figure">
         <f:if condition="{file.link}">
             <f:then>
@@ -89,6 +95,7 @@
                                             <div class="container">
                                                 <div class="row g-0">
                                                     <div class="col-10 title">
+                                                        <h2 class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_view')}</h2>
                                                         <f:link.file class="btn btn-image btn-download" download="true" file="{file.originalFile}" filename="{file.originalFile.name}">{file.originalFile.name} <span>{file.originalFile.size -> f:format.bytes()} ({file.originalFile.extension -> f:format.case(mode: 'upper')})</span> | {f:translate(key:'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:tt_content.gallery_download_now')}</f:link.file>
                                                     </div>
                                                     <div class="col-2 close text-end">

@@ -1,5 +1,11 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
 <f:layout name="Default"/>
 
 <f:section name="Main">
@@ -15,7 +21,7 @@
                                         <h3>
                                             <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
                                                 <span>
-                                                  <f:format.raw>{page.title}</f:format.raw>
+                                                  {page.title}
                                                 </span>
                                             </f:link.typolink>
                                         </h3>

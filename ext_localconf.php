@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 /*
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
@@ -29,7 +33,7 @@ defined('TYPO3') or die('Access denied.');
 
 (function () {
     // @todo Check after implementation of  Feature https://forge.typo3.org/issues/100056
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= true;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= false;
     // Future Security Headers
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginEmbedderPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginOpenerPolicy'] ??= false;
@@ -86,15 +90,12 @@ defined('TYPO3') or die('Access denied.');
         'className' => \ITZBund\GsbCore\Backend\Form\Container\FilesControlContainer::class,
     ];
 
-    // override youtube helper to support offline mode
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\YouTubeHelper::class] = [
-        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class,
-    ];
-
-    // override vimeo helper to support offline mode
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper::class] = [
-        'className' => \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class,
-    ];
+    if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['youtube'] =
+            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['vimeo'] =
+            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class;
+    }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
 

@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 declare(strict_types=1);
 
 /*
@@ -9,7 +13,7 @@ declare(strict_types=1);
   * BMI/ITZBund. Author: Patrick Schriner
   *
   * It is free software; you can redistribute it and/or modify it under
-  * the terms of the GNU General Public License, either version 2
+  * the terms of the GNU General Public License, either version 3
   * of the License, or any later version.
   *
   * For the full copyright and license information, please read the

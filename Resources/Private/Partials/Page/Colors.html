@@ -1,0 +1,10 @@
+<f:asset.css identifier="global-color-configs" useNonce="true">
+    :root <f:format.raw>{</f:format.raw>
+    <f:spaceless>
+    <f:for each="{site.configuration}" as="item" key="key"><f:if condition="{item} !== ''">
+        <f:switch expression="{key -> f:format.crop(maxCharacters: 6, append: '')}">
+            <f:case value="color_">--gsb-{key}: {item};</f:case>
+        </f:switch></f:if></f:for>
+    </f:spaceless>
+    <f:format.raw>}</f:format.raw>
+</f:asset.css>

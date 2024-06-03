@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 /*
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
@@ -7,7 +11,7 @@
   * BMI/ITZBund. Author: Ole Hartwig, Christian Rath-Ulrich
   *
   * It is free software; you can redistribute it and/or modify it under
-  * the terms of the GNU General Public License, either version 2
+  * the terms of the GNU General Public License, either version 3
   * of the License, or any later version.
   *
   * For the full copyright and license information, please read the
@@ -15,7 +19,7 @@
   */
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -24,7 +28,11 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favi
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small';
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo, second-logo-alt, second-logo-link';
+
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.label';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.description';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_1, label_color_1, color_2, label_color_2, color_3, label_color_3, color_4, label_color_4, color_5, label_color_5, color_6, label_color_6';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -91,7 +99,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
 //ITZBUNDPHP-2903 Logo komplett austauschen
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-toggle'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle.description',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-toggle',
     'onChange' => 'reload',
     'config' => [
         'renderType' => 'checkboxToggle',
@@ -118,6 +126,49 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-small'] = [
         [
             'type' => 'link',
             'allowedTypes' => ['file'],
+        ],
+];
+
+//ITZBUNDPHP-2870 Zweites Logo
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-toggle'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-complete-toggle',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-complete-toggle',
+    'onChange' => 'reload',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-alt'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-alt',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-alt',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'text',
+            'renderType' => 'input',
+        ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-link',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-link',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['url'],
         ],
 ];
 
@@ -231,3 +282,23 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
             'allowedTypes' => ['file'],
         ],
 ];
+
+// add more color fields
+for ($i = 0; $i <= 6; $i++) {
+    $GLOBALS['SiteConfiguration']['site']['columns']["label_color_{$i}"] = [
+        'label' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}_label.label",
+        'description' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}_label.description",
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+    $GLOBALS['SiteConfiguration']['site']['columns']["color_{$i}"] = [
+        'label' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.label",
+        'description' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.description",
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+}

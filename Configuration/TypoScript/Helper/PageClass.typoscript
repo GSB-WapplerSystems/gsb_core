@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
 #
 # Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
@@ -51,5 +55,11 @@ lib.page.class {
     field = layout
     noTrimWrap = | layout-||
     ifEmpty = default
+  }
+  50 = TEXT
+  50 {
+    data = site:second-logo-complete-toggle
+    ifEmpty = default
+    noTrimWrap = | second-logo-||
   }
 }

@@ -1,5 +1,11 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ff="http://www.w3.org/1999/html" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
 <f:if condition="{dimensions.width}">
     <f:then>
         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">

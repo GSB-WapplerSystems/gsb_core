@@ -1,5 +1,11 @@
 <html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
 <nav aria-labelledby="mainmenu" class="main-menu-layer dropdown flex-grow-0{f:if(condition: '{navType} == 0', then: ' d-lg-none')}" id="main-menu">
     <div aria-level="2" class="visually-hidden" id="mainmenu" role="heading">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</div>
     <f:if condition="{site.configuration.search} == 1">
@@ -22,7 +28,7 @@
     </f:if>
     <button aria-controls="menu" aria-expanded="false" class="navbar-toggler" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" id="main-menu-button" title="{f:translate(key: 'header.openMenuTitle', extensionName: 'gsb_core')}" type="button">
         <span class="line"></span>
-        <span class="txt"><f:format.raw>{f:translate(key: 'header.openMenu', extensionName: 'gsb_core')}</f:format.raw></span>
+        <span class="txt"><f:format.html>{f:translate(key: 'header.openMenu', extensionName: 'gsb_core')}</f:format.html></span>
     </button>
     <div class="dropdown-menu" id="menu">
         <div class="navbar-wrapper">

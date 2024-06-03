@@ -18,6 +18,9 @@
 			<trans-unit id="meta.HeaderSection" resname="meta.HeaderSection">
 				<source>Header area</source>
 			</trans-unit>
+			<trans-unit id="meta.HeaderInitiative" resname="meta.HeaderInitiative">
+				<source>An initiative by:</source>
+			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection">
 				<source>Service section</source>
 			</trans-unit>
@@ -288,6 +291,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_close" resname="tt_content.gallery_close">
 				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_view" resname="tt_content.gallery_view">
+				<source>Enlarge image</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_download" resname="tt_content.gallery_download">
 				<source>Download</source>

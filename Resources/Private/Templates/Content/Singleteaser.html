@@ -1,7 +1,36 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
+
+<f:if condition="{data.grid_bgcolor}">
+
+    <f:variable name="colorCode" value="{data.grid_bgcolor -> f:format.trim(characters: '#')}" />
+    <f:variable name="isHex" value="{data.grid_bgcolor -> f:format.crop(maxCharacters: 1, append: '')}" />
+    <f:variable name="singleTeaserBackgroundClass"> singleTeaserBackgroundClass-{colorCode}</f:variable>
+
+    <f:if condition="# == {isHex}">
+        <f:then>
+            <f:variable name="bgColorValue" value="{data.grid_bgcolor}" />
+        </f:then>
+        <f:else>
+            <f:variable name="bgColorValue" value="var(--gsb-{data.grid_bgcolor})" />
+        </f:else>
+    </f:if>
+
+    <f:asset.css identifier="cssIdentifierSingleTeaser-{colorCode}" useNonce="true">
+        .singleTeaserBackgroundClass-{colorCode} <f:format.raw>{</f:format.raw>
+        background-color: {bgColorValue};
+        <f:format.raw>}</f:format.raw>
+    </f:asset.css>
+</f:if>
 
 <article id="c{data.uid}" class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-    <div class="teaser d-flex{f:if(condition:'{data.imageorient} == 0', then:' textpic topcenter flex-wrap')}{f:if(condition:'{data.imageorient} == 25', then:' textpic nexttotext-right d-md-flex')}{f:if(condition:'{data.imageorient} == 26', then:' textpic nexttotext-left d-lg-flex')}"{f:if(condition: data.grid_bgcolor, then: ' style="background-color:{data.grid_bgcolor}"')}>
+    <div class="teaser{singleTeaserBackgroundClass} d-flex{f:if(condition:'{data.imageorient} == 0', then:' textpic topcenter flex-wrap')}{f:if(condition:'{data.imageorient} == 25', then:' textpic nexttotext-right d-md-flex')}{f:if(condition:'{data.imageorient} == 26', then:' textpic nexttotext-left d-lg-flex')}">
         <div class="teaser-content ce-bodytext{f:if(condition:'{data.imageorient} == 0', then:' w-100 h-100 order-1')}{f:if(condition:'{data.imageorient} == 26', then:' order-1')}">
             <f:if condition="{data.header}">
                 <f:render partial="Header/All" arguments="{_all}" />

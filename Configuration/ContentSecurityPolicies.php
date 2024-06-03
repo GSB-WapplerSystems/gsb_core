@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 /*
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
@@ -7,7 +11,7 @@
   * BMI/ITZBund. Author: Ole Hartwig
   *
   * It is free software; you can redistribute it and/or modify it under
-  * the terms of the GNU General Public License, either version 2
+  * the terms of the GNU General Public License, either version 3
   * of the License, or any later version.
   *
   * For the full copyright and license information, please read the
@@ -115,68 +119,71 @@ if (\TYPO3\CMS\Core\Core\Environment::getContext()->isDevelopment()) {
     );
 }
 
-$cspCollection = new MutationCollection(
-    $inscureRequestMutation,
-    $bitvTestFormMutation,
-    $bitvTestDefaultMutation,
-    $bitvTestFrameMutation,
-    $bitvTestScriptSrcMutation,
-    $bitvTestScriptSrcElmMutation,
-    $bitvTestStyleSrcElemMutation,
-    new Mutation(
-        MutationMode::Set,
-        Directive::BaseUri,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::FrameAncestors,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::WorkerSrc,
-        SourceKeyword::self,
-        SourceScheme::blob,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::FormAction,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::FontSrc,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::ConnectSrc,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::ObjectSrc,
-        SourceKeyword::self,
-        SourceKeyword::none,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::ManifestSrc,
-        SourceKeyword::self,
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::MediaSrc,
-        new UriValue('https://www.youtube.com'),
-    ),
-    new Mutation(
-        MutationMode::Extend,
-        Directive::ScriptSrcElem,
-        new UriValue('https://www.youtube.com'),
-    )
-);
+if (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('security.frontend.enforceContentSecurityPolicy')) {
+    $cspCollection = new MutationCollection(
+        $inscureRequestMutation,
+        $bitvTestFormMutation,
+        $bitvTestDefaultMutation,
+        $bitvTestFrameMutation,
+        $bitvTestScriptSrcMutation,
+        $bitvTestScriptSrcElmMutation,
+        $bitvTestStyleSrcElemMutation,
+        new Mutation(
+            MutationMode::Set,
+            Directive::BaseUri,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::FrameAncestors,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::WorkerSrc,
+            SourceKeyword::self,
+            SourceScheme::blob,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::FormAction,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::FontSrc,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::ConnectSrc,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::ObjectSrc,
+            SourceKeyword::self,
+            SourceKeyword::none,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::ManifestSrc,
+            SourceKeyword::self,
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::MediaSrc,
+            new UriValue('https://www.youtube.com'),
+        ),
+        new Mutation(
+            MutationMode::Extend,
+            Directive::ScriptSrcElem,
+            new UriValue('https://www.youtube.com'),
+        )
+    );
 
-return Map::fromEntries(
-    [Scope::frontend(), $cspCollection]
-);
+    return Map::fromEntries(
+        [Scope::frontend(), $cspCollection]
+    );
+}
+return new Map();

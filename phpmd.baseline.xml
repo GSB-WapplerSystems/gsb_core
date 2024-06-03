@@ -44,9 +44,9 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
-  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php" method="isOfflineMode"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php"/>
-  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php" method="isOfflineMode"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php"/>
   <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initialize"/>
@@ -60,6 +60,7 @@
   <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="getSessionTimeout"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/UserFunc/ColorPickerValueItems.php" method="getLanguageService"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>

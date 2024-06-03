@@ -1,3 +1,10 @@
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
 
 <f:variable name="dropdown" value="false"/>
 
@@ -15,7 +22,7 @@
         </button>
         <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
             <f:for as="item" each="{languagenavigation}">
-                <li aria-hidden="{f:if(condition: item.active, then: 'true', else: 'false')}" class="nav-item{f:if(condition: item.active, then: ' active')}">
+                <li class="nav-item{f:if(condition: item.active, then: ' active')}">
                     <f:if condition="{item.active} == 1">
                         <f:then>
                             <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # Content type help button
 
 Info button can be added to content types.
