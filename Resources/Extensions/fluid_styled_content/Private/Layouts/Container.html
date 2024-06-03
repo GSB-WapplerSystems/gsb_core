@@ -6,6 +6,29 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
+
+<f:if condition="{data.grid_bgcolor}">
+
+    <f:variable name="colorCode" value="{data.grid_bgcolor -> f:format.trim(characters: '#')}" />
+    <f:variable name="isHex" value="{data.grid_bgcolor -> f:format.crop(maxCharacters: 1, append: '')}" />
+    <f:variable name="containerBackgroundClass"> containerBackgroundClass-{colorCode}</f:variable>
+
+    <f:if condition="# == {isHex}">
+        <f:then>
+            <f:variable name="bgColorValue" value="{data.grid_bgcolor}" />
+        </f:then>
+        <f:else>
+            <f:variable name="bgColorValue" value="var(--gsb-{data.grid_bgcolor})" />
+        </f:else>
+    </f:if>
+
+    <f:asset.css identifier="cssIdentifierContainer-{colorCode}" useNonce="true">
+        .containerBackgroundClass-{colorCode} <f:format.raw>{</f:format.raw>
+        background-color: {bgColorValue};
+        <f:format.raw>}</f:format.raw>
+    </f:asset.css>
+</f:if>
+
 <f:if condition="{data.grid_imgbg}">
     <f:then>
         <div class="row">
@@ -14,7 +37,7 @@
                     <f:if condition="{files}">
                         <f:then>
                             <f:if condition="{data.grid_bgcolor}">
-                                <div class="grid-bg" style="{f:if(condition: data.grid_bgcolor, then: 'background-color:{data.grid_bgcolor}', else: 'background-color:transparent')};"></div>
+                                <div class="grid-bg{containerBackgroundClass}"></div>
                             </f:if>
                             <f:for each="{files}" as="file">
                                 <f:render partial="Media/Rendering/ImageIcon" arguments="{_all}"/>
@@ -22,7 +45,7 @@
                         </f:then>
                         <f:else>
                             <f:if condition="{data.grid_bgcolor}">
-                                <div class="grid-bg" style="{f:if(condition: data.grid_bgcolor, then: 'background-color:{data.grid_bgcolor}', else: 'background-color:transparent')};"></div>
+                                <div class="grid-bg{containerBackgroundClass}"></div>
                             </f:if>
                         </f:else>
                     </f:if>
@@ -40,7 +63,7 @@
         <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.grid_bgfullsize, then: ' grid-fullsize')}{f:if(condition: data.grid_light, then: ' grid-light')}{f:if(condition: data.grid_imgbg, then: ' grid-cols col-12 offset-xl-1 col-xl-10')}">
             <div class="container-wrapper {data.frame_class}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
                 <f:if condition="{data.grid_bgcolor}">
-                    <div class="grid-bg" style="{f:if(condition: data.grid_bgcolor, then: 'background-color:{data.grid_bgcolor}', else: 'background-color:transparent')};"></div>
+                    <div class="grid-bg{containerBackgroundClass}"></div>
                 </f:if>
 
                 {f:if(condition:'{data.grid_container} != 1', then:'<div class="container">')}
