@@ -56,4 +56,10 @@ lib.page.class {
     noTrimWrap = | layout-||
     ifEmpty = default
   }
+  50 = TEXT
+  50 {
+    data = site:second-logo-complete-toggle
+    ifEmpty = default
+    noTrimWrap = | second-logo-||
+  }
 }
