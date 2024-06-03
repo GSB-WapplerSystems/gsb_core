@@ -18,6 +18,9 @@
 			<trans-unit id="meta.HeaderSection" resname="meta.HeaderSection">
 				<source>Header area</source>
 			</trans-unit>
+			<trans-unit id="meta.HeaderInitiative" resname="meta.HeaderInitiative">
+				<source>An initiative by:</source>
+			</trans-unit>
 			<trans-unit id="meta.ServiceSection" resname="meta.ServiceSection">
 				<source>Service section</source>
 			</trans-unit>

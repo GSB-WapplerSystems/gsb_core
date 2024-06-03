@@ -875,7 +875,7 @@
 				<target>Gesamtes Logo tauschen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.logo-complete-toggle" resname="page.configuration.description.logo-complete-toggle">
-				<source>Activate if you want the complete logo</source>
+				<source>Activate if you want to overwrite the whole logo</source>
 				<target>Aktivieren, um das gesamte Logo auszutauschen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.logo-complete-big" resname="page.configuration.logo-complete-big">
@@ -895,6 +895,31 @@
 				<target>Anpassung der mobilen Version des Logos</target>
 			</trans-unit>
 
+			<trans-unit id="page.configuration.second-logo-complete-toggle" resname="page.configuration.second-logo-complete-toggle">
+				<source>Second logo</source>
+				<target>Zweites Logo</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo-complete-toggle" resname="page.configuration.description.second-logo-complete-toggle">
+				<source>Activate if you want a second logo.</source>
+				<target>Aktivieren, um ein zweites Logo zu verwenden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.description.second-logo" resname="page.configuration.description.second-logo">
+				<source>Adjust the second logo displayed in the desktop version of the header.</source>
+				<target>Anpassung der Desktop-Version des zweiten Logos.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.second-logo-alt" resname="page.configuration.second-logo-alt">
+				<source>Second logo alt text</source>
+				<target>Alternativ Text 2. Logo</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.second-logo-alt" resname="page.configuration.description.second-logo-alt">
+				<source>Set an alternative text for the logo for visually impaired users.</source>
+				<target>Alternativ Text für das zweite Logo für visuell beeinträchtigte Webseiten-Besucher.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.second-logo-link" resname="page.configuration.second-logo-link">
+				<source>Link target for sponsor logo</source>
+				<target>Link ziel des zweiten Logos</target>
+			</trans-unit>
 
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>Favicons can be configured here.</source>
