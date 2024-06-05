@@ -152,4 +152,7 @@ lib {
       }
     }
   }
+  # Remove wrapping p
+  parseFunc_RTE_noEncapsLines < .parseFunc_RTE
+  parseFunc_RTE_noEncapsLines.nonTypoTagStdWrap.encapsLines >
 }
