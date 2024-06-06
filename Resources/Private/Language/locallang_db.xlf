@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:gsb_core/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_core">
-        <header/>
-        <body>
+	<file source-language="en" datatype="plaintext" original="EXT:gsb_core/Resources/Private/Language/locallang_db.xlf" date="2022-12-01T09:48:17" product-name="gsb_core">
+		<header/>
+		<body>
 			<trans-unit id="BackendLayouts.Default" resname="BackendLayouts.Default">
 				<source>Default</source>
 			</trans-unit>
@@ -151,16 +151,16 @@
 				<source>Slideshow</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link" resname="tt_content.tx_link">
-					<source>Link</source>
+				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout" resname="tt_content.tx_link_layout">
-					<source>Link layout</source>
+				<source>Link layout</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_text" resname="tt_content.tx_link_text">
-					<source>Link text</source>
+				<source>Link text</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position" resname="tt_content.tx_link_position">
-					<source>Link position</source>
+				<source>Link position</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.0" resname="tt_content.tx_link_layout.I.0">
 				<source>Primary button</source>
@@ -184,80 +184,80 @@
 				<source>Download</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.0" resname="tt_content.tx_link_position.I.0">
-					<source>Middle</source>
+				<source>Middle</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.1" resname="tt_content.tx_link_position.I.1">
-					<source>Left</source>
+				<source>Left</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_link_position.I.2" resname="tt_content.tx_link_position.I.2">
-					<source>Right</source>
+				<source>Right</source>
 			</trans-unit>
-            <trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
-                <source>Kicker</source>
-            </trans-unit>
+			<trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
+				<source>Kicker</source>
+			</trans-unit>
 			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
 				<source>override categories by Kicker</source>
 			</trans-unit>
-            <trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
-                <source>Intext</source>
-            </trans-unit>
-            <trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext">
-                <source>Left (in text)</source>
-            </trans-unit>
-            <trans-unit id="tt_content.header_position.rightintext" resname="tt_content.header_position.rightintext">
-                <source>Right (in text)</source>
-            </trans-unit>
-            <trans-unit id="tt_content.header_position.centerintext" resname="tt_content.header_position.centerintext">
-                <source>Center (in text)</source>
-            </trans-unit>
-            <trans-unit id="tt_content.header_style" resname="tt_content.header_style">
-                <source>Style</source>
-            </trans-unit>
-            <trans-unit id="tt_content.header_style.default" resname="tt_content.header_style.default">
-                <source>Default</source>
-            </trans-unit>
-            <trans-unit id="CType.menu_section_pages" resname="CType.menu_section_pages">
-                <source>Teaser menu: Index of subpages from selected pages</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_caption" resname="tt_content.tx_video_caption">
-                <source>Caption</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video" resname="tt_content.tx_video">
-                <source>Video</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_videourl" resname="tt_content.tx_video_videourl">
-                <source>YouTube Video URL</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_mainstage_label" resname="tt_content.tx_video_mainstage_label">
-                <source>Mainstage Video</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_mainstage_description" resname="tt_content.tx_video_mainstage_description">
-                <source>Only use for the startpage</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_mainstage_checkbox" resname="tt_content.tx_video_mainstage_checkbox">
-                <source>Mainstage</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_video_video" resname="tt_content.tx_video_video">
-                <source>Video (File)</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
-                <source>Multimedia</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.video" resname="tt_content.CType.video">
-                <source>Video</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_audio_poster" resname="tt_content.tx_audio_poster">
-                <source>Picture above audioplayer</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_audio" resname="tt_content.tx_audio">
-                <source>Audio</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_audio_audio" resname="tt_content.tx_audio_audio">
-                <source>Audio (File)</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
-                <source>Audio</source>
-            </trans-unit>
+			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
+				<source>Intext</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext">
+				<source>Left (in text)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_position.rightintext" resname="tt_content.header_position.rightintext">
+				<source>Right (in text)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_position.centerintext" resname="tt_content.header_position.centerintext">
+				<source>Center (in text)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_style" resname="tt_content.header_style">
+				<source>Style</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_style.default" resname="tt_content.header_style.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="CType.menu_section_pages" resname="CType.menu_section_pages">
+				<source>Teaser menu: Index of subpages from selected pages</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_caption" resname="tt_content.tx_video_caption">
+				<source>Caption</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video" resname="tt_content.tx_video">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_videourl" resname="tt_content.tx_video_videourl">
+				<source>YouTube Video URL</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_mainstage_label" resname="tt_content.tx_video_mainstage_label">
+				<source>Mainstage Video</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_mainstage_description" resname="tt_content.tx_video_mainstage_description">
+				<source>Only use for the startpage</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_mainstage_checkbox" resname="tt_content.tx_video_mainstage_checkbox">
+				<source>Mainstage</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_video" resname="tt_content.tx_video_video">
+				<source>Video (File)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
+				<source>Multimedia</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.video" resname="tt_content.CType.video">
+				<source>Video</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_audio_poster" resname="tt_content.tx_audio_poster">
+				<source>Picture above audioplayer</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_audio" resname="tt_content.tx_audio">
+				<source>Audio</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_audio_audio" resname="tt_content.tx_audio_audio">
+				<source>Audio (File)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
+				<source>Audio</source>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch">
 				<source>Stage Type</source>
 			</trans-unit>
@@ -270,351 +270,351 @@
 			<trans-unit id="stage.tx_stage_video" resname="stage.tx_stage_video">
 				<source>Stage Video</source>
 			</trans-unit>
-            <trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg">
-                <source>Stage background</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_bgcolor" resname="stage.tx_stage_bgcolor">
-                <source>Stage background color</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_position" resname="stage.tx_stage_position">
-                <source>Stage text position</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_bgcolor.I.0" resname="stage.tx_stage_bgcolor.I.0">
-                <source>Bright</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_bgcolor.I.1" resname="stage.tx_stage_bgcolor.I.1">
-                <source>Dark</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_position.I.0" resname="stage.tx_stage_position.I.0">
-                <source>Default</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_position.I.1" resname="stage.tx_stage_position.I.1">
-                <source>Top</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2">
-                <source>Middle</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3">
-                <source>Bottom</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0">
-                <source>Hide</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1">
-                <source>Show</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_textcolor.I.0" resname="stage.tx_stage_textcolor.I.0">
-                <source>Black</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage_textcolor.I.1" resname="stage.tx_stage_textcolor.I.1">
-                <source>White</source>
-            </trans-unit>
-            <trans-unit id="stage.tx_stage" resname="stage.tx_stage">
-                <source>Stage</source>
-            </trans-unit>
-            <trans-unit id="stage.CType.stage" resname="stage.CType.stage">
-                <source>Stage</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.stage" resname="tt_content.CType.stage">
-                <source>Stage</source>
-            </trans-unit>
-            <trans-unit id="with_frame" resname="with_frame">
-                <source>With frame</source>
-            </trans-unit>
-            <trans-unit id="without_frame" resname="without_frame">
-                <source>Without frame</source>
-            </trans-unit>
-            <trans-unit id="columns.twoColumnTitle" resname="columns.twoColumnTitle">
-                <source>2 Columns</source>
-            </trans-unit>
-            <trans-unit id="columns.twoColumnDescription" resname="columns.twoColumnDescription">
-                <source>Two columns with customized width</source>
-            </trans-unit>
-            <trans-unit id="columns.column.0" resname="columns.column.0">
-                <source>One Column 8.33%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.1" resname="columns.column.1">
-                <source>Two columns 16.66%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.2" resname="columns.column.2">
-                <source>Three columns 25%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.3" resname="columns.column.3">
-                <source>Four columns 33.33%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.4" resname="columns.column.4">
-                <source>Five columns 41.66%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.5" resname="columns.column.5">
-                <source>Six columns 50%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.6" resname="columns.column.6">
-                <source>Seven columns 58.33%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.7" resname="columns.column.7">
-                <source>Eight columns 66.66%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.8" resname="columns.column.8">
-                <source>Nine columns 75%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.9" resname="columns.column.9">
-                <source>Ten columns 83.33%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.10" resname="columns.column.10">
-                <source>Elven columns 91.66%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.11" resname="columns.column.11">
-                <source>Twelve columns 100%</source>
-            </trans-unit>
-            <trans-unit id="columns.column.first" resname="columns.column.first">
-                <source>First column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.first.description" resname="columns.column.first.description">
-                <source>Width of the first column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.second" resname="columns.column.second">
-                <source>Second column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.second.description" resname="columns.column.second.description">
-                <source>Width of the second column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.third" resname="columns.column.third">
-                <source>Third column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.third.description" resname="columns.column.third.description">
-                <source>Width of the third column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.fourth" resname="columns.column.fourth">
-                <source>Fourth column</source>
-            </trans-unit>
-            <trans-unit id="columns.column.fourth.description" resname="columns.column.fourth.description">
-                <source>Width of the fourth column</source>
-            </trans-unit>
-            <trans-unit id="columns.threeColumnTitle" resname="columns.threeColumnTitle">
-                <source>3 Columns</source>
-            </trans-unit>
-            <trans-unit id="columns.threeColumnDescription" resname="columns.threeColumnDescription">
-                <source>Three columns with customized width</source>
-            </trans-unit>
-            <trans-unit id="columns.fourColumnTitle" resname="columns.fourColumnTitle">
-                <source>4 Columns</source>
-            </trans-unit>
-            <trans-unit id="columns.fourColumnDescription" resname="columns.fourColumnDescription">
-                <source>Four columns with customized width</source>
-            </trans-unit>
-            <trans-unit id="columns.column1" resname="columns.column1">
-                <source>Column 1</source>
-            </trans-unit>
-            <trans-unit id="columns.column2" resname="columns.column2">
-                <source>Column 2</source>
-            </trans-unit>
-            <trans-unit id="columns.column3" resname="columns.column3">
-                <source>Column 3</source>
-            </trans-unit>
-            <trans-unit id="columns.column4" resname="columns.column4">
-                <source>Column 4</source>
-            </trans-unit>
-            <trans-unit id="content" resname="content">
-                <source>Content</source>
-            </trans-unit>
-            <trans-unit id="grid.type" resname="grid.type">
-                <source>Grid type</source>
-            </trans-unit>
-            <trans-unit id="grid.type.description" resname="grid.type.description">
-                <source>Choose whether elements are in a list or in containers</source>
-            </trans-unit>
-            <trans-unit id="grid.type.list" resname="grid.type.list">
-                <source>List</source>
-            </trans-unit>
-            <trans-unit id="grid.type.container" resname="grid.type.container">
-                <source>Container</source>
-            </trans-unit>
-            <trans-unit id="grid.icon" resname="grid.bgimage">
-                <source>Container Icon</source>
-            </trans-unit>
+			<trans-unit id="stage.tx_stage_bg" resname="stage.tx_stage_bg">
+				<source>Stage background</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_bgcolor" resname="stage.tx_stage_bgcolor">
+				<source>Stage background color</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position" resname="stage.tx_stage_position">
+				<source>Stage text position</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_bgcolor.I.0" resname="stage.tx_stage_bgcolor.I.0">
+				<source>Bright</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_bgcolor.I.1" resname="stage.tx_stage_bgcolor.I.1">
+				<source>Dark</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.0" resname="stage.tx_stage_position.I.0">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.1" resname="stage.tx_stage_position.I.1">
+				<source>Top</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.2" resname="stage.tx_stage_position.I.2">
+				<source>Middle</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_position.I.3" resname="stage.tx_stage_position.I.3">
+				<source>Bottom</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_salutation.I.0" resname="stage.tx_stage_salutation.I.0">
+				<source>Hide</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_salutation.I.1" resname="stage.tx_stage_salutation.I.1">
+				<source>Show</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_textcolor.I.0" resname="stage.tx_stage_textcolor.I.0">
+				<source>Black</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage_textcolor.I.1" resname="stage.tx_stage_textcolor.I.1">
+				<source>White</source>
+			</trans-unit>
+			<trans-unit id="stage.tx_stage" resname="stage.tx_stage">
+				<source>Stage</source>
+			</trans-unit>
+			<trans-unit id="stage.CType.stage" resname="stage.CType.stage">
+				<source>Stage</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.stage" resname="tt_content.CType.stage">
+				<source>Stage</source>
+			</trans-unit>
+			<trans-unit id="with_frame" resname="with_frame">
+				<source>With frame</source>
+			</trans-unit>
+			<trans-unit id="without_frame" resname="without_frame">
+				<source>Without frame</source>
+			</trans-unit>
+			<trans-unit id="columns.twoColumnTitle" resname="columns.twoColumnTitle">
+				<source>2 Columns</source>
+			</trans-unit>
+			<trans-unit id="columns.twoColumnDescription" resname="columns.twoColumnDescription">
+				<source>Two columns with customized width</source>
+			</trans-unit>
+			<trans-unit id="columns.column.0" resname="columns.column.0">
+				<source>One Column 8.33%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.1" resname="columns.column.1">
+				<source>Two columns 16.66%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.2" resname="columns.column.2">
+				<source>Three columns 25%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.3" resname="columns.column.3">
+				<source>Four columns 33.33%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.4" resname="columns.column.4">
+				<source>Five columns 41.66%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.5" resname="columns.column.5">
+				<source>Six columns 50%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.6" resname="columns.column.6">
+				<source>Seven columns 58.33%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.7" resname="columns.column.7">
+				<source>Eight columns 66.66%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.8" resname="columns.column.8">
+				<source>Nine columns 75%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.9" resname="columns.column.9">
+				<source>Ten columns 83.33%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.10" resname="columns.column.10">
+				<source>Elven columns 91.66%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.11" resname="columns.column.11">
+				<source>Twelve columns 100%</source>
+			</trans-unit>
+			<trans-unit id="columns.column.first" resname="columns.column.first">
+				<source>First column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.first.description" resname="columns.column.first.description">
+				<source>Width of the first column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.second" resname="columns.column.second">
+				<source>Second column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.second.description" resname="columns.column.second.description">
+				<source>Width of the second column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.third" resname="columns.column.third">
+				<source>Third column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.third.description" resname="columns.column.third.description">
+				<source>Width of the third column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.fourth" resname="columns.column.fourth">
+				<source>Fourth column</source>
+			</trans-unit>
+			<trans-unit id="columns.column.fourth.description" resname="columns.column.fourth.description">
+				<source>Width of the fourth column</source>
+			</trans-unit>
+			<trans-unit id="columns.threeColumnTitle" resname="columns.threeColumnTitle">
+				<source>3 Columns</source>
+			</trans-unit>
+			<trans-unit id="columns.threeColumnDescription" resname="columns.threeColumnDescription">
+				<source>Three columns with customized width</source>
+			</trans-unit>
+			<trans-unit id="columns.fourColumnTitle" resname="columns.fourColumnTitle">
+				<source>4 Columns</source>
+			</trans-unit>
+			<trans-unit id="columns.fourColumnDescription" resname="columns.fourColumnDescription">
+				<source>Four columns with customized width</source>
+			</trans-unit>
+			<trans-unit id="columns.column1" resname="columns.column1">
+				<source>Column 1</source>
+			</trans-unit>
+			<trans-unit id="columns.column2" resname="columns.column2">
+				<source>Column 2</source>
+			</trans-unit>
+			<trans-unit id="columns.column3" resname="columns.column3">
+				<source>Column 3</source>
+			</trans-unit>
+			<trans-unit id="columns.column4" resname="columns.column4">
+				<source>Column 4</source>
+			</trans-unit>
+			<trans-unit id="content" resname="content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="grid.type" resname="grid.type">
+				<source>Grid type</source>
+			</trans-unit>
+			<trans-unit id="grid.type.description" resname="grid.type.description">
+				<source>Choose whether elements are in a list or in containers</source>
+			</trans-unit>
+			<trans-unit id="grid.type.list" resname="grid.type.list">
+				<source>List</source>
+			</trans-unit>
+			<trans-unit id="grid.type.container" resname="grid.type.container">
+				<source>Container</source>
+			</trans-unit>
+			<trans-unit id="grid.icon" resname="grid.bgimage">
+				<source>Container Icon</source>
+			</trans-unit>
 			<trans-unit id="grid.icon.description" resname="grid.bgimage.description" >
 				<source>Insert icon at the top left of the container</source>
 			</trans-unit>
-            <trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg">
-                <source>Move out element</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.imgbg.description" resname="grid.bg.imgbg.description">
-                <source>Move out element and add optional icon</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.wave" resname="grid.bg.wave">
-                <source>Conclusion image</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.wave.description" resname="grid.bg.wave.description">
-                <source>Insert final image</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor">
-                <source>Backgroud color</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
-                <source>Set a backgroundcolor</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize">
-                <source>Grid expansion</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description">
-                <source>Drag grid container across the entire width</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.container" resname="grid.bg.container">
-                <source>Container</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.container.description" resname="grid.bg.container.description">
-                <source>Turns off the container wrapper</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.light" resname="grid.bg.light">
-                <source>Grid font-color</source>
-            </trans-unit>
-            <trans-unit id="grid.bg.light.description" resname="grid.bg.light.description">
-                <source>Switch font-color from dark to light</source>
-            </trans-unit>
-            <trans-unit id="grid.elements" resname="grid.elements">
-                <source>Grid elements</source>
-            </trans-unit>
-            <trans-unit id="grid.columns" resname="grid.columns">
-                <source>Grid Columns</source>
-            </trans-unit>
-            <trans-unit id="grid.columns.description" resname="grid.columns.description">
-                <source>Choose how many columns the grid will be divided into</source>
-            </trans-unit>
-            <trans-unit id="grid.columns.onecol" resname="grid.columns.onecol">
-                <source>One column</source>
-            </trans-unit>
-            <trans-unit id="grid.columns.twocol" resname="grid.columns.twocol">
-                <source>Two columns</source>
-            </trans-unit>
-            <trans-unit id="grid.columns.threecol" resname="grid.columns.threecol">
-                <source>Three columns</source>
-            </trans-unit>
-            <trans-unit id="grid.columns.fourcol" resname="grid.columns.fourcol">
-                <source>Four columns</source>
-            </trans-unit>
-            <trans-unit id="grid.slider.type" resname="grid.slider.type">
-                <source>Slider type</source>
-            </trans-unit>
-            <trans-unit id="grid.slider.columns" resname="grid.slider.columns">
-                <source>Slider columns</source>
-            </trans-unit>
-            <trans-unit id="grid.slider.description" resname="grid.slider.description">
-                <source>Toggle to a Slider</source>
-            </trans-unit>
-            <trans-unit id="accordion.title" resname="accordion.title">
-                <source>Accordion</source>
-            </trans-unit>
-            <trans-unit id="accordion.description" resname="accordion.description">
-                <source>The content elements are accessible in an accordion</source>
-            </trans-unit>
-            <trans-unit id="accordion.label.onload" resname="accordion.label.onload">
-                <source>On load</source>
-            </trans-unit>
-            <trans-unit id="accordion.description.onload" resname="accordion.description.onload">
-                <source>Open a specific accordion tile when loading</source>
-            </trans-unit>
+			<trans-unit id="grid.bg.imgbg" resname="grid.bg.imgbg">
+				<source>Move out element</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.imgbg.description" resname="grid.bg.imgbg.description">
+				<source>Move out element and add optional icon</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.wave" resname="grid.bg.wave">
+				<source>Conclusion image</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.wave.description" resname="grid.bg.wave.description">
+				<source>Insert final image</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor">
+				<source>Backgroud color</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
+				<source>Set a backgroundcolor</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize">
+				<source>Grid expansion</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description">
+				<source>Drag grid container across the entire width</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.container" resname="grid.bg.container">
+				<source>Container</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.container.description" resname="grid.bg.container.description">
+				<source>Turns off the container wrapper</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.light" resname="grid.bg.light">
+				<source>Grid font-color</source>
+			</trans-unit>
+			<trans-unit id="grid.bg.light.description" resname="grid.bg.light.description">
+				<source>Switch font-color from dark to light</source>
+			</trans-unit>
+			<trans-unit id="grid.elements" resname="grid.elements">
+				<source>Grid elements</source>
+			</trans-unit>
+			<trans-unit id="grid.columns" resname="grid.columns">
+				<source>Grid Columns</source>
+			</trans-unit>
+			<trans-unit id="grid.columns.description" resname="grid.columns.description">
+				<source>Choose how many columns the grid will be divided into</source>
+			</trans-unit>
+			<trans-unit id="grid.columns.onecol" resname="grid.columns.onecol">
+				<source>One column</source>
+			</trans-unit>
+			<trans-unit id="grid.columns.twocol" resname="grid.columns.twocol">
+				<source>Two columns</source>
+			</trans-unit>
+			<trans-unit id="grid.columns.threecol" resname="grid.columns.threecol">
+				<source>Three columns</source>
+			</trans-unit>
+			<trans-unit id="grid.columns.fourcol" resname="grid.columns.fourcol">
+				<source>Four columns</source>
+			</trans-unit>
+			<trans-unit id="grid.slider.type" resname="grid.slider.type">
+				<source>Slider type</source>
+			</trans-unit>
+			<trans-unit id="grid.slider.columns" resname="grid.slider.columns">
+				<source>Slider columns</source>
+			</trans-unit>
+			<trans-unit id="grid.slider.description" resname="grid.slider.description">
+				<source>Toggle to a Slider</source>
+			</trans-unit>
+			<trans-unit id="accordion.title" resname="accordion.title">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.description" resname="accordion.description">
+				<source>The content elements are accessible in an accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.label.onload" resname="accordion.label.onload">
+				<source>On load</source>
+			</trans-unit>
+			<trans-unit id="accordion.description.onload" resname="accordion.description.onload">
+				<source>Open a specific accordion tile when loading</source>
+			</trans-unit>
 			<trans-unit id="accordion.label.onloadall" resname="accordion.label.onloadall">
 				<source>Accordion toggle</source>
 			</trans-unit>
 			<trans-unit id="accordion.description.onloadall" resname="accordion.description.onloadall">
 				<source>Accordions close when an accordion element is selected / Accordions stay open</source>
 			</trans-unit>
-            <trans-unit id="accordion.label.open" resname="accordion.label.open">
-                <source>Accordion tile</source>
-            </trans-unit>
-            <trans-unit id="accordion.description.open" resname="accordion.description.open">
-                <source>Choose the accordion tile, wich should be opened</source>
-            </trans-unit>
-            <trans-unit id="tabs.title" resname="tabs.title">
-                <source>Tabs</source>
-            </trans-unit>
-            <trans-unit id="tabs.description" resname="tabs.description">
-                <source>The content elements are accessible through tabs</source>
-            </trans-unit>
-            <trans-unit id="tabs.label.onload" resname="tabs.label.onload">
-                <source>On load</source>
-            </trans-unit>
-            <trans-unit id="tabs.description.onload" resname="tabs.description.onload">
-                <source>Open a specific tab when loading</source>
-            </trans-unit>
-            <trans-unit id="container.title" resname="container.title">
-                <source>Page container</source>
-            </trans-unit>
-            <trans-unit id="container.description" resname="container.description">
-                <source>Container covering the entire page or screen width</source>
-            </trans-unit>
-            <trans-unit id="silhouette.0" resname="silhouette.0">
-                <source>Default</source>
-            </trans-unit>
-            <trans-unit id="silhouette.1" resname="silhouette.1">
-                <source>Silhouette 1</source>
-            </trans-unit>
-            <trans-unit id="silhouette.2" resname="silhouette.2">
-                <source>Silhouette 2</source>
-            </trans-unit>
-            <trans-unit id="silhouette.3" resname="silhouette.3">
-                <source>Silhouette 3</source>
-            </trans-unit>
-            <trans-unit id="silhouette.4" resname="silhouette.4">
-                <source>Silhouette 4</source>
-            </trans-unit>
-            <trans-unit id="silhouette.5" resname="silhouette.5">
-                <source>Silhouette 5</source>
-            </trans-unit>
-            <trans-unit id="silhouette.6" resname="silhouette.6">
-                <source>Silhouette 6</source>
-            </trans-unit>
-            <trans-unit id="silhouette.7" resname="silhouette.7">
-                <source>Silhouette 7</source>
-            </trans-unit>
-            <trans-unit id="tt_content.file" resname="tt_content.file">
-                <source>Gallery Image</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_bg" resname="tt_content.gallery_bg">
-                <source>Gallery background</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_layout" resname="tt_content.gallery_layout">
-                <source>Gallery layout</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_textcolor" resname="tt_content.gallery_textcolor">
-                <source>Gallery text color</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_salutation" resname="tt_content.gallery_salutation">
-                <source>Salutation</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_bg.I.0" resname="tt_content.gallery_bg.I.0">
-                <source>Bright</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_bg.I.1" resname="tt_content.gallery_bg.I.1">
-                <source>Dark</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_layout.I.0" resname="tt_content.gallery_layout.I.0">
-                <source>Single</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_layout.I.1" resname="tt_content.gallery_layout.I.1">
-                <source>Tiles</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_layout.I.2" resname="tt_content.gallery_layout.I.2">
-                <source>Slider</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_salutation.I.0" resname="tt_content.gallery_salutation.I.0">
-                <source>Hide</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_salutation.I.1" resname="tt_content.gallery_salutation.I.1">
-                <source>Show</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_textcolor.I.0" resname="tt_content.gallery_textcolor.I.0">
-                <source>Black</source>
-            </trans-unit>
-            <trans-unit id="tt_content.gallery_textcolor.I.1" resname="tt_content.gallery_textcolor.I.1">
-                <source>White</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.div._gallery_" resname="tt_content.CType.div._gallery_">
-                <source>Gallery</source>
-            </trans-unit>
-            <trans-unit id="tt_content.CType.gallery" resname="tt_content.CType.gallery">
-                <source>Gallery</source>
-            </trans-unit>
+			<trans-unit id="accordion.label.open" resname="accordion.label.open">
+				<source>Accordion tile</source>
+			</trans-unit>
+			<trans-unit id="accordion.description.open" resname="accordion.description.open">
+				<source>Choose the accordion tile, wich should be opened</source>
+			</trans-unit>
+			<trans-unit id="tabs.title" resname="tabs.title">
+				<source>Tabs</source>
+			</trans-unit>
+			<trans-unit id="tabs.description" resname="tabs.description">
+				<source>The content elements are accessible through tabs</source>
+			</trans-unit>
+			<trans-unit id="tabs.label.onload" resname="tabs.label.onload">
+				<source>On load</source>
+			</trans-unit>
+			<trans-unit id="tabs.description.onload" resname="tabs.description.onload">
+				<source>Open a specific tab when loading</source>
+			</trans-unit>
+			<trans-unit id="container.title" resname="container.title">
+				<source>Page container</source>
+			</trans-unit>
+			<trans-unit id="container.description" resname="container.description">
+				<source>Container covering the entire page or screen width</source>
+			</trans-unit>
+			<trans-unit id="silhouette.0" resname="silhouette.0">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="silhouette.1" resname="silhouette.1">
+				<source>Silhouette 1</source>
+			</trans-unit>
+			<trans-unit id="silhouette.2" resname="silhouette.2">
+				<source>Silhouette 2</source>
+			</trans-unit>
+			<trans-unit id="silhouette.3" resname="silhouette.3">
+				<source>Silhouette 3</source>
+			</trans-unit>
+			<trans-unit id="silhouette.4" resname="silhouette.4">
+				<source>Silhouette 4</source>
+			</trans-unit>
+			<trans-unit id="silhouette.5" resname="silhouette.5">
+				<source>Silhouette 5</source>
+			</trans-unit>
+			<trans-unit id="silhouette.6" resname="silhouette.6">
+				<source>Silhouette 6</source>
+			</trans-unit>
+			<trans-unit id="silhouette.7" resname="silhouette.7">
+				<source>Silhouette 7</source>
+			</trans-unit>
+			<trans-unit id="tt_content.file" resname="tt_content.file">
+				<source>Gallery Image</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_bg" resname="tt_content.gallery_bg">
+				<source>Gallery background</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout" resname="tt_content.gallery_layout">
+				<source>Gallery layout</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_textcolor" resname="tt_content.gallery_textcolor">
+				<source>Gallery text color</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_salutation" resname="tt_content.gallery_salutation">
+				<source>Salutation</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_bg.I.0" resname="tt_content.gallery_bg.I.0">
+				<source>Bright</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_bg.I.1" resname="tt_content.gallery_bg.I.1">
+				<source>Dark</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout.I.0" resname="tt_content.gallery_layout.I.0">
+				<source>Single</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout.I.1" resname="tt_content.gallery_layout.I.1">
+				<source>Tiles</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout.I.2" resname="tt_content.gallery_layout.I.2">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_salutation.I.0" resname="tt_content.gallery_salutation.I.0">
+				<source>Hide</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_salutation.I.1" resname="tt_content.gallery_salutation.I.1">
+				<source>Show</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_textcolor.I.0" resname="tt_content.gallery_textcolor.I.0">
+				<source>Black</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_textcolor.I.1" resname="tt_content.gallery_textcolor.I.1">
+				<source>White</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.div._gallery_" resname="tt_content.CType.div._gallery_">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tt_content.CType.gallery" resname="tt_content.CType.gallery">
+				<source>Gallery</source>
+			</trans-unit>
 			<trans-unit id="sys_file_reference.outline" resname="sys_file_reference.outline">
 				<source>Show Outline</source>
 			</trans-unit>
@@ -962,6 +962,32 @@
 			<trans-unit id="page.configuration.color_6_label.description" xml:lang="en">
 				<source>Here you can assign a name for the color value.</source>
 			</trans-unit>
-        </body>
-    </file>
+
+			<trans-unit id="page.configuration.color_primary.label">
+				<source>Color Value Primary</source>
+
+			</trans-unit>
+			<trans-unit id="page.configuration.color_primary.description">
+				<source>Here is where the value for the primary color can be set.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.label">
+				<source>Color Value Secondary</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.description">
+				<source>Here is where the value for the secondary color can be set.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.label">
+				<source>Color Value Tertiary</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.description">
+				<source>Here is where the value for the tertiary color can be set.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.label">
+				<source>Color Value Quaternary</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.description">
+				<source>Here is where the value for the Quaternary color can be set.</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>
