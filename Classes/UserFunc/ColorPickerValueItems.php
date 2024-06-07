@@ -23,7 +23,7 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\UserFunc;
 
 use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\Site\Entity\SiteInterface;
 
 class ColorPickerValueItems
 {
@@ -32,7 +32,7 @@ class ColorPickerValueItems
      */
     public function getItems(array &$config): void
     {
-        /** @var Site $site */
+        /** @var SiteInterface $site */
         $site = $config['site'];
         $items = [
             [
@@ -40,6 +40,10 @@ class ColorPickerValueItems
                 '',
             ],
         ];
+        if (!method_exists($site, 'getConfiguration')) {
+            $config['items'] = [];
+            return;
+        }
 
         $configuration = $site->getConfiguration();
 
