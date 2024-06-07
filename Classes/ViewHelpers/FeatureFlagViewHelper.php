@@ -22,17 +22,17 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\ViewHelpers;
 
+use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 class FeatureFlagViewHelper extends AbstractViewHelper
 {
-
-
     use CompileWithRenderStatic;
 
-    public function initializeArguments()
+    public function initializeArguments():void
     {
         $this->registerArgument('featureKey', 'string', 'The feature key to check', true);
     }
@@ -41,16 +41,10 @@ class FeatureFlagViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ) {
+    ):bool {
         $featureKey = $arguments['featureKey'];
 
-        if (!array_key_exists($featureKey, $GLOBALS['TYPO3_CONF_VARS']['SYS']['features'])) {
-            return true;
-        }
-
-        $featureValue = $GLOBALS['TYPO3_CONF_VARS']['SYS']['features'][$featureKey];
-
-        if ($featureValue === false) {
+        if (!GeneralUtility::makeInstance(Features::class)->isFeatureEnabled($featureKey)) {
             return false;
         }
 

@@ -18,7 +18,6 @@
   * LICENSE file that was distributed with this source code.
   */
 
-
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
     ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
@@ -309,8 +308,7 @@ for ($i = 0; $i <= 6; $i++) {
         ],
     ];
 }
-var_dump($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877']);
-var_dump($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true);
+
 if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true) {
     //    ITZBUNDPHP-2877 Color: Generell
     $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [

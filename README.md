@@ -69,7 +69,7 @@ To use a feature flag in your PHP code, you can check the flag's value in the gl
 
 ```php
 # in controller context
-if ($this->features->isFeatureEnabled('myFeatureName') {
+if ($this->features->isFeatureEnabled('ITZBUNDPHP-2877')) {
 // only if the feature flag is set to false the feature is deactivated
             // Feature-specific code goes here
 }
