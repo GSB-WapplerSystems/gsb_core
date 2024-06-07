@@ -1,4 +1,6 @@
-<f:if condition="{feature.ITZBUNDPHP-2877}">
+{namespace gsb=ITZBund\GsbCore\ViewHelpers}
+
+<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2877')}">
     <f:if condition="{site.configuration.color_primary} || {site.configuration.color_secondary} || {site.configuration.color_tertiary} || {site.configuration.color_quaternary}">
         <f:asset.css identifier="general-color-configs" useNonce="true" priority="true">
             :root <f:format.raw>{</f:format.raw>

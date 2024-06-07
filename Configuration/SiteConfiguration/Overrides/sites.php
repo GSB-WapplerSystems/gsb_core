@@ -17,11 +17,10 @@
   * For the full copyright and license information, please read the
   * LICENSE file that was distributed with this source code.
   */
-//replace with actual flag
-$feature = [];
+
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color
+    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -36,7 +35,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['color']['label'] = 'LLL:EXT:g
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_1, label_color_1, color_2, label_color_2, color_3, label_color_3, color_4, label_color_4, color_5, label_color_5, color_6, label_color_6';
 
-if (in_array('ITZBUNDPHP-2877', $feature)) {
+if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true) {
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_tertiary,color_quaternary';
@@ -310,8 +309,9 @@ for ($i = 0; $i <= 6; $i++) {
         ],
     ];
 }
-
-if (in_array('ITZBUNDPHP-2877', $feature)) {
+var_dump($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877']);
+var_dump($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true);
+if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true) {
     //    ITZBUNDPHP-2877 Color: Generell
     $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',
@@ -334,8 +334,8 @@ if (in_array('ITZBUNDPHP-2877', $feature)) {
     $GLOBALS['SiteConfiguration']['site']['columns']['color_tertiary'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.label',
         'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.description',
-        'config' => ['
-    type' => 'input',
+        'config' => [
+            'type' => 'input',
             'size' => 25,
         ],
     ];
