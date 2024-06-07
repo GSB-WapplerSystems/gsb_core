@@ -32,7 +32,7 @@ class FeatureFlagViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
-    public function initializeArguments():void
+    public function initializeArguments(): void
     {
         $this->registerArgument('featureKey', 'string', 'The feature key to check', true);
     }
@@ -41,13 +41,9 @@ class FeatureFlagViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ):bool {
-        $featureKey = $arguments['featureKey'];
+    ): string {
+        $key = $arguments['featureKey'];
 
-        if (!GeneralUtility::makeInstance(Features::class)->isFeatureEnabled($featureKey)) {
-            return false;
-        }
-
-        return true;
+        return GeneralUtility::makeInstance(Features::class)->isFeatureEnabled($key) ? '1' : '0';
     }
 }

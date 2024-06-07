@@ -45,23 +45,23 @@ This document explains how to use feature flags. Feature flags allow you to enab
 Feature flags are configured in the `.env` or the `local-dev/.ddev/docker-compose.environment.yaml` file on ddev machine. To add a feature flag, use the following syntax:
 
 ```plaintext
-# Feature flag for the specific tickets. Set them to false to deactivate the features.
+# Feature flag for the specific tickets. Set them to true to activate the features.
 - TYPO3__SYS__features__ITZBUNDPHP-2877=%const(bool:true)%
 ```
 
-In this example, the feature flag `ITZBUNDPHP-2877` is set to `true`. To disable the feature, change the value to `false`.
-Only if the feature flag is set to false the feature is deactivated.
+In this example, the feature flag `ITZBUNDPHP-2877` is set to `true`. To disable the feature, change the value to `false` or delete
+the setting.
 
 #### Feature Flag Truth Table
 
 This table illustrates the behavior of feature flags in various states.
 
-| Feature Flag State      | Evaluated Value | Description                               |
-|-------------------------|-----------------|-------------------------------------------|
-| `featureFlag = false`   | `false`         | The feature is explicitly disabled.       |
-| `featureFlag = true`    | `true`          | The feature is explicitly enabled.        |
-| `featureFlag = ''`      | `true`          | An empty value is treated as `true`.      |
-| `featureFlag not exist` | `true`          | A non-existent flag defaults to `true`.   |
+| Feature Flag State      | Evaluated Value | Description                              |
+|-------------------------|-----------------|------------------------------------------|
+| `featureFlag = true`    | `true`          | The feature is explicitly enabled.       |
+| `featureFlag = false`   | `false`         | The feature is explicitly disabled.      |
+| `featureFlag = ''`      | `false`         | An empty value is treated as `false`.    |
+| `featureFlag not exist` | `false`         | A non-existent flag defaults to `false`. |
 
 ### Usage in PHP Code
 
@@ -70,17 +70,12 @@ To use a feature flag in your PHP code, you can check the flag's value in the gl
 ```php
 # in controller context
 if ($this->features->isFeatureEnabled('ITZBUNDPHP-2877')) {
-// only if the feature flag is set to false the feature is deactivated
-            // Feature-specific code goes here
-}
-#OR
-if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true) {
-    // only if the feature flag is set to false the feature is deactivated
+    // only if the feature flag is set to true the feature is activated
     // Feature-specific code goes here
 }
 ```
 
-In this example, the feature-specific code will only not execute if the feature flag `ITZBUNDPHP-2877` is set to `false`.
+In this example, the feature-specific code will only execute if the feature flag `ITZBUNDPHP-2877` is set to `true`.
 
 ### Usage in Fluid Templates
 
@@ -98,7 +93,7 @@ Then, use the `featureFlag` ViewHelper to conditionally render content based on 
 </f:if>
 ```
 
-In this example, the content inside the `<f:if>` tag will only be rendered if the feature flag `ITZBUNDPHP-2877` is set to `true`.
+In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-2877` is not set to `false`.
 
 ### Further Reading
 
