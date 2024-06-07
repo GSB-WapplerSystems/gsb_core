@@ -432,8 +432,8 @@
 				<target>Eingeloggt mit Benutzername</target>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date" approved="yes">
-				<source>Published on</source>
-				<target>Veröffentlicht am</target>
+				<source>Published on: </source>
+				<target>Veröffentlicht am: </target>
 			</trans-unit>
 			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff" approved="yes">
 				<source>Show filters</source>
