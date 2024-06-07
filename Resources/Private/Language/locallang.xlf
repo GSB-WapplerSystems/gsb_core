@@ -323,7 +323,7 @@
 				<source>Logged in with Username</source>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
-				<source>Published on</source>
+				<source>Published on: </source>
 			</trans-unit>
 			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff">
 				<source>Show filters</source>
