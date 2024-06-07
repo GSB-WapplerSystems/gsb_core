@@ -1143,6 +1143,49 @@
 				<source>Here you can assign a name for the color value.</source>
 				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
 			</trans-unit>
+
+			<trans-unit id="page.configuration.sitepackage.palette.color-general.label">
+				<source>Color General</source>
+				<target>Color General</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color-general.description">
+				<source>The values for the color variables can be swapped out at this point. These are then used in the CSS. This allows for changes to elements such as the button color or the footer.</source>
+				<target>Die Werte für die Farbvariablen können an dieser Stelle ausgetauscht werden. Diese werden dann im CSS verwendet. Somit können beispielsweise die Schaltflächenfarbe oder der Footer angepasst werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_primary.label">
+				<source>Color Value Primary</source>
+				<target>Farbwert Primär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_primary.description">
+				<source>Here is where the value for the primary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Primärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.label">
+				<source>Color Value Secondary</source>
+				<target>Farbwert Sekundär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.description">
+				<source>Here is where the value for the secondary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Sekundärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.label">
+				<source>Color Value Tertiary</source>
+				<target>Farbwert Tertiär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.description">
+				<source>Here is where the value for the tertiary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Tertiärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.label">
+				<source>Color Value Quaternary</source>
+				<target>Farbwert Quartär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.description">
+				<source>Here is where the value for the Quaternary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Quartärfarbe vergeben werden.</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

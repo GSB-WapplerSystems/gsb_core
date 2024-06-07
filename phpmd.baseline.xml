@@ -63,6 +63,8 @@
   <violation rule="PHPMD\Rule\Controversial\Superglobals" file="Classes/UserFunc/ColorPickerValueItems.php" method="getLanguageService"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/FeatureFlagViewHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/FeatureFlagViewHelper.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
 </phpmd-baseline>

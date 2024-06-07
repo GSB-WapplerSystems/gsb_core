@@ -1,4 +1,27 @@
-<f:asset.css identifier="global-color-configs" useNonce="true">
+{namespace gsb=ITZBund\GsbCore\ViewHelpers}
+
+<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2877')}">
+    <f:if condition="{site.configuration.color_primary} || {site.configuration.color_secondary} || {site.configuration.color_tertiary} || {site.configuration.color_quaternary}">
+        <f:asset.css identifier="general-color-configs" useNonce="true" priority="true">
+            :root <f:format.raw>{</f:format.raw>
+            <f:spaceless>
+                <f:for each="{site.configuration}" as="item" key="key">
+                    <f:if condition="{item} !== ''">
+                        <f:switch expression="{key}">
+                            <f:case value="color_primary">--bs-primary: {item};</f:case>
+                            <f:case value="color_secondary">--bs-secondary: {item};</f:case>
+                            <f:case value="color_tertiary">--bs-tertiary: {item};</f:case>
+                            <f:case value="color_quaternary">--bs-quaternary: {item};</f:case>
+                        </f:switch>
+                    </f:if>
+                </f:for>
+            </f:spaceless>
+            <f:format.raw>}</f:format.raw>
+        </f:asset.css>
+    </f:if>
+</f:if>
+
+<f:asset.css identifier="background-color-configs" useNonce="true">
     :root <f:format.raw>{</f:format.raw>
     <f:spaceless>
     <f:for each="{site.configuration}" as="item" key="key"><f:if condition="{item} !== ''">
