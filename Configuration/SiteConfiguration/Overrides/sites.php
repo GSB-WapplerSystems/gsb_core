@@ -312,7 +312,7 @@ for ($i = 0; $i <= 6; $i++) {
     ];
 }
 
-if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-2877'] ?? true) {
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
     //    ITZBUNDPHP-2877 Color: Generell
     $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',

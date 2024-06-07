@@ -68,9 +68,8 @@ This table illustrates the behavior of feature flags in various states.
 To use a feature flag in your PHP code, you can check the flag's value in the global TYPO3 configuration. Here's an example:
 
 ```php
-# in controller context
-if ($this->features->isFeatureEnabled('ITZBUNDPHP-2877')) {
-    // only if the feature flag is set to true the feature is activated
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
+    // Only if the feature flag is set to true the feature is activated
     // Feature-specific code goes here
 }
 ```
@@ -97,13 +96,7 @@ In this example, the content inside the `<f:if>` tag will always be rendered if 
 
 ### Further Reading
 
-For more information about feature flags in TYPO3, please refer to the [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Configuration/FeatureToggles.html).
-
-### Conclusion
-
-By following these instructions, you can easily manage feature flags in your TYPO3 project. This allows for greater flexibility and control over which features are enabled in different environments.
-
-If you have any questions or run into issues, feel free to reach out to the development team.
+For more information about feature flags in TYPO3, please refer to the [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/Configuration/FeatureToggles.html).
 
 ## Contribute
 As with TYPO3, we encourage you to join the project by submitting changes. Development of the GSB&nbsp;11 mainly happens in the GSB&nbsp;11 TYPO3 extension repositories.
