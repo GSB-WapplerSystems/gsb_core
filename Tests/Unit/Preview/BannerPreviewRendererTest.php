@@ -6,7 +6,6 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Preview;
 
-use Exception;
 use ITZBund\GsbCore\Preview\BannerPreviewRenderer;
 
 class BannerPreviewRendererTest extends AbstractPreviewRendererTest
@@ -14,7 +13,7 @@ class BannerPreviewRendererTest extends AbstractPreviewRendererTest
     protected BannerPreviewRenderer $BannerPreviewRenderer;
 
     /**
-    * @throws Exception
+    * @throws \Exception
     */
     public function testRenderPageModulePreviewContent()
     {

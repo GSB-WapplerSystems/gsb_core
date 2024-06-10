@@ -160,7 +160,7 @@ final class AddTypoScriptFromSitePackageEvent
         $fakeRowAdded = false;
 
         foreach ($sysTemplateRows as $sysTemplateRow) {
-            list($newSysTemplateRows, $fakeRow, $fakeRowAdded) = $this->handleSysTemplateRow($sysTemplateRow, $fakeRow, $newSysTemplateRows, $pidsBeforeSite, $site, $fakeRowAdded);
+            [$newSysTemplateRows, $fakeRow, $fakeRowAdded] = $this->handleSysTemplateRow($sysTemplateRow, $fakeRow, $newSysTemplateRows, $pidsBeforeSite, $site, $fakeRowAdded);
         }
         return $newSysTemplateRows;
     }
@@ -210,7 +210,7 @@ final class AddTypoScriptFromSitePackageEvent
         $site = $event->getSite();
 
         if (!$site instanceof Site) {
-            return  false;
+            return false;
         }
 
         $package = $this->packageHelper->getSitePackageFromSite($site);
