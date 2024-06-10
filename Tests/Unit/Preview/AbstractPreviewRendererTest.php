@@ -12,11 +12,10 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use UnitTester;
 
 class AbstractPreviewRendererTest extends Unit
 {
-    protected UnitTester $tester;
+    protected \UnitTester $tester;
 
     protected $subject;
 

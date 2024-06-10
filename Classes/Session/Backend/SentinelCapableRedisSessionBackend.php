@@ -360,7 +360,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 $this->redisSentinel = new \RedisSentinel($sentinelConfig);
                 $sentinelMaster = $this->redisSentinel->masters();
                 if ($sentinelMaster === false) {
-                    throw new Exception('Could not get master from sentinel.', 1279765134);
+                    throw new \Exception('Could not get master from sentinel.', 1279765134);
                 }
 
                 $host = $sentinelMaster[0]['ip'];

@@ -6,7 +6,6 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Preview;
 
-use Exception;
 use ITZBund\GsbCore\Preview\StagePreviewRenderer;
 
 class StagePreviewRendererTest extends AbstractPreviewRendererTest
@@ -20,7 +19,7 @@ class StagePreviewRendererTest extends AbstractPreviewRendererTest
     }
 
     /**
-    * @throws Exception
+    * @throws \Exception
     */
     public function testRenderPageModulePreviewContent()
     {
