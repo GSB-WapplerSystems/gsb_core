@@ -74,14 +74,12 @@ lib {
               }
             }
             files {
-              // variant 1 to grab file uid
+              // variant 2 to grab file uid
               data = parameters:href
               // replace string before uid
-              replacement {
-                10 {
-                  search = t3://file?uid=
-                  replace =
-                }
+              split {
+                token.char = 61
+                returnKey = 1
               }
             }
             renderObj = COA
