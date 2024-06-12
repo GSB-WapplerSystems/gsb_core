@@ -38,7 +38,8 @@ Nothing to do.
 
 ## Feature Flags in `gsb_core`
 
-This document explains how to use feature flags. Feature flags allow you to enable or disable specific features in your  installation.
+This document explains how to use feature flags. Feature flags allow you to enable or disable specific features in your installation.
+This is of particular importance to not use features that have not passed the approval process.
 
 ### Configuration
 
@@ -62,6 +63,14 @@ This table illustrates the behavior of feature flags in various states.
 | `featureFlag = false`   | `false`         | The feature is explicitly disabled.      |
 | `featureFlag = ''`      | `false`         | An empty value is treated as `false`.    |
 | `featureFlag not exist` | `false`         | A non-existent flag defaults to `false`. |
+
+### Curent feature flags of `gsb_core`
+
+| Feature flag           | Description
+|------------------------|------------------------------------------------------------------
+| `brandingBackendLogin` | At default branding to the login screen
+| `ITZBUNDPHP-2877`      | Enables general color management in the site module.<br />This sets the bootstrap colors `--bs-primary` `--bs-secondary` `--bs-tertiary` `--bs-quaternary`
+
 
 ### Usage in PHP Code
 
