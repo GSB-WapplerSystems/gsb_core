@@ -30,7 +30,7 @@
 
     <f:if condition="{data.header} || {data.bodytext}">
         <f:if condition="{data.header_layout} != 100">
-            <div class="container stage-content-wrapper {data.tx_link_position}">
+            <div class="container stage-content-wrapper{f:if(condition: '!{data.tx_link}', then: ' nolink')} {data.tx_link_position}">
                 <div class="stage-content{f:if(condition: data.header_position, then: ' text-{data.header_position}')} teaser">
                     <div class="teaser-content">
                         <f:if condition="{data.header}">
