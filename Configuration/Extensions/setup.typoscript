@@ -23,6 +23,3 @@
 @import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/Extensions/seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/Extensions/felogin/Configuration/TypoScript/setup.typoscript'
-@import 'EXT:gsb_core/Configuration/Extensions/solr/ext_conf_template.txt'
-@import 'EXT:gsb_core/Configuration/Extensions/solr/Configuration/TypoScript/StyleSheets/setup.typoscript'
-@import 'EXT:gsb_core/Configuration/Extensions/solr/Configuration/TypoScript/Solr/setup.typoscript'
