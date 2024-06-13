@@ -7,77 +7,9 @@
 </f:comment>
 <f:if condition="{menuMainDesktop}">
     <ul class="list-unstyled d-flex mb-0" id="nav-desktop">
-        <f:for as="mainItem" each="{menuMainDesktop}" iteration="iteration">
-            <li class="mainnav-desktop-item{f:if(condition:'{mainItem.data.doktype} == 4', then:' shortcut')}">
-                <f:if condition="{mainItem.children}">
-                    <f:then>
-                        <f:if condition="{mainItem.children}">
-                            <button aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.openMenuTitleOpen', extensionName: 'gsb_core')}">
-                                <span class="txt">{mainItem.title}</span>
-                            </button>
-                            <div class="dropdown-menu main-menu-desktop" id="menu-desktop-{mainItem.data.uid}">
-                                <div class="container d-flex justify-content-end pt-3 pb-3" style="height: 5.5rem !important">
-                                    <button aria-label="{f:translate(key: 'header.closeMenuTitleClose', extensionName: 'gsb_core')}" class="btn-close rounded-circle dropdown-item" type="button"></button>
-                                </div>
-                                <ul class="container list-unstyled mainnav-children">
-                                    <f:for as="mainChild" each="{mainItem.children}">
-                                        <f:render arguments="{mainChild: mainChild, mainItem: mainItem}" section="submenu"/>
-                                    </f:for>
-                                </ul>
-                            </div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{mainItem.current}">
-                            <f:then>
-                                <f:link.page aria="{current: 'page'}" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
-                                    {mainItem.title}
-                                </f:link.page>
-                            </f:then>
-                            <f:else>
-                                <f:link.page class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
-                                    {mainItem.title}
-                                </f:link.page>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </li>
+        <f:for as="mainItem" each="{menuMainDesktop}">
+            <f:render partial="Navigation/MainNavDesktopNavItem" arguments="{mainItem: mainItem}" />
         </f:for>
-        <f:if condition="{site.configuration.search} == 1">
-            <f:render arguments="{_all}" partial="Header.Search"/>
-        </f:if>
     </ul>
 
 </f:if>
-
-<f:section name="submenu">
-    <f:if condition="{mainChild.children}">
-        <f:then>
-            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
-                <button aria-controls="menu-desktop-{mainChild.data.uid}" aria-expanded="false" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" data-bs-target="#menu-desktop-{mainChild.data.uid}" data-bs-toggle="collapse" type="button">{mainChild.title}</button>
-                <ul class="list-unstyled collapse subnav-children" id="menu-desktop-{mainChild.data.uid}"{f:if(condition:mainItem.children, then:' data-bs-parent="#nav-desktop"')}>
-                    <f:for as="mainChild" each="{mainChild.children}">
-                        <f:render arguments="{mainChild: mainChild}" section="submenu"/>
-                    </f:for>
-                </ul>
-            </li>
-        </f:then>
-        <f:else>
-            <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
-                <f:if condition="{mainChild.current}">
-                    <f:then>
-                        <f:link.page aria="{current: 'page'}" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
-                            <span>{mainChild.title}</span>
-                        </f:link.page>
-                    </f:then>
-                    <f:else>
-                        <f:link.page class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
-                            <span>{mainChild.title}</span>
-                        </f:link.page>
-                    </f:else>
-                </f:if>
-            </li>
-        </f:else>
-    </f:if>
-</f:section>

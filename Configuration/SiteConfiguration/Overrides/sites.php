@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
+    ,--div--;GSB,sitePackage, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -52,35 +52,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
         'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
-
-// ITZBUNDPHP-2872 Build searchbox toggle
-$GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search.description',
-    'config' => [
-        'renderType' => 'checkboxToggle',
-        'type' => 'check',
-        'default' => 0,
-    ],
-];
-
-// /ITZBUNDPHP-2973-facet-toggle
-$GLOBALS['SiteConfiguration']['site']['columns']['solr_enabled_facets'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets.description',
-    'config' => [
-        'renderType' => 'checkboxToggle',
-        'type' => 'check',
-        'default' => 1,
-    ],
-];
-
-//$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',solr_enabled_facets,';
-$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = str_replace(
-    'solr_enabled_read',
-    'solr_enabled_facets, solr_enabled_read ',
-    $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem']
-);
 
 // ITZBUNDPHP-2873 Copyright-Text
 $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [

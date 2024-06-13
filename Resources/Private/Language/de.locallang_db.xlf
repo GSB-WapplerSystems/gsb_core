@@ -819,25 +819,9 @@
 				<source>Accept button label</source>
 				<target>Annehmen-Button-Beschriftung</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.search" resname="page.configuration.search" approved="yes">
-				<source>Use search</source>
-				<target>Suche nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description" approved="yes">
-				<source>By disabling this toggle, the "Search" menu item will be hidden in the navigation.</source>
-				<target>Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.</target>
-			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.search.palette.lable" resname="page.configuration.sitepackage.search.palette.lable">
 				<source>Favicons can be configured here.</source>
 				<target>Faceten nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
-				<source>Use facets</source>
-				<target>Facetten nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
-				<source>By deactivating this toggle the facets in the search will be hidden.</source>
-				<target>Das Deaktivieren dieses Toggles blendet die Facettierung der Suche aus.</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage" approved="yes">
 				<source>Site package of this site</source>
