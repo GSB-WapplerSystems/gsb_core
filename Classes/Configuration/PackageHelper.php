@@ -93,6 +93,6 @@ class PackageHelper
 
     public function isSitePackage(string $packageKey): bool
     {
-        return str_contains($packageKey, 'site') || $packageKey === 'gsb_core';
+        return (str_contains($packageKey, 'site') || $packageKey === 'gsb_core') && !str_contains($packageKey, 'impexp');
     }
 }
