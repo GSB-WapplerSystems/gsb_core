@@ -130,6 +130,9 @@
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"extension-key": "gsb_core",
 			"web-dir": ".composer"
+		},
+		"itzbund/gsb-core": {
+			"isSitePackage": true
 		}
 	},
 	"scripts": {

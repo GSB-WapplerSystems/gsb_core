@@ -103,6 +103,27 @@ Then, use the `featureFlag` ViewHelper to conditionally render content based on 
 
 In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-2877` is not set to `false`.
 
+## Site package
+
+Site packages in `EXT:gsb_core` are alike to [sets in TYPO3 13+][typo3-13-sets-url].
+
+A package is available in the site configuration if it matches one of the following criteria:
+
+* it's extension key includes `gsb_core` or `site` AND does not include `impexp`
+* it includes the following configuration in it's `composer.json`:
+
+```json
+    {
+        "extra": {
+            "itzbund/gsb-core": {
+                 "isSitePackage": true
+            }
+        }
+    }
+```
+
+If a package has been selected as a site package, it's typoscript configuration (`Configuration/TypoScript/{constants|setttings}.typoscript`) will be loaded as the root template, which allows for zero configuration deployments.
+
 ### Further Reading
 
 For more information about feature flags in TYPO3, please refer to the [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/Configuration/FeatureToggles.html).
@@ -117,4 +138,5 @@ To get started, have a look at our [detailed contribution walkthrough](https://g
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [gsb11-readme-url]: https://gitlab.opencode.de/bmi/government-site-builder-11/extensions
 [kickstarter-url]: https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_sitepackage
+[typo3-13-sets-url]: [https:////](https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/SiteHandling/SiteSets.html)
 
