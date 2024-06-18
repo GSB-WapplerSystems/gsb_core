@@ -68,6 +68,9 @@ defined('TYPO3') || die();
         ],
     ];
 
+    $GLOBALS['TCA']['tt_content']['types']['ce_slider']['columnsOverrides']['grid_columns']['config']['default'] = 1;
+    $GLOBALS['TCA']['tt_content']['types']['ce_slider']['columnsOverrides']['slider']['config']['default'] = 'slide';
+
     $GLOBALS['TCA']['tt_content']['palettes'] += $sliderPalettes;
 
     // override default settings
