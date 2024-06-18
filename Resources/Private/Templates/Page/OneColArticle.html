@@ -13,38 +13,31 @@
     <main class="main-wrapper" id="mainContent" aria-labelledby="headerMain">
         <article class="main-article">
             <div class="top-container">
-                <f:if condition="{data.starttime}">
-                    <f:then>
-                        <p class="date ">
-                            <span class="date-text">
-                               <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.starttime}</f:format.date>
-                            </span>
-                        </p>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{data.lastUpdated} > {data.tstamp}">
-                            <f:then>
-                                <p class="date ">
-                                    <span class="date-text">
-                                        <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date>
-                                    </span>
-                                </p>
-                            </f:then>
-                            <f:else>
-                                <p class="date ">
-                                    <span class="date-text">
-                                        <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{data.tstamp}</f:format.date>
-                                    </span>
-                                </p>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-                <f:if condition="{mainCategory}">
-                    <span class="dot" aria-hidden="true">•</span> {mainCategory}
-                </f:if>
+                <p class="date text-center">
+                    <f:if condition="{data.lastUpdated}">
+                        <f:then>
+                            <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
+                            <time datetime="{f:format.date(date:data.lastUpdated, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date></time>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{data.SYS_LASTCHANGED} > {data.tstamp}">
+                                <f:then>
+                                    <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
+                                    <time datetime="{f:format.date(date:data.SYS_LASTCHANGED, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.SYS_LASTCHANGED}</f:format.date></time>
+                                </f:then>
+                                <f:else>
+                                    <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
+                                    <time datetime="{f:format.date(date:data.tstamp, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.tstamp}</f:format.date></time>
+                                </f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{mainCategory}">
+                        <span class="dot" aria-hidden="true">•</span> <span class="category">{mainCategory}</span>
+                    </f:if>
+                </p>
                 <f:if condition="{pageCategories}">
-                    <ul class="list-group list-group-horizontal liststyle-none">
+                    <ul class="list-group list-group-horizontal liststyle-none justify-content-center">
                         <f:for each="{pageCategories}" as="category">
                             <li class="list-group-item border-0 ps-0 kicker">
                                 <span>{category}</span>

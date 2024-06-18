@@ -6,7 +6,6 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Preview;
 
-use Exception;
 use ITZBund\GsbCore\Preview\VideoPreviewRenderer;
 
 class VideoPreviewRendererTest extends AbstractPreviewRendererTest
@@ -14,7 +13,7 @@ class VideoPreviewRendererTest extends AbstractPreviewRendererTest
     protected VideoPreviewRenderer $videoPreviewRenderer;
 
     /**
-    * @throws Exception
+    * @throws \Exception
     */
     public function testRenderPageModulePreviewContent()
     {

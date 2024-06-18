@@ -36,6 +36,11 @@ parameters:
 			path: Classes/Configuration/PackageHelper.php
 
 		-
+			message: "#^Variable property access on mixed\\.$#"
+			count: 2
+			path: Classes/Configuration/PackageHelper.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/DataProcessing/CustomContentCategoryProcessor.php

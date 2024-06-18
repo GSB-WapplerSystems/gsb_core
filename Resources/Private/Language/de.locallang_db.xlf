@@ -819,25 +819,9 @@
 				<source>Accept button label</source>
 				<target>Annehmen-Button-Beschriftung</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.search" resname="page.configuration.search" approved="yes">
-				<source>Use search</source>
-				<target>Suche nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.search.description" resname="page.configuration.search.description" approved="yes">
-				<source>By disabling this toggle, the "Search" menu item will be hidden in the navigation.</source>
-				<target>Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.</target>
-			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.search.palette.lable" resname="page.configuration.sitepackage.search.palette.lable">
 				<source>Favicons can be configured here.</source>
 				<target>Faceten nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.facets" resname="page.configuration.facets" approved="yes">
-				<source>Use facets</source>
-				<target>Facetten nutzen</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.facets.description" resname="page.configuration.facets.description" approved="yes">
-				<source>By deactivating this toggle the facets in the search will be hidden.</source>
-				<target>Das Deaktivieren dieses Toggles blendet die Facettierung der Suche aus.</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage" approved="yes">
 				<source>Site package of this site</source>
@@ -1143,6 +1127,49 @@
 				<source>Here you can assign a name for the color value.</source>
 				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
 			</trans-unit>
+
+			<trans-unit id="page.configuration.sitepackage.palette.color-general.label">
+				<source>Color General</source>
+				<target>Color General</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sitepackage.palette.color-general.description">
+				<source>The values for the color variables can be swapped out at this point. These are then used in the CSS. This allows for changes to elements such as the button color or the footer.</source>
+				<target>Die Werte für die Farbvariablen können an dieser Stelle ausgetauscht werden. Diese werden dann im CSS verwendet. Somit können beispielsweise die Schaltflächenfarbe oder der Footer angepasst werden.</target>
+			</trans-unit>
+
+			<trans-unit id="page.configuration.color_primary.label">
+				<source>Color Value Primary</source>
+				<target>Farbwert Primär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_primary.description">
+				<source>Here is where the value for the primary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Primärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.label">
+				<source>Color Value Secondary</source>
+				<target>Farbwert Sekundär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary.description">
+				<source>Here is where the value for the secondary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Sekundärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.label">
+				<source>Color Value Tertiary</source>
+				<target>Farbwert Tertiär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_tertiary.description">
+				<source>Here is where the value for the tertiary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Tertiärfarbe vergeben werden.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.label">
+				<source>Color Value Quaternary</source>
+				<target>Farbwert Quartär</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_quaternary.description">
+				<source>Here is where the value for the Quaternary color can be set.</source>
+				<target>Hier kann ein Farbwert für die Quartärfarbe vergeben werden.</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

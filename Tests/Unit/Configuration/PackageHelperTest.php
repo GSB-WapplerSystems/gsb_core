@@ -6,8 +6,10 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Configuration;
 
+use Codeception\Attribute\DataProvider;
 use Codeception\Test\Unit;
 use ITZBund\GsbCore\Configuration\PackageHelper;
+use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Package\PackageInterface;
 use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -15,10 +17,13 @@ use TYPO3\CMS\Core\Site\SiteFinder;
 
 class PackageHelperTest extends Unit
 {
-    protected function createMockPackage(string $packageKey): PackageInterface
+    protected function createMockPackage(string $packageKey, $composerExtra = null): PackageInterface
     {
         $package = $this->createMock(PackageInterface::class);
         $package->method('getPackageKey')->willReturn($packageKey);
+        if ($composerExtra) {
+            $package->method('getValueFromComposerManifest')->with('extra')->willReturn($composerExtra);
+        }
         return $package;
     }
 
@@ -112,27 +117,26 @@ class PackageHelperTest extends Unit
         self::assertSame($expectedItems, $fieldDefinition['items']);
     }
 
-    public function testIsSitePackageWithSitePackageKey(): void
+    protected function getPackagesForIsSitepackage(): array
     {
-        $packageKey = 'site_extension';
-        $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
-        $result = $packageHelper->isSitePackage($packageKey);
-        self::assertTrue($result);
+        $composerExtra = new \stdClass();
+        $composerExtra->{'itzbund/gsb-core'} = new \stdClass();
+        $composerExtra->{'itzbund/gsb-core'}->isSitePackage = true;
+        return [
+            'EXT:extension_site' => ['extension_site', true],
+            'EXT:site_extension' =>  ['site_extension', true],
+            'EXT:gsb_core ' => ['gsb_core', 'true'],
+            'EXT:site_extension1_impexp' => ['site_extension1_impexp', false],
+            'EXT:with_composer_extra' => ['with_composer_extra', true, $composerExtra],
+        ];
     }
 
-    public function testIsSitePackageWithGsbCorePackageKey(): void
+    #[Test]
+    #[DataProvider('getPackagesForIsSitepackage')]
+    public function isSitepackagesWorks($packageKey, $expected, $composerExtraSet = null): void
     {
-        $packageKey = 'gsb_core';
+        $package = $this->createMockPackage($packageKey, $composerExtraSet);
         $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
-        $result = $packageHelper->isSitePackage($packageKey);
-        self::assertTrue($result);
-    }
-
-    public function testIsSitePackageWithNonSitePackageKey(): void
-    {
-        $packageKey = 'other_extension';
-        $packageHelper = new PackageHelper($this->createMock(PackageManager::class), $this->createMock(SiteFinder::class));
-        $result = $packageHelper->isSitePackage($packageKey);
-        self::assertFalse($result);
+        self::assertEquals($expected, $packageHelper->isSitePackage($package));
     }
 }

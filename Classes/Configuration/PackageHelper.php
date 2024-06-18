@@ -72,8 +72,8 @@ class PackageHelper
         $currentValue = $fieldDefinition['row']['sitePackage'] ?? '';
         $gotCurrentValue = false;
         foreach ($this->packageManager->getActivePackages() as $package) {
-            $packageKey = $package->getPackageKey();
-            if ($this->isSitePackage($packageKey)) {
+            if ($this->isSitePackage($package)) {
+                $packageKey = $package->getPackageKey();
                 $fieldDefinition['items'][] = [
                     0 => $packageKey,
                     1 => $packageKey,
@@ -91,8 +91,13 @@ class PackageHelper
         }
     }
 
-    public function isSitePackage(string $packageKey): bool
+    public function isSitePackage(PackageInterface $package): bool
     {
-        return str_contains($packageKey, 'site') || $packageKey === 'gsb_core';
+        $extra = $package->getValueFromComposerManifest('extra') ?? null;
+        if (($extra !== null) && ($extra->{'itzbund/gsb-core'}->{'isSitePackage'} ?? false)) {
+            return true;
+        }
+        $packageKey = $package->getPackageKey();
+        return (str_contains($packageKey, 'site') || $packageKey === 'gsb_core') && !str_contains($packageKey, 'impexp');
     }
 }

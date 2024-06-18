@@ -18,8 +18,11 @@
   * LICENSE file that was distributed with this source code.
   */
 
+use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, search, solr_enabled_facets, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color
+    ,--div--;GSB,sitePackage, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -34,6 +37,12 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['color']['label'] = 'LLL:EXT:g
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_1, label_color_1, color_2, label_color_2, color_3, label_color_3, color_4, label_color_4, color_5, label_color_5, color_6, label_color_6';
 
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
+    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
+    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
+    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_tertiary,color_quaternary';
+}
+
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.description',
@@ -43,35 +52,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
         'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
-
-// ITZBUNDPHP-2872 Build searchbox toggle
-$GLOBALS['SiteConfiguration']['site']['columns']['search'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.search.description',
-    'config' => [
-        'renderType' => 'checkboxToggle',
-        'type' => 'check',
-        'default' => 0,
-    ],
-];
-
-// /ITZBUNDPHP-2973-facet-toggle
-$GLOBALS['SiteConfiguration']['site']['columns']['solr_enabled_facets'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.facets.description',
-    'config' => [
-        'renderType' => 'checkboxToggle',
-        'type' => 'check',
-        'default' => 1,
-    ],
-];
-
-//$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',solr_enabled_facets,';
-$GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = str_replace(
-    'solr_enabled_read',
-    'solr_enabled_facets, solr_enabled_read ',
-    $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem']
-);
 
 // ITZBUNDPHP-2873 Copyright-Text
 $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
@@ -296,6 +276,45 @@ for ($i = 0; $i <= 6; $i++) {
     $GLOBALS['SiteConfiguration']['site']['columns']["color_{$i}"] = [
         'label' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.label",
         'description' => "LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_{$i}.description",
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+}
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
+    //    ITZBUNDPHP-2877 Color: Generell
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_tertiary'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_quaternary'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.description',
         'config' => [
             'type' => 'input',
             'size' => 25,

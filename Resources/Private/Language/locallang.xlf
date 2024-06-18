@@ -90,24 +90,6 @@
 			<trans-unit id="header.closeMenuTitleClose" resname="header.closeMenuTitle">
 				<source>Close</source>
 			</trans-unit>
-			<trans-unit id="header.search" resname="header.search">
-				<source>Search</source>
-			</trans-unit>
-			<trans-unit id="header.searching" resname="header.searching">
-				<source>Search</source>
-			</trans-unit>
-			<trans-unit id="header.search.add" resname="header.search.add">
-				<source>Enter search term(s)</source>
-			</trans-unit>
-			<trans-unit id="header.searchterm" resname="header.searchterm">
-				<source>Searchterm</source>
-			</trans-unit>
-			<trans-unit id="header.searchopen" resname="header.searchopen">
-				<source>open search</source>
-			</trans-unit>
-			<trans-unit id="header.magnifyingglass" resname="header.magnifyingglass">
-				<source>Magnifying glass</source>
-			</trans-unit>
 			<trans-unit id="header.youarehere" resname="header.youarehere">
 				<source>You are here</source>
 			</trans-unit>
@@ -323,28 +305,10 @@
 				<source>Logged in with Username</source>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date">
-				<source>Published on</source>
-			</trans-unit>
-			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff">
-				<source>Show filters</source>
-			</trans-unit>
-			<trans-unit id="solr.filterSearchResults" resname="solr.filterSearchResults">
-				<source>Filter search results</source>
+				<source>Published on: </source>
 			</trans-unit>
 			<trans-unit id="button.readMore" resname="button.readMore">
 				<source>Read more</source>
-			</trans-unit>
-			<trans-unit id="solr.relevance" resname="solr.relevance">
-				<source>Relevance</source>
-			</trans-unit>
-			<trans-unit id="solr.created" resname="solr.created">
-				<source>Date</source>
-			</trans-unit>
-			<trans-unit id="solr.pagination" resname="solr.pagination">
-				<source>Search results navigation</source>
-			</trans-unit>
-			<trans-unit id="solr.delete" resname="solr.delete">
-				<source>. Deselect.</source>
 			</trans-unit>
 		</body>
     </file>

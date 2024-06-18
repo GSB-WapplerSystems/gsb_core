@@ -119,30 +119,6 @@
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
-			<trans-unit id="header.search" resname="header.search" approved="yes">
-				<source>Search</source>
-				<target>Suche</target>
-			</trans-unit>
-			<trans-unit id="header.searching" resname="header.searching" approved="yes">
-				<source>Search</source>
-				<target>Suchen</target>
-			</trans-unit>
-			<trans-unit id="header.search.add" resname="header.search.add" approved="yes">
-				<source>Enter search term(s)</source>
-				<target>Suchbegriff(e) eingeben</target>
-			</trans-unit>
-			<trans-unit id="header.searchterm" resname="header.searchterm" approved="yes">
-				<source>Searchterm</source>
-				<target>Suchbegriff</target>
-			</trans-unit>
-			<trans-unit id="header.searchopen" resname="header.searchopen" approved="yes">
-				<source>open search</source>
-				<target>Suche öffnen</target>
-			</trans-unit>
-			<trans-unit id="header.magnifyingglass" resname="header.magnifyingglass" approved="yes">
-				<source>Magnifying glass</source>
-				<target>Lupe</target>
-			</trans-unit>
 			<trans-unit id="header.youarehere" resname="header.youarehere" approved="yes">
 				<source>You are here</source>
 				<target>Sie sind hier</target>
@@ -432,36 +408,12 @@
 				<target>Eingeloggt mit Benutzername</target>
 			</trans-unit>
 			<trans-unit id="contentElement.header.date" resname="contentElement.header.date" approved="yes">
-				<source>Published on</source>
-				<target>Veröffentlicht am</target>
-			</trans-unit>
-			<trans-unit id="solr.filterButtonOff" resname="solr.filterButtonOff" approved="yes">
-				<source>Show filters</source>
-				<target>Filter einblenden</target>
-			</trans-unit>
-			<trans-unit id="solr.filterSearchResults" resname="solr.filterSearchResults" approved="yes">
-				<source>Filter search results</source>
-				<target>Suchergebnisse filtern</target>
+				<source>Published on: </source>
+				<target>Veröffentlicht am: </target>
 			</trans-unit>
 			<trans-unit id="button.readMore" resname="button.readMore" approved="yes">
 				<source>Read more</source>
 				<target>Mehr erfahren</target>
-			</trans-unit>
-			<trans-unit id="solr.relevance" resname="solr.relevance" approved="yes">
-				<source>Relevance</source>
-				<target>Relevanz</target>
-			</trans-unit>
-			<trans-unit id="solr.created" resname="solr.created" approved="yes">
-				<source>Date</source>
-				<target>Datum</target>
-			</trans-unit>
-			<trans-unit id="solr.pagination" resname="solr.pagination" approved="yes">
-				<source>Search results navigation</source>
-				<target>Suchergebnisse Navigation</target>
-			</trans-unit>
-			<trans-unit id="solr.delete" resname="solr.delete" approved="yes">
-				<source>. Deselect.</source>
-				<target>. Abwählen.</target>
 			</trans-unit>
 		</body>
 	</file>
