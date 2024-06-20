@@ -14,9 +14,7 @@
 				<f:for each="{files}" as="file" iteration="fileIterator">
 					<li class="d-flex mb-3">
 						<f:if condition="{data.uploads_type} == 1">
-							<div class="col-1 text-center">
-								<img class="figure-img img-fluid" width="32" src="{f:uri.resource(path: 'EXT:gsb_core/Resources/Public/Icons/{file.extension}.svg', extensionName: 'frontend')}" alt="{file.extension -> f:format.case()}" loading="lazy">
-							</div>
+							<div class="col-1 text-center icon {file.extension}"></div>
 						</f:if>
 						<f:if condition="{data.uploads_type} == 2">
 							<div>
