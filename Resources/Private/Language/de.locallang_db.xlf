@@ -500,7 +500,7 @@
 				<target>Abschluss Grafik einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor" approved="yes">
-				<source>Backgroud color</source>
+				<source>Background color</source>
 				<target>Hintergrundfarbe</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description" approved="yes">

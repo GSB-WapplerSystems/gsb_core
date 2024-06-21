@@ -448,7 +448,7 @@
 				<source>Insert final image</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor">
-				<source>Backgroud color</source>
+				<source>Background color</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
 				<source>Set a backgroundcolor</source>
