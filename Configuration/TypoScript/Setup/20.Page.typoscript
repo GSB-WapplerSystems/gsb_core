@@ -96,7 +96,7 @@ page {
     variables {
       // set main-menu
       navType = TEXT
-      navType.value = {$config.navType}
+      navType.value = 0
 
       // social media links
       socialLinks-Facebook = TEXT
@@ -153,3 +153,7 @@ page {
     google-site-verification = {$page.meta.google-site-verification}
   }
 }
+
+[site("configuration")["navType"] == "1"]
+  page.10.variables.navType.value = 1
+[GLOBAL]

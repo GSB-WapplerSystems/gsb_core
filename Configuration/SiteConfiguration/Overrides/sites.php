@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
+    ,--div--;GSB,sitePackage, navType, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -260,6 +260,26 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
         [
             'type' => 'link',
             'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['navType'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.nav-type',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.nav-type',
+    'config' =>
+        [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.items.nav-type.0',
+                    'value' => 0,
+                ],
+                [
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.items.nav-type.1',
+                    'value' => 1,
+                ],
+            ],
         ],
 ];
 
