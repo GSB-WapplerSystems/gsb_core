@@ -500,19 +500,19 @@
 				<target>Abschluss Grafik einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor" approved="yes">
-				<source>Backgroud color</source>
+				<source>Background color</source>
 				<target>Hintergrundfarbe</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description" approved="yes">
-				<source>Set a backgroundcolor</source>
+				<source>Set a background color</source>
 				<target>Eine Hintergrundfarbe festlegen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize" approved="yes">
-				<source>Grid Ausdehnung</source>
+				<source>Grid expansion</source>
 				<target>Grid Ausdehnung</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description" approved="yes">
-				<source>Drag grid container across the entire width</source>
+				<source>Expand grid container across the entire width</source>
 				<target>Grid Container über die ganze Breite ziehen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.container" resname="grid.bg.container" approved="yes">
