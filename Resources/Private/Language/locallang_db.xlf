@@ -451,13 +451,13 @@
 				<source>Background color</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
-				<source>Set a backgroundcolor</source>
+				<source>Set a background color</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize">
 				<source>Grid expansion</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description">
-				<source>Drag grid container across the entire width</source>
+				<source>Expand grid container across the entire width</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.container" resname="grid.bg.container">
 				<source>Container</source>
