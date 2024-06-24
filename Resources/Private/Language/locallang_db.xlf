@@ -858,6 +858,18 @@
 			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
 				<source>link to browserconfig.xml</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.nav-type" resname="page.configuration.nav-type">
+				<source>Navigation Type</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.nav-type" resname="page.configuration.description.nav-type">
+				<source>Configures which navigation style should be displayed for desktop viewports.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.0" resname="page.configuration.items.nav-type.0">
+				<source>Desktop Navigation Style</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.1" resname="page.configuration.items.nav-type.1">
+				<source>Mobile Navigation Style</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.palette.color.label">
 				<source>Background colors</source>
 			</trans-unit>
