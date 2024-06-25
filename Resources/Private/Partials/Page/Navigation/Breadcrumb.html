@@ -10,32 +10,29 @@
     <h2 class="visually-hidden" id="breadcrumb">{f:translate(key:'pages.fe.Breadcrumb', extensionName:'gsb_core')}</h2>
     <ol class="breadcrumb">
         <f:for as="item" each="{breadcrumbMenu}" iteration="iterator">
-            <f:if condition="{item.data.is_siteroot} == '1'">
-                <f:then>
-                    <li class="breadcrumb-item pe-1">
+            <li class="breadcrumb-item">
+                <f:if condition="{item.data.is_siteroot} == '1'">
+                    <f:then>
                         <a href="{item.link}" title="{item.title}">
                             <span class="visually-hidden">{item.title}</span>
                         </a>
-                    </li>
-                </f:then>
-                <f:else>
-                    <f:if condition="{item.current} == '1'">
-                        <f:then>
-                            <li aria-current="page"
-                                class="breadcrumb-item breadcrumb-text-color breadcrumb-active ps-1 pe-2">
-                                {item.title}
-                            </li>
-                        </f:then>
-                        <f:else>
-                            <li class="breadcrumb-item ps-1 pe-2">
-                                <a class="breadcrumb-text-color" href="{item.link}">
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{item.current} == '1'">
+                            <f:then>
+                                <a aria-current="page" class="breadcrumb-link fw-bold" href="{item.link}">
+                                    <span>{item.title}</span>
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <a class="breadcrumb-link" href="{item.link}">
                                     {item.title}
                                 </a>
-                            </li>
-                        </f:else>
-                    </f:if>
-                </f:else>
-            </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </li>
         </f:for>
     </ol>
 </nav>
