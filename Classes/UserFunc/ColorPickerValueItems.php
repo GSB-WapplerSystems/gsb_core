@@ -47,8 +47,12 @@ class ColorPickerValueItems
 
         $configuration = $site->getConfiguration();
 
-        $colors = array_filter($configuration, function ($item) { return str_starts_with($item, 'color_'); }, ARRAY_FILTER_USE_KEY);
-        $colors = array_filter($colors);
+        $colors = array_filter(
+            $configuration,
+            #function ($item) { return str_starts_with($item, 'color_'); },
+            function ($item, $key) { return (int)preg_match('/^color_[0-9]+$/', $key) > 0 && !empty($item); },
+            ARRAY_FILTER_USE_BOTH
+        );
 
         foreach ($colors as $key => $color) {
             $label = $color;
