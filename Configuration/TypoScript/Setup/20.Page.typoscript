@@ -148,9 +148,6 @@ page {
     X-UA-Compatible {
       attribute = http-equiv
     }
-    # Google
-    google = {$page.meta.google}
-    google-site-verification = {$page.meta.google-site-verification}
   }
 }
 
