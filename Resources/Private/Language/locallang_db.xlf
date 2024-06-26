@@ -723,6 +723,12 @@
 			<trans-unit id="page.configuration.sitepackage.description" resname="page.configuration.sitepackage.description">
 				<source>Attached site extension with TypoScript entry points</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification" resname="page.configuration.google_site_verification">
+				<source>Google Site Verification Code</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification.description" resname="page.configuration.google_site_verification.description">
+				<source>This field should contain the verification code provided by the Google Search Console. This allows verification of website ownership.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
 				<source>Copyright notice</source>
 			</trans-unit>

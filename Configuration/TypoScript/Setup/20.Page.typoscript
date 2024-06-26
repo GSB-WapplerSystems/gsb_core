@@ -154,6 +154,14 @@ page {
   }
 }
 
-[site("configuration")["navType"] == "1"]
+[traverse(site("configuration"),"navType") == "1"]
   page.10.variables.navType.value = 1
+[GLOBAL]
+
+[traverse(site("configuration"),"google_site_verification") !== ""]
+  page.meta.google-site-verification =
+  page.meta.google-site-verification {
+    preCObject = TEXT
+    data = site:google_site_verification
+  }
 [GLOBAL]

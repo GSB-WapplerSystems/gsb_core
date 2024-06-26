@@ -831,6 +831,14 @@
 				<source>Attached site extension with TypoScript entry points</source>
 				<target>Angehängte Website-Erweiterung mit TypoScript-Einstiegspunkten</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification" resname="page.configuration.google_site_verification">
+				<source>Google Site Verification Code</source>
+				<target>Google Site Verification Code</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification.description" resname="page.configuration.google_site_verification.description">
+				<source>This field should contain the verification code provided by the Google Search Console. This allows verification of website ownership.</source>
+				<target>Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
 				<source>Copyright notice</source>
 				<target>Urheberrechtshinweis</target>
