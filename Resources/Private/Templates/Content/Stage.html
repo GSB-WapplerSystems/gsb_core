@@ -44,8 +44,7 @@
                         <f:if condition="{data.tx_link} && {data.tx_link_text} && {data.tx_header_inside} == '1'">
                             <p class="stage-link mb-0">
                                 <f:link.typolink class="{data.tx_link_layout} {data.tx_link_position} stretched-link teaser-link" parameter="{data.tx_link}">
-                                    {data.tx_link_text}
-                                    <span class="visually-hidden">: {data.header}</span>
+                                    <span class="icon"></span><span>{data.tx_link_text}<span class="visually-hidden">: {data.header}</span></span>
                                 </f:link.typolink>
                             </p>
                         </f:if>
@@ -53,8 +52,7 @@
                     <f:if condition="{data.tx_link} && {data.tx_link_text} && {data.tx_header_inside} == '0'">
                         <p class="stage-link mt-3 mb-0">
                             <f:link.typolink class="{data.tx_link_layout} {data.tx_link_position} stretched-link teaser-link" parameter="{data.tx_link}">
-                                {data.tx_link_text}
-                                <span class="visually-hidden">: {data.header}</span>
+                                <span class="icon"></span><span>{data.tx_link_text}<span class="visually-hidden">: {data.header}</span></span>
                             </f:link.typolink>
                         </p>
                     </f:if>
