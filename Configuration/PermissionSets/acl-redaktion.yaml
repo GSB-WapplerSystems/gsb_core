@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 imports:
-  - { resource: "acl-fm-base.yaml"}
   - { resource: "acl-dbm-base.yaml"}
 
 label: "[GSB][ACL] Editor"

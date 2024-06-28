@@ -31,3 +31,6 @@ resources:
   sys_category:
     permissions: ['read', 'write']
     fields: '*'
+  sys_file:
+    permissions: ['read', 'write']
+    fields: '*'
