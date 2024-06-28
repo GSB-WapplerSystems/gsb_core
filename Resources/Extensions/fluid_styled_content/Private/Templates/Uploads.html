@@ -14,7 +14,7 @@
 				<f:for each="{files}" as="file" iteration="fileIterator">
 					<li class="d-flex mb-3">
 						<f:if condition="{data.uploads_type} == 1">
-							<div class="col-1 text-center icon {file.extension}"></div>
+							<div class="col-1 text-center icon-file {file.extension}"></div>
 						</f:if>
 						<f:if condition="{data.uploads_type} == 2">
 							<div>
@@ -33,6 +33,7 @@
 							</div>
 						</f:if>
 						<a class="download" href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+                        <span class="icon"></span>
 						<f:if condition="{file.properties.description}">
 							<f:if condition="{data.uploads_description}">
 								<f:format.html>{file.properties.description}</f:format.html>
