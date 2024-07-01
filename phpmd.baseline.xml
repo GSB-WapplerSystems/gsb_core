@@ -1,9 +1,55 @@
 <?xml version="1.0"?>
 <phpmd-baseline>
-  <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Command/ConfigurationImportCommand.php"/>
-  <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Configuration/Discovery/ExtendSiteConfigurationLocator.php"/>
+  <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/ConfigurationImportCommand.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/TriggerSynchronizeConfigurationCommand.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>
-  <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/CustomContentCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/CustomContentCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/CustomPageCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/CustomPageCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
+  <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\UnusedPrivateMethod" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="initializeRead"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\IfStatementAssignment" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="acquire"/>
+  <violation rule="PHPMD\Rule\CleanCode\BooleanArgumentFlag" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/AudioPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php"/>
+  <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php" method="initializeConnection"/>
+  <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Session/Backend/SentinelCapableRedisSessionBackend.php"/>
+  <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/ViewHelpers/CategoryViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/FeatureFlagViewHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/FeatureFlagViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/GsbVersionViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/GsbVersionViewHelper.php"/>
 </phpmd-baseline>
