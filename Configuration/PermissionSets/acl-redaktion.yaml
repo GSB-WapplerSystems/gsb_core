@@ -68,15 +68,6 @@ resources:
   tx_gsbcore_forms:
     permissions: ['read', 'write']
     fields: '*'
-  tx_news_domain_model_link:
-    permissions: ['read', 'write']
-    fields: '*'
-  tx_news_domain_model_news:
-    permissions: ['read', 'write']
-    fields: '*'
-  tx_news_domain_model_tag:
-    permissions: ['read', 'write']
-    fields: '*'
   sys_be_shortcuts:
     permissions: ['read', 'write']
     fields: '*'

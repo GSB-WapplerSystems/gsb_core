@@ -33,26 +33,6 @@ plugin.tx_seo {
             additionalWhere = no_index = 0
           }
         }
-        news {
-          provider = GeorgRinger\News\Seo\NewsXmlSitemapDataProvider
-          config {
-            table = tx_news_domain_model_news
-            sortField = sorting
-            lastModifiedField = tstamp
-            pid = 29
-            recursive = 1
-            url {
-              pageId = 31
-              fieldToParameterMap {
-                uid = tx_news_pi1[news]
-              }
-              additionalGetParameters {
-                tx_news_pi1.controller = News
-                tx_news_pi1.action = detail
-              }
-            }
-          }
-        }
       }
     }
   }
