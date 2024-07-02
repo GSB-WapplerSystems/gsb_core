@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
+    ,--div--;GSB,sitePackage, navType, google_site_verification, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -62,6 +62,17 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
         'renderType' => 'input',
     ],
 ];
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3176')) {
+    $GLOBALS['SiteConfiguration']['site']['columns']['google_site_verification'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification.description',
+        'config' => [
+            'type' => 'text',
+            'renderType' => 'input',
+        ],
+    ];
+}
 
 // ITZBUNDPHP-2869 Logo Textmarke
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
@@ -260,6 +271,26 @@ $GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
         [
             'type' => 'link',
             'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['navType'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.nav-type',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.nav-type',
+    'config' =>
+        [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.items.nav-type.0',
+                    'value' => 0,
+                ],
+                [
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.items.nav-type.1',
+                    'value' => 1,
+                ],
+            ],
         ],
 ];
 

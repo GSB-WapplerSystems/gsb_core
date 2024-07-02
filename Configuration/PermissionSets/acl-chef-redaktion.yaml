@@ -18,7 +18,7 @@ modules:
   workspaces:
     - 'workspaces_admin'
   file:
-    - 'file_FilelistList'
+    - '*'
   user:
     - 'user_setup'
   system:
@@ -29,5 +29,8 @@ modules:
 
 resources:
   sys_category:
+    permissions: ['read', 'write']
+    fields: '*'
+  sys_file:
     permissions: ['read', 'write']
     fields: '*'

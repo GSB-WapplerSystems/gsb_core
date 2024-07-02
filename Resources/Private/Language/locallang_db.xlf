@@ -448,16 +448,16 @@
 				<source>Insert final image</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor">
-				<source>Backgroud color</source>
+				<source>Background color</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description">
-				<source>Set a backgroundcolor</source>
+				<source>Set a background color</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize">
 				<source>Grid expansion</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description">
-				<source>Drag grid container across the entire width</source>
+				<source>Expand grid container across the entire width</source>
 			</trans-unit>
 			<trans-unit id="grid.bg.container" resname="grid.bg.container">
 				<source>Container</source>
@@ -723,6 +723,12 @@
 			<trans-unit id="page.configuration.sitepackage.description" resname="page.configuration.sitepackage.description">
 				<source>Attached site extension with TypoScript entry points</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification" resname="page.configuration.google_site_verification">
+				<source>Google Site Verification Code</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification.description" resname="page.configuration.google_site_verification.description">
+				<source>This field should contain the verification code provided by the Google Search Console. This allows verification of website ownership.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
 				<source>Copyright notice</source>
 			</trans-unit>
@@ -857,6 +863,18 @@
 			</trans-unit>
 			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
 				<source>link to browserconfig.xml</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.nav-type" resname="page.configuration.nav-type">
+				<source>Navigation Type</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.nav-type" resname="page.configuration.description.nav-type">
+				<source>Configures which navigation style should be displayed for desktop viewports.</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.0" resname="page.configuration.items.nav-type.0">
+				<source>Desktop Navigation Style</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.1" resname="page.configuration.items.nav-type.1">
+				<source>Mobile Navigation Style</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.palette.color.label">
 				<source>Background colors</source>

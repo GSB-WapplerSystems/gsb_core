@@ -96,7 +96,7 @@ page {
     variables {
       // set main-menu
       navType = TEXT
-      navType.value = {$config.navType}
+      navType.value = 0
 
       // social media links
       socialLinks-Facebook = TEXT
@@ -148,8 +148,17 @@ page {
     X-UA-Compatible {
       attribute = http-equiv
     }
-    # Google
-    google = {$page.meta.google}
-    google-site-verification = {$page.meta.google-site-verification}
   }
 }
+
+[traverse(site("configuration"),"navType") == "1"]
+  page.10.variables.navType.value = 1
+[GLOBAL]
+
+[traverse(site("configuration"),"google_site_verification") !== ""]
+  page.meta.google-site-verification =
+  page.meta.google-site-verification {
+    preCObject = TEXT
+    data = site:google_site_verification
+  }
+[GLOBAL]

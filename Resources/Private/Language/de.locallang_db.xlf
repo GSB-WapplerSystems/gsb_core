@@ -500,19 +500,19 @@
 				<target>Abschluss Grafik einfügen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor" resname="grid.bg.bgcolor" approved="yes">
-				<source>Backgroud color</source>
+				<source>Background color</source>
 				<target>Hintergrundfarbe</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgcolor.description" resname="grid.bg.bgcolor.description" approved="yes">
-				<source>Set a backgroundcolor</source>
+				<source>Set a background color</source>
 				<target>Eine Hintergrundfarbe festlegen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize" resname="grid.bg.bgfullsize" approved="yes">
-				<source>Grid Ausdehnung</source>
+				<source>Grid expansion</source>
 				<target>Grid Ausdehnung</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.bgfullsize.description" resname="grid.bg.bgfullsize.description" approved="yes">
-				<source>Drag grid container across the entire width</source>
+				<source>Expand grid container across the entire width</source>
 				<target>Grid Container über die ganze Breite ziehen</target>
 			</trans-unit>
 			<trans-unit id="grid.bg.container" resname="grid.bg.container" approved="yes">
@@ -831,6 +831,14 @@
 				<source>Attached site extension with TypoScript entry points</source>
 				<target>Angehängte Website-Erweiterung mit TypoScript-Einstiegspunkten</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification" resname="page.configuration.google_site_verification">
+				<source>Google Site Verification Code</source>
+				<target>Google Site Verification Code</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.google_site_verification.description" resname="page.configuration.google_site_verification.description">
+				<source>This field should contain the verification code provided by the Google Search Console. This allows verification of website ownership.</source>
+				<target>Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.copyright" resname="page.configuration.copyright">
 				<source>Copyright notice</source>
 				<target>Urheberrechtshinweis</target>
@@ -1009,6 +1017,22 @@
 			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
 				<source>link to browserconfig.xml</source>
 				<target>Link zur browserconfig.xml.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.nav-type" resname="page.configuration.nav-type">
+				<source>Navigation Type</source>
+				<target>Navigations-Typ</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.nav-type" resname="page.configuration.description.nav-type">
+				<source>Configures which navigation style should be displayed for desktop viewports.</source>
+				<target>Darstellungsart der Hauptnavigation in der Desktop Ansicht.</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.0" resname="page.configuration.items.nav-type.0">
+				<source>Desktop Navigation Style</source>
+				<target>Klassiche Desktop Navigation</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.items.nav-type.1" resname="page.configuration.items.nav-type.1">
+				<source>Mobile Navigation Style</source>
+				<target>Mobiles "Burger" Menü</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.palette.color.label">
 				<source>Background colors</source>

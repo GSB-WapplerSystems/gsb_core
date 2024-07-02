@@ -29,7 +29,6 @@ editor:
         - { model: "heading6", view: "h6", title: "Heading 6" }
 
     stylesSet:
-      - { name: "Paragraph: Kicker", element: "p", attributes: { 'class': 'kicker' } }
       - { name: "Paragraph: Subheader", element: "p", attributes: { 'class': 'lead' } }
       - { name: "Blockquote: Quote", element: "blockquote", attributes: { 'class': 'quote-dot' } }
 
@@ -53,6 +52,7 @@ editor:
       - { name: "Link: Galerie", element: "a", attributes: { 'class': 'gallery' } }
       - { name: "Link: Chart", element: "a", attributes: { 'class': 'chart' } }
 
+      - { name: "Text: Kicker", element: "span", attributes: { 'class': 'kicker' } }
       - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
       - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
       - { name: "Text: Capitalized", element: "span", attributes: { 'class': 'text-capitalize' } }
