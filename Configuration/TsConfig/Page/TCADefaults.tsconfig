@@ -24,6 +24,9 @@
 #### TCAdefaults ####
 #####################
 TCAdefaults {
+  be_users {
+    file_permissions =
+  }
   tt_content {
     ##Download with filesize
     filelink_size = 1
