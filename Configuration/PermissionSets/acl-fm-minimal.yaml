@@ -13,4 +13,5 @@ files:
   - copyFile
   # folder-related permissions
   - readFolder
+  - writeFolder
   - addFolder
