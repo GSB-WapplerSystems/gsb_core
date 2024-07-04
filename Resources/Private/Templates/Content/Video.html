@@ -21,14 +21,14 @@
         <div class="video video-local">
             <f:if condition="{videoImg}">
                 <f:then>
-                    <video controls poster="{f:uri.image(image: '{videoImg}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="width:100%; height:100%;" src="{videoRelation.publicUrl}">
+                    <video class="player local-video" controls poster="{f:uri.image(image: '{videoImg}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="background: #000000; width:100%; height:100%;" src="{videoRelation.publicUrl}">
                         <f:if condition="{videoCaption}">
                             <track label="Deutsch" kind="subtitles" srclang="de" src="{f:uri.image(image: videoCaption)}" />
                         </f:if>
                     </video>
                 </f:then>
                 <f:else>
-                    <video controls preload="none" style="width:100%; height:100%;" src="{videoRelation.publicUrl}">
+                    <video class="player local-video" controls preload="none" style="background: #000000; width:100%; height:100%;" src="{videoRelation.publicUrl}">
                         <f:if condition="{videoCaption}">
                             <track label="Deutsch" kind="subtitles" srclang="de" src="{videoCaption.publicUrl}" />
                         </f:if>
@@ -37,6 +37,7 @@
             </f:if>
         </div>
     </div>
+    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
 </f:if>
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/youtube'">
@@ -50,24 +51,52 @@
         <div class="video video-youtube">
             <f:if condition="{files}">
                 <f:then>
-                    <div class="dsgvo" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-caption="{videoCaption.publicUrl}">
+                    <div class="dsgvo dsgvo-youtube" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
                 </f:then>
                 <f:else>
-                    <div class="dsgvo" style="background-color:#efefef;" data-src="{videoRelation.publicUrl}" data-caption="{videoCaption.publicUrl}">
+                    <div class="dsgvo dsgvo-youtube" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
                 </f:else>
             </f:if>
             <div class="player-wrapper">
                 <div class="dsgvo-text">
-                    <button class="video-start mejs__overlay-button" title="{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}" type="button">
+                    <button class="video-start video-start-youtube" title="{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}" type="button">
                         <span class="visually-hidden">{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}</span>
                     </button>
-                    <p><f:format.raw>{f:translate(key: 'videoyoutube.link', extensionName: 'gsb_core')}</f:format.raw></p>
+                    <f:format.html>{f:translate(key: 'videoyoutube.link', extensionName: 'gsb_core')}</f:format.html>
                 </div>
-            </div></div>
-    </div>
-    </div>
+            </div>
+        </div>
+    </div></div>
 </f:if>
 
-    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
-    <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
+<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/vimeo'">
+    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+        <f:if condition="{data.header}">
+            <f:render arguments="{_all}" partial="Header/All" />
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </f:if>
+        <div class="video video-vimeo">
+            <f:if condition="{files}">
+                <f:then>
+                    <div class="dsgvo dsgvo-vimeo" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                </f:then>
+                <f:else>
+                    <div class="dsgvo dsgvo-vimeo" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                </f:else>
+            </f:if>
+            <div class="player-wrapper">
+                <div class="dsgvo-text">
+                    <button class="video-start video-start-vimeo" title="{f:translate(key: 'videovimeo.play', extensionName: 'gsb_core')}" type="button">
+                        <span class="visually-hidden">{f:translate(key: 'videovimeo.play', extensionName: 'gsb_core')}</span>
+                    </button>
+                    <f:format.html>{f:translate(key: 'videovimeo.link', extensionName: 'gsb_core')}</f:format.html>
+                </div>
+            </div>
+        </div>
+    </div></div>
+</f:if>
+
+<f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
 </html>
