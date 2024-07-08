@@ -122,7 +122,7 @@ BackendUserGroups:
         explicit_allowdeny: "",
         allowed_languages: "",
         db_mountpoints: "",
-        file_mountpoints: "",
+        file_mountpoints: "3",
         file_permissions: "",
         workspace_perms: "1",
         category_perms: "0",

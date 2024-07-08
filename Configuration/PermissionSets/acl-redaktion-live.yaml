@@ -6,4 +6,12 @@ label: "[GSB][ACL] Live Editor"
 
 modules:
   web:
+    - page_preview
     - web_FormFormbuilder
+    - web_info
+    - web_info_overview
+    - web_info_translations
+    - web_linkvalidator
+    - recycler
+  site:
+    - site_redirects
