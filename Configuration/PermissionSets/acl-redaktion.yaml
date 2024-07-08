@@ -20,6 +20,8 @@ modules:
     - '*'
   user:
     - 'user_setup'
+  system:
+    - 'system_BelogLog'
 
 widgets:
   - '*'
