@@ -15,3 +15,9 @@ modules:
     - recycler
   site:
     - site_redirects
+
+files:
+  # folder-related permissions
+  - renameFolder
+  - moveFolder
+  - copyFolder
