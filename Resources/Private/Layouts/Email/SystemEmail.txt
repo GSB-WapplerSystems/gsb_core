@@ -1,0 +1,5 @@
+<f:spaceless><f:render section="Title" optional="true" />
+<f:render section="Main" /></f:spaceless>
+
+Diese E-Mail wurde von GSB11 von der URL: {normalizedParams.siteUrl} gesendet.
+Bitte kontaktieren Sie Ihren Website-Administrator, wenn Sie glauben, diese E-Mail irrtümlich erhalten zu haben.

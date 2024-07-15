@@ -22,9 +22,9 @@ modules:
   user:
     - 'user_setup'
   system:
-    - 'BelogLog'
+    - 'system_BelogLog'
   site:
-    - 'redirects'
+    - 'site_redirects'
 
 
 resources:

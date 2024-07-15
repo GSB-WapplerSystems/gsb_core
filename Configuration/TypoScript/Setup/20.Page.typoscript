@@ -83,15 +83,15 @@ page {
     }
     templateRootPaths {
       0 = EXT:gsb_core/Resources/Private/Templates/Page/
-      1 = {$page.fluidtemplate.templateRootPath}
+      100 = {$page.fluidtemplate.templateRootPath}
     }
     partialRootPaths {
       0 = EXT:gsb_core/Resources/Private/Partials/Page/
-      1 = {$page.fluidtemplate.partialRootPath}
+      100 = {$page.fluidtemplate.partialRootPath}
     }
     layoutRootPaths {
       0 = EXT:gsb_core/Resources/Private/Layouts/Page/
-      1 = {$page.fluidtemplate.layoutRootPath}
+      100 = {$page.fluidtemplate.layoutRootPath}
     }
     variables {
       // set main-menu

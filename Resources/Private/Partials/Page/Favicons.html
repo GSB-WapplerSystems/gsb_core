@@ -104,7 +104,7 @@
             }
         }
     }" />
-    <!--
+    <f:comment><!--
      Iterate through the config array and set an HTML tag for each entry according to the config.type key.
         Also set link attribute and linked path.
         Then iterate through the probs subarray to set these as attributes of the tag.
@@ -120,8 +120,8 @@
         example output:
         <link href="/fileadmin/Favicons/favicon.ico" rel="shortcut icon">
 
-     -->
-    <f:for each="{metaConfig}" as="config">
+    --></f:comment>
+    <f:for each="{metaConfig}" as="config"><f:spaceless>
         <f:variable
             name="linkAttribute"
             value="{f:if(condition: '{config.type} == \'meta\'', then: 'content', else: 'href')}"
@@ -130,10 +130,12 @@
             name="linkTarget"
             value="{f:if(condition: '{site.configuration.{config.identifier}}', then: '{site.configuration.{config.identifier}}', else: '{config.default}')}"
         />
-
-        <{config.type} {linkAttribute}="{f:uri.image(src: '{linkTarget}')}"
+        <f:variable name="linkTargetImage" value="{f:uri.image(src: '{linkTarget}')}" />
+        </f:spaceless><f:if condition="{linkTargetImage}">
+        <{config.type} {linkAttribute}="{linkTargetImage}"
             <f:for each="{config.props}" key="prop" as="value"><f:if condition="config.{prop}">{prop}="{value}" </f:if></f:for>
         >
+        </f:if>
     </f:for>
 
     <meta content="{site.configuration.websiteTitle}" name="apple-mobile-web-app-title">

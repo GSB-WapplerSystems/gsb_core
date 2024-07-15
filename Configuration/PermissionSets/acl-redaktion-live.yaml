@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+label: "[GSB][ACL] Live Editor"
+
+modules:
+  web:
+    - page_preview
+    - web_FormFormbuilder
+    - web_info
+    - web_info_overview
+    - web_info_translations
+    - web_linkvalidator
+    - recycler
+  site:
+    - site_redirects
+
+files:
+  # folder-related permissions
+  - renameFolder
+  - moveFolder
+  - copyFolder
+  - deleteFolder
