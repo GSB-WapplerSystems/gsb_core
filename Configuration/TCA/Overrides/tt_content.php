@@ -6,7 +6,9 @@
 
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
@@ -134,11 +136,68 @@ defined('TYPO3') || die();
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $linkColumns);
 
-    $linkPalettes = [
+    $categoryDateOverrides = [
+        'header_kicker_toggle' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker.toggle',
+            'onChange' => 'reload',
+            'config' => [
+                'renderType' => 'checkboxToggle',
+                'type' => 'check',
+                'default' => 0,
+            ],
+        ],
+        'header_kicker' => [
+            'displayCond' => 'FIELD:header_kicker_toggle:REQ:true',
+            'l10n_mode' => 'prefixLangTitle',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+            ],
+        ],
+    ];
+
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
+        $categoryDateOverrides += [
+            'date_override_toggle' => [
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.label',
+                'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.description',
+                'config' => [
+                    'renderType' => 'checkboxToggle',
+                    'type' => 'check',
+                    'default' => 0,
+                ],
+            ],
+        ];
+    }
+
+    ExtensionManagementUtility::addTCAcolumns(
+        'tt_content',
+        $categoryDateOverrides
+    );
+
+    $palettes = [
         'link_config' => [
             'showitem' => 'tx_link_text,tx_link,tx_link_layout,tx_link_position', 'canNotCollapse' => 1,
         ],
     ];
 
-    $GLOBALS['TCA']['tt_content']['palettes'] += $linkPalettes;
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
+        $palettes['category_date_override'] = [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.label',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.description',
+            'showitem' => implode(
+                ',',
+                [
+                    'header_kicker_toggle',
+                    'header_kicker',
+                    '--linebreak--',
+                    'date_override_toggle',
+                ],
+            ),
+        ];
+    }
+
+    $GLOBALS['TCA']['tt_content']['palettes'] += $palettes;
 })();

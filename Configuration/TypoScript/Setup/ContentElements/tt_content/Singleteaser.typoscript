@@ -48,3 +48,12 @@ tt_content {
     }
   }
 }
+
+[feature("ITZBUNDPHP-2328") == true]
+  tt_content.gsb_singleteaser.dataProcessing {
+    30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
+    30 {
+      as = targetPageDate
+    }
+  }
+[global]

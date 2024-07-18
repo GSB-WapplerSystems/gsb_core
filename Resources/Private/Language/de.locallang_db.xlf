@@ -1193,6 +1193,22 @@
 				<source>Here is where the value for the Quaternary color can be set.</source>
 				<target>Hier kann ein Farbwert für die Quartärfarbe vergeben werden.</target>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.category_date_override.label" resname="tt_content.palettes.category_date_override.label">
+				<source>Category and date override</source>
+				<target>Kategorien und Datum überschreiben</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.category_date_override.description" resname="tt_content.palettes.category_date_override.description">
+				<source>Use the following two toggles to switch between using the category and date provided by the target page or set one manually</source>
+				<target>Mit den zwei folgenden Schaltern kann zwischen der Ausgabe von Kategorien und Datum der Zielseite und manuell eingegebenen Daten umgeschaltet werden.</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.date_override_toggle.label" resname="tt_content.palettes.date_override_toggle.label">
+				<source>Hide date</source>
+				<target>Datum ausblenden</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.date_override_toggle.description" resname="tt_content.palettes.date_override_toggle.description">
+				<source>Activate this toggle to hide the configured date of the target page</source>
+				<target>Durch Aktivieren des Schalters wird das Datum der Zielseite ausgeblendet</target>
+			</trans-unit>
 
 		</body>
 	</file>
