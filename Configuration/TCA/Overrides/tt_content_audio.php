@@ -120,7 +120,7 @@ defined('TYPO3') || die();
                     ],
                 'showitem' => '
                     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+                        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Audio,
                         --palette--;;audio_config,

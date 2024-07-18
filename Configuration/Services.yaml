@@ -38,6 +38,9 @@ services:
   ITZBund\GsbCore\Configuration\Discovery\ExtendSiteConfigurationLocator:
     public: true
 
+  ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor:
+    public: true
+
   ITZBund\GsbCore\EventListener\AddInfoButtonToContentElementsEvent:
     public: true
     tags:

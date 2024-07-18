@@ -76,7 +76,7 @@ defined('TYPO3') || die();
     // override default settings
     $GLOBALS['TCA']['tt_content']['types']['ce_slider']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
         --palette--;;header_config,subheader,
     --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_slider.title,
         --palette--;;slider_config,grid_container,

@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <f:comment>
     <!--
     SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
@@ -18,10 +18,24 @@
 				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')} {f:if(condition: data.tx_header_style, then: data.tx_header_style)}',
 				link: data.header_link,
 				default: settings.defaultHeaderType}" partial="Header/Header" />
-			<f:render arguments="{
-				date: data.date,
-				category: mainCategory,
-				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
+
+            <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2328')} == 1">
+                <f:then>
+                    <f:if condition="{data.date_override_toggle} == 0 && {targetPageDate} > 0">
+                        <f:render arguments="{
+                            date: targetPageDate,
+                            category: mainCategory,
+                            positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <f:render arguments="{
+                        date: data.date,
+                        category: mainCategory,
+                        positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
+                </f:else>
+            </f:if>
+
             <f:render arguments="{
 				dontShowCategories: data.header_kicker_toggle,
 				kicker: data.header_kicker,
