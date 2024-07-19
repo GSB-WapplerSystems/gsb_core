@@ -53,7 +53,11 @@ final class ExtendSiteConfigurationLocator
             $finder = Finder::create()->files()->sortByName()->depth(0)->name('*.yaml')->in($package->getPackagePath() . 'Configuration/SiteConfiguration/Extends/*/');
             foreach ($finder as $fileInfo) {
                 $identifier = basename($fileInfo->getPath());
-                $registry->add($identifier, $fileInfo->getPath() . '/' . $fileInfo->getFilename());
+                // the rtrim and ltrim is added to avoid double slashes in the path which occured in the cluster context
+                $registry->add(
+                    $identifier,
+                    rtrim($fileInfo->getPath(), '/') . '/' . ltrim($fileInfo->getFilename(), '/')
+                );
             }
         }
     }
