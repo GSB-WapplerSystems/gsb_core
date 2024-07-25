@@ -38,7 +38,7 @@
 		"typo3/cms-backend": "^12.4",
 		"typo3/cms-belog": "^12.4",
 		"typo3/cms-beuser": "^12.4",
-		"typo3/cms-core": "v12.4.16",
+		"typo3/cms-core": "12.4.16",
 		"typo3/cms-dashboard": "^12.4",
 		"typo3/cms-extbase": "^12.4",
 		"typo3/cms-extensionmanager": "^12.4",
@@ -97,7 +97,7 @@
 		"typo3/testing-framework": "^8.1"
 	},
 	"conflict": {
-		"typo3/cms-core": "v12.4.17"
+		"typo3/cms-core": "12.4.17"
 	},
 	"suggest": {
 		"ext-redis": "*"
@@ -128,13 +128,13 @@
 		"branch-alias": {
 			"dev-main": "2.x-dev"
 		},
+		"itzbund/gsb-core": {
+			"isSitePackage": true
+		},
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"extension-key": "gsb_core",
 			"web-dir": ".composer"
-		},
-		"itzbund/gsb-core": {
-			"isSitePackage": true
 		}
 	},
 	"scripts": {
