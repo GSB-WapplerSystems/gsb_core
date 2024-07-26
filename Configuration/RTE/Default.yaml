@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 imports:
-  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
-  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
-  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - {resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml"}
+  - {resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml"}
+  - {resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml"}
 
 editor:
   config:
@@ -16,50 +16,50 @@ editor:
     defaultLanguage: "de"
 
     importModules:
-      - { module: '@ckeditor/ckeditor5-language-translations.js', exports: [] }
-      - { module: '@ckeditor/ckeditor5-language', exports: ['TextPartLanguage'] }
+      - {module: '@ckeditor/ckeditor5-language-translations.js', exports: []}
+      - {module: '@ckeditor/ckeditor5-language', exports: ['TextPartLanguage']}
 
     heading:
       options:
-        - { model: "paragraph", title: "Paragraph" }
-        - { model: "heading2", view: "h2", title: "Heading 2" }
-        - { model: "heading3", view: "h3", title: "Heading 3" }
-        - { model: "heading4", view: "h4", title: "Heading 4" }
-        - { model: "heading5", view: "h5", title: "Heading 5" }
-        - { model: "heading6", view: "h6", title: "Heading 6" }
+        - {model: "paragraph", title: "Paragraph"}
+        - {model: "heading2", view: "h2", title: "Heading 2"}
+        - {model: "heading3", view: "h3", title: "Heading 3"}
+        - {model: "heading4", view: "h4", title: "Heading 4"}
+        - {model: "heading5", view: "h5", title: "Heading 5"}
+        - {model: "heading6", view: "h6", title: "Heading 6"}
 
     stylesSet:
-      - { name: "Paragraph: Subheader", element: "p", attributes: { 'class': 'lead' } }
-      - { name: "Blockquote: Quote", element: "blockquote", attributes: { 'class': 'quote-dot' } }
+      - {name: "Paragraph: Subheader", element: "p", attributes: {'class': 'lead'}}
+      - {name: "Blockquote: Quote", element: "blockquote", attributes: {'class': 'quote-dot'}}
 
-      - { name: "Button: Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
-      - { name: "Button: Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
-      - { name: "Button: Tertiary", element: "a", attributes: { 'class': 'btn btn-tertiary' } }
+      - {name: "Button: Primary", element: "a", attributes: {'class': 'btn btn-primary'}}
+      - {name: "Button: Secondary", element: "a", attributes: {'class': 'btn btn-secondary'}}
+      - {name: "Button: Tertiary", element: "a", attributes: {'class': 'btn btn-tertiary'}}
 
-      - { name: "List: Unstyled", element: "li", attributes: { 'class': 'list-unstyled' } }
-      - { name: "List: Scroll", element: "li", attributes: { 'class': 'list-scroll' } }
+      - {name: "List: Unstyled", element: "li", attributes: {'class': 'list-unstyled'}}
+      - {name: "List: Scroll", element: "li", attributes: {'class': 'list-scroll'}}
 
-      - { name: "Link: Internal", element: "a", attributes: { 'class': 'internal-link' } }
-      - { name: "Link: Download", element: "a", attributes: { 'class': 'download' } }
-      - { name: "Link: External", element: "a", attributes: { 'class': 'external-link' } }
-      - { name: "Link: Email", element: "a", attributes: { 'class': 'email' } }
-      - { name: "Link: Phone", element: "a", attributes: { 'class': 'phone' } }
-      - { name: "Link: Audio", element: "a", attributes: { 'class': 'audio' } }
-      - { name: "Link: Video", element: "a", attributes: { 'class': 'video' } }
-      - { name: "Link: Glossary", element: "a", attributes: { 'class': 'glossary' } }
-      - { name: "Link: Public", element: "a", attributes: { 'class': 'public' } }
-      - { name: "Link: Legal", element: "a", attributes: { 'class': 'legal' } }
-      - { name: "Link: Galerie", element: "a", attributes: { 'class': 'gallery' } }
-      - { name: "Link: Chart", element: "a", attributes: { 'class': 'chart' } }
+      - {name: "Link: Internal", element: "a", attributes: {'class': 'internal-link'}}
+      - {name: "Link: Download", element: "a", attributes: {'class': 'download'}}
+      - {name: "Link: External", element: "a", attributes: {'class': 'external-link'}}
+      - {name: "Link: Email", element: "a", attributes: {'class': 'email'}}
+      - {name: "Link: Phone", element: "a", attributes: {'class': 'phone'}}
+      - {name: "Link: Audio", element: "a", attributes: {'class': 'audio'}}
+      - {name: "Link: Video", element: "a", attributes: {'class': 'video'}}
+      - {name: "Link: Glossary", element: "a", attributes: {'class': 'glossary'}}
+      - {name: "Link: Public", element: "a", attributes: {'class': 'public'}}
+      - {name: "Link: Legal", element: "a", attributes: {'class': 'legal'}}
+      - {name: "Link: Galerie", element: "a", attributes: {'class': 'gallery'}}
+      - {name: "Link: Chart", element: "a", attributes: {'class': 'chart'}}
 
-      - { name: "Text: Kicker", element: "span", attributes: { 'class': 'kicker' } }
-      - { name: "Text: Lowercased", element: "span", attributes: { 'class': 'text-lowercase' } }
-      - { name: "Text: Uppercased", element: "span", attributes: { 'class': 'text-uppercase' } }
-      - { name: "Text: Capitalized", element: "span", attributes: { 'class': 'text-capitalize' } }
-      - { name: "Text: Bold", element: "span", attributes: { 'class': 'bold' } }
-      - { name: "Text: Small", element: "span", attributes: { 'class': 'small' } }
-      - { name: "Text: Emphasize", element: "span", attributes: { 'class': 'em' } }
-      - { name: "Text: Hidden", element: "span", attributes: { 'class': 'hide visually-hidden' } }
+      - {name: "Text: Kicker", element: "span", attributes: {'class': 'kicker'}}
+      - {name: "Text: Lowercased", element: "span", attributes: {'class': 'text-lowercase'}}
+      - {name: "Text: Uppercased", element: "span", attributes: {'class': 'text-uppercase'}}
+      - {name: "Text: Capitalized", element: "span", attributes: {'class': 'text-capitalize'}}
+      - {name: "Text: Bold", element: "span", attributes: {'class': 'bold'}}
+      - {name: "Text: Small", element: "span", attributes: {'class': 'small'}}
+      - {name: "Text: Emphasize", element: "span", attributes: {'class': 'em'}}
+      - {name: "Text: Hidden", element: "span", attributes: {'class': 'hide visually-hidden'}}
 
     toolbar:
       items:
@@ -95,7 +95,7 @@ editor:
         - findAndReplace
 
     table:
-      defaultHeadings: { rows: 1 }
+      defaultHeadings: {rows: 1}
       contentToolbar:
         - tableColumn
         - tableRow
@@ -107,9 +107,9 @@ editor:
     language:
       ui: "de"
       textPartLanguage:
-        - { title: "Deutsch", languageCode: "de" }
-        - { title: "English", languageCode: "en" }
-        - { title: "Français", languageCode: "fr" }
+        - {title: "Deutsch", languageCode: "de"}
+        - {title: "English", languageCode: "en"}
+        - {title: "Français", languageCode: "fr"}
 
     format_tags: "s;p;h1;h2;h3;h4;h5;h6;pre"
 
