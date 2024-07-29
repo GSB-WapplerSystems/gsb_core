@@ -1,0 +1,208 @@
+# SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+renderingOptions:
+  submitButtonLabel: Absenden
+identifier: vorlagebarrieremelden
+label: 'Vorlage (Barriere Melden)'
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: '{text-1}'
+      attachUploads: true
+      translation:
+        language: default
+      recipients:
+        no-reply@itzbund.de: itzbund.de
+      addHtmlPart: true
+    identifier: EmailToReceiver
+  -
+    options:
+      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      recipients:
+        '{email}': '{email}'
+      senderAddress: no-reply@gsb-itzbund.de
+      senderName: 'GSB 11'
+      addHtmlPart: true
+      attachUploads: true
+      title: ''
+    identifier: EmailToSender
+  -
+    options:
+      pageUid: '53'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächste Seite'
+    identifier: page-1
+    label: Barrieremelden
+    type: Page
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldset-1
+        label: ''
+        renderables:
+          -
+            type: Text
+            identifier: referrerUrl
+            label: 'URL, von der aus Sie auf dieses Formular zugegriffen haben.'
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                data-initialize-with-referrer: true
+
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-3
+            label: 'Bitte geben Sie die Seite an, auf der Sie die Barriere festgestellt haben.'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-4
+            label: 'Vor- und Zuname'
+          -
+            defaultValue: ''
+            identifier: email
+            label: 'E-Mail-Adresse (wird nur für Rückfragen und Antworten genutzt)'
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+                placeholder: name@domain.de
+              validationErrorMessages:
+                -
+                  code: 1221560910
+                  message: 'Bitte eine E-Mail-Adresse angeben'
+                -
+                  code: 1221560718
+                  message: 'Bitte eine E-Mail-Adresse angeben'
+                -
+                  code: 1347992400
+                  message: 'Bitte eine E-Mail-Adresse angeben'
+                -
+                  code: 1347992453
+                  message: 'Bitte eine E-Mail-Adresse angeben'
+                -
+                  code: 1221559976
+                  message: 'Bitte eine gültige E-Mail-Adresse eintragen'
+              elementDescription: 'Bitte geben Sie eine E-Mail-Adresse im Format name@domain.de an.'
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                identifier: EmailAddress
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-6
+            label: Betreff
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: Betreff
+                required: required
+              validationErrorMessages:
+                -
+                  code: 1221560910
+                  message: 'Bitte ein Betreff angeben'
+                -
+                  code: 1221560718
+                  message: 'Bitte ein Betreff angeben'
+                -
+                  code: 1347992400
+                  message: 'Bitte ein Betreff angeben'
+                -
+                  code: 1347992453
+                  message: 'Bitte ein Betreff angeben'
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            identifier: message
+            label: 'Ihre Nachricht'
+            type: Textarea
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+                minlength: '10'
+                maxlength: '3000'
+                placeholder: Nachricht
+              validationErrorMessages:
+                -
+                  code: 1221560910
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1221560718
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1347992400
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1347992453
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1238110957
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1269883975
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1428504122
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1238108068
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+                -
+                  code: 1238108069
+                  message: 'Bitte eine Nachricht eintragen (min. 10 Zeichen, max. 3000 Zeichen)'
+              elementDescription: 'Mindestens 10 Zeichen, maximal 3000 Zeichen möglich.'
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                options:
+                  minimum: '10'
+                  maximum: '3000'
+                identifier: StringLength
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-2
+            label: 'Verwendeter Browser'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-5
+            label: 'Verwendetes Betriebssystem'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-7
+            label: 'Verwendete Hilfsmittel/Assistenztechnologien (z.B. Screenreader)'
+          -
+            type: Checkbox
+            identifier: checkbox-1
+            label: 'Ich habe die Datenschutzbestimmungen zur Kenntnis genommen und erkläre mich mit diesen einverstanden.'
+            validators:
+              -
+                identifier: NotEmpty
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+  -
+    renderingOptions:
+      previousButtonLabel: Zurück
+      nextButtonLabel: Weiter
+    type: SummaryPage
+    identifier: summarypage-1
+    label: Zusammenfassung
