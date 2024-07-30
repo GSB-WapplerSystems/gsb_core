@@ -14,6 +14,8 @@
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/CustomContentCategoryProcessor.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/CustomPageCategoryProcessor.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/CustomPageCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
   <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>

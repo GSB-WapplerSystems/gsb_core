@@ -82,30 +82,6 @@ defined('TYPO3') || die();
         'after:header_position'
     );
 
-    $headerKicker = [
-        'header_kicker' => [
-            'l10n_mode' => 'prefixLangTitle',
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-                'max' => 255,
-            ],
-        ],
-    ];
-
-    ExtensionManagementUtility::addTCAcolumns(
-        'tt_content',
-        $headerKicker
-    );
-
-    ExtensionManagementUtility::addFieldsToPalette(
-        'tt_content',
-        'headers',
-        'header_kicker, --linebreak--',
-        'before:header'
-    );
-
     $headerPalettes = [
         'header_config' => [
             'showitem' => 'header_layout,header_position,tx_header_style,tx_header_inside', 'canNotCollapse' => 1,

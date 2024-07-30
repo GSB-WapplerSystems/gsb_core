@@ -96,11 +96,6 @@ parameters:
 			path: Classes/EventListener/AddTypoScriptFromSitePackageEvent.php
 
 		-
-			message: "#^Casting to string something that's already string\\.$#"
-			count: 1
-			path: Classes/EventListener/ExtendsSiteConfigurationEvent.php
-
-		-
 			message: "#^Cannot call method critical\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
 			count: 3
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
@@ -157,11 +152,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$host of class RedisSentinel constructor expects string, array\\<string, mixed\\> given\\.$#"
-			count: 1
-			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
-
-		-
-			message: "#^Parameter \\#2 \\$timeout_or_key of method Redis\\:\\:blPop\\(\\) expects float\\|int\\|string, int\\<1, max\\>\\|Redis given\\.$#"
 			count: 1
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
 

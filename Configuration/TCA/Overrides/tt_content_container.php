@@ -40,7 +40,7 @@ defined('TYPO3') or die('Access denied.');
     // override default settings
     $GLOBALS['TCA']['tt_content']['types']['ce_container']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header_kicker,header,
+        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
         --palette--;Header Config;header_config,subheader,
     --div--;Container,
         --palette--;;grid_bg,

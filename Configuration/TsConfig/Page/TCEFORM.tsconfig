@@ -379,3 +379,5 @@ mod.web_list.deniedNewTables := addToList(tx_gsbcore_consent)
 [traverse(page, "is_siteroot") == 1]
 mod.web_list.deniedNewTables := removeFromList(tx_gsbcore_consent)
 [global]
+
+mod.wizards.newContentElement.wizardItems.plugins.show = general,tx_solr_results

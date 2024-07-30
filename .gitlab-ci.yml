@@ -1,12 +1,9 @@
+---
 stages:
-  - build
   - lint
+  - build-app
   - test
-  - semver
   - release
-  - trigger
 
 include:
-  - project: 'gsb11/gitlab-scripts'
-    ref: main
-    file: 'default-extension.yml'
+  - component: ${CI_SERVER_HOST}/gsb11/gitlab-ci-cd-components/gsb-extensions/build@1.0.4

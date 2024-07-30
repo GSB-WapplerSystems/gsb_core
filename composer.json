@@ -38,7 +38,7 @@
 		"typo3/cms-backend": "^12.4",
 		"typo3/cms-belog": "^12.4",
 		"typo3/cms-beuser": "^12.4",
-		"typo3/cms-core": "^12.4",
+		"typo3/cms-core": "12.4.16 || 12.4.17",
 		"typo3/cms-dashboard": "^12.4",
 		"typo3/cms-extbase": "^12.4",
 		"typo3/cms-extensionmanager": "^12.4",
@@ -54,7 +54,6 @@
 		"typo3/cms-linkvalidator": "^12.4",
 		"typo3/cms-lowlevel": "^12.4",
 		"typo3/cms-opendocs": "^12.4",
-		"typo3/cms-recordlist": "^12.4",
 		"typo3/cms-recycler": "^12.4",
 		"typo3/cms-redirects": "^12.4",
 		"typo3/cms-reports": "^12.4",
@@ -97,8 +96,12 @@
 		"typo3/coding-standards": "^0.8",
 		"typo3/testing-framework": "^8.1"
 	},
+	"conflict": {
+		"typo3/cms-core": "12.4.17"
+	},
 	"suggest": {
-		"ext-redis": "*"
+		"ext-redis": "*",
+		"featdd/dpn-glossary": "*"
 	},
 	"repositories": [
 		{
@@ -126,13 +129,13 @@
 		"branch-alias": {
 			"dev-main": "2.x-dev"
 		},
+		"itzbund/gsb-core": {
+			"isSitePackage": true
+		},
 		"typo3/cms": {
 			"cms-package-dir": "{$vendor-dir}/typo3/cms",
 			"extension-key": "gsb_core",
 			"web-dir": ".composer"
-		},
-		"itzbund/gsb-core": {
-			"isSitePackage": true
 		}
 	},
 	"scripts": {

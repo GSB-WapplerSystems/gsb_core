@@ -994,6 +994,18 @@
 			<trans-unit id="page.configuration.color_quaternary.description">
 				<source>Here is where the value for the Quaternary color can be set.</source>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.category_date_override.label" resname="tt_content.palettes.category_date_override.label">
+				<source>Category and date override</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.category_date_override.description" resname="tt_content.palettes.category_date_override.description">
+				<source>Use the following two toggles to switch between using the category and date provided by the target page or set one manually</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.date_override_toggle.label" resname="tt_content.palettes.date_override_toggle.label">
+				<source>Hide date</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.date_override_toggle.description" resname="tt_content.palettes.date_override_toggle.description">
+				<source>Activate this toggle to hide the configured date of the target page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
