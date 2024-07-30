@@ -5,15 +5,15 @@
 renderingOptions:
   submitButtonLabel: Absenden
 identifier: vorlagebarrieremelden
-label: 'Vorlage (Barriere Melden)'
+label: 'Vorlage (Barriere melden)'
 type: Form
 prototypeName: standard
 finishers:
   -
     options:
-      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      subject: 'E-Mail von ITZBund: {text-4}'
       senderAddress: no-reply@gsb-itzbund.de
-      senderName: '{text-1}'
+      senderName: '{text-4}'
       attachUploads: true
       translation:
         language: default
@@ -23,7 +23,7 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
-      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      subject: 'E-Mail von ITZBund: {text-4}'
       recipients:
         '{email}': '{email}'
       senderAddress: no-reply@gsb-itzbund.de
@@ -43,7 +43,7 @@ renderables:
       previousButtonLabel: 'Vorherige Seite'
       nextButtonLabel: 'Nächste Seite'
     identifier: page-1
-    label: Barrieremelden
+    label: Barriere melden
     type: Page
     renderables:
       -
@@ -52,7 +52,7 @@ renderables:
         label: ''
         renderables:
           -
-            type: Text
+            type: Url
             identifier: referrerUrl
             label: 'URL, von der aus Sie auf dieses Formular zugegriffen haben.'
             defaultValue: ''
