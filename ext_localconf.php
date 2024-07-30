@@ -56,6 +56,8 @@ defined('TYPO3') or die('Access denied.');
         $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['20'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
     }
 
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
+
     /***************
      * Define TypoScript as content rendering template
      */

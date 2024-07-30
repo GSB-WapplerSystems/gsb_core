@@ -1,0 +1,11 @@
+[feature("ITZBUNDPHP-3327") == false]
+  mod.web_list.table.tx_dpnglossary_domain_model_description.hideTable = 1
+  mod.web_list.table.tx_dpnglossary_domain_model_synonym.hideTable = 1
+  mod.web_list.table.tx_dpnglossary_domain_model_term.hideTable = 1
+
+  mod.web_list.deniedNewTables := addToList(tx_dpnglossary_domain_model_description)
+  mod.web_list.deniedNewTables := addToList(tx_dpnglossary_domain_model_synonym)
+  mod.web_list.deniedNewTables := addToList(tx_dpnglossary_domain_model_term)
+
+  TCEFORM.tt_content.list_type.removeItems := addToList(dpnglossary_glossary,dpnglossary_glossarypreviewnewest,dpnglossary_glossarypreviewrandom,dpnglossary_glossarypreviewselected)
+[END]

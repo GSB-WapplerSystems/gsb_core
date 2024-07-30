@@ -72,6 +72,7 @@ This table illustrates the behavior of feature flags in various states.
 | `ITZBUNDPHP-2877`      | Enables general color management in the site module.<br />This sets the bootstrap colors `--bs-primary` `--bs-secondary` `--bs-tertiary` `--bs-quaternary`
 | `ITZBUNDPHP-1615`      | Replaces the TYPO3 core default email template footer text with a GSB11 footer text
 | `ITZBUNDPHP-2328`      | Streamline handling for linked pages in stage and singleteaser CEs. Fetches category and date value from target page and adds possibility to override/hide those values
+| `ITZBUNDPHP-3327`      | Enable/Expose EXT:dpn_glossary in the TYPO3 backend
 
 ### Usage in PHP Code
 
