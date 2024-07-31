@@ -172,3 +172,8 @@ BackendUserGroups:
       category_perms: "0",
       permission_sets: "itzbund/gsb-core/acl-fm-minimal",
     }
+    - {
+      uid: 99,
+      title: "[GSB] Placeholder to increase UID",
+      deleted: "1"
+    }
