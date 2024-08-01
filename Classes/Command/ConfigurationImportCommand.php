@@ -105,6 +105,9 @@ class ConfigurationImportCommand extends Command
         $mode = $config['mode'] ?? 'append';
         $conn = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
 
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->getRestrictions()->removeAll();
+
         if ($mode === 'replace') {
             $conn->truncate($table);
             $output->writeln('Emptied database table "' . $table . '"');
@@ -118,7 +121,17 @@ class ConfigurationImportCommand extends Command
             }
 
             $identifiers = ['uid' => $entry['uid']];
-            if ($conn->count('uid', $table, $identifiers) === 0) {
+
+            // connection will respect all restrictions, and that cannot be removed
+            $count = $queryBuilder->count('uid')
+                ->from($table)
+                ->where(
+                    $queryBuilder->expr()->eq('uid', $entry['uid'])
+                )
+                ->executeQuery()
+                ->fetchOne();
+
+            if ((int)$count === 0) {
                 $conn->insert($table, $entry);
                 $output->writeln('Added (mode=update, entry does not have uid): ' . json_encode($entry) . ' to database table ' . $table);
                 continue;
