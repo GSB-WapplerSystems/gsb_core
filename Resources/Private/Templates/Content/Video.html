@@ -12,11 +12,13 @@
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/mp4'">
     <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
-        <f:if condition="{data.header}">
-            <f:render arguments="{_all}" partial="Header/All" />
-        </f:if>
-        <f:if condition="{data.bodytext}">
-            <f:format.html>{data.bodytext}</f:format.html>
+        <f:if condition="{data.imageorient} == '0'">
+            <f:if condition="{data.header}">
+                <f:render arguments="{_all}" partial="Header/All" />
+            </f:if>
+            <f:if condition="{data.bodytext}">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </f:if>
         </f:if>
         <div class="video video-local">
             <f:if condition="{videoImg}">
@@ -36,25 +38,35 @@
                 </f:else>
             </f:if>
         </div>
+        <f:if condition="{data.imageorient} == '8'">
+            <f:if condition="{data.header}">
+                <f:render arguments="{_all}" partial="Header/All" />
+            </f:if>
+            <f:if condition="{data.bodytext}">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </f:if>
+        </f:if>
     </div>
-    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
+    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_frontend/Resources/Public/JavaScripts/mediaelements.js"/>
 </f:if>
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/youtube'">
     <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
-        <f:if condition="{data.header}">
-            <f:render arguments="{_all}" partial="Header/All" />
-        </f:if>
-        <f:if condition="{data.bodytext}">
-            <f:format.html>{data.bodytext}</f:format.html>
+        <f:if condition="{data.imageorient} == '0'">
+            <f:if condition="{data.header}">
+                <f:render arguments="{_all}" partial="Header/All" />
+            </f:if>
+            <f:if condition="{data.bodytext}">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </f:if>
         </f:if>
         <div class="video video-youtube">
             <f:if condition="{files}">
                 <f:then>
-                    <div class="dsgvo dsgvo-youtube" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                    <div class="dsgvo dsgvo-youtube" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:then>
                 <f:else>
-                    <div class="dsgvo dsgvo-youtube" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                    <div class="dsgvo dsgvo-youtube" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:else>
             </f:if>
             <div class="player-wrapper">
@@ -66,24 +78,35 @@
                 </div>
             </div>
         </div>
-    </div></div>
-</f:if>
-
-<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/vimeo'">
-    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+    </div>
+    <f:if condition="{data.imageorient} == '8'">
         <f:if condition="{data.header}">
             <f:render arguments="{_all}" partial="Header/All" />
         </f:if>
         <f:if condition="{data.bodytext}">
             <f:format.html>{data.bodytext}</f:format.html>
         </f:if>
+    </f:if>
+    </div>
+</f:if>
+
+<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/vimeo'">
+    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+        <f:if condition="{data.imageorient} == '0'">
+            <f:if condition="{data.header}">
+                <f:render arguments="{_all}" partial="Header/All" />
+            </f:if>
+            <f:if condition="{data.bodytext}">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </f:if>
+        </f:if>
         <div class="video video-vimeo">
             <f:if condition="{files}">
                 <f:then>
-                    <div class="dsgvo dsgvo-vimeo" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                    <div class="dsgvo dsgvo-vimeo" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:then>
                 <f:else>
-                    <div class="dsgvo dsgvo-vimeo" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{videoRelation.originalFile.properties.title}">
+                    <div class="dsgvo dsgvo-vimeo" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:else>
             </f:if>
             <div class="player-wrapper">
@@ -95,7 +118,16 @@
                 </div>
             </div>
         </div>
-    </div></div>
+    </div>
+    <f:if condition="{data.imageorient} == '8'">
+        <f:if condition="{data.header}">
+            <f:render arguments="{_all}" partial="Header/All" />
+        </f:if>
+        <f:if condition="{data.bodytext}">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </f:if>
+    </f:if>
+    </div>
 </f:if>
 
 <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
