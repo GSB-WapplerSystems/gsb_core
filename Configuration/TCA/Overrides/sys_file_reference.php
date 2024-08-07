@@ -86,5 +86,5 @@ defined('TYPO3') || die();
         'caption',
         'after:title'
     );
-    $GLOBALS['TCA']['sys_file_reference']['palettes']['videoOverlayPalette']['showitem'] = 'autoplay';
+    $GLOBALS['TCA']['sys_file_reference']['palettes']['videoOverlayPalette']['showitem'] = 'title';
 })();
