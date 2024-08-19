@@ -61,7 +61,7 @@ class JsonFileWriter extends FileWriter
             'date' => date('r', (int)$record->getCreated()),
             'level' => strtoupper($record->getLevel()),
             'requestId' => $record->getRequestId(),
-            'compontent' => $record->getComponent(),
+            'component' => $record->getComponent(),
             'message' => $this->interpolate($message, $context),
             'context' => $context,
         ];
