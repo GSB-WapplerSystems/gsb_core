@@ -157,7 +157,7 @@ lib {
   parseFunc {
     externalBlocks := addToList(li)
     externalBlocks {
-      li.stdWrap.parseFunc < lib.parseFunc_RTE
+      li.stdWrap.parseFunc < lib.parseFunc_RTE_noEncapsLines
     }
   }
 }
