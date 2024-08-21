@@ -31,12 +31,14 @@ lib.page.class {
     field = alias // uid
     noTrimWrap = |page-||
   }
+
   // Language
   20 = TEXT
   20 {
     data = sitelanguage:iso-639-1
     noTrimWrap = | lang-||
   }
+
   // Backend layout
   30 = TEXT
   30 {
@@ -46,9 +48,11 @@ lib.page.class {
       search = pagets__
       replace =
     }
+
     ifEmpty = default
     noTrimWrap = | ||
   }
+
   // Layout
   40 = TEXT
   40 {
@@ -56,10 +60,18 @@ lib.page.class {
     noTrimWrap = | layout-||
     ifEmpty = default
   }
+
   50 = TEXT
   50 {
     data = site:second-logo-complete-toggle
     ifEmpty = default
     noTrimWrap = | second-logo-||
+  }
+
+  60 = TEXT
+  60 {
+    data = site:logo-complete-toggle
+    ifEmpty = default
+    noTrimWrap = | complete-logo-||
   }
 }
