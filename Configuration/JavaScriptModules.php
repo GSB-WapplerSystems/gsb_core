@@ -18,13 +18,26 @@
   * LICENSE file that was distributed with this source code.
   */
 
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+
+if (VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getNumericTypo3Version()) < VersionNumberUtility::convertVersionNumberToInteger('12.4.17')) {
+    return [
+        'dependencies' => ['backend'],
+        'tags' => [
+            'backend.form',
+        ],
+        'imports' => [
+            '@ckeditor/ckeditor5-language' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language.js',
+            '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+        ],
+    ];
+}
 return [
     'dependencies' => ['backend'],
     'tags' => [
         'backend.form',
     ],
     'imports' => [
-        '@ckeditor/ckeditor5-language' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language.js',
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
     ],
 ];

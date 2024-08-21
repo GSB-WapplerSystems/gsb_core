@@ -156,6 +156,11 @@ parameters:
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
 
 		-
+			message: "#^Parameter \\#2 \\$timeout_or_key of method Redis\\:\\:blPop\\(\\) expects float\\|int\\|string, int\\<1, max\\>\\|Redis given\\.$#"
+			count: 1
+			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
+
+		-
 			message: "#^Property ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:\\$configuration type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
