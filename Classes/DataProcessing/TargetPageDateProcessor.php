@@ -42,11 +42,11 @@ class TargetPageDateProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $link = $cObj->data['tx_link'];
+        $link = $cObj->data['tx_link'] ?? null;
 
         $targetVariableName = (string)$cObj->stdWrapValue('as', $processorConfiguration, 'tx_link_target_date');
 
-        if ($link === '') {
+        if (trim($link ?? '') === '') {
             return $processedData;
         }
 
