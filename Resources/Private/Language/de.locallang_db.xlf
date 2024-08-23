@@ -913,7 +913,7 @@
 			</trans-unit>
 			<trans-unit id="page.configuration.second-logo-link" resname="page.configuration.second-logo-link">
 				<source>Link target for sponsor logo</source>
-				<target>Link ziel des zweiten Logos</target>
+				<target>Linkziel des zweiten Logos</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.description.second-logo-link" resname="page.configuration.description.second-logo-link">
 				<source>Set/Change the optional link for the second logo.</source>
