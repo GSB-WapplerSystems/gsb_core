@@ -36,8 +36,10 @@ editor:
       - {name: "Button: Secondary", element: "a", attributes: {'class': 'btn btn-secondary'}}
       - {name: "Button: Tertiary", element: "a", attributes: {'class': 'btn btn-tertiary'}}
 
-      - {name: "List: Unstyled", element: "li", attributes: {'class': 'list-unstyled'}}
-      - {name: "List: Scroll", element: "li", attributes: {'class': 'list-scroll'}}
+      - {name: "List ul/ol: Unstyled", element: "ul", attributes: {'class': 'list-unstyled'}}
+      - {name: "List ul/ol: Inline", element: "ul", attributes: {'class': 'list-inline'}}
+
+      - {name: "List li: Scroll", element: "li", attributes: {'class': 'list-scroll'}}
 
       - {name: "Link: Internal", element: "a", attributes: {'class': 'internal-link'}}
       - {name: "Link: Download", element: "a", attributes: {'class': 'download'}}

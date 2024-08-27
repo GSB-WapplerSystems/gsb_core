@@ -11,8 +11,8 @@
 			"email": "o.hartwig@moselwal.de"
 		},
 		{
-			"name": "Matthias Pelzer",
-			"email": "matthias.pelzer@digitaspixelpark.com"
+			"name": "Matthias Peltzer",
+			"email": "matthias.peltzer@digitas.com"
 		},
 		{
 			"name": "Michael Max Busch",
@@ -24,7 +24,7 @@
 		},
 		{
 			"name": "Christian Rath-Ulrich",
-			"email": "christian.rath-ulrich@digitaspixelpark.com"
+			"email": "christian.rath-ulrich@digitas.com"
 		}
 	],
 	"require": {
@@ -38,7 +38,7 @@
 		"typo3/cms-backend": "^12.4",
 		"typo3/cms-belog": "^12.4",
 		"typo3/cms-beuser": "^12.4",
-		"typo3/cms-core": "12.4.16 || 12.4.17",
+		"typo3/cms-core": "12.4.16 || 12.4.19",
 		"typo3/cms-dashboard": "^12.4",
 		"typo3/cms-extbase": "^12.4",
 		"typo3/cms-extensionmanager": "^12.4",
@@ -97,7 +97,7 @@
 		"typo3/testing-framework": "^8.1"
 	},
 	"conflict": {
-		"typo3/cms-core": "12.4.17"
+		"typo3/cms-core": "12.4.17 || 12.4.18"
 	},
 	"suggest": {
 		"ext-redis": "*",

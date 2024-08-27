@@ -160,24 +160,20 @@
 				<target>Video abspielen</target>
 			</trans-unit>
 			<trans-unit id="videoyoutube.link" resname="videoyoutube.link" approved="yes">
-				<source>By clicking on the button, you accept the transfer of your data (including IP address) to YouTube. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49 (1) a) DSGVO. You can find more information in the <![CDATA[<a href="/privacy-policy"><u>privacy policy</u></a>.]]>.</source>
-				<target>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <![CDATA[<a href="/datenschutz"><u>Datenschutzerklärung</u></a>.]]></target>
+				<source><![CDATA[<p><span class="h4">Please note!</span><br>By clicking on the button, you accept the transfer of your data (including IP address) to YouTube. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the <a href="/en/privacy-policy"><u>Privacy Policy</u></a>.</p>]]></source>
+                <target><![CDATA[<p><span class="h4">Bitte beachten Sie!</span><br>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <a href="/datenschutz"><u>Datenschutzerklärung</u></a>.</p>]]></target>
 			</trans-unit>
 			<trans-unit id="audio.play" resname="audio.play" approved="yes">
 				<source>Play audio</source>
 				<target>Audio abspielen</target>
-			</trans-unit>
-			<trans-unit id="audio.link" resname="audio.link" approved="yes">
-				<source>To activate the widget you need to click on the button. After activating the button, <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link opens in new window">SoundCloud's privacy policy</a>]]> applies.</source>
-				<target>Zum Aktivieren des Widgets musst Du auf den Button klicken. Nach dem Aktivieren des Buttons gelten die <![CDATA[<a href="https://soundcloud.com/pages/privacy" target="_blank" class="external-link" rel="noreferrer" title="Link öffnet in neuem Fenster">Datenschutzbestimmungen von SoundCloud</a>.]]></target>
 			</trans-unit>
 			<trans-unit id="videovimeo.play" resname="videovimeo.play" approved="yes">
 				<source>Play video</source>
 				<target>Video abspielen</target>
 			</trans-unit>
 			<trans-unit id="videovimeo.link" resname="videovimeo.link" approved="yes">
-				<source>By clicking on the button, you accept the transfer of your data (including IP address) to Vimeo. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49 (1) a) DSGVO. You can find more information in the <![CDATA[<a href="/privacy-policy"><u>privacy policy</u></a>.]]>.</source>
-                <target>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an Vimeo. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <![CDATA[<a href="/datenschutz"><u>Datenschutzerklärung</u></a>.]]></target>
+				<source><![CDATA[<p><span class="h4">Please note!</span><br>By clicking on the button, you accept the transfer of your data (including IP address) to Vimeo. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the <a href="/en/privacy-policy"><u>Privacy Policy</u></a>.</p>]]></source>
+                <target><![CDATA[<p><span class="h4">Bitte beachten Sie!</span><br>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an Vimeo. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <a href="/datenschutz"><u>Datenschutzerklärung</u></a>.</p>]]></target>
 			</trans-unit>
 			<trans-unit id="shariff.social" resname="shariff.social" approved="yes">
 				<source>Share this article:</source>

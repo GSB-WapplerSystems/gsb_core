@@ -35,6 +35,28 @@ defined('TYPO3') || die();
                         'allowed' => 'mp4,webm,ogg,youtube,vimeo',
                         'maxitems' => 1,
                         'minitems' => 0,
+                        'overrideChildTca' => [
+                            'columns' => [
+                                'description' => [
+                                    'config' => [
+                                        'type' => 'passthrough',
+                                    ],
+                                ],
+                                'title' => [
+                                    'config' =>
+                                        [
+                                            'eval' => 'trim',
+                                            'type' => 'input',
+                                        ],
+                                ],
+                                'autoplay' => [
+                                    'config' => [
+                                        'renderType' => 'passthrough',
+                                        'type' => 'passthrough',
+                                    ],
+                                ],
+                            ],
+                        ],
                     ],
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',

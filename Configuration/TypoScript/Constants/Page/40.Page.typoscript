@@ -24,14 +24,6 @@
 ### PAGE ###
 ############
 page {
-  fluidtemplate {
-    # cat=template: templates/100/100; type=string; label=Layout Root Path: Path to layouts
-    layoutRootPath = EXT:gsb_core/Resources/Private/Layouts/Page/
-    # cat=template: templates/100/110; type=string; label=Partial Root Path: Path to partials
-    partialRootPath = EXT:gsb_core/Resources/Private/Partials/Page/
-    # cat=template: templates/100/120; type=string; label=Template Root Path: Path to templates
-    templateRootPath = EXT:gsb_core/Resources/Private/Templates/Page/
-  }
   meta {
     # cat=template: meta data/130/100; type=string; label=viewport
     viewport = width=device-width, initial-scale=1, minimum-scale=1
