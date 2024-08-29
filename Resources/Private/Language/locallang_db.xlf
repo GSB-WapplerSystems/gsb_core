@@ -982,6 +982,12 @@
 			<trans-unit id="page.configuration.color_secondary.description">
 				<source>Here is where the value for the secondary color can be set.</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary_rgba.label">
+				<source>Color Value Secondary RGBA</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary_rgba.description">
+				<source>Here is where the value for the secondary rgba color can be set.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.color_tertiary.label">
 				<source>Color Value Tertiary</source>
 			</trans-unit>
