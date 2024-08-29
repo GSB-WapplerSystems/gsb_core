@@ -18,6 +18,7 @@
   * LICENSE file that was distributed with this source code.
   */
 
+use ITZBund\GsbCore\Configuration\PackageHelper;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -40,7 +41,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_
 if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_tertiary,color_quaternary';
+    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_secondary_rgba,color_tertiary,color_quaternary';
 }
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
@@ -49,7 +50,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'config' => [
         'type' => 'select',
         'renderType' => 'selectSingle',
-        'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
+        'itemsProcFunc' => PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
 
@@ -328,6 +329,15 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
     $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.label',
         'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary_rgba'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.description',
         'config' => [
             'type' => 'input',
             'size' => 25,
