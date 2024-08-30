@@ -10,7 +10,7 @@
 <f:variable name="videoRelation">{video.0}</f:variable>
 <f:variable name="videoCaption">{video_caption.0}</f:variable>
 
-<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/mp4'">
+<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/mp4' || {videoRelation.originalFile.properties.mime_type} == 'video/generic'">
     <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
         <f:if condition="{data.imageorient} == '0'">
             <f:if condition="{data.header}">

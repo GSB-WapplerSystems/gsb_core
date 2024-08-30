@@ -18,7 +18,7 @@
   * LICENSE file that was distributed with this source code.
   */
 
-namespace ITZBund\GsbCore\Resources\OnlineMedia\Helpers;
+namespace ITZBund\GsbCore\Resource\OnlineMedia\Helpers;
 
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\YouTubeHelper;

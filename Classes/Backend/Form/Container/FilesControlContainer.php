@@ -20,6 +20,11 @@
 
 namespace ITZBund\GsbCore\Backend\Form\Container;
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesControlContainer
 {
     /**
@@ -46,6 +51,25 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
             );
         }
 
+        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
+            $this->addVideoDescriptionField();
+        }
+
         return parent::render();
+    }
+
+    public function addVideoDescriptionField(): void
+    {
+        if (! str_ends_with($this->data['parameterArray']['itemFormElName'] ?? '', '[tx_video_video]')) {
+            return;
+        }
+
+        $config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
+        $lll = (GeneralUtility::makeInstance(LanguageServiceFactory::class))->createFromUserPreferences(
+            $GLOBALS['BE_USER']
+        );
+
+        $desc = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedVideoDomains';
+        $this->data['parameterArray']['fieldConf']['description'] = $lll->sL($desc) . ': ' . $config['allowedVideoDomains'];
     }
 }

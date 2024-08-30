@@ -4,20 +4,21 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-namespace ITZBund\GsbCore\Tests\Unit\Resources\OnlineMedia\Helpers;
+namespace ITZBund\GsbCore\Tests\Unit\Resource\OnlineMedia\Helpers;
 
+use Codeception\Attribute\Incomplete;
 use Codeception\Test\Unit;
-use ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper;
+use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\OverrideVimeoHelper;
+use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\Index\MetaDataRepository;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\VimeoHelper;
+use TYPO3\CMS\Core\Resource\ResourceStorage;
+use TYPO3\CMS\Core\Resource\StorageRepository;
 
 class OverrideVimeoHelperTest extends Unit
 {
-    /**
-    @var OverrideVimeoHelper
-     */
-    protected $overrideVimeoHelper;
+    protected OverrideVimeoHelper $overrideVimeoHelper;
 
     protected function _before()
     {
@@ -30,20 +31,17 @@ class OverrideVimeoHelperTest extends Unit
         unset($this->overrideVimeoHelper);
     }
 
+    #[Test]
+    #[Incomplete('Many external dependencies. This never worked')]
     public function getPreviewImageReturnsCorrectImageInOfflineMode()
     {
         // Set the offline mode to true
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] = true;
 
         // Create a mock StorageRepository and ResourceStorage
-        $storageRepository = $this->makeEmpty(StorageRepository::class);
         $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-        // Create a mock File object with a specific online media ID and Storage
-        $file = $this->make(File::class, [
-            'getProperty' => '123456',
-            'getStorage' => $resourceStorage,
-        ]);
+        $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
 
         // Call the method and retrieve the temporary file name
         $previewImage = $this->overrideVimeoHelper->getPreviewImage($file);
@@ -52,6 +50,8 @@ class OverrideVimeoHelperTest extends Unit
         self::assertMatchesRegularExpression('/^.*vimeo_[a-f0-9]{32}\.jpg$/', $previewImage);
     }
 
+    #[Test]
+    #[Incomplete('Many external dependencies. This never worked')]
     public function getPreviewImageReturnsParentResultInOnlineMode()
     {
         // Set the offline mode to false
@@ -61,11 +61,7 @@ class OverrideVimeoHelperTest extends Unit
         $storageRepository = $this->makeEmpty(StorageRepository::class);
         $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-        // Create a mock File object with a specific online media ID and Storage
-        $file = $this->make(File::class, [
-            'getProperty' => '123456',
-            'getStorage' => $resourceStorage,
-        ]);
+        $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
 
         // Call the method and retrieve the temporary file name
         $previewImage = $this->overrideVimeoHelper->getPreviewImage($file);

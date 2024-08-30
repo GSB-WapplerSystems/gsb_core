@@ -4,20 +4,21 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-namespace ITZBund\GsbCore\Tests\Unit\Resources\OnlineMedia\Helpers;
+namespace ITZBund\GsbCore\Tests\Unit\Resource\OnlineMedia\Helpers;
 
+use Codeception\Attribute\Incomplete;
 use Codeception\Test\Unit;
-use ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper;
+use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\OverrideYouTubeHelper;
+use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\Index\MetaDataRepository;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\YouTubeHelper;
+use TYPO3\CMS\Core\Resource\ResourceStorage;
+use TYPO3\CMS\Core\Resource\StorageRepository;
 
 class OverrideYouTubeHelperTest extends Unit
 {
-    /**
-    @var OverrideYouTubeHelper
-     */
-    protected $overrideYouTubeHelper;
+    protected OverrideYouTubeHelper $overrideYouTubeHelper;
 
     protected function _before()
     {
@@ -30,33 +31,31 @@ class OverrideYouTubeHelperTest extends Unit
         unset($this->overrideYouTubeHelper);
     }
 
+    #[Test]
+    #[Incomplete('Many external dependencies. This never worked')]
     public function getPreviewImageReturnsCorrectImageInOfflineMode()
     {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] = true;
 
         $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-        $file = $this->make(File::class, [
-            'getProperty' => '123456',
-            'getStorage' => $resourceStorage,
-        ]);
+        $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
 
         $previewImage = $this->overrideYouTubeHelper->getPreviewImage($file);
 
         self::assertMatchesRegularExpression('/^.*YouTube_[a-f0-9]{32}\.jpg$/', $previewImage);
     }
 
+    #[Test]
+    #[Incomplete('Many external dependencies. This never worked')]
     public function getPreviewImageReturnsParentResultInOnlineMode()
     {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] = false;
 
         $storageRepository = $this->makeEmpty(StorageRepository::class);
-        $resourceStorage = $this->makeEmpty(ResourceStorage::class, ['getUid' => 1]);
 
-        $file = $this->make(File::class, [
-            'getProperty' => '123456',
-            'getStorage' => $resourceStorage,
-        ]);
+        $resourceStorage = $this->makeEmpty(ResourceStorage::class);
+        $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
 
         $previewImage = $this->overrideYouTubeHelper->getPreviewImage($file);
 

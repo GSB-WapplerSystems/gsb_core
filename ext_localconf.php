@@ -24,8 +24,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
+use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
 use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -83,6 +87,23 @@ defined('TYPO3') or die('Access denied.');
     '));
     }
 
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
+        $extVideoFileExtension = 'externalvideo';
+
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
+
+        /** @var RendererRegistry $rendererRegistry */
+        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+        $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
+
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
+
+        /** @var IconRegistry $iconRegistry */
+        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+        $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
+    }
+
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
     // $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['gsb_frontend'] = 'EXT:gsb_frontend/Resources/Public/StyleSheets/ckeditor.css';
@@ -99,9 +120,9 @@ defined('TYPO3') or die('Access denied.');
 
     if ($GLOBALS['TYPO3_CONF_VARS']['SYS']['offlineMode'] ?? false) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['youtube'] =
-            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideYouTubeHelper::class;
+            \ITZBund\GsbCore\Resource\OnlineMedia\Helpers\OverrideYouTubeHelper::class;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['vimeo'] =
-            \ITZBund\GsbCore\Resources\OnlineMedia\Helpers\OverrideVimeoHelper::class;
+            \ITZBund\GsbCore\Resource\OnlineMedia\Helpers\OverrideVimeoHelper::class;
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
