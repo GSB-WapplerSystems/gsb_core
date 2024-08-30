@@ -206,14 +206,14 @@ parameters:
 			path: Classes/Log/Writer/JsonFileWriter.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideVimeoHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resource\\\\OnlineMedia\\\\Helpers\\\\OverrideVimeoHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/Resources/OnlineMedia/Helpers/OverrideVimeoHelper.php
+			path: Classes/Resource/OnlineMedia/Helpers/OverrideVimeoHelper.php
 
 		-
-			message: "#^Method ITZBund\\\\GsbCore\\\\Resources\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method ITZBund\\\\GsbCore\\\\Resource\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: Classes/Resources/OnlineMedia/Helpers/OverrideYouTubeHelper.php
+			path: Classes/Resource/OnlineMedia/Helpers/OverrideYouTubeHelper.php
 
 		-
 			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"

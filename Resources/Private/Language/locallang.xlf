@@ -312,6 +312,9 @@
 			<trans-unit id="button.readMore" resname="button.readMore">
 				<source>Read more</source>
 			</trans-unit>
+			<trans-unit id="config.allowedVideoDomains" resname="config.allowedVideoDomains">
+				<source>Allowed domains for external videos: e.g. *.*.bund.de, www.myvideohost.example, https://*.bund.de</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>
