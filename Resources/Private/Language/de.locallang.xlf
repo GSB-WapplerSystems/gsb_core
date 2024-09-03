@@ -420,8 +420,12 @@
 				<target>Mehr erfahren</target>
 			</trans-unit>
 			<trans-unit id="config.allowedVideoDomains" resname="config.allowedVideoDomains">
-				<source>Allowed domains for external videos: e.g. *.*.bund.de, www.myvideohost.example, https://*.bund.de</source>
-				<target>Erlaubte Domains zum Einbinden externer Videos: z.B. *.*.bund.de, www.myvideohost.example, https://*.bund.de</target>
+				<source>Allowed domains for external videos: e.g. *.bund.de, www.myvideohost.example, https://*.bund.de</source>
+				<target>Erlaubte Domains zum Einbinden externer Videos: z.B. *.bund.de, www.myvideohost.example, https://*.bund.de</target>
+			</trans-unit>
+			<trans-unit id="config.allowedVideoDomains.list" resname="config.allowedVideoDomains.list">
+				<source>Allowed domains for external videos:</source>
+				<target>Erlaubte Domains zum Einbinden externer Videos:</target>
 			</trans-unit>
 		</body>
 	</file>
