@@ -37,6 +37,8 @@ class GenericExternalVideoHelperTest extends Unit
 
     public function getAllowedDomains()
     {
+        yield 'Fails if domain array is null' => [ null, 'https://gsb.de/test/test.mp4', false];
+        yield 'Fails if domain array is empty' => [ [], 'https://gsb.de/test/test.mp4', false];
         yield 'Matches if simple domain' => [ ['gsb.de'], 'https://gsb.de/test/test.mp4', true];
         yield 'Fails if empty' => [ [], 'https://gsb.de/test/test.mp4', false];
         yield 'Matches if multiple domains' => [ ['gsb.de', 'gsb1.de'], 'https://gsb.de/test/test.mp4', true];
