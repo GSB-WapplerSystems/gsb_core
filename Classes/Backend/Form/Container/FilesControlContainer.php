@@ -54,7 +54,6 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
             $this->addVideoDescriptionField();
         }
 
-
         return parent::render();
     }
 
