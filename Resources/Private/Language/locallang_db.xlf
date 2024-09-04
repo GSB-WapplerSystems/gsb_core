@@ -1012,6 +1012,15 @@
 			<trans-unit id="tt_content.palettes.date_override_toggle.description" resname="tt_content.palettes.date_override_toggle.description">
 				<source>Activate this toggle to hide the configured date of the target page</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.label" resname="page.configuration.palette.localized-logos-and-copyright.label">
+				<source>Language overrides for logos and copyright text</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.description" resname="page.configuration.palette.localized-logos-and-copyright.description">
+				<source>
+					The following fields can be used to override the globally set logo and copyright info configured in the GSB tab.
+					Toggles are readonly fields and get their value assigned by the global configuration in the GSB tab.
+				</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

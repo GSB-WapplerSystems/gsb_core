@@ -1217,6 +1217,17 @@
 				<source>Activate this toggle to hide the configured date of the target page</source>
 				<target>Durch Aktivieren des Schalters wird das Datum der Zielseite ausgeblendet</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.label" resname="page.configuration.palette.localized-logos-and-copyright.label">
+				<source>Language overrides for logos and copyright text</source>
+				<target>Übersetzte Logos und Texte</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.description" resname="page.configuration.palette.localized-logos-and-copyright.description">
+				<source>The following fields can be used to override the globally set logo and copyright info configured in the GSB tab.</source>
+				<target>
+					Die folgenden Felder können genutzt werden um die global gepflegten Logos und den Copyright Text aus dem GSB Tab mit einer sprachspezifischen Version zu überschreiben.
+					Schalter sind nicht konfigurierbar und erhalten den Wert aus der allgemeinen Konfiguration im GSB Tab.
+				</target>
+			</trans-unit>
 
 		</body>
 	</file>
