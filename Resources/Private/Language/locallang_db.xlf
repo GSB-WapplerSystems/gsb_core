@@ -788,6 +788,17 @@
 			<trans-unit id="page.configuration.description.second-logo-link" resname="page.configuration.description.second-logo-link">
 				<source>Set/Change the optional link for the second logo.</source>
 			</trans-unit>
+
+			<trans-unit id="page.configuration.initiative-text-toggle.label" resname="page.configuration.initiative-text-toggle.label">
+            	<source>Initiative text overwrite</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.initiative-text-toggle" resname="page.configuration.description.initiative-text-toggle">
+				<source><![CDATA[Overwrite the label for the second logo which defaults to: "An initiative by"]]></source>
+			</trans-unit>
+			<trans-unit id="page.configuration.initiative-text.label" resname="page.configuration.initiative-text.label">
+				<source>Initiative text next to second logo</source>
+			</trans-unit>
+
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>Favicons can be configured here.</source>
 			</trans-unit>
