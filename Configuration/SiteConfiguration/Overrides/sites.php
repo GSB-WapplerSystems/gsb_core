@@ -362,3 +362,33 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
         ],
     ];
 }
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
+    $localizableKeys = [
+        'logo-complete-toggle',
+        'second-logo-complete-toggle',
+        'logo-complete-big',
+        'logo-complete-small',
+        'second-logo',
+        'second-logo-alt',
+        'second-logo-link',
+        'logo-text',
+        'copyright',
+    ];
+
+    foreach ($localizableKeys as $localizableKey) {
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey] = $GLOBALS['SiteConfiguration']['site']['columns'][$localizableKey];
+
+        if (str_contains($localizableKey, 'toggle')) {
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['readOnly'] = true;
+        }
+    }
+
+    $GLOBALS['SiteConfiguration']['site_language']['palettes']['localized-logos-and-copyright'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.description',
+        'showitem' => implode(',', $localizableKeys),
+    ];
+
+    $GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
+}

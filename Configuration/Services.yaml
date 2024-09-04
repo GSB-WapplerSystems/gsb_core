@@ -61,6 +61,13 @@ services:
       - name: event.listener
         identifier: 'gsb_core/extends-site-configuration'
 
+  ITZBund\GsbCore\EventListener\SynchronizeLocalizedSiteSettings:
+    public: true
+    tags:
+      - name: event.listener
+        identifier: 'gsb_core/synchronize-localized-site-settings'
+
+
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'
     public: true
