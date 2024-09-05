@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 namespace ITZBund\GsbCore\Tests\Unit\Utility;
 
 use Codeception\Attribute\DataProvider;
@@ -173,6 +177,99 @@ class ExtendedSiteUtilityTest extends Unit
                     [
                         'languageId' => 2,
                         'toggle_key_to_overwrite' => 'overridden value',
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    #[Test]
+    #[DataProvider('nullableFieldsControlData')]
+    public function excludeNullableFieldsRemovesValuesThatShouldGetTheFallbackValue($config, $control, $expectedResult): void
+    {
+        $result = ExtendSiteUtility::removeSelectedNullableFields($config, $control);
+
+        self::assertEquals($expectedResult, $result);
+    }
+
+    public function nullableFieldsControlData(): \Generator
+    {
+        yield 'nullable fields doesnt change the array if control data array is empty' => [
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'some_default_key' => '',
+                    ],
+                ],
+            ],
+            [],
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'some_default_key' => '',
+                    ],
+                ],
+            ],
+        ];
+        yield 'nullable fields removes field if control data array has field set with value 0' => [
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'some_default_key' => '',
+                    ],
+                ],
+            ],
+            [
+                'site_language' => [
+                    0 => [
+                        'some_default_key' => 0,
+                    ],
+                ],
+            ],
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                    ],
+                ],
+            ],
+        ];
+        yield 'nullable fields does not remove field if control data array has field set with value 1' => [
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'some_default_key' => '',
+                    ],
+                ],
+            ],
+            [
+                'site_language' => [
+                    0 => [
+                        'some_default_key' => 1,
+                    ],
+                ],
+            ],
+            [
+                'some_key' => 'some value',
+                'some_default_key' => 'some default value',
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'some_default_key' => '',
                     ],
                 ],
             ],

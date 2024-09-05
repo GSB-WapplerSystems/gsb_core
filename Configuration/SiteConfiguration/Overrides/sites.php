@@ -8,7 +8,7 @@
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
   * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Ole Hartwig, Christian Rath-Ulrich
+  * BMI/ITZBund. Author: Ole Hartwig, Christian Rath-Ulrich, Willi Wehmeier
   *
   * It is free software; you can redistribute it and/or modify it under
   * the terms of the GNU General Public License, either version 3
@@ -372,15 +372,50 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
         'second-logo',
         'second-logo-alt',
         'second-logo-link',
+        'initiative-text-toggle',
+        'initiative-text',
         'logo-text',
         'copyright',
     ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text-toggle.label',
+        'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.initiative-text-toggle',
+        'onChange' => 'reload',
+        'config' => [
+            'renderType' => 'checkboxToggle',
+            'type' => 'check',
+            'default' => 0,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text.label',
+        'displayCond' => [
+            'AND' => [
+                'FIELD:second-logo-complete-toggle:REQ:true',
+                'FIELD:initiative-text-toggle:REQ:true',
+            ],
+        ],
+        'config' => [
+            'type' => 'text',
+            'renderType' => 'input',
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', initiative-text-toggle, initiative-text';
 
     foreach ($localizableKeys as $localizableKey) {
         $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey] = $GLOBALS['SiteConfiguration']['site']['columns'][$localizableKey];
 
         if (str_contains($localizableKey, 'toggle')) {
             $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['readOnly'] = true;
+        } else {
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['mode'] = 'useOrOverridePlaceholder';
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['eval'] = 'null';
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['default'] = null;
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['nullable'] = true;
         }
     }
 

@@ -16,7 +16,7 @@
     <div id="metaNavigationSection" class="visually-hidden" role="heading" aria-level="1">{f:translate(key: 'meta.HeaderSection', extensionName: 'gsb_core')}</div>
     <div class="header-wrapper-bg d-flex flex-wrap">
         <f:if condition="{site.configuration.second-logo-complete-toggle}">
-            <f:render section="header-second-logo" arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt}" />
+            <f:render section="header-second-logo" arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}" />
         </f:if>
         <div class="container-md">
             <div class="row">
@@ -88,7 +88,20 @@
         <div class="row">
             <div class="col-12">
                 <div class="logo-additional-border d-flex">
-                    <div class="logo-initiative" role="heading" aria-level="2">{f:translate(key: 'meta.HeaderInitiative', extensionName: 'gsb_core')}</div>
+
+                    <f:if condition="{site.configuration.initiative-text-toggle}">
+                        <f:then>
+                            <f:if condition="{site.configuration.initiative-text}">
+                                <div class="logo-initiative" role="heading" aria-level="2">{site.configuration.initiative-text}</div>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <div class="logo-initiative" role="heading" aria-level="2">
+                                {f:translate(key: 'meta.HeaderInitiative', extensionName: 'gsb_core')}
+                            </div>
+                        </f:else>
+                    </f:if>
+
                     <f:if condition="{link} && {logo}">
                         <f:then>
                             <a href="{link}" class="d-inline-block">
