@@ -6,26 +6,26 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers\Format\Json;
 
-use ITZBund\GsbCore\Tests\Unit\ViewHelpers\AbstractViewHelperTestCase;
 use ITZBund\GsbCore\ViewHelpers\Format\Json\DecodeViewHelper;
+use PHPUnit\Framework\Attributes\Test;
+use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class DecodeViewHelperTest extends AbstractViewHelperTestCase
+class DecodeViewHelperTest extends UnitTestCase
 {
-    /**
-     * @test
-     */
-    public function returnsNullForEmptyArguments()
+    #[Test]
+    public function viewHelperReturnsNullForEmptyArguments()
     {
-        $result = DecodeViewHelper::renderStatic([''], function () {}, $this->renderingContext);
+        $renderingContext = $this->getRenderingContextMock();
+
+        $result = DecodeViewHelper::renderStatic([''], function () {}, $renderingContext);
         self::assertEquals('', $result);
-        $result = DecodeViewHelper::renderStatic(['json' => ''], function () {}, $this->renderingContext);
+        $result = DecodeViewHelper::renderStatic(['json' => ''], function () {}, $renderingContext);
         self::assertEquals('', $result);
     }
 
-    /**
-     * @test
-     */
-    public function testReturnsExpectedValueForProvidedArguments()
+    #[Test]
+    public function viewHelperReturnsExpectedValueForProvidedArguments()
     {
         $fixture = '{"foo":"bar","bar":true,"baz":1,"foobar":null}';
 
@@ -35,19 +35,27 @@ class DecodeViewHelperTest extends AbstractViewHelperTestCase
             'baz' => 1,
             'foobar' => null,
         ];
+        $renderingContext = $this->getRenderingContextMock();
 
-        $result = $this->executeViewHelper(['json' => $fixture]);
+        $result = DecodeViewHelper::renderStatic(['json' => $fixture], function () {}, $renderingContext);
         self::assertEquals($expected, $result);
     }
 
-    //adds in real error
-    /**
-     * @test
-     */
-    public function testThrowsExceptionForInvalidArgument()
+    #[Test]
+    public function viewHelperThrowsExceptionForInvalidArgument()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionCode(1358440054);
+
         $invalidJson = "{'foo': 'bar'}";
-        $this->expectViewHelperException();
-        $this->executeViewHelper(['json' => $invalidJson]);
+
+        $renderingContext = $this->getRenderingContextMock();
+
+        DecodeViewHelper::renderStatic(['json' => $invalidJson], function () {}, $renderingContext);
+    }
+
+    public function getRenderingContextMock(): RenderingContext
+    {
+        return $this->getMockBuilder(RenderingContext::class)->disableOriginalConstructor()->getMock();
     }
 }

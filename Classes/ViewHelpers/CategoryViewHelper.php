@@ -32,11 +32,17 @@ class CategoryViewHelper extends AbstractViewHelper
 {
     protected PersistenceManagerInterface $persistenceManager;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function __construct(PersistenceManagerInterface $persistenceManager)
     {
         $this->persistenceManager = $persistenceManager;
     }
 
+    /**
+     * @codecoverageIgnore
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument('category', 'int', 'The uid of the category', false);

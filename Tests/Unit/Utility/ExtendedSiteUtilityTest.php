@@ -6,12 +6,12 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Utility;
 
-use Codeception\Attribute\DataProvider;
-use Codeception\Test\Unit;
 use ITZBund\GsbCore\Utility\ExtendSiteUtility;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class ExtendedSiteUtilityTest extends Unit
+class ExtendedSiteUtilityTest extends UnitTestCase
 {
     #[Test]
     #[DataProvider('getTestConfigurations')]
@@ -22,7 +22,7 @@ class ExtendedSiteUtilityTest extends Unit
         self::assertEquals($result, $localizedConfig);
     }
 
-    public function getTestConfigurations(): \Generator
+    public static function getTestConfigurations(): \Generator
     {
         yield 'Does not overwrite if language does not match' => [
             [
@@ -100,7 +100,7 @@ class ExtendedSiteUtilityTest extends Unit
         self::assertEquals($expectedResult, $actualResult);
     }
 
-    public function arraysContainingKeysWithToggle(): \Generator
+    public static function arraysContainingKeysWithToggle(): \Generator
     {
         yield 'Returns empty array when no key contains "toggle"' => [
             [
@@ -131,7 +131,7 @@ class ExtendedSiteUtilityTest extends Unit
         self::assertEquals($expectedResult, $result);
     }
 
-    public function configurationWithToggleKeysToCopy(): \Generator
+    public static function configurationWithToggleKeysToCopy(): \Generator
     {
         yield 'Copies toggle key to languages' => [
             [
@@ -192,7 +192,7 @@ class ExtendedSiteUtilityTest extends Unit
         self::assertEquals($expectedResult, $result);
     }
 
-    public function nullableFieldsControlData(): \Generator
+    public static function nullableFieldsControlData(): \Generator
     {
         yield 'nullable fields doesnt change the array if control data array is empty' => [
             [

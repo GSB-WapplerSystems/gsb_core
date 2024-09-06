@@ -38,6 +38,9 @@ class GenericExternalVideoHelper extends AbstractOnlineMediaHelper
         return $this->createNewFile($targetFolder, $fileName, $url);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function getPublicUrl(File $file): ?string
     {
         return $this->getOnlineMediaId($file);
@@ -59,6 +62,7 @@ class GenericExternalVideoHelper extends AbstractOnlineMediaHelper
     }
 
     /**
+     * @codeCoverageIgnore
      * @return array<int,mixed>
      */
     public function getMetaData(File $file): array

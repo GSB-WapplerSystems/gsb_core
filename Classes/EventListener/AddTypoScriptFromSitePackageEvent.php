@@ -25,7 +25,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\EventListener;
 
 use ITZBund\GsbCore\Configuration\PackageHelper;
-use ITZBund\GsbCore\Tests\Unit\EventListener\MockAfterTemplatesHaveBeenDeterminedEvent;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\TypoScript\IncludeTree\Event\AfterTemplatesHaveBeenDeterminedEvent;
 
@@ -147,13 +146,13 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
+     * @param AfterTemplatesHaveBeenDeterminedEvent $event
      * @param array<string> $sysTemplateRows
      * @param array<string,int> $fakeRow
      * @param Site $site
      * @return array<int<0,max>,mixed>
      */
-    public function getSysTemplateRows(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event, array $sysTemplateRows, array $fakeRow, Site $site): array
+    public function getSysTemplateRows(AfterTemplatesHaveBeenDeterminedEvent $event, array $sysTemplateRows, array $fakeRow, Site $site): array
     {
         $newSysTemplateRows = [];
         $pidsBeforeSite = array_unique(array_merge([0], array_column(array_reverse($event->getRootline()), 'uid')));
@@ -202,10 +201,10 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event
+     * @param AfterTemplatesHaveBeenDeterminedEvent $event
      * @return bool
      */
-    public function addTypoScriptFromSitePackage(AfterTemplatesHaveBeenDeterminedEvent|MockAfterTemplatesHaveBeenDeterminedEvent $event): bool
+    public function addTypoScriptFromSitePackage(AfterTemplatesHaveBeenDeterminedEvent $event): bool
     {
         $site = $event->getSite();
 

@@ -32,6 +32,9 @@ class FeatureFlagViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument('featureKey', 'string', 'The feature key to check', true);

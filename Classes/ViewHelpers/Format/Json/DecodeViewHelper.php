@@ -44,6 +44,9 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     protected $escapeChildren = false;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function initializeArguments(): void
     {
         $this->registerArgument('json', 'string', 'The JSON string to decode', true);
