@@ -8,6 +8,9 @@ namespace ITZBund\GsbCore\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Category extends AbstractEntity
 {
     /** @var string */

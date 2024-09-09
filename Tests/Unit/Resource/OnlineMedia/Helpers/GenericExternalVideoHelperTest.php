@@ -6,36 +6,38 @@
 
 namespace ITZBund\GsbCore\Tests\Unit\Resource\OnlineMedia\Helpers;
 
-use Codeception\Attribute\DataProvider;
-use Codeception\Test\Unit;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\ResourceStorage;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class GenericExternalVideoHelperTest extends Unit
+class GenericExternalVideoHelperTest extends UnitTestCase
 {
     protected GenericExternalVideoHelper $genericExternalVideoHelper;
 
-    protected function _before()
+    protected function setUp(): void
     {
+        parent::setUp();
         $this->genericExternalVideoHelper = new GenericExternalVideoHelper('externalvideo');
     }
 
-    protected function _after()
+    protected function tearDown(): void
     {
-        unset($this->OverrideVimeoHelper);
+        parent::tearDown();
+        unset($this->genericExternalVideoHelper);
     }
 
     #[Test]
     public function getMetaDataReturnsEmptyArray()
     {
-        $resourceStorage = $this->makeEmpty(ResourceStorage::class);
+        $resourceStorage = $this->getMockBuilder(ResourceStorage::class)->disableOriginalConstructor()->getMock();
         $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
         self::assertEquals([], $this->genericExternalVideoHelper->getMetaData($file));
     }
 
-    public function getAllowedDomains()
+    public static function getAllowedDomains()
     {
         yield 'Fails if domain array is null' => [ null, 'https://gsb.de/test/test.mp4', false];
         yield 'Fails if domain array is empty' => [ [], 'https://gsb.de/test/test.mp4', false];
@@ -51,8 +53,8 @@ class GenericExternalVideoHelperTest extends Unit
         yield 'Does not work as regex' => [ ['*sb.de'], 'https://media.media.gsb.de/test/test.mp4', false];
     }
 
-    #[DataProvider('getAllowedDomains')]
     #[Test]
+    #[DataProvider('getAllowedDomains')]
     public function matchesAllowedDomainsMatches($conf, $url, $expected)
     {
         $reflectionClass = new \ReflectionClass($this->genericExternalVideoHelper);

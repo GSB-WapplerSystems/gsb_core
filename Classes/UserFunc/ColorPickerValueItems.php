@@ -65,6 +65,9 @@ class ColorPickerValueItems
         $config['items'] = $items;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function getLanguageService(): LanguageService
     {
         return $GLOBALS['LANG'];
