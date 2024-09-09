@@ -438,7 +438,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             }
         }
 
-        $encodedSessions = $this->redis->mGet($keys);
+        $encodedSessions = $this->redis->mget($keys);
         if (!is_array($encodedSessions)) {
             return [];
         }
