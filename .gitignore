@@ -1,5 +1,7 @@
 .composer
 composer.lock
+coverage.cobertura.xml
+Tests/.phpunit.cache
 .DS_Store
 /ManualBuild/node_modules/
 /auth.json

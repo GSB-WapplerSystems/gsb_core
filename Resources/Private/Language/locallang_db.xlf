@@ -788,6 +788,17 @@
 			<trans-unit id="page.configuration.description.second-logo-link" resname="page.configuration.description.second-logo-link">
 				<source>Set/Change the optional link for the second logo.</source>
 			</trans-unit>
+
+			<trans-unit id="page.configuration.initiative-text-toggle.label" resname="page.configuration.initiative-text-toggle.label">
+            	<source>Initiative text overwrite</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.description.initiative-text-toggle" resname="page.configuration.description.initiative-text-toggle">
+				<source><![CDATA[Overwrite the label for the second logo which defaults to: "An initiative by"]]></source>
+			</trans-unit>
+			<trans-unit id="page.configuration.initiative-text.label" resname="page.configuration.initiative-text.label">
+				<source>Initiative text next to second logo</source>
+			</trans-unit>
+
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>Favicons can be configured here.</source>
 			</trans-unit>
@@ -982,6 +993,12 @@
 			<trans-unit id="page.configuration.color_secondary.description">
 				<source>Here is where the value for the secondary color can be set.</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary_rgba.label">
+				<source>Color Value Secondary RGBA</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.color_secondary_rgba.description">
+				<source>Here is where the value for the secondary rgba color can be set.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.color_tertiary.label">
 				<source>Color Value Tertiary</source>
 			</trans-unit>
@@ -1005,6 +1022,15 @@
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.date_override_toggle.description" resname="tt_content.palettes.date_override_toggle.description">
 				<source>Activate this toggle to hide the configured date of the target page</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.label" resname="page.configuration.palette.localized-logos-and-copyright.label">
+				<source>Language overrides for logos and copyright text</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.palette.localized-logos-and-copyright.description" resname="page.configuration.palette.localized-logos-and-copyright.description">
+				<source>
+					The following fields can be used to override the globally set logo and copyright info configured in the GSB tab.
+					Toggles are readonly fields and get their value assigned by the global configuration in the GSB tab.
+				</source>
 			</trans-unit>
 		</body>
 	</file>

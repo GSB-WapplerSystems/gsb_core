@@ -32,7 +32,7 @@ defined('TYPO3') || die();
                 'config' =>
                     [
                         'type' => 'file',
-                        'allowed' => 'mp4,webm,ogg,youtube,vimeo',
+                        'allowed' => 'mp4,webm,ogg,youtube,vimeo,externalvideo',
                         'maxitems' => 1,
                         'minitems' => 0,
                         'overrideChildTca' => [
@@ -62,6 +62,7 @@ defined('TYPO3') || die();
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
             ],
     ];
+
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
 
     $videoPalettes = [

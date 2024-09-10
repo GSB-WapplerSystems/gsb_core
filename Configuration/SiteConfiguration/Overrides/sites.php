@@ -8,7 +8,7 @@
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
   * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Ole Hartwig, Christian Rath-Ulrich
+  * BMI/ITZBund. Author: Ole Hartwig, Christian Rath-Ulrich, Willi Wehmeier
   *
   * It is free software; you can redistribute it and/or modify it under
   * the terms of the GNU General Public License, either version 3
@@ -18,6 +18,7 @@
   * LICENSE file that was distributed with this source code.
   */
 
+use ITZBund\GsbCore\Configuration\PackageHelper;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -40,7 +41,7 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_
 if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
     $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_tertiary,color_quaternary';
+    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_secondary_rgba,color_tertiary,color_quaternary';
 }
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
@@ -49,7 +50,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'config' => [
         'type' => 'select',
         'renderType' => 'selectSingle',
-        'itemsProcFunc' => \ITZBund\GsbCore\Configuration\PackageHelper::class . '->getSiteListForSiteModule',
+        'itemsProcFunc' => PackageHelper::class . '->getSiteListForSiteModule',
     ],
 ];
 
@@ -334,6 +335,15 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
         ],
     ];
 
+    $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary_rgba'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 25,
+        ],
+    ];
+
     $GLOBALS['SiteConfiguration']['site']['columns']['color_tertiary'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.label',
         'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.description',
@@ -351,4 +361,69 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
             'size' => 25,
         ],
     ];
+}
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
+    $localizableKeys = [
+        'logo-complete-toggle',
+        'second-logo-complete-toggle',
+        'logo-complete-big',
+        'logo-complete-small',
+        'second-logo',
+        'second-logo-alt',
+        'second-logo-link',
+        'initiative-text-toggle',
+        'initiative-text',
+        'logo-text',
+        'copyright',
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text-toggle.label',
+        'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.initiative-text-toggle',
+        'onChange' => 'reload',
+        'config' => [
+            'renderType' => 'checkboxToggle',
+            'type' => 'check',
+            'default' => 0,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text.label',
+        'displayCond' => [
+            'AND' => [
+                'FIELD:second-logo-complete-toggle:REQ:true',
+                'FIELD:initiative-text-toggle:REQ:true',
+            ],
+        ],
+        'config' => [
+            'type' => 'text',
+            'renderType' => 'input',
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', initiative-text-toggle, initiative-text';
+
+    foreach ($localizableKeys as $localizableKey) {
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey] = $GLOBALS['SiteConfiguration']['site']['columns'][$localizableKey];
+
+        if (str_contains($localizableKey, 'toggle')) {
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['readOnly'] = true;
+        } else {
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['mode'] = 'useOrOverridePlaceholder';
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['eval'] = 'null';
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['default'] = null;
+            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['nullable'] = true;
+        }
+    }
+
+    $GLOBALS['SiteConfiguration']['site_language']['palettes']['localized-logos-and-copyright'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.description',
+        'showitem' => implode(',', $localizableKeys),
+    ];
+
+    $GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
 }
