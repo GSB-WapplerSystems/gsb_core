@@ -12,5 +12,11 @@ return [
                 'typo3/cms-frontend/site',
             ],
         ],
+        'itzbund/gsb-version' => [
+            'target' => \ITZBund\GsbCore\Middleware\VersionEndpoint::class,
+            'before' => [
+                'typo3/cms-frontend/site',
+            ],
+        ],
     ],
 ];
