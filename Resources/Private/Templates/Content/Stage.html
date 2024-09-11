@@ -38,7 +38,7 @@
                         </f:if>
                         <f:if condition="{data.bodytext}">
                             <div class="ce-bodytext">
-                                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                                <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:format.crop append="..." maxCharacters="200" respectHtml="true" respectWordBoundaries="true">{data.bodytext}</f:format.crop></f:format.html>
                             </div>
                         </f:if>
                         <f:if condition="{data.tx_link} && {data.tx_link_text} && {data.tx_header_inside} == '1'">
