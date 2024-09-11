@@ -22,6 +22,7 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Middleware;
 
+use ITZBund\GsbCore\Utility\EnvironmentVersionsUtility;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -30,30 +31,32 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class VersionEndpoint implements MiddlewareInterface
 {
-    public function __construct(private readonly ResponseFactoryInterface $responseFactory) {}
+    public const ENDPOINT_PATH = '/api/version';
+
+    public function __construct(
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly EnvironmentVersionsUtility $versionsUtility,
+    ) {}
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if ($request->getUri()->getPath() !== '/api/version' || $request->getMethod() !== 'GET') {
+        if ($request->getUri()->getPath() !== self::ENDPOINT_PATH || $request->getMethod() !== 'GET') {
             return $handler->handle($request);
         }
 
-        $response = $this->responseFactory->createResponse()
-            ->withHeader('Content-Type', 'text/plain; charset=utf-8');
+        $response = $this->responseFactory->createResponse(200)
+            ->withHeader('Content-Type', 'application/json; charset=utf-8');
 
-        $response->getBody()->write($this->getGsbVersion());
-
-        return $response;
-    }
-
-    protected function getGsbVersion(): string
-    {
-        $gsbFromEnv = getenv('GSB_VERSION');
-
-        if ($gsbFromEnv === false) {
-            return '11';
+        try {
+            $body = json_encode($this->versionsUtility->getVersions(), JSON_THROW_ON_ERROR);
+        } catch (\Exception $e) {
+            $body = null;
         }
 
-        return (string)$gsbFromEnv;
+        if ($body !== null) {
+            $response->getBody()->write($body);
+        }
+
+        return $response;
     }
 }
