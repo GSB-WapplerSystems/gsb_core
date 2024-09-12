@@ -22,7 +22,6 @@
 
 plugin.tx_seo {
   config {
-    xslFile = EXT:gsb_core/Resources/Public/Seo/Sitemap.xsl
 
     xmlSitemap {
       sitemaps {
@@ -37,3 +36,6 @@ plugin.tx_seo {
     }
   }
 }
+
+# Sitemap template without XSL, as that breaks with CSPs
+plugin.tx_seo.view.templateRootPaths.20 = EXT:gsb_core/Resources/Extensions/seo/Templates/XmlSitemap
