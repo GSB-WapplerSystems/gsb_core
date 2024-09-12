@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><!-- TEST -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <f:for each="{sitemaps}" as="sitemap">
         <sitemap>
             <f:spaceless>
