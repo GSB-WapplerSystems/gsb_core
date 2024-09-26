@@ -6,4 +6,4 @@ stages:
   - release
 
 include:
-  - component: ${CI_SERVER_HOST}/gsb11/gitlab-ci-cd-components/gsb-extensions/build@1.0.82
+  - component: ${CI_SERVER_HOST}/gsb11/gitlab-ci-cd-components/gsb-extensions/build@1.0.83
