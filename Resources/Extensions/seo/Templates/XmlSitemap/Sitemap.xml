@@ -4,7 +4,7 @@
     <f:for each="{items}" as="item">
         <f:if condition="{item.loc}">
             <url>
-                <loc>{item.loc}</loc>
+                <loc><f:format.raw>{item.loc}</f:format.raw></loc>
                 <lastmod>{item.lastMod -> f:format.date(format: 'c')}</lastmod>
                 <f:if condition="{item.changefreq}">
                     <changefreq>{item.changefreq}</changefreq>
