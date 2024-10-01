@@ -27,9 +27,9 @@ use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 
 class ExtendSiteUtility
 {
-    public static function extendSiteWithLocalizationOverload(Site $site, SiteLanguage $language): Site
+    public function extendSiteWithLocalizationOverload(Site $site, SiteLanguage $language): Site
     {
-        $localizedConfig = static::overloadWithLocalizedConfig($site->getConfiguration(), $language->getLanguageId());
+        $localizedConfig = $this->overloadWithLocalizedConfig($site->getConfiguration(), $language->getLanguageId());
 
         return new Site($site->getIdentifier(), $site->getRootPageId(), $localizedConfig, $site->getSettings());
     }
@@ -38,7 +38,7 @@ class ExtendSiteUtility
      * @param array<string,mixed> $config
      * @return array<string,mixed>
      */
-    public static function overloadWithLocalizedConfig(array $config, int $languageId): array
+    public function overloadWithLocalizedConfig(array $config, int $languageId): array
     {
         $languages = $config['languages'] ?? [];
 
@@ -67,9 +67,9 @@ class ExtendSiteUtility
      * @param array<string,mixed> $config
      * @return array<string,mixed>
      */
-    public static function copyToggleFieldsToLanguageConfigs(array $config): array
+    public function copyToggleFieldsToLanguageConfigs(array $config): array
     {
-        $toggleFields = self::getLocalizationToggleFields($config);
+        $toggleFields = $this->getLocalizationToggleFields($config);
 
         foreach ($config['languages'] as &$languageConfig) {
             foreach ($toggleFields as $toggleFieldKey) {
@@ -84,7 +84,7 @@ class ExtendSiteUtility
      * @param array<string,mixed> $config
      * @return string[]
      */
-    public static function getLocalizationToggleFields(array $config): array
+    public function getLocalizationToggleFields(array $config): array
     {
         return array_values(array_filter(
             array_keys($config),
@@ -99,7 +99,7 @@ class ExtendSiteUtility
      * @param array<string,mixed> $controlFields
      * @return array<string,mixed>
      */
-    public static function removeSelectedNullableFields(array $settings, array $controlFields): array
+    public function removeSelectedNullableFields(array $settings, array $controlFields): array
     {
         foreach ($settings['languages'] as $key => &$language) {
             $languageControls = $controlFields['site_language'][$key] ?? [];

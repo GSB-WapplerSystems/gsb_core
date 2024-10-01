@@ -1,5 +1,9 @@
 <?php
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Middleware;
@@ -16,6 +20,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class SiteExtender implements MiddlewareInterface
 {
+    public function __construct(private readonly ExtendSiteUtility $extendSiteUtility) {}
+
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if (! GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
@@ -25,7 +31,7 @@ class SiteExtender implements MiddlewareInterface
         if ($request->getAttribute('site') instanceof Site && $request->getAttribute('language') instanceof SiteLanguage) {
             $request = $request->withAttribute(
                 'site',
-                ExtendSiteUtility::extendSiteWithLocalizationOverload($request->getAttribute('site'), $request->getAttribute('language'))
+                $this->extendSiteUtility->extendSiteWithLocalizationOverload($request->getAttribute('site'), $request->getAttribute('language'))
             );
         }
 

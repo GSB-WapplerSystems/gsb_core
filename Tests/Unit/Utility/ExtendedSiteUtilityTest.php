@@ -17,7 +17,7 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     #[DataProvider('getTestConfigurations')]
     public function overloadWithLocalizedConfigOverloadsExistingKeysForGivenLanguage($config, $language, $result)
     {
-        $localizedConfig = ExtendSiteUtility::overloadWithLocalizedConfig($config, $language);
+        $localizedConfig = (new ExtendSiteUtility())->overloadWithLocalizedConfig($config, $language);
 
         self::assertEquals($result, $localizedConfig);
     }
@@ -95,7 +95,7 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     #[DataProvider('arraysContainingKeysWithToggle')]
     public function getLocalizationToggleFieldsReturnsKeysContainingToggle($config, $expectedResult): void
     {
-        $actualResult = ExtendSiteUtility::getLocalizationToggleFields($config);
+        $actualResult = (new ExtendSiteUtility())->getLocalizationToggleFields($config);
 
         self::assertEquals($expectedResult, $actualResult);
     }
@@ -126,7 +126,7 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     #[DataProvider('configurationWithToggleKeysToCopy')]
     public function copyToggleFieldsToLanguageConfigsCopiesFields($config, $expectedResult): void
     {
-        $result = ExtendSiteUtility::copyToggleFieldsToLanguageConfigs($config);
+        $result = (new ExtendSiteUtility())->copyToggleFieldsToLanguageConfigs($config);
 
         self::assertEquals($expectedResult, $result);
     }
@@ -187,7 +187,7 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     #[DataProvider('nullableFieldsControlData')]
     public function excludeNullableFieldsRemovesValuesThatShouldGetTheFallbackValue($config, $control, $expectedResult): void
     {
-        $result = ExtendSiteUtility::removeSelectedNullableFields($config, $control);
+        $result = (new ExtendSiteUtility())->removeSelectedNullableFields($config, $control);
 
         self::assertEquals($expectedResult, $result);
     }

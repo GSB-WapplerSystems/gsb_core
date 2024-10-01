@@ -25,6 +25,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\Typolink\LinkFactory;
+use TYPO3\CMS\Frontend\Typolink\UnableToLinkException;
 
 class TargetPageDateProcessor implements DataProcessorInterface
 {
@@ -71,7 +72,11 @@ class TargetPageDateProcessor implements DataProcessorInterface
      */
     private function getPageFromTypolink(ContentObjectRenderer $cObj, string $typolink): ?array
     {
-        $linkConfiguration = $this->linkFactory->create('', ['parameter' => $typolink], $cObj);
+        try {
+            $linkConfiguration = $this->linkFactory->create('', ['parameter' => $typolink], $cObj);
+        } catch (UnableToLinkException $uTLe) {
+            return null;
+        }
 
         if ($linkConfiguration->getType() !== 'page') {
             return null;

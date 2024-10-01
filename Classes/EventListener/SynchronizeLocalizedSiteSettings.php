@@ -30,6 +30,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class SynchronizeLocalizedSiteSettings
 {
+    public function __construct(private readonly ExtendSiteUtility $extendSiteUtility) {}
+
     public function __invoke(SiteConfigurationBeforeWriteEvent $event): void
     {
         if (! GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
@@ -40,8 +42,8 @@ final class SynchronizeLocalizedSiteSettings
         $requestBody = is_array($this->getRequest()->getParsedBody()) ? $this->getRequest()->getParsedBody() : [];
         $controlFields = $requestBody['control']['active'] ?? [];
 
-        $settings = ExtendSiteUtility::removeSelectedNullableFields($settings, $controlFields);
-        $updatedSettings = ExtendSiteUtility::copyToggleFieldsToLanguageConfigs($settings);
+        $settings = $this->extendSiteUtility->removeSelectedNullableFields($settings, $controlFields);
+        $updatedSettings = $this->extendSiteUtility->copyToggleFieldsToLanguageConfigs($settings);
 
         $event->setConfiguration($updatedSettings);
     }
