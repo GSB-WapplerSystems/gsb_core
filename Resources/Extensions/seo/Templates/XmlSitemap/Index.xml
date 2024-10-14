@@ -5,8 +5,8 @@
         <sitemap>
             <f:spaceless>
                 <f:if condition="{sitemap.page}">
-                    <f:then><loc><f:format.raw><f:uri.typolink parameter="t3://page?uid=current" additionalParams="&type={type}&sitemap={sitemap.key}&page={sitemap.page}" absolute="true" /></f:format.raw></loc></f:then>
-                    <f:else><loc><f:format.raw><f:uri.typolink parameter="t3://page?uid=current" additionalParams="&type={type}&sitemap={sitemap.key}" absolute="true" /></f:format.raw></loc></f:else>
+                    <f:then><loc><f:uri.typolink parameter="t3://page?uid=current" additionalParams="&type={type}&sitemap={sitemap.key}&page={sitemap.page}" absolute="true" /></loc></f:then>
+                    <f:else><loc><f:uri.typolink parameter="t3://page?uid=current" additionalParams="&type={type}&sitemap={sitemap.key}" absolute="true" /></loc></f:else>
                 </f:if>
             </f:spaceless>
             <lastmod>{sitemap.lastMod -> f:format.date(format: 'c')}</lastmod>
