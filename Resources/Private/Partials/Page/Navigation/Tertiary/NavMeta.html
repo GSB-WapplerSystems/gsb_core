@@ -1,0 +1,37 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
+
+  <div class="col meta-desktop d-none d-lg-block">
+    <div class="meta-wrapper d-flex justify-content-end align-items-center">
+      <nav aria-labelledby="MetaNavigation" class="d-flex">
+        <h2 class="visually-hidden" id="MetaNavigation">{f:translate(key: 'meta.navigation', extensionName: 'gsb_core')}</h2>
+          <f:render arguments="{_all}" partial="Navigation/NavLang"/>
+        <ul class="metanav nav">
+          <f:for as="mainItem" each="{metaNavTop}" iteration="i">
+            <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
+              <f:if condition="{mainItem.current}">
+                <f:then>
+                  <strong class="nav-link{f:if(condition:mainItem.hasSubpages, then:' sub')}">
+                    {mainItem.title}
+                  </strong>
+                </f:then>
+                <f:else>
+                  <f:link.page class="nav-link fw-bold{f:if(condition:mainItem.active, then:' active')}{f:if(condition:mainItem.hasSubpages, then:' sub')}" pageUid="{mainItem.data.uid}">
+                    {mainItem.title}
+                  </f:link.page>
+                </f:else>
+              </f:if>
+            </li>
+          </f:for>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</html>
