@@ -1,0 +1,94 @@
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
+
+<f:variable name="dropdown" value="false"/>
+
+<f:if condition="{languagenavigation -> f:count()} > 2">
+    <f:variable name="dropdown" value="true"/>
+</f:if>
+
+<f:if condition="{dropdown}">
+    <f:then>
+        <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
+                data-bs-toggle="dropdown"
+                type="button">
+            {f:translate(key:'header.language', extensionName:'gsb_core')}
+        </button>
+        <ul class="dropdown-menu language-menu d-none-not-important list-unstyled p-0 rounded-0 nav" id="language-menu">
+            <f:for as="item" each="{languagenavigation}">
+                <li class="nav-item{f:if(condition: item.active, then: ' active')}">
+                    <f:if condition="{item.active} == 1">
+                        <f:then>
+                            <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"
+                               aria-current="true"
+                               href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                               hreflang="{item.twoLetterIsoCode}">
+                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"
+                               href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                               hreflang="{item.twoLetterIsoCode}">
+                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            </a>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:then>
+    <f:comment>if languagenavigation count is under 2 than render languageswitch as navbar</f:comment>
+    <f:else>
+        <f:for as="item" each="{languagenavigation}">
+            <f:render
+                arguments="{item: item, site:site, itemClass:'nav-link'}"
+                section="isActiveAndAvailableSection"/>
+        </f:for>
+    </f:else>
+</f:if>
+
+<f:section name="isActiveAndAvailableSection">
+    <f:if condition="{item.active} != 1">
+        <f:then>
+            <f:if condition="{item.available} == 1">
+                <f:then>
+                    <div class="nav-item">
+                        <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
+                           href="{item.link}"
+                           hreflang="{item.twoLetterIsoCode}">
+                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                        </a>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{dropdown}">
+                        <f:then>
+                            <li class="nav-item">
+                                <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
+                                   href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                                   hreflang="{item.twoLetterIsoCode}">
+                                    <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                </a>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="nav-item">
+                                <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
+                                   href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
+                                   hreflang="{item.twoLetterIsoCode}">
+                                    <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                </a>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </f:then>
+    </f:if>
+</f:section>

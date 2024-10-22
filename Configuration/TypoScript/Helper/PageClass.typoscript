@@ -74,4 +74,11 @@ lib.page.class {
     ifEmpty = default
     noTrimWrap = | complete-logo-||
   }
+
+  // NavType
+  70 = TEXT
+  70 {
+    data = site:navType
+    noTrimWrap = | navtype-||
+  }
 }

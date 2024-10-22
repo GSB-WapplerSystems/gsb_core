@@ -1,0 +1,29 @@
+<html data-namespace-typo3-fluid="true" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
+
+    <div class="row align-items-start flex-nowrap">
+        <f:render arguments="{_all}" partial="Header.Logo"/>
+        <f:render arguments="{_all}" partial="Navigation/Tertiary/NavMeta"/>
+        <f:render arguments="{_all}" partial="Navigation/Tertiary/NavMainMobile"/>
+    </div>
+
+    <div class="row align-items-center d-none d-lg-block">
+        <nav aria-labelledby="mainnavDesktop" class="mainnav-desktop justify-content-end d-none d-lg-flex">
+            <div aria-level="2" class="visually-hidden" id="mainnavDesktop" role="heading">Hauptnavigation</div>
+            <ul class="list-unstyled d-flex mb-0 justify-content-end" id="nav-desktop">
+                <f:for as="mainItem" each="{menuMainDesktop}">
+                    <f:render arguments="{mainItem: mainItem}" partial="Navigation/Tertiary/NavMain" />
+                </f:for>
+            </ul>
+        </nav>
+    </div>
+
+    <f:asset.script identifier="navigationTertiaryJs" src="EXT:gsb_frontend/Resources/Public/JavaScripts/navigationTertiary.js" />
+    <f:asset.css identifier="navigationTertiaryCss" href="EXT:gsb_frontend/Resources/Public/StyleSheets/navigationTertiary.css" />
+</html>

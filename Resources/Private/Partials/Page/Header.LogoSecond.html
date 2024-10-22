@@ -1,0 +1,40 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
+
+    <div class="logo-additional d-none d-lg-flex">
+        <f:if condition="{site.configuration.initiative-text-toggle}">
+            <f:then>
+                <f:if condition="{site.configuration.initiative-text}">
+                    <div class="logo-additional-headline" role="heading" aria-level="2">{site.configuration.initiative-text}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <div class="logo-additional-headline" role="heading" aria-level="2">
+                    {f:translate(key: 'meta.HeaderInitiative', extensionName: 'gsb_core')}
+                </div>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{link} && {logo}">
+            <f:then>
+                <a href="{link}" class="logo-additional-img">
+                    <f:image src="{logo}" class="img-fluid" alt="{alt}" maxHeight="40" />
+                </a>
+            </f:then>
+            <f:else>
+                <span class="logo-additional-img">
+                    <f:image src="{logo}" class="img-fluid" alt="{alt}" maxHeight="40" />
+                </span>
+            </f:else>
+        </f:if>
+    </div>
+</html>

@@ -1,128 +1,45 @@
 <html data-namespace-typo3-fluid="true" lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
-<f:comment>
-    <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
-    SPDX-License-Identifier: GPL-3.0-or-later
-    -->
-</f:comment>
-<f:format.html>{jumpNav}</f:format.html>
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
-<div class="layer"></div>
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
 
-<header class="header-wrapper fixed-top" aria-labelledby="metaNavigationSection">
-    <div id="metaNavigationSection" class="visually-hidden" role="heading" aria-level="1">{f:translate(key: 'meta.HeaderSection', extensionName: 'gsb_core')}</div>
-    <div class="header-wrapper-bg d-flex flex-wrap">
-        <f:if condition="{site.configuration.second-logo-complete-toggle}">
-            <f:render section="header-second-logo" arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}" />
-        </f:if>
-        <div class="container-md">
-            <div class="row">
-                <div class="col-9 col-lg-5 col-xxl-4 logo-wrapper">
-                    <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
-                        <f:then>
-                            <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <span class="header-image">
-                                    <f:render section="header-logo" arguments="{_all}"></f:render>
-                                </span>
-                            </div>
-                        </f:then>
-                        <f:else>
-                            <div class="logo lh-1 h-100 d-flex align-items-center">
-                                <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
-                                    <span class="header-image">
-                                        <f:render section="header-logo" arguments="{_all}"></f:render>
-                                    </span>
-                                </f:link.page>
-                            </div>
-                        </f:else>
-                    </f:if>
-                </div>
-                <div class="col-3 col-lg-7 col-xxl-8 meta-wrapper d-flex flex-wrap justify-content-end">
-                    <div class="meta-desktop d-none d-lg-block w-100">
-                        <f:render arguments="{menuMetaTop: menuMetaTop, languagenavigation: languagenavigation, site: site}" partial="Navigation/MetaNavTop"/>
-                    </div>
-                    <f:render arguments="{menuMain: menuMain, menuMetaMain: menuMetaMain, searchBoxMobi: searchBoxMobi, navType: navType, site: site}" partial="Header.Mainnav"/>
-                </div>
+    <f:format.raw>{jumpNav}</f:format.raw>
+
+    <header aria-labelledby="headerWrapperBg" class="header-wrapper fixed-top">
+        <div aria-level="1" class="visually-hidden" id="headerWrapperBg" role="heading">{f:translate(key: 'header.area', extensionName: 'gsb_core')}</div>
+
+        <div class="layer"></div>
+        <div class="header-wrapper-bg">
+            <div class="container position-relative">
+                <f:if condition="{site.configuration.second-logo-complete-toggle}">
+                    <f:render arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}" partial="Header.LogoSecond"/>
+                </f:if>
+                <f:if condition="{site.configuration.navType} == 0">
+                    <f:render arguments="{_all}" partial="Navigation/Primary/NavPrimary"/>
+                </f:if>
+
+                <f:if condition="{site.configuration.navType} == 1">
+                    <f:render arguments="{_all}" partial="Navigation/Secondary/NavSecondary"/>
+                </f:if>
+
+                <f:if condition="{site.configuration.navType} == 2">
+                    <f:render arguments="{_all}" partial="Navigation/Tertiary/NavTertiary"/>
+                </f:if>
             </div>
-            <f:if condition="{navType} == 0">
-                <nav class="mainnav-desktop justify-content-end{f:if(condition: '{navType} == 0', then: ' d-none d-lg-flex')}" aria-labelledby="mainnavDesktop">
-                    <div id="mainnavDesktop" class="visually-hidden" role="heading" aria-level="2">{f:translate(key:'header.mainnavigation', extensionName:'gsb_core')}</div>
-                    <f:render arguments="{menuMainDesktop: menuMainDesktop, navType: navType, site: site}" partial="Navigation/MainNavDesktop"/>
-                </nav>
-            </f:if>
         </div>
-    </div>
-</header>
-<div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
+    </header>
 
-<f:if condition="{data.breadcrumb} != 1">
-    <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
-</f:if>
+    <div class="meta-mobile container d-block d-lg-none" id="meta-mobile"></div>
 
-<f:section name="header-logo">
-    <span class="visually-hidden">{site.configuration.websiteTitle}{f:if(condition: '{site.configuration.rootPageId} != {data.uid}', then: ' - {f:translate(key: "header.text", extensionName: "gsb_core")}')}</span>
-    <f:if condition="{site.configuration.logo-complete-toggle}">
-        <f:then>
-            <f:if condition="{site.configuration.logo-complete-big}">
-                <span class="logo-complete-big">
-                  <f:image src="{site.configuration.logo-complete-big}" class="img-fluid" alt="" title=""></f:image>
-                </span>
-            </f:if>
-            <f:if condition="{site.configuration.logo-complete-small}">
-                <span class="logo-complete-small">
-                  <f:image src="{site.configuration.logo-complete-small}" class="img-fluid" alt="" title=""></f:image>
-                </span>
-            </f:if>
-        </f:then>
-        <f:else>
-            <f:render arguments="{_all}" partial="Header.Image-Trademark"></f:render>
-        </f:else>
+    <f:if condition="{data.breadcrumb} != 1">
+        <f:render arguments="{breadcrumbMenu: breadcrumbMenu}" partial="Navigation/Breadcrumb"/>
     </f:if>
-</f:section>
-
-<f:section name="header-second-logo">
-    <div class="header-logo-additional container">
-        <div class="row">
-            <div class="col-12">
-                <div class="logo-additional-border d-flex">
-
-                    <f:if condition="{site.configuration.initiative-text-toggle}">
-                        <f:then>
-                            <f:if condition="{site.configuration.initiative-text}">
-                                <div class="logo-initiative" role="heading" aria-level="2">{site.configuration.initiative-text}</div>
-                            </f:if>
-                        </f:then>
-                        <f:else>
-                            <div class="logo-initiative" role="heading" aria-level="2">
-                                {f:translate(key: 'meta.HeaderInitiative', extensionName: 'gsb_core')}
-                            </div>
-                        </f:else>
-                    </f:if>
-
-                    <f:if condition="{link} && {logo}">
-                        <f:then>
-                            <a href="{link}" class="d-inline-block">
-                                <f:if condition="{logo}">
-                                    <f:image src="{logo}" class="img-fluid logo-additional" alt="{alt}" />
-                                </f:if>
-                            </a>
-                        </f:then>
-                        <f:else>
-                            <f:if condition="{logo}">
-                                <span class="d-inline-block">
-                                    <f:image src="{logo}" class="img-fluid logo-additional" alt="{alt}" />
-                                </span>
-                            </f:if>
-                        </f:else>
-                    </f:if>
-                </div>
-            </div>
-        </div>
-    </div>
-</f:section>
 
 </html>
-
