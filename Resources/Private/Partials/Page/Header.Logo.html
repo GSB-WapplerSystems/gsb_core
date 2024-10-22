@@ -1,0 +1,52 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
+
+    <div class="col logo">
+        <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.pageid')} == {f:cObject(typoscriptObjectPath: 'lib.home')}">
+            <f:then>
+                <f:if condition="{site.configuration.logo-complete-toggle}">
+                    <f:then>
+                        <f:if condition="{site.configuration.logo-complete-big}">
+                            <f:image src="{site.configuration.logo-complete-big}" class="img-fluid logo-complete-big d-none d-lg-block" alt="" maxHeight="80"></f:image>
+                        </f:if>
+                        <f:if condition="{site.configuration.logo-complete-small}">
+                            <f:image src="{site.configuration.logo-complete-small}" class="img-fluid logo-complete-small d-block d-lg-none" alt="" maxHeight="36"></f:image>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <f:render arguments="{_all}" partial="Header.Image-Trademark"></f:render>
+                    </f:else>
+                </f:if>
+                <span class="visually-hidden">{f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+            </f:then>
+            <f:else>
+                <f:link.page pageUid="{site.rootPageId}" title="{f:translate(key: 'header.text', extensionName: 'gsb_core')}">
+                    <f:if condition="{site.configuration.logo-complete-toggle}">
+                        <f:then>
+                            <f:if condition="{site.configuration.logo-complete-big}">
+                                <f:image src="{site.configuration.logo-complete-big}" class="img-fluid logo-complete-big d-none d-lg-block" alt="" maxWidth="220"></f:image>
+                            </f:if>
+                            <f:if condition="{site.configuration.logo-complete-small}">
+                                <f:image src="{site.configuration.logo-complete-small}" class="img-fluid logo-complete-small d-block d-lg-none" alt="" maxWidth="150"></f:image>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:render arguments="{_all}" partial="Header.Image-Trademark"></f:render>
+                        </f:else>
+                    </f:if>
+                    <span class="visually-hidden">{f:translate(key: 'header.text', extensionName: 'gsb_core')} - {f:cObject(typoscriptObjectPath: 'lib.headTitle')}</span>
+                </f:link.page>
+            </f:else>
+        </f:if>
+    </div>
+
+</html>
