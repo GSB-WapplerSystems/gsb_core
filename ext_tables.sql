@@ -62,7 +62,7 @@ CREATE TABLE tt_content
 	tx_link                        tinytext,
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
-	tx_link_position               tinytext,
+	tx_link_position               tinytext
 );
 
 CREATE TABLE pages
@@ -70,6 +70,7 @@ CREATE TABLE pages
 	newsletter                  varchar(255) DEFAULT ''  NOT NULL,
 	socialmedia                 varchar(255) DEFAULT ''  NOT NULL,
 	breadcrumb                  varchar(255) DEFAULT ''  NOT NULL,
+	datetoggle                  varchar(255) DEFAULT ''  NOT NULL,
 	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
 	category_title              text,
@@ -97,7 +98,7 @@ CREATE TABLE tx_gsbcore_forms
 	value12											text,
 	value13											text,
 	value14											text,
-	value15											text,
+	value15											text
 );
 
 CREATE TABLE tx_gsbcore_consent
@@ -105,5 +106,5 @@ CREATE TABLE tx_gsbcore_consent
 	header varchar(255) DEFAULT '' NOT NULL,
 	accept_button_label varchar(255) DEFAULT '' NOT NULL,
 	body TEXT,
-	show_accept tinyint(1) DEFAULT '1' NOT NULL,
+	show_accept tinyint(1) DEFAULT '1' NOT NULL
 );

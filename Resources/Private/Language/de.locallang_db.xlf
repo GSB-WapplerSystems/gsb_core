@@ -43,6 +43,14 @@
 				<source>Remove socialmedia bar</source>
 				<target>Socialmedia-Leiste entfernen</target>
 			</trans-unit>
+			<trans-unit id="pages.DatetoggleBox" resname="pages.DatetoggleBox" approved="yes">
+				<source>Hide Date/Tags</source>
+				<target>Datum/Tags ausbleden</target>
+			</trans-unit>
+			<trans-unit id="pages.DatetoggleBox.description" resname="pages.DatetoggleBox.description" approved="yes">
+				<source>Hide date and Tags on article pages</source>
+				<target>Datum und Tags auf Artikelseiten ausblenden</target>
+			</trans-unit>
 			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb" approved="yes">
 				<source>Breadcrumb</source>
 				<target>Breadcrumb</target>
