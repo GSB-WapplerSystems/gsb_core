@@ -75,6 +75,7 @@ This table illustrates the behavior of feature flags in various states.
 | `ITZBUNDPHP-3327`      | Enable/Expose EXT:dpn_glossary in the TYPO3 backend
 | `ITZBUNDPHP-3435`      | Enable generic video renderer to add support for external video sources
 | `ITZBUNDPHP-3176`      | Enable Google Site Verification via SiteConfig
+| `ITZBUNDPHP-3288`      | Enable i18n of logo, 2nd logo, initiative-text etc
 
 ### Usage in PHP Code
 
