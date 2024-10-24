@@ -39,6 +39,12 @@
 			<trans-unit id="pages.SocialmediaBar.description" resname="pages.SocialmediaBar.description">
 				<source>Remove socialmedia bar</source>
 			</trans-unit>
+			<trans-unit id="pages.DatetoggleBox" resname="pages.DatetoggleBox">
+				<source>Hide Date/Tags</source>
+			</trans-unit>
+			<trans-unit id="pages.DatetoggleBox.description" resname="pages.DatetoggleBox.description">
+				<source>Hide date and tags on article pages</source>
+			</trans-unit>
 			<trans-unit id="pages.Breadcrumb" resname="pages.Breadcrumb">
 				<source>Breadcrumb</source>
 			</trans-unit>
