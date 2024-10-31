@@ -427,6 +427,10 @@
 				<source>Allowed domains for external videos:</source>
 				<target>Erlaubte Domains zum Einbinden externer Videos:</target>
 			</trans-unit>
+			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
+				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
+				<target>Weitere erlaubte Dateiendungen für das Dateilinks-Element: z.B. docx,xls</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
