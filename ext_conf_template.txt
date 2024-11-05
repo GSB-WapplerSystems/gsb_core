@@ -1,2 +1,4 @@
-# cat=Videos; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedVideoDomains
+# cat=config/cmedia/10; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedVideoDomains
 allowedVideoDomains =
+# cat=config/cuploads/10; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.additionalAllowedFileExtensionsForUploadsElement
+additionalAllowedFileExtensionsForUploadsElement =

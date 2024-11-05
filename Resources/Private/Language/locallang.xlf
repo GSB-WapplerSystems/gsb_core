@@ -318,6 +318,9 @@
 			<trans-unit id="config.allowedVideoDomains.list" resname="config.allowedVideoDomains.list">
 				<source>Allowed domains for external videos:</source>
 			</trans-unit>
+			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
+				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>

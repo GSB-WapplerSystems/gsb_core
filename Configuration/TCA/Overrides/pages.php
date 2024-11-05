@@ -63,6 +63,23 @@ defined('TYPO3') || die();
             ],
         ],
 
+        'datetoggle' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.DatetoggleBox',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.DatetoggleBox.description',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.DatetoggleBox',
+                        'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                        'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
+                    ],
+                ],
+            ],
+        ],
+
         'teaser_description' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:pages.TeaserDescription.description',
@@ -94,7 +111,7 @@ defined('TYPO3') || die();
         ],
     ];
     ExtensionManagementUtility::addTCAcolumns('pages', $visibleoptions);
-    ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb', 'after:newUntil');
+    ExtensionManagementUtility::addFieldsToPalette('pages', 'layout', '--linebreak--,newsletter,socialmedia,breadcrumb,datetoggle', 'after:newUntil');
     ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--,teaser_description', 'after:media');
     ExtensionManagementUtility::addToAllTCAtypes('pages', 'main_category', '', 'before:categories');
 })();
