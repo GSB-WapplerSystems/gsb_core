@@ -66,7 +66,7 @@ lib {
         postCObject {
           10 = FILES
           10 {
-            stdWrap.if {
+            if {
               equals = t3://file
               value {
                 data = parameters:href
@@ -106,7 +106,7 @@ lib {
         typolink.ATagParams.stdWrap.outerWrap.cObject {
           10 = FILES
           10 {
-            stdWrap.if {
+            if {
               equals = t3://file
               value {
                 data = parameters:href
