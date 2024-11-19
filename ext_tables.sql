@@ -67,10 +67,10 @@ CREATE TABLE tt_content
 
 CREATE TABLE pages
 (
-	newsletter                  varchar(255) DEFAULT ''  NOT NULL,
-	socialmedia                 varchar(255) DEFAULT ''  NOT NULL,
-	breadcrumb                  varchar(255) DEFAULT ''  NOT NULL,
-	datetoggle                  varchar(255) DEFAULT ''  NOT NULL,
+	newsletter                  varchar(1) DEFAULT '0'  NOT NULL,
+	socialmedia                 varchar(1) DEFAULT '0'  NOT NULL,
+	breadcrumb                  varchar(1) DEFAULT '0'  NOT NULL,
+	datetoggle                  varchar(1) DEFAULT '0'  NOT NULL,
 	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
 	teaser_description          text,
 	category_title              text,

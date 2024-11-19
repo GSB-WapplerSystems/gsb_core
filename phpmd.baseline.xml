@@ -18,7 +18,16 @@
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
-  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/SynchronizeLocalizedSiteSettings.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Fluid/ViewHelpers/ImageViewHelper.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Fluid/ViewHelpers/ImageViewHelper.php" method="originalRender"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Fluid/ViewHelpers/ImageViewHelper.php" method="originalRender"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Fluid/ViewHelpers/ImageViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Design\CouplingBetweenObjects" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php" method="originalRenderStatic"/>
+  <violation rule="PHPMD\Rule\Design\NpathComplexity" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php" method="originalRenderStatic"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Fluid/ViewHelpers/Uri/ImageViewHelper.php"/>
   <violation rule="PHPMD\Rule\Design\WeightedMethodCount" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\UnusedPrivateField" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\UnusedPrivateMethod" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="initializeRead"/>
@@ -30,7 +39,6 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>
-  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Middleware/SiteExtender.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/AudioPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/GalleryPreviewRenderer.php"/>

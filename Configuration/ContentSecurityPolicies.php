@@ -36,7 +36,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $cspCollection = [];
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('security.frontend.enforceContentSecurityPolicy')) {
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('security.frontend.enforceContentSecurityPolicy') &&
+    !GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('gsb_csp.security.frontend.enforceHashbasedContentSecurityPolicy')) {
     $cspCollection = array_merge($cspCollection, [
         new Mutation(
             Environment::getContext()->isDevelopment() ? MutationMode::Reduce : MutationMode::Set,

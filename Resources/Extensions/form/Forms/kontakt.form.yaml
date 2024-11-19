@@ -11,7 +11,7 @@ prototypeName: standard
 finishers:
   -
     options:
-      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      subject: 'E-Mail von ITZBund: {text-1}'
       senderAddress: no-reply@gsb-itzbund.de
       senderName: '{text-1}'
       attachUploads: true
@@ -23,7 +23,7 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
-      subject: 'E-Mail von ITZBund: {text-1} {name}'
+      subject: 'E-Mail von ITZBund: {text-1}'
       recipients:
         '{email}': '{email}'
       senderAddress: no-reply@gsb-itzbund.de

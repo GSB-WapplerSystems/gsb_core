@@ -134,4 +134,6 @@ defined('TYPO3') or die('Access denied.');
             '@import "EXT:gsb_core/Configuration/user.tsconfig"'
         );
     }
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
 })();
