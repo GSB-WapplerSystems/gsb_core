@@ -940,105 +940,69 @@
 				<source>Initiative text next to second logo</source>
 				<target>Initiative text für zweites Logo</target>
 			</trans-unit>
-
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
-				<source>Favicons can be configured here.</source>
-				<target>Favicons können hier konfiguriert werden.</target>
+				<source>To do this, please use the service at: https://realfavicongenerator.net/ (This service is free of charge and copyright free). To do this, you need a 512x512 PNG image and have it processed by this service. Download the generated files and insert them e.g. under /fileadmin/Favicons/. You can then link the corresponding files here again to replace your favicon. Of course, you can also create all the files manually. The file names and image sizes must be retained.</source>
+				<target>Nutzen Sie dazu bitte den Dienst unter: https://realfavicongenerator.net/ (Dieser Dienst ist kostenlos und Copyright frei). Hierzu brauchen Sie nur ein 512x512 großes Favicon-PNG Bild und lassen es von diesem Dienst bearbeiten. Laden Sie die erzeugten Dateien herunter und fügen Sie diese z.B. unter /fileadmin/Favicons/ ein. Danach können Sie die entsprechenden Dateien hier wieder verlinken, um Ihr Favicon auszutauschen. Natürlich können Sie alle Dateien auch händisch erstellen. Die Dateinamen und Bildgrößen müssen beibehalten werden.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.favicon-16x16" resname="page.configuration.favicon-16x16">
-				<source>favicon-16x16</source>
-				<target>favicon-16x16</target>
+			<trans-unit id="page.configuration.apple-touch-icon" resname="page.configuration.apple-touch-icon" approved="yes">
+				<source>Apple Touch Icon (PNG)</source>
+				<target>Apple Touch Icon (PNG)</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.favicon-16x16" resname="page.configuration.description.favicon-16x16">
-				<source>The favicon file must be named favicon-16x16.png.</source>
-				<target>Die Favicon-Datei muss zwingend als favicon-16x16.png benannt sein.</target>
+			<trans-unit id="page.configuration.description.apple-touch-icon" resname="page.configuration.description.apple-touch-icon" approved="yes">
+				<source>The PNG file has to be square in 180x180 pixel. Filename must be 'apple-touch-icon.png'.</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 180x180 Pixel haben. Dateiname muss "apple-touch-icon.png" sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.favicon-32x32" resname="page.configuration.favicon-32x32">
-				<source>favicon-32x32</source>
-				<target>favicon-32x32</target>
+			<trans-unit id="page.configuration.faviconIco" resname="page.configuration.faviconIco" approved="yes">
+				<source>Favicon Icon (ICO)</source>
+				<target>Favicon Icon (ICO)</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.favicon-32x32" resname="page.configuration.description.favicon-32x32">
-				<source>The favicon file must be named favicon-32x32.png.</source>
-				<target>Die Favicon-Datei muss zwingend als favicon-32x32.png benannt sein.</target>
+			<trans-unit id="page.configuration.description.faviconIco" resname="page.configuration.description.faviconIco" approved="yes">
+				<source>The classic Ico file must be square and have a size of 48x48 pixels. Filename must be 'favicon.ico'.</source>
+				<target>Die klassische Ico-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon.ico" sein.</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.apple-touch-icon-60x60" resname="page.configuration.apple-touch-icon-60x60">
-				<source>apple-touch-icon-60x60</source>
-				<target>apple-touch-icon-60x60</target>
+			<trans-unit id="page.configuration.faviconSvg" resname="page.configuration.faviconSvg" approved="yes">
+				<source>Favicon SVG</source>
+				<target>Favicon SVG</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.apple-touch-icon-60x60" resname="page.configuration.description.apple-touch-icon-60x60">
-				<source>The apple touch icon file must be named apple-touch-icon-60x60.png.</source>
-				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-60x60.png benannt sein.</target>
+			<trans-unit id="page.configuration.description.faviconSvg" resname="page.configuration.description.faviconSvg" approved="yes">
+				<source>The SVG touch icon must be square and have a size of 512x512 pixels. Filename must be 'favicon.svg'.</source>
+				<target>Das SVG Touch Icon muss muss quadratisch sein und eine Größe von 512x512 Pixeln haben. Dateiname muss "favicon.svg" sein.</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.apple-touch-icon-76x76" resname="page.configuration.apple-touch-icon-76x76">
-				<source>apple-touch-icon-76x76</source>
-				<target>apple-touch-icon-76x76</target>
+			<trans-unit id="page.configuration.description.favicon-48x48-png" resname="page.configuration.description.favicon-48x48-png" approved="yes">
+				<source>The PNG file has to be square in 48x48 pixel. Filename must be 'favicon-48x48.png'.</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon-48x48.png" sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.apple-touch-icon-76x76" resname="page.configuration.description.apple-touch-icon-76x76">
-				<source>The apple touch icon file must be named apple-touch-icon-76x76.png.</source>
-				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-76x76.png benannt sein.</target>
+			<trans-unit id="page.configuration.favicon-96x96-png" resname="page.configuration.favicon-96x96-png" approved="yes">
+				<source>Favicon 96x96 PNG</source>
+				<target>Favicon 96x96 PNG</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.apple-touch-icon-120x120" resname="page.configuration.apple-touch-icon-120x120">
-				<source>apple-touch-icon-120x120</source>
-				<target>apple-touch-icon-120x120</target>
+			<trans-unit id="page.configuration.description.favicon-96x96-png" resname="page.configuration.description.favicon-96x96-png" approved="yes">
+				<source>The PNG file has to be square in 48x48 pixel. Filename must be 'favicon-96x96.png'.</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 96x96 Pixel haben. Dateiname muss "favicon-96x96.png" sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.apple-touch-icon-120x120" resname="page.configuration.description.apple-touch-icon-120x120">
-				<source>The apple touch icon file must be named apple-touch-icon-120x120.png.</source>
-				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-120x120.png benannt sein.</target>
+			<trans-unit id="page.configuration.webmanifest" resname="page.configuration.webmanifest" approved="yes">
+				<source>Site Webmanifest</source>
+				<target>Site Webmanifest</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.apple-touch-icon-152x152" resname="page.configuration.apple-touch-icon-152x152">
-				<source>apple-touch-icon-152x152</source>
-				<target>apple-touch-icon-152x152</target>
+			<trans-unit id="page.configuration.description.webmanifest" resname="page.configuration.description.webmanifest" approved="yes">
+				<source>The Webmanifest file must first be customized according to your preferences. The file name must be “site.webmanifest”.</source>
+				<target>Die Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.apple-touch-icon-152x152" resname="page.configuration.description.apple-touch-icon-152x152">
-				<source>The apple touch icon file must be named apple-touch-icon-152x152.png.</source>
-				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-152x152.png benannt sein.</target>
+			<trans-unit id="page.configuration.web-app-manifest-192x192" resname="page.configuration.web-app-manifest-192x192" approved="yes">
+				<source>Web App Manifest 192x192 PNG</source>
+				<target>Web App Manifest 192x192 PNG</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.apple-touch-icon-180x180" resname="page.configuration.apple-touch-icon-180x180">
-				<source>apple-touch-icon-180x180</source>
-				<target>apple-touch-icon-180x180</target>
+			<trans-unit id="page.configuration.description.web-app-manifest-192x192" resname="page.configuration.description.web-app-manifest-192x192" approved="yes">
+				<source>The PNG file has to be square in 192x192 pixel. Filename must be 'web-app-manifest-192x192.png'.</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 192x192 Pixel haben. Dateiname muss "web-app-manifest-192x192.png" sein.</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.description.apple-touch-icon-180x180" resname="page.configuration.description.apple-touch-icon-180x180">
-				<source>The apple touch icon file must be named apple-touch-icon-180x180.png.</source>
-				<target>Das Apple-Touch-Icon muss zwingend als apple-touch-icon-180x180.png benannt sein.</target>
+			<trans-unit id="page.configuration.web-app-manifest-512x512" resname="page.configuration.web-app-manifest-512x512" approved="yes">
+				<source>Web App Manifest 512x512 PNG</source>
+				<target>Web App Manifest 512x512 PNG</target>
 			</trans-unit>
-
-			<trans-unit id="page.configuration.safari-pinned-tab" resname="page.configuration.safari-pinned-tab">
-				<source>safari-pinned-tab</source>
-				<target>safari-pinned-tab</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.description.safari-pinned-tab" resname="page.configuration.description.safari-pinned-tab">
-				<source>The safari pinned tab icon file must be named safari-pinned-tab.svg.</source>
-				<target>Das Safari-Pinned-Tab-Icon muss zwingend als safari-pinned-tab.svg benannt sein.</target>
-			</trans-unit>
-
-			<trans-unit id="page.configuration.shortcut-icon" resname="page.configuration.shortcut-icon">
-				<source>favicon.ico</source>
-				<target>favicon.ico</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.description.shortcut-icon" resname="page.configuration.description.shortcut-icon">
-				<source>The favicon icon file must be named favicon.ico.</source>
-				<target>Das Favicon-Icon muss zwingend als favicon.ico benannt sein.</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.webmanifest" resname="page.configuration.webmanifest">
-				<source>site.webmanifest</source>
-				<target>site.webmanifest</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.description.webmanifest" resname="page.configuration.description.webmanifest">
-				<source>link to site.webmanifest</source>
-				<target>Link zum site.webmanifest.</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.browserconfig" resname="page.configuration.browserconfig">
-				<source>browserconfig</source>
-				<target>Browserconfig</target>
-			</trans-unit>
-			<trans-unit id="page.configuration.description.browserconfig" resname="page.configuration.description.browserconfig">
-				<source>link to browserconfig.xml</source>
-				<target>Link zur browserconfig.xml.</target>
+			<trans-unit id="page.configuration.description.web-app-manifest-512x512" resname="page.configuration.description.web-app-manifest-512x512" approved="yes">
+				<source>The PNG file has to be square in 512x512 pixel. Filename must be 'web-app-manifest-512x512.png'.</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 512x512 Pixel haben. Dateiname muss "web-app-manifest-512x512.png" sein.</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.nav-type" resname="page.configuration.nav-type">
 				<source>Navigation Type</source>
