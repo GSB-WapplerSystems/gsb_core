@@ -9,11 +9,15 @@ Bild, Text und Slider. Die Extension container von b13 wurde ebenfalls eingebund
 
 ### Neue Funktionen:
 
-* ******** ERGÄNZEN ********
+* ******** FEATURES ERGÄNZEN ********
 
 ### Behobene Probleme:
 
-* ******** ERGÄNZEN ********
+* ******** FIXES ERGÄNZEN ********
+
+### Sonstige Anpassungen:
+
+* ******** CHORES ERGÄNZEN ********
 
 ### Bekannte Probleme:
 
