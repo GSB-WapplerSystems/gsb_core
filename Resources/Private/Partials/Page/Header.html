@@ -16,8 +16,26 @@
 
     <header aria-labelledby="headerWrapperBg" class="header-wrapper fixed-top">
         <div aria-level="1" class="visually-hidden" id="headerWrapperBg" role="heading">{f:translate(key: 'header.area', extensionName: 'gsb_core')}</div>
-        <div class="header-wrapper-bg">
-            <div class="container position-relative">
+        <f:if condition="{site.configuration.display-brand-topline}">
+            <div class="brand-topline w-100 bg-light mx-auto overflow-hidden">
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-center gap-3">
+                        <span class="d-flex align-items-center" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 16" width="24" height="16">
+                                <path fill="#000" d="M0 .5h24v5.333H0z"></path>
+                                <path fill="red" d="M0 5.833h24v5.333H0z"></path>
+                                <path fill="#FACA2C" d="M0 11.167h24V16.5H0z"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <f:translate key="header.brandtopline" extensionName="gsb_core" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+        <div class="header-wrapper-bg flex-wrap{f:if(condition: site.configuration.display-brand-topline, then: ' position-static pt-0')}">
+            <div class="container position-relative{f:if(condition: site.configuration.display-brand-topline, then: ' mt-3')}">
                 <f:if condition="{site.configuration.second-logo-complete-toggle}">
                     <f:render arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}" partial="Header.LogoSecond"/>
                 </f:if>
