@@ -1,152 +1,48 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
-<f:comment>
-    <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
-    SPDX-License-Identifier: GPL-3.0-or-later
-    -->
-</f:comment>
-    <f:variable name="metaConfig" value="{
-        0: {
-            'identifier': 'apple-touch-icon-60x60',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-60x60.png',
-            'props': {
-                'rel': 'apple-touch-icon',
-                'sizes': '60x60'
-            }
-        },
-        1: {
-            'identifier': 'apple-touch-icon-76x76',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-76x76.png',
-            'props': {
-                'rel': 'apple-touch-icon',
-                'sizes': '76x76'
-            }
-        },
-        2: {
-            'identifier': 'apple-touch-icon-120x120',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-120x120.png',
-            'props': {
-                'rel': 'apple-touch-icon',
-                'sizes': '120x120'
-            }
-        },
-        3: {
-            'identifier': 'apple-touch-icon-152x152',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-152x152.png',
-            'props': {
-                'rel': 'apple-touch-icon',
-                'sizes': '152x152'
-            }
-        },
-        4: {
-            'identifier': 'apple-touch-icon-180x180',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon-180x180.png',
-            'props': {
-                'rel': 'apple-touch-icon',
-                'sizes': '180x180'
-            }
-        },
-        5: {
-            'identifier': 'favicon-32x32',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon-32x32.png',
-            'props': {
-                'rel': 'icon',
-                'sizes': '32x32'
-            }
-        },
-        6: {
-            'identifier': 'favicon-16x16',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon-16x16.png',
-            'props': {
-                'rel': 'icon',
-                'sizes': '16x16'
-            }
-        },
-        7: {
-            'identifier': 'safari-pinned-tab',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/safari-pinned-tab.svg',
-            'props': {
-                'rel': 'mask-icon',
-                'color': '#333333'
-            }
-        },
-        8: {
-            'identifier': 'shortcut-icon',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico',
-            'props': {
-                'rel': 'shortcut icon'
-            }
-        },
-        9: {
-            'identifier': 'webmanifest',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest',
-            'props': {
-                'rel': 'manifest',
-                'crossorigin': 'use-credentials'
-            }
-        },
-        10: {
-            'identifier': 'browserconfig',
-            'type': 'meta',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/browserconfig.xml',
-            'props': {
-                'name': 'msapplication-config'
-            }
-        }
-    }" />
-    <f:comment><!--
-     Iterate through the config array and set an HTML tag for each entry according to the config.type key.
-        Also set link attribute and linked path.
-        Then iterate through the probs subarray to set these as attributes of the tag.
-        example array:
-        8: {
-            'identifier': 'shortcut-icon',
-            'type': 'link',
-            'default': 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico',
-            'props': {
-                'rel': 'shortcut icon'
-            }
-        },
-        example output:
-        <link href="/fileadmin/Favicons/favicon.ico" rel="shortcut icon">
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
 
-    --></f:comment>
-    <f:for each="{metaConfig}" as="config"><f:spaceless>
-        <f:variable
-            name="linkAttribute"
-            value="{f:if(condition: '{config.type} == \'meta\'', then: 'content', else: 'href')}"
-        ></f:variable>
-        <f:variable
-            name="linkTarget"
-            value="{f:if(condition: '{site.configuration.{config.identifier}}', then: '{site.configuration.{config.identifier}}', else: '{config.default}')}"
-        />
-        <f:variable name="linkTargetImage" value="{f:uri.image(src: '{linkTarget}')}" />
-        </f:spaceless><f:if condition="{linkTargetImage}">
-        <{config.type} {linkAttribute}="{linkTargetImage}"
-            <f:for each="{config.props}" key="prop" as="value"><f:if condition="config.{prop}">{prop}="{value}" </f:if></f:for>
-        >
-        </f:if>
-    </f:for>
+    <f:if condition="{site.configuration.favicon-48x48-png} || {site.configuration.favicon-96x96-png} || {site.configuration.faviconIco} || {site.configuration.faviconSvg} || {site.configuration.apple-touch-icon} || {site.configuration.webmanifest}">
+        <f:then>
+            <f:if condition="{site.configuration.favicon-48x48-png}">
+                <link href="{f:uri.image(src: '{site.configuration.favicon-48x48-png}')}" rel="icon" sizes="48x48" type="image/png" />
+            </f:if>
+            <f:if condition="{site.configuration.favicon-96x96-png}">
+                <link href="{f:uri.image(src: '{site.configuration.favicon-96x96-png}')}" rel="icon" sizes="96x96" type="image/png" />
+            </f:if>
+            <f:if condition="{site.configuration.faviconIco}">
+                <link href="{f:uri.image(src: '{site.configuration.faviconIco}')}" rel="shortcut icon" />
+            </f:if>
+            <f:if condition="{site.configuration.faviconSvg}">
+                <link href="{f:uri.image(src: '{site.configuration.faviconSvg}')}" rel="icon" type="image/svg+xml" />
+            </f:if>
+            <f:if condition="{site.configuration.apple-touch-icon}">
+                <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon}')}" rel="apple-touch-icon" sizes="180x180" />
+            </f:if>
+            <f:if condition="{site.configuration.webmanifest}">
+                <link href="{f:uri.image(src: '{site.configuration.webmanifest}')}" rel="manifest" />
+            </f:if>
+        </f:then>
+        <f:else>
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon-96x96.png')}" rel="icon" sizes="96x96" type="image/png" />
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.ico')}" rel="shortcut icon" />
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/favicon.svg')}" rel="icon" type="image/svg+xml" />
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/apple-touch-icon.png')}" rel="apple-touch-icon" sizes="180x180" />
+            <link href="{f:uri.image(src: 'EXT:gsb_core/Resources/Public/Favicons/site.webmanifest')}" rel="manifest" />
+        </f:else>
+    </f:if>
 
     <meta content="{site.configuration.websiteTitle}" name="apple-mobile-web-app-title">
-    <meta content="{site.configuration.websiteTitle}" name="application-name">
-    <meta content="#333333" name="msapplication-TileColor">
-    <meta content="#333333" name="theme-color">
 
     <f:if condition="{data.keywords}">
         <meta content="{data.keywords}" name="keywords">
     </f:if>
+
     <f:if condition="{data.lastUpdated}">
         <meta content="{f:format.date(format: '%Y-%m-%d, %R', date: data.lastUpdated)}" name="last-modified">
     </f:if>

@@ -28,7 +28,7 @@ $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-16x16,favicon-32x32,apple-touch-icon-60x60,apple-touch-icon-76x76,apple-touch-icon-120x120,apple-touch-icon-152x152,apple-touch-icon-180x180,safari-pinned-tab,shortcut-icon,webmanifest,browserconfig';
+$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-96x96-png, faviconIco, faviconSvg, apple-touch-icon, webmanifest, web-app-manifest-192x192, web-app-manifest-512x512';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
@@ -164,11 +164,10 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
         ],
 ];
 
-// favicons
-
-$GLOBALS['SiteConfiguration']['site']['columns']['favicon-16x16'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-16x16',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-16x16',
+// Add different favicons to the page
+$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon',
     'config' =>
         [
             'type' => 'link',
@@ -176,9 +175,9 @@ $GLOBALS['SiteConfiguration']['site']['columns']['favicon-16x16'] = [
         ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['favicon-32x32'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-32x32',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-32x32',
+$GLOBALS['SiteConfiguration']['site']['columns']['faviconIco'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.faviconIco',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.faviconIco',
     'config' =>
         [
             'type' => 'link',
@@ -186,9 +185,9 @@ $GLOBALS['SiteConfiguration']['site']['columns']['favicon-32x32'] = [
         ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-60x60'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-60x60',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-60x60',
+$GLOBALS['SiteConfiguration']['site']['columns']['faviconSvg'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.faviconSvg',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.faviconSvg',
     'config' =>
         [
             'type' => 'link',
@@ -196,58 +195,9 @@ $GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-60x60'] = [
         ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-76x76'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-76x76',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-76x76',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-120x120'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-120x120',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-120x120',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-152x152'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-152x152',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-152x152',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon-180x180'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon-180x180',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon-180x180',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['safari-pinned-tab'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.safari-pinned-tab',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.safari-pinned-tab',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['shortcut-icon'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.shortcut-icon',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.shortcut-icon',
+$GLOBALS['SiteConfiguration']['site']['columns']['favicon-96x96-png'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-96x96-png',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-96x96-png',
     'config' =>
         [
             'type' => 'link',
@@ -265,9 +215,19 @@ $GLOBALS['SiteConfiguration']['site']['columns']['webmanifest'] = [
         ],
 ];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['browserconfig'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.browserconfig',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.browserconfig',
+$GLOBALS['SiteConfiguration']['site']['columns']['web-app-manifest-192x192'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.web-app-manifest-192x192',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.web-app-manifest-192x192',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['web-app-manifest-512x512'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.web-app-manifest-512x512',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.web-app-manifest-512x512',
     'config' =>
         [
             'type' => 'link',
