@@ -197,13 +197,13 @@
 
 <f:section name="GallerySingle">
     <picture data-aspectratio-lg="1:1" data-aspectratio-md="1:1" data-aspectratio-sm="1:1" data-aspectratio-xl="1:1" data-aspectratio-xs="1:1">
-        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" height="600c" loading="lazy" maxHeight="600" maxWidth="600" src="{file.properties.uid}" treatIdAsReference="1" width="600c" />
+        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" height="600c" loading="lazy" maxHeight="600" maxWidth="600" image="{file}" width="600c" />
     </picture>
 </f:section>
 
 <f:section name="GallerySlide">
     <picture data-aspectratio-lg="16:9" data-aspectratio-md="16:9" data-aspectratio-sm="16:9" data-aspectratio-xl="16:9" data-aspectratio-xs="16:9">
-        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" loading="lazy" maxWidth="600" src="{file.properties.uid}" treatIdAsReference="1"/>
+        <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" loading="lazy" maxWidth="600" image="{file}" />
     </picture>
 </f:section>
 
