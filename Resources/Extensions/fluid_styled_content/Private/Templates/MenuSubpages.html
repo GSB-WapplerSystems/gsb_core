@@ -14,19 +14,19 @@
             <f:for as="page" each="{menu}" iteration="iterator">
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
-                        <article class="frame frame-type-gsb_singleteaser frame-layout-0">
-                            <div class="teaser textpic topcenter d-flex flex-wrap" style="background-color:#f3f7fb">
+                        <article class="frame frame-type-gsb_singleteaser frame-layout-0 h-100">
+                            <div class="teaser textpic topcenter d-flex flex-wrap h-100" style="{f:if(condition: '{data.grid_bgcolor}', then: 'background-color:var(--gsb-{data.grid_bgcolor});')}">
                                 <div class="teaser-content ce-bodytext order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
-                                        <h3>
+                                        <{f:if(condition: data.tx_subelements_header_style, then: '{data.tx_subelements_header_style}', else: 'h2')}>
                                             <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
                                                 <span>
                                                   {page.title}
                                                 </span>
                                             </f:link.typolink>
-                                        </h3>
+                                        </{f:if(condition: tx_subelements_header_style, then: '{tx_subelements_header_style}', else: 'h2')}>
                                         <p>
-                                            <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.teaser_description}</f:format.crop></f:format.raw></f:format.stripTags>
+                                            <f:format.stripTags><f:format.raw>{page.data.teaser_description}</f:format.raw></f:format.stripTags>
                                         </p>
                                     </f:if>
                                 </div>

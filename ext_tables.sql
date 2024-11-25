@@ -16,10 +16,55 @@ CREATE TABLE sys_file_reference
   is_accessible tinyint(4) unsigned DEFAULT '0' NOT NULL,
 );
 
+CREATE TABLE pages
+(
+	newsletter                  varchar(1) DEFAULT '0'  NOT NULL,
+	socialmedia                 varchar(1) DEFAULT '0'  NOT NULL,
+	breadcrumb                  varchar(1) DEFAULT '0'  NOT NULL,
+	datetoggle                  varchar(1) DEFAULT '0'  NOT NULL,
+	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
+	teaser_description          text,
+	category_title              text,
+	main_category               tinyint(1) DEFAULT '0' NOT NULL
+);
+
+CREATE TABLE tx_gsbcore_forms
+(
+	firstname                   varchar(255) DEFAULT '' NOT NULL,
+	lastname                    varchar(255) DEFAULT '' NOT NULL,
+	email                       varchar(255) DEFAULT '' NOT NULL,
+	data_privacy                tinyint(1)   DEFAULT '1' NOT NULL,
+	message                     text,
+	value1											text,
+	value2											text,
+	value3											text,
+	value4											text,
+	value5											text,
+	value6											text,
+	value7											text,
+	value8											text,
+	value9											text,
+	value10											text,
+	value11											text,
+	value12											text,
+	value13											text,
+	value14											text,
+	value15											text
+);
+
+CREATE TABLE tx_gsbcore_consent
+(
+	header varchar(255) DEFAULT '' NOT NULL,
+	accept_button_label varchar(255) DEFAULT '' NOT NULL,
+	body TEXT,
+	show_accept tinyint(1) DEFAULT '1' NOT NULL
+);
+
 CREATE TABLE tt_content
 (
 	tx_header_inside               tinyint(4)       DEFAULT '0' NOT NULL,
 	tx_header_style                tinytext,
+	tx_subelements_header_style    tinytext,
 	header_kicker                  tinytext,
 	header_kicker_toggle           tinyint(4)       DEFAULT '0' NOT NULL,
 	date_override_toggle           tinyint(4)       DEFAULT '0' NOT NULL,
@@ -63,48 +108,4 @@ CREATE TABLE tt_content
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
 	tx_link_position               tinytext
-);
-
-CREATE TABLE pages
-(
-	newsletter                  varchar(1) DEFAULT '0'  NOT NULL,
-	socialmedia                 varchar(1) DEFAULT '0'  NOT NULL,
-	breadcrumb                  varchar(1) DEFAULT '0'  NOT NULL,
-	datetoggle                  varchar(1) DEFAULT '0'  NOT NULL,
-	highlight                   tinyint(1)   DEFAULT '0' NOT NULL,
-	teaser_description          text,
-	category_title              text,
-	main_category               tinyint(1) DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tx_gsbcore_forms
-(
-	firstname                   varchar(255) DEFAULT '' NOT NULL,
-	lastname                    varchar(255) DEFAULT '' NOT NULL,
-	email                       varchar(255) DEFAULT '' NOT NULL,
-	data_privacy                tinyint(1)   DEFAULT '1' NOT NULL,
-	message                     text,
-	value1											text,
-	value2											text,
-	value3											text,
-	value4											text,
-	value5											text,
-	value6											text,
-	value7											text,
-	value8											text,
-	value9											text,
-	value10											text,
-	value11											text,
-	value12											text,
-	value13											text,
-	value14											text,
-	value15											text
-);
-
-CREATE TABLE tx_gsbcore_consent
-(
-	header varchar(255) DEFAULT '' NOT NULL,
-	accept_button_label varchar(255) DEFAULT '' NOT NULL,
-	body TEXT,
-	show_accept tinyint(1) DEFAULT '1' NOT NULL
 );
