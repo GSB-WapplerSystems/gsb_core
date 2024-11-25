@@ -264,6 +264,18 @@
 			<trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
 				<source>Audio</source>
 			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance" resname="tt_content.menu_subpages.items.appearance">
+				<source>Appearance of menu items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.label" resname="tt_content.menu_subpages.subelements_header_style.default.label">
+				<source>Headline type of menu items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.default" resname="tt_content.menu_subpages.subelements_header_style.default">
+				<source>Default (H2)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_bgcolor.label" resname="tt_content.menu_subpages.items.appearance.grid_bgcolor.label">
+				<source>Background color of menu items</source>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch">
 				<source>Stage Type</source>
 			</trans-unit>
