@@ -40,9 +40,9 @@
             </f:if>
             <f:if condition="{data.tx_link_text}">
                 <div class="ce-button ce-btn-left">
-                    <f:link.typolink parameter="{data.tx_link}" class="{data.tx_link_layout} stretched-link teaser-link">
-                        <span class="icon"></span><span>{data.tx_link_text}<span class="visually-hidden">: {data.header}</span></span>
-                    </f:link.typolink>
+                    <p class="{data.tx_link_layout} teaser-link">
+                        <span class="icon"></span><span>{data.tx_link_text}</span>
+                    </p>
                 </div>
             </f:if>
         </div>
