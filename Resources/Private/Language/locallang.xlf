@@ -96,6 +96,9 @@
 			<trans-unit id="header.linktohomepage" resname="header.linktohomepage">
 				<source>Link to homepage</source>
 			</trans-unit>
+			<trans-unit id="header.brandtopline" resname="header.brandtopline">
+				<source>An official website of the Federal Republic of Germany</source>
+			</trans-unit>
 			<trans-unit id="supplement.areamenu" resname="supplement.areamenu">
 				<source>Area menu</source>
 			</trans-unit>

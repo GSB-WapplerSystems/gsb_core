@@ -127,6 +127,10 @@
 				<source>Link to homepage</source>
 				<target>Zur Startseite</target>
 			</trans-unit>
+			<trans-unit id="header.brandtopline" resname="header.brandtopline">
+				<source>An official website of the Federal Republic of Germany</source>
+				<target>Eine offizielle Website der Bundesrepublik Deutschland</target>
+			</trans-unit>
 			<trans-unit id="supplement.areamenu" resname="supplement.areamenu" approved="yes">
 				<source>Area menu</source>
 				<target>Bereichsmenü</target>

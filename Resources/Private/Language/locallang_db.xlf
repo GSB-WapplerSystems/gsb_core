@@ -1024,6 +1024,12 @@
 					Toggles are readonly fields and get their value assigned by the global configuration in the GSB tab.
 				</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.display-brand-topline.label" resname="page.configuration.display-brand-topline.label">
+				<source>Show page topline</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.display-brand-topline.description" resname="page.configuration.display-brand-topline.description">
+				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
