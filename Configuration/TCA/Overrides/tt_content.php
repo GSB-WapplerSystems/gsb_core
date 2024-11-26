@@ -201,3 +201,5 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $palettes;
 })();
+
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['default'] = '2';

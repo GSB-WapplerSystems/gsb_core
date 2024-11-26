@@ -80,12 +80,12 @@
 				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="header_layout.1" resname="header_layout.1" approved="yes">
-				<source>H1 - Default</source>
-				<target>H1 - Standard</target>
+				<source>H1</source>
+				<target>H1</target>
 			</trans-unit>
 			<trans-unit id="header_layout.2" resname="header_layout.2" approved="yes">
-				<source>H2</source>
-				<target>H2</target>
+				<source>H2 - Default</source>
+				<target>H2 - Standard</target>
 			</trans-unit>
 			<trans-unit id="header_layout.3" resname="header_layout.3" approved="yes">
 				<source>H3</source>
