@@ -15,7 +15,7 @@
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
                         <article class="frame frame-type-gsb_singleteaser frame-layout-0 h-100">
-                            <div class="teaser textpic topcenter d-flex flex-wrap h-100{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}">
+                            <div class="teaser textpic topcenter d-flex flex-wrap h-100{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}{f:if(condition: data.grid_light, then: ' grid-light')}">
                                 <div class="teaser-content ce-bodytext order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
                                         <{f:if(condition: data.tx_subelements_header_style, then: '{data.tx_subelements_header_style}', else: 'h2')}>
