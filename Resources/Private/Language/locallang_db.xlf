@@ -61,10 +61,10 @@
 				<source>Default</source>
 			</trans-unit>
 			<trans-unit id="header_layout.1" resname="header_layout.1">
-				<source>H1 - Default</source>
+				<source>H1</source>
 			</trans-unit>
 			<trans-unit id="header_layout.2" resname="header_layout.2">
-				<source>H2</source>
+				<source>H2 - Default</source>
 			</trans-unit>
 			<trans-unit id="header_layout.3" resname="header_layout.3">
 				<source>H3</source>
