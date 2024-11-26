@@ -53,13 +53,14 @@ defined('TYPO3') || die();
     $menuSubpagesAppearancePalettes = [
         'menu_subpages_items_appearance' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.menu_subpages.items.appearance',
-            'showitem' => '--linebreak--,tx_subelements_header_style,grid_bgcolor',
+            'showitem' => '--linebreak--,tx_subelements_header_style,--linebreak--,grid_bgcolor,grid_light',
         ],
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $menuSubpagesAppearancePalettes;
 
     $GLOBALS['TCA']['tt_content']['types']['menu_subpages']['columnsOverrides']['grid_bgcolor']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.menu_subpages.items.appearance.grid_bgcolor.label';
+    $GLOBALS['TCA']['tt_content']['types']['menu_subpages']['columnsOverrides']['grid_light']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.menu_subpages.items.appearance.grid_light.label';
 
     $GLOBALS['TCA']['tt_content']['types']['menu_subpages']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,

@@ -355,6 +355,10 @@
 				<source>Background color of menu items</source>
 				<target>Hintergrundfarbe der Menü-Elemente</target>
 			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_light.label" resname="tt_content.menu_subpages.items.appearance.grid_light.label">
+				<source>Text color color of menu items</source>
+				<target>Textfarbe der Menü-Elemente</target>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch" approved="yes">
 				<source>Stage Type</source>
 				<target>Bühnen Typ</target>

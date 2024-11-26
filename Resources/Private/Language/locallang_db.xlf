@@ -276,6 +276,9 @@
 			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_bgcolor.label" resname="tt_content.menu_subpages.items.appearance.grid_bgcolor.label">
 				<source>Background color of menu items</source>
 			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_light.label" resname="tt_content.menu_subpages.items.appearance.grid_light.label">
+				<source>Text color color of menu items</source>
+			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch">
 				<source>Stage Type</source>
 			</trans-unit>
