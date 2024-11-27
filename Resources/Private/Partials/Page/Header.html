@@ -35,8 +35,8 @@
                 </div>
             </div>
         </f:if>
-        <div class="header-wrapper-bg flex-wrap{f:if(condition: '{gsb:featureFlag(featureKey: \'ITZBUNDPHP-3979\')} && {site.configuration.display-brand-topline}', then: ' pt-0')}">
-            <div class="container position-relative{f:if(condition: '{gsb:featureFlag(featureKey: \'ITZBUNDPHP-3979\')} && {site.configuration.display-brand-topline}', then: ' mt-3')}">
+        <div class="header-wrapper-bg flex-wrap">
+            <div class="container position-relative">
                 <f:if condition="{site.configuration.second-logo-complete-toggle}">
                     <f:render arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}" partial="Header.LogoSecond"/>
                 </f:if>
