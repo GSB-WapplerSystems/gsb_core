@@ -300,6 +300,9 @@
 			<trans-unit id="is_accessible.0" resname="is_accessible.0">
 				<source>(not accessible)</source>
 			</trans-unit>
+			<trans-unit id="is_accessible.1" resname="is_accessible.0" approved="yes">
+				<source></source>
+			</trans-unit>
 			<trans-unit id="form.uploaded.file" resname="form.uploaded.file">
 				<source>Uploaded file that will be sent</source>
 			</trans-unit>
@@ -323,12 +326,6 @@
 			</trans-unit>
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
-			</trans-unit>
-			<trans-unit id="sys_file_metadata.accessible" resname="sys_file_metadata.accessible">
-				<source>File is accessible</source>
-			</trans-unit>
-			<trans-unit id="sys_file_metadata.not-accessible" resname="sys_file_metadata.not-accessible">
-				<source>File is not accessible</source>
 			</trans-unit>
 		</body>
     </file>

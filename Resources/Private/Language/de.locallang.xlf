@@ -400,8 +400,12 @@
 				<target>Nach oben springen</target>
 			</trans-unit>
 			<trans-unit id="is_accessible.0" resname="is_accessible.0" approved="yes">
-				<source>(bot accessible)</source>
+				<source>(not accessible)</source>
 				<target>(nicht barrierefrei)</target>
+			</trans-unit>
+			<trans-unit id="is_accessible.1" resname="is_accessible.0" approved="yes">
+				<source></source>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="form.uploaded.file" resname="form.uploaded.file" approved="yes">
 				<source>Uploaded file that will be sent</source>
@@ -434,14 +438,6 @@
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 				<target>Weitere erlaubte Dateiendungen für das Dateilinks-Element: z.B. docx,xls</target>
-			</trans-unit>
-			<trans-unit id="sys_file_metadata.accessible" resname="sys_file_metadata.accessible">
-				<source>File is accessible</source>
-				<target>Datei ist barrierefrei/barrierearm</target>
-			</trans-unit>
-			<trans-unit id="sys_file_metadata.not-accessible" resname="sys_file_metadata.not-accessible">
-				<source>File is not accessible</source>
-				<target>Datei ist nicht barrierefrei</target>
 			</trans-unit>
 		</body>
 	</file>
