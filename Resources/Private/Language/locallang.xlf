@@ -324,6 +324,12 @@
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.accessible" resname="sys_file_metadata.accessible">
+				<source>File is accessible</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.not-accessible" resname="sys_file_metadata.not-accessible">
+				<source>File is not accessible</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>

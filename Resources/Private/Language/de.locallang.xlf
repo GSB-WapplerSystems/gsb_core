@@ -435,6 +435,14 @@
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 				<target>Weitere erlaubte Dateiendungen für das Dateilinks-Element: z.B. docx,xls</target>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.accessible" resname="sys_file_metadata.accessible">
+				<source>File is accessible</source>
+				<target>Datei ist barrierefrei/barrierearm</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.not-accessible" resname="sys_file_metadata.not-accessible">
+				<source>File is not accessible</source>
+				<target>Datei ist nicht barrierefrei</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
