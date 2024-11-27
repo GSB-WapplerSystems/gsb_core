@@ -7,15 +7,14 @@
     -->
 </f:comment>
 <f:layout name="Default" />
+
 <f:section name="Main">
-
     <f:render section="Menu" arguments="{menu: menu}" />
-
 </f:section>
-<f:section name="Menu">
 
+<f:section name="Menu">
     <f:if condition="{menu}">
-        <ul class="list-unstyled">
+        <ul>
             <f:for each="{menu}" as="page">
                 <li>
                     <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
@@ -26,6 +25,6 @@
             </f:for>
         </ul>
     </f:if>
-
 </f:section>
+
 </html>
