@@ -83,20 +83,47 @@ lib {
               }
             }
             renderObj = COA
+            renderObj.stdWrap.noTrimWrap = | | |
             renderObj {
-              10 = TEXT
-              10 {
-                data = file:current:extension
-                stdWrap.case = upper
-                noTrimWrap = | [|
+              5 = CASE
+              5 {
+                key.data = file:current:extension
+                pdf = CASE
+                pdf {
+                  key.data = file:current:is_accessible
+                  1 = TEXT
+                  1 {
+                    data = LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:is_accessible.1
+                  }
+
+                  default = TEXT
+                  default {
+                    data = LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:is_accessible.0
+                  }
+                }
+                default = TEXT
+                default {
+                  value =
+                }
+                stdWrap.noTrimWrap = | | |
+                stdWrap.required = 1
               }
-              20 = TEXT
-              20 {
-                data = file:current:size
-                insertData = 1
-                bytes = 1
-                bytes.labels = "B|KB|MB|GB"
-                noTrimWrap = |, |]|
+              10 = COA
+              10.stdWrap.noTrimWrap = | [|] |
+              10 {
+                10 = TEXT
+                10 {
+                  data = file:current:extension
+                  stdWrap.case = upper
+                  stdWrap.noTrimWrap = ||, |
+                }
+                30 = TEXT
+                30 {
+                  data = file:current:size
+                  insertData = 1
+                  bytes = 1
+                  bytes.labels = "B|KB|MB|GB"
+                }
               }
             }
           }
@@ -158,6 +185,11 @@ lib {
     externalBlocks := addToList(li)
     externalBlocks {
       li.stdWrap.parseFunc < lib.parseFunc_RTE_noEncapsLines
+      li.stdWrap.parseFunc {
+        tags {
+          a < lib.parseFunc_RTE.tags.a
+        }
+      }
     }
   }
 }
