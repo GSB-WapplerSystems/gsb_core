@@ -83,7 +83,7 @@ lib {
               }
             }
             renderObj = COA
-            renderObj.stdWrap.noTrimWrap = | [ | ] |
+            renderObj.stdWrap.noTrimWrap = | | |
             renderObj {
               5 = CASE
               5 {
@@ -105,21 +105,25 @@ lib {
                 default {
                   value =
                 }
-                stdWrap.noTrimWrap = | |, |
+                stdWrap.noTrimWrap = | | |
                 stdWrap.required = 1
               }
-              10 = TEXT
+              10 = COA
+              10.stdWrap.noTrimWrap = | [|] |
               10 {
-                data = file:current:extension
-                stdWrap.case = upper
-                stdWrap.noTrimWrap = | |, |
-              }
-              30 = TEXT
-              30 {
-                data = file:current:size
-                insertData = 1
-                bytes = 1
-                bytes.labels = "B|KB|MB|GB"
+                10 = TEXT
+                10 {
+                  data = file:current:extension
+                  stdWrap.case = upper
+                  stdWrap.noTrimWrap = ||, |
+                }
+                30 = TEXT
+                30 {
+                  data = file:current:size
+                  insertData = 1
+                  bytes = 1
+                  bytes.labels = "B|KB|MB|GB"
+                }
               }
             }
           }
