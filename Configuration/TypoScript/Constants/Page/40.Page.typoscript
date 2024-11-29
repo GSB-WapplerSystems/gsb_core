@@ -25,8 +25,6 @@
 ############
 page {
   meta {
-    generator = GSB11
-    generator.replace = 1
     # cat=template: meta data/130/100; type=string; label=viewport
     viewport = width=device-width, initial-scale=1, minimum-scale=1
     # cat=template: meta data/130/110; type=string; label=robots
