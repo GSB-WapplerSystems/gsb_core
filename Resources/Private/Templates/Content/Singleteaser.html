@@ -31,4 +31,12 @@
         </f:if>
     </div>
 </article>
+
+<f:if condition="{data.grid_light}">
+    <f:asset.css identifier="general-color-configs-overwrite" useNonce="true" priority="true">
+        .teaser.grid-light {
+            --bs-focus-ring-color: rgb(255, 255, 255, .1);
+        }
+    </f:asset.css>
+</f:if>
 </html>
