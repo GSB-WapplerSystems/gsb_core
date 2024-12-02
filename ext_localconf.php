@@ -26,7 +26,6 @@
 
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
-use ITZBund\GsbCore\Upgrades\RemoveIsAccessibleColumnWizard;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Information\Typo3Version;
