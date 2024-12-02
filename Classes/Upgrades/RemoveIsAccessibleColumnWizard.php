@@ -24,7 +24,6 @@ namespace ITZBund\GsbCore\Upgrades;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 class RemoveIsAccessibleColumnWizard implements UpgradeWizardInterface
