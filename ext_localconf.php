@@ -26,6 +26,7 @@
 
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
+use ITZBund\GsbCore\Upgrades\RemoveIsAccessibleColumnWizard;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Information\Typo3Version;
@@ -136,4 +137,6 @@ defined('TYPO3') or die('Access denied.');
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update'][RemoveIsAccessibleColumnWizard::class] = RemoveIsAccessibleColumnWizard::class;
 })();
