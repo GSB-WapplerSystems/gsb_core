@@ -13,7 +13,7 @@
                 <figure class="figure">
                     <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                       <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                          <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{file.properties.uid}" treatIdAsReference="1" />
+                          <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" image="{file}" />
                       </picture>
                     </f:alias>
                     <f:if condition="{file.description} || {file.originalFile.properties.copyright} || {file.originalFile.properties.caption}">

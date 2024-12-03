@@ -43,7 +43,12 @@ config {
   # cat=Default Templateset (ITZBund): advanced/150/210; type=boolean; label=Concatenate Css
   concatenateCss = 0
   # cat=Default Templateset (ITZBund): advanced/150/220; type=text; label=Header Comment
-  headerComment = itzbund.de
+  headerComment ( itzbund.de
+
+=========================================================================================
+Uses GSB 11 https://software.opencode.de/project/2460
+=========================================================================================
+  )
   # cat=Default Templateset (ITZBund): advanced/150/260; type=boolean; label=Spam protect email addresses
   spamProtectEmailAddresses =
   # cat=Default Templateset (ITZBund): advanced/150/270; type=text; label=Spam protect email addresses atSubst

@@ -387,3 +387,17 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
 
     $GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
 }
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3979')) {
+    $GLOBALS['SiteConfiguration']['site']['columns']['display-brand-topline'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.display-brand-topline.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.display-brand-topline.description',
+        'config' => [
+            'renderType' => 'checkboxToggle',
+            'type' => 'check',
+            'default' => 0,
+        ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', display-brand-topline';
+}

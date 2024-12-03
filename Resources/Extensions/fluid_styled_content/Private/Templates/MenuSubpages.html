@@ -14,27 +14,28 @@
             <f:for as="page" each="{menu}" iteration="iterator">
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
-                        <article class="frame frame-type-gsb_singleteaser frame-layout-0">
-                            <div class="teaser textpic topcenter d-flex flex-wrap" style="background-color:#f3f7fb">
+                        <article class="frame frame-type-gsb_singleteaser frame-layout-0 h-100">
+                            <div class="teaser textpic topcenter d-flex flex-wrap h-100{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}{f:if(condition: data.grid_light, then: ' grid-light')}">
                                 <div class="teaser-content ce-bodytext order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
-                                        <h3>
+                                        <{f:if(condition: data.tx_subelements_header_style, then: '{data.tx_subelements_header_style}', else: 'h2')}>
                                             <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
                                                 <span>
                                                   {page.title}
                                                 </span>
                                             </f:link.typolink>
-                                        </h3>
+                                        </{f:if(condition: tx_subelements_header_style, then: '{tx_subelements_header_style}', else: 'h2')}>
                                         <p>
-                                            <f:format.stripTags><f:format.raw><f:format.crop append="..." maxCharacters="150" respectHtml="true" respectWordBoundaries="true">{page.data.teaser_description}</f:format.crop></f:format.raw></f:format.stripTags>
+                                            <f:format.stripTags><f:format.raw>{page.data.teaser_description}</f:format.raw></f:format.stripTags>
                                         </p>
                                     </f:if>
                                 </div>
-                                <f:if condition="{page.files}">
+                                <f:if condition="{page.files} && {page.files->f:count()}">
+                                    <f:variable name="file">{page.files.0}</f:variable>
                                     <div class="teaser-image ce-gallery order-0">
-                                        <f:alias map="{gsb:format.json.decode(json: page.files.0.properties.crop)}">
+                                        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                                             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                                                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" src="{page.files.0.properties.uid}" treatIdAsReference="1" />
+                                                <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" image="{file}" treatIdAsReference="1" />
                                             </picture>
                                         </f:alias>
                                     </div>
@@ -45,6 +46,14 @@
                 </f:if>
             </f:for>
         </ul>
+    </f:if>
+
+    <f:if condition="{data.grid_light}">
+        <f:asset.css identifier="general-color-configs-overwrite" useNonce="true" priority="true">
+            .teaser.grid-light {
+                --bs-focus-ring-color: rgb(255, 255, 255, .2);
+            }
+        </f:asset.css>
     </f:if>
 </f:section>
 </html>

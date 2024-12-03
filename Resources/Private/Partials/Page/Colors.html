@@ -1,7 +1,7 @@
 {namespace gsb=ITZBund\GsbCore\ViewHelpers}
 
 <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2877')}">
-    <f:if condition="{site.configuration.color_primary} || {site.configuration.color_secondary} || {site.configuration.color_tertiary} || {site.configuration.color_quaternary}">
+    <f:if condition="{site.configuration.color_primary} || {site.configuration.color_secondary} || {site.configuration.color_tertiary} || {site.configuration.color_quaternary} || {site.configuration.color_1} || {site.configuration.color_2} || {site.configuration.color_3} || {site.configuration.color_4} || {site.configuration.color_5} || {site.configuration.color_6}">
         <f:asset.css identifier="general-color-configs" useNonce="true" priority="true">
             :root <f:format.raw>{</f:format.raw>
             <f:spaceless>
@@ -13,6 +13,12 @@
                             <f:case value="color_secondary_rgba">--bs-focus-ring-color: {item};</f:case>
                             <f:case value="color_tertiary">--bs-tertiary: {item};</f:case>
                             <f:case value="color_quaternary">--bs-quaternary: {item};</f:case>
+                            <f:case value="color_1">--bs-bgcolor-1: {item};</f:case>
+                            <f:case value="color_2">--bs-bgcolor-2: {item};</f:case>
+                            <f:case value="color_3">--bs-bgcolor-3: {item};</f:case>
+                            <f:case value="color_4">--bs-bgcolor-4: {item};</f:case>
+                            <f:case value="color_5">--bs-bgcolor-5: {item};</f:case>
+                            <f:case value="color_6">--bs-bgcolor-6: {item};</f:case>
                         </f:switch>
                     </f:if>
                 </f:for>
@@ -21,14 +27,3 @@
         </f:asset.css>
     </f:if>
 </f:if>
-
-<f:asset.css identifier="background-color-configs" useNonce="true">
-    :root <f:format.raw>{</f:format.raw>
-    <f:spaceless>
-    <f:for each="{site.configuration}" as="item" key="key"><f:if condition="{item} !== ''">
-        <f:switch expression="{key -> f:format.crop(maxCharacters: 6, append: '')}">
-            <f:case value="color_">--gsb-{key}: {item};</f:case>
-        </f:switch></f:if></f:for>
-    </f:spaceless>
-    <f:format.raw>}</f:format.raw>
-</f:asset.css>

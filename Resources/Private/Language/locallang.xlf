@@ -96,6 +96,9 @@
 			<trans-unit id="header.linktohomepage" resname="header.linktohomepage">
 				<source>Link to homepage</source>
 			</trans-unit>
+			<trans-unit id="header.brandtopline" resname="header.brandtopline">
+				<source>An official website of the Federal Republic of Germany</source>
+			</trans-unit>
 			<trans-unit id="supplement.areamenu" resname="supplement.areamenu">
 				<source>Area menu</source>
 			</trans-unit>
@@ -296,6 +299,9 @@
 			</trans-unit>
 			<trans-unit id="is_accessible.0" resname="is_accessible.0">
 				<source>(not accessible)</source>
+			</trans-unit>
+			<trans-unit id="is_accessible.1" resname="is_accessible.0" approved="yes">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="form.uploaded.file" resname="form.uploaded.file">
 				<source>Uploaded file that will be sent</source>

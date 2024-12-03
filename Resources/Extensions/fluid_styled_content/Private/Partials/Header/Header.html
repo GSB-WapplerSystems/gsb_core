@@ -6,147 +6,67 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
+
+<f:variable name="headerLinkClass">{f:if(condition: link, then: 'link')}{f:if(condition: teaserLink, then: ' teaser-link stretched-link')}</f:variable>
+<f:variable name="headerLinkParameter">{f:if(condition: teaserLink, then: '{teaserLink}', else: '{link}')}</f:variable>
+
 <f:if condition="{header}">
-	<f:switch expression="{layout}">
-		<f:case value="1">
-			<h1 class="{positionClass}" id="headerMain">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h1>
-		</f:case>
-		<f:case value="2">
-			<h2 class="{positionClass}">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h2>
-		</f:case>
-		<f:case value="3">
-			<h3 class="{positionClass}">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h3>
-		</f:case>
-		<f:case value="4">
-			<h4 class="{positionClass}">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h4>
-		</f:case>
-		<f:case value="5">
-			<h5 class="{positionClass}">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h5>
-		</f:case>
-		<f:case value="6">
-			<h6 class="{positionClass}">
-                <f:if condition="{linkText}">
-                    <f:then>
-                        <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <f:link.typolink parameter="{link}"><span>{header}</span></f:link.typolink>
-                            </f:then>
-                            <f:else>
-                                <f:link.typolink class="teaser-link stretched-link" parameter="{teaserLink}"><span>{header}</span></f:link.typolink>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-			</h6>
-		</f:case>
-		<f:case value="7">
-			<h1 class="visually-hidden" id="headerMain">
-				{header}
-			</h1>
-		</f:case>
-		<f:case value="8">
-			<h2 class="visually-hidden">
-				{header}
-			</h2>
-		</f:case>
-		<f:case value="9">
-			<h3 class="visually-hidden">
-				{header}
-			</h3>
-		</f:case>
-		<f:case value="10">
-			<h4 class="visually-hidden">
-				{header}
-			</h4>
-		</f:case>
-		<f:case value="10">
-			<h4 class="visually-hidden">
-				{header}
-			</h4>
-		</f:case>
+    <f:switch expression="{layout}">
+        <f:case value="1">
+            <h1 class="{positionClass}" id="headerMain">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h1>
+        </f:case>
+        <f:case value="2">
+            <h2 class="{positionClass}">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h2>
+        </f:case>
+        <f:case value="3">
+            <h3 class="{positionClass}">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h3>
+        </f:case>
+        <f:case value="4">
+            <h4 class="{positionClass}">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h4>
+        </f:case>
+        <f:case value="5">
+            <h5 class="{positionClass}">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h5>
+        </f:case>
+        <f:case value="6">
+            <h6 class="{positionClass}">
+                <f:link.typolink class="{headerLinkClass}" parameter="{headerLinkParameter}"><span>{header}</span></f:link.typolink>
+            </h6>
+        </f:case>
+        <f:case value="7">
+            <h1 class="visually-hidden">
+                {header}
+            </h1>
+        </f:case>
+        <f:case value="8">
+            <h2 class="visually-hidden">
+                {header}
+            </h2>
+        </f:case>
+        <f:case value="9">
+            <h3 class="visually-hidden">
+                {header}
+            </h3>
+        </f:case>
+        <f:case value="10">
+            <h4 class="visually-hidden">
+                {header}
+            </h4>
+        </f:case>
+        <f:case value="10">
+            <h4 class="visually-hidden">
+                {header}
+            </h4>
+        </f:case>
         <f:case value="11">
             <h5 class="visually-hidden">
                 {header}
@@ -157,18 +77,18 @@
                 {header}
             </h6>
         </f:case>
-		<f:case value="100">
-			<f:comment> -- do not show header -- </f:comment>
-		</f:case>
-		<f:defaultCase>
-			<f:if condition="{default}">
-				<f:render arguments="{
+        <f:case value="100">
+            <f:comment> -- do not show header -- </f:comment>
+        </f:case>
+        <f:defaultCase>
+            <f:if condition="{default}">
+                <f:render arguments="{
 					header: header,
 					layout: default,
 					positionClass: positionClass,
 					link: link}" partial="Header/Header" />
-			</f:if>
-		</f:defaultCase>
-	</f:switch>
+            </f:if>
+        </f:defaultCase>
+    </f:switch>
 </f:if>
 </html>

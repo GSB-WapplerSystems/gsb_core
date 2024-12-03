@@ -80,12 +80,12 @@
 				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="header_layout.1" resname="header_layout.1" approved="yes">
-				<source>H1 - Default</source>
-				<target>H1 - Standard</target>
+				<source>H1</source>
+				<target>H1</target>
 			</trans-unit>
 			<trans-unit id="header_layout.2" resname="header_layout.2" approved="yes">
-				<source>H2</source>
-				<target>H2</target>
+				<source>H2 - Default</source>
+				<target>H2 - Standard</target>
 			</trans-unit>
 			<trans-unit id="header_layout.3" resname="header_layout.3" approved="yes">
 				<source>H3</source>
@@ -338,6 +338,26 @@
 			<trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio" approved="yes">
 				<source>Audio</source>
 				<target>Audio</target>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance" resname="tt_content.menu_subpages.items.appearance">
+				<source>Appearance of menu items</source>
+				<target>Erscheinungsbild der Menü-Elemente</target>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.label" resname="tt_content.menu_subpages.subelements_header_style.default.label">
+				<source>Headline type of menu items</source>
+				<target>Typ der Überschriften der Menü-Elemente</target>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.default" resname="tt_content.menu_subpages.subelements_header_style.default">
+				<source>Default (H2)</source>
+				<target>Standard (H2)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_bgcolor.label" resname="tt_content.menu_subpages.items.appearance.grid_bgcolor.label">
+				<source>Background color of menu items</source>
+				<target>Hintergrundfarbe der Menü-Elemente</target>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_light.label" resname="tt_content.menu_subpages.items.appearance.grid_light.label">
+				<source>Text color color of menu items</source>
+				<target>Textfarbe der Menü-Elemente</target>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch" approved="yes">
 				<source>Stage Type</source>
@@ -1214,7 +1234,14 @@
 					Schalter sind nicht konfigurierbar und erhalten den Wert aus der allgemeinen Konfiguration im GSB Tab.
 				</target>
 			</trans-unit>
-
+			<trans-unit id="page.configuration.display-brand-topline.label" resname="page.configuration.display-brand-topline.label">
+				<source>Show page topline</source>
+				<target>Kopfzeile anzeigen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.display-brand-topline.description" resname="page.configuration.display-brand-topline.description">
+				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
+				<target>Zeigt als Kopfzeile der Webseite den Text "Eine offizielle Website der Bundesrepublik Deutschland" an.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

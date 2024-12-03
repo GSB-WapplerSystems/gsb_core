@@ -1,3 +1,4 @@
+.idea
 .composer
 composer.lock
 coverage.cobertura.xml

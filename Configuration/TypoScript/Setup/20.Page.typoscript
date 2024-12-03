@@ -140,6 +140,8 @@ page {
     }
   }
   meta {
+    generator = GSB11
+    generator.replace = 1
     viewport = {$page.meta.viewport}
     robots = {$page.meta.robots}
     apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}

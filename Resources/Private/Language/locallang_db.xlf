@@ -61,10 +61,10 @@
 				<source>Default</source>
 			</trans-unit>
 			<trans-unit id="header_layout.1" resname="header_layout.1">
-				<source>H1 - Default</source>
+				<source>H1</source>
 			</trans-unit>
 			<trans-unit id="header_layout.2" resname="header_layout.2">
-				<source>H2</source>
+				<source>H2 - Default</source>
 			</trans-unit>
 			<trans-unit id="header_layout.3" resname="header_layout.3">
 				<source>H3</source>
@@ -263,6 +263,21 @@
 			</trans-unit>
 			<trans-unit id="tt_content.CType.audio" resname="tt_content.CType.audio">
 				<source>Audio</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance" resname="tt_content.menu_subpages.items.appearance">
+				<source>Appearance of menu items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.label" resname="tt_content.menu_subpages.subelements_header_style.default.label">
+				<source>Headline type of menu items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.subelements_header_style.default" resname="tt_content.menu_subpages.subelements_header_style.default">
+				<source>Default (H2)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_bgcolor.label" resname="tt_content.menu_subpages.items.appearance.grid_bgcolor.label">
+				<source>Background color of menu items</source>
+			</trans-unit>
+			<trans-unit id="tt_content.menu_subpages.items.appearance.grid_light.label" resname="tt_content.menu_subpages.items.appearance.grid_light.label">
+				<source>Text color color of menu items</source>
 			</trans-unit>
 			<trans-unit id="stage.tx_stage_switch" resname="stage.tx_stage_switch">
 				<source>Stage Type</source>
@@ -1008,6 +1023,12 @@
 					The following fields can be used to override the globally set logo and copyright info configured in the GSB tab.
 					Toggles are readonly fields and get their value assigned by the global configuration in the GSB tab.
 				</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.display-brand-topline.label" resname="page.configuration.display-brand-topline.label">
+				<source>Show page topline</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.display-brand-topline.description" resname="page.configuration.display-brand-topline.description">
+				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
 			</trans-unit>
 		</body>
 	</file>

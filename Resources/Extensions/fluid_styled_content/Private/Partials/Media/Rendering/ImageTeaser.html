@@ -62,7 +62,7 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <f:image class="figure-img img-fluid" style="{f:if(condition:'{file.properties.outline} == 1', then:'border-color:{data.grid_bgcolor}')}" cropVariant="default" loading="lazy" maxWidth="{data.imagewidth}" src="{file.properties.uid}" alt="" treatIdAsReference="1"/>
+                <f:image class="figure-img img-fluid" style="{f:if(condition:'{file.properties.outline} == 1', then:'border-color:{data.grid_bgcolor}')}" cropVariant="default" loading="lazy" maxWidth="{data.imagewidth}" image="{file}" />
             </picture>
         </f:alias>
     </f:then>
@@ -119,7 +119,7 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 600, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <f:image class="figure-img img-fluid" style="{f:if(condition:'{file.properties.outline} == 1', then:'border-color:{data.grid_bgcolor}')}" cropVariant="default" loading="lazy" maxWidth="1920" src="{file.properties.uid}" alt="" treatIdAsReference="1"/>
+                <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="1920" />
             </picture>
         </f:alias>
     </f:else>
