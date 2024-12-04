@@ -25,7 +25,7 @@ namespace ITZBund\GsbCore\Log\Writer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Log\LogRecord;
 use TYPO3\CMS\Core\Log\Writer\FileWriter;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -65,6 +65,12 @@ class JsonFileWriter extends FileWriter
             'message' => $this->interpolate($message, $context),
             'context' => $context,
         ];
+
+        $request = $GLOBALS['TYPO3_REQUEST'] ?? null;
+        if ($request instanceof ServerRequest && $request->hasHeader('x-request-id')) {
+            $requestIdHeader = $request->getHeader('x-request-id');
+            $payload['X-Request-Id'] = (string)reset($requestIdHeader);
+        }
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
