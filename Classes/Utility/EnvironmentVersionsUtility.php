@@ -38,7 +38,8 @@ class EnvironmentVersionsUtility
             'versions' => [
                 'gsb' => $this->getGsbVersion(),
                 'container' => $this->getContainerVersion(),
-                'helmChart' => $this->getHelmChartVersion(),
+                'gsbBaseHelmChart' => $this->getGsbBaseHelmChartVersion(),
+                'gsbBaseConfig' => $this->getGsbBaseConfigVersion(),
                 'TYPO3' => $this->typo3Version->getVersion(),
                 'packageCacheHash' => $this->packageManager->getCacheIdentifier(),
             ],
@@ -47,34 +48,45 @@ class EnvironmentVersionsUtility
 
     protected function getGsbVersion(): ?string
     {
-        $gsbVersion = getenv('GSB_VERSION');
+        $version = getenv('GSB_VERSION');
 
-        if ($gsbVersion === false) {
+        if ($version === false) {
             return null;
         }
 
-        return $gsbVersion;
+        return $version;
     }
 
     protected function getContainerVersion(): ?string
     {
-        $containerVersion = getenv('CONTAINER_VERSION');
+        $version = getenv('CONTAINER_VERSION');
 
-        if ($containerVersion === false) {
+        if ($version === false) {
             return null;
         }
 
-        return $containerVersion;
+        return $version;
     }
 
-    protected function getHelmChartVersion(): ?string
+    protected function getGsbBaseHelmChartVersion(): ?string
     {
-        $helmChartVersion = getenv('HELM_CHART_VERSION');
+        $version = getenv('GSB_BASE_HELM_CHART_VERSION');
 
-        if ($helmChartVersion === false) {
+        if ($version === false) {
             return null;
         }
 
-        return $helmChartVersion;
+        return $version;
+    }
+
+    protected function getGsbBaseConfigVersion(): ?string
+    {
+        $version = getenv('GSB_BASE_CONFIG_VERSION');
+
+        if ($version === false) {
+            return null;
+        }
+
+        return $version;
     }
 }
