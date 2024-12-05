@@ -20,7 +20,7 @@ defined('TYPO3') || die();
                 'config' =>
                     [
                         'type' => 'file',
-                        'allowed' => 'mp3,wav',
+                        'allowed' => 'mp3,wav,externalaudio',
                         'maxitems' => 1,
                         'minitems' => 0,
                         'overrideChildTca' => [

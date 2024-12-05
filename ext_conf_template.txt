@@ -1,4 +1,6 @@
 # cat=config/cmedia/10; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedVideoDomains
 allowedVideoDomains =
+# cat=config/cmedia/20; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedAudioDomains
+allowedAudioDomains =
 # cat=config/cuploads/10; type=string; label=LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.additionalAllowedFileExtensionsForUploadsElement
 additionalAllowedFileExtensionsForUploadsElement =

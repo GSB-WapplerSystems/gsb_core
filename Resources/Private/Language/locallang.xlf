@@ -324,6 +324,12 @@
 			<trans-unit id="config.allowedVideoDomains.list" resname="config.allowedVideoDomains.list">
 				<source>Allowed domains for external videos:</source>
 			</trans-unit>
+			<trans-unit id="config.allowedAudioDomains" resname="config.allowedAudioDomains">
+				<source>Allowed domains for external audio files: e.g. *.bund.de, www.myvideohost.example, https://*.bund.de</source>
+			</trans-unit>
+			<trans-unit id="config.allowedAudioDomains.list" resname="config.allowedAudioDomains.list">
+				<source>Allowed domains for external audio files:</source>
+			</trans-unit>
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 			</trans-unit>
