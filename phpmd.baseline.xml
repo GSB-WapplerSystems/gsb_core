@@ -47,6 +47,8 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalVideoHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalVideoHelper.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalAudioHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalAudioHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resource/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/OverrideYouTubeHelper.php"/>

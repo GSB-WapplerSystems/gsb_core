@@ -54,6 +54,10 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
             $this->addVideoDescriptionField();
         }
 
+        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
+            $this->addAudioDescriptionField();
+        }
+
         return parent::render();
     }
 
@@ -68,5 +72,18 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
         $desc = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedVideoDomains.list';
         $this->data['parameterArray']['fieldConf']['description'] =
             $this->getLanguageService()->sL($desc) . ' ' . $config['allowedVideoDomains'];
+    }
+
+    public function addAudioDescriptionField(): void
+    {
+        if (! str_ends_with($this->data['parameterArray']['itemFormElName'] ?? '', '[tx_audio_audio]')) {
+            return;
+        }
+
+        $config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
+
+        $desc = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:config.allowedAudioDomains.list';
+        $this->data['parameterArray']['fieldConf']['description'] =
+            $this->getLanguageService()->sL($desc) . ' ' . $config['allowedAudioDomains'];
     }
 }
