@@ -45,6 +45,11 @@ tt_content {
       100 {
         field = gsb_singleteaser
       }
+
+      200 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
+      200 {
+        as = mainCategory
+      }
     }
   }
 }
