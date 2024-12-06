@@ -44,6 +44,8 @@ lib {
       table {
         stdWrap {
           HTMLparser = 1
+          wrap = <div class="table-responsive">|</div>
+
           HTMLparser {
             tags {
               table {
@@ -60,6 +62,7 @@ lib {
         }
       }
     }
+
     tags {
       a {
         postCObject = COA
@@ -73,6 +76,7 @@ lib {
                 stdWrap.substring = 0,9
               }
             }
+
             files {
               // variant 2 to grab file uid
               data = parameters:href
@@ -82,6 +86,7 @@ lib {
                 returnKey = 1
               }
             }
+
             renderObj = COA
             renderObj.stdWrap.noTrimWrap = | | |
             renderObj {
@@ -101,13 +106,16 @@ lib {
                     data = LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:is_accessible.0
                   }
                 }
+
                 default = TEXT
                 default {
                   value =
                 }
+
                 stdWrap.noTrimWrap = | | |
                 stdWrap.required = 1
               }
+
               10 = COA
               10.stdWrap.noTrimWrap = | [|] |
               10 {
@@ -117,6 +125,7 @@ lib {
                   stdWrap.case = upper
                   stdWrap.noTrimWrap = ||, |
                 }
+
                 30 = TEXT
                 30 {
                   data = file:current:size
@@ -128,6 +137,7 @@ lib {
             }
           }
         }
+
         // add default title and e.g: download attribute
         typolink.ATagParams.stdWrap.outerWrap.cObject = COA
         typolink.ATagParams.stdWrap.outerWrap.cObject {
@@ -140,6 +150,7 @@ lib {
                 stdWrap.substring = 0,9
               }
             }
+
             files {
               // variant 2 to grab file uid
               data = parameters:href
@@ -149,6 +160,7 @@ lib {
                 returnKey = 1
               }
             }
+
             renderObj = COA
             renderObj {
               // add title, if not set
@@ -161,6 +173,7 @@ lib {
                   dataWrap.if.isTrue.data = file:current:download_name
                 }
               }
+
               // add download name or other attributes
               20 = TEXT
               20 {
@@ -177,6 +190,7 @@ lib {
       }
     }
   }
+
   # Remove wrapping p
   parseFunc_RTE_noEncapsLines < .parseFunc_RTE
   parseFunc_RTE_noEncapsLines.nonTypoTagStdWrap.encapsLines >
