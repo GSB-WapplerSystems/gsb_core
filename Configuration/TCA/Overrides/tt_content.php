@@ -136,6 +136,28 @@ defined('TYPO3') || die();
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $linkColumns);
 
+    $mainCategoryDateOverrides = [
+        'main_category_overwrite_toggle' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.main_category.overwrite.toggle',
+            'onChange' => 'reload',
+            'config' => [
+                'renderType' => 'checkboxToggle',
+                'type' => 'check',
+                'default' => 0,
+            ],
+        ],
+        'main_category_overwrite' => [
+            'displayCond' => 'FIELD:main_category_overwrite_toggle:REQ:true',
+            'l10n_mode' => 'prefixLangTitle',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.main_category.overwrite',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'max' => 255,
+            ],
+        ],
+    ];
+
     $categoryDateOverrides = [
         'header_kicker_toggle' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.header_position.kicker.toggle',
@@ -174,6 +196,11 @@ defined('TYPO3') || die();
 
     ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
+        $mainCategoryDateOverrides
+    );
+
+    ExtensionManagementUtility::addTCAcolumns(
+        'tt_content',
         $categoryDateOverrides
     );
 
@@ -190,6 +217,9 @@ defined('TYPO3') || die();
             'showitem' => implode(
                 ',',
                 [
+                    'main_category_overwrite_toggle',
+                    'main_category_overwrite',
+                    '--linebreak--',
                     'header_kicker_toggle',
                     'header_kicker',
                     '--linebreak--',

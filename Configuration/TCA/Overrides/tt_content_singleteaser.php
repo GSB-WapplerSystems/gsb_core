@@ -35,6 +35,10 @@ defined('TYPO3') || die();
 
     $dateAndKickerOverrideFields = '';
     if (! GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
+        $mainCategoryOverrideFields = implode(',', [
+                'main_category_overwrite_toggle',
+                'main_category_overwrite',
+            ]) . ',';
         $dateAndKickerOverrideFields = implode(',', [
             'date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel',
             'header_kicker_toggle',

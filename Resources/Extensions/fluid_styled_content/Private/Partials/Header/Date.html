@@ -11,8 +11,15 @@
         <f:if condition="{date}">
 		    <span class="date-text"><span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{date}</f:format.date> </span>
         </f:if>
-        <f:if condition="{category}">
-            <span class="dot" aria-hidden="true">•</span> {category.title}
+        <f:if condition="{main_category_overwrite_toggle}">
+            <f:then>
+                <f:if condition="{main_category_overwrite}">
+                    <span class="dot" aria-hidden="true">•</span> {main_category_overwrite}
+                </f:if>
+            </f:then>
+            <f:else if="{category.title}">
+                <span class="dot" aria-hidden="true">•</span> {category.title}
+            </f:else>
         </f:if>
 	</p>
 </f:if>

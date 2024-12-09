@@ -198,11 +198,17 @@
 			<trans-unit id="tt_content.tx_link_position.I.2" resname="tt_content.tx_link_position.I.2">
 				<source>Right</source>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
-				<source>Kicker</source>
+            <trans-unit id="tt_content.main_category.overwrite.toggle" resname="tt_content.main_category.overwrite.toggle">
+                <source>Override main categories by Kicker</source>
+            </trans-unit>
+            <trans-unit id="tt_content.main_category.overwrite" resname="tt_content.main_category.overwrite">
+                <source>Kicker (Main Category)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
+				<source>Kicker (Subcategories)</source>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
-				<source>override categories by Kicker</source>
+				<source>Override subcategories by Kicker</source>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
 				<source>Intext</source>
@@ -1007,7 +1013,7 @@
 				<source>Category and date override</source>
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.category_date_override.description" resname="tt_content.palettes.category_date_override.description">
-				<source>Use the following two toggles to switch between using the category and date provided by the target page or set one manually</source>
+				<source>Use the following three toggles to switch between using the categories and date provided by the target page or set one manually</source>
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.date_override_toggle.label" resname="tt_content.palettes.date_override_toggle.label">
 				<source>Hide date</source>

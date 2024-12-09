@@ -25,6 +25,8 @@
                         <f:render arguments="{
                             date: targetPageDate,
                             category: mainCategory,
+                            main_category_overwrite_toggle: data.main_category_overwrite_toggle,
+                            main_category_overwrite: data.main_category_overwrite,
                             positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
                     </f:if>
                 </f:then>
