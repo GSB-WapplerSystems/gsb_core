@@ -7,9 +7,9 @@
     -->
 </f:comment>
 <f:if condition="{data.header_layout} != 100">
-	<f:if condition="{data.header}">
-		<div class="header-content">
-			<f:render arguments="{
+    <f:if condition="{data.header}">
+        <div class="header-content">
+            <f:render arguments="{
 				header: data.header,
 				layout: data.header_layout,
 				style: data.tx_header_style,
@@ -19,14 +19,25 @@
 				link: data.header_link,
 				default: settings.defaultHeaderType}" partial="Header/Header" />
 
-            <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2328')} == 1">
+            <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2328')} == 1 || {gsb:featureFlag(featureKey: 'ITZBUNDPHP-3969')} == 1">
                 <f:then>
+                    <f:if condition="{targetPageMainCategory} && {gsb:featureFlag(featureKey: 'ITZBUNDPHP-3969')} == 1">
+                        <f:then>
+                            <f:variable name="elementCategory" value="{targetPageMainCategory}" />
+                            <f:variable name="mainCategoryOverwriteToggle" value="{data.main_category_overwrite_toggle}" />
+                            <f:variable name="mainCategoryOverwrite" value="{data.main_category_overwrite}" />
+                        </f:then>
+                        <f:else if="{mainCategory}">
+                            <f:variable name="elementCategory" value="{mainCategory}" />
+                        </f:else>
+                    </f:if>
+
                     <f:if condition="{data.date_override_toggle} == 0 && {targetPageDate} > 0">
                         <f:render arguments="{
                             date: targetPageDate,
-                            category: mainCategory,
-                            main_category_overwrite_toggle: data.main_category_overwrite_toggle,
-                            main_category_overwrite: data.main_category_overwrite,
+                            category: elementCategory,
+                            main_category_overwrite_toggle: mainCategoryOverwriteToggle,
+                            main_category_overwrite: mainCategoryOverwrite,
                             positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
                     </f:if>
                 </f:then>
@@ -47,15 +58,15 @@
 				teaserLink: data.tx_link,
 				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position} \')}',
 				default: settings.defaultHeaderType}" partial="Header/Kicker" />
-			<f:render arguments="{
+            <f:render arguments="{
 				subheader: data.subheader,
 				layout: data.header_layout,
 				linkText: data.tx_link_text,
 				teaserLink: data.tx_link,
 				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
 				default: settings.defaultHeaderType}" partial="Header/SubHeader" />
-		</div>
-	</f:if>
+        </div>
+    </f:if>
 </f:if>
 </html>
 

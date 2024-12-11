@@ -6,7 +6,7 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
-<f:if condition="{date} || {categories}">
+<f:if condition="{date} || {category}">
 	<p class="date {positionClass}">
         <f:if condition="{date}">
 		    <span class="date-text"><span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{date}</f:format.date> </span>

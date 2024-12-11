@@ -46,10 +46,6 @@ tt_content {
         field = gsb_singleteaser
       }
 
-      200 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
-      200 {
-        as = mainCategory
-      }
     }
   }
 }
@@ -59,6 +55,15 @@ tt_content {
     30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
     30 {
       as = targetPageDate
+    }
+  }
+[global]
+
+[feature("ITZBUNDPHP-3969") == true]
+  tt_content.gsb_singleteaser.dataProcessing {
+    1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
+    1733847629 {
+      as = targetPageMainCategory
     }
   }
 [global]
