@@ -42,7 +42,7 @@ defined('TYPO3') || die();
                         'enableRichtext' => 1,
                     ],
                 ],
-                'image' =>[
+                'image' => [
                     'config' => [
                         'maxitems' => 1,
                         'allowed' => 'jpg,jpeg,svg,png,gif',
@@ -97,7 +97,7 @@ defined('TYPO3') || die();
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
-            ],
+        ],
     ];
 
     $GLOBALS['TCA']['tt_content']['types']['gsb_singleteaser']['previewRenderer'] = SingleteaserPreviewRenderer::class;
