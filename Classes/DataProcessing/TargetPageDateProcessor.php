@@ -21,6 +21,9 @@
 namespace ITZBund\GsbCore\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\LinkHandling\Exception\UnknownLinkHandlerException;
+use TYPO3\CMS\Core\LinkHandling\Exception\UnknownUrnException;
+use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -73,20 +76,21 @@ class TargetPageDateProcessor implements DataProcessorInterface
     private function getPageFromTypolink(ContentObjectRenderer $cObj, string $typolink): ?array
     {
         try {
-            $linkConfiguration = $this->linkFactory->create('', ['parameter' => $typolink], $cObj);
+            $this->linkFactory->create('', ['parameter' => $typolink], $cObj);
         } catch (UnableToLinkException $uTLe) {
             return null;
         }
 
-        if ($linkConfiguration->getType() !== 'page') {
+        $linkService = GeneralUtility::makeInstance(LinkService::class);
+        try {
+            $decoded = $linkService->resolveByStringRepresentation($typolink);
+        } catch (UnknownLinkHandlerException | UnknownUrnException $exception) {
             return null;
         }
 
-        $matches = [];
-        preg_match('/^t3:\/\/page\?uid=([0-9]+)#{0,1}[0-9a-z-]*$/', $typolink, $matches);
-
-        if (count($matches) !== 2) {
-            return null;
+        $pageUid = 0;
+        if (($decoded['type'] ?? '') == 'page') {
+            $pageUid = $decoded['pageuid'];
         }
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
@@ -94,7 +98,7 @@ class TargetPageDateProcessor implements DataProcessorInterface
         $result = $queryBuilder
             ->select('*')
             ->from('pages')
-            ->where($queryBuilder->expr()->eq('uid', (int)$matches[1]))
+            ->where($queryBuilder->expr()->eq('uid', $pageUid))
             ->executeQuery()
             ->fetchAssociative();
 

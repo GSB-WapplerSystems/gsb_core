@@ -21,6 +21,9 @@
 namespace ITZBund\GsbCore\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\LinkHandling\Exception\UnknownLinkHandlerException;
+use TYPO3\CMS\Core\LinkHandling\Exception\UnknownUrnException;
+use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -41,8 +44,6 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $linkFactory = GeneralUtility::makeInstance(LinkFactory::class);
-
         $link = $cObj->data['tx_link'] ?? null;
         $targetVariableName = (string)$cObj->stdWrapValue('as', $processorConfiguration, 'tx_link_target_main_category');
 
@@ -50,7 +51,7 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
             return $processedData;
         }
 
-        $category = $this->getCategoryFromTypolink($cObj, $link, $linkFactory);
+        $category = $this->getCategoryFromTypolink($cObj, $link);
 
         if ($category !== null) {
             $processedData[$targetVariableName] = $category;
@@ -64,26 +65,28 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
      *
      * @return array<string,mixed>|null
      */
-    private function getCategoryFromTypolink(ContentObjectRenderer $cObj, string $typolink, LinkFactory $linkFactory): ?array
+    private function getCategoryFromTypolink(ContentObjectRenderer $cObj, string $typolink): ?array
     {
+        $linkFactory = GeneralUtility::makeInstance(LinkFactory::class);
         try {
-            $linkConfiguration = $linkFactory->create('', ['parameter' => $typolink], $cObj);
+            $linkFactory->create('', ['parameter' => $typolink], $cObj);
         } catch (UnableToLinkException $uTLe) {
             return null;
         }
 
-        if ($linkConfiguration->getType() !== 'page') {
+        $decoded = [];
+
+        $linkService = GeneralUtility::makeInstance(LinkService::class);
+        try {
+            $decoded = $linkService->resolveByStringRepresentation($typolink);
+        } catch (UnknownLinkHandlerException | UnknownUrnException $exception) {
             return null;
         }
 
-        $matches = [];
-        preg_match('/^t3:\/\/page\?uid=([0-9]+)#{0,1}[0-9a-z-]*$/', $typolink, $matches);
-
-        if (count($matches) !== 2) {
-            return null;
+        $pageUid = 0;
+        if (($decoded['type'] ?? '') == 'page') {
+            $pageUid = $decoded['pageuid'];
         }
-
-        $pageUid = (int)$matches[1];
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
 
         $result = $queryBuilder
