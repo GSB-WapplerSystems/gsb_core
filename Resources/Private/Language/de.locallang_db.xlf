@@ -263,14 +263,22 @@
 				<source>Right</source>
 				<target>Rechts</target>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker" approved="yes">
-				<source>Kicker</source>
-				<target>Dachzeile</target>
-			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
-				<source>override categories by Kicker</source>
-				<target>Kategorien mit Dachzeile überschreiben</target>
-			</trans-unit>
+            <trans-unit id="tt_content.main_category.overwrite.toggle" resname="tt_content.main_category.overwrite.toggle">
+                <source>Override main categories by Kicker</source>
+                <target>Hauptthema mit Dachzeile überschreiben</target>
+            </trans-unit>
+            <trans-unit id="tt_content.main_category.overwrite" resname="tt_content.main_category.overwrite">
+                <source>Kicker (Main Category)</source>
+                <target>Dachzeile (Hauptthema)</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker" approved="yes">
+                <source>Kicker</source>
+                <target>Dachzeile</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
+                <source>override categories by Kicker</source>
+                <target>Kategorien mit Dachzeile überschreiben</target>
+            </trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside" approved="yes">
 				<source>Intext</source>
 				<target>Im Text</target>
@@ -1207,13 +1215,21 @@
 				<source>Here is where the value for the Quaternary color can be set.</source>
 				<target>Hier kann ein Farbwert für die Quartärfarbe vergeben werden.</target>
 			</trans-unit>
+            <trans-unit id="tt_content.palettes.main_category_override.label" resname="tt_content.palettes.cmain_category_override.label">
+                <source>Main category override</source>
+                <target>Hauptthema überschreiben</target>
+            </trans-unit>
+            <trans-unit id="tt_content.palettes.main_category_override.description" resname="tt_content.palettes.main_category_override.description">
+                <source>Use the following toggle to switch between using the main category provided by the target page or set one manually.</source>
+                <target>Mit dem folgenden Schaltern kann zwischen der Ausgabe von Hauptthema der Zielseite und manuell eingegebenen Text umgeschaltet werden.</target>
+            </trans-unit>
 			<trans-unit id="tt_content.palettes.category_date_override.label" resname="tt_content.palettes.category_date_override.label">
 				<source>Category and date override</source>
 				<target>Kategorien und Datum überschreiben</target>
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.category_date_override.description" resname="tt_content.palettes.category_date_override.description">
-				<source>Use the following two toggles to switch between using the category and date provided by the target page or set one manually</source>
-				<target>Mit den zwei folgenden Schaltern kann zwischen der Ausgabe von Kategorien und Datum der Zielseite und manuell eingegebenen Daten umgeschaltet werden.</target>
+				<source>Use the following three toggles to switch between using the categories and date provided by the target page or set one manually</source>
+				<target>Mit den drei folgenden Schaltern kann zwischen der Ausgabe von Kategorien und Datum der Zielseite und manuell eingegebenen Daten umgeschaltet werden.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.date_override_toggle.label" resname="tt_content.palettes.date_override_toggle.label">
 				<source>Hide date</source>

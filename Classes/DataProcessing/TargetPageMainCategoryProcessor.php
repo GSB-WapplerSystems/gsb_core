@@ -8,7 +8,7 @@
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
   * Copyright (C) 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Willi Wehmeier
+  * BMI/ITZBund. Author: Marco Luig
   *
   * It is free software; you can redistribute it and/or modify it under
   * the terms of the GNU General Public License, either version 3
@@ -30,10 +30,8 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\Typolink\LinkFactory;
 use TYPO3\CMS\Frontend\Typolink\UnableToLinkException;
 
-class TargetPageDateProcessor implements DataProcessorInterface
+class TargetPageMainCategoryProcessor implements DataProcessorInterface
 {
-    public function __construct(private readonly LinkFactory $linkFactory) {}
-
     /**
      * @param array<mixed> $contentObjectConfiguration
      * @param array<mixed> $processorConfiguration
@@ -47,39 +45,36 @@ class TargetPageDateProcessor implements DataProcessorInterface
         array $processedData
     ): array {
         $link = $cObj->data['tx_link'] ?? null;
-
-        $targetVariableName = (string)$cObj->stdWrapValue('as', $processorConfiguration, 'tx_link_target_date');
+        $targetVariableName = (string)$cObj->stdWrapValue('as', $processorConfiguration, 'tx_link_target_main_category');
 
         if (trim($link ?? '') === '') {
             return $processedData;
         }
 
-        $page = $this->getPageFromTypolink($cObj, $link);
-        $dateField = 'tstamp';
+        $category = $this->getCategoryFromTypolink($cObj, $link);
 
-        if ($page !== null) {
-            if ($page['SYS_LASTCHANGED'] > $page[$dateField]) {
-                $dateField = 'SYS_LASTCHANGED';
-            }
-            if ($page['lastUpdated'] !== 0 && $page['lastUpdated'] !== '') {
-                $dateField = 'lastUpdated';
-            }
-            $processedData[$targetVariableName] = $page[$dateField];
+        if ($category !== null) {
+            $processedData[$targetVariableName] = $category;
         }
 
         return $processedData;
     }
 
     /**
+     * Extracts the complete 'sys_category' object from the page referenced by TypoLink.
+     *
      * @return array<string,mixed>|null
      */
-    private function getPageFromTypolink(ContentObjectRenderer $cObj, string $typolink): ?array
+    private function getCategoryFromTypolink(ContentObjectRenderer $cObj, string $typolink): ?array
     {
+        $linkFactory = GeneralUtility::makeInstance(LinkFactory::class);
         try {
-            $this->linkFactory->create('', ['parameter' => $typolink], $cObj);
+            $linkFactory->create('', ['parameter' => $typolink], $cObj);
         } catch (UnableToLinkException $uTLe) {
             return null;
         }
+
+        $decoded = [];
 
         $linkService = GeneralUtility::makeInstance(LinkService::class);
         try {
@@ -92,16 +87,29 @@ class TargetPageDateProcessor implements DataProcessorInterface
         if (($decoded['type'] ?? '') == 'page') {
             $pageUid = $decoded['pageuid'];
         }
-
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
 
         $result = $queryBuilder
-            ->select('*')
+            ->select('main_category')
             ->from('pages')
             ->where($queryBuilder->expr()->eq('uid', $pageUid))
             ->executeQuery()
+            ->fetchOne();
+
+        if ($result === false || (int)$result === 0) {
+            return null;
+        }
+
+        $categoryUid = (int)$result;
+        $categoryQueryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
+
+        $category = $categoryQueryBuilder
+            ->select('*')
+            ->from('sys_category')
+            ->where($categoryQueryBuilder->expr()->eq('uid', $categoryUid))
+            ->executeQuery()
             ->fetchAssociative();
 
-        return $result !== false ? $result : null;
+        return $category !== false ? $category : null;
     }
 }
