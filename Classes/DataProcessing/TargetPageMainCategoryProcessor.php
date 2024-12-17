@@ -21,6 +21,7 @@
 namespace ITZBund\GsbCore\DataProcessing;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\LinkHandling\Exception\UnknownLinkHandlerException;
 use TYPO3\CMS\Core\LinkHandling\Exception\UnknownUrnException;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
@@ -32,6 +33,8 @@ use TYPO3\CMS\Frontend\Typolink\UnableToLinkException;
 
 class TargetPageMainCategoryProcessor implements DataProcessorInterface
 {
+    use PagesCacheAddingTrait;
+
     /**
      * @param array<mixed> $contentObjectConfiguration
      * @param array<mixed> $processorConfiguration
@@ -85,10 +88,13 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
 
         $pageUid = 0;
         if (($decoded['type'] ?? '') == 'page') {
-            $pageUid = $decoded['pageuid'];
+            $pageUid = (int)$decoded['pageuid'];
         }
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        if ($pageUid > 0) {
+            $this->addPageUidCacheTag($pageUid);
+        }
 
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
         $result = $queryBuilder
             ->select('main_category')
             ->from('pages')
