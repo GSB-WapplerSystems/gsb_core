@@ -21,10 +21,10 @@
 namespace ITZBund\GsbCore\DataProcessing;
 
 use TYPO3\CMS\Core\Http\ServerRequest;
+use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 trait PagesCacheAddingTrait
 {
-
     protected function addPageUidCacheTag(int $pageUid): void
     {
         $request = $GLOBALS['TYPO3_REQUEST'] ?? null;
