@@ -16,6 +16,10 @@
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/CustomPageCategoryProcessor.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/DataProcessing/TargetPageDateProcessor.php"/>
+  <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/DataProcessing/TargetPageMainCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/DataProcessing/TargetPageMainCategoryProcessor.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/DataProcessing/TargetPageMainCategoryProcessor.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/AddInfoButtonToContentElementsEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/EventListener/ExtendsSiteConfigurationEvent.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Fluid/ViewHelpers/ImageViewHelper.php"/>
@@ -45,6 +49,8 @@
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/SingleteaserPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/StagePreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/VideoPreviewRenderer.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalAudioHelper.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalAudioHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalVideoHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Resource/OnlineMedia/Helpers/GenericExternalVideoHelper.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Resource/OnlineMedia/Helpers/OverrideVimeoHelper.php"/>

@@ -7,7 +7,7 @@
         -->
     </f:comment>
 
-    <f:if condition="{menuMetaTop}">
+    <f:if condition="{menuMetaTop} || {languagenavigation}">
         <div class="col meta-desktop d-none d-lg-block">
             <nav class="meta-item" aria-labelledby="metaItem">
                 <div aria-level="2" class="visually-hidden" id="metaItem" role="heading">{f:translate(key:'header.servicenavigation', extensionName:'gsb_core')}</div>

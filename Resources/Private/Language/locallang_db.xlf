@@ -198,12 +198,18 @@
 			<trans-unit id="tt_content.tx_link_position.I.2" resname="tt_content.tx_link_position.I.2">
 				<source>Right</source>
 			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
-				<source>Kicker</source>
-			</trans-unit>
-			<trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
-				<source>override categories by Kicker</source>
-			</trans-unit>
+            <trans-unit id="tt_content.main_category.overwrite.toggle" resname="tt_content.main_category.overwrite.toggle">
+                <source>Override main categories by Kicker</source>
+            </trans-unit>
+            <trans-unit id="tt_content.main_category.overwrite" resname="tt_content.main_category.overwrite">
+                <source>Kicker (Main Category)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker" resname="tt_content.header_position.kicker">
+                <source>Kicker</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_position.kicker.toggle" resname="tt_content.header_position.kicker.toggle">
+                <source>override categories by Kicker</source>
+            </trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
 				<source>Intext</source>
 			</trans-unit>
@@ -1003,6 +1009,12 @@
 			<trans-unit id="page.configuration.color_quaternary.description">
 				<source>Here is where the value for the Quaternary color can be set.</source>
 			</trans-unit>
+            <trans-unit id="tt_content.palettes.main_category_override.label" resname="tt_content.palettes.cmain_category_override.label">
+                <source>Main category override</source>
+            </trans-unit>
+            <trans-unit id="tt_content.palettes.main_category_override.description" resname="tt_content.palettes.main_category_override.description">
+                <source>Use the following toggle to switch between using the main category provided by the target page or set one manually.</source>
+            </trans-unit>
 			<trans-unit id="tt_content.palettes.category_date_override.label" resname="tt_content.palettes.category_date_override.label">
 				<source>Category and date override</source>
 			</trans-unit>

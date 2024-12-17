@@ -24,7 +24,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalAudioHelper;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
+use ITZBund\GsbCore\Resource\Rendering\GenericExternalAudioRenderer;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
@@ -104,6 +106,23 @@ defined('TYPO3') or die('Access denied.');
         $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
     }
 
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
+        $extAudioFileExtension = 'externalaudio';
+
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
+
+        /** @var RendererRegistry $rendererRegistry */
+        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+        $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
+
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
+
+        /** @var IconRegistry $iconRegistry */
+        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+        $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
+    }
+
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
     // $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['gsb_frontend'] = 'EXT:gsb_frontend/Resources/Public/StyleSheets/ckeditor.css';
@@ -136,4 +155,5 @@ defined('TYPO3') or die('Access denied.');
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
+
 })();
