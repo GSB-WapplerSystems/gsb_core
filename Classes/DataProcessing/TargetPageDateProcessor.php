@@ -32,6 +32,8 @@ use TYPO3\CMS\Frontend\Typolink\UnableToLinkException;
 
 class TargetPageDateProcessor implements DataProcessorInterface
 {
+    use PagesCacheAddingTrait;
+
     public function __construct(private readonly LinkFactory $linkFactory) {}
 
     /**
@@ -90,7 +92,10 @@ class TargetPageDateProcessor implements DataProcessorInterface
 
         $pageUid = 0;
         if (($decoded['type'] ?? '') == 'page') {
-            $pageUid = $decoded['pageuid'];
+            $pageUid = (int)$decoded['pageuid'];
+        }
+        if ($pageUid > 0) {
+            $this->addPageUidCacheTag($pageUid);
         }
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
@@ -104,4 +109,5 @@ class TargetPageDateProcessor implements DataProcessorInterface
 
         return $result !== false ? $result : null;
     }
+
 }
