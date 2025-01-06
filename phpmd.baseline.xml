@@ -73,4 +73,5 @@
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/Format/Json/DecodeViewHelper.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/ViewHelpers/GsbVersionViewHelper.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/ViewHelpers/GsbVersionViewHelper.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/ViewHelpers/TrademarkViewHelper.php"/>
 </phpmd-baseline>
