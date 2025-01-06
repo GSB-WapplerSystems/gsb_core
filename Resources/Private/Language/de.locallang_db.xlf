@@ -667,21 +667,21 @@
 				<source>Gallery Image</source>
 				<target>Galerie Bild</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_bg" resname="tt_content.gallery_bg" approved="yes">
-				<source>Gallery background</source>
-				<target>Galerie Hintergrund</target>
-			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout" resname="tt_content.gallery_layout" approved="yes">
 				<source>Gallery layout</source>
 				<target>Galerie Layout</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_textcolor" resname="tt_content.gallery_textcolor" approved="yes">
-				<source>Gallery text color</source>
-				<target>Galerie Text Farbe</target>
+			<trans-unit id="tt_content.gallery_layout.description" resname="tt_content.gallery_layout.description" approved="yes">
+				<source>Single image, tiles or slider</source>
+				<target>Einzelbild, Kacheln oder Slider</target>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_salutation" resname="tt_content.gallery_salutation" approved="yes">
-				<source>Salutation</source>
-				<target>Begrüßung</target>
+			<trans-unit id="tt_content.gallery_columns" resname="tt_content.gallery_columns" approved="yes">
+				<source>Gallery columns</source>
+				<target>Galerie Spaltigkeit</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_columns.description" resname="tt_content.gallery_columns.description" approved="yes">
+				<source>Select the number of columns the grid will be divided into.</source>
+				<target>Wählen Sie in wie viele Spalten das Raster aufgeteilt wird.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.0" resname="tt_content.gallery_bg.I.0" approved="yes">
 				<source>Bright</source>

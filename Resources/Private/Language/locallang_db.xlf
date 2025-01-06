@@ -597,17 +597,17 @@
 			<trans-unit id="tt_content.file" resname="tt_content.file">
 				<source>Gallery Image</source>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_bg" resname="tt_content.gallery_bg">
-				<source>Gallery background</source>
-			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout" resname="tt_content.gallery_layout">
 				<source>Gallery layout</source>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_textcolor" resname="tt_content.gallery_textcolor">
-				<source>Gallery text color</source>
+			<trans-unit id="tt_content.gallery_layout.description" resname="tt_content.gallery_layout.description">
+				<source>Single image, tiles or slider</source>
 			</trans-unit>
-			<trans-unit id="tt_content.gallery_salutation" resname="tt_content.gallery_salutation">
-				<source>Salutation</source>
+			<trans-unit id="tt_content.gallery_columns" resname="tt_content.gallery_columns">
+				<source>Gallery columns</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_columns.description" resname="tt_content.gallery_columns.description">
+				<source>Select the number of columns the grid will be divided into.</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_bg.I.0" resname="tt_content.gallery_bg.I.0">
 				<source>Bright</source>
