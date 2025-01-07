@@ -25,13 +25,15 @@ namespace ITZBund\GsbCore\ViewHelpers;
 use ITZBund\GsbCore\Event\GetTrademarkLogoEvent;
 use ITZBund\GsbCore\Event\GetTrademarkTextEvent;
 use TYPO3\CMS\Core\EventDispatcher\EventDispatcher;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class TrademarkViewHelper extends AbstractViewHelper
 {
-    // @var bool
-    protected $escapeOutput = false;
+    public function __construct(
+        private readonly EventDispatcher $eventDispatcher
+    ) {
+        $this->escapeOutput = false;
+    }
 
     public function initializeArguments(): void
     {
@@ -41,17 +43,18 @@ class TrademarkViewHelper extends AbstractViewHelper
     public function render(): string
     {
         $assetType = $this->arguments['type'];
-
-        $eventDispatcher = GeneralUtility::makeInstance(EventDispatcher::class);
+        $event = null;
         switch ($assetType) {
             case 'logo':
                 $event = new GetTrademarkLogoEvent();
-                $eventDispatcher->dispatch($event);
-                return $event->getValue();
+                break;
             case 'text':
                 $event = new GetTrademarkTextEvent();
-                $eventDispatcher->dispatch($event);
-                return $event->getValue();
+                break;
+        }
+        if ($event !== null) {
+            $this->eventDispatcher->dispatch($event);
+            return $event->getValue();
         }
         return '';
     }
