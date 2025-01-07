@@ -19,19 +19,11 @@ TYPO3:
             EmailToReceiver:
               options:
                 templateRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/Finishers/Email/'
-                layoutRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Layouts/Finishers/Email/'
-                partialRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Partials/Finishers/Email/'
+                  101: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/Finishers/Email/'
             EmailToSender:
               options:
                 templateRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/Finishers/Email/'
-                layoutRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Layouts/Finishers/Email/'
-                partialRootPaths:
-                  20: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Partials/Finishers/Email/'
+                  101: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/Finishers/Email/'
           formElementsDefinition:
             FileUpload:
               formEditor:

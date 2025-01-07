@@ -59,7 +59,7 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-1615'] ??= false;
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-1615')) {
-        $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['20'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
+        $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['100'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
