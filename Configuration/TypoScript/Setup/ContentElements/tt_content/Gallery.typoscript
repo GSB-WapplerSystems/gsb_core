@@ -22,16 +22,15 @@
 
 tt_content {
   gallery = FLUIDTEMPLATE
-
   gallery {
     partialRootPaths {
       200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+      300 = {$gsb_core.content.view.partialRootPath}
     }
-
     templateRootPaths {
       200 = EXT:gsb_core/Resources/Private/Templates/Content/
+      300 = {$gsb_core.content.view.templateRootPath}
     }
-
     templateName = Gallery
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -41,7 +40,6 @@ tt_content {
           fieldName = image
           table = tt_content
         }
-
         as = files
       }
     }

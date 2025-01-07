@@ -22,8 +22,14 @@
 
 tt_content.audio = FLUIDTEMPLATE
 tt_content.audio {
-  partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-  templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
+  partialRootPaths {
+    200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+    300 = {$gsb_core.content.view.partialRootPath}
+  }
+  templateRootPaths {
+    200 = EXT:gsb_core/Resources/Private/Templates/Content/
+    300 = {$gsb_core.content.view.templateRootPath}
+  }
   templateName = Audio
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
