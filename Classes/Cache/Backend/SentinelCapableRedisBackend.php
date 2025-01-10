@@ -20,6 +20,7 @@
 
 namespace ITZBund\GsbCore\Cache\Backend;
 
+use RuntimeException;
 use TYPO3\CMS\Core\Cache\Backend\RedisBackend;
 use TYPO3\CMS\Core\Cache\Exception;
 
@@ -116,7 +117,7 @@ class SentinelCapableRedisBackend extends RedisBackend
                 $redisSentinel = new \RedisSentinel($sentinelConfig);
                 $sentinelMaster = $redisSentinel->masters();
                 if ($sentinelMaster === false) {
-                    throw new Exception('Could not get master from sentinel.', 1279765134);
+                    throw new RuntimeException('Could not get master from sentinel.', 1279765134);
                 }
                 $host = $sentinelMaster[0]['ip'];
                 $port = $sentinelMaster[0]['port'];
@@ -131,20 +132,17 @@ class SentinelCapableRedisBackend extends RedisBackend
             if ($this->connected && $this->password !== '') {
                 $success = $this->redis->auth($this->password);
                 if (!$success) {
-                    throw new Exception('The given password was not accepted by the redis server.', 1279765134);
+                    throw new RuntimeException('The given password was not accepted by the redis server.', 1279765134);
                 }
             }
             if ($this->connected && $this->database >= 0) {
                 $success = $this->redis->select($this->database);
                 if (!$success) {
-                    throw new Exception('The given database "' . $this->database . '" could not be selected.', 1279765144);
+                    throw new RuntimeException('The given database "' . $this->database . '" could not be selected.', 1279765144);
                 }
             }
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not initialize connection to redis server.', [
-                'message' => $e->getMessage(),
-                'exception' => $e,
-            ]);
+            throw new RuntimeException('Could not initialize connection to redis server: ' . $e->getMessage(), 1736508869, $e);
         }
     }
 
@@ -418,7 +416,7 @@ class SentinelCapableRedisBackend extends RedisBackend
         for ($attempt = 0; $attempt < $retryCount; $attempt++) {
             try {
                 return $operation();
-            } catch (\RedisException $e) {
+            } catch (\RedisException|\RuntimeException $e) {
                 if ($this->isPermanentException($e)) {
                     throw $e;
                 }
@@ -437,7 +435,7 @@ class SentinelCapableRedisBackend extends RedisBackend
      * @param \RedisException $e
      * @return bool
      */
-    private function isPermanentException(\RedisException $e): bool
+    private function isPermanentException(\RedisException|\RuntimeException $e): bool
     {
         // Check for authentification errors
         if (str_contains($e->getMessage(), 'AUTH')) {
