@@ -24,10 +24,12 @@ tt_content {
   gsb_banner = FLUIDTEMPLATE
   gsb_banner {
     templateRootPaths {
-      200 = EXT:gsb_core/Resources/Private/Templates/Content
+      200 = EXT:gsb_core/Resources/Private/Templates/Content/
+      300 = {$gsb_core.content.view.templateRootPath}
     }
     partialRootPaths {
       200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+      300 = {$gsb_core.content.view.partialRootPath}
     }
     templateName = Banner
     dataProcessing {

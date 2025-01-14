@@ -23,8 +23,14 @@
 tt_content {
   gallery = FLUIDTEMPLATE
   gallery {
-    partialRootPaths.200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-    templateRootPaths.200 = EXT:gsb_core/Resources/Private/Templates/Content/
+    partialRootPaths {
+      200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+      300 = {$gsb_core.content.view.partialRootPath}
+    }
+    templateRootPaths {
+      200 = EXT:gsb_core/Resources/Private/Templates/Content/
+      300 = {$gsb_core.content.view.templateRootPath}
+    }
     templateName = Gallery
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -35,16 +41,6 @@ tt_content {
           table = tt_content
         }
         as = files
-      }
-
-      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-      20 {
-        table = sys_category
-        selectFields = uid, title
-        pidInList = {$config.pids.Categories}
-        join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
-        where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
-        as = contentCategories
       }
     }
   }

@@ -12,11 +12,11 @@
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        <div class="ce-gallery float-end ms-md-5" data-images="{gallery.count.files}">
+        <div class="ce-gallery float-lg-end ms-md-5" data-images="{gallery.count.files}">
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        <div class="ce-gallery float-start me-md-5" data-images="{gallery.count.files}">
+        <div class="ce-gallery float-lg-start me-md-5" data-images="{gallery.count.files}">
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
@@ -27,7 +27,7 @@
         <div class="ce-gallery me-md-5" data-images="{gallery.count.files}">
     </f:if>
 
-    <f:if condition="{gallery.count.columns} == 1">
+    <f:if condition="{gallery.count.files} == 1">
         <f:then>
             <f:render section="GalleryDiv" arguments="{_all}" />
         </f:then>
@@ -70,7 +70,7 @@
 </f:section>
 
 <f:section name="GalleryList">
-    <ul class="ce-row row">
+    <ul class="ce-row{f:if(condition: '{data.imagecols} == 1', then: ' row flex-column flex-nowrap', else: ' row')}">
         <f:for each="{gallery.rows}" as="row" iteration="i">
             <f:for each="{row.columns}" as="column" iteration="iterator">
                 <f:if condition="{column.media}">
