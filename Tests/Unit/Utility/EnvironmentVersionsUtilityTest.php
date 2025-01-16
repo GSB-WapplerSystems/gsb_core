@@ -45,6 +45,7 @@ class EnvironmentVersionsUtilityTest extends UnitTestCase
                 'GSB_VERSION' => null,
                 'CONTAINER_VERSION' => null,
                 'GSB_BASE_HELM_CHART_VERSION' => null,
+                'GSB_MANDANTEN_HELM_CHART_VERSION' => null,
                 'GSB_BASE_CONFIG_VERSION' => null,
             ],
             [
@@ -52,6 +53,7 @@ class EnvironmentVersionsUtilityTest extends UnitTestCase
                     'gsb' => null,
                     'container' => null,
                     'gsbBaseHelmChart' => null,
+                    'gsbMandantenHelmChart' => null,
                     'gsbBaseConfig' => null,
                     'TYPO3' => (new Typo3Version())->getVersion(),
                     'packageCacheHash' => '42',
@@ -63,6 +65,7 @@ class EnvironmentVersionsUtilityTest extends UnitTestCase
                 'GSB_VERSION' => '1.2.3',
                 'CONTAINER_VERSION' => '4.5.6',
                 'GSB_BASE_HELM_CHART_VERSION' => '7.8.9',
+                'GSB_MANDANTEN_HELM_CHART_VERSION' => '10.11.12',
                 'GSB_BASE_CONFIG_VERSION' => 'v3.35.0',
             ],
             [
@@ -70,6 +73,7 @@ class EnvironmentVersionsUtilityTest extends UnitTestCase
                     'gsb' => '1.2.3',
                     'container' => '4.5.6',
                     'gsbBaseHelmChart' => '7.8.9',
+                    'gsbMandantenHelmChart' => '10.11.12',
                     'gsbBaseConfig' => 'v3.35.0',
                     'TYPO3' => (new Typo3Version())->getVersion(),
                     'packageCacheHash' => '42',

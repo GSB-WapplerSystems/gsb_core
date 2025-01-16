@@ -39,6 +39,7 @@ class EnvironmentVersionsUtility
                 'gsb' => $this->getGsbVersion(),
                 'container' => $this->getContainerVersion(),
                 'gsbBaseHelmChart' => $this->getGsbBaseHelmChartVersion(),
+                'gsbMandantenHelmChart' => $this->getGsbMandantenHelmChartVersion(),
                 'gsbBaseConfig' => $this->getGsbBaseConfigVersion(),
                 'TYPO3' => $this->typo3Version->getVersion(),
                 'packageCacheHash' => $this->packageManager->getCacheIdentifier(),
@@ -71,6 +72,17 @@ class EnvironmentVersionsUtility
     protected function getGsbBaseHelmChartVersion(): ?string
     {
         $version = getenv('GSB_BASE_HELM_CHART_VERSION');
+
+        if ($version === false) {
+            return null;
+        }
+
+        return $version;
+    }
+
+    protected function getGsbMandantenHelmChartVersion(): ?string
+    {
+        $version = getenv('GSB_MANDANTEN_HELM_CHART_VERSION');
 
         if ($version === false) {
             return null;
