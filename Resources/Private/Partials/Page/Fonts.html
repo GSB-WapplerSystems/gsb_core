@@ -30,7 +30,7 @@
             <f:render section="fontFace" arguments="{id: 'fontSansMediumCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-medium)}', fontWeight: '500', fontStyle: 'normal'}" />
         </f:if>
         <f:if condition="{site.configuration.font-sans-bold}">
-            <f:render section="fontFace" arguments="{id: 'fontSansBoldCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold)}', fontWeight: '700', fontStyle: 'italic'}" />
+            <f:render section="fontFace" arguments="{id: 'fontSansBoldCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold)}', fontWeight: '700', fontStyle: 'normal'}" />
         </f:if>
         <f:if condition="{site.configuration.font-sans-bold-italic}">
             <f:render section="fontFace" arguments="{id: 'fontSansBoldItalicCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold-italic)}', fontWeight: '700', fontStyle: 'italic'}" />
