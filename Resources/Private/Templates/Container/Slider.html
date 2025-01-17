@@ -10,7 +10,7 @@
 
 <f:section name="Main">
     <f:if condition="{children_101}">
-        <div class="swiper swiper-{data.slider_type}-col-{data.grid_columns}">
+        <div class="swiper swiper-raw swiper-{data.slider_type}-col-{data.grid_columns}">
             <ul class="slider swiper-wrapper list-unstyled">
                 <f:for as="child" each="{children_101}">
                     <li class="swiper-slide">
@@ -21,20 +21,19 @@
 
             <f:if condition="{data.slider_autoplay} == '1'">
                 <div class="autoplay">
-                    <button class="swiper-start" type="button"><span>Start</span></button>
-                    <button class="swiper-stop active" type="button"><span>Pause</span></button>
+                    <button class="swiper-start"><span>Start</span></button>
+                    <button class="swiper-stop active"><span>Pause</span></button>
                 </div>
             </f:if>
 
             <div class="swiper-navigation" aria-hidden="true">
-                <button class="swiper-button-prev" type="button"></button>
-                <div class="swiper-pagination" type="button"></div>
-                <button class="swiper-button-next" type="button"></button>
+                <button class="swiper-button swiper-button-prev" tabindex="-1"></button>
+                <div class="swiper-pagination"></div>
+                <button class="swiper-button swiper-button-next" tabindex="-1"></button>
             </div>
-
-            <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
-            <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
         </div>
+        <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
+        <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
     </f:if>
 </f:section>
 

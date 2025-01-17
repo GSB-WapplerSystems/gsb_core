@@ -601,7 +601,7 @@
 				<source>Gallery layout</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.description" resname="tt_content.gallery_layout.description">
-				<source>Single image, tiles or slider</source>
+				<source>As single image, tiles, slider or thumbs</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_columns" resname="tt_content.gallery_columns">
 				<source>Gallery columns</source>
@@ -623,6 +623,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.I.2" resname="tt_content.gallery_layout.I.2">
 				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout.I.3" resname="tt_content.gallery_layout.I.3">
+				<source>Thumbs</source>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.0" resname="tt_content.gallery_salutation.I.0">
 				<source>Hide</source>
