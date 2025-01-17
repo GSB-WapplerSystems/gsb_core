@@ -35,11 +35,17 @@ defined('TYPO3') || die();
                                         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.2',
                                         'value' => 'gallery-slider',
                                     ],
+                                3 =>
+                                    [
+                                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.I.3',
+                                        'value' => 'gallery-thumbs',
+                                    ],
                             ],
                         'renderType' => 'selectSingle',
                         'type' => 'select',
                     ],
                 'exclude' => '0',
+                'default' => 'gallery-single',
                 'onChange' => 'reload',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout',
                 'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.gallery_layout.description',

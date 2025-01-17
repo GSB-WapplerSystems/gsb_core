@@ -672,8 +672,8 @@
 				<target>Galerie Layout</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_layout.description" resname="tt_content.gallery_layout.description" approved="yes">
-				<source>Single image, tiles or slider</source>
-				<target>Einzelbild, Kacheln oder Slider</target>
+				<source>As single image, tiles, slider or thumbs</source>
+				<target>Als Einzelbild, Kacheln, Slider oder Thumbs</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_columns" resname="tt_content.gallery_columns" approved="yes">
 				<source>Gallery columns</source>
@@ -702,6 +702,10 @@
 			<trans-unit id="tt_content.gallery_layout.I.2" resname="tt_content.gallery_layout.I.2" approved="yes">
 				<source>Slider</source>
 				<target>Slider</target>
+			</trans-unit>
+			<trans-unit id="tt_content.gallery_layout.I.3" resname="tt_content.gallery_layout.I.3" approved="yes">
+				<source>Thumbs</source>
+				<target>Thumbs</target>
 			</trans-unit>
 			<trans-unit id="tt_content.gallery_salutation.I.0" resname="tt_content.gallery_salutation.I.0" approved="yes">
 				<source>Hide</source>
