@@ -27,7 +27,7 @@
                     <source srcset="{f:uri.image(image: audioImg, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
                     <source srcset="{f:uri.image(image: audioImg, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
                     <source srcset="{f:uri.image(image: audioImg, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
-                    <f:image image="{audioImg}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid rounded" loading="lazy" />
+                    <f:image image="{audioImg}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
                 </picture>
             </f:if>
             <audio preload="none" controls class="player local-audio" style="max-width:100%; width: 100%;">
