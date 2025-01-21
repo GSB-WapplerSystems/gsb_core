@@ -25,9 +25,13 @@ namespace ITZBund\GsbCore\Log\Writer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Log\LogRecord;
 use TYPO3\CMS\Core\Log\Writer\FileWriter;
+use TYPO3\CMS\Core\SysLog\Action as SystemLogAction;
+use TYPO3\CMS\Core\SysLog\Error as SystemLogErrorClassification;
+use TYPO3\CMS\Core\SysLog\Type as SystemLogType;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -79,10 +83,10 @@ class JsonFileWriter extends FileWriter
         /* we don't want to stumble over warnings like undefined keys */
         $oldReporting = (int)ini_get('error_reporting');
         error_reporting(E_ERROR);
+        $safePayload = $payload;
         try {
             $jsonString = $serializer->serialize($payload, 'json');
         } catch (\Exception $e) {
-            $safePayload = $payload;
             $safePayload['context'] = [];
             if ($context['exception']) {
                 $safePayload['context']['exception'] = $context['exception'];
@@ -93,9 +97,22 @@ class JsonFileWriter extends FileWriter
         error_reporting($oldReporting);
 
         if (fwrite(self::$logFileHandles[$this->logFile], $jsonString . LF) === false) {
-            throw new \RuntimeException('Could not write log record to log file', 1697542908);
+            if ($this->getBackendUser() instanceof BackendUserAuthentication) {
+                try {
+                    $this->getBackendUser()->writelog(SystemLogType::ERROR, SystemLogAction::UNDEFINED, SystemLogErrorClassification::USER_ERROR, 0, 'Could not write log record to log file', $safePayload);
+                } catch (\Exception $e) {
+
+                }
+            } else {
+                throw new \RuntimeException('Could not write log record to log file', 1697542908);
+            }
         }
 
         return $this;
+    }
+
+    protected function getBackendUser(): ?BackendUserAuthentication
+    {
+        return $GLOBALS['BE_USER'] ?? null;
     }
 }
