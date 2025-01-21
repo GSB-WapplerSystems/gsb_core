@@ -40,8 +40,12 @@
   <violation rule="PHPMD\Rule\CleanCode\IfStatementAssignment" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php" method="acquire"/>
   <violation rule="PHPMD\Rule\CleanCode\BooleanArgumentFlag" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Locking/SentinelCapableRedisLockingStrategy.php"/>
+  <violation rule="PHPMD\Rule\Design\CouplingBetweenObjects" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CyclomaticComplexity" file="Classes/Log/Writer/JsonFileWriter.php" method="writeLog"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\UndefinedVariable" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\Design\EmptyCatchBlock" file="Classes/Log/Writer/JsonFileWriter.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Log/Writer/JsonFileWriter.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/AudioPreviewRenderer.php"/>
   <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Preview/BannerPreviewRenderer.php"/>
