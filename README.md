@@ -80,6 +80,7 @@ This table illustrates the behavior of feature flags in various states.
 | `ITZBUNDPHP-3969`      | Extended handling for linked pages in single teaser CEs. Retrieves the value of the main category from the target page and offers the option of overwriting this value
 | `ITZBUNDPHP-4070`      | Enable a feature that allows additional file extensions for the `uploads` element<br />These can be configured via the extension configuration: `additionalAllowedFileExtensionsForUploadsElement`
 | `ITZBUNDPHP-4083`      | Enable generic audio renderer to add support for external audio sources<br />The allowed external sources have to be configured via the extension configuration: `allowedAudioDomains`
+| `ITZBUNDPHP-4329`      | Activates the option to replace the platform's fonts with your own font faces.
 
 ### Usage in PHP Code
 
