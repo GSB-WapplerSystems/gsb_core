@@ -106,6 +106,9 @@ defined('TYPO3') || die();
         'galleryposition_config' => [
             'showitem' => 'gallery_layout,gallery_columns', 'canNotCollapse' => 1,
         ],
+        'gallerybehaviour_config' => [
+            'showitem' => 'image_zoom',
+        ],
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $galleryPositionPalettes;
@@ -161,6 +164,7 @@ defined('TYPO3') || die();
                       --palette--;;header_config,subheader,bodytext,
                   --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.gallery,
                       --palette--;;galleryposition_config,image,
+                      --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.imagelinks;gallerybehaviour_config,
                   --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                       --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                       --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
