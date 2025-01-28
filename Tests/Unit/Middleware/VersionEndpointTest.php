@@ -60,6 +60,7 @@ class VersionEndpointTest extends UnitTestCase
         putenv('GSB_VERSION=1');
         putenv('CONTAINER_VERSION=2');
         putenv('GSB_BASE_HELM_CHART_VERSION=3');
+        putenv('GSB_MANDANTEN_HELM_CHART_VERSION=5');
         putenv('GSB_BASE_CONFIG_VERSION=4');
 
         $responseFactory = $this->getMockBuilder(ResponseFactory::class)->onlyMethods(['createResponse'])->disableOriginalConstructor()->getMock();
@@ -74,6 +75,7 @@ class VersionEndpointTest extends UnitTestCase
                         'gsb' => '1',
                         'container' => '2',
                         'gsbBaseHelmChart' => '3',
+                        'gsbMandantenHelmChart' => '5',
                         'gsbBaseConfig' => '4',
                         'TYPO3' => (new Typo3Version())->getVersion(),
                         'packageCacheHash' => '42',
@@ -99,6 +101,7 @@ class VersionEndpointTest extends UnitTestCase
         putenv('GSB_VERSION');
         putenv('CONTAINER_VERSION');
         putenv('GSB_BASE_HELM_CHART_VERSION');
+        putenv('GSB_MANDANTEN_HELM_CHART_VERSION');
         putenv('GSB_BASE_CONFIG_VERSION');
     }
 
