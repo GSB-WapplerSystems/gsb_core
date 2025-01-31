@@ -206,11 +206,6 @@ parameters:
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
 
 		-
-			message: "#^Parameter \\#2 \\$timeout_or_key of method Redis\\:\\:blPop\\(\\) expects float\\|int\\|string, int\\<1, max\\>\\|Redis given\\.$#"
-			count: 1
-			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
-
-		-
 			message: "#^Property ITZBund\\\\GsbCore\\\\Locking\\\\SentinelCapableRedisLockingStrategy\\:\\:\\$configuration type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Locking/SentinelCapableRedisLockingStrategy.php
@@ -264,6 +259,11 @@ parameters:
 			message: "#^Method ITZBund\\\\GsbCore\\\\Resource\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Resource/OnlineMedia/Helpers/OverrideYouTubeHelper.php
+
+		-
+			message: "#^Call to method Redis\\:\\:mGet\\(\\) with incorrect case\\: mget$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
 
 		-
 			message: "#^Cannot call method alert\\(\\) on Psr\\\\Log\\\\LoggerInterface\\|null\\.$#"
