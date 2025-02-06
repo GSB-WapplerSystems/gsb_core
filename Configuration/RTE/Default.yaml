@@ -141,28 +141,8 @@ editor:
     removeButtons:
       - Underline
 
-classesAnchor:
-  page:
-    class: "internal-link"
-    type: "page"
-  folder:
-    class: "internal-link"
-    type: "folder"
-  file:
-    class: "download"
-    type: "file"
-  external:
-    class: "external-link"
-    type: "url"
-  mail:
-    class: "email"
-    type: "mail"
-  phone:
-    class: "phone"
-    type: "phone"
-
 buttons:
   link:
     properties:
       class:
-        allowedClasses: "internal-link, external-link, download, email, phone"
+        allowedClasses: "internal-link, external-link, download, email, phone, audio, video, glossary, public, legal, gallery, chart"
