@@ -96,6 +96,7 @@ CREATE TABLE tt_content
 	grid_icon                      int(11) unsigned DEFAULT '0' NOT NULL,
 	grid_parallax                  tinyint(4)       DEFAULT '0' NOT NULL,
 	grid_imgbg                     tinyint(4)       DEFAULT '0' NOT NULL,
+	grid_bgimage                   int(11) unsigned DEFAULT '0' NOT NULL,
 	grid_bottom_image              tinytext,
 	grid_bgcolor                   varchar(10),
 	grid_bgfullsize                tinyint(4)       DEFAULT '0' NOT NULL,

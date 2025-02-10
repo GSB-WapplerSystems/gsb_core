@@ -528,6 +528,18 @@
 			<trans-unit id="grid.slider.description" resname="grid.slider.description">
 				<source>Toggle to a Slider</source>
 			</trans-unit>
+			<trans-unit id="grid.bgimage.container" resname="grid.bgimage.container">
+				<source>Background image</source>
+			</trans-unit>
+			<trans-unit id="grid.bgimage.container.description" resname="grid.bgimage.container.description">
+				<source>Add a background image to the container.</source>
+			</trans-unit>
+			<trans-unit id="grid.parallax" resname="grid.bgimage.container">
+				<source>Parallax animation</source>
+			</trans-unit>
+			<trans-unit id="grid.parallax.description" resname="grid.bgimage.container.description">
+				<source>Add a parallax animation to the background image.</source>
+			</trans-unit>
 			<trans-unit id="accordion.title" resname="accordion.title">
 				<source>Accordion</source>
 			</trans-unit>
