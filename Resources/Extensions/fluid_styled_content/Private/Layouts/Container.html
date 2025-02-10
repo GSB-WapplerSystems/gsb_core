@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:comment>
     <!--
     SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
@@ -6,7 +6,6 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
-
 <f:if condition="{data.grid_imgbg}">
     <f:then>
         <div class="row">
@@ -14,6 +13,20 @@
                 <div class="container-wrapper {data.frame_class}">
                     <f:if condition="{files}">
                         <f:then>
+                            <f:if condition="{data_bgimage} && {gsb:featureFlag(featureKey: 'ITZBUNDPHP-4326')}">
+                                <f:variable name="bgimage">{f:uri.image(image: data_bgimage.0, maxWidth: 2560, treatIdAsReference: '1')}</f:variable>
+                                <f:asset.css identifier="c{data.uid}-data-bgimage">
+                                    #c{data.uid}-data-bgimage
+                                    <f:format.raw>{</f:format.raw>
+                                        background-image: url("{bgimage}");
+                                    <f:format.raw>}</f:format.raw>
+                                </f:asset.css>
+                                <div class="grid-bg{f:if(condition: data.grid_parallax, then: ' grid-parallax')}" id="c{data.uid}-data-bgimage">
+                                    <f:if condition="{data.grid_parallax}">
+                                        <img class="jarallax-img" src="{bgimage}" alt="" aria-hidden="true">
+                                    </f:if>
+                                </div>
+                            </f:if>
                             <f:if condition="{data.grid_bgcolor}">
                                 <div class="grid-bg{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}"></div>
                             </f:if>
@@ -39,7 +52,21 @@
     </f:then>
     <f:else>
         <div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.grid_bgfullsize, then: ' grid-fullsize')}{f:if(condition: data.grid_light, then: ' grid-light')}{f:if(condition: data.grid_imgbg, then: ' grid-cols col-12 offset-xl-1 col-xl-10')}">
-            <div class="container-wrapper {data.frame_class}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+            <div class="container-wrapper {data.frame_class}{f:if(condition: data.grid_bgimage, then: ' grid-bgimage')}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+                <f:if condition="{data_bgimage} && {gsb:featureFlag(featureKey: 'ITZBUNDPHP-4326')}">
+                    <f:variable name="bgimage">{f:uri.image(image: data_bgimage.0, maxWidth: 2560, treatIdAsReference: '1')}</f:variable>
+                    <f:asset.css identifier="c{data.uid}-data-bgimage">
+                        #c{data.uid}-data-bgimage
+                        <f:format.raw>{</f:format.raw>
+                            background-image: url("{bgimage}");
+                        <f:format.raw>}</f:format.raw>
+                    </f:asset.css>
+                    <div class="grid-bg{f:if(condition: data.grid_parallax, then: ' grid-parallax')}" id="c{data.uid}-data-bgimage">
+                        <f:if condition="{data.grid_parallax}">
+                            <img class="jarallax-img" src="{bgimage}" alt="" aria-hidden="true">
+                        </f:if>
+                    </div>
+                </f:if>
                 <f:if condition="{data.grid_bgcolor}">
                     <div class="grid-bg{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}"></div>
                 </f:if>
@@ -56,5 +83,4 @@
         </div>
     </f:else>
 </f:if>
-
 </html>

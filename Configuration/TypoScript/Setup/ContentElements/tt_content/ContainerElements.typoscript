@@ -46,6 +46,16 @@ lib {
         }
         as = files
       }
+      200 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      200 {
+        if.isTrue.field = grid_bgimage
+        references {
+          fieldName = grid_bgimage
+          table = tt_content
+        }
+
+        as = data_bgimage
+      }
     }
   }
 

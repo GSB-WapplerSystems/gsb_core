@@ -607,6 +607,22 @@
 				<source>Toggle to a Slider</source>
 				<target>Zu einem Slider umschalten</target>
 			</trans-unit>
+			<trans-unit id="grid.bgimage.container" resname="grid.bgimage.container" approved="yes">
+				<source>Background image</source>
+				<target>Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="grid.bgimage.container.description" resname="grid.bgimage.container.description" approved="yes">
+				<source>Add a background image to the container.</source>
+				<target>Ein Hintergrundbild dem Container hinzufügen.</target>
+			</trans-unit>
+			<trans-unit id="grid.parallax" resname="grid.bgimage.container" approved="yes">
+				<source>Parallax animation</source>
+				<target>Parallax-Animation</target>
+			</trans-unit>
+			<trans-unit id="grid.parallax.description" resname="grid.bgimage.container.description" approved="yes">
+				<source>Add a parallax animation to the background image.</source>
+				<target>Das Hintergrundbild mit einer Parallax-Animation versehen.</target>
+			</trans-unit>
 			<trans-unit id="accordion.title" resname="accordion.title" approved="yes">
 				<source>Accordion</source>
 				<target>Akkordeon</target>
