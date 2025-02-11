@@ -29,7 +29,7 @@
 	],
 	"require": {
 		"php": "^8.1",
-		"b13/container": "^3.0",
+		"b13/container": "2.3.6",
 		"b13/permission-sets": "^0.1",
 		"ichhabrecht/content-defender": "3.5.1",
 		"pixelant/interest": "^2.1.2",
@@ -75,7 +75,7 @@
 		"doctrine/dbal": "^3.3",
 		"ergebnis/composer-normalize": "^2.28",
 		"friendsofphp/php-cs-fixer": "^3.14",
-		"helmich/typo3-typoscript-lint": "3.1.0 || 3.2.0 || 3.2.1",
+		"helmich/typo3-typoscript-lint": "3.3.0",
 		"itzbund/captainhook-hooks": "^1.0",
 		"michielroos/typo3scan": "^1.7",
 		"mockery/mockery": "^1.6",

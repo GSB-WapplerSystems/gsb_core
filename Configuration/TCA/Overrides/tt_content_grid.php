@@ -9,6 +9,7 @@ declare(strict_types=1);
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use ITZBund\GsbCore\UserFunc\ColorPickerValueItems;
+use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -264,17 +265,105 @@ defined('TYPO3') or die('Access denied.');
         ],
     ];
 
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4326')) {
+        $grid = array_merge_recursive(
+            $grid,
+            [
+                'grid_bgimage' => [
+                    'exclude' => '1',
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bgimage.container',
+                    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.bgimage.container.description',
+                    'config' =>
+                        [
+                            'type' => 'file',
+                            'allowed' => 'png,jpg,jpeg,gif,svg,webp',
+                            'maxitems' => '1',
+                            'appearance' => [
+                                'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                                'showPossibleLocalizationRecords' => true,
+                            ],
+                            // custom configuration for displaying fields in the overlay/reference table
+                            // to use the imageoverlayPalette instead of the basicoverlayPalette
+                            'overrideChildTca' => [
+                                'columns' => [
+                                    'description' => [
+                                        'config' => [
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'link' => [
+                                        'config' => [
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'title' => [
+                                        'config' => [
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'outline' => [
+                                        'config' => [
+                                            'renderType' => 'passthrough',
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'allow_download' => [
+                                        'config' => [
+                                            'renderType' => 'passthrough',
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'caption' => [
+                                        'config' => [
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                ],
+                'grid_parallax' => [
+                    'exclude' => '0',
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.parallax',
+                    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.parallax.description',
+                    'config' => [
+                        'type' => 'check',
+                        'renderType' => 'checkboxToggle',
+                        'items' => [
+                            [
+                                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:grid.parallax',
+                                'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                                'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled',
+                            ],
+                        ],
+                        'default' => '0',
+                    ],
+                ],
+            ]
+        );
+    }
+
     $gridPalettes = [
         'grid_config' => [
-            'showitem' => 'grid_type,grid_columns', 'canNotCollapse' => 1,
+            'showitem' => 'grid_type,grid_columns',
+            'canNotCollapse' => 1,
         ],
         'grid_bg' => [
-            'showitem' => 'grid_bgcolor,grid_light,grid_imgbg,--linebreak--,grid_icon', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgcolor,grid_light,grid_imgbg,--linebreak--,grid_icon',
+            'canNotCollapse' => 1,
         ],
         'grid_container_pallet' => [
-            'showitem' => 'grid_bgfullsize,grid_container', 'canNotCollapse' => 1,
+            'showitem' => 'grid_bgfullsize,grid_container',
+            'canNotCollapse' => 1,
         ],
     ];
+
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4326')) {
+        $gridPalettes['grid_background_image'] = [
+            'showitem' => 'grid_bgimage, grid_parallax',
+            'canNotCollapse' => 1,
+        ];
+    }
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $gridPalettes;
 

@@ -45,6 +45,7 @@ defined('TYPO3') or die('Access denied.');
     --div--;Container,
         --palette--;;grid_bg,
         --palette--;;grid_container_pallet,
+        --palette--;;grid_background_image,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
