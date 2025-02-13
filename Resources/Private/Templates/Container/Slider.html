@@ -13,9 +13,16 @@
         <div class="swiper swiper-raw swiper-{data.slider_type}-col-{data.grid_columns}">
             <ul class="slider swiper-wrapper list-unstyled">
                 <f:for as="child" each="{children_101}">
-                    <li class="swiper-slide">
-                        <f:format.raw>{child.renderedContent}</f:format.raw>
-                    </li>
+                    <f:if condition="{child.CType} == list && {child.list_type} == solr_pi_results">
+                        <f:then>
+                            <f:format.raw>{child.renderedContent}</f:format.raw>
+                        </f:then>
+                        <f:else>
+                            <li class="swiper-slide">
+                                <f:format.raw>{child.renderedContent}</f:format.raw>
+                            </li>
+                        </f:else>
+                    </f:if>
                 </f:for>
             </ul>
 
