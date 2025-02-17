@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund\GsbCore\ViewHelpers">
 <f:comment>
     <!--
     SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
@@ -13,7 +13,7 @@
         <div class="swiper swiper-raw swiper-{data.slider_type}-col-{data.grid_columns}">
             <ul class="slider swiper-wrapper list-unstyled">
                 <f:for as="child" each="{children_101}">
-                    <f:if condition="{child.CType} == list && {child.list_type} == solr_pi_results">
+                    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4458')} && {child.CType} == list && {child.list_type} == solr_pi_results">
                         <f:then>
                             <f:format.raw>{child.renderedContent}</f:format.raw>
                         </f:then>
