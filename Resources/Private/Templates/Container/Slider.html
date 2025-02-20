@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund\GsbCore\ViewHelpers">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <f:comment>
     <!--
     SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
@@ -39,8 +39,10 @@
                 <button class="swiper-button swiper-button-next" tabindex="-1"></button>
             </div>
         </div>
+        <f:comment><!-- gsb_core does not provide javascript or css
         <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
         <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
+        --></f:comment>
     </f:if>
 </f:section>
 
