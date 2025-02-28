@@ -16,6 +16,7 @@ frame-layout-{data.layout}
 {f:if(condition: data.grid_light, then: 'grid-light')}
 {f:if(condition: data.grid_bgfullsize, then: 'grid-fullsize')}
 {f:if(condition: data_bgimage, then: 'grid-bgimage')}
+{f:if(condition:'{data.grid_container} == 1', then:'header-underline')}
 {f:if(condition: data.grid_imgbg, then: 'grid-cols col-12 offset-xl-1 col-xl-10')} position-relative"
      id="c{data.uid}">
 
@@ -46,7 +47,7 @@ frame-layout-{data.layout}
         </f:for>
     </f:if>
 
-    {f:if(condition:'{data.grid_container} != 1', then:'<div class="container">')}
+    {f:if(condition:'{data.grid_container} != 1', then:'<div class="container header-underline">')}
 
     <f:render section="Header" optional="true">
         <f:render partial="Header/All" arguments="{_all}" />
