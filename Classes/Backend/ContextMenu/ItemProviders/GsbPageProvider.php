@@ -23,23 +23,17 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Backend\ContextMenu\ItemProviders;
 
 use TYPO3\CMS\Backend\ContextMenu\ItemProviders\PageProvider;
-use TYPO3\CMS\Core\Configuration\Features;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Context menu item provider for pages table
  *
- * If feature flag ITZBUNDPHP-4597 is set, the delete and cut options won't be
- * provided for pages that have is_siteroot set
+ * The delete and cut options won't be provided for pages that have is_siteroot set
  */
 class GsbPageProvider extends PageProvider
 {
     public function getPriority(): int
     {
-        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4597')) {
-            return 101;
-        }
-        return 0;
+        return 101;
     }
 
     /**
