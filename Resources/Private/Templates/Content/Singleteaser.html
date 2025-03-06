@@ -24,8 +24,10 @@
                 </div>
             </f:if>
         </div>
-        <f:if condition="{files}">
+        <f:if condition="{files->f:count()}">
             <div class="teaser-image ce-gallery {f:if(condition:'{data.imageorient} == 0', then:' order-0 m-auto text-center flex-shrink-1')}{f:if(condition:'{data.imageorient} == 26', then:' order-0')}">
+                <f:variable name="file">{files.0}</f:variable>
+                <f:render partial="Media/Copyright" arguments="{file: file, site: site}" />
                 <f:render partial="Media/Rendering/ImageTeaser" arguments="{_all}"/>
             </div>
         </f:if>
