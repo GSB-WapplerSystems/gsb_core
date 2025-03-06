@@ -13,7 +13,8 @@
         <f:then>
             <f:if condition="{files}">
                 <div class="stage-image">
-                    <f:for as="file" each="{files}">
+                    <f:for each="{files}" as="file">
+                        <f:render partial="Media/Copyright" arguments="{file: file, site: site}" />
                         <f:render arguments="{_all}" partial="Media/Rendering/Image"/>
                     </f:for>
                 </div>

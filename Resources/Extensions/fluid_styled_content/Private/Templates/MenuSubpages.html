@@ -33,6 +33,7 @@
                                 <f:if condition="{page.files} && {page.files->f:count()}">
                                     <f:variable name="file">{page.files.0}</f:variable>
                                     <div class="teaser-image ce-gallery order-0">
+                                        <f:render partial="Media/Copyright" arguments="{file: file, site: site}" />
                                         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                                             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                                                 <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" image="{file}" treatIdAsReference="1" />

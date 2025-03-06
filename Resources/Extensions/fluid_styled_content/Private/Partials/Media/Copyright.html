@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
+<f:if condition="{file.properties.copyright} && {site.configuration.show-copyright} == 1">
+    <div class="btn-copyright-wrapper dropstart">
+        <button aria-expanded="false" class="btn btn-image btn-copyright" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
+            <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.copyright.button" /></span>
+        </button>
+        <div class="dropdown-menu dropdown-copyright p-0">
+            <p>© {file.properties.copyright}</p>
+        </div>
+    </div>
+</f:if>
+</html>
