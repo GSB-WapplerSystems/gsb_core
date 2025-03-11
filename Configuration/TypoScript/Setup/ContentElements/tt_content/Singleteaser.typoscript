@@ -33,6 +33,10 @@ tt_content {
     }
     templateName = Singleteaser
     dataProcessing {
+      5 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+      5 {
+        as = site
+      }
       10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
       10 {
         if.isTrue.field = image

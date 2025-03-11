@@ -7,6 +7,12 @@
   <violation rule="PHPMD\Rule\CleanCode\MissingImport" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
   <violation rule="PHPMD\Rule\Naming\ShortVariable" file="Classes/Cache/Backend/SentinelCapableRedisBackend.php"/>
+  <violation rule="PHPMD\Rule\Design\CouplingBetweenObjects" file="Classes/Command/BackendUserDeleteCommand.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/BackendUserDeleteCommand.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\StaticAccess" file="Classes/Command/BackendUserDeleteCommand.php"/>
+  <violation rule="PHPMD\Rule\CleanCode\ElseExpression" file="Classes/Command/BackendUserDeleteCommand.php"/>
+  <violation rule="PHPMD\Rule\Design\CouplingBetweenObjects" file="Classes/Command/BackendUserListCommand.php"/>
+  <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/BackendUserListCommand.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/ConfigurationImportCommand.php"/>
   <violation rule="PHPMD\Rule\UnusedFormalParameter" file="Classes/Command/TriggerSynchronizeConfigurationCommand.php"/>
   <violation rule="PHPMD\Rule\Naming\LongVariable" file="Classes/Configuration/ExtendSiteConfigurationRegistry.php"/>

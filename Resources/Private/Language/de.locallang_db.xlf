@@ -988,6 +988,14 @@
 				<source>Initiative text next to second logo</source>
 				<target>Initiative text für zweites Logo</target>
 			</trans-unit>
+			<trans-unit id="page.configuration.show-copyright.label" resname="page.configuration.show-copyright.label">
+				<source>Show copyright</source>
+				<target>Copyright anzeigen</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.show-copyright.description" resname="page.configuration.show-copyright.description">
+				<source>Also display copyright for teasers or stage images.</source>
+				<target>Copyright auch an Teaser oder Bühnen-Bildern anzeigen.</target>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>To do this, please use the service at: https://realfavicongenerator.net/ (This service is free of charge and copyright free). To do this, you need a 512x512 PNG image and have it processed by this service. Download the generated files and insert them e.g. under /fileadmin/Favicons/. You can then link the corresponding files here again to replace your favicon. Of course, you can also create all the files manually. The file names and image sizes must be retained.</source>
 				<target>Nutzen Sie dazu bitte den Dienst unter: https://realfavicongenerator.net/ (Dieser Dienst ist kostenlos und Copyright frei). Hierzu brauchen Sie nur ein 512x512 großes Favicon-PNG Bild und lassen es von diesem Dienst bearbeiten. Laden Sie die erzeugten Dateien herunter und fügen Sie diese z.B. unter /fileadmin/Favicons/ ein. Danach können Sie die entsprechenden Dateien hier wieder verlinken, um Ihr Favicon auszutauschen. Natürlich können Sie alle Dateien auch händisch erstellen. Die Dateinamen und Bildgrößen müssen beibehalten werden.</target>

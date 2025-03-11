@@ -840,6 +840,12 @@
 			<trans-unit id="page.configuration.initiative-text.label" resname="page.configuration.initiative-text.label">
 				<source>Initiative text next to second logo</source>
 			</trans-unit>
+			<trans-unit id="page.configuration.show-copyright.label" resname="page.configuration.show-copyright.label">
+				<source>Show copyright</source>
+			</trans-unit>
+			<trans-unit id="page.configuration.show-copyright.description" resname="page.configuration.show-copyright.description">
+				<source>Also display copyright for teasers or stage images.</source>
+			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.favicon.palette.description" resname="page.configuration.sitepackage.favicon.palette.description">
 				<source>To do this, please use the service at: https://realfavicongenerator.net/ (This service is free of charge and copyright free). All you need is a 512x512 favicon PNG image and let this service process it. Download the generated files and insert them e.g. under /fileadmin/Favicons/. You can then link the corresponding files here again to replace your favicon. Of course, you can also create all the files manually. The file names and image sizes must be retained.</source>
 			</trans-unit>

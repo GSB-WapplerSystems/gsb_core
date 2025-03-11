@@ -12,6 +12,20 @@ services:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
 
+  ITZBund\GsbCore\Command\BackendUserDeleteCommand:
+    tags:
+      - name: console.command
+        schedulable: false
+        command: 'gsbcore:backend:user:delete'
+        description: 'Delete backend users.'
+
+  ITZBund\GsbCore\Command\BackendUserListCommand:
+    tags:
+      - name: console.command
+        schedulable: false
+        command: 'gsbcore:backend:user:list'
+        description: 'List backend users.'
+
   ITZBund\GsbCore\Command\ConfigurationImportCommand:
     tags:
       - name: console.command
