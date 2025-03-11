@@ -15,8 +15,8 @@
                 <f:if condition="{page.data.doktype} != 4">
                     <li class="col">
                         <article class="frame frame-type-gsb_singleteaser frame-layout-0 h-100">
-                            <div class="teaser textpic topcenter d-flex flex-wrap h-100{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}{f:if(condition: data.grid_light, then: ' grid-light')}">
-                                <div class="teaser-content ce-bodytext order-1">
+                            <div class="teaser d-flex textpic topcenter flex-wrap h-100{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}{f:if(condition: data.grid_light, then: ' grid-light')}">
+                                <div class="teaser-content ce-bodytext w-100 h-100 order-1">
                                     <f:if condition="{page.data.description} || {page.title}">
                                         <{f:if(condition: data.tx_subelements_header_style, then: '{data.tx_subelements_header_style}', else: 'h2')}>
                                             <f:link.typolink class="stretched-link teaser-link" parameter="{page.link}">
@@ -32,7 +32,7 @@
                                 </div>
                                 <f:if condition="{page.files} && {page.files->f:count()}">
                                     <f:variable name="file">{page.files.0}</f:variable>
-                                    <div class="teaser-image ce-gallery order-0">
+                                    <div class="teaser-image ce-gallery order-0 m-auto text-center flex-shrink-1">
                                         <f:render partial="Media/Copyright" arguments="{file: file, site: site}" />
                                         <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                                             <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
