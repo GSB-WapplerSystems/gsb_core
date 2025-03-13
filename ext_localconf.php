@@ -64,10 +64,7 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
 
-    /***************
-     * Define TypoScript as content rendering template
-     */
-    // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
+
 
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
@@ -75,19 +72,48 @@ defined('TYPO3') or die('Access denied.');
         module.tx_form {
             settings {
                 yamlConfigurations {
-                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    90 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
         plugin.tx_form {
             settings {
                 yamlConfigurations {
-                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    90 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
     '));
     }
+
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-4469'] ??= false;
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')) {
+        if (ExtensionManagementUtility::isLoaded('form_mailtext')) {
+            $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['formmailtext'] = ['Kitzberger\\FormMailtext\\ViewHelpers'];
+            ExtensionManagementUtility::addTypoScriptSetup(trim('
+                plugin.tx_form {
+                    settings {
+                        yamlConfigurations {
+                            122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                        }
+                    }
+                }
+                module.tx_form {
+                    settings {
+                        yamlConfigurations {
+                            122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                        }
+                    }
+                }
+            '));
+        }
+    }
+    /***************
+     * Define TypoScript as content rendering template
+     */
+    // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
+
 
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
         $extVideoFileExtension = 'externalvideo';
