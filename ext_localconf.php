@@ -64,8 +64,6 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
 
-
-
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
         ExtensionManagementUtility::addTypoScriptSetup(trim('
@@ -85,7 +83,6 @@ defined('TYPO3') or die('Access denied.');
         }
     '));
     }
-
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-4469'] ??= false;
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')) {
@@ -113,7 +110,6 @@ defined('TYPO3') or die('Access denied.');
      * Define TypoScript as content rendering template
      */
     // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
-
 
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
         $extVideoFileExtension = 'externalvideo';
