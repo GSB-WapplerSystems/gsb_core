@@ -70,14 +70,14 @@ defined('TYPO3') or die('Access denied.');
         module.tx_form {
             settings {
                 yamlConfigurations {
-                    90 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
         plugin.tx_form {
             settings {
                 yamlConfigurations {
-                    90 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
+                    110 = EXT:gsb_core/Resources/Extensions/form/Yaml/BaseSetup.yaml
                 }
             }
         }
