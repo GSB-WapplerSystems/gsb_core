@@ -268,7 +268,7 @@
 </f:section>
 
 <f:section name="GalleryThumb">
-    <figure class="figure">
+    <figure class="figure{f:if(condition: file.properties.copyright, then: ' me-lg-3')}">
         <picture data-aspectratio-lg="16:9" data-aspectratio-md="16:9" data-aspectratio-sm="16:9" data-aspectratio-xl="16:9" data-aspectratio-xs="16:9">
             <f:image class="figure-img img-fluid" cropVariant="default" data="{bs-slide-to: '{i.index}', bs-target: '#galleryCarousel-{data.uid}'}" decoding="async" height="731c" loading="lazy" maxHeight="731c" maxWidth="1300c" src="{file.properties.uid}" treatIdAsReference="1" width="1300c"/>
         </picture>

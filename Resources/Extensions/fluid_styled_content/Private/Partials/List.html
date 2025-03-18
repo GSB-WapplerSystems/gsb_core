@@ -10,7 +10,7 @@
     <div class="teaser-item-wrapper">
         <f:for as="file" each="{page.files}" iteration="counter">
             <f:if condition="{counter.cycle} == 1">
-                <figure class="figure">
+                <figure class="figure{f:if(condition: file.properties.copyright, then: ' me-lg-3')}">
                     <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
                       <picture data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                           <f:image class="figure-img img-fluid" cropVariant="default" loading="lazy" maxWidth="650" image="{file}" />
