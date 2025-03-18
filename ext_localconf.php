@@ -85,26 +85,28 @@ defined('TYPO3') or die('Access denied.');
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-4469'] ??= false;
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')) {
-        if (ExtensionManagementUtility::isLoaded('form_mailtext')) {
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['formmailtext'] = ['Kitzberger\\FormMailtext\\ViewHelpers'];
-            ExtensionManagementUtility::addTypoScriptSetup(trim('
-                plugin.tx_form {
-                    settings {
-                        yamlConfigurations {
-                            122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
-                        }
+    if (
+        GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')
+    ) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:form/Resources/Private/Language/Database.xlf'][] = 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf';
+        ExtensionManagementUtility::addTypoScriptSetup(trim('
+            plugin.tx_form {
+                settings {
+                    yamlConfigurations {
+                        122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                        123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
                     }
                 }
-                module.tx_form {
-                    settings {
-                        yamlConfigurations {
-                            122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
-                        }
+            }
+            module.tx_form {
+                settings {
+                    yamlConfigurations {
+                        122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                        123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
                     }
                 }
-            '));
-        }
+            }
+        '));
     }
     /***************
      * Define TypoScript as content rendering template

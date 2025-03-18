@@ -1,0 +1,16 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          finishersDefinition:
+            EmailToSender:
+              FormEngine:
+                elements:
+                  message:
+                    description: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.description'
+            EmailToReceiver:
+              FormEngine:
+                elements:
+                  message:
+                    description: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'

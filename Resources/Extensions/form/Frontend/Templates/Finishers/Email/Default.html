@@ -1,107 +1,72 @@
 <html
    xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers"
+   xmlns:formmailtext="http://typo3.org/ns/Kitzberger/FormMailtext/ViewHelpers"
    data-namespace-typo3-fluid="true"
 >
 <f:layout name="SystemEmail" />
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
+    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1996')}">
+        <f:variable name="ITZBUNDPHP-1996-requestIdHeader"><gsb:requestId /></f:variable>
+    </f:if>
+    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
+        <f:then>
+            <formmailtext:renderMessage message="{message -> f:format.html()}">
+                <f:render section="tablebasedStandardMailText" arguments="{_all}" />
+            </formmailtext:renderMessage>
+        </f:then>
+        <f:else>
+            <f:render section="tablebasedStandardMailText" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</f:section>
 
+<f:section name="tablebasedStandardMailText">
     <table>
-        <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
-            <f:then>
-                <formmailtext:renderMessage message="{message -> f:format.html()}">
-                        <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
-                            <tr>
-                                <f:if condition="{formValue.isSection}">
+        <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
+        <tr>
+            <f:if condition="{formValue.isSection}">
+                <f:then>
+                    <td colspan="2"><b>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</b></td>
+                </f:then>
+                <f:else>
+                    <td width="600" valign="top" align="left">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</td>
+                    <td width="600" valign="top" align="left">
+                        <f:if condition="{formValue.value}">
+                            <f:then>
+                                <f:if condition="{formValue.isMultiValue}">
                                     <f:then>
-                                        <td colspan="2"><b>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</b></td>
+                                        <table cellspacing="0" border="0">
+                                            <f:for each="{formValue.processedValue}" as="value">
+                                                <tr>
+                                                    <td>{value}</td>
+                                                </tr>
+                                            </f:for>
+                                        </table>
                                     </f:then>
                                     <f:else>
-                                        <td width="600" valign="top" align="left">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</td>
-                                        <td width="600" valign="top" align="left">
-                                            <f:if condition="{formValue.value}">
-                                                <f:then>
-                                                    <f:if condition="{formValue.isMultiValue}">
-                                                        <f:then>
-                                                            <table cellspacing="0" border="0">
-                                                                <f:for each="{formValue.processedValue}" as="value">
-                                                                    <tr>
-                                                                        <td>{value}</td>
-                                                                    </tr>
-                                                                </f:for>
-                                                            </table>
-                                                        </f:then>
-                                                        <f:else>
-                                                            <table cellspacing="0" border="0">
-                                                                <tr>
-                                                                    <td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
-                                                                </tr>
-                                                            </table>
-                                                        </f:else>
-                                                    </f:if>
-                                                </f:then>
-                                                <f:else>
-                                                    -
-                                                </f:else>
-                                            </f:if>
-                                        </td>
+                                        <table cellspacing="0" border="0">
+                                            <tr>
+                                                <td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
+                                            </tr>
+                                        </table>
                                     </f:else>
                                 </f:if>
-                            </tr>
-                        </formvh:renderAllFormValues>
-                </formmailtext:renderMessage>
-            </f:then>
-            <f:else>
-                <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
-                    <tr>
-                        <f:if condition="{formValue.isSection}">
-                            <f:then>
-                                <td colspan="2"><b>{formvh:translateElementProperty(element: formValue.element, property: 'label')}</b></td>
                             </f:then>
                             <f:else>
-                                <td valign="top" align="left">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</td>
-                                <td valign="top" align="left">
-                                    <f:if condition="{formValue.value}">
-                                        <f:then>
-                                            <f:if condition="{formValue.isMultiValue}">
-                                                <f:then>
-                                                    <table cellspacing="0" border="0">
-                                                        <f:for each="{formValue.processedValue}" as="value">
-                                                            <tr>
-                                                                <td>{value}</td>
-                                                            </tr>
-                                                        </f:for>
-                                                    </table>
-                                                </f:then>
-                                                <f:else>
-                                                    <table cellspacing="0" border="0">
-                                                        <tr>
-                                                            <td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
-                                                        </tr>
-                                                    </table>
-                                                </f:else>
-                                            </f:if>
-                                        </f:then>
-                                        <f:else>
-                                            -
-                                        </f:else>
-                                    </f:if>
-                                </td>
+                                -
                             </f:else>
                         </f:if>
-                    </tr>
-                </formvh:renderAllFormValues>
-            </f:else>
-        </f:if>
-
-        <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1996')}">
-            <f:variable name="requestIdHeader"><gsb:requestId /></f:variable>
-                <f:if condition="{requestIdHeader}">
-                <tr>
-                    <td align="left" valign="top">Request ID</td>
-                    <td align="left">{requestIdHeader}</td>
-                </tr>
+                    </td>
+                </f:else>
             </f:if>
+        </tr>
+        </formvh:renderAllFormValues>
+        <f:if condition="{ITZBUNDPHP-1996-requestIdHeader}">
+        <tr>
+            <td align="left" valign="top">Request ID</td>
+            <td align="left">{ITZBUNDPHP-1996-requestIdHeader}</td>
+        </tr>
         </f:if>
     </table>
 </f:section>
