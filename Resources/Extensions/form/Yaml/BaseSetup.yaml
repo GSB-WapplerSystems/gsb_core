@@ -51,6 +51,7 @@ TYPO3:
                         label: '2:/formupload/'
             Form:
               renderingOptions:
+                templateVariant: version2
                 templateRootPaths:
                   200: 'EXT:gsb_core/Resources/Extensions/form/Frontend/Templates/'
                 partialRootPaths:

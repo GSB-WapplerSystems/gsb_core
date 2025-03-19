@@ -15,21 +15,21 @@
             <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/>
         </f:if>
 
-        <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/FieldUpload">
+        <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/Field">
             <formvh:form.uploadedResource
                 accept="{element.properties.allowedMimeTypes}"
                 additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
                 aria="{aria}"
                 as="resource"
-                class="{element.properties.elementClassAttribute} form-control form-control-lg"
-                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                class="{element.properties.elementClassAttribute} form-control-lg"
+                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}"
                 id="{element.uniqueIdentifier}"
                 property="{element.identifier}"
             >
                 <f:if condition="{resource}">
-                    <p id="{element.uniqueIdentifier}-preview" class="fw-bold">
-                        <em>{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:form.uploaded.file')}: {resource.originalResource.originalFile.name}</em>
-                    </p>
+                    <div id="{element.uniqueIdentifier}-preview">
+                        {resource.originalResource.originalFile.name}
+                    </div>
                 </f:if>
             </formvh:form.uploadedResource>
         </f:render>
