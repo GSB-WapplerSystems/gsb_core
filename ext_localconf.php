@@ -88,7 +88,6 @@ defined('TYPO3') or die('Access denied.');
     if (
         GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')
     ) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:form/Resources/Private/Language/Database.xlf'][] = 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf';
         ExtensionManagementUtility::addTypoScriptSetup(trim('
             plugin.tx_form {
                 settings {

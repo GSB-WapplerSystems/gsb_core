@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="EXT:form_mailtext/Resources/Private/Language/locallang.xlf" date="2025-03-18T20:15:32Z" product-name="gsb_core">
+    <file source-language="en" datatype="plaintext" date="2025-03-18T20:15:32Z" original="EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf" product-name="gsb_core">
         <header/>
         <body>
             <trans-unit id="tt_content.finishersDefinition.EmailToReceiver.message.description" resname="tt_content.finishersDefinition.EmailToReceiver.message.description" xml:space="preserve">

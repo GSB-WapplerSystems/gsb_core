@@ -3,6 +3,12 @@ TYPO3:
     Form:
       prototypes:
         standard:
+          formEditor:
+            translationFiles:
+              100: 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf'
+          formEngine:
+            translationFiles:
+              100: 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf'
           finishersDefinition:
             EmailToSender:
               FormEngine:
