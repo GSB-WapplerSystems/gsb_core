@@ -7,11 +7,11 @@
     -->
 </f:comment>
 <formvh:renderRenderable renderable="{element}">
-    <f:render arguments="{element: element, renderFieldset: '{element.properties.renderFieldset}', doNotShowLabel: '{element.properties.legendVisuallyHidden}'}" contentAs="elementContent" partial="Field/FieldMultibox">
+    <f:render arguments="{element: element, renderFieldset: '{element.properties.renderFieldset}', doNotShowLabel: '{element.properties.legendVisuallyHidden}'}" contentAs="elementContent" partial="Field/Field">
         <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
 
             <f:variable name="errorClass">{f:if(condition: '{validationResults.errors}', then: '{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}')}</f:variable>
-            <ul aria-label="{element.label}" class="{errorClass} radiogroup list-unstyled" id="{element.uniqueIdentifier}" role="radiogroup">
+            <div aria-label="{element.label}" class="{errorClass}" id="{element.uniqueIdentifier}" role="radiogroup">
                 <f:for as="label" each="{element.properties.options}" iteration="idIterator" key="value">
                     <f:if condition="{element.properties.elementDescription}">
                         <f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}" />
@@ -20,22 +20,22 @@
                         <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}" />
                     </f:if>
 
-                    <li class="{element.properties.containerClassAttribute} form-check">
-                        <f:form.radio
+                    <div class="{element.properties.containerClassAttribute}">
+                        <label class="{element.properties.labelClassAttribute}" for="{element.uniqueIdentifier}-{idIterator.index}">
+                            <f:form.radio
                                 additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
                                 aria="{aria}"
-                                class="{element.properties.elementClassAttribute} form-check-input"
-                                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                                class="{element.properties.elementClassAttribute}"
+                                errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}"
                                 id="{element.uniqueIdentifier}-{idIterator.index}"
                                 property="{element.identifier}"
                                 value="{value}"
-                        />
-                        <label class="{element.properties.labelClassAttribute} form-label" for="{element.uniqueIdentifier}-{idIterator.index}">
+                            />
                             <span class="{element.properties.labelTextClassAttribute}">{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}</span>
                         </label>
-                    </li>
+                    </div>
                 </f:for>
-            </ul>
+            </div>
             <f:if condition="{validationResults.flattenedErrors} && {element.properties.renderFieldset} == '1'">
                 <span class="{element.rootForm.renderingOptions.fieldProperties.errorMsgClassAttribute}" id="{element.uniqueIdentifier}-errors" role="alert">
                     <f:for as="error" each="{validationResults.errors}">

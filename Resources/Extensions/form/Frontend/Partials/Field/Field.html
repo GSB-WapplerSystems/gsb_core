@@ -19,15 +19,15 @@
             </fieldset>
         </f:then>
         <f:else>
-            <div class="{element.properties.containerClassAttribute}{f:if(condition: '{validationResults.errors.0}', then: ' {element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}')} mb-4">
+            <div class="{element.properties.containerClassAttribute}">
                 <f:if condition="{doNotShowLabel} != 1">
-                    <label class="{element.properties.labelClassAttribute}{f:if(condition: '{doNotShowLabel} == 1', then: ' {element.rootForm.renderingOptions.fieldProperties.visuallyHiddenClassAttribute}')} form-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}
+                    <label class="{element.properties.labelClassAttribute}{f:if(condition: '{doNotShowLabel} == 1', then: ' {element.rootForm.renderingOptions.fieldProperties.visuallyHiddenClassAttribute}')}" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}
                         <f:if condition="{element.required}">
                             <f:render arguments="{element: element}" partial="Field/Required"/>
                         </f:if>
                     </label>
-                    <f:render arguments="{_all}" section="Element"/>
                 </f:if>
+                <f:render arguments="{_all}" section="Element"/>
             </div>
         </f:else>
     </f:if>
@@ -36,16 +36,15 @@
 <f:section name="Element">
     <f:format.raw>{elementContent}</f:format.raw>
     <f:if condition="{validationResults.flattenedErrors} && {renderFieldset} != 1">
-        <div class="{element.rootForm.renderingOptions.fieldProperties.errorMsgClassAttribute} invalid-feedback" id="{element.uniqueIdentifier}-errors" role="alert">
+        <span class="{element.rootForm.renderingOptions.fieldProperties.errorMsgClassAttribute}" id="{element.uniqueIdentifier}-errors" role="alert">
             <f:for as="error" each="{validationResults.errors}">
                 <f:format.htmlspecialchars>{formvh:translateElementError(element: element, error: error)}</f:format.htmlspecialchars>
+                <br/>
             </f:for>
-        </div>
+        </span>
     </f:if>
     <f:if condition="{element.properties.elementDescription}">
-        <p class="{element.rootForm.renderingOptions.fieldProperties.descriptionClassAttribute} description" id="{element.uniqueIdentifier}-desc">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</p>
+        <span class="{element.rootForm.renderingOptions.fieldProperties.descriptionClassAttribute}" id="{element.uniqueIdentifier}-desc">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</span>
     </f:if>
 </f:section>
-
-<f:asset.script identifier="gsb-core-initialize-with-referrer" src="EXT:gsb_core/Resources/Public/JavaScript/formInitializeWithReferrer.js" />
 </html>
