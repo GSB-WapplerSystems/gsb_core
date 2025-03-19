@@ -14,3 +14,16 @@ TYPO3:
                 elements:
                   message:
                     description: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
+          formElementsDefinition:
+            Form:
+              formEditor:
+                propertyCollections:
+                  finishers:
+                    10:
+                      editors:
+                        220:
+                          fieldExplanationText: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.description'
+                    20:
+                      editors:
+                        220:
+                          fieldExplanationText: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
