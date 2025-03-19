@@ -6,20 +6,21 @@
 <f:layout name="SystemEmail" />
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
+<f:spaceless>
 <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1996')}">
     <f:variable name="ITZBUNDPHP-1996-requestIdHeader"><gsb:requestId /></f:variable>
 </f:if>
     <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
         <f:then>
-            <formmailtext:renderMessage message="{message -> f:format.stripTags()}">
-                <f:render section="StandardEmail" arguments="{_all}" />
-            </formmailtext:renderMessage>
+<formmailtext:renderMessage message="{message -> f:format.stripTags()}">
+<f:render section="StandardEmail" arguments="{_all}" />
+</formmailtext:renderMessage>
         </f:then>
         <f:else>
-            <f:render section="StandardEmail" arguments="{_all}" />
+<f:render section="StandardEmail" arguments="{_all}" />
         </f:else>
     </f:if>
-</f:section>
+</f:spaceless></f:section>
 
 <f:section name="StandardEmail">
 <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue"><f:spaceless>
