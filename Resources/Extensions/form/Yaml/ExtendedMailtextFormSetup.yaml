@@ -15,11 +15,16 @@ TYPO3:
                 elements:
                   message:
                     description: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.description'
+                    config:
+                      eval: ''
             EmailToReceiver:
               FormEngine:
                 elements:
                   message:
                     description: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
+                    config:
+                      eval: ''
+          # Extra field 'message' in finisher config in form module
           formElementsDefinition:
             Form:
               formEditor:
@@ -33,3 +38,10 @@ TYPO3:
                       editors:
                         220:
                           fieldExplanationText: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
+                          identifier: 'message'
+                          templateName: 'Inspector-TextareaEditor'
+                          label: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.label'
+                          propertyPath: 'options.message'
+                          enableFormelementSelectionButton: true
+                          propertyValidators:
+                            10: ''
