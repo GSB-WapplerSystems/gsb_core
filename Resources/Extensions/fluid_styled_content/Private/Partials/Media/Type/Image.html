@@ -6,7 +6,7 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
-    <figure class="figure">
+    <figure class="figure{f:if(condition: file.properties.copyright, then: ' me-lg-3')}">
         <f:if condition="{file.link}">
             <f:then>
                 <f:link.typolink parameter="{file.link}" title="{file.link.title}">

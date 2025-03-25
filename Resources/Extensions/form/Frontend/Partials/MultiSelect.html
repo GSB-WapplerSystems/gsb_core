@@ -15,14 +15,14 @@
             <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}" />
         </f:if>
 
-        <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/FieldUpload">
+        <f:render arguments="{element: element}" contentAs="elementContent" partial="Field/Field">
             <f:if condition="{element.properties.prependOptionLabel}">
                 <f:then>
                     <f:form.select
                         additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
                         aria="{aria}"
-                        class="{element.properties.elementClassAttribute} form-select"
-                        errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                        class="{element.properties.elementClassAttribute} form-select-lg"
+                        errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}"
                         id="{element.uniqueIdentifier}"
                         multiple="multiple"
                         options="{formvh:translateElementProperty(element: element, property: 'options')}"
@@ -35,8 +35,8 @@
                     <f:form.select
                         additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
                         aria="{aria}"
-                        class="{element.properties.elementClassAttribute}"
-                        errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute} is-invalid"
+                        class="{element.properties.elementClassAttribute} form-select-lg"
+                        errorClass="{element.rootForm.renderingOptions.fieldProperties.errorClassAttribute}"
                         id="{element.uniqueIdentifier}"
                         multiple="multiple"
                         options="{formvh:translateElementProperty(element: element, property: 'options')}"

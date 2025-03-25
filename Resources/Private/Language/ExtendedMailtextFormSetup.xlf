@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" date="2025-03-18T20:15:32Z" original="EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf" product-name="gsb_core">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.finishersDefinition.EmailToReceiver.message.description" resname="tt_content.finishersDefinition.EmailToReceiver.message.description" xml:space="preserve">
+                <source>You can use {variables} to include the original table based content.</source>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description" resname="formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description" xml:space="preserve">
+                <source>You can use {variables} to include the original table based content.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.finishersDefinition.EmailToSender.message.description" resname="tt_content.finishersDefinition.EmailToSender.message.description" xml:space="preserve">
+                <source>You can use {variables} to include the original table based content.</source>
+            </trans-unit>
+            <trans-unit id="formEditor.elements.Form.finisher.EmailToSender.editor.message.description" resname="formEditor.elements.Form.finisher.EmailToSender.editor.message.description" xml:space="preserve">
+                <source>You can use {variables} to include the original table based content.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

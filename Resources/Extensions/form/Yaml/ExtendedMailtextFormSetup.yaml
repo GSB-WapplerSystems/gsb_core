@@ -1,0 +1,47 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formEditor:
+            translationFiles:
+              100: 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf'
+          formEngine:
+            translationFiles:
+              100: 'EXT:gsb_core/Resources/Private/Language/ExtendedMailtextFormSetup.xlf'
+          finishersDefinition:
+            EmailToSender:
+              FormEngine:
+                elements:
+                  message:
+                    description: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.description'
+                    config:
+                      eval: ''
+            EmailToReceiver:
+              FormEngine:
+                elements:
+                  message:
+                    description: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
+                    config:
+                      eval: ''
+          # Extra field 'message' in finisher config in form module
+          formElementsDefinition:
+            Form:
+              formEditor:
+                propertyCollections:
+                  finishers:
+                    10:
+                      editors:
+                        220:
+                          fieldExplanationText: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.description'
+                    20:
+                      editors:
+                        220:
+                          fieldExplanationText: 'formEditor.elements.Form.finisher.EmailToReceiver.editor.message.description'
+                          identifier: 'message'
+                          templateName: 'Inspector-TextareaEditor'
+                          label: 'formEditor.elements.Form.finisher.EmailToSender.editor.message.label'
+                          propertyPath: 'options.message'
+                          enableFormelementSelectionButton: true
+                          propertyValidators:
+                            10: ''

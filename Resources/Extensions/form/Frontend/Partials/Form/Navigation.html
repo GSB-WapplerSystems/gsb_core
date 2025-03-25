@@ -1,4 +1,4 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:comment>
     <!--
     SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
@@ -6,42 +6,19 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
+<nav class="{form.renderingOptions.formNavigation.navigationClassAttribute}" aria-label="{form.renderingOptions.formNavigation.navigationAriaLabelAttribute}">
     <f:if condition="{form.previousPage}">
-        <f:form.hidden property="__currentPage" respectSubmittedDataValue="false" value="{form.previousPage.index}"/>
-        <f:asset.script identifier="form-navigation" useNonce="true">
-            document.addEventListener('DOMContentLoaded', function() {
-                var buttons = document.querySelectorAll('.form button.previous');
-
-                buttons.forEach(function(button) {
-                    button.addEventListener('click', function(event) {
-                        var form = event.target.closest('form');
-                        if (form) {
-                            form.submit();
-                        }
-                    });
-                });
-            });
-        </f:asset.script>
-        <f:form.button class="{form.renderingOptions.formNavigation.btnPreviousClassAttribute} previous btn btn-primary"
-                       formnovalidate="formnovalidate"
-                       type="button">
-            {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}
-        </f:form.button>
+        <f:form.button property="__currentPage" value="{form.previousPage.index}" formnovalidate="formnovalidate" class="{form.renderingOptions.formNavigation.btnPreviousClassAttribute}">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'previousButtonLabel')}</f:form.button>
     </f:if>
     <f:if condition="{form.nextPage}">
         <f:then>
-            <f:form.button
-                    class="{form.renderingOptions.formNavigation.btnNextClassAttribute} btn btn-primary"
-                    property="__currentPage" value="{form.nextPage.index}">
-                {formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}
-            </f:form.button>
+            <f:form.button property="__currentPage" value="{form.nextPage.index}" class="{form.renderingOptions.formNavigation.btnNextClassAttribute}">{formvh:translateElementProperty(element: form.currentPage, renderingOptionProperty: 'nextButtonLabel')}</f:form.button>
         </f:then>
         <f:else>
-            <f:form.button
-                    class="{form.renderingOptions.formNavigation.btnSubmitClassAttribute} btn btn-primary"
-                    property="__currentPage" value="{form.pages -> f:count()}">
+            <f:form.button property="__currentPage" value="{form.pages -> f:count()}" class="{form.renderingOptions.formNavigation.btnSubmitClassAttribute}">
                 {formvh:translateElementProperty(element: form, renderingOptionProperty: 'submitButtonLabel')}
             </f:form.button>
         </f:else>
     </f:if>
+</nav>
 </html>
