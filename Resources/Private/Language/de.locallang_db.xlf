@@ -1344,6 +1344,22 @@
                 <source>Serif - Regular Italic (400)</source>
                 <target>Serifenschrift - Normal Kursiv (400)</target>
             </trans-unit>
+			<trans-unit id="page.configuration.simple-language.label" resname="page.configuration.simple-language.label">
+				<source>Simple Language Page</source>
+				<target>Einfache Sprachen Seite</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.simple-language.description" resname="page.configuration.simple-language.description">
+				<source>configure Page for Simple Language hier</source>
+				<target>Konfiguration einfache Sprachen Seite</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sign-language.label" resname="page.configuration.sign-language.label">
+				<source>Sign Language Page</source>
+				<target>Gebärdensprache Seite</target>
+			</trans-unit>
+			<trans-unit id="page.configuration.sign-language.description" resname="page.configuration.sign-language.description">
+				<source>configure Page for Sign Language hier</source>
+				<target>Konfiguration Gebärdensprache Seite</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
