@@ -31,7 +31,7 @@
 		"php": "^8.1",
 		"b13/container": "2.3.6",
 		"b13/permission-sets": "^0.1",
-		"ichhabrecht/content-defender": "3.5.2",
+		"ichhabrecht/content-defender": "3.5.3",
 		"kitzberger/form-mailtext": "^2.1",
 		"pixelant/interest": "^2.1.2",
 		"symfony/serializer-pack": "^1.3",
