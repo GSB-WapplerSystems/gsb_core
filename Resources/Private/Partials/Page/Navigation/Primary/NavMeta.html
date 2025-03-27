@@ -16,24 +16,16 @@
                             <f:render arguments="{languagenavigation: languagenavigation, site: site}" partial="Navigation/NavLang"/>
                         </li>
                     </f:if>
-                    <f:for as="mainItem" each="{menuMetaTop}" iteration="i">
+                    <f:for as="mainItem" each="{menuMetaTop}" iteration="i"><f:spaceless>
+                        <f:variable name="signLanguagePageAdditionalClass"></f:variable>
+                        <f:variable name="simpleLanguagePageAdditionalClass"></f:variable>
                         <f:if condition="{site.configuration.sign-language-page} == {mainItem.data.uid}">
-                            <f:then>
-                                {f:variable(name: 'signLanguagePageAdditionalClass', value: ' sign-language-page')}
-                            </f:then>
-                            <f:else>
-                                {f:variable(name: 'signLanguagePageAdditionalClass', value: '')}
-                            </f:else>
+                            <f:variable name="signLanguagePageAdditionalClassname"> sign-language-page</f:variable>
                         </f:if>
                         <f:if condition="{site.configuration.simple-language-page} == {mainItem.data.uid}">
-                            <f:then>
-                                {f:variable(name: 'simpleLanguagePageAdditionalClass', value: ' simple-language-page')}
-                            </f:then>
-                            <f:else>
-                                {f:variable(name: 'simpleLanguagePageAdditionalClass', value: '')}
-                            </f:else>
+                            <f:variable name="simpleLanguagePageAdditionalClass"> simple-language-page</f:variable>
                         </f:if>
-                        <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
+                        </f:spaceless><li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
                             <f:if condition="{mainItem.current}">
                                 <f:then>
                                     <f:link.page aria="{current: 'page'}"
