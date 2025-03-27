@@ -23,7 +23,7 @@ use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, show-copyright, navType, google_site_verification, copyright, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
+    ,--div--;GSB,sitePackage, show-copyright, navType, google_site_verification, copyright, sign-language-page, simple-language-page, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -549,6 +549,30 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
         'appearance' =>
             [
                 'allowedExtensions' => ['woff2'],
+            ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['simple-language-page'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.description',
+        'config' =>
+            [
+                'type' => 'link',
+                'allowedTypes' => ['page'],
+                'size' => 50,
+                'default' => '95',
+            ],
+    ];
+
+    $GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.description',
+        'config' =>
+            [
+                'type' => 'link',
+                'allowedTypes' => ['page'],
+                'size' => 50,
+                'default' => '94',
             ],
     ];
 }
