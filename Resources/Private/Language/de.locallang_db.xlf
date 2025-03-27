@@ -1344,11 +1344,11 @@
                 <source>Serif - Regular Italic (400)</source>
                 <target>Serifenschrift - Normal Kursiv (400)</target>
             </trans-unit>
-			<trans-unit id="page.configuration.simple-language.label" resname="page.configuration.simple-language.label">
+			<trans-unit id="page.configuration.simple-language-page.label" resname="page.configuration.simple-language-page.label">
 				<source>Simple Language Page</source>
 				<target>Einfache Sprachen Seite</target>
 			</trans-unit>
-			<trans-unit id="page.configuration.simple-language.description" resname="page.configuration.simple-language.description">
+			<trans-unit id="page.configuration.simple-language-page.description" resname="page.configuration.simple-language-page.description">
 				<source>configure Page for Simple Language hier</source>
 				<target>Konfiguration einfache Sprachen Seite</target>
 			</trans-unit>

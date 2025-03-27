@@ -1105,16 +1105,16 @@
             <trans-unit id="page.configuration.font-serif-italic.label" resname="page.configuration.font-serif-italic.label">
                 <source>Serif - Regular Italic (400)</source>
             </trans-unit>
-			<trans-unit id="page.configuration.simple-language.label" resname="page.configuration.simple-language.label">
+			<trans-unit id="page.configuration.simple-language-page.label" resname="page.configuration.simple-language-page.label">
 				<source>Simple Language Page</source>
 			</trans-unit>
-			<trans-unit id="page.configuration.simple-language.description" resname="page.configuration.simple-language.description">
+			<trans-unit id="page.configuration.simple-language-page.description" resname="page.configuration.simple-language-page.description">
 				<source>configure Page for Simple Language hier</source>
 			</trans-unit>
-			<trans-unit id="page.configuration.sign-language.label" resname="page.configuration.sign-language.label">
+			<trans-unit id="page.configuration.sign-language-page.label" resname="page.configuration.sign-language-page.label">
 				<source>Sign Language Page</source>
 			</trans-unit>
-			<trans-unit id="page.configuration.sign-language.description" resname="page.configuration.sign-language.description">
+			<trans-unit id="page.configuration.sign-language-page.description" resname="page.configuration.sign-language-page.description">
 				<source>configure Page for Sign Language hier</source>
 			</trans-unit>
 		</body>

@@ -17,33 +17,33 @@
                         </li>
                     </f:if>
                     <f:for as="mainItem" each="{menuMetaTop}" iteration="i">
-                        <f:if condition="{site.configuration.sign-language} == {mainItem.data.uid}">
+                        <f:if condition="{site.configuration.sign-language-page} == {mainItem.data.uid}">
                             <f:then>
-                                {f:variable(name: 'sign-language', value: ' sign-language')}
+                                {f:variable(name: 'signLanguagePageAdditionalClass', value: ' sign-language-page')}
                             </f:then>
                             <f:else>
-                                {f:variable(name: 'sign-language', value: '')}
+                                {f:variable(name: 'signLanguagePageAdditionalClass', value: '')}
                             </f:else>
                         </f:if>
-                        <f:if condition="{site.configuration.simple-language} == {mainItem.data.uid}">
+                        <f:if condition="{site.configuration.simple-language-page} == {mainItem.data.uid}">
                             <f:then>
-                                {f:variable(name: 'simple-language', value: ' simple-language')}
+                                {f:variable(name: 'simpleLanguagePageAdditionalClass', value: ' simple-language-page')}
                             </f:then>
                             <f:else>
-                                {f:variable(name: 'simple-language', value: '')}
+                                {f:variable(name: 'simpleLanguagePageAdditionalClass', value: '')}
                             </f:else>
                         </f:if>
                         <li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
                             <f:if condition="{mainItem.current}">
                                 <f:then>
                                     <f:link.page aria="{current: 'page'}"
-                                                 class="nav-link{sign-language}{simple-language}{f:if(condition:mainItem.active, then:' current')}"
+                                                 class="nav-link{signLanguagePageAdditionalClass}{simpleLanguagePageAdditionalClass}{f:if(condition:mainItem.active, then:' current')}"
                                                  pageUid="{mainItem.data.uid}">
                                         <span>{mainItem.title}</span>
                                     </f:link.page>
                                 </f:then>
                                 <f:else>
-                                    <f:link.page class="nav-link{sign-language}{simple-language}" pageUid="{mainItem.data.uid}">
+                                    <f:link.page class="nav-link{signLanguagePageAdditionalClass}{simpleLanguagePageAdditionalClass}" pageUid="{mainItem.data.uid}">
                                         <span>{mainItem.title}</span>
                                     </f:link.page>
                                 </f:else>
