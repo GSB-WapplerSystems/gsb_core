@@ -560,7 +560,7 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
                 'type' => 'link',
                 'allowedTypes' => ['page'],
                 'size' => 50,
-                'default' => '95',
+                'default' => '',
             ],
     ];
 
@@ -572,7 +572,7 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
                 'type' => 'link',
                 'allowedTypes' => ['page'],
                 'size' => 50,
-                'default' => '94',
+                'default' => '',
             ],
     ];
 }
