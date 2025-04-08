@@ -297,6 +297,9 @@
 			<trans-unit id="tt_content.images.open" resname="tt_content.images.open">
 				<source>Open image gallery</source>
 			</trans-unit>
+			<trans-unit id="is_accessible" resname="is_accessible">
+				<source>(not accessible)</source>
+			</trans-unit>
 			<trans-unit id="is_accessible.0" resname="is_accessible.0">
 				<source>(not accessible)</source>
 			</trans-unit>

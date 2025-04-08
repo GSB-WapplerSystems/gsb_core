@@ -29,6 +29,10 @@ config.additionalHeaders {
   60.header = Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(self), clipboard-write=(self), gamepad=(), speaker-selection=()
 }
 
+[backend.user]
+config.additionalHeaders.20.header >
+[global]
+
 [feature("crossOriginEmbedderPolicy")]
   config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: require-corp
 [global]

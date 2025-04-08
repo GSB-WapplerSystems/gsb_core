@@ -43,7 +43,7 @@ renderables:
       previousButtonLabel: 'Vorherige Seite'
       nextButtonLabel: 'Nächste Seite'
     identifier: page-1
-    label: Barriere melden
+    label: 'Barriere melden'
     type: Page
     renderables:
       -
@@ -52,14 +52,13 @@ renderables:
         label: ''
         renderables:
           -
+            defaultValue: ''
             type: Url
             identifier: referrerUrl
             label: 'URL, von der aus Sie auf dieses Formular zugegriffen haben.'
-            defaultValue: ''
             properties:
               fluidAdditionalAttributes:
                 data-initialize-with-referrer: true
-
           -
             defaultValue: ''
             type: Text
@@ -193,12 +192,12 @@ renderables:
             type: Checkbox
             identifier: checkbox-1
             label: 'Ich habe die Datenschutzbestimmungen zur Kenntnis genommen und erkläre mich mit diesen einverstanden.'
-            validators:
-              -
-                identifier: NotEmpty
             properties:
               fluidAdditionalAttributes:
                 required: required
+            validators:
+              -
+                identifier: NotEmpty
   -
     renderingOptions:
       previousButtonLabel: Zurück

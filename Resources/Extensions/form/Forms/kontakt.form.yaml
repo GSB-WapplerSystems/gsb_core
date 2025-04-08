@@ -20,6 +20,7 @@ finishers:
       recipients:
         no-reply@itzbund.de: itzbund.de
       addHtmlPart: true
+      message: ''
     identifier: EmailToReceiver
   -
     options:

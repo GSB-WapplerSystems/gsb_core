@@ -1,0 +1,14 @@
+plugin {
+  tx_dpnglossary {
+    settings {
+      termWraps {
+        abbreviation {
+          typolink >
+        }
+        acronym {
+          typolink >
+        }
+      }
+    }
+  }
+}
