@@ -13,7 +13,7 @@
 </f:if>
 
 <f:if condition="{dropdown}">
-    <f:comment>if languagenavigation count is over 2 than render languageswitch as Dropdown</f:comment>
+    <f:comment><!--if languagenavigation count is over 2 than render languageswitch as Dropdown--></f:comment>
     <f:then>
         <button aria-expanded="false" class="btn-language-menu btn-dropdown-icon text-capitalize dropdown-toggle"
                 data-bs-toggle="dropdown"
@@ -29,14 +29,14 @@
                                aria-current="true"
                                href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
                                hreflang="{item.twoLetterIsoCode}">
-                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                <span class="active-span dividing-line d-block w-100" lang="{item.twoLetterIsoCode}">{item.navigationTitle}</span>
                             </a>
                         </f:then>
                         <f:else>
                             <a class="dropdown-item nav-link pb-0{f:if(condition: item.active, then: ' active')}"
                                href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
                                hreflang="{item.twoLetterIsoCode}">
-                                <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                <span class="active-span dividing-line d-block w-100" lang="{item.twoLetterIsoCode}">{item.navigationTitle}</span>
                             </a>
                         </f:else>
                     </f:if>
@@ -44,7 +44,7 @@
             </f:for>
         </ul>
     </f:then>
-    <f:comment>if languagenavigation count is under 2 than render languageswitch as navbar</f:comment>
+    <f:comment><!--if languagenavigation count is under 2 than render languageswitch as navbar--></f:comment>
     <f:else>
         <f:for as="item" each="{languagenavigation}">
             <f:render
@@ -63,7 +63,7 @@
                         <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
                            href="{item.link}"
                            hreflang="{item.twoLetterIsoCode}">
-                            <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                            <span class="active-span dividing-line d-block w-100" lang="{item.twoLetterIsoCode}">{item.navigationTitle}</span>
                         </a>
                     </div>
                 </f:then>
@@ -74,7 +74,7 @@
                                 <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
                                    href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
                                    hreflang="{item.twoLetterIsoCode}">
-                                    <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                    <span class="active-span dividing-line d-block w-100" lang="{item.twoLetterIsoCode}">{item.navigationTitle}</span>
                                 </a>
                             </li>
                         </f:then>
@@ -83,7 +83,7 @@
                                 <a class="{itemClass} text-capitalize{f:if(condition: item.active, then: 'active')}"
                                    href="{f:uri.typolink(parameter: site.rootPageId, language: item.languageId)}"
                                    hreflang="{item.twoLetterIsoCode}">
-                                    <span class="active-span dividing-line d-block w-100">{item.navigationTitle}</span>
+                                    <span class="active-span dividing-line d-block w-100" lang="{item.twoLetterIsoCode}">{item.navigationTitle}</span>
                                 </a>
                             </li>
                         </f:else>
