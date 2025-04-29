@@ -1,6 +1,6 @@
 <?php
 
-// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+// SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -9,7 +9,7 @@ declare(strict_types=1);
 /*
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
- * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+ * Copyright (C) 2025 Bundesrepublik Deutschland, vertreten durch das
  * BMI/ITZBund. Author: Thorsten Hersam
  *
  * It is free software; you can redistribute it and/or modify it under
@@ -28,7 +28,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-class VersionEndpoint implements MiddlewareInterface
+class HealthEndpoint implements MiddlewareInterface
 {
     public const ENDPOINT_PATH = '/api/health';
 
