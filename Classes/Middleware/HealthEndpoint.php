@@ -42,8 +42,7 @@ class HealthEndpoint implements MiddlewareInterface
             return $handler->handle($request);
         }
 
-        $response = $this->responseFactory->createResponse(204)
-            ->withHeader('Content-Type', 'application/json; charset=utf-8');
+        $response = $this->responseFactory->createResponse(204);
 
         return $response;
     }
