@@ -45,7 +45,7 @@
 			</trans-unit>
 			<trans-unit id="pages.DatetoggleBox" resname="pages.DatetoggleBox" approved="yes">
 				<source>Hide Date/Tags</source>
-				<target>Datum/Tags ausbleden</target>
+				<target>Datum/Tags ausblenden</target>
 			</trans-unit>
 			<trans-unit id="pages.DatetoggleBox.description" resname="pages.DatetoggleBox.description" approved="yes">
 				<source>Hide date and Tags on article pages</source>
