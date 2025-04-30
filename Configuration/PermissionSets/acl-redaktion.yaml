@@ -8,20 +8,14 @@ imports:
 label: "[GSB][ACL] Editor"
 
 modules:
-  dashboard:
-    - '*'
-  web:
-    - 'web_layout'
-    - 'web_ViewpageView'
-    - 'web_list'
-  workspaces:
-    - 'workspaces_admin'
-  file:
-    - '*'
-  user:
-    - 'user_setup'
-  system:
-    - 'system_BelogLog'
+  dashboard: true
+  web_layout: true
+  web_ViewpageView: true
+  web_list: true
+  workspaces_admin: true
+  file: "*"
+  user_setup: true
+  system_BelogLog: true
 
 widgets:
   - '*'

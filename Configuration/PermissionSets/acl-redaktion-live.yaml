@@ -5,16 +5,14 @@
 label: "[GSB][ACL] Live Editor"
 
 modules:
-  web:
-    - page_preview
-    - web_FormFormbuilder
-    - web_info
-    - web_info_overview
-    - web_info_translations
-    - web_linkvalidator
-    - recycler
-  site:
-    - site_redirects
+  page_preview: true
+  web_FormFormbuilder: true
+  web_info: true
+  web_info_overview: true
+  web_info_translations: true
+  web_linkvalidator: true
+  recycler: true
+  site_redirects: true
 
 files:
   # folder-related permissions
