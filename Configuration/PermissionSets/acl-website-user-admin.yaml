@@ -9,9 +9,9 @@ modules:
     - 'feusermanagement'
 
 resources:
-  fe_users:
+  fe_groups:
     permissions: ['read', 'write']
     fields: '*'
-  fe_groups:
+  fe_users:
     permissions: ['read', 'write']
     fields: '*'
