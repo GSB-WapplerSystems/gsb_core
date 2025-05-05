@@ -5,8 +5,7 @@
 label: "[GSB][ACL] Consent Manager"
 
 modules:
-  web:
-    - 'web_list'
+  web_list: true
 
 resources:
   tx_gsbcore_consent:

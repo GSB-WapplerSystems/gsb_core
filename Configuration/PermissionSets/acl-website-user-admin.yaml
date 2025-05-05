@@ -5,8 +5,7 @@
 label: "[GSB][ACL] Website User Admin"
 
 modules:
-  system:
-    - 'feusermanagement'
+  feusermanagement: true
 
 resources:
   fe_groups:
