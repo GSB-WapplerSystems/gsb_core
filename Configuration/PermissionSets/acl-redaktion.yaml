@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-
+---
 imports:
   - {resource: "acl-dbm-base.yaml"}
 
@@ -27,6 +27,9 @@ widgets:
   - '*'
 
 resources:
+  backend_layout:
+    permissions: ['read']
+    fields: '*'
   pages:
     permissions: ['read', 'write']
     fields: '*'
@@ -49,8 +52,8 @@ resources:
   sys_file_storage:
     permissions: ['read']
     fields: '*'
-  backend_layout:
-    permissions: ['read']
+  sys_be_shortcuts:
+    permissions: ['read', 'write']
     fields: '*'
   sys_redirect:
     permissions: ['read', 'write']
@@ -63,21 +66,27 @@ resources:
     fields: '*'
     types:
       - '*'
-  tx_gsbcore_consent:
-    permissions: ['read', 'write']
-    fields: '*'
-  tx_gsbcore_forms:
-    permissions: ['read', 'write']
-    fields: '*'
-  sys_be_shortcuts:
-    permissions: ['read', 'write']
-    fields: '*'
-  tx_dpnglossary_domain_model_term:
+  tx_dpnglossary_domain_model_description:
     permissions: ['read']
     fields: '*'
   tx_dpnglossary_domain_model_synonym:
     permissions: ['read']
     fields: '*'
-  tx_dpnglossary_domain_model_description:
+  tx_dpnglossary_domain_model_term:
     permissions: ['read']
+    fields: '*'
+  tx_gsbconsent_consentgroup:
+    permissions: ['read']
+    fields: '*'
+  tx_gsbconsent_consentmanager:
+    permissions: ['read']
+    fields: '*'
+  tx_gsbconsent_consentscript:
+    permissions: ['read']
+    fields: '*'
+  tx_gsbcore_consent:
+    permissions: ['read']
+    fields: '*'
+  tx_gsbcore_forms:
+    permissions: ['read', 'write']
     fields: '*'

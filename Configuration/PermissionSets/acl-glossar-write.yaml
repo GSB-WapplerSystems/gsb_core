@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-label: "[GSB][ROLE] Glossar Schreibrechte"
+label: "[GSB][ACL] Glossar Schreibrechte"
 
 modules:
   web:

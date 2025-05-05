@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+label: "[GSB][ACL] Consent Manager"
+
+modules:
+  web:
+    - 'web_list'
+
+resources:
+  tx_gsbcore_consent:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_gsbconsent_consentgroup:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_gsbconsent_consentmanager:
+    permissions: ['read', 'write']
+    fields: '*'
+  tx_gsbconsent_consentscript:
+    permissions: ['read', 'write']
+    fields: '*'
