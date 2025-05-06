@@ -37,6 +37,14 @@ class GsbPageProvider extends PageProvider
     }
 
     /**
+     * Whether this provider should kick in
+     */
+    public function canHandle(): bool
+    {
+        return $this->table === 'pages';
+    }
+
+    /**
      * Checks if the page is allowed to be removed
      */
     protected function canBeDeleted(): bool

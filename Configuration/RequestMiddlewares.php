@@ -18,5 +18,14 @@ return [
                 'typo3/cms-frontend/site',
             ],
         ],
+        'itzbund/gsb-health' => [
+            'target' => \ITZBund\GsbCore\Middleware\HealthEndpoint::class,
+            'after' => [
+                'typo3/cms-frontend/authentication',
+            ],
+            'before' => [
+                'typo3/cms-frontend/page-resolver',
+            ],
+        ],
     ],
 ];

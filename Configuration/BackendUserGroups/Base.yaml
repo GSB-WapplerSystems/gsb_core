@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+# SPDX-FileCopyrightText: 2024-2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -184,6 +184,19 @@ BackendUserGroups:
       workspace_perms: "0",
       category_perms: "0",
       permission_sets: "itzbund/gsb-core/acl-glossar-write",
+    }
+    - {
+      uid: 15,
+      title: "[GSB][ROLE] Consent Manager",
+      non_exclude_fields: "",
+      explicit_allowdeny: "",
+      allowed_languages: "",
+      db_mountpoints: "",
+      file_mountpoints: "",
+      file_permissions: "",
+      workspace_perms: "0",
+      category_perms: "0",
+      permission_sets: "itzbund/gsb-core/acl-consent-manager",
     }
     - {
       uid: 99,

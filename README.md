@@ -140,20 +140,27 @@ If a package has been selected as a site package, it's typoscript configuration 
 
 For more information about feature flags in TYPO3, please refer to the [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/Configuration/FeatureToggles.html).
 
-## Special Endpoints
+## Middleware based endpoints
 
-For infrastructure reasons this extension provides a version endpoint at **/api/version** which returns a json object with the following structure
-```
+### `/api/version`
+
+For infrastructure reasons this extension provides a version endpoint at `/api/version` which returns a json object with the following structure
+
+```json
 {
     "versions": {
-        "gsb": [string|null],
-        "container": [string|null],
-        "helmChart": [string|null],
+        "gsb": "[string|null]",
+        "container": "[string|null]",
+        "helmChart": "[string|null]",
         "TYPO3": "[string|null]",
         "packageCacheHash": "[string|null]"
     }
 }
 ```
+
+### `/api/health`
+
+This extension provides a health endpoint at `/api/health` which returns a response without a body and status code 204.
 
 ## Contribute
 As with TYPO3, we encourage you to join the project by submitting changes. Development of the GSB&nbsp;11 mainly happens in the GSB&nbsp;11 TYPO3 extension repositories.

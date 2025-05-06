@@ -275,6 +275,30 @@ for ($i = 0; $i <= 6; $i++) {
     ];
 }
 
+$GLOBALS['SiteConfiguration']['site']['columns']['simple-language-page'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.description',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['page'],
+            'size' => 50,
+            'default' => '',
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.description',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['page'],
+            'size' => 50,
+            'default' => '',
+        ],
+];
+
 if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
     //    ITZBUNDPHP-2877 Color: Generell
     $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
@@ -549,30 +573,6 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-
         'appearance' =>
             [
                 'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['simple-language-page'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.description',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['page'],
-                'size' => 50,
-                'default' => '',
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.description',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['page'],
-                'size' => 50,
-                'default' => '',
             ],
     ];
 }
