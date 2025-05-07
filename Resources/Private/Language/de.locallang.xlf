@@ -451,6 +451,10 @@
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 				<target>Weitere erlaubte Dateiendungen für das Dateilinks-Element: z.B. docx,xls</target>
 			</trans-unit>
+			<trans-unit id="dpn_glossary.modal_close" resname="dpn_glossary.modal_close">
+				<source>Close</source>
+				<target>Schließen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
