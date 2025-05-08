@@ -455,6 +455,10 @@
 				<source>Close</source>
 				<target>Schließen</target>
 			</trans-unit>
+			<trans-unit id="dpn_glossary.to_glossary" resname="dpn_glossary.to_glossary">
+				<source>To the glossary</source>
+				<target>Zum Glossar</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

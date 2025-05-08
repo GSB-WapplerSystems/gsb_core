@@ -6,6 +6,7 @@
     -->
 </f:comment>
 <f:asset.script identifier="glossary-definition-modal-js" src="EXT:gsb_core/Resources/Public/JavaScript/glossaryDefinitionModal.js" />
+
 <div aria-hidden="true" class="modal fade" data-bs-backdrop="static" id="glossary-definition-modal" tabindex="-1">
     <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -24,6 +25,11 @@
                 </div>
             </div>
             <div id="glossary-definition-modal-body" class="modal-body"></div>
+            <div class="modal-footer glossary-modal-footer">
+                <a id="glossary-definition-modal-link" class="glossary-link-icon" href="#" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:dpn_glossary.to_glossary')}">
+                    {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:dpn_glossary.to_glossary')}
+                </a>
+            </div>
         </div>
     </div>
 </div>

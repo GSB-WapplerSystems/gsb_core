@@ -6,11 +6,28 @@ plugin {
           typolink >
         }
 
-        acronym {
-          typolink >
-        }
+        acronym < abbreviation
 
         definition {
+          typolink {
+            section.field = url_segment
+
+            parameter.override < plugin.tx_dpnglossary.settings.detailPage
+            parameter.override.if {
+              value = 0
+              isGreaterThan < plugin.tx_dpnglossary.settings.detailPage
+            }
+
+            override >
+            parameter.stdWrap.override >
+            additionalParams >
+
+            ATagParams {
+              dataWrap = title="{FIELD:tooltiptext // FIELD:name}" class="dpnglossary link" role="button"
+              dataWrap.override < .dataWrap
+            }
+          }
+
           dataWrap (
             <dfn
               data-glossary-title="{FIELD:descriptions|0|meaning}"
