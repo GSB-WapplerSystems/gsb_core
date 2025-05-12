@@ -1,0 +1,27 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <li class="accordion-item">
+        <div class="accordion-header" id="heading-{term.urlSegment}">
+            <a href="#{term.urlSegment}"
+            class="accordion-button"
+            data-bs-toggle="collapse"
+            data-bs-target="#{term.urlSegment}"
+            data-bs-parent="#glossary-accordion"
+            aria-expanded="false"
+            aria-controls="{term.urlSegment}"
+            role="button"
+            >{term.name}</a>
+        </div>
+
+        <div id="{term.urlSegment}"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading-{term.urlSegment}"
+        data-bs-parent="#glossary-accordion">
+            <div class="accordion-body">
+                <h3>{term.descriptions.0.meaning}</h3>
+                <f:format.raw>{term.descriptions.0.text}</f:format.raw>
+            </div>
+        </div>
+    </li>
+</html>

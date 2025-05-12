@@ -1,0 +1,20 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:dpn="http://typo3.org/ns/Featdd/DpnGlossary/ViewHelpers"
+
+      dpn:schemaLocation="http://schemas.featdd.de/dpn_glossary.xsd">
+
+    <f:layout name="Default"/>
+
+    <f:section name="Main">
+        <h1>{f:translate(key: 'tx_dpnglossary_domain_model_term.listheadline')}</h1>
+        <div class="accordion-wrapper">
+            <ul class="accordion list-unstyled" id="glossary-accordion">
+                <f:for each="{terms}" as="term" iteration="iterator">
+                    <f:render partial="Term/List" arguments="{term: term}"/>
+                </f:for>
+            </ul>
+        </div>
+    </f:section>
+</html>

@@ -41,6 +41,11 @@ plugin {
         }
       }
     }
+
+    view {
+      templateRootPaths.10 = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Templates/
+      partialRootPaths.10 = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Partials/
+    }
   }
 }
 
