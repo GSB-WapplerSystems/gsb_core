@@ -11,7 +11,7 @@ plugin {
         definition >
         definition = FLUIDTEMPLATE
         definition {
-          file = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Partials/Term/Definition.html
+          file = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Templates/Term/Definition.html
 
           variables {
             title = TEXT
