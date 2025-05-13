@@ -8,36 +8,23 @@ plugin {
 
         acronym < abbreviation
 
+        definition >
+        definition = FLUIDTEMPLATE
         definition {
-          typolink {
-            section.field = url_segment
+          file = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Partials/Term/Definition.html
 
-            parameter.override < plugin.tx_dpnglossary.settings.detailPage
-            parameter.override.if {
-              value = 0
-              isGreaterThan < plugin.tx_dpnglossary.settings.detailPage
-            }
-
-            override >
-            parameter.stdWrap.override >
-            additionalParams >
-
-            ATagParams {
-              dataWrap = title="{FIELD:tooltiptext // FIELD:name}" class="dpnglossary link" role="button"
-              dataWrap.override < .dataWrap
+          variables {
+            title = TEXT
+            title.data = field: tooltiptext // field: name
+            detailLink = TEXT
+            detailLink {
+              typolink {
+                section.field = url_segment
+                parameter < plugin.tx_dpnglossary.settings.detailPage
+                returnLast = url
+              }
             }
           }
-
-          dataWrap (
-            <dfn
-              data-glossary-title="{FIELD:descriptions|0|meaning}"
-              data-glossary-text="{FIELD:descriptions|0|text}"
-              data-bs-target="#glossary-definition-modal"
-              data-bs-toggle="modal"
-              title="{FIELD:tooltiptext // FIELD:name}"
-              lang="{FIELD:term_lang}">|</dfn>
-          )
-          dataWrap.override < .dataWrap
         }
       }
     }
