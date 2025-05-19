@@ -7,7 +7,7 @@
         data-bs-target="#glossary-definition-modal"
         data-bs-toggle="modal"
         title="{title}"
-        lang="{data.term_lang}">
-        <a href="{detailLink}" title="{data.descriptions.0.meaning -> f:format.htmlentities()}" class="dpnglossary link" role="button">{data.name}</a>
+        {f:if(condition: data.term_lang, then: 'lang="{data.term_lang}"')}>
+        <a href="{overviewLink}/{characterFilter}#{data.url_segment}" title="{data.descriptions.0.meaning -> f:format.htmlentities()}" class="dpnglossary link" role="button">{data.name}</a>
     </dfn>
 </html>

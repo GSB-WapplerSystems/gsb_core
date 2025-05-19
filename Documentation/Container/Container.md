@@ -12,7 +12,7 @@ It enables some configuration options for the backend that have an effect on the
 
 - In the following line you will find the **template for the container.html**.
 
-```
+```text
 Resources/Private/Templates/Container/Container.html
 ```
 

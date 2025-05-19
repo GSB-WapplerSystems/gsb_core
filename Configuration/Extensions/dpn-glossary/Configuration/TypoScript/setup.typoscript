@@ -16,13 +16,17 @@ plugin {
           variables {
             title = TEXT
             title.data = field: tooltiptext // field: name
-            detailLink = TEXT
-            detailLink {
+            overviewLink = TEXT
+            overviewLink {
               typolink {
-                section.field = url_segment
                 parameter < plugin.tx_dpnglossary.settings.detailPage
                 returnLast = url
               }
+            }
+            characterFilter = TEXT
+            characterFilter {
+              field = url_segment
+              substring = 0,1
             }
           }
         }

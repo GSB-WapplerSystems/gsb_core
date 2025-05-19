@@ -1,27 +1,39 @@
 <html data-namespace-typo3-fluid="true" lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-    <li class="accordion-item">
-        <div class="accordion-header" id="heading-{term.urlSegment}">
-            <a href="#{term.urlSegment}"
-            class="accordion-button"
-            data-bs-toggle="collapse"
-            data-bs-target="#{term.urlSegment}"
-            data-bs-parent="#glossary-accordion"
-            aria-expanded="false"
-            aria-controls="{term.urlSegment}"
-            role="button"
-            >{term.name}</a>
-        </div>
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+>
+    <div class="accordion-header" id="heading-{term.urlSegment}">
+        <a href="#{term.urlSegment}"
+           class="accordion-button collapsed"
+           data-bs-toggle="collapse"
+           data-bs-target="#{term.urlSegment}"
+           data-bs-parent="{dataBsParent}"
+           aria-expanded="false"
+           aria-controls="{term.urlSegment}"
+           role="button"
+        >
+            {term.name}
+        </a>
+    </div>
 
-        <div id="{term.urlSegment}"
-        class="accordion-collapse collapse"
-        aria-labelledby="heading-{term.urlSegment}"
-        data-bs-parent="#glossary-accordion">
-            <div class="accordion-body">
-                <h3>{term.descriptions.0.meaning}</h3>
-                <f:format.raw>{term.descriptions.0.text}</f:format.raw>
-            </div>
+    <div id="{term.urlSegment}"
+         class="accordion-collapse collapse"
+         aria-labelledby="heading-{term.urlSegment}"
+         data-bs-parent="{dataBsParent}"
+    >
+        <div class="accordion-body">
+            <f:if condition="{term.descriptions}">
+                <f:for each="{term.descriptions}" as="description">
+                    <h3>{description.meaning}</h3>
+                    <f:format.html>{description.text}</f:format.html>
+                </f:for>
+            </f:if>
+
+            <f:if condition="{term.media}">
+                <f:for each="{term.media}" as="media">
+                    <f:media file="{media}" title="{media.originalResource.title}" alt="{media.originalResource.alternative}" height="m300"/>
+                </f:for>
+            </f:if>
         </div>
-    </li>
+    </div>
 </html>

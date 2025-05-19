@@ -1,14 +1,10 @@
 plugin {
   tx_dpnglossary {
-    persistence {
-    storagePid = 759
-    }
-
     settings {
       maxReplacementPerPage = 1
       parsingTags = p, h1, h2, h3, h4, h5, h6, li, dt, td, th, span
       addStylesheet = 0
-      listmode = normal
+      listmode = pagination
       parserRepositoryClass = Featdd\DpnGlossary\Domain\Repository\TermRepository
     }
   }

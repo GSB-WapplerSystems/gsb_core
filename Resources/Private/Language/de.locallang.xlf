@@ -459,6 +459,10 @@
 				<source>To the glossary</source>
 				<target>Zum Glossar</target>
 			</trans-unit>
+			<trans-unit id="dpn_glossary.letter_filter" resname="dpn_glossary.letter_filter">
+				<source>Filter for letter</source>
+				<target>Filterung nach Buchstabe</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

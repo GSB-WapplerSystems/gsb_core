@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <!-- PROJECT SHIELDS -->
-[![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
+# [![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
 
 # GSB&nbsp;11 Extension gsb_core
 
@@ -66,23 +66,23 @@ This table illustrates the behavior of feature flags in various states.
 
 ### Curent feature flags of `gsb_core`
 
-| Feature flag           | Description
-|------------------------|------------------------------------------------------------------
-| `brandingBackendLogin` | At default branding to the login screen
-| `ITZBUNDPHP-1615`      | Replaces the TYPO3 core default email template footer text with a GSB11 footer text
-| `ITZBUNDPHP-1996`      | Form emails have the `X-Request-Id` header added to their field output table
-| `ITZBUNDPHP-2328`      | Streamline handling for linked pages in stage and singleteaser CEs. Fetches category and date value from target page and adds possibility to override/hide those values
-| `ITZBUNDPHP-2877`      | Enables general color management in the site module.<br />This sets the bootstrap colors `--bs-primary` `--bs-secondary` `--bs-tertiary` `--bs-quaternary`
-| `ITZBUNDPHP-3176`      | Enable Google Site Verification via SiteConfig
-| `ITZBUNDPHP-3288`      | Enable i18n of logo, 2nd logo, initiative-text etc
-| `ITZBUNDPHP-3327`      | Enable/Expose EXT:dpn_glossary in the TYPO3 backend
-| `ITZBUNDPHP-3435`      | Enable generic video renderer to add support for external video sources<br />The allowed external sources have to be configured via the extension configuration: `allowedVideoDomains`
-| `ITZBUNDPHP-3969`      | Extended handling for linked pages in single teaser CEs. Retrieves the value of the main category from the target page and offers the option of overwriting this value
-| `ITZBUNDPHP-4070`      | Enable a feature that allows additional file extensions for the `uploads` element<br />These can be configured via the extension configuration: `additionalAllowedFileExtensionsForUploadsElement`
-| `ITZBUNDPHP-4083`      | Enable generic audio renderer to add support for external audio sources<br />The allowed external sources have to be configured via the extension configuration: `allowedAudioDomains`
-| `ITZBUNDPHP-4326`      | Background image for container elements, with optional parallax effect
-| `ITZBUNDPHP-4329`      | Activates the option to replace the platform's fonts with your own font faces.
-| `ITZBUNDPHP-4469`      | Custom mail texts for emails generated from EXT:form
+| Feature flag           | Description                                                                                                                                                                                        |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
+| `ITZBUNDPHP-1615`      | Replaces the TYPO3 core default email template footer text with a GSB11 footer text                                                                                                                |
+| `ITZBUNDPHP-1996`      | Form emails have the `X-Request-Id` header added to their field output table                                                                                                                       |
+| `ITZBUNDPHP-2328`      | Streamline handling for linked pages in stage and singleteaser CEs. Fetches category and date value from target page and adds possibility to override/hide those values                            |
+| `ITZBUNDPHP-2877`      | Enables general color management in the site module.<br />This sets the bootstrap colors `--bs-primary` `--bs-secondary` `--bs-tertiary` `--bs-quaternary`                                         |
+| `ITZBUNDPHP-3176`      | Enable Google Site Verification via SiteConfig                                                                                                                                                     |
+| `ITZBUNDPHP-3288`      | Enable i18n of logo, 2nd logo, initiative-text etc                                                                                                                                                 |
+| `ITZBUNDPHP-3327`      | Enable/Expose EXT:dpn_glossary in the TYPO3 backend                                                                                                                                                |
+| `ITZBUNDPHP-3435`      | Enable generic video renderer to add support for external video sources<br />The allowed external sources have to be configured via the extension configuration: `allowedVideoDomains`             |
+| `ITZBUNDPHP-3969`      | Extended handling for linked pages in single teaser CEs. Retrieves the value of the main category from the target page and offers the option of overwriting this value                             |
+| `ITZBUNDPHP-4070`      | Enable a feature that allows additional file extensions for the `uploads` element<br />These can be configured via the extension configuration: `additionalAllowedFileExtensionsForUploadsElement` |
+| `ITZBUNDPHP-4083`      | Enable generic audio renderer to add support for external audio sources<br />The allowed external sources have to be configured via the extension configuration: `allowedAudioDomains`             |
+| `ITZBUNDPHP-4326`      | Background image for container elements, with optional parallax effect                                                                                                                             |
+| `ITZBUNDPHP-4329`      | Activates the option to replace the platform's fonts with your own font faces.                                                                                                                     |
+| `ITZBUNDPHP-4469`      | Custom mail texts for emails generated from EXT:form                                                                                                                                               |
 
 ### Usage in PHP Code
 

@@ -11,22 +11,22 @@ In the next sections, the paths to the files essential for navigation are listed
 
 - The fluid templates can be found at the following location:
 
-```
+```text
 Resources/Private/Partials/Page/Header.html
 ```
 - Afterwards, you will find several partials in the **Header.html** for executing further fluid templates.
 
   Define relative path back to source file, for example:
 
-```
+```text
 Resources/Private/Partials/Page/Header-Image.html
 ```
 
-```
+```text
 Resources/Private/Partials/Page/Header.Mainnav.html
 ```
 
-```
+```text
 Resources/Private/Partials/Page/Header.Search.html
 ```
 
