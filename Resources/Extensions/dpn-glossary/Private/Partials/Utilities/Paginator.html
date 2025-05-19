@@ -1,0 +1,39 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<nav class="dpnglossary" aria-label="Suchergebnisse Navigation">
+    <ul class="pagination px-1 px-xl-2">
+        <f:for each="{pagination.characters}" as="character">
+            <f:if condition="{character.isCurrent}">
+                <f:then>
+                    <li class="page-item no-border active">
+                        <a aria-current="page" class="page-link">
+                            <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:dpn_glossary.letter_filter')} </span>{character}
+                        </a>
+                    </li>
+                </f:then>
+                <f:else>
+                    <f:if condition="{character.isEmpty}">
+                        <f:then>
+                            <li class="page-item d-md-block no-border disabled">
+                                <a class="page-link">
+                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:dpn_glossary.letter_filter')} </span>{character}
+                                </a>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="page-item d-md-block no-border not-empty">
+                                <f:link.action class="page-link" action="list" controller="Term" arguments="{currentCharacter: character.character}">
+                                    <span class="visually-hidden">{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:dpn_glossary.letter_filter')} </span>{character}
+                                </f:link.action>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </f:for>
+    </ul>
+</nav>
+
+</html>
