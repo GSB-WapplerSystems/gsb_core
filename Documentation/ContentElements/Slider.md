@@ -10,19 +10,19 @@ The technical documentation for the slideshow is explained here.
 
 - In the following line, the path to the slideshow is resolved:
 
-```
+```text
 Resources/Private/Templates/Container/Slider.html
 ```
 
 - There we find a code snippet that points to our configuration in TypoScrip.
 
-```
+```text
 Configuration/TypoScript/Setup/ContentElements/tt_content/ContainerElements.typoscript
 ```
 
 - The code snippet looks like this.
 
-```
+```text
 <f:format.raw>{child.renderedContent}</f:format.raw>
 ```
 

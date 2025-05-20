@@ -5,13 +5,41 @@ plugin {
         abbreviation {
           typolink >
         }
-        acronym {
-          typolink >
+
+        acronym < abbreviation
+
+        definition >
+        definition = FLUIDTEMPLATE
+        definition {
+          file = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Templates/Term/Definition.html
+
+          variables {
+            title = TEXT
+            title.data = field: tooltiptext // field: name
+            overviewLink = TEXT
+            overviewLink {
+              typolink {
+                parameter < plugin.tx_dpnglossary.settings.detailPage
+                returnLast = url
+              }
+            }
+            characterFilter = TEXT
+            characterFilter {
+              field = url_segment
+              substring = 0,1
+            }
+          }
         }
       }
     }
+
+    view {
+      templateRootPaths.10 = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Templates/
+      partialRootPaths.10 = EXT:gsb_core/Resources/Extensions/dpn-glossary/Private/Partials/
+    }
   }
 }
+
 [feature("ITZBUNDPHP-3327") == false]
 plugin.tx_dpnglossary.settings.disableParser = 1
 module.tx_dpnglossary.settings.disableParser = 1

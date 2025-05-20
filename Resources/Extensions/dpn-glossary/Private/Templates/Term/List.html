@@ -1,0 +1,75 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:dpn="http://typo3.org/ns/Featdd/DpnGlossary/ViewHelpers"
+
+      dpn:schemaLocation="http://schemas.featdd.de/dpn_glossary.xsd">
+
+    <f:layout name="Default"/>
+
+    <f:section name="Main">
+        <f:if condition="{listmode} == 'pagination'">
+            <f:render partial="Utilities/Paginator" arguments="{pagination: pagination, paginator: paginator}"/>
+        </f:if>
+
+        <div class="accordion-wrapper">
+            <ul class="accordion list-unstyled" id="glossary-accordion">
+                <f:if condition="{listmode} == 'character'">
+                    <f:for each="{terms}" as="groupTerms" key="firstChar">
+                        <li class="accordion-item">
+                            <h2 class="accordion-header" id="glossary-accordion-character-{firstChar}">
+                                <a href="#glossary-accordion-character-{firstChar}"
+                                   class="accordion-button collapsed"
+                                   data-bs-toggle="collapse"
+                                   data-bs-target="#c{firstChar}"
+                                   data-bs-parent="#glossary-accordion"
+                                   aria-expanded="false"
+                                   aria-controls="c{firstChar}"
+                                   role="button">
+                                    {firstChar}
+                                </a>
+                            </h2>
+
+                            <div id="c{firstChar}"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="heading-{record.uid}"
+                                 data-bs-parent="#glossary-accordion">
+                                <div class="accordion-body">
+                                    <div class="frame frame-default frame-type-ce_container">
+                                        <div class="frame frame-default frame-type-ce_accordion" id="character-{firstChar}">
+                                            <div class="accordion-wrapper">
+                                                <ul class="accordion list-unstyled" id="accordion-character-{firstChar}">
+                                                    <f:for each="{groupTerms}" as="term" iteration="iterator">
+                                                        <li class="accordion-item">
+                                                            <f:render partial="Term/List" arguments="{term: term, dataBsParent: '#accordion-character-{firstChar}'}"/>
+                                                        </li>
+                                                    </f:for>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </f:for>
+                </f:if>
+
+                <f:if condition="{listmode} == 'normal'">
+                    <f:for each="{terms}" as="term" iteration="iterator">
+                        <li class="accordion-item">
+                            <f:render partial="Term/List" arguments="{term: term, dataBsParent: '#glossary-accordion'}"/>
+                        </li>
+                    </f:for>
+                </f:if>
+
+                <f:if condition="{listmode} == 'pagination'">
+                    <f:for each="{paginator.paginatedItems}" as="term" iteration="iterator">
+                        <li class="accordion-item">
+                            <f:render partial="Term/List" arguments="{term: term, dataBsParent: '#glossary-accordion'}"/>
+                        </li>
+                    </f:for>
+                </f:if>
+            </ul>
+        </div>
+    </f:section>
+</html>
