@@ -8,6 +8,6 @@
         data-bs-toggle="modal"
         title="{title}"
         {f:if(condition: data.term_lang, then: 'lang="{data.term_lang}"')}>
-        <a href="{overviewLink}/{characterFilter}#{data.url_segment}" title="{data.descriptions.0.meaning -> f:format.htmlentities()}" class="dpnglossary link" role="button">{data.name}</a>
+        <a href="{overviewLink}/{characterFilter}#{data.url_segment}" title="{title}" class="dpnglossary link" role="button">{data.name}</a>
     </dfn>
 </html>

@@ -39,11 +39,11 @@
                                         <div class="frame frame-default frame-type-ce_accordion" id="character-{firstChar}">
                                             <div class="accordion-wrapper">
                                                 <ul class="accordion list-unstyled" id="accordion-character-{firstChar}">
-                                                    <li class="accordion-item">
-                                                        <f:for each="{groupTerms}" as="term" iteration="iterator">
-                                                            <f:render partial="Term/List" arguments="{term: term, dataBsParent: '#glossary-accordion-character-{firstChar}'}"/>
-                                                        </f:for>
-                                                    </li>
+                                                    <f:for each="{groupTerms}" as="term" iteration="iterator">
+                                                        <li class="accordion-item">
+                                                            <f:render partial="Term/List" arguments="{term: term, dataBsParent: '#accordion-character-{firstChar}'}"/>
+                                                        </li>
+                                                    </f:for>
                                                 </ul>
                                             </div>
                                         </div>

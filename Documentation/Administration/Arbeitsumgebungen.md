@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 # Arbeitsumgebungen
-### Einfacher Freigabeprozess
+## Einfacher Freigabeprozess
 
 Die Gruppe "[ROLE] Redakteur:innen" hat keinen Zugriff auf die Live-Arbeitsumgebung.
 Alle Änderungen an Seiten werden von einem Chefredakteuer:innen oder Site Administrator:in freigegeben.
