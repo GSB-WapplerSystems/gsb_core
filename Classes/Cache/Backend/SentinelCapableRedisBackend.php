@@ -193,13 +193,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     return parent::get($entryIdentifier);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while getting Data from Redis Cache', [
+                $this->logger?->critical('Error while getting Data from Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -221,13 +221,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     return parent::has($entryIdentifier);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while checking if Redis Cache has Data', [
+                $this->logger?->critical('Error while checking if Redis Cache has Data', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -251,13 +251,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     return parent::findIdentifiersByTag($tag);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while fetching from Redis Cache', [
+                $this->logger?->critical('Error while fetching from Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
         return [];
     }
@@ -282,13 +282,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     parent::set($entryIdentifier, $data, $tags, $lifetime);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while setting data into Redis Cache', [
+                $this->logger?->critical('Error while setting data into Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -310,13 +310,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     parent::remove($entryIdentifier);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while removing data from Redis Cache', [
+                $this->logger?->critical('Error while removing data from Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
         return false;
     }
@@ -340,13 +340,13 @@ class SentinelCapableRedisBackend extends RedisBackend
             try {
                 parent::collectGarbage();
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while collecting garbage in Redis Cache', [
+                $this->logger?->critical('Error while collecting garbage in Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -364,13 +364,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     parent::flush();
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while flushing complete cache in Redis Cache', [
+                $this->logger?->critical('Error while flushing complete cache in Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 
@@ -391,13 +391,13 @@ class SentinelCapableRedisBackend extends RedisBackend
                     parent::flushByTag($tag);
                 });
             } catch (\Throwable $e) {
-                $this->logger->critical('Error while flushing cache tag in Redis Cache', [
+                $this->logger?->critical('Error while flushing cache tag in Redis Cache', [
                     'message' => $e->getMessage(),
                     'exception' => $e,
                 ]);
             }
         } else {
-            $this->logger->critical('Not connected', ['method' => __METHOD__]);
+            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
         }
     }
 

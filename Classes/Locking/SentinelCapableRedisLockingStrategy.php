@@ -236,8 +236,8 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         if ($this->isAcquired) {
             return true;
         }
-        if ($mode & self::LOCK_CAPABILITY_EXCLUSIVE) {
-            if ($mode & self::LOCK_CAPABILITY_NOBLOCK) {
+        if ((bool)($mode & self::LOCK_CAPABILITY_EXCLUSIVE)) {
+            if ((bool)($mode & self::LOCK_CAPABILITY_NOBLOCK)) {
                 // try to acquire the lock - non-blocking
                 if (!$this->isAcquired = $this->lock(false)) {
                     throw new LockAcquireWouldBlockException(
@@ -251,7 +251,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
                 // wait() and lock() another process may acquire the lock
                 while (!$this->isAcquired = $this->lock()) {
                     // this blocks till the lock gets released or timeout is reached
-                    if (!$this->wait()) {
+                    if ($this->wait() === false) {
                         throw new LockAcquireException(
                             'Could not acquire exclusive lock (blocking+exclusive).',
                             1561445710
@@ -277,7 +277,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         // Even in an error, the release is locked
         $this->unlockAndSignal();
         $this->isAcquired = false;
-        return !$this->isAcquired;
+        return true;
     }
 
     /**
@@ -331,10 +331,11 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      *
      * @return string The popped value, FALSE on timeout
      */
-    private function wait()
+    private function wait(): string|bool
     {
         try {
-            $blockingTo = max(1, $this->backend->ttl($this->name));
+            $ttl = (int)$this->backend->ttl($this->name);
+            $blockingTo = max(1, $ttl);
             $result = $this->backend->blPop([$this->mutexName], $blockingTo);
 
             return is_array($result) ? $result[1] : false;
