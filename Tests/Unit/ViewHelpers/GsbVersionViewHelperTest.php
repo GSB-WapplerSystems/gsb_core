@@ -15,16 +15,16 @@ class GsbVersionViewHelperTest extends AbstractViewHelperUnitTestCase
     public function viewHelperReturnsDefaultVersionNumberIfEnvVariableIsNotSet(): void
     {
         putenv('GSB_VERSION');
-        $versionString = GsbVersionViewHelper::renderStatic([], function () {}, $this->getRenderingContextMock());
-        self::assertEquals(' 11', $versionString);
+        $gsbVersionViewHelper = new GsbVersionViewHelper();
+        self::assertEquals($gsbVersionViewHelper->initializeArgumentsAndRender(), '11');
     }
 
     #[Test]
     public function viewHelperReturnsVersionNumberFromEnvironmentIfSet(): void
     {
         putenv('GSB_VERSION=0815');
-        $versionString = GsbVersionViewHelper::renderStatic([], function () {}, $this->getRenderingContextMock());
-        self::assertEquals(' 0815', $versionString);
+        $gsbVersionViewHelper = new GsbVersionViewHelper();
+        self::assertEquals('0815', $gsbVersionViewHelper->initializeArgumentsAndRender());
         putenv('GSB_VERSION');
     }
 }

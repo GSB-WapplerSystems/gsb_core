@@ -86,7 +86,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
      * @param string $identifier Name of the session type, e.g. FE or BE
      * @internal To be used only by SessionManager
      */
-    public function initialize(string $identifier, array $configuration)
+    public function initialize(string $identifier, array $configuration): void
     {
         $this->configuration = $configuration;
         $this->identifier = $identifier;
@@ -160,7 +160,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             }
             throw new SessionNotFoundException('Session could not be fetched from redis', 1481885583);
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not fetch session from redis', [
+            $this->logger?->critical('Could not fetch session from redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -190,7 +190,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             // "not successful".
             return is_int($deleteResult) && $deleteResult >= 1;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not remove session from redis', [
+            $this->logger?->critical('Could not remove session from redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -237,7 +237,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
             return $sessionData;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not write session to redis', [
+            $this->logger?->critical('Could not write session to redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -280,7 +280,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
             return $sessionData;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not update session in redis', [
+            $this->logger?->critical('Could not update session in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -312,7 +312,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 }
             }
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not collect garbage in redis', [
+            $this->logger?->critical('Could not collect garbage in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -382,7 +382,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 );
             }
         } catch (\RedisException $e) {
-            $this->logger->alert('Could not connect to redis server.', ['exception' => $e]);
+            $this->logger?->alert('Could not connect to redis server.', ['exception' => $e]);
         }
 
         if (!$this->connected) {
