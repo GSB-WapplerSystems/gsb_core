@@ -41,6 +41,21 @@ parameters:
 			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
 
 		-
+			message: "#^Parameter \\#2 \\$contentObjectConfiguration \\(array\\<int\\|string, mixed\\>\\) of method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) should be contravariant with parameter \\$contentObjectConfiguration \\(array\\) of method TYPO3\\\\CMS\\\\Frontend\\\\ContentObject\\\\DataProcessorInterface\\:\\:process\\(\\)$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
+
+		-
+			message: "#^Parameter \\#3 \\$processorConfiguration \\(array\\<int\\|string, mixed\\>\\) of method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) should be contravariant with parameter \\$processorConfiguration \\(array\\) of method TYPO3\\\\CMS\\\\Frontend\\\\ContentObject\\\\DataProcessorInterface\\:\\:process\\(\\)$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
+
+		-
+			message: "#^Parameter \\#4 \\$processedData \\(array\\<int\\|string, mixed\\>\\) of method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomContentCategoryProcessor\\:\\:process\\(\\) should be contravariant with parameter \\$processedData \\(array\\) of method TYPO3\\\\CMS\\\\Frontend\\\\ContentObject\\\\DataProcessorInterface\\:\\:process\\(\\)$#"
+			count: 1
+			path: Classes/DataProcessing/CustomContentCategoryProcessor.php
+
+		-
 			message: "#^Method ITZBund\\\\GsbCore\\\\DataProcessing\\\\CustomPageCategoryProcessor\\:\\:process\\(\\) has parameter \\$contentObjectConfiguration with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/DataProcessing/CustomPageCategoryProcessor.php
@@ -214,6 +229,11 @@ parameters:
 			message: "#^Method ITZBund\\\\GsbCore\\\\Resource\\\\OnlineMedia\\\\Helpers\\\\OverrideYouTubeHelper\\:\\:getOEmbedData\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Classes/Resource/OnlineMedia/Helpers/OverrideYouTubeHelper.php
+
+		-
+			message: "#^Call to method Redis\\:\\:mGet\\(\\) with incorrect case\\: mget$#"
+			count: 1
+			path: Classes/Session/Backend/SentinelCapableRedisSessionBackend.php
 
 		-
 			message: "#^Class RedisSentinel constructor invoked with 1 parameter, 2\\-6 required\\.$#"

@@ -35,12 +35,9 @@
     "php": "^8.1",
     "b13/container": "2.3.6",
     "b13/permission-sets": "^1.0",
-    "derhansen/form_crshield": "^1.4",
     "ichhabrecht/content-defender": "3.5.3",
     "kitzberger/form-mailtext": "^2.1",
-    "pixelant/interest": "^2.1.2",
     "symfony/serializer-pack": "^1.3",
-    "typo3/cms-adminpanel": "^12.4",
     "typo3/cms-backend": "^12.4",
     "typo3/cms-belog": "^12.4",
     "typo3/cms-beuser": "^12.4",
@@ -57,7 +54,6 @@
     "typo3/cms-impexp": "^12.4",
     "typo3/cms-info": "^12.4",
     "typo3/cms-install": "^12.4",
-    "typo3/cms-linkvalidator": "^12.4",
     "typo3/cms-lowlevel": "^12.4",
     "typo3/cms-opendocs": "^12.4",
     "typo3/cms-recycler": "^12.4",
@@ -70,7 +66,6 @@
     "typo3/cms-sys-note": "^12.4",
     "typo3/cms-t3editor": "^12.4",
     "typo3/cms-tstemplate": "^12.4",
-    "typo3/cms-viewpage": "^12.4",
     "typo3/cms-workspaces": "^12.4"
   },
   "require-dev": {
