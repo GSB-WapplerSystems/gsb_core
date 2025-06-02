@@ -1,177 +1,175 @@
 {
-	"name": "itzbund/gsb-core",
-	"description": "GSB Core. This is Part of the Goverment Site Build (GSB) 11. Der GSB 11 ist eine Maßnahme der Dienstekonsolidierung Bund (DKB) des Bundesministeriums des Innern und für Heimat (BMI) und wird im Auftrag des Informationstechnikzentrums Bund (ITZBund) durchgeführt.",
-	"license": [
-		"GPL-3.0-or-later"
-	],
-	"type": "typo3-cms-extension",
-	"authors": [
-		{
-			"name": "Kai Ole Hartwig",
-			"email": "o.hartwig@moselwal.de"
-		},
-		{
-			"name": "Matthias Peltzer",
-			"email": "matthias.peltzer@digitas.com"
-		},
-		{
-			"name": "Michael Max Busch",
-			"email": "m.busch@moselwal.de"
-		},
-		{
-			"name": "Patrick Schriner",
-			"email": "patrick.schriner@diemedialen.de"
-		},
-		{
-			"name": "Christian Rath-Ulrich",
-			"email": "christian.rath-ulrich@digitas.com"
-		},
-		{
-			"name": "Thorsten Müller",
-			"email": "thorsten.mueller@adesso.de"
-		}
-	],
-	"require": {
-		"php": "^8.1",
-		"b13/container": "2.3.6",
-		"b13/permission-sets": "^1.0",
-		"derhansen/form_crshield": "^1.4",
-		"ichhabrecht/content-defender": "3.5.3",
-		"kitzberger/form-mailtext": "^2.1",
-		"pixelant/interest": "^2.1.2",
-		"symfony/serializer-pack": "^1.3",
-		"typo3/cms-adminpanel": "^12.4",
-		"typo3/cms-backend": "^12.4",
-		"typo3/cms-belog": "^12.4",
-		"typo3/cms-beuser": "^12.4",
-		"typo3/cms-core": "^12.4",
-		"typo3/cms-dashboard": "^12.4",
-		"typo3/cms-extbase": "^12.4",
-		"typo3/cms-extensionmanager": "^12.4",
-		"typo3/cms-filelist": "^12.4",
-		"typo3/cms-filemetadata": "^12.4",
-		"typo3/cms-fluid": "^12.4",
-		"typo3/cms-fluid-styled-content": "^12.4",
-		"typo3/cms-form": "^12.4",
-		"typo3/cms-frontend": "^12.4",
-		"typo3/cms-impexp": "^12.4",
-		"typo3/cms-info": "^12.4",
-		"typo3/cms-install": "^12.4",
-		"typo3/cms-linkvalidator": "^12.4",
-		"typo3/cms-lowlevel": "^12.4",
-		"typo3/cms-opendocs": "^12.4",
-		"typo3/cms-recycler": "^12.4",
-		"typo3/cms-redirects": "^12.4",
-		"typo3/cms-reports": "^12.4",
-		"typo3/cms-rte-ckeditor": "^12.4",
-		"typo3/cms-scheduler": "^12.4",
-		"typo3/cms-seo": "^12.4",
-		"typo3/cms-setup": "^12.4",
-		"typo3/cms-sys-note": "^12.4",
-		"typo3/cms-t3editor": "^12.4",
-		"typo3/cms-tstemplate": "^12.4",
-		"typo3/cms-viewpage": "^12.4",
-		"typo3/cms-workspaces": "^12.4"
-	},
-	"require-dev": {
-		"captainhook/captainhook-phar": "^5.21",
-		"codeception/codeception": "*",
-		"codeception/module-asserts": "*",
-		"codeception/module-db": "*",
-		"doctrine/dbal": "^3.3",
-		"ergebnis/composer-normalize": "^2.28",
-		"friendsofphp/php-cs-fixer": "^3.14",
-		"helmich/typo3-typoscript-lint": "3.3.0",
-		"itzbund/captainhook-hooks": "^1.0",
-		"michielroos/typo3scan": "^1.7",
-		"mockery/mockery": "^1.6",
-		"php-coveralls/php-coveralls": "^2.5",
-		"phpmd/phpmd": "^2.13",
-		"phpstan/extension-installer": "^1.2",
-		"phpstan/phpstan": "^1.10",
-		"phpstan/phpstan-phpunit": "^1.3",
-		"phpstan/phpstan-strict-rules": "^1.5",
-		"phpunit/phpunit": "^10.0",
-		"ramsey/conventional-commits": "^1.5",
-		"saschaegerer/phpstan-typo3": "^1.8",
-		"sbuerk/typo3-cmscomposerinstallers-testingframework-bridge": "^0.1.2",
-		"seld/jsonlint": "^1.9",
-		"squizlabs/php_codesniffer": "^3.7",
-		"ssch/typo3-rector": "^1.1",
-		"symfony/yaml": "^6.1",
-		"typo3/coding-standards": "^0.8",
-		"typo3/testing-framework": "^8.1"
-	},
-	"conflict": {
-		"typo3/cms-core": "12.4.17 || 12.4.18"
-	},
-	"suggest": {
-		"ext-redis": "*",
-		"featdd/dpn-glossary": "*"
-	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://git.gsb-itzbund.de/api/v4/group/6/-/packages/composer/packages.json"
-		}
-	],
-	"autoload": {
-		"psr-4": {
-			"ITZBund\\GsbCore\\": "Classes/",
-			"ITZBund\\GsbCore\\Tests\\": "Tests/"
-		}
-	},
-	"config": {
-		"allow-plugins": true,
-		"bin-dir": ".composer/bin",
-		"gitlab-domains": [
-			"gitlab.itzbund.de"
-		],
-		"gitlab-protocol": "https",
-		"sort-packages": true,
-		"vendor-dir": ".composer/vendor"
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-main": "2.x-dev"
-		},
-		"itzbund/gsb-core": {
-			"isSitePackage": true
-		},
-		"typo3/cms": {
-			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"extension-key": "gsb_core",
-			"web-dir": ".composer"
-		}
-	},
-	"scripts": {
-		"composer:normalize": "@composer normalize --dry-run --no-check-lock",
-		"composer:normalize:fix": "@composer normalize --no-check-lock",
-		"composer:psr-verify": "@composer dumpautoload --optimize --strict-psr",
-		"composer:validate": "@composer validate --strict",
-		"json:lint": "find . ! -path '*.composer/*' ! -path '*Build/*' ! -path '*node_modules/*' -name '*.json' | xargs -r php .composer/bin/jsonlint -q",
-		"phpcs:analyze": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff",
-		"phpcs:fix": "php .composer/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --using-cache no --diff",
-		"phpmd:analyze": "php .composer/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml",
-		"phpmd:generatebaseline": "php .composer/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml --generate-baseline",
-		"phpstan:analyze": "php .composer/bin/phpstan analyse --no-progress",
-		"phpstan:generatebaseline": "php .composer/bin/phpstan analyse --no-progress --generate-baseline",
-		"typoscript:lint": "php .composer/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript",
-		"yaml:lint": "rm -rf Build/node_modules && find . -not -path './.composer/*' -not -path './Build/*' -name '*.yaml' -o -name '*.yml' | xargs -r php .composer/bin/yaml-lint"
-	},
-	"scripts-descriptions": {
-		"composer:normalize": "Normalize composer.json",
-		"composer:normalize:fix": "Normalize composer.json and fix it",
-		"composer:psr-verify": "Verify PSR-4 autoloading",
-		"composer:validate": "Validate composer.json",
-		"json:lint": "Lint JSON files",
-		"phpcs:analyze": "Analyze code with PHP Code Sniffer (TYPO3 Ruleset)",
-		"phpcs:fix": "Fix code with PHP Code Sniffer (TYPO3 Ruleset)",
-		"phpmd:analyze": "Analyze code with PHPMD",
-		"phpmd:generatebaseline": "Generate baseline for PHPMD",
-		"phpstan:analyze": "Analyze code with PHPStan",
-		"phpstan:generatebaseline": "Generate baseline for PHPStan",
-		"typoscript:lint": "Lint TypoScript files",
-		"yaml:lint": "Lint YAML files"
-	}
+  "name": "itzbund/gsb-core",
+  "description": "GSB Core. This is Part of the Goverment Site Build (GSB) 11. Der GSB 11 ist eine Maßnahme der Dienstekonsolidierung Bund (DKB) des Bundesministeriums des Innern und für Heimat (BMI) und wird im Auftrag des Informationstechnikzentrums Bund (ITZBund) durchgeführt.",
+  "license": [
+    "GPL-3.0-or-later"
+  ],
+  "type": "typo3-cms-extension",
+  "authors": [
+    {
+      "name": "Kai Ole Hartwig",
+      "email": "o.hartwig@moselwal.de"
+    },
+    {
+      "name": "Matthias Peltzer",
+      "email": "matthias.peltzer@digitas.com"
+    },
+    {
+      "name": "Michael Max Busch",
+      "email": "m.busch@moselwal.de"
+    },
+    {
+      "name": "Patrick Schriner",
+      "email": "patrick.schriner@diemedialen.de"
+    },
+    {
+      "name": "Christian Rath-Ulrich",
+      "email": "christian.rath-ulrich@digitas.com"
+    },
+    {
+      "name": "Thorsten Müller",
+      "email": "thorsten.mueller@adesso.de"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "b13/container": "2.3.6",
+    "b13/permission-sets": "^1.0",
+    "derhansen/form_crshield": "^1.4",
+    "ichhabrecht/content-defender": "3.5.3",
+    "kitzberger/form-mailtext": "^2.1",
+    "pixelant/interest": "^2.1.2",
+    "symfony/serializer-pack": "^1.3",
+    "typo3/cms-adminpanel": "^12.4",
+    "typo3/cms-backend": "^12.4",
+    "typo3/cms-belog": "^12.4",
+    "typo3/cms-beuser": "^12.4",
+    "typo3/cms-core": "^12.4",
+    "typo3/cms-dashboard": "^12.4",
+    "typo3/cms-extbase": "^12.4",
+    "typo3/cms-extensionmanager": "^12.4",
+    "typo3/cms-filelist": "^12.4",
+    "typo3/cms-filemetadata": "^12.4",
+    "typo3/cms-fluid": "^12.4",
+    "typo3/cms-fluid-styled-content": "^12.4",
+    "typo3/cms-form": "^12.4",
+    "typo3/cms-frontend": "^12.4",
+    "typo3/cms-impexp": "^12.4",
+    "typo3/cms-info": "^12.4",
+    "typo3/cms-install": "^12.4",
+    "typo3/cms-linkvalidator": "^12.4",
+    "typo3/cms-lowlevel": "^12.4",
+    "typo3/cms-opendocs": "^12.4",
+    "typo3/cms-recycler": "^12.4",
+    "typo3/cms-redirects": "^12.4",
+    "typo3/cms-reports": "^12.4",
+    "typo3/cms-rte-ckeditor": "^12.4",
+    "typo3/cms-scheduler": "^12.4",
+    "typo3/cms-seo": "^12.4",
+    "typo3/cms-setup": "^12.4",
+    "typo3/cms-sys-note": "^12.4",
+    "typo3/cms-t3editor": "^12.4",
+    "typo3/cms-tstemplate": "^12.4",
+    "typo3/cms-viewpage": "^12.4",
+    "typo3/cms-workspaces": "^12.4"
+  },
+  "require-dev": {
+    "captainhook/captainhook-phar": "^5.21",
+    "codeception/codeception": "*",
+    "codeception/module-asserts": "*",
+    "codeception/module-db": "*",
+    "doctrine/dbal": "^3.3",
+    "ergebnis/composer-normalize": "^2.28",
+    "friendsofphp/php-cs-fixer": "^3.14",
+    "helmich/typo3-typoscript-lint": "3.3.0",
+    "itzbund/captainhook-hooks": "^1.0",
+    "michielroos/typo3scan": "^1.7",
+    "mockery/mockery": "^1.6",
+    "php-coveralls/php-coveralls": "^2.5",
+    "phpmd/phpmd": "^2.13",
+    "phpstan/extension-installer": "^1.2",
+    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan-phpunit": "^1.3",
+    "phpstan/phpstan-strict-rules": "^1.5",
+    "phpunit/phpunit": "^10.0",
+    "ramsey/conventional-commits": "^1.5",
+    "saschaegerer/phpstan-typo3": "^1.8",
+    "sbuerk/typo3-cmscomposerinstallers-testingframework-bridge": "^0.1.2",
+    "seld/jsonlint": "^1.9",
+    "squizlabs/php_codesniffer": "^3.7",
+    "ssch/typo3-rector": "^1.1",
+    "symfony/yaml": "^6.1",
+    "typo3/coding-standards": "^0.8",
+    "typo3/testing-framework": "^8.1"
+  },
+  "conflict": {
+    "typo3/cms-core": "12.4.17 || 12.4.18"
+  },
+  "suggest": {
+    "ext-redis": "*",
+    "featdd/dpn-glossary": "*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://git.gsb-itzbund.de/api/v4/group/6/-/packages/composer/packages.json"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ITZBund\\GsbCore\\": "Classes/",
+      "ITZBund\\GsbCore\\Tests\\": "Tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": true,
+    "gitlab-domains": [
+      "gitlab.itzbund.de"
+    ],
+    "gitlab-protocol": "https",
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "2.x-dev"
+    },
+    "itzbund/gsb-core": {
+      "isSitePackage": true
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "extension-key": "gsb_core",
+      "web-dir": "vendor"
+    }
+  },
+  "scripts": {
+    "composer:normalize": "@composer normalize --dry-run --no-check-lock",
+    "composer:normalize:fix": "@composer normalize --no-check-lock",
+    "composer:psr-verify": "@composer dumpautoload --optimize --strict-psr",
+    "composer:validate": "@composer validate --strict",
+    "json:lint": "find . ! -path '*vendor/*' ! -path '*Build/*' ! -path '*node_modules/*' -name '*.json' | xargs -r php vendor/bin/jsonlint -q",
+    "phpcs:analyze": "php vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff",
+    "phpcs:fix": "php vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --using-cache no --diff",
+    "phpmd:analyze": "php vendor/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml",
+    "phpmd:generatebaseline": "php vendor/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml --generate-baseline",
+    "phpstan:analyze": "php vendor/bin/phpstan analyse --no-progress",
+    "phpstan:generatebaseline": "php vendor/bin/phpstan analyse --no-progress --generate-baseline",
+    "typoscript:lint": "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript",
+    "yaml:lint": "rm -rf Build/node_modules && find . -not -path './vendor/*' -not -path './Build/*' -name '*.yaml' -o -name '*.yml' | xargs -r php vendor/bin/yaml-lint"
+  },
+  "scripts-descriptions": {
+    "composer:normalize": "Normalize composer.json",
+    "composer:normalize:fix": "Normalize composer.json and fix it",
+    "composer:psr-verify": "Verify PSR-4 autoloading",
+    "composer:validate": "Validate composer.json",
+    "json:lint": "Lint JSON files",
+    "phpcs:analyze": "Analyze code with PHP Code Sniffer (TYPO3 Ruleset)",
+    "phpcs:fix": "Fix code with PHP Code Sniffer (TYPO3 Ruleset)",
+    "phpmd:analyze": "Analyze code with PHPMD",
+    "phpmd:generatebaseline": "Generate baseline for PHPMD",
+    "phpstan:analyze": "Analyze code with PHPStan",
+    "phpstan:generatebaseline": "Generate baseline for PHPStan",
+    "typoscript:lint": "Lint TypoScript files",
+    "yaml:lint": "Lint YAML files"
+  }
 }
