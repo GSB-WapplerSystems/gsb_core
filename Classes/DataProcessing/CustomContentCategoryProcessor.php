@@ -27,6 +27,9 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class CustomContentCategoryProcessor extends AbstractCategoryProcessor implements DataProcessorInterface
 {
     /**
+     * @param array<mixed,mixed> $contentObjectConfiguration
+     * @param array<mixed,mixed> $processorConfiguration
+     * @param array<mixed,mixed> $processedData
      * @throws Exception
      */
     public function process(
