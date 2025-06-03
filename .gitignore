@@ -1,5 +1,5 @@
 .idea
-.composer
+vendor
 vendor
 composer.lock
 coverage.cobertura.xml
