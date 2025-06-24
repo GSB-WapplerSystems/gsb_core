@@ -6,7 +6,7 @@
     -->
 </f:comment>
 
-<f:if condition="{socialLinks-Facebook} || {socialLinks-YouTube} || {socialLinks-Instagram} || {socialLinks-X}">
+<f:if condition="{socialLinks-Facebook} || {socialLinks-YouTube} || {socialLinks-Instagram} || {socialLinks-Twitter}">
     <aside class="row" aria-labelledby="SocialFooter">
         <div class="col-12">
             <div class="social-media justify-content-lg-end d-sm-flex align-items-center">
@@ -36,11 +36,11 @@
                             </a>
                         </li>
                     </f:if>
-                    <f:if condition="{socialLinks-X}">
+                    <f:if condition="{socialLinks-Twitter}">
                         <li>
-                            <a class="x" href="{socialLinks-X}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X (Twittter) {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <a class="x" href="{socialLinks-Twitter}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-X" aria-hidden="true"></span>
-                                <span class="visually-hidden">X (Twittter)</span>
+                                <span class="visually-hidden">X</span>
                             </a>
                         </li>
                     </f:if>

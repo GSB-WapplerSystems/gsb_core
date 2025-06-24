@@ -103,8 +103,8 @@ page {
       socialLinks-Facebook.value = {$config.socialLinks.Facebook}
       socialLinks-Instagram = TEXT
       socialLinks-Instagram.value = {$config.socialLinks.Instagram}
-      socialLinks-X = TEXT
-      socialLinks-X.value = {$config.socialLinks.X}
+      socialLinks-Twitter = TEXT
+      socialLinks-Twitter.value = {$config.socialLinks.Twitter}
       socialLinks-YouTube = TEXT
       socialLinks-YouTube.value = {$config.socialLinks.YouTube}
 

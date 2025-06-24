@@ -64,6 +64,6 @@ Uses GSB 11 https://software.opencode.de/project/2460
     # cat=Social Media Links (ITZBund): advanced/160/120; type=string; label=YouTube:Url
     YouTube = https://youtube.com
     # cat=Social Media Links (ITZBund): advanced/160/130; type=string; label=X:Url
-    X = https://x.com
+    Twitter = https://x.com
   }
 }
