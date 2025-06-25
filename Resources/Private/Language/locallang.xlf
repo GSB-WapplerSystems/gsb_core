@@ -201,8 +201,8 @@
 			<trans-unit id="aside.shareonfacebook" resname="aside.shareonfacebook">
 				<source>Share on Facebook</source>
 			</trans-unit>
-			<trans-unit id="aside.shareontwitter" resname="aside.shareontwitter">
-				<source>Share on X (Twittter)</source>
+			<trans-unit id="aside.shareonX" resname="aside.shareonX">
+				<source>Share on X</source>
 			</trans-unit>
 			<trans-unit id="aside.shareonreddit" resname="aside.shareonreddit">
 				<source>Share on Reddit</source>
