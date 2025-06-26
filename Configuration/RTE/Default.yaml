@@ -63,6 +63,36 @@ editor:
       - {name: "Text: Emphasize", element: "span", attributes: {'class': 'em'}}
       - {name: "Text: Hidden", element: "span", attributes: {'class': 'hide visually-hidden'}}
 
+      - {name: 'Headline 2 > 1', element: 'h2', attributes: {'class': 'h1'}}
+      - {name: 'Headline 2 > 3', element: 'h2', attributes: {'class': 'h3'}}
+      - {name: 'Headline 2 > 4', element: 'h2', attributes: {'class': 'h4'}}
+      - {name: 'Headline 2 > 5', element: 'h2', attributes: {'class': 'h5'}}
+      - {name: 'Headline 2 > 6', element: 'h2', attributes: {'class': 'h6'}}
+
+      - {name: 'Headline 3 > 1', element: 'h3', attributes: {'class': 'h1'}}
+      - {name: 'Headline 3 > 2', element: 'h3', attributes: {'class': 'h2'}}
+      - {name: 'Headline 3 > 4', element: 'h3', attributes: {'class': 'h4'}}
+      - {name: 'Headline 3 > 5', element: 'h3', attributes: {'class': 'h5'}}
+      - {name: 'Headline 3 > 6', element: 'h3', attributes: {'class': 'h6'}}
+
+      - {name: 'Headline 4 > 1', element: 'h4', attributes: {'class': 'h1'}}
+      - {name: 'Headline 4 > 2', element: 'h4', attributes: {'class': 'h2'}}
+      - {name: 'Headline 4 > 3', element: 'h4', attributes: {'class': 'h3'}}
+      - {name: 'Headline 4 > 5', element: 'h4', attributes: {'class': 'h5'}}
+      - {name: 'Headline 4 > 6', element: 'h4', attributes: {'class': 'h6'}}
+
+      - {name: 'Headline 5 > 1', element: 'h5', attributes: {'class': 'h1'}}
+      - {name: 'Headline 5 > 2', element: 'h5', attributes: {'class': 'h2'}}
+      - {name: 'Headline 5 > 3', element: 'h5', attributes: {'class': 'h3'}}
+      - {name: 'Headline 5 > 4', element: 'h5', attributes: {'class': 'h4'}}
+      - {name: 'Headline 5 > 6', element: 'h5', attributes: {'class': 'h6'}}
+
+      - {name: 'Headline 6 > 1', element: 'h6', attributes: {'class': 'h1'}}
+      - {name: 'Headline 6 > 2', element: 'h6', attributes: {'class': 'h2'}}
+      - {name: 'Headline 6 > 3', element: 'h6', attributes: {'class': 'h3'}}
+      - {name: 'Headline 6 > 4', element: 'h6', attributes: {'class': 'h4'}}
+      - {name: 'Headline 6 > 5', element: 'h6', attributes: {'class': 'h5'}}
+
     toolbar:
       items:
         - heading
