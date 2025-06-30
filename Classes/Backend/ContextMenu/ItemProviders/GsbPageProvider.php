@@ -62,6 +62,6 @@ class GsbPageProvider extends PageProvider
 
     protected function isRecordSiteRoot(): bool
     {
-        return (bool)$this->record['is_siteroot'];
+        return (bool)($this->record['is_siteroot'] ?? false);
     }
 }
