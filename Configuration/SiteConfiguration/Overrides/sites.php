@@ -38,11 +38,9 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['color']['label'] = 'LLL:EXT:g
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['color']['showitem'] = 'color_1, label_color_1, color_2, label_color_2, color_3, label_color_3, color_4, label_color_4, color_5, label_color_5, color_6, label_color_6';
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
-    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_secondary_rgba,color_tertiary,color_quaternary';
-}
+$GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.label';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.palette.color-general.description';
+$GLOBALS['SiteConfiguration']['site']['palettes']['color-general']['showitem'] = 'color_primary,color_secondary,color_secondary_rgba,color_tertiary,color_quaternary';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['sitePackage'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage',
@@ -299,53 +297,51 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
         ],
 ];
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
-    //    ITZBUNDPHP-2877 Color: Generell
-    $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 25,
-        ],
-    ];
+//    ITZBUNDPHP-2877 Color: Generell
+$GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.description',
+    'config' => [
+        'type' => 'input',
+        'size' => 25,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 25,
-        ],
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['color_secondary'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary.description',
+    'config' => [
+        'type' => 'input',
+        'size' => 25,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['color_secondary_rgba'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 25,
-        ],
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['color_secondary_rgba'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_secondary_rgba.description',
+    'config' => [
+        'type' => 'input',
+        'size' => 25,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['color_tertiary'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 25,
-        ],
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['color_tertiary'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_tertiary.description',
+    'config' => [
+        'type' => 'input',
+        'size' => 25,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['color_quaternary'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 25,
-        ],
-    ];
-}
+$GLOBALS['SiteConfiguration']['site']['columns']['color_quaternary'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_quaternary.description',
+    'config' => [
+        'type' => 'input',
+        'size' => 25,
+    ],
+];
 
 $GLOBALS['SiteConfiguration']['site']['columns']['show-copyright'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.show-copyright.label',
