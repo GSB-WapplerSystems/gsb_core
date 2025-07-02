@@ -109,12 +109,10 @@ defined('TYPO3') || die();
         'after:header',
     );
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3969')) {
-        ExtensionManagementUtility::addToAllTCAtypes(
-            'tt_content',
-            '--palette--;;main_category_override',
-            'gsb_singleteaser',
-            'after:header',
-        );
-    }
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;main_category_override',
+        'gsb_singleteaser',
+        'after:header',
+    );
 })();

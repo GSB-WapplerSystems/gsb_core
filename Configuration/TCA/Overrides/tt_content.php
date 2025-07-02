@@ -208,19 +208,17 @@ defined('TYPO3') || die();
         ],
     ];
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3969')) {
-        $palettes['main_category_override'] = [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.label',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.description',
-            'showitem' => implode(
-                ',',
-                [
-                    'main_category_overwrite_toggle',
-                    'main_category_overwrite',
-                ],
-            ),
-        ];
-    }
+    $palettes['main_category_override'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.description',
+        'showitem' => implode(
+            ',',
+            [
+                'main_category_overwrite_toggle',
+                'main_category_overwrite',
+            ],
+        ),
+    ];
 
     $palettes['category_date_override'] = [
         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.label',

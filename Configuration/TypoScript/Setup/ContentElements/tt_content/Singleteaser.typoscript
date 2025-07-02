@@ -65,11 +65,9 @@ tt_content.gsb_singleteaser.dataProcessing {
 }
 
 
-[feature("ITZBUNDPHP-3969") == true]
-  tt_content.gsb_singleteaser.dataProcessing {
-    1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
-    1733847629 {
-      as = targetPageMainCategory
-    }
+tt_content.gsb_singleteaser.dataProcessing {
+  1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
+  1733847629 {
+    as = targetPageMainCategory
   }
-[global]
+}
