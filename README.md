@@ -71,7 +71,6 @@ This table illustrates the behavior of feature flags in various states.
 | Feature flag           | Description                                                                                                                                                                                        |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
-| `ITZBUNDPHP-1996`      | Form emails have the `X-Request-Id` header added to their field output table                                                                                                                       |
 | `ITZBUNDPHP-4469`      | Custom mail texts for emails generated from EXT:form                                                                                                                                               |
 
 ### Usage in PHP Code

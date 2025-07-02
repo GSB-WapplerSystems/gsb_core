@@ -6,9 +6,7 @@
 <f:layout name="SystemEmail" />
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
-    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1996')}">
-        <f:variable name="ITZBUNDPHP-1996-requestIdHeader"><gsb:requestId /></f:variable>
-    </f:if>
+    <f:variable name="requestIdHeader"><gsb:requestId /></f:variable>
     <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
         <f:then>
             <formmailtext:renderMessage message="{message -> f:format.html()}">
@@ -62,10 +60,10 @@
             </f:if>
         </tr>
         </formvh:renderAllFormValues>
-        <f:if condition="{ITZBUNDPHP-1996-requestIdHeader}">
+        <f:if condition="{requestIdHeader}">
         <tr>
             <td align="left" valign="top">Request ID</td>
-            <td align="left">{ITZBUNDPHP-1996-requestIdHeader}</td>
+            <td align="left">{requestIdHeader}</td>
         </tr>
         </f:if>
     </table>
