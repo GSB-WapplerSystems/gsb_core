@@ -79,10 +79,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     public function executeUpdate(): bool
     {
-        if (! $this->features->isFeatureEnabled('ITZBUNDPHP-3944')) {
-            return false;
-        }
-
         $filteredTables = $this->filterByUpdateNeccessary(self::TABLES_AND_COLUMNS);
         foreach ($filteredTables as $table => $columns) {
             $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
@@ -99,10 +95,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     public function updateNecessary(): bool
     {
-        if (! $this->features->isFeatureEnabled('ITZBUNDPHP-3944')) {
-            return false;
-        }
-
         return count($this->filterByUpdateNeccessary(self::TABLES_AND_COLUMNS)) > 0;
     }
 
