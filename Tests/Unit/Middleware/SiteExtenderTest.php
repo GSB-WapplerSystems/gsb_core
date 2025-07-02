@@ -20,8 +20,6 @@ class SiteExtenderTest extends UnitTestCase
     #[Test]
     public function middlewareDoesNotExtendSiteIfRequestHasNoSite(): void
     {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3288'] = true;
-
         $request = $this->getMockBuilder(ServerRequest::class)->getMock();
         $request->expects(self::exactly(1))->method('getAttribute')->with('site', null)
             ->willReturn(null);
@@ -36,8 +34,6 @@ class SiteExtenderTest extends UnitTestCase
     #[Test]
     public function middlewareExtendsRequestWithLocalizedSite(): void
     {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3288'] = true;
-
         $request = $this->getMockBuilder(ServerRequest::class)->getMock();
 
         $site = $this->getMockBuilder(Site::class)->disableOriginalConstructor()->getMock();

@@ -19,8 +19,6 @@
   */
 
 use ITZBund\GsbCore\Configuration\PackageHelper;
-use TYPO3\CMS\Core\Configuration\Features;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
     ,--div--;GSB,sitePackage, show-copyright, navType, google_site_verification, copyright, sign-language-page, simple-language-page, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
@@ -350,71 +348,70 @@ $GLOBALS['SiteConfiguration']['site']['columns']['show-copyright'] = [
     ],
 ];
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
-    $localizableKeys = [
-        'logo-complete-toggle',
-        'second-logo-complete-toggle',
-        'logo-complete-big',
-        'logo-complete-small',
-        'second-logo',
-        'second-logo-alt',
-        'second-logo-link',
-        'initiative-text-toggle',
-        'initiative-text',
-        'show-copyright',
-        'logo-text',
-        'copyright',
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text-toggle.label',
+    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.initiative-text-toggle',
+    'onChange' => 'reload',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text-toggle.label',
-        'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.initiative-text-toggle',
-        'onChange' => 'reload',
-        'config' => [
-            'renderType' => 'checkboxToggle',
-            'type' => 'check',
-            'default' => 0,
+$GLOBALS['SiteConfiguration']['site']['columns']['initiative-text'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text.label',
+    'displayCond' => [
+        'AND' => [
+            'FIELD:second-logo-complete-toggle:REQ:true',
+            'FIELD:initiative-text-toggle:REQ:true',
         ],
-    ];
+    ],
+    'config' => [
+        'type' => 'text',
+        'renderType' => 'input',
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text.label',
-        'displayCond' => [
-            'AND' => [
-                'FIELD:second-logo-complete-toggle:REQ:true',
-                'FIELD:initiative-text-toggle:REQ:true',
-            ],
-        ],
-        'config' => [
-            'type' => 'text',
-            'renderType' => 'input',
-        ],
-    ];
+$GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', initiative-text-toggle, initiative-text';
 
-    $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', initiative-text-toggle, initiative-text';
+// ITZBUNDPHP-3288 Localizable site settings
+$localizableKeys = [
+    'logo-complete-toggle',
+    'second-logo-complete-toggle',
+    'logo-complete-big',
+    'logo-complete-small',
+    'second-logo',
+    'second-logo-alt',
+    'second-logo-link',
+    'initiative-text-toggle',
+    'initiative-text',
+    'show-copyright',
+    'logo-text',
+    'copyright',
+];
 
-    foreach ($localizableKeys as $localizableKey) {
-        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey] = $GLOBALS['SiteConfiguration']['site']['columns'][$localizableKey];
+foreach ($localizableKeys as $localizableKey) {
+    $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey] = $GLOBALS['SiteConfiguration']['site']['columns'][$localizableKey];
 
-        if (str_contains($localizableKey, 'toggle')) {
-            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['readOnly'] = true;
-        } else {
-            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['mode'] = 'useOrOverridePlaceholder';
-            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['eval'] = 'null';
-            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['default'] = null;
-            $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['nullable'] = true;
-        }
+    if (str_contains($localizableKey, 'toggle')) {
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['readOnly'] = true;
+    } else {
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['mode'] = 'useOrOverridePlaceholder';
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['eval'] = 'null';
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['default'] = null;
+        $GLOBALS['SiteConfiguration']['site_language']['columns'][$localizableKey]['config']['nullable'] = true;
     }
-
-    $GLOBALS['SiteConfiguration']['site_language']['palettes']['localized-logos-and-copyright'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.description',
-        'showitem' => implode(',', $localizableKeys),
-    ];
-
-    $GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
 }
+
+$GLOBALS['SiteConfiguration']['site_language']['palettes']['localized-logos-and-copyright'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.description',
+    'showitem' => implode(',', $localizableKeys),
+];
+
+$GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
 
 $GLOBALS['SiteConfiguration']['site']['columns']['display-brand-topline'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.display-brand-topline.label',
