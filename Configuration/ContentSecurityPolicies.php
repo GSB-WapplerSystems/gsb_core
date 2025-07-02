@@ -145,17 +145,15 @@ foreach ($allowedVideoDomains as $domain) {
     );
 }
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-    $config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
-    $allowedAudioDomains = GeneralUtility::trimExplode(',', $config['allowedAudioDomains'] ?? '', true) ?? null;
+$config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
+$allowedAudioDomains = GeneralUtility::trimExplode(',', $config['allowedAudioDomains'] ?? '', true) ?? null;
 
-    foreach ($allowedAudioDomains as $domain) {
-        $cspCollection[] = new Mutation(
-            MutationMode::Extend,
-            Directive::MediaSrc,
-            new UriValue($domain),
-        );
-    }
+foreach ($allowedAudioDomains as $domain) {
+    $cspCollection[] = new Mutation(
+        MutationMode::Extend,
+        Directive::MediaSrc,
+        new UriValue($domain),
+    );
 }
 
 return Map::fromEntries(

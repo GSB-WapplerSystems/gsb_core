@@ -52,9 +52,7 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
 
         $this->addVideoDescriptionField();
 
-        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-            $this->addAudioDescriptionField();
-        }
+        $this->addAudioDescriptionField();
 
         return parent::render();
     }
