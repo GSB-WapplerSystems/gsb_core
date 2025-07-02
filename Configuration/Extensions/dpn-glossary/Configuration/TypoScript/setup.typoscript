@@ -40,7 +40,5 @@ plugin {
   }
 }
 
-[feature("ITZBUNDPHP-3327") == false]
 plugin.tx_dpnglossary.settings.disableParser = 1
 module.tx_dpnglossary.settings.disableParser = 1
-[global]
