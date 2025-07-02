@@ -21,22 +21,22 @@ frame-layout-{data.layout}
 {f:if(condition: data.grid_imgbg, then: 'grid-cols col-12 offset-xl-1 col-xl-10')} position-relative"
      id="c{data.uid}">
 
-    <f:if condition="{data_bgimage} && {gsb:featureFlag(featureKey: 'ITZBUNDPHP-4326')}">
-        <f:variable name="bgimage">{f:uri.image(image: data_bgimage.0, maxWidth: 2560, treatIdAsReference: '1')}</f:variable>
-        <f:if condition="{data.grid_parallax} == 0">
-            <f:asset.css identifier="c{data.uid}-data-bgimage" priority="true">
-                #c{data.uid}-data-bgimage
-                <f:format.raw>{</f:format.raw>
-                background-image: url("{bgimage}");
-                <f:format.raw>}</f:format.raw>
-            </f:asset.css>
-        </f:if>
-        <div class="grid-bg{f:if(condition: data.grid_parallax, then: ' grid-parallax')}" id="c{data.uid}-data-bgimage">
-            <f:if condition="{data.grid_parallax}">
-                <img class="jarallax-img" src="{bgimage}" alt="" aria-hidden="true">
-            </f:if>
-        </div>
+    
+    <f:variable name="bgimage">{f:uri.image(image: data_bgimage.0, maxWidth: 2560, treatIdAsReference: '1')}</f:variable>
+    <f:if condition="{data.grid_parallax} == 0">
+        <f:asset.css identifier="c{data.uid}-data-bgimage" priority="true">
+            #c{data.uid}-data-bgimage
+            <f:format.raw>{</f:format.raw>
+            background-image: url("{bgimage}");
+            <f:format.raw>}</f:format.raw>
+        </f:asset.css>
     </f:if>
+    <div class="grid-bg{f:if(condition: data.grid_parallax, then: ' grid-parallax')}" id="c{data.uid}-data-bgimage">
+        <f:if condition="{data.grid_parallax}">
+            <img class="jarallax-img" src="{bgimage}" alt="" aria-hidden="true">
+        </f:if>
+    </div>
+    
 
     <f:if condition="{data.grid_bgcolor}">
         <div class="grid-bg{f:if(condition: data.grid_bgcolor, then: ' bg-{data.grid_bgcolor}')}"></div>
