@@ -9,38 +9,36 @@
         -->
     </f:comment>
 
-    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4329')} && {site.configuration.font-switch}">
-        <f:if condition="{site.configuration.font-sans-name}">
-            <f:asset.css identifier="rootVarSansCss" priority="1">
-                    :root { --bs-font-sans-serif: {site.configuration.font-sans-name}; --bs-font-monospace: {site.configuration.font-sans-name}; }
-            </f:asset.css>
-        </f:if>
-        <f:if condition="{site.configuration.font-serif-name}">
-            <f:asset.css identifier="rootVarSerifCss" priority="1">
-                :root { --bs-font-serif: {site.configuration.font-serif-name}; }
-            </f:asset.css>
-        </f:if>
-        <f:if condition="{site.configuration.font-sans}">
-            <f:render section="fontFace" arguments="{id: 'fontSansCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans)}', fontWeight: '400', fontStyle: 'normal'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-sans-italic}">
-            <f:render section="fontFace" arguments="{id: 'fontSansItalicCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-sans-medium}">
-            <f:render section="fontFace" arguments="{id: 'fontSansMediumCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-medium)}', fontWeight: '500', fontStyle: 'normal'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-sans-bold}">
-            <f:render section="fontFace" arguments="{id: 'fontSansBoldCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold)}', fontWeight: '700', fontStyle: 'normal'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-sans-bold-italic}">
-            <f:render section="fontFace" arguments="{id: 'fontSansBoldItalicCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold-italic)}', fontWeight: '700', fontStyle: 'italic'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-serif}">
-            <f:render section="fontFace" arguments="{id: 'fontSerifCss', fontName: site.configuration.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-serif)}', fontWeight: '400', fontStyle: 'normal'}" />
-        </f:if>
-        <f:if condition="{site.configuration.font-serif-italic)}">
-            <f:render section="fontFace" arguments="{id: 'fontSerifItalicCss', fontName: site.configuration.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-serif-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
-        </f:if>
+    <f:if condition="{site.configuration.font-sans-name}">
+        <f:asset.css identifier="rootVarSansCss" priority="1">
+                :root { --bs-font-sans-serif: {site.configuration.font-sans-name}; --bs-font-monospace: {site.configuration.font-sans-name}; }
+        </f:asset.css>
+    </f:if>
+    <f:if condition="{site.configuration.font-serif-name}">
+        <f:asset.css identifier="rootVarSerifCss" priority="1">
+            :root { --bs-font-serif: {site.configuration.font-serif-name}; }
+        </f:asset.css>
+    </f:if>
+    <f:if condition="{site.configuration.font-sans}">
+        <f:render section="fontFace" arguments="{id: 'fontSansCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans)}', fontWeight: '400', fontStyle: 'normal'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-sans-italic}">
+        <f:render section="fontFace" arguments="{id: 'fontSansItalicCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-sans-medium}">
+        <f:render section="fontFace" arguments="{id: 'fontSansMediumCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-medium)}', fontWeight: '500', fontStyle: 'normal'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-sans-bold}">
+        <f:render section="fontFace" arguments="{id: 'fontSansBoldCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold)}', fontWeight: '700', fontStyle: 'normal'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-sans-bold-italic}">
+        <f:render section="fontFace" arguments="{id: 'fontSansBoldItalicCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans-bold-italic)}', fontWeight: '700', fontStyle: 'italic'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-serif}">
+        <f:render section="fontFace" arguments="{id: 'fontSerifCss', fontName: site.configuration.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-serif)}', fontWeight: '400', fontStyle: 'normal'}" />
+    </f:if>
+    <f:if condition="{site.configuration.font-serif-italic)}">
+        <f:render section="fontFace" arguments="{id: 'fontSerifItalicCss', fontName: site.configuration.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-serif-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
     </f:if>
 
     <f:section name="fontFace">

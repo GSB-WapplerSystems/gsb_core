@@ -428,142 +428,139 @@ $GLOBALS['SiteConfiguration']['site']['columns']['display-brand-topline'] = [
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', display-brand-topline';
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4329')) {
+$GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.fonts.palette.label';
+$GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.fonts.palette.description';
+$GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['showitem'] = 'font-switch, --linebreak--, font-sans-name, --linebreak--, font-sans, font-sans-italic, --linebreak--, font-sans-medium, --linebreak--, font-sans-bold, font-sans-bold-italic, --linebreak--, font-serif-name, --linebreak--, font-serif, font-serif-italic';
+$GLOBALS['SiteConfiguration']['site']['columns']['font-switch'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-switch.label',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-switch.description',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+    'onChange' => 'reload',
+];
 
-    $GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['label'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.fonts.palette.label';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.fonts.palette.description';
-    $GLOBALS['SiteConfiguration']['site']['palettes']['fonts']['showitem'] = 'font-switch, --linebreak--, font-sans-name, --linebreak--, font-sans, font-sans-italic, --linebreak--, font-sans-medium, --linebreak--, font-sans-bold, font-sans-bold-italic, --linebreak--, font-serif-name, --linebreak--, font-serif, font-serif-italic';
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-switch'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-switch.label',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-switch.description',
-        'config' => [
-            'renderType' => 'checkboxToggle',
-            'type' => 'check',
-            'default' => 0,
-        ],
-        'onChange' => 'reload',
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans-name'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-name.label',
+    'config' => [
+        'type' => 'input',
+        'size' => 50,
+    ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans-name'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-name.label',
-        'config' => [
-            'type' => 'input',
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
             'size' => 50,
         ],
-    ];
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans-italic'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-italic.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans-medium'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-medium.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans-bold'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-bold.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-sans-bold-italic'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-bold-italic.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-serif-name'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif-name.label',
-        'config' => [
-            'type' => 'input',
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans-italic'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-italic.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
             'size' => 50,
         ],
-    ];
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-serif'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans-medium'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-medium.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+            'size' => 50,
+        ],
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
 
-    $GLOBALS['SiteConfiguration']['site']['columns']['font-serif-italic'] = [
-        'displayCond' => 'FIELD:font-switch:REQ:true',
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif-italic.label',
-        'config' =>
-            [
-                'type' => 'link',
-                'allowedTypes' => ['file'],
-                'size' => 50,
-            ],
-        'appearance' =>
-            [
-                'allowedExtensions' => ['woff2'],
-            ],
-    ];
-}
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans-bold'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-bold.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+            'size' => 50,
+        ],
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['font-sans-bold-italic'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-sans-bold-italic.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+            'size' => 50,
+        ],
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['font-serif-name'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif-name.label',
+    'config' => [
+        'type' => 'input',
+        'size' => 50,
+    ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['font-serif'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+            'size' => 50,
+        ],
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['font-serif-italic'] = [
+    'displayCond' => 'FIELD:font-switch:REQ:true',
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.font-serif-italic.label',
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+            'size' => 50,
+        ],
+    'appearance' =>
+        [
+            'allowedExtensions' => ['woff2'],
+        ],
+];
