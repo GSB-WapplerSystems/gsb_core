@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
@@ -34,6 +33,10 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * More accurate database:updateschema --destructive
+ *
+ * Can be manually started with
+ *
+ * `typo3 upgrade:run gsbcore_removeColumnsWizard`
  */
 #[UpgradeWizard('gsbcore_removeColumnsWizard')]
 class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
@@ -53,10 +56,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      * @var OutputInterface
      */
     protected $output;
-
-    public function __construct(
-        private readonly Features $features,
-    ) {}
 
     /**
      * Returns the title of the upgrade wizard.
