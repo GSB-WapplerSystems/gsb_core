@@ -34,7 +34,12 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
 {
     use PagesCacheAddingTrait;
 
+    public function __construct(private readonly ConnectionPool $connectionPool) {}
+
     /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
      * @param array<mixed> $contentObjectConfiguration
      * @param array<mixed> $processorConfiguration
      * @param array<mixed> $processedData
@@ -93,7 +98,7 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
             $this->addPageUidCacheTag($pageUid);
         }
 
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('pages');
         $result = $queryBuilder
             ->select('main_category')
             ->from('pages')
@@ -106,7 +111,7 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
         }
 
         $categoryUid = (int)$result;
-        $categoryQueryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
+        $categoryQueryBuilder = $this->connectionPool->getQueryBuilderForTable('sys_category');
 
         $category = $categoryQueryBuilder
             ->select('*')

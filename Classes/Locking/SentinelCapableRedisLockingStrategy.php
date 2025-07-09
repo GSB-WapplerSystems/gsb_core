@@ -48,8 +48,6 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     private \Redis $backend;
 
-    private ?\RedisSentinel $redisSentinel = null;
-
     /**
      * The locking subject (e.g. "pagesection")
      * @var string
@@ -133,33 +131,25 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         $this->initializeWrite();
     }
 
-    private function initializeRead(): void
-    {
-        $this->retryOperation(function () {
-            $this->backend = $this->initializeConnection(false);
-        });
-    }
-
     private function initializeWrite(): void
     {
         $this->retryOperation(function () {
-            $this->backend = $this->initializeConnection(true);
+            $this->backend = $this->initializeConnection();
         });
     }
 
     /**
      * Set up redis connection.
      *
-     * @param bool $useWriteConnection
      * @return \Redis
      */
-    private function initializeConnection(bool $useWriteConnection): \Redis
+    private function initializeConnection(): \Redis
     {
         $backend = new \Redis();
         $host = $this->configuration['hostname'] ?? '127.0.0.1';
         $port = $this->configuration['port'] ?? 6379;
 
-        if (array_key_exists('isSentinel', $this->configuration) && $this->configuration['isSentinel'] && $useWriteConnection) {
+        if (array_key_exists('isSentinel', $this->configuration) && $this->configuration['isSentinel']) {
             $sentinelConfig = [
                 'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
                 'port' => $this->configuration['sentinelPort'] ?? 26379,
@@ -236,31 +226,32 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         if ($this->isAcquired) {
             return true;
         }
-        if ((bool)($mode & self::LOCK_CAPABILITY_EXCLUSIVE)) {
-            if ((bool)($mode & self::LOCK_CAPABILITY_NOBLOCK)) {
-                // try to acquire the lock - non-blocking
-                if (!$this->isAcquired = $this->lock(false)) {
-                    throw new LockAcquireWouldBlockException(
-                        'Could not acquire exclusive lock (non-blocking).',
-                        1561445651
+
+        if (!($mode & self::LOCK_CAPABILITY_EXCLUSIVE)) {
+            throw new LockAcquireException('Could not acquire lock due to insufficient capabilities.', 1561445737);
+        }
+
+        if (!($mode & self::LOCK_CAPABILITY_NOBLOCK)) {
+            // try to acquire the lock - blocking
+            // N.B. we do this in a loop because between
+            // wait() and lock() another process may acquire the lock
+            while (!$this->isAcquired = $this->lock()) {
+                // this blocks till the lock gets released or timeout is reached
+                if ($this->wait() === false) {
+                    throw new LockAcquireException(
+                        'Could not acquire exclusive lock (blocking+exclusive).',
+                        1561445710
                     );
                 }
-            } else {
-                // try to acquire the lock - blocking
-                // N.B. we do this in a loop because between
-                // wait() and lock() another process may acquire the lock
-                while (!$this->isAcquired = $this->lock()) {
-                    // this blocks till the lock gets released or timeout is reached
-                    if ($this->wait() === false) {
-                        throw new LockAcquireException(
-                            'Could not acquire exclusive lock (blocking+exclusive).',
-                            1561445710
-                        );
-                    }
-                }
             }
-        } else {
-            throw new LockAcquireException('Could not acquire lock due to insufficient capabilities.', 1561445737);
+        }
+
+        // try to acquire the lock - non-blocking
+        if (!$this->isAcquired = $this->lock(false)) {
+            throw new LockAcquireWouldBlockException(
+                'Could not acquire exclusive lock (non-blocking).',
+                1561445651
+            );
         }
 
         return $this->isAcquired;
@@ -308,10 +299,11 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
             // option NX: set value if key is not present
             $result = (bool)$this->backend->set($this->name, $this->value, ['NX', 'EX' => $this->ttl]);
             // Non blocking, but the current request is the same, you're fine.
-            if (!$blocking && !$result) {
-                if ($this->backend->get($this->name) === $this->value) {
-                    return true;
-                }
+            if (!$blocking
+                && !$result
+                && $this->backend->get($this->name) === $this->value
+            ) {
+                return true;
             }
             return $result;
         } catch (\Throwable $e) {

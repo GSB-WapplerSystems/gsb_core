@@ -22,18 +22,14 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\ViewHelpers\Format\Json;
 
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Class DecodeViewHelper
  */
 class DecodeViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
      * @var bool
      */
@@ -52,18 +48,12 @@ class DecodeViewHelper extends AbstractViewHelper
         $this->registerArgument('json', 'string', 'The JSON string to decode', true);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return string
-     */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public function render()
     {
-        if ($arguments === ['']) {
+        if ($this->arguments === ['']) {
             return '';
         }
-        $json = $arguments['json'];
+        $json = $this->arguments['json'];
 
         if ($json === '' || $json === null) {
             return '';

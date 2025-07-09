@@ -4,10 +4,11 @@ SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
+<!-- PROJECT SHIELDS -->
+
 # GSB&nbsp;11 Extension gsb_core
 
-<!-- PROJECT SHIELDS -->
-[![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
+[![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
 
 ## About
 

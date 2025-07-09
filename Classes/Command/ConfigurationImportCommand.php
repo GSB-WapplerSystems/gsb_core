@@ -56,6 +56,10 @@ class ConfigurationImportCommand extends Command
         $this->setHelp('This command imports a configuration from a yaml file. It is used to import the configuration of the workspaces and be_groups tables.');
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         foreach ($this->packageManager->getActivePackages() as $package) {

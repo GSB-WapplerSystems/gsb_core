@@ -25,6 +25,7 @@ namespace ITZBund\GsbCore\Session\Backend;
 use Exception;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotCreatedException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotFoundException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotUpdatedException;
@@ -79,6 +80,8 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
      * @var string
      */
     protected $identifier;
+
+    public function __construct(private readonly Context $context) {}
 
     /**
      * Initializes the session backend
@@ -221,7 +224,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
             $hashedSessionId = $this->hash($sessionId);
             $sessionData['ses_id'] = $hashedSessionId;
-            $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
+            $sessionData['ses_tstamp'] = $this->context->getPropertyFromAspect('date', 'timestamp') ?? time();
 
             // nx will not allow overwriting existing keys
             $jsonString = json_encode($sessionData);
@@ -268,7 +271,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 throw new SessionNotUpdatedException('Cannot update non-existing record', 1484389971, $e);
             }
             $sessionData['ses_id'] = $hashedSessionId;
-            $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
+            $sessionData['ses_tstamp'] = $this->context->getPropertyFromAspect('date', 'timestamp') ?? time();
 
             $key = $this->getSessionKeyName($hashedSessionId);
             $jsonString = json_encode($sessionData);
@@ -302,11 +305,11 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
         try {
             foreach ($this->getAll() as $sessionRecord) {
                 if (!($sessionRecord['ses_userid'] ?? false)) {
-                    if ($maximumAnonymousLifetime > 0 && ($sessionRecord['ses_tstamp'] + $maximumAnonymousLifetime) < $GLOBALS['EXEC_TIME']) {
+                    if ($maximumAnonymousLifetime > 0 && ($sessionRecord['ses_tstamp'] + $maximumAnonymousLifetime) < $this->context->getPropertyFromAspect('date', 'timestamp')) {
                         $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
                     }
                 } else {
-                    if (($sessionRecord['ses_tstamp'] + $maximumLifetime) < $GLOBALS['EXEC_TIME']) {
+                    if (($sessionRecord['ses_tstamp'] + $maximumLifetime) < $this->context->getPropertyFromAspect('date', 'timestamp')) {
                         $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
                     }
                 }

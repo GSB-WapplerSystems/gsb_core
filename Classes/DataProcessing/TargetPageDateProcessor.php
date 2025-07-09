@@ -34,9 +34,12 @@ class TargetPageDateProcessor implements DataProcessorInterface
 {
     use PagesCacheAddingTrait;
 
-    public function __construct(private readonly LinkFactory $linkFactory) {}
+    public function __construct(private readonly LinkFactory $linkFactory, private readonly ConnectionPool $connectionPool) {}
 
     /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
      * @param array<mixed> $contentObjectConfiguration
      * @param array<mixed> $processorConfiguration
      * @param array<mixed> $processedData
@@ -98,7 +101,7 @@ class TargetPageDateProcessor implements DataProcessorInterface
             $this->addPageUidCacheTag($pageUid);
         }
 
-        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder = $this->connectionPool->getQueryBuilderForTable('pages');
 
         $result = $queryBuilder
             ->select('*')

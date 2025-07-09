@@ -30,7 +30,6 @@ use ITZBund\GsbCore\Resource\Rendering\GenericExternalAudioRenderer;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -154,15 +153,5 @@ defined('TYPO3') or die('Access denied.');
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
-
-    $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-    // Only include user.tsconfig if TYPO3 version is below 13 so that it is not imported twice.
-    if ($versionInformation->getMajorVersion() < 13) {
-        ExtensionManagementUtility::addUserTSConfig(
-            '@import "EXT:gsb_core/Configuration/user.tsconfig"'
-        );
-    }
-
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
-
 })();

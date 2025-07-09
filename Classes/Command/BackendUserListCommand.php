@@ -35,6 +35,9 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * List or delete backend users
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class BackendUserListCommand extends Command
 {
@@ -99,6 +102,10 @@ EOF
         }
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $filter = $this->sanitizeFilter($input->getOption('filter'));
