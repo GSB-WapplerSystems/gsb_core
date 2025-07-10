@@ -59,8 +59,6 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['100'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
-
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
         ExtensionManagementUtility::addTypoScriptSetup(trim('
