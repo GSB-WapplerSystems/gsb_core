@@ -49,10 +49,10 @@ Feature flags are configured in the `.env` or the `local-dev/.ddev/docker-compos
 
 ```plaintext
 # Feature flag for the specific tickets. Set them to true to activate the features.
-- TYPO3__SYS__features__ITZBUNDPHP-2877=%const(bool:true)%
+- TYPO3__SYS__features__ITZBUNDPHP-1234=%const(bool:true)%
 ```
 
-In this example, the feature flag `ITZBUNDPHP-2877` is set to `true`. To disable the feature, change the value to `false` or delete
+In this example, the feature flag `ITZBUNDPHP-1234` is set to `true`. To disable the feature, change the value to `false` or delete
 the setting.
 
 #### Feature Flag Truth Table
@@ -72,7 +72,6 @@ This table illustrates the behavior of feature flags in various states.
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
 | `ITZBUNDPHP-1996`      | Form emails have the `X-Request-Id` header added to their field output table                                                                                                                       |
-| `ITZBUNDPHP-2877`      | Enables general color management in the site module.<br />This sets the bootstrap colors `--bs-primary` `--bs-secondary` `--bs-tertiary` `--bs-quaternary`                                         |
 | `ITZBUNDPHP-3176`      | Enable Google Site Verification via SiteConfig                                                                                                                                                     |
 | `ITZBUNDPHP-3288`      | Enable i18n of logo, 2nd logo, initiative-text etc                                                                                                                                                 |
 | `ITZBUNDPHP-3327`      | Enable/Expose EXT:dpn_glossary in the TYPO3 backend                                                                                                                                                |
@@ -88,13 +87,13 @@ This table illustrates the behavior of feature flags in various states.
 To use a feature flag in your PHP code, you can check the flag's value in the global TYPO3 configuration. Here's an example:
 
 ```php
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2877')) {
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-1234')) {
     // Only if the feature flag is set to true the feature is activated
     // Feature-specific code goes here
 }
 ```
 
-In this example, the feature-specific code will only execute if the feature flag `ITZBUNDPHP-2877` is set to `true`.
+In this example, the feature-specific code will only execute if the feature flag `ITZBUNDPHP-1234` is set to `true`.
 
 ### Usage in Fluid Templates
 
@@ -107,12 +106,12 @@ You can also use feature flags in your Fluid templates with a custom ViewHelper.
 Then, use the `featureFlag` ViewHelper to conditionally render content based on the feature flag:
 
 ```html
-<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2877')}">
+<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1234')}">
     <!-- Feature-specific content goes here -->
 </f:if>
 ```
 
-In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-2877` is not set to `false`.
+In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-1234` is not set to `false`.
 
 ## Site package
 
