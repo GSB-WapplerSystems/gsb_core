@@ -109,22 +109,20 @@ defined('TYPO3') or die('Access denied.');
      */
     // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
-        $extVideoFileExtension = 'externalvideo';
+    $extVideoFileExtension = 'externalvideo';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
 
-        /** @var RendererRegistry $rendererRegistry */
-        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
-        $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
+    /** @var RendererRegistry $rendererRegistry */
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+    $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
 
-        /** @var IconRegistry $iconRegistry */
-        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-        $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
-    }
+    /** @var IconRegistry $iconRegistry */
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+    $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
 
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
         $extAudioFileExtension = 'externalaudio';
