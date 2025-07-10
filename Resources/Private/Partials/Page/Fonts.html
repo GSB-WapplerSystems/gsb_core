@@ -9,6 +9,7 @@
         -->
     </f:comment>
 
+    <f:if condition="{site.configuration.font-switch}">
     <f:if condition="{site.configuration.font-sans-name}">
         <f:asset.css identifier="rootVarSansCss" priority="1">
                 :root { --bs-font-sans-serif: {site.configuration.font-sans-name}; --bs-font-monospace: {site.configuration.font-sans-name}; }
@@ -39,6 +40,7 @@
     </f:if>
     <f:if condition="{site.configuration.font-serif-italic)}">
         <f:render section="fontFace" arguments="{id: 'fontSerifItalicCss', fontName: site.configuration.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-serif-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
+    </f:if>
     </f:if>
 
     <f:section name="fontFace">
