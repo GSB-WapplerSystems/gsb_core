@@ -73,7 +73,6 @@ This table illustrates the behavior of feature flags in various states.
 | `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
 | `ITZBUNDPHP-1996`      | Form emails have the `X-Request-Id` header added to their field output table                                                                                                                       |
 | `ITZBUNDPHP-3288`      | Enable i18n of logo, 2nd logo, initiative-text etc                                                                                                                                                 |
-| `ITZBUNDPHP-4326`      | Background image for container elements, with optional parallax effect                                                                                                                             |
 | `ITZBUNDPHP-4329`      | Activates the option to replace the platform's fonts with your own font faces.                                                                                                                     |
 | `ITZBUNDPHP-4469`      | Custom mail texts for emails generated from EXT:form                                                                                                                                               |
 
