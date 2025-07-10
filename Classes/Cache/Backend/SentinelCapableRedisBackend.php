@@ -89,7 +89,7 @@ class SentinelCapableRedisBackend extends RedisBackend
             return new RedisEndpoint(
                 $this->hostname,
                 $this->port,
-                $this->connectionTimeout,
+                (float)$this->connectionTimeout,
                 $this->persistentConnection ? (string)$this->database : null
             );
         }
@@ -114,7 +114,7 @@ class SentinelCapableRedisBackend extends RedisBackend
         return new RedisEndpoint(
             (string)$sentinelMaster[0]['ip'],
             (int)$sentinelMaster[0]['port'],
-            $this->connectionTimeout,
+            (float)$this->connectionTimeout,
             $this->persistentConnection ? (string)$this->database : null
         );
     }

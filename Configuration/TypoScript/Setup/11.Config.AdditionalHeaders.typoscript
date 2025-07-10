@@ -30,7 +30,7 @@ config.additionalHeaders {
 }
 
 [backend.user]
-config.additionalHeaders.20.header >
+  config.additionalHeaders.20.header >
 [global]
 
 [feature("crossOriginEmbedderPolicy")]

@@ -29,7 +29,6 @@ namespace ITZBund\GsbCore\Fluid\ViewHelpers;
 use Psr\Http\Message\RequestInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\Area;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -137,12 +136,12 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerTagAttribute('alt', 'string', 'Specifies an alternate text for an image', false);
-        $this->registerTagAttribute('ismap', 'string', 'Specifies an image as a server-side image-map. Rarely used. Look at usemap instead', false);
-        $this->registerTagAttribute('longdesc', 'string', 'Specifies the URL to a document that contains a long description of an image', false);
-        $this->registerTagAttribute('usemap', 'string', 'Specifies an image as a client-side image-map', false);
-        $this->registerTagAttribute('loading', 'string', 'Native lazy-loading for images property. Can be "lazy", "eager" or "auto"', false);
-        $this->registerTagAttribute('decoding', 'string', 'Provides an image decoding hint to the browser. Can be "sync", "async" or "auto"', false);
+        $this->registerArgument('alt', 'string', 'Specifies an alternate text for an image');
+        $this->registerArgument('ismap', 'string', 'Specifies an image as a server-side image-map. Rarely used. Look at usemap instead');
+        $this->registerArgument('longdesc', 'string', 'Specifies the URL to a document that contains a long description of an image');
+        $this->registerArgument('usemap', 'string', 'Specifies an image as a client-side image-map');
+        $this->registerArgument('loading', 'string', 'Native lazy-loading for images property. Can be "lazy", "eager" or "auto"');
+        $this->registerArgument('decoding', 'string', 'Provides an image decoding hint to the browser. Can be "sync", "async" or "auto"');
 
         $this->registerArgument('src', 'string', 'a path to a file, a combined FAL identifier or an uid (int). If $treatIdAsReference is set, the integer is considered the uid of the sys_file_reference record. If you already got a FAL object, consider using the $image parameter instead', false, '');
         $this->registerArgument('treatIdAsReference', 'bool', 'given src argument is a sys_file_reference record', false, false);
@@ -158,6 +157,16 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('maxWidth', 'int', 'maximum width of the image');
         $this->registerArgument('maxHeight', 'int', 'maximum height of the image');
         $this->registerArgument('absolute', 'bool', 'Force absolute URL', false, false);
+    }
+
+    private function addTagAttributeIfSet(string $attributeName)
+    {
+        /** @var string $argument */
+        $attributeValue = $this->arguments[$attributeName] ?? null;
+
+        if ($attributeValue) {
+            $this->tag->addAttribute($attributeName, $attributeValue);
+        }
     }
 
     public function render(): string
@@ -216,6 +225,14 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
             // thrown if file storage does not exist
             throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741914, $e);
         }
+
+        $this->addTagAttributeIfSet('alt');
+        $this->addTagAttributeIfSet('ismap');
+        $this->addTagAttributeIfSet('longdesc');
+        $this->addTagAttributeIfSet('usemap');
+        $this->addTagAttributeIfSet('loading');
+        $this->addTagAttributeIfSet('decoding');
+
         return $this->tag->render();
     }
 

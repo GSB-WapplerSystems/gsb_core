@@ -43,9 +43,11 @@ class OverrideVimeoHelper extends VimeoHelper
 
     /**
      * Get OEmbed data
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      *
      * @param string $mediaId
-     * @return array|null
+     * @return mixed[]|null
      */
     protected function getOEmbedData($mediaId): ?array
     {

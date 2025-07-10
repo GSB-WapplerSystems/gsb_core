@@ -50,10 +50,7 @@ class DecodeViewHelper extends AbstractViewHelper
 
     public function render()
     {
-        if ($this->arguments === ['']) {
-            return '';
-        }
-        $json = $this->arguments['json'];
+        $json = $this->arguments['json'] ?? null;
 
         if ($json === '' || $json === null) {
             return '';

@@ -28,13 +28,10 @@ namespace ITZBund\GsbCore\Fluid\ViewHelpers\Uri;
 
 use Psr\Http\Message\RequestInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 

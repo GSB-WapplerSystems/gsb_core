@@ -24,7 +24,7 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\DataTransferObject;
 
-readonly final class RedisEndpoint
+final readonly class RedisEndpoint
 {
     public function __construct(
         private string $host,
