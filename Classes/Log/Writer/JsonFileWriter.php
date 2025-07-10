@@ -44,8 +44,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class JsonFileWriter extends FileWriter
 {
-    protected static array $logFileHandles = [];
-
     /**
      * Writes the log record
      * @phpstan-ignore-next-line
@@ -98,8 +96,16 @@ class JsonFileWriter extends FileWriter
 
         error_reporting($oldReporting);
 
+        /** @phpstan-ignore-next-line */
         if (fwrite(self::$logFileHandles[$this->logFile], $jsonString . LF) === false) {
-            $this->getBackendUser()->writelog(SystemLogType::ERROR, SystemLogAction::UNDEFINED, SystemLogErrorClassification::USER_ERROR, 0, 'Could not write log record to log file', $safePayload);
+            $this->getBackendUser()->writelog(
+                SystemLogType::ERROR,
+                SystemLogAction::UNDEFINED,
+                SystemLogErrorClassification::USER_ERROR,
+                null,
+                'Could not write log record to log file',
+                $safePayload
+            );
         }
 
         return $this;
@@ -107,7 +113,6 @@ class JsonFileWriter extends FileWriter
 
     protected function getSerializer(): Serializer
     {
-        /** @var Serializer $serializer */
         return GeneralUtility::makeInstance(Serializer::class, [new ObjectNormalizer()], [new JsonEncoder()]);
     }
 
