@@ -122,22 +122,20 @@ defined('TYPO3') or die('Access denied.');
     $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
     $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-        $extAudioFileExtension = 'externalaudio';
+    $extAudioFileExtension = 'externalaudio';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
 
-        /** @var RendererRegistry $rendererRegistry */
-        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
-        $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
+    /** @var RendererRegistry $rendererRegistry */
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+    $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
 
-        /** @var IconRegistry $iconRegistry */
-        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-        $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
-    }
+    /** @var IconRegistry $iconRegistry */
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+    $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
 
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
