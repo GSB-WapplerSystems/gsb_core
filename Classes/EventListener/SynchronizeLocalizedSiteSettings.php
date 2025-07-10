@@ -24,9 +24,7 @@ namespace ITZBund\GsbCore\EventListener;
 
 use ITZBund\GsbCore\Utility\ExtendSiteUtility;
 use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationBeforeWriteEvent;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Http\ServerRequest;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class SynchronizeLocalizedSiteSettings
 {
@@ -34,10 +32,6 @@ final class SynchronizeLocalizedSiteSettings
 
     public function __invoke(SiteConfigurationBeforeWriteEvent $event): void
     {
-        if (! GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3288')) {
-            return;
-        }
-
         $settings = $event->getConfiguration();
         $requestBody = is_array($this->getRequest()->getParsedBody()) ? $this->getRequest()->getParsedBody() : [];
         $controlFields = $requestBody['control']['active'] ?? [];
