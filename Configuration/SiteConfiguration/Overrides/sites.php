@@ -62,16 +62,14 @@ $GLOBALS['SiteConfiguration']['site']['columns']['copyright'] = [
     ],
 ];
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3176')) {
-    $GLOBALS['SiteConfiguration']['site']['columns']['google_site_verification'] = [
-        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification',
-        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification.description',
-        'config' => [
-            'type' => 'text',
-            'renderType' => 'input',
-        ],
-    ];
-}
+$GLOBALS['SiteConfiguration']['site']['columns']['google_site_verification'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.google_site_verification.description',
+    'config' => [
+        'type' => 'text',
+        'renderType' => 'input',
+    ],
+];
 
 // ITZBUNDPHP-2869 Logo Textmarke
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
@@ -297,7 +295,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
         ],
 ];
 
-//    ITZBUNDPHP-2877 Color: Generell
 $GLOBALS['SiteConfiguration']['site']['columns']['color_primary'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.label',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_primary.description',
