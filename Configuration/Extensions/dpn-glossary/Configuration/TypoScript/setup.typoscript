@@ -39,6 +39,3 @@ plugin {
     }
   }
 }
-
-plugin.tx_dpnglossary.settings.disableParser = 1
-module.tx_dpnglossary.settings.disableParser = 1
