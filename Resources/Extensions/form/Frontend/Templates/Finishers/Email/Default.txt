@@ -8,16 +8,9 @@
 <f:section name="Main">
 <f:spaceless>
 <f:variable name="requestIdHeader"><gsb:requestId /></f:variable>
-    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
-        <f:then>
 <formmailtext:renderMessage message="{message -> f:format.stripTags()}">
 <f:render section="StandardEmail" arguments="{_all}" />
 </formmailtext:renderMessage>
-        </f:then>
-        <f:else>
-<f:render section="StandardEmail" arguments="{_all}" />
-        </f:else>
-    </f:if>
 </f:spaceless></f:section>
 
 <f:section name="StandardEmail">
