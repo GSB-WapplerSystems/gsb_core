@@ -30,6 +30,12 @@ class CustomPageCategoryProcessor extends AbstractCategoryProcessor implements D
      * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      *
+     * @param ContentObjectRenderer $cObj
+     * @param mixed[] $contentObjectConfiguration
+     * @param mixed[] $processorConfiguration
+     * @param mixed[] $processedData
+     * @return mixed[]
+     *
      * @throws Exception
      */
     public function process(

@@ -26,7 +26,7 @@ MEGALINTER_CONTAINER_NAME 	= "${PROJECT_NAME}-megalinter-container"
 # COMPOSE
 DOCKER_ARGS			= DOCKER_USERNAME="${DOCKER_USERNAME}" DOCKER_UID="${DOCKER_UID}" DOCKER_GID="${DOCKER_GID}" PROJECT_NAME="${PROJECT_NAME}"
 DOCKER_COMPOSE		= DOCKER_USER="${DOCKER_USERNAME}" ${DOCKER_ARGS} docker compose -f Docker/Composer/docker-compose.yml
-DOCKER_MEGALINTER	= REPORT_OUTPUT_FOLDER="/var/www/html/Quality-Tools/megalinter-reports" PROJECT_NAME="${PROJECT_NAME}" docker compose -f Docker/Megalinter/docker-compose.yml
+DOCKER_MEGALINTER	= REPORT_OUTPUT_FOLDER=none  PROJECT_NAME="${PROJECT_NAME}" docker compose -f Docker/Megalinter/docker-compose.yml
 # COMPOSER CONTAINER
 CONTAINER_EXEC			= docker exec -it "${COMPOSER_CONTAINER_NAME}"
 MEGALINTER_EXEC			= docker exec -it "${MEGALINTER_CONTAINER_NAME}"
@@ -104,36 +104,11 @@ update:
 #run-linting: ## Execute all linting scripts except Megalinter
 .PHONY: run-linting
 run-linting:
-	@printf "\n$(BGC_CYAN)$(C_LIGHT_YELLOW)                                      $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   -------------------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   |  Running composer-normalize |    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   -------------------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)                                      $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) composer-normalize --no-print-directory
-	@printf "\n$(BGC_CYAN)$(C_LIGHT_YELLOW)                         $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   |  Running phpcs |    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)                         $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
-	@$(MAKE) phpcs --no-print-directory
-	@printf "\n$(BGC_CYAN)$(C_LIGHT_YELLOW)                         $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   |  Running phpmd |    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)                         $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
-	@$(MAKE) phpmd --no-print-directory
-	@printf "\n$(BGC_CYAN)$(C_LIGHT_YELLOW)                           $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   --------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   |  Running phpstan |    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   --------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)                           $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
-	@$(MAKE) phpstan --no-print-directory
-	@printf "\n$(BGC_CYAN)$(C_LIGHT_YELLOW)                                   $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ----------------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   |  Running typoscript-lint |    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)   ----------------------------    $(BGC_DEFAULT)\n"
-	@printf "$(BGC_CYAN)                                   $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) typoscript-lint  --no-print-directory
+	@$(MAKE) phpcs --no-print-directory
+	@$(MAKE) phpmd --no-print-directory
+	@$(MAKE) phpstan --no-print-directory
 
 #run-megalinter: ## Executes Megalinter
 .PHONY: run-megalinter
@@ -165,29 +140,59 @@ phpunit:
 #composer-normalize: ## Normalizes composer.json
 .PHONY: composer-normalize
 composer-normalize:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                                       $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    -------------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running composer-normalize |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    -------------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                                       $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${COMPOSER_NORMALIZE} --no-print-directory
 
 #composer-validate: ## Validate composer.json
 .PHONY: composer-validate
 composer-validate:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                                      $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running composer-validate |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                                      $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${COMPOSER_VALIDATE} --no-print-directory
 
 #phpcs: ## Analyze code with PHP Code Sniffer (TYPO3 Ruleset)
 .PHONY: phpcs
 phpcs:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                          $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running phpcs |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                          $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${PHP_CS_FIXER} --no-print-directory
 
 #phpmd: ## Analyze code with PHPMD
 .PHONY: phpmd
 phpmd:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                          $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running phpmd |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                          $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${PHP_MD} --no-print-directory
 
 #phpstan: ## Analyze code with PHPStan
 .PHONY: phpstan
 phpstan:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                            $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    --------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running phpstan |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    --------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                            $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${PHP_STAN} --no-print-directory
 
 #typoscript-lint: ## Lint TypoScript files
 .PHONY: typoscript-lint
 typoscript-lint:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                                    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ----------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running typoscript-lint |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    ----------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                                    $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
 	@$(MAKE) container exec=${TYPOSCRIPT_LINT} --no-print-directory

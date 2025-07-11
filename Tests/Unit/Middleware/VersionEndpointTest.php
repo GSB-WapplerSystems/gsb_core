@@ -22,6 +22,13 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class VersionEndpointTest extends UnitTestCase
 {
+    /**
+     * @param string $path
+     * @param string $method
+     * @param string[][] $versionUtilityReturn
+     * @param string $streamReturn
+     * @param bool $equals
+     */
     #[Test]
     #[DataProvider('processDataProvider')]
     #[TestDox('Return a Response containing a Stream with Version data $_dataName')]
@@ -38,6 +45,7 @@ class VersionEndpointTest extends UnitTestCase
         /** Response **/
         $responseMock = $this->createResponseMock($streamReturn);
         /** ServerRequest **/
+        /** @var ServerRequestInterface $serverRequestMock */
         $serverRequestMock = $this->createServerRequestMock($path, $method);
 
         /** RequestHandler **/
@@ -64,10 +72,11 @@ class VersionEndpointTest extends UnitTestCase
             ->method('getVersions')
             ->willReturn($versionUtilityReturn);
 
+        $subject = new VersionEndpoint($responseFactoryMock, $environmentVersionsUtilityMock);
+
         /*#######
         ## Act ##
         #######*/
-        $subject = new VersionEndpoint($responseFactoryMock, $environmentVersionsUtilityMock);
         $assert = $subject->process($serverRequestMock, $requestHandlerMock);
 
         /*##########
@@ -121,7 +130,7 @@ class VersionEndpointTest extends UnitTestCase
         ];
     }
 
-    protected function createResponseMock($streamReturn): MockObject|ResponseInterface
+    protected function createResponseMock(string $streamReturn): MockObject|ResponseInterface
     {
         /** Stream **/
         $streamMock = $this->getMockBuilder(StreamInterface::class)
@@ -144,7 +153,7 @@ class VersionEndpointTest extends UnitTestCase
         return $responseMock;
     }
 
-    protected function createServerRequestMock($path, $method): MockObject|ServerRequestInterface
+    protected function createServerRequestMock(string $path, string $method): MockObject|ServerRequestInterface
     {
         /** Uri **/
         $uriMock = $this->getMockBuilder(UriInterface::class)

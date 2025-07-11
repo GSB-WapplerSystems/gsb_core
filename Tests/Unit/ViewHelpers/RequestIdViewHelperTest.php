@@ -60,11 +60,11 @@ class RequestIdViewHelperTest extends UnitTestCase
         }
 
         $GLOBALS['TYPO3_REQUEST'] = $serverRequestMock;
+        $subject = new RequestIdViewHelper();
 
         /*#######
         ## Act ##
         #######*/
-        $subject = new RequestIdViewHelper();
         $assert = $subject->render();
 
         /*##########

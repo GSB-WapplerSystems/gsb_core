@@ -39,12 +39,16 @@ class SiteExtenderTest extends UnitTestCase
         $site = $this->getMockBuilder(Site::class)->disableOriginalConstructor()->getMock();
         $siteLanguage = $this->getMockBuilder(SiteLanguage::class)->disableOriginalConstructor()->getMock();
 
-        $request->expects(self::atLeast(2))->method('getAttribute')->willReturnCallback(function ($argument) use ($site, $siteLanguage) {
-            return match ($argument) {
-                'site' => $site,
-                'language' => $siteLanguage,
-            };
-        });
+        $request->expects(self::atLeast(2))
+            ->method('getAttribute')
+            ->willReturnCallback(
+                fn($argument) =>
+                    match ($argument) {
+                        'site' => $site,
+                        'language' => $siteLanguage,
+                        default => null,
+                    }
+            );
 
         $request->expects(self::once())->method('withAttribute');
 
@@ -54,6 +58,17 @@ class SiteExtenderTest extends UnitTestCase
         $siteUtilityMock->expects(self::once())->method('extendSiteWithLocalizationOverload')->with($site, $siteLanguage);
 
         $subject = new SiteExtender($siteUtilityMock);
+        $subject->process($request, $handler);
+    }
+
+    #[Test]
+    public function middlewareReturnsDirectlyWhenFeatureIsNotEnabled(): void
+    {
+        $request = $this->getMockBuilder(ServerRequest::class)->getMock();
+        $request->expects(self::never())->method('getAttribute');
+        $handler = $this->getMockBuilder(RequestHandler::class)->disableOriginalConstructor()->getMock();
+
+        $subject = new SiteExtender(new ExtendSiteUtility());
         $subject->process($request, $handler);
     }
 }

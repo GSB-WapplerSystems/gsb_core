@@ -159,9 +159,9 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('absolute', 'bool', 'Force absolute URL', false, false);
     }
 
-    private function addTagAttributeIfSet(string $attributeName)
+    private function addTagAttributeIfSet(string $attributeName): void
     {
-        /** @var string $argument */
+        /** @var string|null $attributeValue */
         $attributeValue = $this->arguments[$attributeName] ?? null;
 
         if ($attributeValue) {

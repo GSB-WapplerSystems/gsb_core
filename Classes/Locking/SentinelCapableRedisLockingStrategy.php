@@ -46,50 +46,35 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     public const DEFAULT_PRIORITY = 100;
 
-    /**
-     * @var \Redis
-     */
     private \Redis $backend;
 
     /**
-     * The locking subject (e.g. "pagesection")
-     * @var string
-     */
-    private string $subject;
-
-    /**
      * The name of the lock
-     * @var string
      */
     private string $name;
 
     /**
      * The name for the mutex lock
-     * @var string
      */
     private string $mutexName;
 
     /**
      * The value to store into Redis
-     *
-     * @var string
      */
     private string $value;
 
     /**
-     * @var bool TRUE if lock is acquired by this locker
+     * True if lock is acquired by this locker
      */
     private bool $isAcquired = false;
 
     /**
      * The max amount of time within the database for locking in seconds.
-     *
-     * @var int
      */
     private int $ttl = 30;
 
     /**
-     * @var array
+     * @var mixed[]
      */
     private array $configuration = [];
 
@@ -98,6 +83,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     public function __construct($subject)
     {
+        /** @var mixed[]|string $configuration */
         $configuration = $GLOBALS['TYPO3_CONF_VARS']['SYS']['locking'][self::class]['options'] ?? null;
         if (!is_array($configuration)) {
             throw new LockCreateException(
@@ -126,7 +112,6 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         }
 
         $redisKeyPrefix = sha1($GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] . '_REDIS_LOCKING');
-        $this->subject = $subject;
         $this->name = sprintf('%s:lock:name:%s', $redisKeyPrefix, $subject);
         $this->mutexName = sprintf('%s:lock:mutex:%s', $redisKeyPrefix, $subject);
         $this->value = uniqid();
@@ -243,6 +228,8 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
 
     /**
      * @inheritdoc
+     *
+     * @phpstan-ignore-next-line
      */
     public function destroy()
     {
@@ -264,13 +251,13 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     private function getRedisEndpoint(): RedisEndpoint
     {
-        $timeout = (float)$this->configuration['connectionTimeout'] ?? 0.0;
-        $persistentId = (string)$this->configuration['database'] ?? '0';
+        $timeout = (float)($this->configuration['connectionTimeout'] ?? 0.0);
+        $persistentId = (string)($this->configuration['database'] ?? '0');
 
         if (!array_key_exists('isSentinel', $this->configuration) || !$this->configuration['isSentinel']) {
             return new RedisEndpoint(
-                (string)$this->configuration['hostname'] ?? '127.0.0.1',
-                (int)$this->configuration['port'] ?? 6379,
+                (string)($this->configuration['hostname'] ?? '127.0.0.1'),
+                (int)($this->configuration['port'] ?? 6379),
                 $timeout,
                 $persistentId
             );
@@ -287,8 +274,8 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
             $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
         }
 
-        $redisSentinel = new \RedisSentinel($sentinelConfig);
-        $sentinelMaster = $redisSentinel->masters();
+        /** @phpstan-ignore-next-line */
+        $sentinelMaster = (new \RedisSentinel($sentinelConfig))->masters();
 
         if ($sentinelMaster === false) {
             throw new \Exception('Could not get master from sentinel.', 1279765134);
@@ -349,7 +336,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
             }
             return $result;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not lock in redis', [
+            $this->logger?->critical('Could not lock in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -374,7 +361,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
 
             return is_array($result) ? $result[1] : false;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not wait in redis', [
+            $this->logger?->critical('Could not wait in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -402,7 +389,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         ';
             return (bool)$this->backend->eval($script, [$this->name, $this->mutexName, $this->value, $this->ttl], 2);
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not unlock and signal in redis', [
+            $this->logger?->critical('Could not unlock and signal in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);

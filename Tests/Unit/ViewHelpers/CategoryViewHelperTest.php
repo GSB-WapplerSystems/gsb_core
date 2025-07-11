@@ -50,6 +50,7 @@ class CategoryViewHelperTest extends UnitTestCase
         $categoryRepositoryMock
             ->method('findByUid')
             ->willReturn($this->category);
+
         GeneralUtility::setSingletonInstance(CategoryRepository::class, $categoryRepositoryMock);
     }
 
@@ -66,11 +67,11 @@ class CategoryViewHelperTest extends UnitTestCase
 
         /** RenderingContext **/
         $renderingContext = new RenderingContext();
+        $viewHelper = new CategoryViewHelper($persistenceManagerMock);
 
         /*#######
         ## Act ##
         #######*/
-        $viewHelper = new CategoryViewHelper($persistenceManagerMock);
         $viewHelper->setRenderingContext($renderingContext);
         $viewHelper->initializeArguments();
         $viewHelper->setArguments(['category' => 1, 'as' => 'catVariable']);

@@ -48,6 +48,12 @@ class TrademarkViewHelperTest extends UnitTestCase
         );
     }
 
+    /**
+     * @param callable $callable
+     * @param GetTrademarkLogoEvent|GetTrademarkTextEvent $event
+     * @param string $argumentType
+     * @param string $expectedResult
+     */
     #[Test]
     #[DataProvider('callables')]
     #[TestDox('Dispatches the event $_dataName and changes it`s value from "" to "$expectedResult"')]
@@ -68,10 +74,11 @@ class TrademarkViewHelperTest extends UnitTestCase
                 yield $callable;
             });
 
+        $trademarkViewHelper = new TrademarkViewHelper($this->eventDispatcher);
+
         /*#######
         ## Act ##
         #######*/
-        $trademarkViewHelper = new TrademarkViewHelper($this->eventDispatcher);
         $trademarkViewHelper->initializeArguments();
         $trademarkViewHelper->setArguments(['type' => $argumentType]);
         $assert = $trademarkViewHelper->render();

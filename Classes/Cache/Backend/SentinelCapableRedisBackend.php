@@ -105,6 +105,7 @@ class SentinelCapableRedisBackend extends RedisBackend
             $sentinelConfig['auth'] = $this->sentinelPassword;
         }
 
+        /** @phpstan-ignore-next-line */
         $sentinelMaster = (new \RedisSentinel($sentinelConfig))->masters();
 
         if ($sentinelMaster === false) {
@@ -222,7 +223,7 @@ class SentinelCapableRedisBackend extends RedisBackend
      * Scales O(n) with number of tag entries
      *
      * @param string $tag The tag to search for
-     * @return array An array of entries with all matching entries. An empty array if no entries matched
+     * @return mixed[] An array of entries with all matching entries. An empty array if no entries matched
      */
     public function findIdentifiersByTag($tag): array
     {
@@ -242,7 +243,7 @@ class SentinelCapableRedisBackend extends RedisBackend
      *
      * @param string $entryIdentifier Identifier for this specific cache entry
      * @param string $data Data to be stored
-     * @param array $tags Tags to associate with this cache entry
+     * @param mixed[] $tags Tags to associate with this cache entry
      * @param int $lifetime Lifetime of this cache entry in seconds. If NULL is specified, default lifetime is used. "0" means unlimited lifetime.
      */
     public function set($entryIdentifier, $data, array $tags = [], $lifetime = null): void

@@ -10,6 +10,7 @@ use ITZBund\GsbCore\ViewHelpers\FeatureFlagViewHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
+use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 
@@ -18,28 +19,32 @@ class FeatureFlagViewHelperTest extends UnitTestCase
     #[Test]
     #[DataProvider('featureFlagViewHelperDataProvider')]
     #[TestDox('Render method returns string "$expectedResult", when checking for feature "$featureKey" and it $_dataName')]
-    public function renderStaticReturnsString(string $featureKey, bool $featureEnabled, bool $featureExists, string $expectedResult)
+    public function renderStaticReturnsString(string $featureKey, bool $featureEnabled, string $expectedResult): void
     {
         /*###########
         ## Arrange ##
         ###########*/
-        if ($featureExists) {
-            $GLOBALS['TYPO3_CONF_VARS']['SYS']['features'][$featureKey] = $featureEnabled;
-        }
+        /** Features **/
+        $featuresMock = $this->getMockBuilder(Features::class)
+            ->getMock();
+        $featuresMock
+            ->method('isFeatureEnabled')
+            ->willReturn($featureEnabled);
 
         /** RenderingContext **/
         $renderingContextMock = $this->getMockBuilder(RenderingContextInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
 
+        $featureFlagViewHelper = new FeatureFlagViewHelper($featuresMock);
+
         /*#######
         ## Act ##
         #######*/
-        $assert = FeatureFlagViewHelper::renderStatic(
-            ['featureKey' => $featureKey],
-            function () {},
-            $renderingContextMock
-        );
+        $featureFlagViewHelper->setRenderingContext($renderingContextMock);
+        $featureFlagViewHelper->initializeArguments();
+        $featureFlagViewHelper->setArguments(['featureKey' => $featureKey]);
+        $assert = $featureFlagViewHelper->render();
 
         /*##########
         ## Assert ##
@@ -49,25 +54,15 @@ class FeatureFlagViewHelperTest extends UnitTestCase
 
     public static function featureFlagViewHelperDataProvider(): \Generator
     {
-        yield 'exists and is disabled' => [
+        yield 'is disabled' => [
             'existingFeature',
             false,
-            true,
             '0',
         ];
-
-        yield 'exists and is enabled' => [
+        yield 'is enabled' => [
             'existingFeature',
-            true,
             true,
             '1',
-        ];
-
-        yield 'does not exist' => [
-            'nonExistingFeature',
-            false,
-            false,
-            '0',
         ];
     }
 }

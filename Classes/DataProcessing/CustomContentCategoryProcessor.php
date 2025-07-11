@@ -33,6 +33,9 @@ class CustomContentCategoryProcessor extends AbstractCategoryProcessor implement
      * @param array<mixed,mixed> $contentObjectConfiguration
      * @param array<mixed,mixed> $processorConfiguration
      * @param array<mixed,mixed> $processedData
+     *
+     * @return mixed[]
+     *
      * @throws Exception
      */
     public function process(

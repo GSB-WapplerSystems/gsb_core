@@ -179,7 +179,9 @@ EOF
 
     /**
      * @param array<mixed,mixed> $filter
+     *
      * @return array<string,string>
+     *
      * @throws \UnexpectedValueException
      * @throws Exception
      * @throws \InvalidArgumentException
@@ -193,7 +195,7 @@ EOF
         $returnFilter = [];
         foreach ($filter as $filterLine) {
             $split = explode('=', $filterLine);
-            $field = $split[0] ?? null;
+            $field = !empty($split[0]) ? $split[0] : null;
             $value = $split[1] ?? null;
             if ($field !== null && $value !== null && $field !== 'password') {
                 if ($tableDetails->hasColumn($field)) {

@@ -39,8 +39,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class ConfigurationImportCommand extends Command
 {
-    private \TYPO3\CMS\Core\Package\PackageManager $packageManager;
-    private \TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader $yamlFileLoader;
+    private PackageManager $packageManager;
+    private YamlFileLoader $yamlFileLoader;
 
     public function __construct(PackageManager $packageManager, YamlFileLoader $yamlFileLoader)
     {
@@ -104,6 +104,13 @@ class ConfigurationImportCommand extends Command
         return '';
     }
 
+    /**
+     * @param string $table
+     * @param mixed[] $config
+     * @param OutputInterface $output
+     *
+     * @throws \Doctrine\DBAL\Exception
+     */
     private function importTables(string $table, array $config, OutputInterface $output): void
     {
         $mode = $config['mode'] ?? 'append';

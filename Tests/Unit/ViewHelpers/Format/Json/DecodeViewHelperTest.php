@@ -7,55 +7,78 @@
 namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers\Format\Json;
 
 use ITZBund\GsbCore\ViewHelpers\Format\Json\DecodeViewHelper;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestDox;
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class DecodeViewHelperTest extends UnitTestCase
 {
     #[Test]
-    public function viewHelperReturnsNullForEmptyArguments()
-    {
-        $renderingContext = $this->getRenderingContextMock();
+    #[DataProvider('callables')]
+    #[TestDox('Render method $_dataName')]
+    public function renderReturnsDecodedJson(
+        string $encodedJson,
+        bool $expectError,
+        mixed $expectedResult,
+    ): void {
+        /*###########
+        ## Arrange ##
+        ###########*/
+        /** RenderingContext **/
+        $renderingContextMock = $this->getMockBuilder(RenderingContext::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
-        $result = DecodeViewHelper::renderStatic([''], function () {}, $renderingContext);
-        self::assertEquals('', $result);
-        $result = DecodeViewHelper::renderStatic(['json' => ''], function () {}, $renderingContext);
-        self::assertEquals('', $result);
+        $decodeViewHelper = new DecodeViewHelper();
+
+        /*#######
+        ## Act ##
+        #######*/
+        $decodeViewHelper->setRenderingContext($renderingContextMock);
+        $decodeViewHelper->initializeArguments();
+        $decodeViewHelper->setArguments(['json' => $encodedJson]);
+
+        /*##########
+        ## Assert ##
+        ##########*/
+        if ($expectError) {
+            self::expectException(\Exception::class);
+            self::expectExceptionCode(1358440054);
+        }
+
+        $assert = $decodeViewHelper->render();
+
+        self::assertEquals($expectedResult, $assert);
     }
 
-    #[Test]
-    public function viewHelperReturnsExpectedValueForProvidedArguments()
+    public static function callables(): \Generator
     {
-        $fixture = '{"foo":"bar","bar":true,"baz":1,"foobar":null}';
-
-        $expected = [
-            'foo' => 'bar',
-            'bar' => true,
-            'baz' => 1,
-            'foobar' => null,
+        yield 'returns valid array from encoded JSON string \'$encodedJson\'.' => [
+            '{"foo":"bar","bar":true,"baz":1,"foobar":null}',
+            false,
+            ['foo' => 'bar', 'bar' => true, 'baz' => 1, 'foobar' => null],
         ];
-        $renderingContext = $this->getRenderingContextMock();
-
-        $result = DecodeViewHelper::renderStatic(['json' => $fixture], function () {}, $renderingContext);
-        self::assertEquals($expected, $result);
-    }
-
-    #[Test]
-    public function viewHelperThrowsExceptionForInvalidArgument()
-    {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionCode(1358440054);
-
-        $invalidJson = "{'foo': 'bar'}";
-
-        $renderingContext = $this->getRenderingContextMock();
-
-        DecodeViewHelper::renderStatic(['json' => $invalidJson], function () {}, $renderingContext);
-    }
-
-    public function getRenderingContextMock(): RenderingContext
-    {
-        return $this->getMockBuilder(RenderingContext::class)->disableOriginalConstructor()->getMock();
+        yield 'returns empty array from encoded empty JSON string \'$encodedJson\'.' => [
+            '{}',
+            false,
+            [],
+        ];
+        yield 'returns empty string string from encoded empty string \'\'.' => [
+            '',
+            false,
+            '',
+        ];
+        yield 'throws exception from invalid encoded JSON string \'$encodedJson\'.' => [
+            '{"foo":"\xB1","bar":true,"baz":1,"foobar":null}',
+            true,
+            null,
+        ];
+        yield 'throws exception from invalid encoded JSON string "$encodedJson".' => [
+            "{'foo': 'bar'}",
+            true,
+            null,
+        ];
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 // SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
@@ -27,6 +27,7 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Fluid\ViewHelpers\Uri;
 
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -148,7 +149,7 @@ final class ImageViewHelper extends AbstractViewHelper
     {
         $result = '';
         try {
-            $result = $this->originalRender($this->arguments, $this->renderChildren());
+            $result = $this->originalRender();
         } catch (\Exception $e) {
             /* @var \TYPO3\CMS\Core\Http\ServerRequest $request */
             $request = $GLOBALS['TYPO3_REQUEST'] ?? null;
@@ -172,7 +173,7 @@ final class ImageViewHelper extends AbstractViewHelper
                 (bool)$this->arguments['treatIdAsReference']
             );
 
-            $cropVariantCollection = $this->createCropVariantCollection();
+            $cropVariantCollection = $this->createCropVariantCollection($image);
             $cropVariant = $this->arguments['cropVariant'] ?: 'default';
             $cropArea = $cropVariantCollection->getCropArea($cropVariant);
             $processingInstructions = [
@@ -218,7 +219,11 @@ final class ImageViewHelper extends AbstractViewHelper
 
     protected function getExceptionMessage(string $detailedMessage): string
     {
-        $request = $this->renderingContext->getRequest();
+        $request = null;
+
+        if (!$this->renderingContext->hasAttribute(ServerRequestInterface::class)) {
+            $request = $this->renderingContext->getAttribute(ServerRequestInterface::class);
+        }
 
         if ($request instanceof RequestInterface) {
             $currentContentObject = $request->getAttribute('currentContentObject');

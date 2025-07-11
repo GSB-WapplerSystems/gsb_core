@@ -22,6 +22,8 @@ class GsbVersionViewHelperTest extends UnitTestCase
         /*###########
         ## Arrange ##
         ###########*/
+        $gsbVersionViewHelper = new GsbVersionViewHelper();
+
         if ($customEnvValue) {
             putenv('GSB_VERSION=' . $expectedResult);
         }
@@ -29,7 +31,6 @@ class GsbVersionViewHelperTest extends UnitTestCase
         /*#######
         ## Act ##
         #######*/
-        $gsbVersionViewHelper = new GsbVersionViewHelper();
         $assert = $gsbVersionViewHelper->initializeArgumentsAndRender();
 
         /*##########

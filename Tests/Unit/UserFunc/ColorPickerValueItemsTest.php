@@ -15,23 +15,25 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class ColorPickerValueItemsTest extends UnitTestCase
 {
-    protected ?ColorPickerValueItems $subject = null;
+    protected ColorPickerValueItems $subject;
 
     public function setUp(): void
     {
         parent::setUp();
 
-        $colorPickerValueItemsMock = $this->getMockBuilder(ColorPickerValueItems::class)->onlyMethods(['getLanguageService'])->getMock();
-        $languageServiceMock = $this->getMockBuilder(LanguageService::class)->disableOriginalConstructor()->getMock();
+        $this->subject = $this->getMockBuilder(ColorPickerValueItems::class)
+            ->onlyMethods(['getLanguageService'])
+            ->getMock();
+        $languageServiceMock = $this->getMockBuilder(LanguageService::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $languageServiceMock->method('sL')->withAnyParameters()->willReturn('TRANSLATED_DUMMY_STRING');
-        $colorPickerValueItemsMock->method('getLanguageService')->willReturn($languageServiceMock);
-
-        $this->subject = $colorPickerValueItemsMock;
+        $this->subject->method('getLanguageService')->willReturn($languageServiceMock);
     }
 
     #[Test]
-    public function getItemsDoesNotAddItemsToConfigIfSiteDoesNotExist()
+    public function getItemsDoesNotAddItemsToConfigIfSiteDoesNotExist(): void
     {
         $config = [
             'site' => new \stdClass(),
@@ -42,9 +44,13 @@ class ColorPickerValueItemsTest extends UnitTestCase
         self::assertEquals(['site' => $config['site'], 'items' => []], $config);
     }
 
+    /**
+     * @param string[] $configuration
+     * @param string[] $expectedValues
+     */
     #[Test]
     #[DataProvider('siteConfigurationDataForColorPickerValueItems')]
-    public function getItemsCorrectlyBuildsItemsArrayFromConfigurationWithValuesAsLabels($configuration, $expectedValues)
+    public function getItemsCorrectlyBuildsItemsArrayFromConfigurationWithValuesAsLabels(array $configuration, array $expectedValues): void
     {
         $site = $this->getMockBuilder(Site::class)->disableOriginalConstructor()->getMock();
         $site->method('getConfiguration')->willReturn($configuration);
@@ -100,6 +106,5 @@ class ColorPickerValueItemsTest extends UnitTestCase
                 ['color 3 label', 'color_3'],
             ],
         ];
-
     }
 }

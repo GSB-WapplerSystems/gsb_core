@@ -8,4 +8,4 @@ parameters:
 		- Tests/
 	excludePaths:
 		- '*Tests/Fixtures/*'
-		- '*Tests/UnitTestBootstrap.php'
+		- '*Tests/UnitTestsBootstrap.php'
