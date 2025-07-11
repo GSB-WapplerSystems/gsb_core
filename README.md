@@ -71,7 +71,6 @@ This table illustrates the behavior of feature flags in various states.
 | Feature flag           | Description                                                                                                                                                                                        |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
-| `ITZBUNDPHP-4458`      | Enables the search results to be displayed in tile view                                                                                                                                            |
 
 ### Usage in PHP Code
 
