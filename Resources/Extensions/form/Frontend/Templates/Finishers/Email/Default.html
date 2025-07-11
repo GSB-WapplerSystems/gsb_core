@@ -7,16 +7,9 @@
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
     <f:variable name="requestIdHeader"><gsb:requestId /></f:variable>
-    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
-        <f:then>
-            <formmailtext:renderMessage message="{message -> f:format.html()}">
-                <f:render section="tablebasedStandardMailText" arguments="{_all}" />
-            </formmailtext:renderMessage>
-        </f:then>
-        <f:else>
-            <f:render section="tablebasedStandardMailText" arguments="{_all}" />
-        </f:else>
-    </f:if>
+    <formmailtext:renderMessage message="{message -> f:format.html()}">
+        <f:render section="tablebasedStandardMailText" arguments="{_all}" />
+    </formmailtext:renderMessage>
 </f:section>
 
 <f:section name="tablebasedStandardMailText">
