@@ -23,10 +23,10 @@ plugin {
               typolink {
                 parameter < plugin.tx_dpnglossary.settings.detailPage
                 returnLast = url
-                additionalParams = &tx_dpnglossary_glossary[action]=list&tx_dpnglossary_glossary[controller]=Term&tx_dpnglossary_glossary[character]=
+                additionalParams = &tx_dpnglossary_glossary[action]=list&tx_dpnglossary_glossary[controller]=Term&tx_dpnglossary_glossary[currentCharacter]=
                 additionalParams.stdWrap.append = TEXT
                 additionalParams.stdWrap.append {
-                  field = name
+                  field = url_segment
                   substring = 0,1
                   case = upper
                 }

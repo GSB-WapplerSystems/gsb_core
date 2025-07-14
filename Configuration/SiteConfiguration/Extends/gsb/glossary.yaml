@@ -13,63 +13,11 @@ routeEnhancers:
       character: ''
     aspects:
       character:
-        type: StaticValueMapper
-        map:
-          A: A
-          B: B
-          C: C
-          D: D
-          E: E
-          F: F
-          G: G
-          H: H
-          I: I
-          J: J
-          K: K
-          L: L
-          M: M
-          N: N
-          O: O
-          P: P
-          Q: Q
-          R: R
-          S: S
-          T: T
-          U: U
-          V: V
-          W: W
-          X: X
-          Y: Y
-          Z: Z
-          Ä: A
-          Ö: O
-          Ü: U
-          a: A
-          b: B
-          c: C
-          d: D
-          e: E
-          f: F
-          g: G
-          h: H
-          i: I
-          j: J
-          k: K
-          l: L
-          m: M
-          n: N
-          o: O
-          p: P
-          q: Q
-          r: R
-          s: S
-          t: T
-          u: U
-          v: V
-          w: W
-          x: X
-          y: Y
-          z: Z
-          ä: A
-          ö: O
-          ü: U
+        type: StaticMultiRangeMapper
+        ranges:
+          - start: 'A'
+            end: 'Z'
+            special: [ Ä,Ö,Ü ]
+          - start: 'a'
+            end: 'z'
+            special: [ ä,ö,ü ]
