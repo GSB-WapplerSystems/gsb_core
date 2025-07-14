@@ -323,6 +323,26 @@
 				<source>Video (File)</source>
 				<target>Video (Datei)</target>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_videodescription" resname="tt_content.tx_video_a11y_videodescription" approved="yes">
+				<source>Videodescription (File)</source>
+				<target>Video Gebärdensprache (Datei)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audiodescription" resname="tt_content.tx_video_a11y_audiodescription" approved="yes">
+				<source>Audiodescription (File)</source>
+				<target>Audiodescription (Datei)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover" resname="tt_content.tx_video_a11y_audio_voiceover" approved="yes">
+				<source>Set audiodescription as voiceover</source>#
+				<target>Audiodescription als Voiceover (Datei)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.checked" resname="tt_content.tx_video_a11y_audio_voiceover.checked" approved="yes">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.unchecked" resname="tt_content.tx_video_a11y_audio_voiceover.unchecked" approved="yes">
+				<source>No</source>
+				<target>Nein</target>
+			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video" approved="yes">
 				<source>Multimedia</source>
 				<target>Multimedia</target>

@@ -61,6 +61,83 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_video',
             ],
+        'tx_video_a11y_videodescription' =>
+            [
+                'config' =>
+                    [
+                        'type' => 'file',
+                        'allowed' => 'mp4,webm,ogg',
+                        'maxitems' => 1,
+                        'minitems' => 0,
+                        'overrideChildTca' => [
+                            'columns' => [
+                                'description' => [
+                                    'config' => [
+                                        'type' => 'passthrough',
+                                    ],
+                                ],
+                                'title' => [
+                                    'config' =>
+                                        [
+                                            'eval' => 'trim',
+                                            'type' => 'input',
+                                        ],
+                                ],
+                                'autoplay' => [
+                                    'config' => [
+                                        'renderType' => 'passthrough',
+                                        'type' => 'passthrough',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                'exclude' => '1',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_videodescription',
+            ],
+            'tx_video_a11y_audiodescription' =>
+                [
+                    'config' =>
+                        [
+                            'type' => 'file',
+                            'allowed' => 'mp3,wav,externalaudio',
+                            'maxitems' => 1,
+                            'minitems' => 0,
+                            'overrideChildTca' => [
+                                'columns' => [
+                                    'description' => [
+                                        'config' => [
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                    'autoplay' => [
+                                        'config' => [
+                                            'renderType' => 'passthrough',
+                                            'type' => 'passthrough',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    'exclude' => '1',
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
+                ],
+        'tx_video_a11y_audio_voiceover' => [
+            'exclude' => '0',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
+                        'labelChecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription.checked',
+                        'labelUnchecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription.unchecked',
+                    ],
+                ],
+                'default' => '0',
+            ],
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
+        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
@@ -68,6 +145,9 @@ defined('TYPO3') || die();
     $videoPalettes = [
         'video_config' => [
             'showitem' => 'tx_video_video,--linebreak--,imageorient,--linebreak--,image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
+        ],
+        'a11y_config' => [
+            'showitem' => 'tx_video_a11y_videodescription,--linebreak--,tx_video_a11y_audiodescription,--linebreak--,tx_video_a11y_audio_voiceover',
         ],
     ];
 
@@ -143,7 +223,7 @@ defined('TYPO3') || die();
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
                         --palette--;;header_config,subheader,bodytext,
                     --div--;Video,
-                        --palette--;;video_config,
+                        --palette--;;video_config, --palette--;;a11y_config,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                         --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
