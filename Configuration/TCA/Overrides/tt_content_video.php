@@ -122,22 +122,6 @@ defined('TYPO3') || die();
                     'exclude' => '1',
                     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
                 ],
-        'tx_video_a11y_audio_voiceover' => [
-            'exclude' => '0',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
-                        'labelChecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription.checked',
-                        'labelUnchecked' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription.unchecked',
-                    ],
-                ],
-                'default' => '0',
-            ],
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
-        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
@@ -147,7 +131,7 @@ defined('TYPO3') || die();
             'showitem' => 'tx_video_video,--linebreak--,imageorient,--linebreak--,image,--linebreak--,tx_video_caption', 'canNotCollapse' => 1,
         ],
         'a11y_config' => [
-            'showitem' => 'tx_video_a11y_videodescription,--linebreak--,tx_video_a11y_audiodescription,--linebreak--,tx_video_a11y_audio_voiceover',
+            'showitem' => 'tx_video_a11y_videodescription,--linebreak--,tx_video_a11y_audiodescription',
         ],
     ];
 

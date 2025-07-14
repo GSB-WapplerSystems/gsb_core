@@ -75,7 +75,6 @@ CREATE TABLE tt_content
 	tx_video_videourl              tinytext,
 	tx_video_a11y_videodescription tinytext,
 	tx_video_a11y_audiodescription tinytext,
-	tx_video_a11y_audio_voiceover  int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_audio_poster                int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_audio_audio                 tinytext,
 	tx_stage_switch                tinyint(4)       DEFAULT '0' NOT NULL,
