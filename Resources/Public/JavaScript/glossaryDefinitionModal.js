@@ -11,9 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
       });
       el.addEventListener('click', function () {
-        document.getElementById('glossary-definition-modal-link').href = el.querySelector('a.dpnglossary').href || "#";
         document.getElementById('glossary-definition-modal-title').innerHTML = el.dataset.glossaryTitle || "";
         document.getElementById('glossary-definition-modal-body').innerHTML = el.dataset.glossaryText || "";
+        document.getElementById('glossary-definition-modal-link').setAttribute('href', el.querySelector('a.dpnglossary').getAttribute('href') || "#");
+        if (document.getElementById('glossary-definition-modal-link').getAttribute('href') == '#') {
+          document.getElementById('glossary-definition-modal-link').classList.add('d-none');
+        } else {
+          document.getElementById('glossary-definition-modal-link').classList.remove('d-none');
+        }
       });
     }
   });
