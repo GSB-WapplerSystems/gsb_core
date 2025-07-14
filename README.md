@@ -4,10 +4,10 @@ SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-<!-- PROJECT SHIELDS -->
-# [![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
-
 # GSB&nbsp;11 Extension gsb_core
+
+<!-- PROJECT SHIELDS -->
+[![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
 
 ## About
 
@@ -107,10 +107,10 @@ In this example, the content inside the `<f:if>` tag will always be rendered if 
 
 Site packages in `EXT:gsb_core` are alike to [sets in TYPO3 13+][typo3-13-sets-url].
 
-A package is available in the site configuration if it matches one of the following criteria:
+A package is available in the site configuration if it **matches one of the following criteria**:
 
-* it's extension key includes `gsb_core` or `site` AND does not include `impexp`
-* it includes the following configuration in it's `composer.json`:
+* it's extension key **includes** `gsb_core` or `site` **AND does not include** `impexp`
+* it **has** the following configuration in it's `composer.json`:
 
 ```json
     {
@@ -146,9 +146,13 @@ For infrastructure reasons this extension provides a version endpoint at `/api/v
 }
 ```
 
+This endpoint can be used to decide whether a cache flush might be necessary after a deployment (or: whether it's not - because the version hasn't changed).
+
 ### `/api/health`
 
 This extension provides a health endpoint at `/api/health` which returns a response without a body and status code 204.
+
+> ⚠️ **Warning**: on production systems you should restrict access to all `/api` paths from the outside to not expose critical system information.
 
 ## Contribute
 
