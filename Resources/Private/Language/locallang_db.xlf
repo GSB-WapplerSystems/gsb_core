@@ -258,9 +258,6 @@
 			<trans-unit id="tt_content.tx_video_a11y_audiodescription" resname="tt_content.tx_video_a11y_audiodescription">
 				<source>Audiodescription (File)</source>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover" resname="tt_content.tx_video_a11y_audio_voiceover">
-				<source>Set audiodescription as voiceover</source>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.checked" resname="tt_content.tx_video_a11y_audio_voiceover.checked">
 				<source>Yes</source>
 			</trans-unit>

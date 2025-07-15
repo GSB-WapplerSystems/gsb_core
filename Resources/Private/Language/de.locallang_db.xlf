@@ -331,10 +331,6 @@
 				<source>Audiodescription (File)</source>
 				<target>Audiodescription (Datei)</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover" resname="tt_content.tx_video_a11y_audio_voiceover" approved="yes">
-				<source>Set audiodescription as voiceover</source>#
-				<target>Audiodescription als Voiceover (Datei)</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.checked" resname="tt_content.tx_video_a11y_audio_voiceover.checked" approved="yes">
 				<source>Yes</source>
 				<target>Ja</target>

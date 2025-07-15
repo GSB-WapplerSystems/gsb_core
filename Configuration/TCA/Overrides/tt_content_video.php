@@ -95,33 +95,33 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_videodescription',
             ],
-            'tx_video_a11y_audiodescription' =>
-                [
-                    'config' =>
-                        [
-                            'type' => 'file',
-                            'allowed' => 'mp3,wav,externalaudio',
-                            'maxitems' => 1,
-                            'minitems' => 0,
-                            'overrideChildTca' => [
-                                'columns' => [
-                                    'description' => [
-                                        'config' => [
-                                            'type' => 'passthrough',
-                                        ],
+        'tx_video_a11y_audiodescription' =>
+            [
+                'config' =>
+                    [
+                        'type' => 'file',
+                        'allowed' => 'mp3,wav,externalaudio',
+                        'maxitems' => 1,
+                        'minitems' => 0,
+                        'overrideChildTca' => [
+                            'columns' => [
+                                'description' => [
+                                    'config' => [
+                                        'type' => 'passthrough',
                                     ],
-                                    'autoplay' => [
-                                        'config' => [
-                                            'renderType' => 'passthrough',
-                                            'type' => 'passthrough',
-                                        ],
+                                ],
+                                'autoplay' => [
+                                    'config' => [
+                                        'renderType' => 'passthrough',
+                                        'type' => 'passthrough',
                                     ],
                                 ],
                             ],
                         ],
-                    'exclude' => '1',
-                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
-                ],
+                    ],
+                'exclude' => '1',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_video_a11y_audiodescription',
+            ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempVideoColumns);
