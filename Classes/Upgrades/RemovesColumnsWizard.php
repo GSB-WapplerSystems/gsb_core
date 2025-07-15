@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
@@ -34,6 +33,10 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * More accurate database:updateschema --destructive
+ *
+ * Can be manually started with
+ *
+ * `typo3 upgrade:run gsbcore_removeColumnsWizard`
  */
 #[UpgradeWizard('gsbcore_removeColumnsWizard')]
 class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
@@ -53,10 +56,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      * @var OutputInterface
      */
     protected $output;
-
-    public function __construct(
-        private readonly Features $features,
-    ) {}
 
     /**
      * Returns the title of the upgrade wizard.
@@ -79,10 +78,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     public function executeUpdate(): bool
     {
-        if (! $this->features->isFeatureEnabled('ITZBUNDPHP-3944')) {
-            return false;
-        }
-
         $filteredTables = $this->filterByUpdateNeccessary(self::TABLES_AND_COLUMNS);
         foreach ($filteredTables as $table => $columns) {
             $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
@@ -99,10 +94,6 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     public function updateNecessary(): bool
     {
-        if (! $this->features->isFeatureEnabled('ITZBUNDPHP-3944')) {
-            return false;
-        }
-
         return count($this->filterByUpdateNeccessary(self::TABLES_AND_COLUMNS)) > 0;
     }
 

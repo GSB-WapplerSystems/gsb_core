@@ -6,9 +6,7 @@
 
 declare(strict_types=1);
 
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
@@ -180,19 +178,17 @@ defined('TYPO3') || die();
         ],
     ];
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
-        $categoryDateOverrides += [
-            'date_override_toggle' => [
-                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.label',
-                'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.description',
-                'config' => [
-                    'renderType' => 'checkboxToggle',
-                    'type' => 'check',
-                    'default' => 0,
-                ],
+    $categoryDateOverrides += [
+        'date_override_toggle' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.label',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.date_override_toggle.description',
+            'config' => [
+                'renderType' => 'checkboxToggle',
+                'type' => 'check',
+                'default' => 0,
             ],
-        ];
-    }
+        ],
+    ];
 
     ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
@@ -210,35 +206,31 @@ defined('TYPO3') || die();
         ],
     ];
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3969')) {
-        $palettes['main_category_override'] = [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.label',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.description',
-            'showitem' => implode(
-                ',',
-                [
-                    'main_category_overwrite_toggle',
-                    'main_category_overwrite',
-                ],
-            ),
-        ];
-    }
+    $palettes['main_category_override'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.main_category_override.description',
+        'showitem' => implode(
+            ',',
+            [
+                'main_category_overwrite_toggle',
+                'main_category_overwrite',
+            ],
+        ),
+    ];
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
-        $palettes['category_date_override'] = [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.label',
-            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.description',
-            'showitem' => implode(
-                ',',
-                [
-                    'header_kicker_toggle',
-                    'header_kicker',
-                    '--linebreak--',
-                    'date_override_toggle',
-                ],
-            ),
-        ];
-    }
+    $palettes['category_date_override'] = [
+        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.label',
+        'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.category_date_override.description',
+        'showitem' => implode(
+            ',',
+            [
+                'header_kicker_toggle',
+                'header_kicker',
+                '--linebreak--',
+                'date_override_toggle',
+            ],
+        ),
+    ];
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $palettes;
 })();

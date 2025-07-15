@@ -8,6 +8,7 @@
         data-bs-toggle="modal"
         title="{title}"
         {f:if(condition: data.term_lang, then: 'lang="{data.term_lang}"')}>
-        <a href="{overviewLink}/{characterFilter}#{data.url_segment}" title="{title}" class="dpnglossary link" role="button">{data.name}</a>
+        <f:variable name="detailPageUrl">{f:link.page(pageUid: '{detailPage}')}</f:variable>
+        <a href="{f:if(condition:'{detailPageUrl}',then: '{overviewLink}', else: '#')}" title="{title}" class="dpnglossary link" role="button">{data.name}</a>
     </dfn>
 </html>

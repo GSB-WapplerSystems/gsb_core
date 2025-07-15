@@ -7,9 +7,7 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\StagePreviewRenderer;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
@@ -127,10 +125,7 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['palettes'] += $stagePositionPalettes;
 
-    $dateField = '';
-    if (! GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
-        $dateField = 'date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel,';
-    }
+    $dateField = 'date;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:date_formlabel,';
 
     $stageTypes = [
         'stage' =>
@@ -215,12 +210,11 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['types']['stage']['previewRenderer'] = StagePreviewRenderer::class;
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
-        ExtensionManagementUtility::addToAllTCAtypes(
-            'tt_content',
-            '--palette--;;category_date_override',
-            'stage',
-            'after:header',
-        );
-    }
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;category_date_override',
+        'stage',
+        'after:header',
+    );
+
 })();

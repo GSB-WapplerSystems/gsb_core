@@ -134,30 +134,26 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('security.fr
     ]);
 }
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
-    $config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
-    $allowedVideoDomains = GeneralUtility::trimExplode(',', $config['allowedVideoDomains'] ?? '', true) ?? null;
+$config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
+$allowedVideoDomains = GeneralUtility::trimExplode(',', $config['allowedVideoDomains'] ?? '', true) ?? null;
 
-    foreach ($allowedVideoDomains as $domain) {
-        $cspCollection[] = new Mutation(
-            MutationMode::Extend,
-            Directive::MediaSrc,
-            new UriValue($domain),
-        );
-    }
+foreach ($allowedVideoDomains as $domain) {
+    $cspCollection[] = new Mutation(
+        MutationMode::Extend,
+        Directive::MediaSrc,
+        new UriValue($domain),
+    );
 }
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-    $config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
-    $allowedAudioDomains = GeneralUtility::trimExplode(',', $config['allowedAudioDomains'] ?? '', true) ?? null;
+$config = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('gsb_core');
+$allowedAudioDomains = GeneralUtility::trimExplode(',', $config['allowedAudioDomains'] ?? '', true) ?? null;
 
-    foreach ($allowedAudioDomains as $domain) {
-        $cspCollection[] = new Mutation(
-            MutationMode::Extend,
-            Directive::MediaSrc,
-            new UriValue($domain),
-        );
-    }
+foreach ($allowedAudioDomains as $domain) {
+    $cspCollection[] = new Mutation(
+        MutationMode::Extend,
+        Directive::MediaSrc,
+        new UriValue($domain),
+    );
 }
 
 return Map::fromEntries(

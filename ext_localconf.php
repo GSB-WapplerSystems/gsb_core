@@ -57,12 +57,7 @@ defined('TYPO3') or die('Access denied.');
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginLogoAlt'] = 'GSB - ITZBund';
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-1615'] ??= false;
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-1615')) {
-        $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['100'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
-    }
-
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-3327'] ??= false;
+    $GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths']['100'] = 'EXT:gsb_core/Resources/Private/Layouts/Email/';
 
     // Register custom EXT:form configuration
     if (ExtensionManagementUtility::isLoaded('form')) {
@@ -84,67 +79,59 @@ defined('TYPO3') or die('Access denied.');
     '));
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['ITZBUNDPHP-4469'] ??= false;
-    if (
-        GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4469')
-    ) {
-        ExtensionManagementUtility::addTypoScriptSetup(trim('
-            plugin.tx_form {
-                settings {
-                    yamlConfigurations {
-                        122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
-                        123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
-                    }
+    ExtensionManagementUtility::addTypoScriptSetup(trim('
+        plugin.tx_form {
+            settings {
+                yamlConfigurations {
+                    122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                    123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
                 }
             }
-            module.tx_form {
-                settings {
-                    yamlConfigurations {
-                        122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
-                        123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
-                    }
+        }
+        module.tx_form {
+            settings {
+                yamlConfigurations {
+                    122 = EXT:form_mailtext/Configuration/Form/MailtextFormSetup.yaml
+                    123 = EXT:gsb_core/Resources/Extensions/form/Yaml/ExtendedMailtextFormSetup.yaml
                 }
             }
-        '));
-    }
+        }
+    '));
+
     /***************
      * Define TypoScript as content rendering template
      */
     // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
-        $extVideoFileExtension = 'externalvideo';
+    $extVideoFileExtension = 'externalvideo';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
 
-        /** @var RendererRegistry $rendererRegistry */
-        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
-        $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
+    /** @var RendererRegistry $rendererRegistry */
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+    $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
 
-        /** @var IconRegistry $iconRegistry */
-        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-        $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
-    }
+    /** @var IconRegistry $iconRegistry */
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+    $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-        $extAudioFileExtension = 'externalaudio';
+    $extAudioFileExtension = 'externalaudio';
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
 
-        /** @var RendererRegistry $rendererRegistry */
-        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
-        $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
+    /** @var RendererRegistry $rendererRegistry */
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+    $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
 
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
 
-        /** @var IconRegistry $iconRegistry */
-        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
-        $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
-    }
+    /** @var IconRegistry $iconRegistry */
+    $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+    $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
 
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';

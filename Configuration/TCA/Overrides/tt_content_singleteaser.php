@@ -7,9 +7,7 @@
 declare(strict_types=1);
 
 use ITZBund\GsbCore\Preview\SingleteaserPreviewRenderer;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
@@ -102,21 +100,17 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['types']['gsb_singleteaser']['previewRenderer'] = SingleteaserPreviewRenderer::class;
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-2328')) {
-        ExtensionManagementUtility::addToAllTCAtypes(
-            'tt_content',
-            '--palette--;;category_date_override',
-            'gsb_singleteaser',
-            'after:header',
-        );
-    }
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;category_date_override',
+        'gsb_singleteaser',
+        'after:header',
+    );
 
-    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3969')) {
-        ExtensionManagementUtility::addToAllTCAtypes(
-            'tt_content',
-            '--palette--;;main_category_override',
-            'gsb_singleteaser',
-            'after:header',
-        );
-    }
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;main_category_override',
+        'gsb_singleteaser',
+        'after:header',
+    );
 })();

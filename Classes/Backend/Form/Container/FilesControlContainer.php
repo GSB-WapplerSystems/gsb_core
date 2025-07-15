@@ -21,7 +21,6 @@
 namespace ITZBund\GsbCore\Backend\Form\Container;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesControlContainer
@@ -50,13 +49,9 @@ class FilesControlContainer extends \TYPO3\CMS\Backend\Form\Container\FilesContr
             );
         }
 
-        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-3435')) {
-            $this->addVideoDescriptionField();
-        }
+        $this->addVideoDescriptionField();
 
-        if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-4083')) {
-            $this->addAudioDescriptionField();
-        }
+        $this->addAudioDescriptionField();
 
         return parent::render();
     }
