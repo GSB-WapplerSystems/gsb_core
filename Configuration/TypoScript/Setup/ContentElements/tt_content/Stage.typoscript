@@ -58,6 +58,11 @@ tt_content {
         as = video
       }
 
+      30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
+      30 {
+        as = targetPageDate
+      }
+
       100 = ITZBund\GsbCore\DataProcessing\CustomContentCategoryProcessor
       100 {
         field = stage
@@ -65,12 +70,3 @@ tt_content {
     }
   }
 }
-
-
-tt_content.stage.dataProcessing {
-  30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
-  30 {
-    as = targetPageDate
-  }
-}
-

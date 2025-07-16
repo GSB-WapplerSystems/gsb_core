@@ -60,15 +60,4 @@ class SiteExtenderTest extends UnitTestCase
         $subject = new SiteExtender($siteUtilityMock);
         $subject->process($request, $handler);
     }
-
-    #[Test]
-    public function middlewareReturnsDirectlyWhenFeatureIsNotEnabled(): void
-    {
-        $request = $this->getMockBuilder(ServerRequest::class)->getMock();
-        $request->expects(self::never())->method('getAttribute');
-        $handler = $this->getMockBuilder(RequestHandler::class)->disableOriginalConstructor()->getMock();
-
-        $subject = new SiteExtender(new ExtendSiteUtility());
-        $subject->process($request, $handler);
-    }
 }

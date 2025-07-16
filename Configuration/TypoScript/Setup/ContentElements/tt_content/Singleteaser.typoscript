@@ -47,27 +47,20 @@ tt_content {
         as = files
       }
 
+      30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
+      30 {
+        as = targetPageDate
+      }
+
       100 = ITZBund\GsbCore\DataProcessing\CustomContentCategoryProcessor
       100 {
         field = gsb_singleteaser
       }
 
+      1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
+      1733847629 {
+        as = targetPageMainCategory
+      }
     }
-  }
-}
-
-
-tt_content.gsb_singleteaser.dataProcessing {
-  30 = ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor
-  30 {
-    as = targetPageDate
-  }
-}
-
-
-tt_content.gsb_singleteaser.dataProcessing {
-  1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
-  1733847629 {
-    as = targetPageMainCategory
   }
 }

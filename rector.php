@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\PostRector\Rector\NameImportingPostRector;
 use Rector\ValueObject\PhpVersion;
+use Ssch\TYPO3Rector\CodeQuality\General\GeneralUtilityMakeInstanceToConstructorPropertyRector;
 use Ssch\TYPO3Rector\Configuration\Typo3Option;
 use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
 use Ssch\TYPO3Rector\Set\Typo3SetList;
@@ -30,6 +31,9 @@ return RectorConfig::configure()
         __DIR__ . '/.github/*',
         NameImportingPostRector::class => [
             'ClassAliasMap.php',
+        ],
+        GeneralUtilityMakeInstanceToConstructorPropertyRector::class => [
+            'TargetPageMainCategoryProcessor.php',
         ],
     ])
 ;

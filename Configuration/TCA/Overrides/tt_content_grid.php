@@ -9,6 +9,7 @@ declare(strict_types=1);
 use B13\Container\Tca\ContainerConfiguration;
 use B13\Container\Tca\Registry;
 use ITZBund\GsbCore\UserFunc\ColorPickerValueItems;
+use TYPO3\CMS\Core\Resource\FileType;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -162,27 +163,27 @@ defined('TYPO3') or die('Access denied.');
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                        FileType::TEXT->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                        FileType::IMAGE->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                        FileType::AUDIO->value => [
                             'showitem' => '
                                 --palette--;;audioOverlayPalette,
                                 --palette--;;filePalette',
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                        FileType::VIDEO->value => [
                             'showitem' => '
                                 --palette--;;videoOverlayPalette,
                                 --palette--;;filePalette',
                         ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                        FileType::APPLICATION->value => [
                             'showitem' => '
                                 --palette--;;imageoverlayPalette,
                                 --palette--;;filePalette',
