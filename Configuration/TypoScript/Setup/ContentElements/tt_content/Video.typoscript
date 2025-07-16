@@ -63,6 +63,26 @@ tt_content {
         }
         as = video_caption
       }
+
+      40 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      40 {
+        if.isTrue.field = tx_video_a11y_videodescription
+        references {
+          fieldName = tx_video_a11y_videodescription
+          table = tt_content
+        }
+        as = video_description
+      }
+
+      50 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      50 {
+        if.isTrue.field = tx_video_a11y_audiodescription
+        references {
+          fieldName = tx_video_a11y_audiodescription
+          table = tt_content
+        }
+        as = video_audiodescription
+      }
     }
   }
 }
