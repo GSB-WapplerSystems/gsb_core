@@ -9,6 +9,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 # GSB&nbsp;11 Extension gsb_core
 
 [![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
+[![PHP 8.3](https://img.shields.io/badge/PHP-8.3-%23777BB4.svg?logo=php&logoColor=white)](https://www.php.net/releases/8.3/en.php)
 
 ## About
 
@@ -69,9 +70,9 @@ This table illustrates the behavior of feature flags in various states.
 
 ### Curent feature flags of `gsb_core`
 
-| Feature flag           | Description                                                                                                                                                                                        |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
+| Feature flag           | Description                             |
+|------------------------|-----------------------------------------|
+| `brandingBackendLogin` | At default branding to the login screen |
 
 ### Usage in PHP Code
 
