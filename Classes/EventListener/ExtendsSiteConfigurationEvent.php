@@ -23,31 +23,43 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\EventListener;
 
 use ITZBund\GsbCore\Configuration\ExtendSiteConfigurationRegistry;
+use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationLoadedEvent;
+use TYPO3\CMS\Core\Configuration\Loader\Exception\YamlParseException;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class ExtendsSiteConfigurationEvent
 {
-    private ExtendSiteConfigurationRegistry $registry;
-
-    public function __construct(ExtendSiteConfigurationRegistry $registry)
-    {
-        $this->registry = $registry;
-    }
+    public function __construct(
+        private readonly ExtendSiteConfigurationRegistry $registry,
+        private readonly LoggerInterface $logger
+    ) {}
 
     public function __invoke(SiteConfigurationLoadedEvent $event): void
     {
         $loader = GeneralUtility::makeInstance(YamlFileLoader::class);
         $siteConfiguration = $event->getConfiguration();
+        $siteConfigExtendsForAllSites = $this->registry->get('_all');
+        foreach ($siteConfigExtendsForAllSites as $fileInfo) {
+            $this->addToYamlConfiguration($siteConfiguration, $loader, (string)$fileInfo);
+        }
+
         $siteConfigExtends = $this->registry->get($event->getSiteIdentifier());
-        if ($siteConfigExtends !== []) {
-            foreach ($siteConfigExtends as $fileInfo) {
-                $configuration = $loader->load(GeneralUtility::fixWindowsFilePath((string)$fileInfo), YamlFileLoader::PROCESS_IMPORTS);
-                ArrayUtility::mergeRecursiveWithOverrule($siteConfiguration, $configuration);
-            }
+        foreach ($siteConfigExtends as $fileInfo) {
+            $this->addToYamlConfiguration($siteConfiguration, $loader, (string)$fileInfo);
         }
         $event->setConfiguration($siteConfiguration);
+    }
+
+    protected function addToYamlConfiguration(array &$siteConfiguration, YamlFileLoader $loader, string $filepath): void
+    {
+        try {
+            $configuration = $loader->load(GeneralUtility::fixWindowsFilePath((string)$filepath), YamlFileLoader::PROCESS_IMPORTS);
+            ArrayUtility::mergeRecursiveWithOverrule($siteConfiguration, $configuration);
+        } catch (YamlParseException $ype) {
+            $this->logger->error('Could not load yaml file', ['exception' => $ype, 'file' => $filepath]);
+        }
     }
 }
