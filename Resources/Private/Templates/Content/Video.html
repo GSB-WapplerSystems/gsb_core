@@ -47,7 +47,13 @@
             </f:if>
         </f:if>
     </div>
-    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_core/Resources/Public/JavaScripts/mediaelements.js"/>
+    <f:comment><!--
+        For this media element to work properly you need to link it to mediaelements.js
+
+        An example is packages in gsb_public_frontend
+
+        <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/mediaelements.js"/>
+-   --></f:comment>
 </f:if>
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/youtube'">
