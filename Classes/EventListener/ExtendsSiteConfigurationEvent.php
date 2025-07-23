@@ -41,8 +41,8 @@ final class ExtendsSiteConfigurationEvent
     {
         $loader = GeneralUtility::makeInstance(YamlFileLoader::class);
         $siteConfiguration = $event->getConfiguration();
-        $siteConfigExtendsForAllSites = $this->registry->get('_all');
-        foreach ($siteConfigExtendsForAllSites as $fileInfo) {
+        $siteConfigExtendsAll = $this->registry->get('_all');
+        foreach ($siteConfigExtendsAll as $fileInfo) {
             $this->addToYamlConfiguration($siteConfiguration, $loader, (string)$fileInfo);
         }
 
@@ -53,10 +53,13 @@ final class ExtendsSiteConfigurationEvent
         $event->setConfiguration($siteConfiguration);
     }
 
+    /**
+     * @param array<string,mixed> &$siteConfiguration
+     */
     protected function addToYamlConfiguration(array &$siteConfiguration, YamlFileLoader $loader, string $filepath): void
     {
         try {
-            $configuration = $loader->load(GeneralUtility::fixWindowsFilePath((string)$filepath), YamlFileLoader::PROCESS_IMPORTS);
+            $configuration = $loader->load(GeneralUtility::fixWindowsFilePath($filepath), YamlFileLoader::PROCESS_IMPORTS);
             ArrayUtility::mergeRecursiveWithOverrule($siteConfiguration, $configuration);
         } catch (YamlParseException $ype) {
             $this->logger->error('Could not load yaml file', ['exception' => $ype, 'file' => $filepath]);
