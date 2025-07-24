@@ -124,6 +124,14 @@ A package is available in the site configuration if it **matches one of the foll
 
 If a package has been selected as a site package, it's typoscript configuration (`Configuration/TypoScript/{constants|setttings}.typoscript`) will be loaded as the root template, which allows for zero configuration deployments.
 
+## Site Configuration Extension
+
+As certain parts of the site configuration are not easily writeable `EXT:gsb_core` provides a way to extend the site `config.yaml` files without actually writing these files.
+
+This is done by placing yaml files in a `Configuration\SiteConfiguration\Extends\SITEIDENTIFIER` folder, which will cause them to be evaluated for the site with the identifier `SITEIDENTIFIER`.
+
+If you choose `_all` as the identifier, the yaml file will be added to all sites.
+
 ### Further Reading
 
 For more information about feature flags in TYPO3, please refer to the [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/Configuration/FeatureToggles.html).

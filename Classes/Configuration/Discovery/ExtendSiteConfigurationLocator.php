@@ -31,9 +31,7 @@ use TYPO3\CMS\Core\Package\PackageManager;
  *
  * Site configuration yaml fragments in `Configuration\SiteConfiguration\Extends\SITEIDENTIFIER\` will be merged into the site configuration `SITEIDENTIFIER`.
  *
- * Drawbacks
- *
- * Currently lacking a mechanism to add to *all* site configurations. You have to know the site identifier.
+ * If the path is `_all`, it will be added to all site configs.
  */
 final class ExtendSiteConfigurationLocator
 {
