@@ -9,7 +9,7 @@
 <f:if condition="{date} || {category}">
 	<p class="date {positionClass}">
         <f:if condition="{date}">
-		    <span class="date-text"><span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %G">{date}</f:format.date> </span>
+		    <span class="date-text"><span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /> </span><f:format.date format="%e. %B %Y">{date}</f:format.date> </span>
         </f:if>
         <f:if condition="{main_category_overwrite_toggle}">
             <f:then>
