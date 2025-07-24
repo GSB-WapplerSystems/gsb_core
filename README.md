@@ -68,9 +68,9 @@ This table illustrates the behavior of feature flags in various states.
 
 ### Curent feature flags of `gsb_core`
 
-| Feature flag           | Description                                                                                                                                                                                        |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
+| Feature flag                                                                      | Description                              |
+|-----------------------------------------------------------------------------------|------------------------------------------|
+| `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` or `brandingBackendLogin` (deprecated) | Add default branding to the login screen |
 
 ### Usage in PHP Code
 
