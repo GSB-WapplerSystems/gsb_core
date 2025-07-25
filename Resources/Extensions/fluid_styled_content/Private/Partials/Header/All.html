@@ -39,15 +39,6 @@
                 </f:else>
             </f:if>
 
-            <f:if condition="{data.date_override_toggle} == 0 && {targetPageDate} > 0">
-                <f:render arguments="{
-                    date: targetPageDate,
-                    category: elementCategory,
-                    main_category_overwrite_toggle: mainCategoryOverwriteToggle,
-                    main_category_overwrite: mainCategoryOverwrite,
-                    positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
-            </f:if>
-
             <f:render arguments="{
 				dontShowCategories: data.header_kicker_toggle,
 				kicker: data.header_kicker,
