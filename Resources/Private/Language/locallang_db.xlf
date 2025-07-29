@@ -252,6 +252,18 @@
 			<trans-unit id="tt_content.tx_video_video" resname="tt_content.tx_video_video">
 				<source>Video (File)</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_videodescription" resname="tt_content.tx_video_a11y_videodescription">
+				<source>Videodescription (File)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audiodescription" resname="tt_content.tx_video_a11y_audiodescription">
+				<source>Audiodescription (File)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.checked" resname="tt_content.tx_video_a11y_audio_voiceover.checked">
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.unchecked" resname="tt_content.tx_video_a11y_audio_voiceover.unchecked">
+				<source>No</source>
+			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
 				<source>Multimedia</source>
 			</trans-unit>

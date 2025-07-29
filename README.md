@@ -68,9 +68,9 @@ This table illustrates the behavior of feature flags in various states.
 
 ### Curent feature flags of `gsb_core`
 
-| Feature flag           | Description                                                                                                                                                                                        |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `brandingBackendLogin` | At default branding to the login screen                                                                                                                                                            |
+| Feature flag                                                                      | Description                              |
+|-----------------------------------------------------------------------------------|------------------------------------------|
+| `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` or `brandingBackendLogin` (deprecated) | Add default branding to the login screen |
 
 ### Usage in PHP Code
 
@@ -123,6 +123,14 @@ A package is available in the site configuration if it **matches one of the foll
 ```
 
 If a package has been selected as a site package, it's typoscript configuration (`Configuration/TypoScript/{constants|setttings}.typoscript`) will be loaded as the root template, which allows for zero configuration deployments.
+
+## Site Configuration Extension
+
+As certain parts of the site configuration are not easily writeable `EXT:gsb_core` provides a way to extend the site `config.yaml` files without actually writing these files.
+
+This is done by placing yaml files in a `Configuration\SiteConfiguration\Extends\SITEIDENTIFIER` folder, which will cause them to be evaluated for the site with the identifier `SITEIDENTIFIER`.
+
+If you choose `_all` as the identifier, the yaml file will be added to all sites.
 
 ### Further Reading
 
