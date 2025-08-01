@@ -63,6 +63,8 @@ class GenericExternalAudioHelper extends AbstractOnlineMediaHelper
 
     /**
      * @codeCoverageIgnore
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @return array<int,mixed>
      */
     public function getMetaData(File $file): array

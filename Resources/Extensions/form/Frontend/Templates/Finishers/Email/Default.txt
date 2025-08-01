@@ -7,19 +7,10 @@
 <f:section name="Title">{title}</f:section>
 <f:section name="Main">
 <f:spaceless>
-<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1996')}">
-    <f:variable name="ITZBUNDPHP-1996-requestIdHeader"><gsb:requestId /></f:variable>
-</f:if>
-    <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-4469')}">
-        <f:then>
+<f:variable name="requestIdHeader"><gsb:requestId /></f:variable>
 <formmailtext:renderMessage message="{message -> f:format.stripTags()}">
 <f:render section="StandardEmail" arguments="{_all}" />
 </formmailtext:renderMessage>
-        </f:then>
-        <f:else>
-<f:render section="StandardEmail" arguments="{_all}" />
-        </f:else>
-    </f:if>
 </f:spaceless></f:section>
 
 <f:section name="StandardEmail">
@@ -35,7 +26,7 @@
     </f:if>
 </f:spaceless>
 </formvh:renderAllFormValues>
-<f:if condition="{ITZBUNDPHP-1996-requestIdHeader}">
-    Request ID:{ITZBUNDPHP-1996-requestIdHeader}
+<f:if condition="{requestIdHeader}">
+    Request ID:{requestIdHeader}
 </f:if>
 </f:section>

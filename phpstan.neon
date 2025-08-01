@@ -2,7 +2,10 @@ includes:
 	- phpstan-baseline.neon
 
 parameters:
-	treatPhpDocTypesAsCertain: false
 	level: 8
 	paths:
 		- Classes/
+		- Tests/
+	excludePaths:
+		- '*Tests/Fixtures/*'
+		- '*Tests/UnitTestsBootstrap.php'

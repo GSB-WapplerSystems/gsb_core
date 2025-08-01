@@ -19,18 +19,11 @@
 				link: data.header_link,
 				default: settings.defaultHeaderType}" partial="Header/Header" />
 
-            <f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-2328')} == 1 || {gsb:featureFlag(featureKey: 'ITZBUNDPHP-3969')} == 1">
+            <f:if condition="{targetPageMainCategory}">
                 <f:then>
-                    <f:if condition="{targetPageMainCategory} && {gsb:featureFlag(featureKey: 'ITZBUNDPHP-3969')} == 1">
-                        <f:then>
-                            <f:variable name="elementCategory" value="{targetPageMainCategory}" />
-                            <f:variable name="mainCategoryOverwriteToggle" value="{data.main_category_overwrite_toggle}" />
-                            <f:variable name="mainCategoryOverwrite" value="{data.main_category_overwrite}" />
-                        </f:then>
-                        <f:else if="{mainCategory}">
-                            <f:variable name="elementCategory" value="{mainCategory}" />
-                        </f:else>
-                    </f:if>
+                    <f:variable name="elementCategory" value="{targetPageMainCategory}" />
+                    <f:variable name="mainCategoryOverwriteToggle" value="{data.main_category_overwrite_toggle}" />
+                    <f:variable name="mainCategoryOverwrite" value="{data.main_category_overwrite}" />
 
                     <f:if condition="{data.date_override_toggle} == 0 && {targetPageDate} > 0">
                         <f:render arguments="{
@@ -41,12 +34,18 @@
                             positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
                     </f:if>
                 </f:then>
-                <f:else>
-                    <f:render arguments="{
-                        date: data.date,
-                        category: mainCategory,
-                        positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
+                <f:else if="{mainCategory}">
+                    <f:variable name="elementCategory" value="{mainCategory}" />
                 </f:else>
+            </f:if>
+
+            <f:if condition="{data.date_override_toggle} == 0 && {targetPageDate} > 0">
+                <f:render arguments="{
+                    date: targetPageDate,
+                    category: elementCategory,
+                    main_category_overwrite_toggle: mainCategoryOverwriteToggle,
+                    main_category_overwrite: mainCategoryOverwrite,
+                    positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" partial="Header/Date" />
             </f:if>
 
             <f:render arguments="{

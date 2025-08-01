@@ -21,6 +21,7 @@
 namespace ITZBund\GsbCore\DataProcessing;
 
 use Doctrine\DBAL\Exception;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -51,13 +52,13 @@ abstract class AbstractCategoryProcessor
                 'sys_category_l10n',
                 $queryBuilder->expr()->and(
                     $queryBuilder->expr()->eq('sys_category_l10n.l10n_parent', $queryBuilder->quoteIdentifier('sys_category.uid')),
-                    $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, Connection::PARAM_INT))
                 )
             )
             ->where(
-                $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter($field, \PDO::PARAM_STR)),
-                $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories', \PDO::PARAM_STR)),
-                $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->createNamedParameter($field, Connection::PARAM_STR)),
+                $queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->createNamedParameter('categories', Connection::PARAM_STR)),
+                $queryBuilder->expr()->eq('mm.uid_foreign', $queryBuilder->createNamedParameter($uid, Connection::PARAM_INT))
             )
             ->executeQuery()
             ->fetchAllAssociative();
@@ -89,11 +90,11 @@ abstract class AbstractCategoryProcessor
                 'sys_category_l10n',
                 $queryBuilder->expr()->and(
                     $queryBuilder->expr()->eq('sys_category_l10n.l10n_parent', $queryBuilder->quoteIdentifier('sys_category.uid')),
-                    $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, \PDO::PARAM_INT))
+                    $queryBuilder->expr()->eq('sys_category_l10n.sys_language_uid', $queryBuilder->createNamedParameter($languageId, Connection::PARAM_INT))
                 )
             )
             ->where(
-                $queryBuilder->expr()->eq('sys_category.uid', $queryBuilder->createNamedParameter($mainCategory, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('sys_category.uid', $queryBuilder->createNamedParameter($mainCategory, Connection::PARAM_INT))
             )
             ->executeQuery()
             ->fetchAssociative();

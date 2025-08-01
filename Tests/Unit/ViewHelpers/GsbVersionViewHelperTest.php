@@ -1,30 +1,56 @@
 <?php
 
-// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+// SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers;
 
 use ITZBund\GsbCore\ViewHelpers\GsbVersionViewHelper;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestDox;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
-class GsbVersionViewHelperTest extends AbstractViewHelperUnitTestCase
+class GsbVersionViewHelperTest extends UnitTestCase
 {
     #[Test]
-    public function viewHelperReturnsDefaultVersionNumberIfEnvVariableIsNotSet(): void
+    #[DataProvider('gsbVersionViewHelperDataProvider')]
+    #[TestDox('Render method returns string " $expectedResult", when $_dataName')]
+    public function renderReturnsVersionNumberFromEnvironment(bool $customEnvValue, string $expectedResult): void
     {
-        putenv('GSB_VERSION');
+        /*###########
+        ## Arrange ##
+        ###########*/
         $gsbVersionViewHelper = new GsbVersionViewHelper();
-        self::assertEquals($gsbVersionViewHelper->initializeArgumentsAndRender(), '11');
+
+        if ($customEnvValue) {
+            putenv('GSB_VERSION=' . $expectedResult);
+        }
+
+        /*#######
+        ## Act ##
+        #######*/
+        $assert = $gsbVersionViewHelper->initializeArgumentsAndRender();
+
+        /*##########
+        ## Assert ##
+        ##########*/
+        self::assertEquals($expectedResult, $assert);
+
+        putenv('GSB_VERSION');
     }
 
-    #[Test]
-    public function viewHelperReturnsVersionNumberFromEnvironmentIfSet(): void
+    public static function gsbVersionViewHelperDataProvider(): \Generator
     {
-        putenv('GSB_VERSION=0815');
-        $gsbVersionViewHelper = new GsbVersionViewHelper();
-        self::assertEquals('0815', $gsbVersionViewHelper->initializeArgumentsAndRender());
-        putenv('GSB_VERSION');
+        yield 'using default environment variable' => [
+            false,
+            '11',
+        ];
+
+        yield 'overwriting default environment variable with "0815"' => [
+            true,
+            '0815',
+        ];
     }
 }

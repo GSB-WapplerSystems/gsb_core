@@ -16,17 +16,26 @@ plugin {
           variables {
             title = TEXT
             title.data = field: tooltiptext // field: name
+            detailPage = TEXT
+            detailPage.value = {$plugin.tx_dpnglossary.settings.detailPage}
             overviewLink = TEXT
             overviewLink {
               typolink {
                 parameter < plugin.tx_dpnglossary.settings.detailPage
                 returnLast = url
+                additionalParams = &tx_dpnglossary_glossary[action]=list&tx_dpnglossary_glossary[controller]=Term&tx_dpnglossary_glossary[currentCharacter]=
+                additionalParams.stdWrap.append = TEXT
+                additionalParams.stdWrap.append {
+                  field = name
+                  substring = 0,1
+                  case = upper
+                }
+                section.stdWrap.append = TEXT
+                section.stdWrap.append {
+                  field = url_segment
+                  htmlSpecialChars = 1
+                }
               }
-            }
-            characterFilter = TEXT
-            characterFilter {
-              field = url_segment
-              substring = 0,1
             }
           }
         }
@@ -39,8 +48,3 @@ plugin {
     }
   }
 }
-
-[feature("ITZBUNDPHP-3327") == false]
-plugin.tx_dpnglossary.settings.disableParser = 1
-module.tx_dpnglossary.settings.disableParser = 1
-[global]

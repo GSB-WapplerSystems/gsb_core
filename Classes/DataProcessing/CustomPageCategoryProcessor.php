@@ -27,6 +27,15 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class CustomPageCategoryProcessor extends AbstractCategoryProcessor implements DataProcessorInterface
 {
     /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
+     * @param ContentObjectRenderer $cObj
+     * @param mixed[] $contentObjectConfiguration
+     * @param mixed[] $processorConfiguration
+     * @param mixed[] $processedData
+     * @return mixed[]
+     *
      * @throws Exception
      */
     public function process(
@@ -42,7 +51,7 @@ class CustomPageCategoryProcessor extends AbstractCategoryProcessor implements D
             $languageId = $processedData['data']['_PAGES_OVERLAY_LANGUAGE'];
         }
         if (isset($processedData['data']['_PAGES_OVERLAY']) && $processedData['data']['_PAGES_OVERLAY'] === true) {
-            $uid = (int)$processedData['data']['_PAGES_OVERLAY_UID'];
+            $uid = (int)$processedData['data']['_LOCALIZED_UID'];
         }
         $processedData['pageCategories'] = $this->getPageCategories($languageId, $processorConfiguration['field'], $uid);
 

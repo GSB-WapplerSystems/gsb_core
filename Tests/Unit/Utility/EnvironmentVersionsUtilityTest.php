@@ -15,9 +15,13 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class EnvironmentVersionsUtilityTest extends UnitTestCase
 {
+    /**
+     * @param string[]|null[] $envVarsToSetOrUnset
+     * @param string[][] $expectedResult
+     */
     #[Test]
     #[DataProvider('getEnvVarsToSetAndExpectedResultsForGetVersion')]
-    public function getVersionsReturnsSetVersionNumbersWithCorrectFallback($envVarsToSetOrUnset, $expectedResult)
+    public function getVersionsReturnsSetVersionNumbersWithCorrectFallback(array $envVarsToSetOrUnset, array $expectedResult): void
     {
         foreach ($envVarsToSetOrUnset as $varName => $value) {
             if ($value === null) {

@@ -15,52 +15,92 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class GenericExternalVideoHelperTest extends UnitTestCase
 {
-    protected GenericExternalVideoHelper $genericExternalVideoHelper;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->genericExternalVideoHelper = new GenericExternalVideoHelper('externalvideo');
-    }
-
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-        unset($this->genericExternalVideoHelper);
-    }
-
     #[Test]
-    public function getMetaDataReturnsEmptyArray()
+    public function getMetaDataReturnsEmptyArray(): void
     {
+        $genericExternalVideoHelper = new GenericExternalVideoHelper('externalvideo');
         $resourceStorage = $this->getMockBuilder(ResourceStorage::class)->disableOriginalConstructor()->getMock();
         $file = new File(['size' => 50, 'uid' => 42], $resourceStorage);
-        self::assertEquals([], $this->genericExternalVideoHelper->getMetaData($file));
+        self::assertEquals([], $genericExternalVideoHelper->getMetaData($file));
     }
 
-    public static function getAllowedDomains()
-    {
-        yield 'Fails if domain array is null' => [ null, 'https://gsb.de/test/test.mp4', false];
-        yield 'Fails if domain array is empty' => [ [], 'https://gsb.de/test/test.mp4', false];
-        yield 'Matches if simple domain' => [ ['gsb.de'], 'https://gsb.de/test/test.mp4', true];
-        yield 'Fails if empty' => [ [], 'https://gsb.de/test/test.mp4', false];
-        yield 'Matches if multiple domains' => [ ['gsb.de', 'gsb1.de'], 'https://gsb.de/test/test.mp4', true];
-        yield 'Fails with wrong domains' => [ ['gsb1.de'], 'https://gsb.de/test/test.mp4', false];
-        yield 'Matches if wildcard domains' => [ ['*.gsb.de'], 'https://media.gsb.de/test/test.mp4', true];
-        yield 'Fails if wildcard domains, but no subdomain' => [ ['*.gsb.de'], 'https://gsb.de/test/test.mp4', false];
-        yield 'Matches with protocol' => [ ['https://media.gsb.de'], 'https://media.gsb.de/test/test.mp4', true];
-        yield 'Fails with protocol' => [ ['http://media.gsb.de'], 'https://media.gsb.de/test/test.mp4', false];
-        yield 'Matches with subsub domain' => [ ['*.gsb.de'], 'https://media.media.gsb.de/test/test.mp4', true];
-        yield 'Does not work as regex' => [ ['*sb.de'], 'https://media.media.gsb.de/test/test.mp4', false];
-    }
-
+    /**
+     * @param string[]|null $allowedVideoDomains
+     * @param string $url
+     * @param bool $expected
+     */
     #[Test]
     #[DataProvider('getAllowedDomains')]
-    public function matchesAllowedDomainsMatches($conf, $url, $expected)
+    public function matchesAllowedDomainsMatches(?array $allowedVideoDomains, string $url, bool $expected): void
     {
-        $reflectionClass = new \ReflectionClass($this->genericExternalVideoHelper);
+        $genericExternalVideoHelper = new GenericExternalVideoHelper('externalvideo');
+        $reflectionClass = new \ReflectionClass($genericExternalVideoHelper);
         $matchesAllowedDomain = $reflectionClass->getMethod('matchesAllowedDomains');
-        $matchesAllowedDomain->setAccessible(true);
 
-        self::assertEquals($expected, $matchesAllowedDomain->invoke($this->genericExternalVideoHelper, $url, $conf));
+        self::assertEquals($expected, $matchesAllowedDomain->invoke($genericExternalVideoHelper, $url, $allowedVideoDomains));
+    }
+
+    public static function getAllowedDomains(): \Generator
+    {
+        yield 'Fails if domain array is null' => [
+            null,
+            'https://gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Fails if domain array is empty' => [
+            [],
+            'https://gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Matches if simple domain' => [
+            ['gsb.de'],
+            'https://gsb.de/test/test.mp4',
+            true,
+        ];
+        yield 'Fails if empty' => [
+            [],
+            'https://gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Matches if multiple domains' => [
+            ['gsb.de', 'gsb1.de'],
+            'https://gsb.de/test/test.mp4',
+            true,
+        ];
+        yield 'Fails with wrong domains' => [
+            ['gsb1.de'],
+            'https://gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Matches if wildcard domains' => [
+            ['*.gsb.de'],
+            'https://media.gsb.de/test/test.mp4',
+            true,
+        ];
+        yield 'Fails if wildcard domains, but no subdomain' => [
+            ['*.gsb.de'],
+            'https://gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Matches with protocol' => [
+            ['https://media.gsb.de'],
+            'https://media.gsb.de/test/test.mp4',
+            true,
+        ];
+        yield 'Fails with protocol' => [
+            ['http://media.gsb.de'],
+            'https://media.gsb.de/test/test.mp4',
+            false,
+        ];
+        yield 'Matches with subsub domain' => [
+            ['*.gsb.de'],
+            'https://media.media.gsb.de/test/test.mp4',
+            true,
+        ];
+        yield 'Does not work as regex' => [
+            ['*sb.de'],
+            'https://media.media.gsb.de/test/test.mp4',
+            false,
+        ];
     }
 }

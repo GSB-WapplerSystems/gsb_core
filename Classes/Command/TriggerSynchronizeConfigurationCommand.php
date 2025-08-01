@@ -21,6 +21,10 @@ class TriggerSynchronizeConfigurationCommand extends Command
         parent::__construct();
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->extConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions(true);

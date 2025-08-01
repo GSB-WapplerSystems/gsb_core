@@ -39,8 +39,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class ConfigurationImportCommand extends Command
 {
-    private \TYPO3\CMS\Core\Package\PackageManager $packageManager;
-    private \TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader $yamlFileLoader;
+    private PackageManager $packageManager;
+    private YamlFileLoader $yamlFileLoader;
 
     public function __construct(PackageManager $packageManager, YamlFileLoader $yamlFileLoader)
     {
@@ -56,6 +56,10 @@ class ConfigurationImportCommand extends Command
         $this->setHelp('This command imports a configuration from a yaml file. It is used to import the configuration of the workspaces and be_groups tables.');
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         foreach ($this->packageManager->getActivePackages() as $package) {
@@ -100,6 +104,13 @@ class ConfigurationImportCommand extends Command
         return '';
     }
 
+    /**
+     * @param string $table
+     * @param mixed[] $config
+     * @param OutputInterface $output
+     *
+     * @throws \Doctrine\DBAL\Exception
+     */
     private function importTables(string $table, array $config, OutputInterface $output): void
     {
         $mode = $config['mode'] ?? 'append';
