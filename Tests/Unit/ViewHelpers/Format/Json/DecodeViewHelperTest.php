@@ -78,10 +78,10 @@ class DecodeViewHelperTest extends UnitTestCase
                 'name' => 'John',
                 'address' => [
                     'city' => 'Berlin',
-                    'country' => 'Germany'
-                ]
+                    'country' => 'Germany',
+                ],
             ],
-            'active' => true
+            'active' => true,
         ];
 
         $this->viewHelper->setArguments(['value' => $jsonString]);
@@ -101,7 +101,7 @@ class DecodeViewHelperTest extends UnitTestCase
             'float' => 45.67,
             'boolean' => true,
             'null' => null,
-            'array' => [1, 2, 3]
+            'array' => [1, 2, 3],
         ];
 
         $this->viewHelper->setArguments(['value' => $jsonString]);

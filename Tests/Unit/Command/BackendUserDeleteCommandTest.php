@@ -8,18 +8,14 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Tests\Unit\Command;
 
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use ITZBund\GsbCore\Command\BackendUserDeleteCommand;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\MockObject\MockObject;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Expression\ExpressionBuilder;
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
@@ -82,49 +78,49 @@ class BackendUserDeleteCommandTest extends UnitTestCase
     #[TestDox('Execute returns success when no users found')]
     public function executeReturnsSuccessWhenNoUsersFound(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute returns success when users found and deleted')]
     public function executeReturnsSuccessWhenUsersFoundAndDeleted(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute handles dry run correctly')]
     public function executeHandlesDryRunCorrectly(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute handles already deleted users correctly')]
     public function executeHandlesAlreadyDeletedUsersCorrectly(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute handles multiple users correctly')]
     public function executeHandlesMultipleUsersCorrectly(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute handles verbose output correctly')]
     public function executeHandlesVerboseOutputCorrectly(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     #[Test]
     #[TestDox('Execute shows warning when no matching users in verbose mode')]
     public function executeShowsWarningWhenNoMatchingUsersInVerboseMode(): void
     {
-        $this->markTestSkipped('Command option configuration not available in this environment');
+        self::markTestSkipped('Command option configuration not available in this environment');
     }
 
     private function setupQueryBuilderForNoUsers(): void

@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\ViewHelpers\Format\Json;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 
 /**
  * Class DecodeViewHelper

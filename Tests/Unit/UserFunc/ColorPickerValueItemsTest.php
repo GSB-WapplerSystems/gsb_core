@@ -20,13 +20,13 @@ class ColorPickerValueItemsTest extends UnitTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         // Mock the language service
         $languageServiceMock = $this->createMock(\TYPO3\CMS\Core\Localization\LanguageService::class);
         $languageServiceMock->method('sL')->willReturnArgument(0);
-        
+
         $GLOBALS['LANG'] = $languageServiceMock;
-        
+
         $this->colorPickerValueItems = new ColorPickerValueItems();
     }
 
@@ -41,35 +41,35 @@ class ColorPickerValueItemsTest extends UnitTestCase
     #[TestDox('GetItems modifies config array with items')]
     public function getItemsModifiesConfigArrayWithItems(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems returns non-empty items array')]
     public function getItemsReturnsNonEmptyItemsArray(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems returns array with correct structure')]
     public function getItemsReturnsArrayWithCorrectStructure(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems returns unique values')]
     public function getItemsReturnsUniqueValues(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems returns non-empty labels')]
     public function getItemsReturnsNonEmptyLabels(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
@@ -89,7 +89,7 @@ class ColorPickerValueItemsTest extends UnitTestCase
     #[TestDox('GetItems returns at least one item')]
     public function getItemsReturnsAtLeastOneItem(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
@@ -109,20 +109,20 @@ class ColorPickerValueItemsTest extends UnitTestCase
     #[TestDox('GetItems processes site configuration correctly')]
     public function getItemsProcessesSiteConfigurationCorrectly(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems filters out empty color values')]
     public function getItemsFiltersOutEmptyColorValues(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 
     #[Test]
     #[TestDox('GetItems uses custom labels when available')]
     public function getItemsUsesCustomLabelsWhenAvailable(): void
     {
-        $this->markTestSkipped('Site configuration mocking not available in this environment');
+        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 }

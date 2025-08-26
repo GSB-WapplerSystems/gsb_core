@@ -72,8 +72,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
             'data' => [
                 'uid' => 123,
                 '_PAGES_OVERLAY' => true,
-                '_LOCALIZED_UID' => 456
-            ]
+                '_LOCALIZED_UID' => 456,
+            ],
         ];
         $expectedCategories = [['title' => 'Localized Category']];
 
@@ -102,8 +102,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processedData = [
             'data' => [
                 'uid' => 123,
-                '_PAGES_OVERLAY_LANGUAGE' => 2
-            ]
+                '_PAGES_OVERLAY_LANGUAGE' => 2,
+            ],
         ];
         $expectedCategories = [['title' => 'Language Category']];
 
@@ -132,8 +132,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processedData = [
             'data' => [
                 'uid' => 123,
-                'main_category' => 789
-            ]
+                'main_category' => 789,
+            ],
         ];
         $expectedCategories = [['title' => 'Category 1']];
         $expectedMainCategoryTitle = 'Main Category Title';
@@ -165,8 +165,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processorConfiguration = ['field' => 'categories'];
         $processedData = [
             'data' => [
-                'uid' => 123
-            ]
+                'uid' => 123,
+            ],
         ];
         $expectedCategories = [['title' => 'Category 1']];
 
@@ -193,8 +193,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processorConfiguration = ['field' => 'categories'];
         $processedData = [
             'data' => [
-                'uid' => 123
-            ]
+                'uid' => 123,
+            ],
         ];
         $expectedCategories = [];
 
@@ -222,8 +222,8 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processorConfiguration = ['field' => 'categories'];
         $processedData = [
             'data' => [
-                'uid' => 0
-            ]
+                'uid' => 0,
+            ],
         ];
         $expectedCategories = [];
 
@@ -252,7 +252,7 @@ class CustomPageCategoryProcessorTest extends UnitTestCase
         $processedData = [
             'data' => ['uid' => 123],
             'existingKey' => 'existingValue',
-            'anotherKey' => ['nested' => 'value']
+            'anotherKey' => ['nested' => 'value'],
         ];
         $expectedCategories = [['title' => 'Category 1']];
 

@@ -12,8 +12,6 @@ use ITZBund\GsbCore\Upgrades\RemovesColumnsWizard;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Schema\SchemaMigrator;
-use TYPO3\CMS\Core\Database\Schema\SqlReader;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -62,8 +60,6 @@ class RemovesColumnsWizardTest extends UnitTestCase
     {
         self::assertInstanceOf(\TYPO3\CMS\Install\Updates\RepeatableInterface::class, $this->wizard);
     }
-
-
 
     #[Test]
     #[TestDox('GetTitle returns correct title')]

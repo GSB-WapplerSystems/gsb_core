@@ -62,7 +62,7 @@ class ResilientSimpleFileBackendTest extends UnitTestCase
         $reflection = new \ReflectionClass(ResilientSimpleFileBackend::class);
         $method = $reflection->getMethod('require');
         $parameters = $method->getParameters();
-        
+
         self::assertCount(1, $parameters);
         self::assertEquals('entryIdentifier', $parameters[0]->getName());
         self::assertEquals('string', $parameters[0]->getType()->getName());
@@ -75,7 +75,7 @@ class ResilientSimpleFileBackendTest extends UnitTestCase
         $reflection = new \ReflectionClass(ResilientSimpleFileBackend::class);
         $method = $reflection->getMethod('require');
         $returnType = $method->getReturnType();
-        
+
         // In PHP 8.0+, mixed is represented as null (no type declaration)
         self::assertNull($returnType);
     }
@@ -111,11 +111,11 @@ class ResilientSimpleFileBackendTest extends UnitTestCase
         $reflection = new \ReflectionClass(ResilientSimpleFileBackend::class);
         $actualPath = $reflection->getFileName();
         $expectedPath = __DIR__ . '/../../../../Classes/Cache/Backend/ResilientSimpleFileBackend.php';
-        
+
         // Normalize paths for comparison
         $actualPath = realpath($actualPath);
         $expectedPath = realpath($expectedPath);
-        
+
         self::assertEquals($expectedPath, $actualPath);
     }
 
@@ -146,7 +146,7 @@ class ResilientSimpleFileBackendTest extends UnitTestCase
         $reflection = new \ReflectionClass(ResilientSimpleFileBackend::class);
         $constructor = $reflection->getConstructor();
         $parameters = $constructor->getParameters();
-        
+
         self::assertCount(2, $parameters);
         self::assertEquals('context', $parameters[0]->getName());
         self::assertEquals('options', $parameters[1]->getName());
