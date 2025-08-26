@@ -55,7 +55,7 @@ class CustomPageCategoryProcessor extends AbstractCategoryProcessor implements D
         }
         $processedData['pageCategories'] = $this->getPageCategories($languageId, $processorConfiguration['field'], $uid);
 
-        if ($processedData['data']['main_category']) {
+        if (isset($processedData['data']['main_category']) && $processedData['data']['main_category']) {
             $mainCategoryTitle = $this->getMainCategoryTitle($languageId, $processedData['data']['main_category']);
             $processedData['mainCategory'] = $mainCategoryTitle;
         }
