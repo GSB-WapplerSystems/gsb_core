@@ -1,0 +1,121 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertNotNull\(\) with ReflectionClass\|false will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 2
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Cannot call method getName\(\) on ReflectionClass\|false\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Cannot call method getName\(\) on ReflectionType\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Cannot call method getParameters\(\) on ReflectionMethod\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Parameter \#1 \$path of function realpath expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of static method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: Tests/Unit/Cache/Backend/ResilientSimpleFileBackendTest.php
+
+		-
+			message: '#^Method ITZBund\\GsbCore\\Tests\\Unit\\Command\\BackendUserDeleteCommandTest\:\:setupConnectionForForceDelete\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: Tests/Unit/Command/BackendUserDeleteCommandTest.php
+
+		-
+			message: '#^Method ITZBund\\GsbCore\\Tests\\Unit\\Command\\BackendUserDeleteCommandTest\:\:setupDataHandler\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: Tests/Unit/Command/BackendUserDeleteCommandTest.php
+
+		-
+			message: '#^Method ITZBund\\GsbCore\\Tests\\Unit\\Command\\BackendUserDeleteCommandTest\:\:setupQueryBuilderForNoUsers\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: Tests/Unit/Command/BackendUserDeleteCommandTest.php
+
+		-
+			message: '#^Method ITZBund\\GsbCore\\Tests\\Unit\\Command\\BackendUserDeleteCommandTest\:\:setupQueryBuilderForUsers\(\) has parameter \$users with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Tests/Unit/Command/BackendUserDeleteCommandTest.php
+
+		-
+			message: '#^Method ITZBund\\GsbCore\\Tests\\Unit\\Command\\BackendUserDeleteCommandTest\:\:setupQueryBuilderForUsers\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: Tests/Unit/Command/BackendUserDeleteCommandTest.php
+
+		-
+			message: '#^Property ITZBund\\GsbCore\\Tests\\Unit\\Controller\\ReportControllerTest\:\:\$backendUserMock has unknown class TYPO3\\CMS\\Backend\\Authentication\\BackendUserAuthentication as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Tests/Unit/Controller/ReportControllerTest.php
+
+		-
+			message: '#^Property ITZBund\\GsbCore\\Tests\\Unit\\Controller\\ReportControllerTest\:\:\$responseMock has unknown class TYPO3\\CMS\\Extbase\\Mvc\\Web\\Response as its type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: Tests/Unit/Controller/ReportControllerTest.php
+
+		-
+			message: '#^Call to an undefined method ITZBund\\GsbCore\\DataProcessing\\CustomPageCategoryProcessor\:\:method\(\)\.$#'
+			identifier: method.notFound
+			count: 9
+			path: Tests/Unit/DataProcessing/CustomPageCategoryProcessorTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsString\(\) with string will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsArray\(\) with array\<string\> will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: Tests/Unit/Upgrades/RemovesColumnsWizardTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsString\(\) with string will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 2
+			path: Tests/Unit/Upgrades/RemovesColumnsWizardTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: Tests/Unit/Upgrades/RemovesColumnsWizardTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsArray\(\) with array\<string, array\<string, string\|null\>\> will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: Tests/Unit/Utility/EnvironmentVersionsUtilityTest.php
+
+		-
+			message: '#^Call to static method PHPUnit\\Framework\\Assert\:\:assertIsArray\(\) with array\<string, string\|null\> will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: Tests/Unit/Utility/EnvironmentVersionsUtilityTest.php
