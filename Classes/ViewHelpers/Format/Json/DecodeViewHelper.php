@@ -45,22 +45,22 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     public function initializeArguments(): void
     {
-        $this->registerArgument('json', 'string', 'The JSON string to decode', true);
+        $this->registerArgument('value', 'string', 'The JSON string to decode', true);
     }
 
     public function render()
     {
-        $json = $this->arguments['json'] ?? null;
+        $json = $this->arguments['value'] ?? null;
 
-        if ($json === '' || $json === null) {
+        if ($json === null) {
             return '';
         }
 
-        $decodedValue = json_decode($json, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('The provided argument is invalid JSON.', 1358440054);
+        if ($json === '') {
+            throw new \JsonException('Empty string is not valid JSON');
         }
+
+        $decodedValue = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         return $decodedValue;
     }

@@ -70,6 +70,9 @@ class ColorPickerValueItems
      */
     public function getLanguageService(): LanguageService
     {
+        if (!isset($GLOBALS['LANG']) || !$GLOBALS['LANG'] instanceof LanguageService) {
+            throw new \RuntimeException('Language service not available');
+        }
         return $GLOBALS['LANG'];
     }
 }

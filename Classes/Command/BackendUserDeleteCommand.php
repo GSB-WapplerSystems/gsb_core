@@ -58,7 +58,8 @@ class BackendUserDeleteCommand extends Command
 
     protected function configure(): void
     {
-        $this->setDescription('Deletes users by criteria')
+        $this->setName('gsb:backend-user:delete')
+        ->setDescription('Deletes users by criteria')
         ->setHelp(
             <<<'EOF'
 The <info>%command.name%</info> deletes users:
@@ -73,7 +74,7 @@ Note: Using at least one of the <comment>--uid</comment>, <comment>--email</comm
 
 EOF
         )
-        ->addOption('email', 'e', InputOption::VALUE_REQUIRED, 'email to use as criteria')
+        ->addOption('email', null, InputOption::VALUE_REQUIRED, 'email to use as criteria')
         ->addOption('uid', null, InputOption::VALUE_REQUIRED, 'uid to use as criteria')
         ->addOption('username', 'name', InputOption::VALUE_REQUIRED, 'username to use as criteria')
         ->addOption('dry', null, InputOption::VALUE_NONE, 'Dry run');
