@@ -1,4 +1,4 @@
-FROM composer:2.8 AS composer
+FROM composer:2.8@sha256:68e926a477000f12e8645e82a020b84904d49071c895c4951551fe80eed5d103 AS composer
 FROM php:8.4-apache@sha256:fc535e6bf80041c11d99380d2a5a3ff4ceaafac7efbd4f8d53c876ca4751c7c2
 
 ARG username
