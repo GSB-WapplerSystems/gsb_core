@@ -5,7 +5,7 @@ services:
         gid: '${DOCKER_GID}'
         uid: '${DOCKER_UID}'
         username: '${DOCKER_USERNAME}'
-      context: .
+      context: ./Docker/Composer
     user: '${DOCKER_USER}'
     image: ${PROJECT_NAME}-composer-container
     container_name: ${PROJECT_NAME}-composer-container

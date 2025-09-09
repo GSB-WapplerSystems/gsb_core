@@ -72,7 +72,7 @@ set-itzbund-auth-token:
 #build: ## build docker images
 .PHONY: build
 build:
-	@COMPOSE_BAKE=true DOCKER_USER="root" ${DOCKER_ARGS} docker compose -f Docker/Composer/docker-compose.yml build --no-cache
+	@COMPOSE_BAKE=true DOCKER_USER="root" ${DOCKER_ARGS} docker buildx bake --file Docker/Composer/docker-compose.yml --no-cache --provenance=false
 
 #container: ## Execute given 'exec' parameter as command in container (e.g. "make container exec='composer list'" runs "composer list" inside the container)
 .PHONY: container
@@ -82,7 +82,7 @@ container:
 		$(CONTAINER_EXEC) $(exec); \
 		$(DOCKER_COMPOSE) down; \
 	else \
-		COMPOSE_BAKE=true DOCKER_USER="root" $(DOCKER_ARGS) docker compose -f Docker/Composer/docker-compose.yml build --no-cache; \
+		COMPOSE_BAKE=true DOCKER_USER="root" $(DOCKER_ARGS) docker buildx bake --file Docker/Composer/docker-compose.yml --no-cache; \
 		$(DOCKER_COMPOSE) up -d; \
 		$(CONTAINER_EXEC) composer install --no-interaction --prefer-dist; \
 		$(CONTAINER_EXEC) $(exec); \
