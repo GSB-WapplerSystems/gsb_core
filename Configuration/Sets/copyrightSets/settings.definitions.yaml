@@ -10,7 +10,7 @@ settings:
     type: string
     default: 'meine Behörde'
 
-  GSB.copyright.showCopyright:
+  GSB.copyright.show-copyright:
     type: bool
     default: false
     category: GSB.copyrightCategory
