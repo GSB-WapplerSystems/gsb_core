@@ -1,0 +1,13 @@
+name: itzbund-gsb/default
+label: GSB11 Standard-Set
+dependencies:
+  - itzbund-gsb/public-frontend
+  - itzbund-gsb/function
+  - itzbund-gsb/copyright
+  - itzbund-gsb/style
+  - typo3/seo-sitemap
+  - typo3/form
+  - typo3/fluid-styled-content
+  - kitzberger/form-mailtext
+  
+

@@ -1,0 +1,108 @@
+categories:
+  GSB.functions:
+    label: 'Funktionen Einstellungen'
+    parent: GSB
+  GSB.functions.categories:
+    label: 'Kategorien Einstellungen'
+    parent: GSB.functions
+  GSB.functions.socialMediaLinks:
+    label: 'Social Media Links Einstellungen'
+    parent: GSB.functions
+  GSB.functions.suche:
+    label: 'Suche Einstellungen'
+    parent: GSB.functions
+  GSB.functions.navigation:
+    label: 'Navigation Einstellungen'
+    parent: GSB.functions
+  GSB.functions.accessability:
+    label: 'Barrierefreiheit Einstellungen'
+    parent: GSB.functions
+
+settings:
+
+### Suche Einstellungen ###
+  GSB.functions.suche:
+    label: 'Suche nutzen'
+    category: GSB.functions.suche
+    description: 'Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.'
+    type: bool
+    default: true
+
+  GSB.functions.suche.solrEnabledFacets:
+    label: 'Facetten nutzen'
+    category: GSB.functions.suche
+    description: 'Das Deaktivieren dieses Toggles blendet die Facettierung der Suche aus.'
+    type: bool
+    default: true
+
+### Navigation Einstellungen ###
+  GSB.functions.navigation.navType:
+    type: string
+    default: '0'
+    category: GSB.functions.navigation
+    label: 'Navigations-Typ'
+    enum:
+      '0': 'Klassische Desktop Navigation'
+      '1': 'Mobiles "Burger" Menü'
+    description: 'Darstellungsart der Hauptnavigation in der Desktop Ansicht.'
+
+
+### Social Media Links Einstellungen ###
+  GSB.functions.socialMediaLink.x:
+    label: 'X'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+  GSB.functions.socialMediaLink.facebook:
+    label: 'Facebook'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+  GSB.functions.socialMediaLink.instagram:
+    label: 'Instagram'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+  GSB.functions.socialMediaLink.xing:
+    label: 'Xing'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+  GSB.functions.socialMediaLink.linkedin:
+    label: 'LinkedIn'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+  GSB.functions.socialMediaLink.youtube:
+    label: 'YouTube'
+    category: GSB.functions.socialMediaLinks
+    description: 'Links to social media profiles'
+    type: string
+    default: ''
+
+  GSB.functions.googleSiteVerification:
+    label: 'Google Site Verification Code'
+    category: GSB.functions
+    description: 'Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.'
+    type: string
+    default: ''
+
+### Barrierefreiheit Einstellungen ###
+  GSB.functions.accessability.signLanguagePage:
+    label: 'Gebärdensprache Seite'
+    category: GSB.functions.accessability
+    description: 'Konfiguration der Gebärdensprache Seite.'
+    type: page
+    default: 0
+
+  GSB.functions.accessability.simpleLanguagePage:
+    label: 'Einfache Sprachen Seite'
+    category: GSB.functions.accessability
+    description: 'Konfiguration der Einfache Sprachen Seite.'
+    type: page
+    default: 0

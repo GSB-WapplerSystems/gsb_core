@@ -1,0 +1,10 @@
+categories:
+  GSB:
+    label: 'GSB Individualisierungs Einstellungen'
+settings:
+  GSB.websiteTitle:
+    label: 'Website title'
+    category: GSB
+    description: 'The title of this web project.'
+    type: string
+    default: 'Awesome website'

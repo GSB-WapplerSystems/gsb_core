@@ -1,0 +1,20 @@
+categories:
+  GSB.copyrightCategory:
+    label: 'Copyright (Urheberrechtshinweis) Einstellungen'
+    parent: GSB
+settings:
+  GSB.copyright:
+    label: 'Urheberrechtshinweis '
+    category: GSB.copyrightCategory
+    description: 'Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt.'
+    type: string
+    default: 'meine Behörde'
+
+  GSB.copyright.showCopyright:
+    type: bool
+    default: false
+    category: GSB.copyrightCategory
+    label: 'Copyright anzeigen'
+    description: 'Copyright auch an Teaser oder Bühnen-Bildern anzeigen.'
+
+ 
