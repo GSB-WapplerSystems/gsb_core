@@ -49,14 +49,19 @@ class ColorPickerValueItems
         }
 
         $settings = $site->getSettings();
-
-        if (isset($settings->get('GSB')['style']['colors']['background'])) {
-            $colors = $settings->get('GSB')['style']['colors']['background'];
+        if (isset($settings->get('colors')['background'])) {
+            $colors = $settings->get('colors')['background'];
         }
         
-        foreach ($colors as $key => $color) {
-            $label = $color['lable'];
-            $color = "color_" . $key;
+       
+        foreach ($colors as $color) {
+            if ($color['color'] !== '#000' && $color['label'] !== '') {
+                $label = $color['label'];
+                $color = $color['color'];
+            }
+            else {
+                continue;
+            }
 
             $items[] = [$label, $color];
         }

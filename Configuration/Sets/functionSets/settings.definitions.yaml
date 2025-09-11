@@ -36,37 +36,37 @@ settings:
 
 
 ### Social Media Links Einstellungen ###
-  socialMediaLinks.socialMediaLink-x:
+  socialMediaLinks.x:
     label: 'X'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
     default: 'x.com'
-  socialMediaLinks.socialMediaLink-facebook:
+  socialMediaLinks.facebook:
     label: 'Facebook'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
     default: 'facebook.com'
-  socialMediaLinks.socialMediaLink-instagram:
+  socialMediaLinks.instagram:
     label: 'Instagram'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
     default: 'instagram.com'
-  socialMediaLinks.socialMediaLink-xing:
+  socialMediaLinks.xing:
     label: 'Xing'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
     default: 'xing.com'
-  socialMediaLinks.socialMediaLink-linkedin:
+  socialMediaLinks.linkedin:
     label: 'LinkedIn'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
     default: 'linkedin.com'
-  socialMediaLinks.socialMediaLink-youtube:
+  socialMediaLinks.youtube:
     label: 'YouTube'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'

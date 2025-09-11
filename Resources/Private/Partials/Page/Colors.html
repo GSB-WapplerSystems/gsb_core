@@ -1,27 +1,26 @@
 {namespace gsb=ITZBund\GsbCore\ViewHelpers}
-
-<f:if condition="{site.configuration.settings.GSB.style.colors}">
+<f:if condition="{site.configuration.settings.colors.colorGeneral} || {site.configuration.settings.colors.background}">
     <f:asset.css identifier="general-color-configs" useNonce="true" priority="true">
         :root <f:format.raw>{</f:format.raw>
         <f:spaceless>
             
-            <f:for each="{site.configuration.settings.GSB.style.colors.colorGeneral}" as="item" key="key">
+            <f:for each="{site.configuration.settings.colors.colorGeneral}" as="item" key="key">
                 <f:switch expression="{key}">
-                        <f:case value="primary">--bs-primary: {item};</f:case>
-                        <f:case value="secondary">--bs-secondary: {item};</f:case>
-                        <f:case value="secondary-rgba">--bs-focus-ring-color: {item};</f:case>
-                        <f:case value="tertiary">--bs-tertiary: {item};</f:case>
-                        <f:case value="quaternary">--bs-quaternary: {item};</f:case>
+                        <f:case value="gsb-color-primary">--bs-primary: {item};</f:case>
+                        <f:case value="gsb-color-secondary">--bs-secondary: {item};</f:case>
+                        <f:case value="gsb-color-secondary-rgba">--bs-focus-ring-color: {item};</f:case>
+                        <f:case value="gsb-color-tertiary">--bs-tertiary: {item};</f:case>
+                        <f:case value="gsb-color-quaternary">--bs-quaternary: {item};</f:case>
                     </f:switch>
             </f:for>
-            <f:for each="{site.configuration.settings.GSB.style.colors.background}" as="item" key="key">
+            <f:for each="{site.configuration.settings.colors.background}" as="item" key="key">
                 <f:switch expression="{key}">
-                        <f:case value="1">--bs-bgcolor-1: {item.color};</f:case>
-                        <f:case value="2">--bs-bgcolor-2: {item.color};</f:case>
-                        <f:case value="3">--bs-bgcolor-3: {item.color};</f:case>
-                        <f:case value="4">--bs-bgcolor-4: {item.color};</f:case>
-                        <f:case value="5">--bs-bgcolor-5: {item.color};</f:case>
-                        <f:case value="6">--bs-bgcolor-6: {item.color};</f:case>
+                        <f:case value="gsb-background-color-1">--bs-bgcolor-1: {item.color};</f:case>
+                        <f:case value="gsb-background-color-2">--bs-bgcolor-2: {item.color};</f:case>
+                        <f:case value="gsb-background-color-3">--bs-bgcolor-3: {item.color};</f:case>
+                        <f:case value="gsb-background-color-4">--bs-bgcolor-4: {item.color};</f:case>
+                        <f:case value="gsb-background-color-5">--bs-bgcolor-5: {item.color};</f:case>
+                        <f:case value="gsb-background-color-6">--bs-bgcolor-6: {item.color};</f:case>
                     </f:switch>
             </f:for>
         </f:spaceless>

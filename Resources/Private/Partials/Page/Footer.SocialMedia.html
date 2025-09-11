@@ -6,49 +6,49 @@
     -->
 </f:comment>
 
-<f:if condition="{$socialMediaLink-x} || {$socialMediaLink-youtube} || {$socialMediaLink-instagram} || {$socialMediaLink-xing} || {$socialMediaLink-facebook} || {$socialMediaLink-linkedin}">
+<f:if condition="{site.configuration.settings.socialMediaLinks.facebook} || {site.configuration.settings.socialMediaLinks.youtube} || {site.configuration.settings.socialMediaLinks.instagram} || {site.configuration.settings.socialMediaLinks.xing} || {site.configuration.settings.socialMediaLinks.facebook} || {site.configuration.settings.socialMediaLinks.linkedin}">
     <aside class="row" aria-labelledby="SocialFooter">
         <div class="col-12">
             <div class="social-media justify-content-lg-end d-sm-flex align-items-center">
                 <h2 class="fs-3 fs-lg-2 fw-normal mt-4 mt-sm-0 mb-0 me-4" id="SocialFooter">{f:translate(key: 'footer.socialmediaheader',extensionName:'gsb_core')}</h2>
                 <ul class="mb-4 mt-4 list-unstyled d-flex gap-4">
-                    <f:if condition="{$socialMediaLink-facebook}">
+                    <f:if condition="{site.configuration.settings.socialMediaLinks.facebook}">
                         <li>
-                            <a class="facebook" href="{$socialMediaLink-facebook}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Facebook {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <a class="facebook" href="https://{site.configuration.settings.socialMediaLinks.facebook}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Facebook {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-facebook" aria-hidden="true"></span>
                                 <span class="visually-hidden">Facebook</span>
                             </a>
                         </li>
                     </f:if>
-                    <f:if condition="{$socialMediaLink-youtube}">
+                    <f:if condition="{site.configuration.settings.socialMediaLinks.youtube}">
                         <li>
-                            <a class="youtube" href="{$socialMediaLink-youtube}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} YouTube {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <a class="youtube" href="https://{site.configuration.settings.socialMediaLinks.youtube}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} YouTube {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-youtube" aria-hidden="true"></span>
                                 <span class="visually-hidden">YouTube</span>
                             </a>
                         </li>
                     </f:if>
-                    <f:if condition="{$socialMediaLink-instagram}">
+                    <f:if condition="{site.configuration.settings.socialMediaLinks.instagram}">
                         <li>
-                            <a class="instagram" href="{$socialMediaLink-instagram}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Instagram {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <a class="instagram" href="https://{site.configuration.settings.socialMediaLinks.instagram}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Instagram {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-instagram" aria-hidden="true"></span>
                                 <span class="visually-hidden">Instagram</span>
                             </a>
                         </li>
                     </f:if>
-                    <f:if condition="{$socialMediaLink-x}">
+                    <f:if condition="{site.configuration.settings.socialMediaLinks.x}">
                         <li>
-                            <a class="twitter" href="{$socialMediaLink-x}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                            <a class="twitter" href="https://{site.configuration.settings.socialMediaLinks.x}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-twitter" aria-hidden="true"></span>
                                 <span class="visually-hidden">X</span>
                             </a>
                         </li>
                     </f:if>
-                    <f:if condition="{$socialMediaLink-xing}">
+                    <f:if condition="{site.configuration.settings.socialMediaLinks.xing}">
                         <li>
-                            <a class="twitter" href="{$socialMediaLink-xing}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                                <span class="icon icon-twitter" aria-hidden="true"></span>
-                                <span class="visually-hidden">X</span>
+                            <a class="twitter" href="https://{site.configuration.settings.socialMediaLinks.xing}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Xing {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
+                                <span class="icon icon-xing" aria-hidden="true"></span>
+                                <span class="visually-hidden">Xing</span>
                             </a>
                         </li>
                     </f:if>

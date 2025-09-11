@@ -21,7 +21,7 @@
 use ITZBund\GsbCore\Configuration\PackageHelper;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage, sign-language-page, simple-language-page, --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
+    ,--div--;GSB,sitePackage,  --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
@@ -209,29 +209,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['web-app-manifest-512x512'] = [
 
 
 
-$GLOBALS['SiteConfiguration']['site']['columns']['simple-language-page'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.label',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.simple-language-page.description',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['page'],
-            'size' => 50,
-            'default' => '',
-        ],
-];
 
-$GLOBALS['SiteConfiguration']['site']['columns']['sign-language-page'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.label',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sign-language-page.description',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['page'],
-            'size' => 50,
-            'default' => '',
-        ],
-];
 
 
 $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
