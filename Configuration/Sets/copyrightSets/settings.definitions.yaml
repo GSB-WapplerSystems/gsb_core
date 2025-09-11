@@ -3,14 +3,14 @@ categories:
     label: 'Copyright (Urheberrechtshinweis) Einstellungen'
     parent: GSB
 settings:
-  GSB.copyright.notice:
+  copyright.notice:
     label: 'Urheberrechtshinweis '
     category: GSB.copyrightCategory
     description: 'Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt.'
     type: string
     default: 'meine Behörde'
 
-  GSB.copyright.show-copyright:
+  copyright.show-copyright:
     type: bool
     default: false
     category: GSB.copyrightCategory

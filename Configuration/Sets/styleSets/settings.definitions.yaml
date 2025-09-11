@@ -19,104 +19,104 @@ categories:
 settings:
   # todo: use colorpicker if fixed
   # Background colors
-  GSB.style.colors.background.1.color:
+  colors.background.gsb-background-color-1:
     label: 'Farbe #1'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #1 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.1.lable:
+  colors.background.gsb-background-color-1-lable:
     label: 'Farbwertname #1'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
-  GSB.style.colors.background.2.color:
+  colors.background.gsb-background-color-2:
     label: 'Farbe #2'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #2 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.2.lable:
+  colors.background.gsb-background-color-2-lable:
     label: 'Farbwertname #2'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
-  GSB.style.colors.background.3.color:
+  colors.background.gsb-background-color-3:
     label: 'Farbe #3'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #3 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.3.lable:
+  colors.background.gsb-background-color-3-lable:
     label: 'Farbwertname #3'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
-  GSB.style.colors.background.4.color:
+  colors.background.gsb-background-color-4:
     label: 'Farbe #4'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #4 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.4.lable:
+  colors.background.gsb-background-color-4-lable:
     label: 'Farbwertname #4'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
-  GSB.style.colors.background.5.color:
+  colors.background.gsb-background-color-5:
     label: 'Farbe #5'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.5.lable:
+  colors.background.gsb-background-color-5-lable:
     label: 'Farbwertname #5'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
-  GSB.style.colors.background.6.color:
+  colors.background.gsb-background-color-6:
     label: 'Farbe #6'
     category: GSB.style.colors.background
     description: 'Konfigurieren Sie die Farbe #6 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: string
     default: '#000'
-  GSB.style.colors.background.6.lable:
+  colors.background.gsb-background-color-6-lable:
     label: 'Farbwertname #6'
     category: GSB.style.colors.background
     description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: ''
   # Color General
-  GSB.style.colors.colorGeneral.primary:
+  colors.colorGeneral.gsb-color-primary:
     label: 'Farbwert Primär'
     category: GSB.style.colors.colorGeneral
     description: 'Hier kann ein Farbwert für die Primärfarbe vergeben werden.'
     type: string
     default: '#000'
-  GSB.style.colors.colorGeneral.secondary:
+  colors.colorGeneral.gsb-color-secondary:
     label: 'Farbwert Sekundär'
     category: GSB.style.colors.colorGeneral
     description: 'Hier kann ein Farbwert für die Sekundärfarbe vergeben werden.'
     type: string
     default: '#000'
-  GSB.style.colors.colorGeneral.secondary-rgba:
+  colors.colorGeneral.gsb-color-secondary-rgba:
     label: 'Farbwert Sekundär RGBA'
     category: GSB.style.colors.colorGeneral
     description: 'Hier kann ein Farbwert für die Sekundärfarbe im RGBA Format vergeben werden.'
     type: string
     default: '#000'
-  GSB.style.colors.colorGeneral.tertiary:
+  colors.colorGeneral.gsb-color-tertiary:
     label: 'Farbwert Tertiär'
     category: GSB.style.colors.colorGeneral
     description: 'Hier kann ein Farbwert für die Tertiärfarbe vergeben werden.'
     type: string
     default: '#000'
-  GSB.style.colors.colorGeneral.quaternary:
+  colors.colorGeneral.gsb-color-quaternary:
     label: 'Farbwert Quartär'
     category: GSB.style.colors.colorGeneral
     description: 'Hier kann ein Farbwert für die Quartärfarbe vergeben werden.'

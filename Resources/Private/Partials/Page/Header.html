@@ -44,15 +44,15 @@
                     partial="Header.LogoSecond" />
             </f:if>
             
-            <f:if condition="{site.configuration.settings.GSB.functions.navigation.navType} == 0">
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 0">
                 <f:render arguments="{_all}" partial="Navigation/Primary/NavPrimary" />
             </f:if>
 
-            <f:if condition="{site.configuration.settings.GSB.functions.navigation.navType} == 1">
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 1">
                 <f:render arguments="{_all}" partial="Navigation/Secondary/NavSecondary" />
             </f:if>
 
-            <f:if condition="{site.configuration.settings.GSB.functions.navigation.navType} == 2">
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 2">
                 <f:render arguments="{_all}" partial="Navigation/Tertiary/NavTertiary" />
             </f:if>
         </div>

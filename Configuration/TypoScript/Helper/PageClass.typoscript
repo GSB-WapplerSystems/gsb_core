@@ -78,7 +78,7 @@ lib.page.class {
   // NavType
   70 = TEXT
   70 {
-    data = site:navType
+    data = {$navigation.gsb-navType}
     noTrimWrap = | navtype-||
   }
 }

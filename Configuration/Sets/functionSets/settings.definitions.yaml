@@ -1,4 +1,6 @@
 categories:
+  GSB:
+    label: 'GSB Individualisierungs Einstellungen'
   GSB.functions:
     label: 'Funktionen Einstellungen'
     parent: GSB
@@ -20,23 +22,9 @@ categories:
 
 settings:
 
-### Suche Einstellungen ###
-  GSB.functions.suche:
-    label: 'Suche nutzen'
-    category: GSB.functions.suche
-    description: 'Durch das Deaktivieren dieses Toggles wird der Menüpunkt "Suche" in der Navigation ausgeblendet werden.'
-    type: bool
-    default: true
-
-  GSB.functions.suche.solrEnabledFacets:
-    label: 'Facetten nutzen'
-    category: GSB.functions.suche
-    description: 'Das Deaktivieren dieses Toggles blendet die Facettierung der Suche aus.'
-    type: bool
-    default: true
 
 ### Navigation Einstellungen ###
-  GSB.functions.navigation.navType:
+  navigation.gsb-navType:
     type: string
     default: '0'
     category: GSB.functions.navigation
@@ -48,44 +36,44 @@ settings:
 
 
 ### Social Media Links Einstellungen ###
-  GSB.functions.socialMediaLink.x:
+  socialMediaLinks.socialMediaLink-x:
     label: 'X'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
-  GSB.functions.socialMediaLink.facebook:
+    default: 'x.com'
+  socialMediaLinks.socialMediaLink-facebook:
     label: 'Facebook'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
-  GSB.functions.socialMediaLink.instagram:
+    default: 'facebook.com'
+  socialMediaLinks.socialMediaLink-instagram:
     label: 'Instagram'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
-  GSB.functions.socialMediaLink.xing:
+    default: 'instagram.com'
+  socialMediaLinks.socialMediaLink-xing:
     label: 'Xing'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
-  GSB.functions.socialMediaLink.linkedin:
+    default: 'xing.com'
+  socialMediaLinks.socialMediaLink-linkedin:
     label: 'LinkedIn'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
-  GSB.functions.socialMediaLink.youtube:
+    default: 'linkedin.com'
+  socialMediaLinks.socialMediaLink-youtube:
     label: 'YouTube'
     category: GSB.functions.socialMediaLinks
     description: 'Links to social media profiles'
     type: string
-    default: ''
+    default: 'youtube.com'
 
-  GSB.functions.googleSiteVerification:
+  search.googleSiteVerification:
     label: 'Google Site Verification Code'
     category: GSB.functions
     description: 'Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.'
@@ -93,14 +81,14 @@ settings:
     default: ''
 
 ### Barrierefreiheit Einstellungen ###
-  GSB.functions.accessability.signLanguagePage:
+  accessability.signLanguagePage:
     label: 'Gebärdensprache Seite'
     category: GSB.functions.accessability
     description: 'Konfiguration der Gebärdensprache Seite.'
     type: page
     default: 0
 
-  GSB.functions.accessability.simpleLanguagePage:
+  accessability.simpleLanguagePage:
     label: 'Einfache Sprachen Seite'
     category: GSB.functions.accessability
     description: 'Konfiguration der Einfache Sprachen Seite.'

@@ -20,7 +20,7 @@
                 <f:for as="mainItem" each="{menuMainDesktop}">
                     <f:render partial="Navigation/Primary/NavMain" arguments="{mainItem: mainItem}" />
                 </f:for>
-                <f:if condition="{site.configuration.search} == 1">
+                <f:if condition="{site.configuration.settings.search.suche} == 1">
                     <f:render arguments="{_all}" partial="Header.MainnavSearch" />
                 </f:if>
             </ul>

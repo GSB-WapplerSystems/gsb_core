@@ -1,13 +1,14 @@
 name: itzbund-gsb/default
 label: GSB11 Standard-Set
 dependencies:
-  - itzbund-gsb/public-frontend
   - itzbund-gsb/function
   - itzbund-gsb/copyright
   - itzbund-gsb/style
+  - itzbund-gsb/solr
   - typo3/seo-sitemap
   - typo3/form
-  - typo3/fluid-styled-content
   - kitzberger/form-mailtext
-  
+  - typo3/fluid-styled-content
+optionalDependencies:
+  - itzbund-gsb/public-frontend
 
