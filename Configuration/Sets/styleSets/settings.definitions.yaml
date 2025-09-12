@@ -20,6 +20,10 @@ categories:
     label: 'Favicons Einstellungen'
     description: 'Nutzen Sie dazu bitte den Dienst unter: https://realfavicongenerator.net/ (Dieser Dienst ist kostenlos und Copyright frei). Hierzu brauchen Sie nur ein 512x512 großes Favicon-PNG Bild und lassen es von diesem Dienst bearbeiten. Laden Sie die erzeugten Dateien herunter und fügen Sie diese z.B. unter /fileadmin/Favicons/ ein. Danach können Sie die entsprechenden Dateien hier wieder verlinken, um Ihr Favicon auszutauschen. Natürlich können Sie alle Dateien auch händisch erstellen. Die Dateinamen und Bildgrößen müssen beibehalten werden.'
     parent: GSB.style
+  GSB.style.fonts:
+    label: 'Fonts Einstellungen'
+    parent: GSB.style
+    description: 'Die folgenden Felder können genutzt werden um individuelle Schriftarten im Frontend zu verwenden.'
 settings:
   # todo: use colorpicker if fixed
   # Background colors
@@ -171,44 +175,87 @@ settings:
     default: ''
   # favicons
   favicons.favicon-96x96-png:
-      label: 'Favicon 96x96 PNG'
-      category: GSB.style.favicons
-      description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 96x96 Pixel haben. Dateiname muss "favicon-96x96.png" sein.'
-      type: file
-      default: 0
+    label: 'Favicon 96x96 PNG'
+    category: GSB.style.favicons
+    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 96x96 Pixel haben. Dateiname muss "favicon-96x96.png" sein.'
+    type: file
+    default: 0
   favicons.faviconIco:
-      label: 'Favicon ICO'
-      category: GSB.style.favicons
-      description: 'Die klassische Ico-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon.ico" sein.'
-      type: file
-      default: 0
+    label: 'Favicon ICO'
+    category: GSB.style.favicons
+    description: 'Die klassische Ico-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon.ico" sein.'
+    type: file
+    default: 0
   favicons.faviconSvg:
-      label: 'Favicon SVG'
-      category: GSB.style.favicons
-      description: 'Das SVG Touch Icon muss muss quadratisch sein und eine Größe von 512x512 Pixeln haben. Dateiname muss "favicon.svg" sein.'
-      type: file
-      default: 0
+    label: 'Favicon SVG'
+    category: GSB.style.favicons
+    description: 'Das SVG Touch Icon muss muss quadratisch sein und eine Größe von 512x512 Pixeln haben. Dateiname muss "favicon.svg" sein.'
+    type: file
+    default: 0
   favicons.apple-touch-icon:
-      label: 'Apple Touch Icon'
-      category: GSB.style.favicons
-      description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 180x180 Pixel haben. Dateiname muss "apple-touch-icon.png" sein.'
-      type: file
-      default: 0
+    label: 'Apple Touch Icon'
+    category: GSB.style.favicons
+    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 180x180 Pixel haben. Dateiname muss "apple-touch-icon.png" sein.'
+    type: file
+    default: 0
   favicons.webmanifest:
-      label: 'Webmanifest'
-      category: GSB.style.favicons
-      description: 'ie Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.'
-      type: file
-      default: 0
+    label: 'Webmanifest'
+    category: GSB.style.favicons
+    description: 'ie Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.'
+    type: file
+    default: 0
   favicons.web-app-manifest-192x192:
-      label: 'Web App Manifest 192x192 PNG'
-      category: GSB.style.favicons
-      description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 192x192 Pixel haben. Dateiname muss "web-app-manifest-192x192.png" sein.'
-      type: file
-      default: 0
+    label: 'Web App Manifest 192x192 PNG'
+    category: GSB.style.favicons
+    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 192x192 Pixel haben. Dateiname muss "web-app-manifest-192x192.png" sein.'
+    type: file
+    default: 0
   favicons.web-app-manifest-512x512:
-      label: 'Web App Manifest 512x512 PNG'
-      category: GSB.style.favicons
-      description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 512x512 Pixel haben. Dateiname muss "web-app-manifest-512x512.png" sein.'
-      type: file
-      default: 0
+    label: 'Web App Manifest 512x512 PNG'
+    category: GSB.style.favicons
+    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 512x512 Pixel haben. Dateiname muss "web-app-manifest-512x512.png" sein.'
+    type: file
+    default: 0
+#fonts
+  fonts.sans.font-sans-normal:
+    label: 'Sans Normal'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Sans Normal ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.sans.font-sans-italic:
+    label: 'Sans Italic'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Sans Italic ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.sans.font-sans-medium:
+    label: 'Sans Medium'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Sans Medium ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.sans.font-sans-bold:
+    label: 'Sans Bold'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Sans Bold ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.sans.font-sans-bold-italic:
+    label: 'Sans Bold Italic'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Sans Bold Italic ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.serif.font-serif-normal:
+    label: 'Serif Normal'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Serif Normal ausgewählt werden.'
+    type: file
+    default: 0
+  fonts.serif.font-serif-italic:
+    label: 'Serif Italic'
+    category: GSB.style.fonts
+    description: 'Hier kann eine Schriftart für den Serif Italic ausgewählt werden.'
+    type: file
+    default: 0
