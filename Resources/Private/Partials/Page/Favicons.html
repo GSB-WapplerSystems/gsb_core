@@ -7,22 +7,22 @@
         -->
     </f:comment>
 
-    <f:if condition="{site.configuration.favicon-48x48-png} || {site.configuration.favicon-96x96-png} || {site.configuration.faviconIco} || {site.configuration.faviconSvg} || {site.configuration.apple-touch-icon} || {site.configuration.webmanifest}">
+    <f:if condition="{site.configuration.settings.favicons.favicon-48x48-png} || {site.configuration.settings.favicons.favicon-96x96-png} || {site.configuration.settings.favicons.faviconIco} || {site.configuration.settings.favicons.faviconSvg} || {site.configuration.settings.favicons.apple-touch-icon} || {site.configuration.settings.favicons.webmanifest}">
         <f:then>
-            <f:if condition="{site.configuration.favicon-96x96-png}">
-                <link href="{f:uri.image(src: '{site.configuration.favicon-96x96-png}')}" rel="icon" sizes="96x96" type="image/png" />
+            <f:if condition="{site.configuration.settings.favicons.favicon-96x96-png}">
+                <link href="{f:uri.image(src: '{site.configuration.settings.favicons.favicon-96x96-png}')}" rel="icon" sizes="96x96" type="image/png" />
             </f:if>
-            <f:if condition="{site.configuration.faviconIco}">
-                <link href="{f:uri.image(src: '{site.configuration.faviconIco}')}" rel="shortcut icon" />
+            <f:if condition="{site.configuration.settings.favicons.faviconIco}">
+                <link href="{f:uri.image(src: '{site.configuration.settings.favicons.faviconIco}')}" rel="shortcut icon" />
             </f:if>
-            <f:if condition="{site.configuration.faviconSvg}">
-                <link href="{f:uri.image(src: '{site.configuration.faviconSvg}')}" rel="icon" type="image/svg+xml" />
+            <f:if condition="{site.configuration.settings.favicons.faviconSvg}">
+                <link href="{f:uri.image(src: '{site.configuration.settings.favicons.faviconSvg}')}" rel="icon" type="image/svg+xml" />
             </f:if>
-            <f:if condition="{site.configuration.apple-touch-icon}">
-                <link href="{f:uri.image(src: '{site.configuration.apple-touch-icon}')}" rel="apple-touch-icon" sizes="180x180" />
+            <f:if condition="{site.configuration.settings.favicons.apple-touch-icon}">
+                <link href="{f:uri.image(src: '{site.configuration.settings.favicons.apple-touch-icon}')}" rel="apple-touch-icon" sizes="180x180" />
             </f:if>
-            <f:if condition="{site.configuration.webmanifest}">
-                <link href="{f:uri.image(src: '{site.configuration.webmanifest}')}" rel="manifest" />
+            <f:if condition="{site.configuration.settings.favicons.webmanifest}">
+                <link href="{f:uri.image(src: '{site.configuration.settings.favicons.webmanifest}')}" rel="manifest" />
             </f:if>
         </f:then>
         <f:else>

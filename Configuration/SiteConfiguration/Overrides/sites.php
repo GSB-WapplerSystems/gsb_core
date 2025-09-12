@@ -21,12 +21,10 @@
 use ITZBund\GsbCore\Configuration\PackageHelper;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage,  --palette--;;, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
+    ,--div--;GSB,sitePackage,  --palette--;;, -, --palette--;;color,--palette--;;color-general,--palette--;;fonts
 ';
 
-$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';
-$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.favicon.palette.description';
-$GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['showitem'] = 'favicon-96x96-png, faviconIco, faviconSvg, apple-touch-icon, webmanifest, web-app-manifest-192x192, web-app-manifest-512x512';
+
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
@@ -135,76 +133,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
         ],
 ];
 
-// Add different favicons to the page
-$GLOBALS['SiteConfiguration']['site']['columns']['apple-touch-icon'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.apple-touch-icon',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.apple-touch-icon',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['faviconIco'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.faviconIco',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.faviconIco',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['faviconSvg'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.faviconSvg',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.faviconSvg',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['favicon-96x96-png'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.favicon-96x96-png',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.favicon-96x96-png',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['webmanifest'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.webmanifest',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.webmanifest',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['web-app-manifest-192x192'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.web-app-manifest-192x192',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.web-app-manifest-192x192',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
-
-$GLOBALS['SiteConfiguration']['site']['columns']['web-app-manifest-512x512'] = [
-    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.web-app-manifest-512x512',
-    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.web-app-manifest-512x512',
-    'config' =>
-        [
-            'type' => 'link',
-            'allowedTypes' => ['file'],
-        ],
-];
 
 
 
