@@ -122,3 +122,47 @@ settings:
     description: 'Hier kann ein Farbwert für die Quartärfarbe vergeben werden.'
     type: string
     default: '#000'
+  # logos
+  logos.gsb-logo-big:
+    label: 'Logo big'
+    category: GSB.style.logos
+    description: 'Hier kann ein Logo ausgewählt werden.'
+    type: file
+    default: 0
+  logos.gsb-logo-small:
+    label: 'Logo small'
+    category: GSB.style.logos
+    description: 'Hier kann ein Logo ausgewählt werden.'
+    type: file
+    default: 0
+  logos.gsb-logo-text:
+    label: 'logo trademark'
+    category: GSB.style.logos
+    description: 'Hier kann die Textmarke des Logos ersetzt werden, die Datei muss ein SVG mit dem entsprechenden Textpfad sein.'
+    type: file
+    default: 0
+  logos.gsb-initiative-text:
+    label: 'Initiative text'
+    category: GSB.style.logos
+    description: 'Überschreibt den im Standard dargestellten Text ("Eine Initiative von") neben dem zweiten Logo.'
+    type: string
+    default: ''
+  logos.gsb-second-logo:
+    label: 'Zweites Logo hinzufügen'
+    category: GSB.style.logos
+    description: 'Anpassung der Desktop-Version des zweiten Logos.'
+    type: file
+    default: 0
+  logos.gsb-second-logo-link:
+    label: 'Linkziel des zweiten Logos '
+    category: GSB.style.logos
+    description: 'Optionaler Link, mit dem das zweite Logo versehen werden kann.'
+    type: page
+    default: 0
+  logos.gsb-second-logo-alt:
+    label: 'Alternativ Text 2. Logo'
+    category: GSB.style.logos
+    description: 'Alternativ Text für das zweite Logo für visuell beeinträchtigte Webseiten-Besucher.'
+    type: string
+    default: ''
+

@@ -27,13 +27,13 @@
     </div>
 
 <f:section name="logo">
-    <f:if condition="{site.configuration.logo-complete-toggle}">
+    <f:if condition="{site.configuration.settings.logos.gsb-logo-small} && {site.configuration.settings.logos.gsb-logo-big}">
         <f:then>
-            <f:if condition="{site.configuration.logo-complete-big}">
-                <f:image src="{site.configuration.logo-complete-big}" class="img-fluid logo-complete-big d-none d-lg-block" alt="" maxWidth="220"></f:image>
+            <f:if condition="{site.configuration.settings.logos.gsb-logo-big}">
+                <f:image src="{site.configuration.settings.logos.gsb-logo-big}" class="img-fluid logo-complete-big d-none d-lg-block" alt="" maxWidth="220"></f:image>
             </f:if>
-            <f:if condition="{site.configuration.logo-complete-small}">
-                <f:image src="{site.configuration.logo-complete-small}" class="img-fluid logo-complete-small d-block d-lg-none" alt="" maxWidth="150"></f:image>
+            <f:if condition="{site.configuration.settings.logos.gsb-logo-small}">
+                <f:image src="{site.configuration.settings.logos.gsb-logo-small}" class="img-fluid logo-complete-small d-block d-lg-none" alt="" maxWidth="150"></f:image>
             </f:if>
         </f:then>
         <f:else>

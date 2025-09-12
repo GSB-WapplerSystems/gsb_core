@@ -21,7 +21,7 @@
 use ITZBund\GsbCore\Configuration\PackageHelper;
 
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] .= ',
-    ,--div--;GSB,sitePackage,  --palette--;;logos, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
+    ,--div--;GSB,sitePackage,  --palette--;;, --palette--;;favicon, --palette--;;color,--palette--;;color-general,--palette--;;fonts
 ';
 
 $GLOBALS['SiteConfiguration']['site']['palettes']['favicon']['label'] = 'Favicons';

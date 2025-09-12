@@ -38,9 +38,9 @@
     </f:if>
     <div class="header-wrapper-bg flex-wrap">
         <div class="container position-relative">
-            <f:if condition="{site.configuration.second-logo-complete-toggle}">
+            <f:if condition="{site.configuration.settings.logos.gsb-second-logo}">
                 <f:render
-                    arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}"
+                    arguments="{logo: site.configuration.settings.logos.gsb-second-logo, link: site.configuration.settings.logos.gsb-second-logo-link, alt: site.configuration.settings.logos.gsb-second-logo-alt, site: site}"
                     partial="Header.LogoSecond" />
             </f:if>
             
