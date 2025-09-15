@@ -6,7 +6,6 @@
 
 declare(strict_types=1);
 
-
 /*
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
@@ -21,7 +20,6 @@ declare(strict_types=1);
   * LICENSE file that was distributed with this source code.
   */
 
-
 namespace ITZBund\GsbCore\Settings\Type;
 
 use Psr\Log\LoggerInterface;
@@ -35,8 +33,7 @@ readonly class FileType implements SettingsTypeInterface
 {
     public function __construct(
         protected LoggerInterface $logger,
-    ) {
-    }
+    ) {}
 
     public function validate(mixed $value, SettingDefinition $definition): bool
     {

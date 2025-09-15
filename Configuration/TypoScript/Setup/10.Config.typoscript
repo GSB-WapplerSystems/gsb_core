@@ -59,10 +59,11 @@ config {
   concatenateCss = {$devconfig.concatenateCss}
 }
 
-#if header comment is not empty
-[{$devconfig.header-comment} == '']
-  config.headerComment = (itzbund.de
-  =========================================================================================
-  Uses GSB 11 https://software.opencode.de/project/2460
-  =========================================================================================)
+#if header comment is not empty ignore the strange formart it works only this way
+[site('configuration')['settings']['devconfig']['header-comment'] == '']
+  config.headerComment ( itzbund.de
+=========================================================================================
+Uses GSB 11 https://software.opencode.de/project/2460
+=========================================================================================
+  )
 [GLOBAL]

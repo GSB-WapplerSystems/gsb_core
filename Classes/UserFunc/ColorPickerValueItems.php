@@ -34,15 +34,14 @@ class ColorPickerValueItems
     {
         /** @var SiteInterface $site */
         $site = $config['site'];
-        
-       
+
         $items = [
             [
                 $this->getLanguageService()->sL('LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label'),
                 '',
             ],
         ];
-        
+
         if (!method_exists($site, 'getConfiguration')) {
             $config['items'] = [];
             return;
@@ -52,14 +51,12 @@ class ColorPickerValueItems
         if (isset($settings->get('colors')['background'])) {
             $colors = $settings->get('colors')['background'];
         }
-        
-       
+
         foreach ($colors as $color) {
             if ($color['color'] !== '#000' && $color['label'] !== '') {
                 $label = $color['label'];
                 $color = $color['color'];
-            }
-            else {
+            } else {
                 continue;
             }
 
