@@ -98,11 +98,6 @@ page {
       navType = TEXT
       navType.value = 0
 
-
-      // getting absRefPrefix dynamically
-      absRefPrefix = TEXT
-      absRefPrefix.value = {$config.absRefPrefix}
-
       # general title and vars
       jumpNav = < lib.jumpNav
       copyrightYear = < lib.copyrightYear

@@ -7,6 +7,8 @@ dependencies:
   - itzbund-gsb/solr
   - typo3/seo-sitemap
   - typo3/form
+  - typo3/felogin
+  - typo3/redirects
   - kitzberger/form-mailtext
   - typo3/fluid-styled-content
 optionalDependencies:

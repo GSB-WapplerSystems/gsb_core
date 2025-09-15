@@ -30,7 +30,6 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-c
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-big'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-big',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-big',
-    'displayCond' => 'FIELD:logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'link',
@@ -40,7 +39,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-big'] = [
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-small'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-small',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-small',
-    'displayCond' => 'FIELD:logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'link',
@@ -63,7 +61,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-complete-toggle'] 
 $GLOBALS['SiteConfiguration']['site']['columns']['second-logo'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo',
-    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'link',
@@ -73,7 +70,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo'] = [
 $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-alt'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-alt',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-alt',
-    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
     'config' =>
         [
             'type' => 'text',
@@ -83,7 +79,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-alt'] = [
 $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.second-logo-link',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.second-logo-link',
-    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
+
     'config' =>
         [
             'type' => 'link',
@@ -93,7 +89,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['second-logo-link'] = [
 
 $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text-toggle.label',
-    'displayCond' => 'FIELD:second-logo-complete-toggle:REQ:true',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.initiative-text-toggle',
     'onChange' => 'reload',
     'config' => [
@@ -105,12 +100,6 @@ $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text-toggle'] = [
 
 $GLOBALS['SiteConfiguration']['site']['columns']['initiative-text'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.initiative-text.label',
-    'displayCond' => [
-        'AND' => [
-            'FIELD:second-logo-complete-toggle:REQ:true',
-            'FIELD:initiative-text-toggle:REQ:true',
-        ],
-    ],
     'config' => [
         'type' => 'text',
         'renderType' => 'input',
@@ -127,7 +116,6 @@ $localizableKeys = [
     'second-logo-alt',
     'second-logo-link',
     'initiative-text',
-    'logo-text',
 ];
 
 foreach ($localizableKeys as $localizableKey) {

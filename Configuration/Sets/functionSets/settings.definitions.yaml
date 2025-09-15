@@ -19,6 +19,12 @@ categories:
   GSB.functions.accessability:
     label: 'Barrierefreiheit Einstellungen'
     parent: GSB.functions
+  GSB.functions.security:
+    label: 'Sicherheit Einstellungen'
+    parent: GSB.functions
+  GSB.functions.devconfig:
+    label: 'Entwicklerkonfiguration Einstellungen'
+    parent: GSB.functions
 
 settings:
 
@@ -33,6 +39,42 @@ settings:
       '0': 'Klassische Desktop Navigation'
       '1': 'Mobiles "Burger" Menü'
     description: 'Darstellungsart der Hauptnavigation in der Desktop Ansicht.'
+  navigation.categories-page:
+    label: 'Kategorien Seite'
+    category: GSB.functions.navigation
+    description: 'Kategorien Seite'
+    type: page
+    default: 150
+  navigation.header-title:
+    label: 'Header Titel'
+    category: GSB.functions.navigation
+    description: 'Header Titel'
+    type: string
+    default: ''
+  navigation.home-page:
+    label: 'Startseite'
+    category: GSB.functions.navigation
+    description: 'Startseite'
+    type: page
+    default: 1
+  navigation.meta-page:
+    label: 'Meta Seite'
+    category: GSB.functions.navigation
+    description: 'Meta Seite'
+    type: page
+    default: 66
+  navigation.metaTop-page:
+    label: 'MetaTop Seite'
+    category: GSB.functions.navigation
+    description: 'MetaTop Seite'
+    type: page
+    default: 66
+  navigation.footer-page:
+    label: 'Footer Seite'
+    category: GSB.functions.navigation
+    description: 'Footer Seite'
+    type: page
+    default: 25
 
 
 ### Social Media Links Einstellungen ###
@@ -72,25 +114,97 @@ settings:
     description: 'Links to social media profiles'
     type: string
     default: 'youtube.com'
-
+# search
+  search.seach-page:
+    label: 'Suche Seite'
+    category: GSB.functions.suche
+    description: 'Suche Seite'
+    type: page
+    default: 35
   search.googleSiteVerification:
     label: 'Google Site Verification Code'
     category: GSB.functions
     description: 'Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.'
     type: string
     default: ''
-
+### devconfig Einstellungen ###
+  devconfig.debug:
+    label: 'Debug'
+    category: GSB.functions.devconfig
+    description: 'Debug'
+    type: bool
+    default: false
+  devconfig.admPanel:
+    label: 'Adm Panel'
+    category: GSB.functions.devconfig
+    description: 'Adm Panel'
+    type: bool
+    default: false
+  devconfig.noCache:
+    label: 'No Cache'
+    category: GSB.functions.devconfig
+    description: 'No Cache'
+    type: bool
+    default: false
+  devconfig.removeDefaultJS:
+    label: 'Remove Default JS'
+    category: GSB.functions.devconfig
+    description: 'Remove Default JS'
+    type: bool
+    default: false
+  devconfig.compressJs:
+    label: 'Compress JS'
+    category: GSB.functions.devconfig
+    description: 'Compress JS'
+    type: bool
+    default: false
+  devconfig.compressCss:
+    label: 'Compress CSS'
+    category: GSB.functions.devconfig
+    description: 'Compress CSS'
+    type: bool
+    default: false
+  devconfig.concatenateJs:
+    label: 'Concatenate JS'
+    category: GSB.functions.devconfig
+    description: 'Concatenate JS'
+    type: bool
+    default: false
+  devconfig.concatenateCss:
+    label: 'Concatenate CSS'
+    category: GSB.functions.devconfig
+    description: 'Concatenate CSS'
+    type: bool
+    default: false
+  devconfig.header-comment:
+    label: 'Header Comment'
+    category: GSB.functions.devconfig
+    description: 'Header Comment'
+    type: string
+    default: ''
 ### Barrierefreiheit Einstellungen ###
   accessability.signLanguagePage:
     label: 'Gebärdensprache Seite'
     category: GSB.functions.accessability
     description: 'Konfiguration der Gebärdensprache Seite.'
     type: page
-    default: 0
-
+    default: 94
   accessability.simpleLanguagePage:
     label: 'Einfache Sprachen Seite'
     category: GSB.functions.accessability
     description: 'Konfiguration der Einfache Sprachen Seite.'
     type: page
-    default: 0
+    default: 95
+### security Einstellungen ###
+  security.spam-protect-email-addresses:
+    label: 'Spam Schutz Email Adressen'
+    category: GSB.functions.security
+    description: 'Spam Schutz Email Adressen'
+    type: bool
+    default: true
+  security.spam-protect-email-addresses-at-subst:
+    label: 'Spam Schutz Email Adressen At Subst'
+    category: GSB.functions.security
+    description: 'Spam Schutz Email Adressen At Subst'
+    type: string
+    default: '@'
