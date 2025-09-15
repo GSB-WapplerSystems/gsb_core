@@ -13,4 +13,3 @@ dependencies:
   - typo3/fluid-styled-content
 optionalDependencies:
   - itzbund-gsb/public-frontend
-
