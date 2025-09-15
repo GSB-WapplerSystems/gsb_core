@@ -35,7 +35,7 @@ readonly class FileType implements SettingsTypeInterface
         protected LoggerInterface $logger,
     ) {}
 
-    public function validate(mixed $value, SettingDefinition $definition): bool
+    public function validate(mixed $value): bool
     {
         if (is_int($value)) {
             return true;

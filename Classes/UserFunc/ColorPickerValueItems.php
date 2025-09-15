@@ -56,11 +56,8 @@ class ColorPickerValueItems
             if ($color['color'] !== '#000' && $color['label'] !== '') {
                 $label = $color['label'];
                 $color = $color['color'];
-            } else {
-                continue;
+                $items[] = [$label, $color];
             }
-
-            $items[] = [$label, $color];
         }
         $config['items'] = $items;
     }
