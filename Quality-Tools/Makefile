@@ -39,7 +39,7 @@ COMPOSER_CONTAINER_ID	:= $(shell docker images --filter reference=${PROJECT_NAME
 COMPOSER_NORMALIZE = "composer normalize --dry-run --no-check-lock"
 COMPOSER_VALIDATE = "composer validate --strict --no-check-lock"
 PHP_CS_FIXER = "php vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff"
-PHP_MD = "php vendor/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml -vvv"
+PHP_MD = "php -r \"error_reporting(error_reporting() ^ E_DEPRECATED);\"; php ../vendor/bin/phpmd ../Classes/ text ../gsb11.ruleset.xml --baseline-file ../phpmd.baseline.xml -vvv"
 PHP_STAN = "php vendor/bin/phpstan analyse --memory-limit=256M --no-progress"
 PHP_UNIT = "vendor/bin/phpunit -c Tests/UnitTests.xml --testdox --coverage-html Tests/_output"
 RECTOR = "vendor/bin/rector --dry-run"
@@ -72,7 +72,7 @@ set-itzbund-auth-token:
 #build: ## build docker images
 .PHONY: build
 build:
-	@COMPOSE_BAKE=true DOCKER_USER="root" ${DOCKER_ARGS} docker compose -f Docker/Composer/docker-compose.yml build --no-cache
+	@COMPOSE_BAKE=true DOCKER_USER="root" ${DOCKER_ARGS} docker buildx bake --file Docker/Composer/docker-compose.yml --no-cache --provenance=false
 
 #container: ## Execute given 'exec' parameter as command in container (e.g. "make container exec='composer list'" runs "composer list" inside the container)
 .PHONY: container
@@ -82,7 +82,7 @@ container:
 		$(CONTAINER_EXEC) $(exec); \
 		$(DOCKER_COMPOSE) down; \
 	else \
-		COMPOSE_BAKE=true DOCKER_USER="root" $(DOCKER_ARGS) docker compose -f Docker/Composer/docker-compose.yml build --no-cache; \
+		COMPOSE_BAKE=true DOCKER_USER="root" $(DOCKER_ARGS) docker buildx bake --file Docker/Composer/docker-compose.yml --no-cache; \
 		$(DOCKER_COMPOSE) up -d; \
 		$(CONTAINER_EXEC) composer install --no-interaction --prefer-dist; \
 		$(CONTAINER_EXEC) $(exec); \
