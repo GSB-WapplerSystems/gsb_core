@@ -102,7 +102,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "2.x-dev"
+      "dev-next": "4.x-dev"
     },
     "itzbund/gsb-core": {
       "isSitePackage": true

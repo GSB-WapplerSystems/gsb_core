@@ -35,7 +35,7 @@ readonly class FileType implements SettingsTypeInterface
         protected LoggerInterface $logger,
     ) {}
 
-    public function validate(mixed $value): bool
+    public function validate(mixed $value, SettingDefinition $definition): bool
     {
         if (is_int($value)) {
             return true;
@@ -60,6 +60,6 @@ readonly class FileType implements SettingsTypeInterface
 
     public function getJavaScriptModule(): string
     {
-        return '@typo3/backend/settings/type/file.js';
+        return '@itzbund/gsb-core/site-sets-type/file.js';
     }
 }
