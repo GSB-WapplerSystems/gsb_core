@@ -4,7 +4,6 @@ dependencies:
   - itzbund-gsb/function
   - itzbund-gsb/copyright
   - itzbund-gsb/style
-  - itzbund-gsb/solr
   - typo3/seo-sitemap
   - typo3/form
   - typo3/felogin
@@ -12,4 +11,5 @@ dependencies:
   - kitzberger/form-mailtext
   - typo3/fluid-styled-content
 optionalDependencies:
+  - itzbund-gsb/solr
   - itzbund-gsb/public-frontend
