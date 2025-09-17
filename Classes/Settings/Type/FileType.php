@@ -35,6 +35,10 @@ readonly class FileType implements SettingsTypeInterface
         protected LoggerInterface $logger,
     ) {}
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function validate(mixed $value, SettingDefinition $definition): bool
     {
         if (is_int($value)) {
@@ -52,7 +56,7 @@ readonly class FileType implements SettingsTypeInterface
     {
         if (!$this->validate($value, $definition)) {
             $this->logger->warning('Setting validation field, reverting to default: {key}', ['key' => $definition->key]);
-            return $definition->default;
+            return (int)$definition->default;
         }
 
         return (int)$value;

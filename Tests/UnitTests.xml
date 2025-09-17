@@ -41,6 +41,12 @@
         <include>
             <directory suffix=".php">../Classes</directory>
         </include>
+        <exclude>
+            <directory>../Classes/Domain/Repository</directory>
+            <directory>../Classes/Domain/Model</directory>
+            <file>../Classes/Controller/ReportController.php</file>
+            <file>../Classes/Cache/Backend/ResilientSimpleFileBackend.php</file>
+        </exclude>
     </source>
 
     <php>

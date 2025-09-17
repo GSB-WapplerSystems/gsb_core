@@ -33,6 +33,7 @@
   ],
   "require": {
     "php": "^8.3",
+    "ext-redis": "*",
     "b13/container": "3.1.10",
     "b13/permission-sets": "^1.0",
     "featdd/dpn-glossary": "^6.1",

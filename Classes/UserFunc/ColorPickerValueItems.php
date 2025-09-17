@@ -34,6 +34,7 @@ class ColorPickerValueItems
     {
         /** @var SiteInterface $site */
         $site = $config['site'];
+        $colors = [];
 
         $items = [
             [
@@ -42,7 +43,7 @@ class ColorPickerValueItems
             ],
         ];
 
-        if (!method_exists($site, 'getConfiguration')) {
+        if (!method_exists($site, 'getSettings')) {
             $config['items'] = [];
             return;
         }

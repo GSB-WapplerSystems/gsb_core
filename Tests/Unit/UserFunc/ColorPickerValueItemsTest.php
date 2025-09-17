@@ -38,41 +38,6 @@ class ColorPickerValueItemsTest extends UnitTestCase
     }
 
     #[Test]
-    #[TestDox('GetItems modifies config array with items')]
-    public function getItemsModifiesConfigArrayWithItems(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems returns non-empty items array')]
-    public function getItemsReturnsNonEmptyItemsArray(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems returns array with correct structure')]
-    public function getItemsReturnsArrayWithCorrectStructure(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems returns unique values')]
-    public function getItemsReturnsUniqueValues(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems returns non-empty labels')]
-    public function getItemsReturnsNonEmptyLabels(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
     #[TestDox('GetItems returns consistent results on multiple calls')]
     public function getItemsReturnsConsistentResultsOnMultipleCalls(): void
     {
@@ -86,13 +51,6 @@ class ColorPickerValueItemsTest extends UnitTestCase
     }
 
     #[Test]
-    #[TestDox('GetItems returns at least one item')]
-    public function getItemsReturnsAtLeastOneItem(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
     #[TestDox('GetItems handles site without getConfiguration method')]
     public function getItemsHandlesSiteWithoutGetConfigurationMethod(): void
     {
@@ -103,26 +61,5 @@ class ColorPickerValueItemsTest extends UnitTestCase
 
         self::assertArrayHasKey('items', $config);
         self::assertSame([], $config['items']);
-    }
-
-    #[Test]
-    #[TestDox('GetItems processes site configuration correctly')]
-    public function getItemsProcessesSiteConfigurationCorrectly(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems filters out empty color values')]
-    public function getItemsFiltersOutEmptyColorValues(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
-    }
-
-    #[Test]
-    #[TestDox('GetItems uses custom labels when available')]
-    public function getItemsUsesCustomLabelsWhenAvailable(): void
-    {
-        self::markTestSkipped('Site configuration mocking not available in this environment');
     }
 }

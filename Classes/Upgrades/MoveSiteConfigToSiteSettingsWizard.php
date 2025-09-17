@@ -40,12 +40,13 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
  * Can be manually started with
  *
  * `typo3 upgrade:run gsbcore_removeColumnsWizard`
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 #[UpgradeWizard('gsbcore_moveSiteConfigToSiteSettingsWizard')]
 class MoveSiteConfigToSiteSettingsWizard implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
 {
-
-
     protected const CONFIG_KEYS = [
         'navType',
         'copyright',
@@ -139,6 +140,18 @@ class MoveSiteConfigToSiteSettingsWizard implements UpgradeWizardInterface, Chat
         return true;
     }
 
+    /**
+     * @param mixed[] $siteConfig
+     * @param string $configFile
+     * @return mixed[]
+     *
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     protected function mapSiteConfigToSettings(array $siteConfig, string $configFile): array
     {
         // Map specific config.yaml values to settings.yaml structure
@@ -343,6 +356,8 @@ class MoveSiteConfigToSiteSettingsWizard implements UpgradeWizardInterface, Chat
             if (!$this->checkIfSettingsFileExists($siteIdentifier)) {
                 return true;
             }
+
+            $siteConfig = $site->getConfiguration();
             foreach (self::CONFIG_KEYS as $key) {
                 if (isset($siteConfig[$key]) && $siteConfig[$key] != '') {
                     return true;

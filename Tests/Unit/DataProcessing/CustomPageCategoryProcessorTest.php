@@ -16,6 +16,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class CustomPageCategoryProcessorTest extends UnitTestCase
 {
+    /** @var \PHPUnit\Framework\MockObject\MockObject|(CustomPageCategoryProcessor&\PHPUnit\Framework\MockObject\MockObject) $processor */
     protected CustomPageCategoryProcessor $processor;
     protected ContentObjectRenderer $contentObjectRenderer;
 
