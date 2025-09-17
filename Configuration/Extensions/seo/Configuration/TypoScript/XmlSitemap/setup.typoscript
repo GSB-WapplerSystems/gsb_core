@@ -20,22 +20,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-plugin.tx_seo {
-  config {
-
-    xmlSitemap {
-      sitemaps {
-        pages {
-          provider = TYPO3\CMS\Seo\XmlSitemap\PagesXmlSitemapDataProvider
-          config {
-            excludedDoktypes = 3, 4, 6, 7, 199, 254, 255
-            additionalWhere = no_index = 0
+plugin {
+  tx_seo {
+    config {
+      xmlSitemap {
+        sitemaps {
+          pages {
+            provider = TYPO3\CMS\Seo\XmlSitemap\PagesXmlSitemapDataProvider
+            config {
+              excludedDoktypes = 3, 4, 6, 7, 199, 254, 255
+              additionalWhere = no_index = 0
+            }
           }
         }
       }
     }
+    # Sitemap template without XSL, as that breaks with CSPs
+    view.templateRootPaths.20 = EXT:gsb_core/Resources/Extensions/seo/Templates/XmlSitemap
   }
 }
-
-# Sitemap template without XSL, as that breaks with CSPs
-plugin.tx_seo.view.templateRootPaths.20 = EXT:gsb_core/Resources/Extensions/seo/Templates/XmlSitemap

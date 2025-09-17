@@ -86,7 +86,6 @@ TCEFORM {
       }
     }
     CType {
-      # removeItems = bullets, div, form_formframework, header, html, image, list, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages, menu_subpages, shortcut, table, text, textmedia, textpic, uploads
       removeItems = bullets, div, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, textmedia, table, html
     }
     layout {
@@ -102,9 +101,7 @@ TCEFORM {
     }
     frame_class {
       disabled = 1
-      #removeItems = indent, indent-left, indent-right, none, ruler-before, ruler-after
       addItems {
-        #text-2-columns = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:frame_class.text-2-columns
       }
       altLabels {
 
@@ -163,7 +160,7 @@ TCEFORM {
           removeItems = 1,2,9,10
         }
         video {
-            removeItems = 1,2,9,10,17,18,25,26
+          removeItems = 1,2,9,10,17,18,25,26
         }
       }
     }
@@ -374,10 +371,12 @@ TCEFORM {
   }
 }
 
-# Only allow consent layer records on siteroot pages
-mod.web_list.deniedNewTables := addToList(tx_gsbcore_consent)
-[traverse(page, "is_siteroot") == 1]
-mod.web_list.deniedNewTables := removeFromList(tx_gsbcore_consent)
-[global]
+mod {
+  web_list.deniedNewTables := addToList(tx_gsbcore_consent)
+  wizards.newContentElement.wizardItems.plugins.show = general,tx_solr_results
+}
 
-mod.wizards.newContentElement.wizardItems.plugins.show = general,tx_solr_results
+# Only allow consent layer records on siteroot pages
+[traverse(page, "is_siteroot") == 1]
+  mod.web_list.deniedNewTables := removeFromList(tx_gsbcore_consent)
+[global]

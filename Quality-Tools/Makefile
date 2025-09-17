@@ -43,7 +43,7 @@ PHP_MD = "php -r \"error_reporting(error_reporting() ^ E_DEPRECATED);\"; php ../
 PHP_STAN = "php vendor/bin/phpstan analyse --memory-limit=256M --no-progress"
 PHP_UNIT = "vendor/bin/phpunit -c Tests/UnitTests.xml --testdox --coverage-html Tests/_output"
 RECTOR = "vendor/bin/rector --dry-run"
-TYPOSCRIPT_LINT = "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript"
+TYPOSCRIPT_LINT = "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv"
 
 ### General:
 #help: ## Displays this list of possible commands with descriptions
