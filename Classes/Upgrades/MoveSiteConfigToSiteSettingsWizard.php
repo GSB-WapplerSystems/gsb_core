@@ -44,6 +44,52 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('gsbcore_moveSiteConfigToSiteSettingsWizard')]
 class MoveSiteConfigToSiteSettingsWizard implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
 {
+
+
+    protected const CONFIG_KEYS = [
+        'navType',
+        'copyright',
+        'show-copyright',
+        'google_site_verification',
+        'solr_enabled_facets',
+        'solrShowTopResults',
+        'search',
+        'sign-language-page',
+        'simple-language-page',
+        'color_1',
+        'label_color_1',
+        'color_2',
+        'label_color_2',
+        'color_3',
+        'label_color_3',
+        'color_4',
+        'label_color_4',
+        'color_5',
+        'label_color_5',
+        'color_6',
+        'label_color_6',
+        'color_primary',
+        'color_secondary',
+        'color_secondary_rgba',
+        'color_tertiary',
+        'logo-complete-toggle',
+        'logo-complete-big',
+        'logo-complete-small',
+        'logo-text',
+        'second-logo-complete-toggle',
+        'second-logo',
+        'second-logo-alt',
+        'second-logo-link',
+        'initiative-text-toggle',
+        'initiative-text',
+        'favicon-96x96-png',
+        'faviconIco',
+        'faviconSvg',
+        'apple-touch-icon',
+        'web-app-manifest-192x192',
+        'web-app-manifest-512x512',
+        'webmanifest',
+    ];
     /**
      * @var OutputInterface
      */
@@ -296,6 +342,11 @@ class MoveSiteConfigToSiteSettingsWizard implements UpgradeWizardInterface, Chat
             $siteIdentifier = $site->getIdentifier();
             if (!$this->checkIfSettingsFileExists($siteIdentifier)) {
                 return true;
+            }
+            foreach (self::CONFIG_KEYS as $key) {
+                if (isset($siteConfig[$key]) && $siteConfig[$key] != '') {
+                    return true;
+                }
             }
         }
         return false;
