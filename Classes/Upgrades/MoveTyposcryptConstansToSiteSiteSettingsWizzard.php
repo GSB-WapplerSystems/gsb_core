@@ -304,7 +304,7 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
         $sites = $siteFinder->getAllSites();
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
-            if ($this->getParsedTypoScriptConstants($siteIdentifier)) {
+            if ($this->getParsedTypoScriptConstants($site->getRootPageId())) {
                 return true;
             }
         }
