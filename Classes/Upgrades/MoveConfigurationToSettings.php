@@ -192,7 +192,7 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
             } catch (\Exception $e) {
                 $this->output->writeln('Error writing settings.yaml for site: ' . $siteIdentifier . ' - ' . $e->getMessage());
             }
-            $this->removeKeysFromSiteConfig($configPath . '/config.yaml');
+            $this->rearangeSiteConfig($configPath . '/config.yaml');
             $this->removeOldConfiguration($site->getRootPageId());
 
         }
