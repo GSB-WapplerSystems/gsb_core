@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
-		<header/>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/functionSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
 		<body>
 			<trans-unit id="label">
 				<source>GSB Functions</source>
 			</trans-unit>
 			<!-- Function Settings Categories -->
-			<trans-unit id="categories.GSB">
-				<source>GSB Individualization Settings</source>
-			</trans-unit>
-
-			<trans-unit id="categories.GSB.functions">
-				<source>Functions</source>
-			</trans-unit>
-
 			<trans-unit id="categories.GSB.functions.categories">
 				<source>Categories</source>
 			</trans-unit>
@@ -267,7 +259,19 @@
 			<trans-unit id="settings.navigation.gsb-navType.enum.1">
 				<source>Burger Menu</source>
 			</trans-unit>
-			
+
+			<trans-unit id="categories.fsc">
+				<source>Fluid Styled Content</source>
+			</trans-unit>
+			<trans-unit id="categories.seo">
+				<source>SEO Sitemap</source>
+			</trans-unit>
+			<trans-unit id="categories.felogin">
+				<source>Frontend Login</source>
+			</trans-unit>
+			<trans-unit id="categories.redirects">
+				<source>Redirects</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

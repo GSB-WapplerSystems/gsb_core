@@ -1,6 +1,3 @@
-categories:
-  GSB.copyrightCategory:
-    parent: GSB
 settings:
   copyright.notice:
     category: GSB.copyrightCategory

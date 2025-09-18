@@ -1,6 +1,4 @@
 categories:
-  GSB.style:
-    parent: GSB
   GSB.style.colors:
     parent: GSB.style
   GSB.style.colors.background:

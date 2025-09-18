@@ -1,5 +1,6 @@
 categories:
   GSB:
+    parent: GSB
   GSB.functions:
     parent: GSB
   GSB.functions.categories:
@@ -16,6 +17,15 @@ categories:
     parent: GSB.functions
   GSB.functions.devconfig:
     parent: GSB.functions
+  fsc:
+    parent: GSB.functions.devconfig
+  felogin:
+    parent: GSB.functions.devconfig
+  seo:
+    parent: GSB.functions.devconfig
+  redirects:
+    parent: GSB.functions.devconfig
+
 
 settings:
 

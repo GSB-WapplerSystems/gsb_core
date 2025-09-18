@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/copyrightSets/labels.xlf" date="2024-09-05T08:00:00Z" product-name="gsb_core">
-		<header/>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/copyrightSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
 		<body>
 			<trans-unit id="label">
 				<source>GSB Copyright</source>
@@ -27,7 +27,6 @@
 			<trans-unit id="settings.copyright.show-copyright.description">
 				<source>Display copyright notice of images additionally on teaser and stage images. Note: Standard image elements already have copyright notices.</source>
 			</trans-unit>
-			
 		</body>
 	</file>
 </xliff>

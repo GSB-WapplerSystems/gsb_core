@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/styleSets/labels.xlf" date="2024-09-05T08:00:00Z" product-name="gsb_core">
-		<header/>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/styleSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
 		<body>
 			<trans-unit id="label">
 				<source>GSB Style</source>
 				<target>GSB Stiel</target>
 			</trans-unit>
 			<!-- Style Settings Categories -->
-			<trans-unit id="categories.GSB.style">
-				<source>Style Settings</source>
-				<target>Stiel Einstellungen</target>
-			</trans-unit>
-
 			<trans-unit id="categories.GSB.style.colors">
 				<source>Color Settings</source>
 				<target>Farben Einstellungen</target>
@@ -453,7 +448,6 @@
 				<source>A font for Serif Italic can be selected here.</source>
 				<target>Hier kann eine Schriftart für den Serif Italic ausgewählt werden.</target>
 			</trans-unit>
-			
 		</body>
 	</file>
 </xliff>
