@@ -109,6 +109,7 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
                 $newSettings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
                 
                 // Merge with existing settings
+                // note: if a setting exist ist will be convertet to an array so its importent to run this only onece
                 $mergedSettings = array_merge_recursive($existingSettings, $newSettings);
                 
                 // Write settings file
@@ -116,7 +117,7 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
                 $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
                 file_put_contents($settingsFile, $yaml);
                 $this->removeOldConfiguration($site->getRootPageId());
-                // Note: We don't clear the extension configuration as it might be used elsewhere
+                
                 $this->output->writeln('Constants migrated to site settings. Original extension configuration preserved.');
             }
         }
@@ -269,24 +270,40 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
     public function updateNecessary(): bool
     {
 		return true;
-        // Check if there are any gsb_core constants in sys_template
-        try {
-            $connection = $this->connectionPool->getConnectionForTable('sys_template');
-            $queryBuilder = $connection->createQueryBuilder();
-            
-            $result = $queryBuilder
-                ->select('constants')
-                ->from('sys_template')
-                ->where(
-                    $queryBuilder->expr()->like('constants', $queryBuilder->createNamedParameter('%gsb_core%'))
-                )
-                ->setMaxResults(1)
-                ->executeQuery();
-            
-            return $result->fetchOne() !== false;
-        } catch (\Exception $e) {
-            return false;
+        //run if settings.yaml dont exists
+        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
+        $sites = $siteFinder->getAllSites();
+        foreach ($sites as $site) {
+            $siteIdentifier = $site->getIdentifier();
+            if ($this->checkIfSettingsFileExists($siteIdentifier)) {
+                return true;
+            }
         }
+        // run if there are any constants in sys_template
+        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
+        $sites = $siteFinder->getAllSites();
+        foreach ($sites as $site) {
+            $siteIdentifier = $site->getIdentifier();
+            if ($this->checkIfSettingsFileExists($siteIdentifier)) {
+                return true;
+            }
+        }
+        // check if mapping is already done
+        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
+        $sites = $siteFinder->getAllSites();
+        foreach ($sites as $site) {
+            $siteIdentifier = $site->getIdentifier();
+            if ($this->checkIfSettingsFileExists($siteIdentifier)) {
+                $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId());
+                if (!empty($parsedTypoScriptConstants)) {
+                    $settings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
+                    if (!empty($settings)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     /**
