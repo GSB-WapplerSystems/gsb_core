@@ -304,7 +304,7 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
         $sites = $siteFinder->getAllSites();
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
-            if ($this->checkIfSettingsFileExists($siteIdentifier)) {
+            if ($this->getParsedTypoScriptConstants($siteIdentifier)) {
                 return true;
             }
         }
@@ -312,14 +312,11 @@ class MoveTyposcryptConstansToSiteSiteSettingsWizzard implements UpgradeWizardIn
         $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
         $sites = $siteFinder->getAllSites();
         foreach ($sites as $site) {
-            $siteIdentifier = $site->getIdentifier();
-            if ($this->checkIfSettingsFileExists($siteIdentifier)) {
-                $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId());
-                if (!empty($parsedTypoScriptConstants)) {
-                    $settings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
-                    if (!empty($settings)) {
-                        return true;
-                    }
+            $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId());
+            if (!empty($parsedTypoScriptConstants)) {
+                $settings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
+                if (!empty($settings)) {
+                    return true;
                 }
             }
         }
