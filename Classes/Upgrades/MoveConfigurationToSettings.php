@@ -121,10 +121,18 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         'display-brand-topline',
         'favicon-16x16',
         'favicon-32x32',
-        'font-switch',
         'safari-pinned-tab',
         'shortcut-icon',
         'sitePackage',
+        'fonts.sans.font-sans-name',
+        'fonts.sans.font-sans-normal',
+        'fonts.sans.font-sans-italic',
+        'fonts.sans.font-sans-medium',
+        'fonts.sans.font-sans-bold',
+        'fonts.sans.font-sans-bold-italic',
+        'fonts.serif.font-serif-name',
+        'fonts.serif.font-serif-normal',
+        'fonts.serif.font-serif-italic',
     ];
 
     /**
@@ -356,6 +364,33 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         if (isset($siteConfig['webmanifest']) && $siteConfig['webmanifest'] != '') {
             $fileUid = $this->cutTypolinkToUid($siteConfig['webmanifest']);
             $settings['favicons.webmanifest'] = $fileUid;
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-name']) && $siteConfig['fonts.sans.font-sans-name'] != '') {
+            $settings['fonts.sans.font-sans-name'] = $siteConfig['fonts.sans.font-sans-name'];
+        }
+        if (isset($siteConfig['fonts.serif.font-serif-name']) && $siteConfig['fonts.serif.font-serif-name'] != '') {
+            $settings['fonts.serif.font-serif-name'] = $siteConfig['fonts.serif.font-serif-name'];
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-normal']) && $siteConfig['fonts.sans.font-sans-normal'] != '') {
+            $settings['fonts.sans.font-sans-normal'] = $siteConfig['fonts.sans.font-sans-normal'];
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-italic']) && $siteConfig['fonts.sans.font-sans-italic'] != '') {
+            $settings['fonts.sans.font-sans-italic'] = $siteConfig['fonts.sans.font-sans-italic'];
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-medium']) && $siteConfig['fonts.sans.font-sans-medium'] != '') {
+            $settings['fonts.sans.font-sans-medium'] = $siteConfig['fonts.sans.font-sans-medium'];
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-bold']) && $siteConfig['fonts.sans.font-sans-bold'] != '') {
+            $settings['fonts.sans.font-sans-bold'] = $siteConfig['fonts.sans.font-sans-bold'];
+        }
+        if (isset($siteConfig['fonts.sans.font-sans-bold-italic']) && $siteConfig['fonts.sans.font-sans-bold-italic'] != '') {
+            $settings['fonts.sans.font-sans-bold-italic'] = $siteConfig['fonts.sans.font-sans-bold-italic'];
+        }
+        if (isset($siteConfig['fonts.serif.font-serif-normal']) && $siteConfig['fonts.serif.font-serif-normal'] != '') {
+            $settings['fonts.serif.font-serif-normal'] = $siteConfig['fonts.serif.font-serif-normal'];
+        }
+        if (isset($siteConfig['fonts.serif.font-serif-italic']) && $siteConfig['fonts.serif.font-serif-italic'] != '') {
+            $settings['fonts.serif.font-serif-italic'] = $siteConfig['fonts.serif.font-serif-italic'];
         }
         return $settings;
     }
