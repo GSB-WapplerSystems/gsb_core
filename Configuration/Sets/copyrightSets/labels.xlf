@@ -16,11 +16,11 @@
 			</trans-unit>
 
 			<!-- Copyright Settings Descriptions -->
-			<trans-unit id="settings.copyright.notice.description">
+			<trans-unit id="settings.description.copyright.notice">
 				<source>The copyright notice is displayed in the footer with the current year. Example: © 2025 ITZBund</source>
 			</trans-unit>
 
-			<trans-unit id="settings.copyright.show-copyright.description">
+			<trans-unit id="settings.description.copyright.show-copyright">
 				<source>Display copyright notice of images additionally on teaser and stage images. Note: Standard image elements already have copyright notices.</source>
 			</trans-unit>
 		</body>

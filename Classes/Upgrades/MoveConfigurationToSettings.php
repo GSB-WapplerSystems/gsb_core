@@ -124,15 +124,15 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         'safari-pinned-tab',
         'shortcut-icon',
         'sitePackage',
-        'fonts.sans.font-sans-name',
-        'fonts.sans.font-sans-normal',
-        'fonts.sans.font-sans-italic',
-        'fonts.sans.font-sans-medium',
-        'fonts.sans.font-sans-bold',
-        'fonts.sans.font-sans-bold-italic',
-        'fonts.serif.font-serif-name',
-        'fonts.serif.font-serif-normal',
-        'fonts.serif.font-serif-italic',
+        'font-sans',
+        'font-sans-bold',
+        'font-sans-bold-italic',
+        'font-sans-italic',
+        'font-sans-medium',
+        'font-sans-name',
+        'font-serif',
+        'font-serif-italic',
+        'font-serif-name',
     ];
 
     /**
@@ -366,31 +366,40 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
             $settings['favicons.webmanifest'] = $fileUid;
         }
         if (isset($siteConfig['fonts.sans.font-sans-name']) && $siteConfig['fonts.sans.font-sans-name'] != '') {
-            $settings['fonts.sans.font-sans-name'] = $siteConfig['fonts.sans.font-sans-name'];
+            $fileUid = $this->cutTypolinkToUid($siteConfig['fonts.sans.font-sans-name']);
+            $settings['fonts.sans.font-sans-name'] = $fileUid;
         }
         if (isset($siteConfig['fonts.serif.font-serif-name']) && $siteConfig['fonts.serif.font-serif-name'] != '') {
-            $settings['fonts.serif.font-serif-name'] = $siteConfig['fonts.serif.font-serif-name'];
+            $fileUid = $this->cutTypolinkToUid($siteConfig['fonts.serif.font-serif-name']);
+            $settings['fonts.serif.font-serif-name'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.sans.font-sans-normal']) && $siteConfig['fonts.sans.font-sans-normal'] != '') {
-            $settings['fonts.sans.font-sans-normal'] = $siteConfig['fonts.sans.font-sans-normal'];
+        if (isset($siteConfig['font-sans-normal']) && $siteConfig['font-sans-normal'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-normal']);
+            $settings['fonts.sans.font-sans-normal'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.sans.font-sans-italic']) && $siteConfig['fonts.sans.font-sans-italic'] != '') {
-            $settings['fonts.sans.font-sans-italic'] = $siteConfig['fonts.sans.font-sans-italic'];
+        if (isset($siteConfig['font-sans-italic']) && $siteConfig['font-sans-italic'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-italic']);
+            $settings['fonts.sans.font-sans-italic'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.sans.font-sans-medium']) && $siteConfig['fonts.sans.font-sans-medium'] != '') {
-            $settings['fonts.sans.font-sans-medium'] = $siteConfig['fonts.sans.font-sans-medium'];
+        if (isset($siteConfig['font-sans-medium']) && $siteConfig['font-sans-medium'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-medium']);
+            $settings['fonts.sans.font-sans-medium'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.sans.font-sans-bold']) && $siteConfig['fonts.sans.font-sans-bold'] != '') {
-            $settings['fonts.sans.font-sans-bold'] = $siteConfig['fonts.sans.font-sans-bold'];
+        if (isset($siteConfig['font-sans-bold']) && $siteConfig['font-sans-bold'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-bold']);
+            $settings['fonts.sans.font-sans-bold'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.sans.font-sans-bold-italic']) && $siteConfig['fonts.sans.font-sans-bold-italic'] != '') {
-            $settings['fonts.sans.font-sans-bold-italic'] = $siteConfig['fonts.sans.font-sans-bold-italic'];
+        if (isset($siteConfig['font-sans-bold-italic']) && $siteConfig['font-sans-bold-italic'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-bold-italic']);
+            $settings['fonts.sans.font-sans-bold-italic'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.serif.font-serif-normal']) && $siteConfig['fonts.serif.font-serif-normal'] != '') {
-            $settings['fonts.serif.font-serif-normal'] = $siteConfig['fonts.serif.font-serif-normal'];
+        if (isset($siteConfig['font-serif-normal']) && $siteConfig['font-serif-normal'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-serif-normal']);
+            $settings['fonts.serif.font-serif-normal'] = $fileUid;
         }
-        if (isset($siteConfig['fonts.serif.font-serif-italic']) && $siteConfig['fonts.serif.font-serif-italic'] != '') {
-            $settings['fonts.serif.font-serif-italic'] = $siteConfig['fonts.serif.font-serif-italic'];
+        if (isset($siteConfig['font-serif-italic']) && $siteConfig['font-serif-italic'] != '') {
+            $fileUid = $this->cutTypolinkToUid($siteConfig['font-serif-italic']);
+            $settings['fonts.serif.font-serif-italic'] = $fileUid;
         }
         return $settings;
     }

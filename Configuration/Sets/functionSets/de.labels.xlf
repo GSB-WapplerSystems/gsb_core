@@ -196,116 +196,116 @@
 			</trans-unit>
 
 			<!-- Navigation Descriptions -->
-			<trans-unit id="settings.navigation.gsb-navType.description">
+			<trans-unit id="settings.description.navigation.gsb-navType">
 				<source>Select the display type of the main navigation for the desktop view.</source>
 				<target>Darstellungsart der Hauptnavigation für die Desktop Ansicht auswählen.</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.categories-page.description">
+			<trans-unit id="settings.description.navigation.categories-page">
 				<source>Set the page ID for storing categories, or select via the "Select Page" button.</source>
 				<target>Seiten-ID für das Speichern der Kategorien festlegen, oder über den Button "Select Page" auswählen.</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.header-title.description">
+			<trans-unit id="settings.description.navigation.header-title">
 				<source>The header title is written into the title attribute in the page source code</source>
 				<target>Der Header Title wird in das Title Attribut in den Quellcode der Seite geschrieben</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.home-page.description">
+			<trans-unit id="settings.description.navigation.home-page">
 				<source>Set the page ID for the link to the home page, or select via the "Select Page" button.</source>
 				<target>Seiten-ID für den Link zur Startseite festlegen, oder über den Button "Select Page" auswählen.</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.meta-page.description">
+			<trans-unit id="settings.description.navigation.meta-page">
 				<source>Set the page ID for the meta parent page of the meta navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as meta navigation.</source>
 				<target>Seiten-ID für die meta-elternseite der Meta-Navigation festlegen, oder über den Button "Select Page" auswählen. Hinweis: die unterseiten der ausgewählten meta-elternseite werden als Meta-Navigation angezeigt.</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.metaTop-page.description">
+			<trans-unit id="settings.description.navigation.metaTop-page">
 				<source>MetaTop Page</source>
 				<target>MetaTop Seite</target>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.footer-page.description">
+			<trans-unit id="settings.description.navigation.footer-page">
 				<source>Footer Page</source>
 				<target>Footer Seite</target>
 			</trans-unit>
 
 			<!-- Search Descriptions -->
-			<trans-unit id="settings.search.seach-page.description">
+			<trans-unit id="settings.description.search.seach-page">
 				<source>Set the page ID for the search results page, or select via the "Select Page" button</source>
 				<target>Seiten-ID für die Suchergebnis-Seite festlegen, oder über den Button "Select Page" auswählen</target>
 			</trans-unit>
 
-			<trans-unit id="settings.search.googleSiteVerification.description">
+			<trans-unit id="settings.description.search.googleSiteVerification">
 				<source>The verification code provided by Google Search Console must be entered in this field. This allows confirmation of website ownership.</source>
 				<target>Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.</target>
 			</trans-unit>
 
 			<!-- Developer Configuration Descriptions -->
-			<trans-unit id="settings.devconfig.debug.description">
+			<trans-unit id="settings.description.devconfig.debug">
 				<source>Debug</source>
 				<target>Debug</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.admPanel.description">
+			<trans-unit id="settings.description.devconfig.admPanel">
 				<source>Adm Panel</source>
 				<target>Adm Panel</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.noCache.description">
+			<trans-unit id="settings.description.devconfig.noCache">
 				<source>No Cache</source>
 				<target>No Cache</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.removeDefaultJS.description">
+			<trans-unit id="settings.description.devconfig.removeDefaultJS">
 				<source>Remove Default JS</source>
 				<target>Remove Default JS</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.compressJs.description">
+			<trans-unit id="settings.description.devconfig.compressJs">
 				<source>Compress JS</source>
 				<target>Compress JS</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.compressCss.description">
+			<trans-unit id="settings.description.devconfig.compressCss">
 				<source>Compress CSS</source>
 				<target>Compress CSS</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.concatenateJs.description">
+			<trans-unit id="settings.description.devconfig.concatenateJs">
 				<source>Concatenate JS</source>
 				<target>Concatenate JS</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.concatenateCss.description">
+			<trans-unit id="settings.description.devconfig.concatenateCss">
 				<source>Concatenate CSS</source>
 				<target>Concatenate CSS</target>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.header-comment.description">
+			<trans-unit id="settings.description.devconfig.header-comment">
 				<source>Header Comment</source>
 				<target>Header Comment</target>
 			</trans-unit>
 
 			<!-- Accessibility Descriptions -->
-			<trans-unit id="settings.accessability.signLanguagePage.description">
+			<trans-unit id="settings.description.accessability.signLanguagePage">
 				<source>Configuration of the sign language page.</source>
 				<target>Konfiguration der Gebärdensprache Seite.</target>
 			</trans-unit>
 
-			<trans-unit id="settings.accessability.simpleLanguagePage.description">
+			<trans-unit id="settings.description.accessability.simpleLanguagePage">
 				<source>Configuration of the simple language page.</source>
 				<target>Konfiguration der Einfache Sprachen Seite.</target>
 			</trans-unit>
 
 			<!-- Security Descriptions -->
-			<trans-unit id="settings.security.spam-protect-email-addresses.description">
+			<trans-unit id="settings.description.security.spam-protect-email-addresses">
 				<source>Spam Protection Email Addresses</source>
 				<target>Spam Schutz Email Adressen</target>
 			</trans-unit>
 
-			<trans-unit id="settings.security.spam-protect-email-addresses-at-subst.description">
+			<trans-unit id="settings.description.security.spam-protect-email-addresses-at-subst">
 				<source>Spam Protection Email Addresses At Subst</source>
 				<target>Spam Schutz Email Adressen At Subst</target>
 			</trans-unit>

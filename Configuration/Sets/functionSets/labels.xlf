@@ -159,95 +159,95 @@
 			</trans-unit>
 
 			<!-- Navigation Descriptions -->
-			<trans-unit id="settings.navigation.gsb-navType.description">
+			<trans-unit id="settings.description.navigation.gsb-navType">
 				<source>Select the display type of the main navigation for the desktop view.</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.categories-page.description">
+			<trans-unit id="settings.description.navigation.categories-page">
 				<source>Set the page ID for storing categories, or select via the "Select Page" button.</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.header-title.description">
+			<trans-unit id="settings.description.navigation.header-title">
 				<source>The header title is written into the title attribute in the page source code</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.home-page.description">
+			<trans-unit id="settings.description.navigation.home-page">
 				<source>Set the page ID for the link to the home page, or select via the "Select Page" button.</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.meta-page.description">
+			<trans-unit id="settings.description.navigation.meta-page">
 				<source>Set the page ID for the meta parent page of the meta navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as meta navigation.</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.metaTop-page.description">
+			<trans-unit id="settings.description.navigation.metaTop-page">
 				<source>MetaTop Page</source>
 			</trans-unit>
 
-			<trans-unit id="settings.navigation.footer-page.description">
+			<trans-unit id="settings.description.navigation.footer-page">
 				<source>Footer Page</source>
 			</trans-unit>
 
 			<!-- Search Descriptions -->
-			<trans-unit id="settings.search.seach-page.description">
+			<trans-unit id="settings.description.search.seach-page">
 				<source>Set the page ID for the search results page, or select via the "Select Page" button</source>
 			</trans-unit>
 
-			<trans-unit id="settings.search.googleSiteVerification.description">
+			<trans-unit id="settings.description.search.googleSiteVerification">
 				<source>The verification code provided by Google Search Console must be entered in this field. This allows confirmation of website ownership.</source>
 			</trans-unit>
 
 			<!-- Developer Configuration Descriptions -->
-			<trans-unit id="settings.devconfig.debug.description">
+			<trans-unit id="settings.description.devconfig.debug">
 				<source>Debug</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.admPanel.description">
+			<trans-unit id="settings.description.devconfig.admPanel">
 				<source>Adm Panel</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.noCache.description">
+			<trans-unit id="settings.description.devconfig.noCache">
 				<source>No Cache</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.removeDefaultJS.description">
+			<trans-unit id="settings.description.devconfig.removeDefaultJS">
 				<source>Remove Default JS</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.compressJs.description">
+			<trans-unit id="settings.description.devconfig.compressJs">
 				<source>Compress JS</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.compressCss.description">
+			<trans-unit id="settings.description.devconfig.compressCss">
 				<source>Compress CSS</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.concatenateJs.description">
+			<trans-unit id="settings.description.devconfig.concatenateJs">
 				<source>Concatenate JS</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.concatenateCss.description">
+			<trans-unit id="settings.description.devconfig.concatenateCss">
 				<source>Concatenate CSS</source>
 			</trans-unit>
 
-			<trans-unit id="settings.devconfig.header-comment.description">
+			<trans-unit id="settings.description.devconfig.header-comment">
 				<source>Header Comment</source>
 			</trans-unit>
 
 			<!-- Accessibility Descriptions -->
-			<trans-unit id="settings.accessability.signLanguagePage.description">
+			<trans-unit id="settings.description.accessability.signLanguagePage">
 				<source>Configuration of the sign language page.</source>
 			</trans-unit>
 
-			<trans-unit id="settings.accessability.simpleLanguagePage.description">
+			<trans-unit id="settings.description.accessability.simpleLanguagePage">
 				<source>Configuration of the simple language page.</source>
 			</trans-unit>
 
 			<!-- Security Descriptions -->
-			<trans-unit id="settings.security.spam-protect-email-addresses.description">
+			<trans-unit id="settings.description.security.spam-protect-email-addresses">
 				<source>Spam Protection Email Addresses</source>
 			</trans-unit>
 
-			<trans-unit id="settings.security.spam-protect-email-addresses-at-subst.description">
+			<trans-unit id="settings.description.security.spam-protect-email-addresses-at-subst">
 				<source>Spam Protection Email Addresses At Subst</source>
 			</trans-unit>
 
