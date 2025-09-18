@@ -7,10 +7,6 @@
 				<source>GSB Copyright</source>
 			</trans-unit>
 			<!-- Copyright Settings -->
-			<trans-unit id="categories.GSB.copyrightCategory">
-				<source>Copyright Settings</source>
-			</trans-unit>
-
 			<trans-unit id="settings.copyright.notice">
 				<source>Website</source>
 			</trans-unit>

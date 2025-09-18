@@ -19,7 +19,7 @@
 			</trans-unit>
 
 			<!-- Copyright Settings Category -->
-			<trans-unit id="categories.GSB.copyrightCategory">
+			<trans-unit id="categories.GSB.copyright">
 				<source>Copyright Settings</source>
 			</trans-unit>
 		</body>

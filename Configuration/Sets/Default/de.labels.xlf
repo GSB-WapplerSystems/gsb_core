@@ -18,11 +18,11 @@
 			<!-- Style Settings Category -->
 			<trans-unit id="categories.GSB.style">
 				<source>Style Settings</source>
-				<target>Stiel Einstellungen</target>
+				<target>Stileinstellungen</target>
 			</trans-unit>
 
 			<!-- Copyright Settings Category -->
-			<trans-unit id="categories.GSB.copyrightCategory">
+			<trans-unit id="categories.GSB.copyright">
 				<source>Copyright Settings</source>
 				<target>Urheberrechtshinweis (Copyright) Einstellungen</target>
 			</trans-unit>

@@ -1,8 +1,4 @@
 categories:
-  GSB:
-    parent: GSB
-  GSB.functions:
-    parent: GSB
   GSB.functions.categories:
     parent: GSB.functions
   GSB.functions.socialMediaLinks:

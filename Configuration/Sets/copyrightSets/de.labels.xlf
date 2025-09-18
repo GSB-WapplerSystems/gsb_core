@@ -8,11 +8,6 @@
 				<target>GSB Urheberrechtshinweis (Copyright)</target>
 			</trans-unit>
 			<!-- Copyright Settings -->
-			<trans-unit id="categories.GSB.copyrightCategory">
-				<source>Copyright Settings</source>
-				<target>Urheberrechtshinweis (Copyright) Einstellungen</target>
-			</trans-unit>
-
 			<trans-unit id="settings.copyright.notice">
 				<source>Website</source>
 				<target>Webseite</target>

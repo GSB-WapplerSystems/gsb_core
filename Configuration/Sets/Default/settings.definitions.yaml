@@ -2,7 +2,7 @@ categories:
   GSB: ~
   GSB.functions:
     parent: GSB
-  GSB.copyrightCategory:
+  GSB.copyright:
     parent: GSB
   GSB.style:
     parent: GSB
