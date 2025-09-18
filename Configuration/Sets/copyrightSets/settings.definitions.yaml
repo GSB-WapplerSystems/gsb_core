@@ -1,12 +1,9 @@
 categories:
   GSB.copyrightCategory:
-    label: 'Urheberrechtshinweis (Copyright) Einstellungen'
     parent: GSB
 settings:
   copyright.notice:
-    label: 'Webseite'
     category: GSB.copyrightCategory
-    description: 'Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt. Beispiel: © 2025 ITZBund'
     type: string
     default: 'ITZBund'
 
@@ -14,5 +11,3 @@ settings:
     type: bool
     default: false
     category: GSB.copyrightCategory
-    label: 'Teaser- und Bühnen-Bildern'
-    description: 'Urheberrechtshinweis der Bilder zusätzlich an Teaser- und Bühnen-Bildern anzeigen. Hinweis: Standart Bild-Elemente haben bereits Urheberrechtshinweise.'

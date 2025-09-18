@@ -1,260 +1,173 @@
 categories:
   GSB.style:
-    label: 'Stiel Einstellungen'
     parent: GSB
   GSB.style.colors:
-    label: 'Farben Einstellungen'
     parent: GSB.style
   GSB.style.colors.background:
-    label: 'Hintergrundfarben Einstellungen'
-    description: 'Hier können bis zu sechs Farbwerte definiert werden, die dann das Corporate Design (CD) des Webauftritts prägen. Diese Farben stehen dann zur Auswahl in Inhaltselementen, bei denen eine Hintergrundfarbe festgelegt werden kann. Das feld "Farbwertname" soll einen benutzerdefinierten Namen oder eine Bezeichnung für einen bestimmten Farbwert zu vergeben. Anstatt sich an komplizierte Hex-Codes zu erinnern, kann die Redaktion einen leicht verständlichen Namen für die Farbe vergeben, wie z.B. "Taubenblau" oder "Akzentfarbe".'
     parent: GSB.style.colors
   GSB.style.colors.colorGeneral:
-    label: 'Color General'
-    description: 'Die Werte für die Farbvariablen können an dieser Stelle ausgetauscht werden. Diese werden dann im CSS verwendet. Somit können beispielsweise die Schaltflächenfarbe oder der Footer angepasst werden.'
     parent: GSB.style.colors
   GSB.style.logos:
-    label: 'Logos Einstellungen'
     parent: GSB.style
   GSB.style.favicons:
-    label: 'Favicons Einstellungen'
-    description: 'Nutzen Sie dazu bitte den Dienst unter: https://realfavicongenerator.net/ (Dieser Dienst ist kostenlos und Copyright frei). Hierzu brauchen Sie nur ein 512x512 großes Favicon-PNG Bild und lassen es von diesem Dienst bearbeiten. Laden Sie die erzeugten Dateien herunter und fügen Sie diese z.B. unter /fileadmin/Favicons/ ein. Danach können Sie die entsprechenden Dateien hier wieder verlinken, um Ihr Favicon auszutauschen. Natürlich können Sie alle Dateien auch händisch erstellen. Die Dateinamen und Bildgrößen müssen beibehalten werden.'
     parent: GSB.style
   GSB.style.fonts:
-    label: 'Fonts Einstellungen'
     parent: GSB.style
-    description: 'Die folgenden Felder können genutzt werden um individuelle Schriftarten im Frontend zu verwenden.'
 settings:
   # Background colors
   colors.background.gsb-background-color-1.color:
-    label: 'Farbe #1'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #1 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#000000'
   colors.background.gsb-background-color-1.label:
-    label: 'Farbwertname #1'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Schwarz'
   colors.background.gsb-background-color-2.color:
-    label: 'Farbe #2'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #2 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#ffffff'
   colors.background.gsb-background-color-2.label:
-    label: 'Farbwertname #2'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Weiss'
   colors.background.gsb-background-color-3.color:
-    label: 'Farbe #3'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #3 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#09406e'
   colors.background.gsb-background-color-3.label:
-    label: 'Farbwertname #3'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Dunkel Blau'
   colors.background.gsb-background-color-4.color:
-    label: 'Farbe #4'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #4 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#f5f5f5'
   colors.background.gsb-background-color-4.label:
-    label: 'Farbwertname #4'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Hell Grau'
   colors.background.gsb-background-color-5.color:
-    label: 'Farbe #5'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#006533'
   colors.background.gsb-background-color-5.label:
-    label: 'Farbwertname #5'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Dunkel Grün'
   colors.background.gsb-background-color-6.color:
-    label: 'Farbe #6'
     category: GSB.style.colors.background
-    description: 'Konfigurieren Sie die Farbe #6 als Hex-Wert, z.b. #000 oder #FFFFFF'
     type: color
     default: '#e9df2e'
   colors.background.gsb-background-color-6.label:
-    label: 'Farbwertname #6'
     category: GSB.style.colors.background
-    description: 'Hier kann ein Name für den Farbwert vergeben werden.'
     type: string
     default: 'Gelb'
   # Color General
   colors.colorGeneral.gsb-color-primary:
-    label: 'Farbwert Primär'
     category: GSB.style.colors.colorGeneral
-    description: 'Hier kann ein Farbwert für die Primärfarbe vergeben werden.'
     type: color
     default: '#C0003C'
   colors.colorGeneral.gsb-color-secondary:
-    label: 'Farbwert Sekundär'
     category: GSB.style.colors.colorGeneral
-    description: 'Hier kann ein Farbwert für die Sekundärfarbe vergeben werden.'
     type: color
     default: '#0A406E'
   colors.colorGeneral.gsb-color-secondary-rgba:
-    label: 'Farbwert Sekundär RGBA'
     category: GSB.style.colors.colorGeneral
-    description: 'Hier kann die Deckkraft der Sekundärfarbe gesetzt werden.'
     type: number
     default: 0.5
   colors.colorGeneral.gsb-color-tertiary:
-    label: 'Farbwert Tertiär'
     category: GSB.style.colors.colorGeneral
-    description: 'Hier kann ein Farbwert für die Tertiärfarbe vergeben werden.'
     type: color
     default: '#FFFFFF'
   colors.colorGeneral.gsb-color-quaternary:
-    label: 'Farbwert Quartär'
     category: GSB.style.colors.colorGeneral
-    description: 'Hier kann ein Farbwert für die Quartärfarbe vergeben werden.'
     type: color
     default: '#E9DF2E'
   # logos
   logos.gsb-logo-big:
-    label: 'Logo big'
     category: GSB.style.logos
-    description: 'Hier kann ein Logo ausgewählt werden.'
     type: file
     default: 0
   logos.gsb-logo-small:
-    label: 'Logo small'
     category: GSB.style.logos
-    description: 'Hier kann ein Logo ausgewählt werden.'
     type: file
     default: 0
   logos.gsb-logo-text:
-    label: 'logo trademark'
     category: GSB.style.logos
-    description: 'Hier kann die Textmarke des Logos ersetzt werden, die Datei muss ein SVG mit dem entsprechenden Textpfad sein.'
     type: file
     default: 0
   logos.gsb-initiative-text:
-    label: 'Initiative text'
     category: GSB.style.logos
-    description: 'Überschreibt den im Standard dargestellten Text ("Eine Initiative von") neben dem zweiten Logo.'
     type: string
     default: ''
   logos.gsb-second-logo:
-    label: 'Zweites Logo hinzufügen'
     category: GSB.style.logos
-    description: 'Anpassung der Desktop-Version des zweiten Logos.'
     type: file
     default: 0
   logos.gsb-second-logo-link:
-    label: 'Linkziel des zweiten Logos '
     category: GSB.style.logos
-    description: 'Optionaler Link, mit dem das zweite Logo versehen werden kann.'
     type: page
     default: 0
   logos.gsb-second-logo-alt:
-    label: 'Alternativ Text 2. Logo'
     category: GSB.style.logos
-    description: 'Alternativ Text für das zweite Logo für visuell beeinträchtigte Webseiten-Besucher.'
     type: string
     default: ''
   # favicons
   favicons.favicon-96x96-png:
-    label: 'Favicon 96x96 PNG'
     category: GSB.style.favicons
-    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 96x96 Pixel haben. Dateiname muss "favicon-96x96.png" sein.'
     type: file
     default: 0
   favicons.faviconIco:
-    label: 'Favicon ICO'
     category: GSB.style.favicons
-    description: 'Die klassische Ico-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon.ico" sein.'
     type: file
     default: 0
   favicons.faviconSvg:
-    label: 'Favicon SVG'
     category: GSB.style.favicons
-    description: 'Das SVG Touch Icon muss muss quadratisch sein und eine Größe von 512x512 Pixeln haben. Dateiname muss "favicon.svg" sein.'
     type: file
     default: 0
   favicons.apple-touch-icon:
-    label: 'Apple Touch Icon'
     category: GSB.style.favicons
-    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 180x180 Pixel haben. Dateiname muss "apple-touch-icon.png" sein.'
     type: file
     default: 0
   favicons.webmanifest:
-    label: 'Webmanifest'
     category: GSB.style.favicons
-    description: 'ie Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.'
     type: file
     default: 0
   favicons.web-app-manifest-192x192:
-    label: 'Web App Manifest 192x192 PNG'
     category: GSB.style.favicons
-    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 192x192 Pixel haben. Dateiname muss "web-app-manifest-192x192.png" sein.'
     type: file
     default: 0
   favicons.web-app-manifest-512x512:
-    label: 'Web App Manifest 512x512 PNG'
     category: GSB.style.favicons
-    description: 'Die PNG-Datei muss quadratisch sein und eine Größe von 512x512 Pixel haben. Dateiname muss "web-app-manifest-512x512.png" sein.'
     type: file
     default: 0
 #fonts
   fonts.sans.font-sans-normal:
-    label: 'Sans Normal'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Sans Normal ausgewählt werden.'
     type: file
     default: 0
   fonts.sans.font-sans-italic:
-    label: 'Sans Italic'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Sans Italic ausgewählt werden.'
     type: file
     default: 0
   fonts.sans.font-sans-medium:
-    label: 'Sans Medium'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Sans Medium ausgewählt werden.'
     type: file
     default: 0
   fonts.sans.font-sans-bold:
-    label: 'Sans Bold'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Sans Bold ausgewählt werden.'
     type: file
     default: 0
   fonts.sans.font-sans-bold-italic:
-    label: 'Sans Bold Italic'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Sans Bold Italic ausgewählt werden.'
     type: file
     default: 0
   fonts.serif.font-serif-normal:
-    label: 'Serif Normal'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Serif Normal ausgewählt werden.'
     type: file
     default: 0
   fonts.serif.font-serif-italic:
-    label: 'Serif Italic'
     category: GSB.style.fonts
-    description: 'Hier kann eine Schriftart für den Serif Italic ausgewählt werden.'
     type: file
     default: 0

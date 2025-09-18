@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+		<header/>
+		<body>
+			<!-- Function Settings Categories -->
+			<trans-unit id="categories.GSB">
+				<source>GSB Individualization Settings</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions">
+				<source>Functions</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.categories">
+				<source>Categories</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.socialMediaLinks">
+				<source>Social Media Links</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.suche">
+				<source>Search</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.navigation">
+				<source>Navigation</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.accessability">
+				<source>Accessibility</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.security">
+				<source>Security</source>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.functions.devconfig">
+				<source>Developer Configuration</source>
+			</trans-unit>
+
+			<!-- Category Descriptions -->
+			<trans-unit id="categories.GSB.functions.socialMediaLinks.description">
+				<source>Social Media Links to your profiles are displayed in the footer. Note: Only registered profiles are displayed.</source>
+			</trans-unit>
+
+			<!-- Navigation Settings -->
+			<trans-unit id="settings.navigation.gsb-navType">
+				<source>Main Navigation</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.categories-page">
+				<source>Category Storage Location</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.header-title">
+				<source>Title Attribute</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.home-page">
+				<source>Home Page</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.meta-page">
+				<source>Meta Menu</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.metaTop-page">
+				<source>MetaTop Page</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.footer-page">
+				<source>Footer Page</source>
+			</trans-unit>
+
+			<!-- Social Media Links -->
+			<trans-unit id="settings.socialMediaLinks.x">
+				<source>X</source>
+			</trans-unit>
+
+			<trans-unit id="settings.socialMediaLinks.facebook">
+				<source>Facebook</source>
+			</trans-unit>
+
+			<trans-unit id="settings.socialMediaLinks.instagram">
+				<source>Instagram</source>
+			</trans-unit>
+
+			<trans-unit id="settings.socialMediaLinks.xing">
+				<source>Xing</source>
+			</trans-unit>
+
+			<trans-unit id="settings.socialMediaLinks.linkedin">
+				<source>LinkedIn</source>
+			</trans-unit>
+
+			<trans-unit id="settings.socialMediaLinks.youtube">
+				<source>YouTube</source>
+			</trans-unit>
+
+			<!-- Search Settings -->
+			<trans-unit id="settings.search.seach-page">
+				<source>Search Page</source>
+			</trans-unit>
+
+			<trans-unit id="settings.search.googleSiteVerification">
+				<source>Google Site Verification Code</source>
+			</trans-unit>
+
+			<!-- Developer Configuration -->
+			<trans-unit id="settings.devconfig.debug">
+				<source>Debug</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.admPanel">
+				<source>Adm Panel</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.noCache">
+				<source>No Cache</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.removeDefaultJS">
+				<source>Remove Default JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.compressJs">
+				<source>Compress JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.compressCss">
+				<source>Compress CSS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.concatenateJs">
+				<source>Concatenate JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.concatenateCss">
+				<source>Concatenate CSS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.header-comment">
+				<source>Header Comment</source>
+			</trans-unit>
+
+			<!-- Accessibility Settings -->
+			<trans-unit id="settings.accessability.signLanguagePage">
+				<source>Sign Language Page</source>
+			</trans-unit>
+
+			<trans-unit id="settings.accessability.simpleLanguagePage">
+				<source>Simple Language Page</source>
+			</trans-unit>
+
+			<!-- Security Settings -->
+			<trans-unit id="settings.security.spam-protect-email-addresses">
+				<source>Spam Protection Email Addresses</source>
+			</trans-unit>
+
+			<trans-unit id="settings.security.spam-protect-email-addresses-at-subst">
+				<source>Spam Protection Email Addresses At Subst</source>
+			</trans-unit>
+
+			<!-- Navigation Descriptions -->
+			<trans-unit id="settings.navigation.gsb-navType.description">
+				<source>Select the display type of the main navigation for the desktop view.</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.categories-page.description">
+				<source>Set the page ID for storing categories, or select via the "Select Page" button.</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.header-title.description">
+				<source>The header title is written into the title attribute in the page source code</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.home-page.description">
+				<source>Set the page ID for the link to the home page, or select via the "Select Page" button.</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.meta-page.description">
+				<source>Set the page ID for the meta parent page of the meta navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as meta navigation.</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.metaTop-page.description">
+				<source>MetaTop Page</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.footer-page.description">
+				<source>Footer Page</source>
+			</trans-unit>
+
+			<!-- Search Descriptions -->
+			<trans-unit id="settings.search.seach-page.description">
+				<source>Set the page ID for the search results page, or select via the "Select Page" button</source>
+			</trans-unit>
+
+			<trans-unit id="settings.search.googleSiteVerification.description">
+				<source>The verification code provided by Google Search Console must be entered in this field. This allows confirmation of website ownership.</source>
+			</trans-unit>
+
+			<!-- Developer Configuration Descriptions -->
+			<trans-unit id="settings.devconfig.debug.description">
+				<source>Debug</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.admPanel.description">
+				<source>Adm Panel</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.noCache.description">
+				<source>No Cache</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.removeDefaultJS.description">
+				<source>Remove Default JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.compressJs.description">
+				<source>Compress JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.compressCss.description">
+				<source>Compress CSS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.concatenateJs.description">
+				<source>Concatenate JS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.concatenateCss.description">
+				<source>Concatenate CSS</source>
+			</trans-unit>
+
+			<trans-unit id="settings.devconfig.header-comment.description">
+				<source>Header Comment</source>
+			</trans-unit>
+
+			<!-- Accessibility Descriptions -->
+			<trans-unit id="settings.accessability.signLanguagePage.description">
+				<source>Configuration of the sign language page.</source>
+			</trans-unit>
+
+			<trans-unit id="settings.accessability.simpleLanguagePage.description">
+				<source>Configuration of the simple language page.</source>
+			</trans-unit>
+
+			<!-- Security Descriptions -->
+			<trans-unit id="settings.security.spam-protect-email-addresses.description">
+				<source>Spam Protection Email Addresses</source>
+			</trans-unit>
+
+			<trans-unit id="settings.security.spam-protect-email-addresses-at-subst.description">
+				<source>Spam Protection Email Addresses At Subst</source>
+			</trans-unit>
+
+			<!-- Navigation Enum Values -->
+			<trans-unit id="settings.navigation.gsb-navType.enum.0">
+				<source>Classic Desktop Navigation</source>
+			</trans-unit>
+
+			<trans-unit id="settings.navigation.gsb-navType.enum.1">
+				<source>Burger Menu</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

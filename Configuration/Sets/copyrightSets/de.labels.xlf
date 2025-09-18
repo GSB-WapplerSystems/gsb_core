@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+		<header/>
+		<body>
+			
+			<!-- Copyright Settings -->
+			<trans-unit id="categories.GSB.copyrightCategory">
+				<source>Copyright Settings</source>
+				<target>Urheberrechtshinweis (Copyright) Einstellungen</target>
+			</trans-unit>
+
+			<trans-unit id="settings.copyright.notice">
+				<source>Website</source>
+				<target>Webseite</target>
+			</trans-unit>
+
+			<trans-unit id="settings.copyright.show-copyright">
+				<source>Teaser and Stage Images</source>
+				<target>Teaser- und Bühnen-Bildern</target>
+			</trans-unit>
+
+			<!-- Copyright Settings Descriptions -->
+			<trans-unit id="settings.copyright.notice.description">
+				<source>The copyright notice is displayed in the footer with the current year. Example: © 2025 ITZBund</source>
+				<target>Der Urheberrechtshinweis wird im Footer mit der aktuellen Jahreszahl ausgespielt. Beispiel: © 2025 ITZBund</target>
+			</trans-unit>
+
+			<trans-unit id="settings.copyright.show-copyright.description">
+				<source>Display copyright notice of images additionally on teaser and stage images. Note: Standard image elements already have copyright notices.</source>
+				<target>Urheberrechtshinweis der Bilder zusätzlich an Teaser- und Bühnen-Bildern anzeigen. Hinweis: Standart Bild-Elemente haben bereits Urheberrechtshinweise.</target>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>
