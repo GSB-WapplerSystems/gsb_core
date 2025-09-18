@@ -141,6 +141,10 @@ settings:
     type: file
     default: 0
 #fonts
+  fonts.sans.font-sans-name:
+    category: GSB.style.fonts
+    type: string
+    default: ''
   fonts.sans.font-sans-normal:
     category: GSB.style.fonts
     type: file
@@ -161,6 +165,10 @@ settings:
     category: GSB.style.fonts
     type: file
     default: 0
+  fonts.serif.font-serif-name:
+    category: GSB.style.fonts
+    type: string
+    default: ''
   fonts.serif.font-serif-normal:
     category: GSB.style.fonts
     type: file
