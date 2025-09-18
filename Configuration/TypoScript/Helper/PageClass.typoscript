@@ -70,7 +70,7 @@ lib.page.class {
 
   60 = TEXT
   60 {
-    data = {$logos.gsb-logo}
+    data = {$logos.gsb-logo-small}
     ifEmpty = default
     noTrimWrap = | complete-logo-||
   }
