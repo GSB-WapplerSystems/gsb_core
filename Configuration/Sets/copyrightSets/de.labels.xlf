@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/copyrightSets/labels.xlf" date="2024-09-05T08:00:00Z" product-name="gsb_core">
 		<header/>
 		<body>
-			
+			<trans-unit id="label">
+				<source>GSB Copyright</source>
+				<target>GSB Urheberrechtshinweis (Copyright)</target>
+			</trans-unit>
 			<!-- Copyright Settings -->
 			<trans-unit id="categories.GSB.copyrightCategory">
 				<source>Copyright Settings</source>

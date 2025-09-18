@@ -3,6 +3,9 @@
 	<file source-language="en" datatype="plaintext" original="EXT:fluid_styled_content/Configuration/Sets/FluidStyledContent/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
 		<header/>
 		<body>
+			<trans-unit id="label">
+				<source>GSB Functions</source>
+			</trans-unit>
 			<!-- Function Settings Categories -->
 			<trans-unit id="categories.GSB">
 				<source>GSB Individualization Settings</source>

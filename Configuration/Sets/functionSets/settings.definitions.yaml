@@ -1,6 +1,5 @@
 categories:
   GSB:
-    parent: GSB
   GSB.functions:
     parent: GSB
   GSB.functions.categories:
