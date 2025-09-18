@@ -98,33 +98,33 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         'web-app-manifest-192x192',
         'web-app-manifest-512x512',
         'webmanifest',
-		'apple-touch-icon-120x120',
-		'apple-touch-icon-152x152',
-		'apple-touch-icon-180x180',
-		'apple-touch-icon-60x60',
-		'apple-touch-icon-76x76',
-		'browserconfig',
-		'color_quaternary',
-		'display-brand-topline',
-		'favicon-16x16',
-		'favicon-32x32',
-		'font-switch',
-		'safari-pinned-tab',
-		'shortcut-icon',
-		'sitePackage',
-		'apple-touch-icon-152x152',
-		'apple-touch-icon-180x180',
-		'apple-touch-icon-60x60',
-		'apple-touch-icon-76x76',
-		'browserconfig',
-		'color_quaternary',
-		'display-brand-topline',
-		'favicon-16x16',
-		'favicon-32x32',
-		'font-switch',
-		'safari-pinned-tab',
-		'shortcut-icon',
-		'sitePackage'
+        'apple-touch-icon-120x120',
+        'apple-touch-icon-152x152',
+        'apple-touch-icon-180x180',
+        'apple-touch-icon-60x60',
+        'apple-touch-icon-76x76',
+        'browserconfig',
+        'color_quaternary',
+        'display-brand-topline',
+        'favicon-16x16',
+        'favicon-32x32',
+        'font-switch',
+        'safari-pinned-tab',
+        'shortcut-icon',
+        'sitePackage',
+        'apple-touch-icon-152x152',
+        'apple-touch-icon-180x180',
+        'apple-touch-icon-60x60',
+        'apple-touch-icon-76x76',
+        'browserconfig',
+        'color_quaternary',
+        'display-brand-topline',
+        'favicon-16x16',
+        'favicon-32x32',
+        'font-switch',
+        'safari-pinned-tab',
+        'shortcut-icon',
+        'sitePackage',
     ];
 
     /**
@@ -167,35 +167,34 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
 
             // Read existing settings or create new array
             if (file_exists($settingsFile)) {
-				$this->output->writeln('Settings file already exists for site: ' . $siteIdentifier);
+                $this->output->writeln('Settings file already exists for site: ' . $siteIdentifier);
                 continue;
             }
             // Process site configuration
-			$siteConfig = $site->getConfiguration();
-			
-			$this->output->writeln('Moving site config to site settings for site: ' . $siteIdentifier);
-			$newSettings = $this->mapSiteConfigToSettings($siteConfig);
-			$this->output->writeln('New settings: ' . print_r($newSettings, true));
+            $siteConfig = $site->getConfiguration();
+
+            $this->output->writeln('Moving site config to site settings for site: ' . $siteIdentifier);
+            $newSettings = $this->mapSiteConfigToSettings($siteConfig);
+            $this->output->writeln('New settings: ' . print_r($newSettings, true));
 
             // Process TypoScript constants
             $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId());
-            
-			$this->output->writeln('Moving TypoScript constants to site settings for site: ' . $siteIdentifier);
-			$typoScriptSettings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
-			$newSettings = array_merge($newSettings, $typoScriptSettings);
-            
+
+            $this->output->writeln('Moving TypoScript constants to site settings for site: ' . $siteIdentifier);
+            $typoScriptSettings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
+            $newSettings = array_merge($newSettings, $typoScriptSettings);
 
             // Merge with existing settings and write
-			try {
-				$yaml = Yaml::dump($newSettings, 10, 4);
-				$this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
-				file_put_contents($settingsFile, $yaml);
-			} catch (\Exception $e) {
-				$this->output->writeln('Error writing settings.yaml for site: ' . $siteIdentifier . ' - ' . $e->getMessage());
-			}
-			$this->removeKeysFromSiteConfig($configPath . '/config.yaml');
-			$this->removeOldConfiguration($site->getRootPageId());
-            
+            try {
+                $yaml = Yaml::dump($newSettings, 10, 4);
+                $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
+                file_put_contents($settingsFile, $yaml);
+            } catch (\Exception $e) {
+                $this->output->writeln('Error writing settings.yaml for site: ' . $siteIdentifier . ' - ' . $e->getMessage());
+            }
+            $this->removeKeysFromSiteConfig($configPath . '/config.yaml');
+            $this->removeOldConfiguration($site->getRootPageId());
+
         }
 
         return true;
@@ -203,7 +202,6 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
 
     /**
      * @param mixed[] $siteConfig
-     * @param string $configFile
      * @return mixed[]
      *
      * @phpstan-ignore-next-line
@@ -434,8 +432,8 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         }
 
         // templates
-		$settings['styles.templates.templateRootPath'] = $parsedTypoScriptConstants['styles.templates.templateRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Templates';
-		$settings['styles.templates.partialRootPath'] = $parsedTypoScriptConstants['styles.templates.partialRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials';
+        $settings['styles.templates.templateRootPath'] = $parsedTypoScriptConstants['styles.templates.templateRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Templates';
+        $settings['styles.templates.partialRootPath'] = $parsedTypoScriptConstants['styles.templates.partialRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials';
         $settings['styles.templates.layoutRootPath'] = $parsedTypoScriptConstants['styles.templates.layoutRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Layouts';
 
         return $settings;
