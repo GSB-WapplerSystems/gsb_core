@@ -26,7 +26,7 @@
 ################
 
 config {
-  no_cache = {$devconfig.no_cache}
+  no_cache = {$devconfig.noCache}
   pageTitleFirst = 1
   pageTitleSeparator = -
   pageTitleSeparator.noTrimWrap = | | |
