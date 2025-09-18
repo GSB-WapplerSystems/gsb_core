@@ -186,7 +186,7 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
 
             // Merge with existing settings and write
             try {
-                $yaml = Yaml::dump($newSettings, 10, 4);
+                $yaml = Yaml::dump($newSettings, 10, 2);
                 $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
                 file_put_contents($settingsFile, $yaml);
             } catch (\Exception $e) {
@@ -297,11 +297,11 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         if (isset($siteConfig['logo-complete-toggle'])) {
             if (isset($siteConfig['logo-complete-big']) && $siteConfig['logo-complete-big'] != '') {
                 $fileUid = $this->cutTypolinkToUid($siteConfig['logo-complete-big']);
-                $settings['logos.gsb-logo-complete-big'] = $fileUid;
+                $settings['logos.gsb-logo-big'] = $fileUid;
             }
             if (isset($siteConfig['logo-complete-small']) && $siteConfig['logo-complete-small'] != '') {
                 $fileUid = $this->cutTypolinkToUid($siteConfig['logo-complete-small']);
-                $settings['logos.gsb-logo-complete-small'] = $fileUid;
+                $settings['logos.gsb-logo-small'] = $fileUid;
             }
         }
 
@@ -569,13 +569,14 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         return null;
     }
 
-    protected function removeKeyFromSiteConfig(string $configFile, string $key): void
+    protected function rearangeSiteConfig(string $configFile, string $key): void
     {
         $this->output->writeln('removing key from site config: ' . $key);
         // remove key from site config in config.yaml
         $config = Yaml::parseFile($configFile);
         unset($config[$key]);
-        $yaml = Yaml::dump($config, 10, 4);
+        $config['dependencies'] = ['itzbund-gsb/default'];
+        $yaml = Yaml::dump($config, 10, 2);
         file_put_contents($configFile, $yaml);
     }
 
@@ -586,7 +587,7 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
             unset($config[$key]);
         }
 
-        $yaml = Yaml::dump($config, 10, 4);
+        $yaml = Yaml::dump($config, 10, 2);
         file_put_contents($configFile, $yaml);
     }
 }
