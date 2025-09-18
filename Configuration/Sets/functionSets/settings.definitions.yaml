@@ -31,8 +31,6 @@ settings:
 
 
 ### Navigation Einstellungen ###
-  
-  
   navigation.gsb-navType:
     type: string
     default: '0'
