@@ -192,7 +192,7 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
             } catch (\Exception $e) {
                 $this->output->writeln('Error writing settings.yaml for site: ' . $siteIdentifier . ' - ' . $e->getMessage());
             }
-            $this->rearangeSiteConfig($configPath . '/config.yaml');
+            $this->rearrangeSiteConfig($configPath . '/config.yaml');
             $this->removeOldConfiguration($site->getRootPageId());
 
         }
@@ -569,23 +569,14 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         return null;
     }
 
-    protected function rearangeSiteConfig(string $configFile, string $key): void
-    {
-        $this->output->writeln('removing key from site config: ' . $key);
-        // remove key from site config in config.yaml
-        $config = Yaml::parseFile($configFile);
-        unset($config[$key]);
-        $config['dependencies'] = ['itzbund-gsb/default'];
-        $yaml = Yaml::dump($config, 10, 2);
-        file_put_contents($configFile, $yaml);
-    }
-
-    protected function removeKeysFromSiteConfig(string $configFile): void
+    protected function rearrangeSiteConfig(string $configFile): void
     {
         $config = Yaml::parseFile($configFile);
         foreach (self::CONFIG_KEYS as $key) {
+            $this->output->writeln('removing key from site config: ' . $key);
             unset($config[$key]);
         }
+        $config['dependencies'] = ['itzbund-gsb/default'];
 
         $yaml = Yaml::dump($config, 10, 2);
         file_put_contents($configFile, $yaml);
