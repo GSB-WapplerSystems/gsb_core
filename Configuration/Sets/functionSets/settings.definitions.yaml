@@ -11,16 +11,16 @@ categories:
     parent: GSB.functions
   GSB.functions.security:
     parent: GSB.functions
-  GSB.functions.devconfig:
-    parent: GSB.functions
+  GSB.devconfig:
+    parent: GSB
   fsc:
-    parent: GSB.functions.devconfig
+    parent: GSB.devconfig
   felogin:
-    parent: GSB.functions.devconfig
+    parent: GSB.devconfig
   seo:
-    parent: GSB.functions.devconfig
+    parent: GSB.devconfig
   redirects:
-    parent: GSB.functions.devconfig
+    parent: GSB.devconfig
 
 
 settings:
@@ -94,39 +94,39 @@ settings:
     default: ''
 ### devconfig Einstellungen ###
   devconfig.debug:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.admPanel:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.noCache:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.removeDefaultJS:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.compressJs:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.compressCss:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.concatenateJs:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.concatenateCss:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: bool
     default: false
   devconfig.header-comment:
-    category: GSB.functions.devconfig
+    category: GSB.devconfig
     type: string
     default: ''
 ### Barrierefreiheit Einstellungen ###

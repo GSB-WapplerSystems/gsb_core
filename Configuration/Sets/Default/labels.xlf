@@ -7,17 +7,14 @@
 			<trans-unit id="categories.GSB">
 				<source>GSB Individualization Settings</source>
 			</trans-unit>
-
 			<!-- Function Settings Category -->
 			<trans-unit id="categories.GSB.functions">
 				<source>Functions</source>
 			</trans-unit>
-
 			<!-- Style Settings Category -->
 			<trans-unit id="categories.GSB.style">
 				<source>Style Settings</source>
 			</trans-unit>
-
 			<!-- Copyright Settings Category -->
 			<trans-unit id="categories.GSB.copyright">
 				<source>Copyright Settings</source>
