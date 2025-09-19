@@ -14,9 +14,9 @@
     <div class="logo-wrapper">
 
         <gsb:trademark type="logo" />
-        <f:if condition="{site.configuration.logo-text}">
+        <f:if condition="{site.configuration.settings.logos.gsb-logo-text}">
             <f:then>
-                <f:image src="{site.configuration.logo-text}" id="text"></f:image>
+                <f:image src="{site.configuration.settings.logos.gsb-logo-text}" id="text"></f:image>
             </f:then>
             <f:else>
                 <gsb:trademark type="text" />

@@ -1,4 +1,11 @@
 ---
+paths:
+  - Configuration/
+
+filePatterns:
+  - "*.typoscript"
+  - "*.tsconfig"
+
 sniffs:
   - class: Indentation
     parameters:

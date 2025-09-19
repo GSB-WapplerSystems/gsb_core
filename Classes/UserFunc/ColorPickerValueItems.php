@@ -34,34 +34,32 @@ class ColorPickerValueItems
     {
         /** @var SiteInterface $site */
         $site = $config['site'];
+        $colors = [];
+
         $items = [
             [
                 $this->getLanguageService()->sL('LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label'),
                 '',
             ],
         ];
-        if (!method_exists($site, 'getConfiguration')) {
+
+        if (!method_exists($site, 'getSettings')) {
             $config['items'] = [];
             return;
         }
 
-        $configuration = $site->getConfiguration();
-
-        $colors = array_filter(
-            $configuration,
-            function ($item, $key) { return (int)preg_match('/^color_[0-9]+$/', $key) > 0 && $item !== ''; },
-            ARRAY_FILTER_USE_BOTH
-        );
-
-        foreach ($colors as $key => $color) {
-            $label = $color;
-            if (isset($configuration['label_color_' . substr($key, -1)]) && $configuration['label_color_' . substr($key, -1)] !== '') {
-                $label = $configuration['label_color_' . substr($key, -1)];
-            }
-
-            $items[] = [$label, $key];
+        $settings = $site->getSettings();
+        if (isset($settings->get('colors')['background'])) {
+            $colors = $settings->get('colors')['background'];
         }
 
+        foreach ($colors as $color) {
+            if ($color['color'] !== '#000' && $color['label'] !== '') {
+                $label = $color['label'];
+                $color = $color['color'];
+                $items[] = [$label, $color];
+            }
+        }
         $config['items'] = $items;
     }
 

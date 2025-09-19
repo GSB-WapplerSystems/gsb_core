@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/styleSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
+		<body>
+			<trans-unit id="label">
+				<source>GSB Style</source>
+				<target>GSB Stiel</target>
+			</trans-unit>
+			<!-- Style Settings Categories -->
+			<trans-unit id="categories.GSB.style.colors">
+				<source>Color Settings</source>
+				<target>Farben Einstellungen</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.colors.background">
+				<source>Background Color Settings</source>
+				<target>Hintergrundfarben Einstellungen</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.colors.colorGeneral">
+				<source>Color General</source>
+				<target>Color General</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.logos">
+				<source>Logo Settings</source>
+				<target>Logos Einstellungen</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.favicons">
+				<source>Favicon Settings</source>
+				<target>Favicons Einstellungen</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.fonts">
+				<source>Font Settings</source>
+				<target>Fonts Einstellungen</target>
+			</trans-unit>
+
+			<!-- Category Descriptions -->
+			<trans-unit id="categories.GSB.style.colors.background.description">
+				<source>Here you can define up to six color values that will shape the corporate design (CD) of the website. These colors are then available for selection in content elements where a background color can be set. The "Color value name" field should assign a custom name or designation for a specific color value. Instead of remembering complicated hex codes, the editorial team can assign an easily understandable name for the color, such as "Pigeon Blue" or "Accent Color".</source>
+				<target>Hier können bis zu sechs Farbwerte definiert werden, die dann das Corporate Design (CD) des Webauftritts prägen. Diese Farben stehen dann zur Auswahl in Inhaltselementen, bei denen eine Hintergrundfarbe festgelegt werden kann. Das feld "Farbwertname" soll einen benutzerdefinierten Namen oder eine Bezeichnung für einen bestimmten Farbwert zu vergeben. Anstatt sich an komplizierte Hex-Codes zu erinnern, kann die Redaktion einen leicht verständlichen Namen für die Farbe vergeben, wie z.B. "Taubenblau" oder "Akzentfarbe".</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.colors.colorGeneral.description">
+				<source>The values for the color variables can be exchanged at this point. These are then used in the CSS. This allows, for example, the button color or footer to be adjusted.</source>
+				<target>Die Werte für die Farbvariablen können an dieser Stelle ausgetauscht werden. Diese werden dann im CSS verwendet. Somit können beispielsweise die Schaltflächenfarbe oder der Footer angepasst werden.</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.favicons.description">
+				<source>Please use the service at: https://realfavicongenerator.net/ (This service is free and copyright-free). For this you only need a 512x512 large favicon PNG image and have it processed by this service. Download the generated files and add them e.g. under /fileadmin/Favicons/. Then you can link the corresponding files here again to exchange your favicon. Of course you can also create all files manually. The file names and image sizes must be maintained.</source>
+				<target>Nutzen Sie dazu bitte den Dienst unter: https://realfavicongenerator.net/ (Dieser Dienst ist kostenlos und Copyright frei). Hierzu brauchen Sie nur ein 512x512 großes Favicon-PNG Bild und lassen es von diesem Dienst bearbeiten. Laden Sie die erzeugten Dateien herunter und fügen Sie diese z.B. unter /fileadmin/Favicons/ ein. Danach können Sie die entsprechenden Dateien hier wieder verlinken, um Ihr Favicon auszutauschen. Natürlich können Sie alle Dateien auch händisch erstellen. Die Dateinamen und Bildgrößen müssen beibehalten werden.</target>
+			</trans-unit>
+
+			<trans-unit id="categories.GSB.style.fonts.description">
+				<source>The following fields can be used to use individual fonts in the frontend.</source>
+				<target>Die folgenden Felder können genutzt werden um individuelle Schriftarten im Frontend zu verwenden.</target>
+			</trans-unit>
+
+			<!-- Background Colors -->
+			<trans-unit id="settings.colors.background.gsb-background-color-1.color">
+				<source>Color #1</source>
+				<target>Farbe #1</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-1.label">
+				<source>Color Value Name #1</source>
+				<target>Farbwertname #1</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-2.color">
+				<source>Color #2</source>
+				<target>Farbe #2</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-2.label">
+				<source>Color Value Name #2</source>
+				<target>Farbwertname #2</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-3.color">
+				<source>Color #3</source>
+				<target>Farbe #3</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-3.label">
+				<source>Color Value Name #3</source>
+				<target>Farbwertname #3</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-4.color">
+				<source>Color #4</source>
+				<target>Farbe #4</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-4.label">
+				<source>Color Value Name #4</source>
+				<target>Farbwertname #4</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-5.color">
+				<source>Color #5</source>
+				<target>Farbe #5</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-5.label">
+				<source>Color Value Name #5</source>
+				<target>Farbwertname #5</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-6.color">
+				<source>Color #6</source>
+				<target>Farbe #6</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.background.gsb-background-color-6.label">
+				<source>Color Value Name #6</source>
+				<target>Farbwertname #6</target>
+			</trans-unit>
+
+			<!-- Color General -->
+			<trans-unit id="settings.colors.colorGeneral.gsb-color-primary">
+				<source>Primary Color Value</source>
+				<target>Farbwert Primär</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.colorGeneral.gsb-color-secondary">
+				<source>Secondary Color Value</source>
+				<target>Farbwert Sekundär</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.colorGeneral.gsb-color-secondary-rgba">
+				<source>Secondary Color Value RGBA</source>
+				<target>Farbwert Sekundär RGBA</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.colorGeneral.gsb-color-tertiary">
+				<source>Tertiary Color Value</source>
+				<target>Farbwert Tertiär</target>
+			</trans-unit>
+
+			<trans-unit id="settings.colors.colorGeneral.gsb-color-quaternary">
+				<source>Quaternary Color Value</source>
+				<target>Farbwert Quartär</target>
+			</trans-unit>
+
+			<!-- Logos -->
+			<trans-unit id="settings.logos.gsb-logo-big">
+				<source>Logo big</source>
+				<target>Logo big</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-logo-small">
+				<source>Logo small</source>
+				<target>Logo small</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-logo-text">
+				<source>Logo trademark</source>
+				<target>logo trademark</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-initiative-text">
+				<source>Initiative text</source>
+				<target>Initiative text</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-second-logo">
+				<source>Add second logo</source>
+				<target>Zweites Logo hinzufügen</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-second-logo-link">
+				<source>Link target of second logo</source>
+				<target>Linkziel des zweiten Logos</target>
+			</trans-unit>
+
+			<trans-unit id="settings.logos.gsb-second-logo-alt">
+				<source>Alternative text 2nd logo</source>
+				<target>Alternativ Text 2. Logo</target>
+			</trans-unit>
+
+			<!-- Favicons -->
+			<trans-unit id="settings.favicons.favicon-96x96-png">
+				<source>Favicon 96x96 PNG</source>
+				<target>Favicon 96x96 PNG</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.faviconIco">
+				<source>Favicon ICO</source>
+				<target>Favicon ICO</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.faviconSvg">
+				<source>Favicon SVG</source>
+				<target>Favicon SVG</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.apple-touch-icon">
+				<source>Apple Touch Icon</source>
+				<target>Apple Touch Icon</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.webmanifest">
+				<source>Webmanifest</source>
+				<target>Webmanifest</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.web-app-manifest-192x192">
+				<source>Web App Manifest 192x192 PNG</source>
+				<target>Web App Manifest 192x192 PNG</target>
+			</trans-unit>
+
+			<trans-unit id="settings.favicons.web-app-manifest-512x512">
+				<source>Web App Manifest 512x512 PNG</source>
+				<target>Web App Manifest 512x512 PNG</target>
+			</trans-unit>
+
+			<!-- Fonts -->
+			<trans-unit id="settings.fonts.sans.font-sans-name">
+				<source>Sans Name</source>
+				<target>Sans Name</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.sans.font-sans-normal">
+				<source>Sans Normal</source>
+				<target>Sans Normal</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.sans.font-sans-italic">
+				<source>Sans Italic</source>
+				<target>Sans Italic</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.sans.font-sans-medium">
+				<source>Sans Medium</source>
+				<target>Sans Medium</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.sans.font-sans-bold">
+				<source>Sans Bold</source>
+				<target>Sans Bold</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.sans.font-sans-bold-italic">
+				<source>Sans Bold Italic</source>
+				<target>Sans Bold Italic</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.serif.font-serif-normal">
+				<source>Serif Normal</source>
+				<target>Serif Normal</target>
+			</trans-unit>
+
+			<trans-unit id="settings.fonts.serif.font-serif-italic">
+				<source>Serif Italic</source>
+				<target>Serif Italic</target>
+			</trans-unit>
+
+			<!-- Background Color Descriptions -->
+			<trans-unit id="settings.description.colors.background.gsb-background-color-1.color">
+				<source>Configure color #1 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #1 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-1.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-2.color">
+				<source>Configure color #2 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #2 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-2.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-3.color">
+				<source>Configure color #3 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #3 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-3.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-4.color">
+				<source>Configure color #4 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #4 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-4.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-5.color">
+				<source>Configure color #5 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #5 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-5.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-6.color">
+				<source>Configure color #6 as hex value, e.g. #000 or #FFFFFF</source>
+				<target>Konfigurieren Sie die Farbe #6 als Hex-Wert, z.b. #000 oder #FFFFFF</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.background.gsb-background-color-6.label">
+				<source>A name can be assigned to the color value here.</source>
+				<target>Hier kann ein Name für den Farbwert vergeben werden.</target>
+			</trans-unit>
+
+			<!-- Color General Descriptions -->
+			<trans-unit id="settings.description.colors.colorGeneral.gsb-color-primary">
+				<source>A color value for the primary color can be assigned here.</source>
+				<target>Hier kann ein Farbwert für die Primärfarbe vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.colorGeneral.gsb-color-secondary">
+				<source>A color value for the secondary color can be assigned here.</source>
+				<target>Hier kann ein Farbwert für die Sekundärfarbe vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.colorGeneral.gsb-color-secondary-rgba">
+				<source>The opacity of the secondary color can be set here.</source>
+				<target>Hier kann die Deckkraft der Sekundärfarbe gesetzt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.colorGeneral.gsb-color-tertiary">
+				<source>A color value for the tertiary color can be assigned here.</source>
+				<target>Hier kann ein Farbwert für die Tertiärfarbe vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.colors.colorGeneral.gsb-color-quaternary">
+				<source>A color value for the quaternary color can be assigned here.</source>
+				<target>Hier kann ein Farbwert für die Quartärfarbe vergeben werden.</target>
+			</trans-unit>
+
+			<!-- Logo Descriptions -->
+			<trans-unit id="settings.description.logos.gsb-logo-big">
+				<source>A logo can be selected here.</source>
+				<target>Hier kann ein Logo ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-logo-small">
+				<source>A logo can be selected here.</source>
+				<target>Hier kann ein Logo ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-logo-text">
+				<source>The text mark of the logo can be replaced here, the file must be an SVG with the corresponding text path.</source>
+				<target>Hier kann die Textmarke des Logos ersetzt werden, die Datei muss ein SVG mit dem entsprechenden Textpfad sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-initiative-text">
+				<source>Overrides the text displayed in the standard ("An initiative of") next to the second logo.</source>
+				<target>Überschreibt den im Standard dargestellten Text ("Eine Initiative von") neben dem zweiten Logo.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-second-logo">
+				<source>Adjustment of the desktop version of the second logo.</source>
+				<target>Anpassung der Desktop-Version des zweiten Logos.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-second-logo-link">
+				<source>Optional link that can be added to the second logo.</source>
+				<target>Optionaler Link, mit dem das zweite Logo versehen werden kann.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.logos.gsb-second-logo-alt">
+				<source>Alternative text for the second logo for visually impaired website visitors.</source>
+				<target>Alternativ Text für das zweite Logo für visuell beeinträchtigte Webseiten-Besucher.</target>
+			</trans-unit>
+
+			<!-- Favicon Descriptions -->
+			<trans-unit id="settings.description.favicons.favicon-96x96-png">
+				<source>The PNG file must be square and have a size of 96x96 pixels. Filename must be "favicon-96x96.png".</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 96x96 Pixel haben. Dateiname muss "favicon-96x96.png" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.faviconIco">
+				<source>The classic Ico file must be square and have a size of 48x48 pixels. Filename must be "favicon.ico".</source>
+				<target>Die klassische Ico-Datei muss quadratisch sein und eine Größe von 48x48 Pixel haben. Dateiname muss "favicon.ico" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.faviconSvg">
+				<source>The SVG Touch Icon must be square and have a size of 512x512 pixels. Filename must be "favicon.svg".</source>
+				<target>Das SVG Touch Icon muss muss quadratisch sein und eine Größe von 512x512 Pixeln haben. Dateiname muss "favicon.svg" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.apple-touch-icon">
+				<source>The PNG file must be square and have a size of 180x180 pixels. Filename must be "apple-touch-icon.png".</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 180x180 Pixel haben. Dateiname muss "apple-touch-icon.png" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.webmanifest">
+				<source>The webmanifest file must be adapted to your wishes beforehand. Filename must be "site.webmanifest".</source>
+				<target>ie Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.web-app-manifest-192x192">
+				<source>The PNG file must be square and have a size of 192x192 pixels. Filename must be "web-app-manifest-192x192.png".</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 192x192 Pixel haben. Dateiname muss "web-app-manifest-192x192.png" sein.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.favicons.web-app-manifest-512x512">
+				<source>The PNG file must be square and have a size of 512x512 pixels. Filename must be "web-app-manifest-512x512.png".</source>
+				<target>Die PNG-Datei muss quadratisch sein und eine Größe von 512x512 Pixel haben. Dateiname muss "web-app-manifest-512x512.png" sein.</target>
+			</trans-unit>
+
+			<!-- Font Descriptions -->
+			<trans-unit id="settings.description.fonts.sans.font-sans-normal">
+				<source>A font for Sans Normal can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Sans Normal ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.sans.font-sans-italic">
+				<source>A font for Sans Italic can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Sans Italic ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.sans.font-sans-medium">
+				<source>A font for Sans Medium can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Sans Medium ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.sans.font-sans-bold">
+				<source>A font for Sans Bold can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Sans Bold ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.sans.font-sans-bold-italic">
+				<source>A font for Sans Bold Italic can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Sans Bold Italic ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.serif.font-serif-normal">
+				<source>A font for Serif Normal can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Serif Normal ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.serif.font-serif-italic">
+				<source>A font for Serif Italic can be selected here.</source>
+				<target>Hier kann eine Schriftart für den Serif Italic ausgewählt werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.sans.font-sans-name">
+				<source>A name for the Sans font can be assigned here.</source>
+				<target>Hier kann ein Name für die Sans-Schriftart vergeben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="settings.description.fonts.serif.font-serif-name">
+				<source>A name for the Serif font can be assigned here.</source>
+				<target>Hier kann ein Name für die Serif-Schriftart vergeben werden.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

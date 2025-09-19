@@ -1,0 +1,10 @@
+settings:
+  copyright.notice:
+    category: GSB.copyright
+    type: string
+    default: 'ITZBund'
+
+  copyright.show-copyright:
+    type: bool
+    default: false
+    category: GSB.copyright

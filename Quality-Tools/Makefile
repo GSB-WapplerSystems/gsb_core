@@ -39,11 +39,11 @@ COMPOSER_CONTAINER_ID	:= $(shell docker images --filter reference=${PROJECT_NAME
 COMPOSER_NORMALIZE = "composer normalize --dry-run --no-check-lock"
 COMPOSER_VALIDATE = "composer validate --strict --no-check-lock"
 PHP_CS_FIXER = "php vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff"
-PHP_MD = "php vendor/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml -vvv"
+PHP_MD = "php -r \"error_reporting(error_reporting() ^ E_DEPRECATED);\"; php ../vendor/bin/phpmd ../Classes/ text ../gsb11.ruleset.xml --baseline-file ../phpmd.baseline.xml -vvv"
 PHP_STAN = "php vendor/bin/phpstan analyse --memory-limit=256M --no-progress"
 PHP_UNIT = "vendor/bin/phpunit -c Tests/UnitTests.xml --testdox --coverage-html Tests/_output"
 RECTOR = "vendor/bin/rector --dry-run"
-TYPOSCRIPT_LINT = "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript"
+TYPOSCRIPT_LINT = "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv"
 
 ### General:
 #help: ## Displays this list of possible commands with descriptions
