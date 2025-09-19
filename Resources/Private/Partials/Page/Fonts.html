@@ -20,10 +20,10 @@
             :root { --bs-font-serif: {site.configuration.settings.fonts.serif.font-serif-name}; }
         </f:asset.css>
     </f:if>
-    <f:if condition="{site.configuration.settings.fonts.sans.font-sans}">
-        <f:render section="fontFace" arguments="{id: 'fontSansCss', fontName: site.configuration.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.font-sans)}', fontWeight: '400', fontStyle: 'normal'}" />
+    <f:if condition="{site.configuration.settings.fonts.sans.font-sans-normal}">
+        <f:render section="fontFace" arguments="{id: 'fontSansCss', fontName: site.configuration.settings.fonts.sans.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.settings.fonts.sans.font-sans-normal)}', fontWeight: '400', fontStyle: 'normal'}" />
     </f:if>
-    <f:if condition="{site.configuration.settings.fonts.sans.   font-sans-italic}">
+    <f:if condition="{site.configuration.settings.fonts.sans.font-sans-italic}">
         <f:render section="fontFace" arguments="{id: 'fontSansItalicCss', fontName: site.configuration.settings.fonts.sans.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.settings.fonts.sans.font-sans-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
     </f:if>
     <f:if condition="{site.configuration.settings.fonts.sans.font-sans-medium}">
@@ -35,10 +35,10 @@
     <f:if condition="{site.configuration.settings.fonts.sans.font-sans-bold-italic}">
         <f:render section="fontFace" arguments="{id: 'fontSansBoldItalicCss', fontName: site.configuration.settings.fonts.sans.font-sans-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.settings.fonts.sans.font-sans-bold-italic)}', fontWeight: '700', fontStyle: 'italic'}" />
     </f:if>
-    <f:if condition="{site.configuration.settings.fonts.serif.font-serif}">
+    <f:if condition="{site.configuration.settings.fonts.serif.font-serif-normal}">
         <f:render section="fontFace" arguments="{id: 'fontSerifCss', fontName: site.configuration.settings.fonts.serif.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.settings.fonts.serif.font-serif)}', fontWeight: '400', fontStyle: 'normal'}" />
     </f:if>
-    <f:if condition="{site.configuration.settings.fonts.serif.font-serif-italic)}">
+    <f:if condition="{site.configuration.settings.fonts.serif.font-serif-italic}">
         <f:render section="fontFace" arguments="{id: 'fontSerifItalicCss', fontName: site.configuration.settings.fonts.serif.font-serif-name, fontSrc: '{f:uri.typolink(parameter: site.configuration.settings.fonts.serif.font-serif-italic)}', fontWeight: '400', fontStyle: 'italic'}" />
     </f:if>
 
