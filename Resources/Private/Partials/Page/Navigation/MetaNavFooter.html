@@ -14,10 +14,7 @@
                     <f:if condition="{copyrightYear}">
                         <p class="footer-copyright-distances footer-copyright-font-properties">
                             © {copyrightYear}
-                            <f:if condition="{site.configuration.copyright}">
-                                <f:then>{site.configuration.copyright}</f:then>
-                                <f:else>ITZBund</f:else>
-                            </f:if>
+                            {site.configuration.settings.copyright.notice}
                         </p>
                     </f:if>
                 </div>

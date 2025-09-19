@@ -31,60 +31,67 @@ mod.wizards.newContentElement.wizardItems.common {
       }
     }
   }
+
   show := addToList(gsb_banner)
 }
 
 TCEFORM {
-    tt_content {
-        tx_link_layout {
-            types {
-                gsb_banner {
-                    disabled = 1
-                }
-            }
+  tt_content {
+    tx_link_layout {
+      types {
+        gsb_banner {
+          disabled = 1
         }
-        tx_link_position {
-            types {
-                gsb_banner {
-                    disabled = 1
-                }
-            }
-        }
-        tx_header_style {
-            types {
-                gsb_banner {
-                    disabled = 0
-                }
-            }
-        }
-        frame_class {
-            types {
-                gsb_banner {
-                    disabled = 1
-                }
-            }
-        }
-        tx_header_inside {
-            types {
-                gsb_banner {
-                    disabled = 1
-                }
-            }
-        }
-        header_position {
-            types {
-                gsb_banner {
-                    disabled = 0
-                }
-            }
-        }
-        imageorient {
-            types {
-                gsb_banner {
-                    #remove 25 and 26 to get the left right option
-                    removeItems = 1,2,8,9,10,17,18
-                }
-            }
-        }
+      }
     }
+
+    tx_link_position {
+      types {
+        gsb_banner {
+          disabled = 1
+        }
+      }
+    }
+
+    tx_header_style {
+      types {
+        gsb_banner {
+          disabled = 0
+        }
+      }
+    }
+
+    frame_class {
+      types {
+        gsb_banner {
+          disabled = 1
+        }
+      }
+    }
+
+    tx_header_inside {
+      types {
+        gsb_banner {
+          disabled = 1
+        }
+      }
+    }
+
+    header_position {
+      types {
+        gsb_banner {
+          disabled = 0
+        }
+      }
+    }
+
+    imageorient {
+      types {
+        gsb_banner {
+          #remove 25 and 26 to get the left right option
+          removeItems = 1,2,8,9,10,17,18
+        }
+      }
+    }
+  }
 }

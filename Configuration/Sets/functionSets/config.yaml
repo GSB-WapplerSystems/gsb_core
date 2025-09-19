@@ -1,0 +1,7 @@
+name: itzbund-gsb/function
+hidden: true
+dependencies:
+  - typo3/seo-sitemap
+  - typo3/felogin
+  - typo3/redirects
+  - typo3/fluid-styled-content

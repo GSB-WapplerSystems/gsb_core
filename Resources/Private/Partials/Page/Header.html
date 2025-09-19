@@ -38,20 +38,21 @@
     </f:if>
     <div class="header-wrapper-bg flex-wrap">
         <div class="container position-relative">
-            <f:if condition="{site.configuration.second-logo-complete-toggle}">
+            <f:if condition="{site.configuration.settings.logos.gsb-second-logo}">
                 <f:render
-                    arguments="{logo: site.configuration.second-logo, link: site.configuration.second-logo-link, alt: site.configuration.second-logo-alt, site: site}"
+                    arguments="{logo: site.configuration.settings.logos.gsb-second-logo, link: site.configuration.settings.logos.gsb-second-logo-link, alt: site.configuration.settings.logos.gsb-second-logo-alt, site: site}"
                     partial="Header.LogoSecond" />
             </f:if>
-            <f:if condition="{site.configuration.navType} == 0">
+            
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 0">
                 <f:render arguments="{_all}" partial="Navigation/Primary/NavPrimary" />
             </f:if>
 
-            <f:if condition="{site.configuration.navType} == 1">
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 1">
                 <f:render arguments="{_all}" partial="Navigation/Secondary/NavSecondary" />
             </f:if>
 
-            <f:if condition="{site.configuration.navType} == 2">
+            <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 2">
                 <f:render arguments="{_all}" partial="Navigation/Tertiary/NavTertiary" />
             </f:if>
         </div>
