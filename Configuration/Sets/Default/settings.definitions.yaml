@@ -6,5 +6,6 @@ categories:
     parent: GSB
   GSB.style:
     parent: GSB
-
+  GSB.devconfig:
+    parent: GSB
 settings: []

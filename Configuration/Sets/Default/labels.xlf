@@ -19,6 +19,10 @@
 			<trans-unit id="categories.GSB.copyright">
 				<source>Copyright Settings</source>
 			</trans-unit>
+			<!-- Developer Settings Category -->
+			<trans-unit id="categories.GSB.devconfig">
+				<source>Developer Configuration</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

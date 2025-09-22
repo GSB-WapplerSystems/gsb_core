@@ -10,18 +10,23 @@
 			</trans-unit>
 			<!-- Function Settings Category -->
 			<trans-unit id="categories.GSB.functions">
-				<source>Functions</source>
-				<target>Funktionen</target>
+				<source>⚙️ Functions</source>
+				<target>⚙️ Funktionen</target>
 			</trans-unit>
 			<!-- Style Settings Category -->
 			<trans-unit id="categories.GSB.style">
-				<source>Style Settings</source>
-				<target>Stil-Corporate Design</target>
+				<source>🎨 Style Settings</source>
+				<target>🎨 Stil-Corporate Design</target>
 			</trans-unit>
 			<!-- Copyright Settings Category -->
 			<trans-unit id="categories.GSB.copyright">
-				<source>Copyright Settings</source>
-				<target>Urheberrechtshinweis (Copyright)</target>
+				<source>©️ Copyright Settings</source>
+				<target>©️ Urheberrechtshinweis (Copyright)</target>
+			</trans-unit>
+			<!-- Developer Settings Category -->
+			<trans-unit id="categories.GSB.devconfig">
+				<source>⚠️ Developer Configuration</source>
+				<target>⚠️ Entwickler Konfiguration</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -32,10 +32,6 @@
 				<source>Security</source>
 				<target>Sicherheit</target>
 			</trans-unit>
-			<trans-unit id="categories.GSB.devconfig">
-				<source>Developer Configuration</source>
-				<target>Entwickler Konfiguration</target>
-			</trans-unit>
 			<trans-unit id="categories.description.GSB.functions.socialMediaLinks">
 				<source>Social Media Links to your profiles are displayed in the footer. Note: Only registered profiles are displayed.</source>
 				<target>Social Media Links zu ihren Profilen werden im Footer angezeigt. Hinweis: Nur eingetragene Profile werden angezeigt.</target>
@@ -144,71 +140,71 @@
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.debug">
 				<source>Debug</source>
-				<target>Debug</target>
+				<target>Debug Modus kann aktiviert werden für die Fehlersuche. Wichtig: Nicht auf Produktionsseiten aktivieren.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.admPanel">
-				<source>Adm Panel</source>
-				<target>Adm Panel</target>
+				<source>Admin Panel</source>
+				<target>Admin Panel</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.admPanel">
-				<source>Adm Panel</source>
-				<target>Adm Panel</target>
+				<source>Admin Panel</source>
+				<target>Admin Panel kann aktiviert um zusätzliche Seitenfunktionen zu testen und zusätzliche Informationen zu erhalten.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.noCache">
 				<source>No Cache</source>
-				<target>No Cache</target>
+				<target>Kein Cache</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.noCache">
 				<source>No Cache</source>
-				<target>No Cache</target>
+				<target>Deaktivierung vom TYPO3 Cache zur Fehlersuche, um das Seitenverhalten ohne Cache zu sehen.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.removeDefaultJS">
 				<source>Remove Default JS</source>
-				<target>Remove Default JS</target>
+				<target>entferne Standard JS</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.removeDefaultJS">
 				<source>Remove Default JS</source>
-				<target>Remove Default JS</target>
+				<target>Entfernen von TYPO3 Standard Javascript um Störungen bei individuellem Javascript zu vermeiden.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.compressJs">
 				<source>Compress JS</source>
-				<target>Compress JS</target>
+				<target>komprimiere Javascript</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.compressJs">
 				<source>Compress JS</source>
-				<target>Compress JS</target>
+				<target>Aktievierung von komprimiertem Javascript um die Performance zu verbessern.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.compressCss">
 				<source>Compress CSS</source>
-				<target>Compress CSS</target>
+				<target>komprimiere CSS</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.compressCss">
 				<source>Compress CSS</source>
-				<target>Compress CSS</target>
+				<target>Aktievierung von komprimierten CSS um die Performance zu verbessern.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.concatenateJs">
 				<source>Concatenate JS</source>
-				<target>Concatenate JS</target>
+				<target>verknüpfe Javascript</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.concatenateJs">
 				<source>Concatenate JS</source>
-				<target>Concatenate JS</target>
+				<target>Aktivierung zum Zusammenfügen aller Javascript Dateinen zu einer Datei, um die Performance zu verbessern.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.concatenateCss">
 				<source>Concatenate CSS</source>
-				<target>Concatenate CSS</target>
+				<target>verknüpfe CSS</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.concatenateCss">
 				<source>Concatenate CSS</source>
-				<target>Concatenate CSS</target>
+				<target>Aktivierung zum Zusammenfügen aller CSS Dateinen zu einer Datei, um die Performance zu verbessern.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.header-comment">
 				<source>Header Comment</source>
-				<target>Header Comment</target>
+				<target>Header Kommentar</target>
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.header-comment">
 				<source>Header Comment</source>
-				<target>Header Comment</target>
+				<target>Header Kommentar wird im Quelcode der Seite angezeigt.</target>
 			</trans-unit>
 			<!-- Accessibility Settings -->
 			<trans-unit id="settings.accessability.signLanguagePage">
@@ -254,20 +250,36 @@
 				<target>Burger Menü</target>
 			</trans-unit>
 			<trans-unit id="categories.fsc">
-				<source>Fluid Styled Content</source>
-				<target>Fluid Styled Content</target>
+				<source>TYPO3 Fluid Styled Content</source>
+				<target>TYPO3 Fluid Styled Content</target>
+			</trans-unit>
+			<trans-unit id="categories.description.fsc">
+				<source>TYPO3 Fluid Styled Content</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
 			</trans-unit>
 			<trans-unit id="categories.seo">
-				<source>SEO Sitemap</source>
-				<target>SEO Sitemap</target>
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3 SEO Sitemap</target>
+			</trans-unit>
+			<trans-unit id="categories.description.seo">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
 			</trans-unit>
 			<trans-unit id="categories.felogin">
-				<source>Frontend Login</source>
-				<target>Frontend Login</target>
+				<source>TYPO3 Frontend Login</source>
+				<target>TYPO3 Frontend Login</target>
+			</trans-unit>
+			<trans-unit id="categories.description.felogin">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
 			</trans-unit>
 			<trans-unit id="categories.redirects">
-				<source>Redirects</source>
-				<target>Redirects</target>
+				<source>TYPO3 Redirects</source>
+				<target>TYPO3 Redirects</target>
+			</trans-unit>
+			<trans-unit id="categories.description.redirects">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
 			</trans-unit>
 		</body>
 	</file>
