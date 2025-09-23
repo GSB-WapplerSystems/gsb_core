@@ -8,23 +8,20 @@
 				<source>GSB Individualization Settings</source>
 				<target>GSB Individualisierungs Einstellungen</target>
 			</trans-unit>
-
 			<!-- Function Settings Category -->
 			<trans-unit id="categories.GSB.functions">
 				<source>Functions</source>
 				<target>Funktionen</target>
 			</trans-unit>
-
 			<!-- Style Settings Category -->
 			<trans-unit id="categories.GSB.style">
 				<source>Style Settings</source>
-				<target>Stileinstellungen</target>
+				<target>Stil-Corporate Design</target>
 			</trans-unit>
-
 			<!-- Copyright Settings Category -->
 			<trans-unit id="categories.GSB.copyright">
 				<source>Copyright Settings</source>
-				<target>Urheberrechtshinweis (Copyright) Einstellungen</target>
+				<target>Urheberrechtshinweis (Copyright)</target>
 			</trans-unit>
 		</body>
 	</file>

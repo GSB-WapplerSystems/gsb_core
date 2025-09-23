@@ -1,10 +1,9 @@
 categories:
-  GSB.style.colors:
-    parent: GSB.style
+
   GSB.style.colors.background:
-    parent: GSB.style.colors
+    parent: GSB.style
   GSB.style.colors.colorGeneral:
-    parent: GSB.style.colors
+    parent: GSB.style
   GSB.style.logos:
     parent: GSB.style
   GSB.style.favicons:
