@@ -196,16 +196,16 @@
 				<source>Burger Menu</source>
 			</trans-unit>
 			<trans-unit id="categories.fsc">
-				<source>Fluid Styled Content</source>
+				<source>TYPO3 Fluid Styled Content</source>
 			</trans-unit>
 			<trans-unit id="categories.seo">
-				<source>SEO Sitemap</source>
+				<source>TYPO3 SEO Sitemap</source>
 			</trans-unit>
 			<trans-unit id="categories.felogin">
-				<source>Frontend Login</source>
+				<source>TYPO3 Frontend Login</source>
 			</trans-unit>
 			<trans-unit id="categories.redirects">
-				<source>Redirects</source>
+				<source>TYPO3 Redirects</source>
 			</trans-unit>
 		</body>
 	</file>

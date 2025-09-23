@@ -11,8 +11,6 @@ categories:
     parent: GSB.functions
   GSB.functions.security:
     parent: GSB.functions
-  GSB.devconfig:
-    parent: GSB
   fsc:
     parent: GSB.devconfig
   felogin:
