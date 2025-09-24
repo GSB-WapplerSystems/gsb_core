@@ -255,37 +255,37 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         }
 
         if (isset($siteConfig['color_1']) && $siteConfig['color_1'] != '') {
-            $settings['colors.background.gsb-background-color-1'] = $siteConfig['color_1'];
+            $settings['colors.background.gsb-background-color-1.color'] = $siteConfig['color_1'];
         }
         if (isset($siteConfig['label_color_1']) && $siteConfig['label_color_1'] != '') {
             $settings['colors.background.gsb-background-color-1.label'] = $siteConfig['label_color_1'];
         }
         if (isset($siteConfig['color_2']) && $siteConfig['color_2'] != '') {
-            $settings['colors.background.gsb-background-color-2'] = $siteConfig['color_2'];
+            $settings['colors.background.gsb-background-color-2.color'] = $siteConfig['color_2'];
         }
         if (isset($siteConfig['label_color_2']) && $siteConfig['label_color_2'] != '') {
             $settings['colors.background.gsb-background-color-2.label'] = $siteConfig['label_color_2'];
         }
         if (isset($siteConfig['color_3']) && $siteConfig['color_3'] != '') {
-            $settings['colors.background.gsb-background-color-3'] = $siteConfig['color_3'];
+            $settings['colors.background.gsb-background-color-3.color'] = $siteConfig['color_3'];
         }
         if (isset($siteConfig['label_color_3']) && $siteConfig['label_color_3'] != '') {
             $settings['colors.background.gsb-background-color-3.label'] = $siteConfig['label_color_3'];
         }
         if (isset($siteConfig['color_4']) && $siteConfig['color_4'] != '') {
-            $settings['colors.background.gsb-background-color-4'] = $siteConfig['color_4'];
+            $settings['colors.background.gsb-background-color-4.color'] = $siteConfig['color_4'];
         }
         if (isset($siteConfig['label_color_4']) && $siteConfig['label_color_4'] != '') {
             $settings['colors.background.gsb-background-color-4.label'] = $siteConfig['label_color_4'];
         }
         if (isset($siteConfig['color_5']) && $siteConfig['color_5'] != '') {
-            $settings['colors.background.gsb-background-color-5'] = $siteConfig['color_5'];
+            $settings['colors.background.gsb-background-color-5.color'] = $siteConfig['color_5'];
         }
         if (isset($siteConfig['label_color_5']) && $siteConfig['label_color_5'] != '') {
             $settings['colors.background.gsb-background-color-5.label'] = $siteConfig['label_color_5'];
         }
         if (isset($siteConfig['color_6']) && $siteConfig['color_6'] != '') {
-            $settings['colors.background.gsb-background-color-6'] = $siteConfig['color_6'];
+            $settings['colors.background.gsb-background-color-6.color'] = $siteConfig['color_6'];
         }
         if (isset($siteConfig['label_color_6']) && $siteConfig['label_color_6'] != '') {
             $settings['colors.background.gsb-background-color-6.label'] = $siteConfig['label_color_6'];
