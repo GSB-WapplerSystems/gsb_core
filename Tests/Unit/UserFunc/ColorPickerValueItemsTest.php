@@ -60,6 +60,13 @@ class ColorPickerValueItemsTest extends UnitTestCase
         $this->colorPickerValueItems->getItems($config);
 
         self::assertArrayHasKey('items', $config);
-        self::assertSame([], $config['items']);
+        self::assertSame(
+            [0 => [
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label',
+                '',
+            ],
+            ],
+            $config['items']
+        );
     }
 }
