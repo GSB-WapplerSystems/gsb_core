@@ -44,23 +44,28 @@ class ColorPickerValueItems
         ];
 
         if (!method_exists($site, 'getSettings')) {
-            $config['items'] = [];
+            $config['items'] = $items;
             return;
         }
 
         $settings = $site->getSettings();
-        if (isset($settings->get('colors')['background'])) {
-            $colors = $settings->get('colors')['background'];
+        if (!isset($settings->get('colors')['background'])) {
+            $config['items'] = $items;
+            return;
         }
 
-        foreach ($colors as $color) {
-            if ($color['color'] !== '#000' && $color['label'] !== '') {
-                $label = $color['label'];
-                $color = $color['color'];
-                $items[] = [$label, $color];
-            }
-        }
-        $config['items'] = $items;
+        $colors = $settings->get('colors')['background'];
+        $config['items'] = array_merge(
+            $items,
+            [
+                [$colors['gsb-background-color-1']['label'] ?? '', 'color_1'],
+                [$colors['gsb-background-color-2']['label'] ?? '', 'color_2'],
+                [$colors['gsb-background-color-3']['label'] ?? '', 'color_3'],
+                [$colors['gsb-background-color-4']['label'] ?? '', 'color_4'],
+                [$colors['gsb-background-color-5']['label'] ?? '', 'color_5'],
+                [$colors['gsb-background-color-6']['label'] ?? '', 'color_6'],
+            ]
+        );
     }
 
     /**
