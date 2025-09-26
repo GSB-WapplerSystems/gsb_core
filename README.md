@@ -26,36 +26,45 @@ The best way to install this extension is to start with the [GSB Sitepackage Kic
 In a composer-based TYPO3 installation you can install the extension EXT:gsb_core via composer:
 
 ```sh
-composer config -g gitlab-domains gitlab.opencode.de && \
-composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core.git
+  composer config -g gitlab-domains gitlab.opencode.de && \
+  composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core.git
 ```
 
 ```sh
-composer require itzbund/gsb-core
+  composer require itzbund/gsb-core
 ```
 
 In TYPO3 installations above version 11.5 the extension will be automatically installed. You do not have to activate it manually.
 
-## Usage
+## Feature Flags
 
-Nothing to do.
+This document explains how to use feature flags. We separate between two different kinds of feature flags:
 
-## Feature Flags in `gsb_core`
+### Feature
 
-This document explains how to use feature flags. Feature flags allow you to enable or disable specific features in your installation.
-This is of particular importance to not use features that have not passed the approval process.
+Feature flags allow you to enable or disable specific features in your installation. \
+This is of particular importance to disable features that have not passed the approval process.
 
-### Configuration
+### Optional
 
-Feature flags are configured in the `.env` or the `local-dev/.ddev/docker-compose.environment.yaml` file on ddev machine. To add a feature flag, use the following syntax:
+Optional flags allow you to (de-)activate specific features for your installation. \
+A practical use for these is the (de-)activation of an extension.
 
-```plaintext
-# Feature flag for the specific tickets. Set them to true to activate the features.
-- TYPO3__SYS__features__ITZBUNDPHP-1234=%const(bool:true)%
+For more information about feature flags in TYPO3, please refer to the official [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/13.4/en-us/ApiOverview/FeatureToggleApi/Index.html).
+
+### Feature Flag Configuration
+
+Feature and Optional flags are configured in the `.env` or the `local-dev/.ddev/docker-compose.environment.yaml` file on ddev machine. To add a feature flag, use the following syntax:
+
+```yaml
+# FEATURE FLAG
+- TYPO3__SYS__features__GSB11_FEATURE_123_NEW_FEATURE=%const(bool:true)%
+# OPTIONAL FLAG
+- TYPO3__SYS__features__GSB11_OPTION_123_ENABLE_EXTENSION=%const(bool:true)%
 ```
 
-In this example, the feature flag `ITZBUNDPHP-1234` is set to `true`. To disable the feature, change the value to `false` or delete
-the setting.
+In this example, both feature flags, `GSB11_FEATURE_123_NEW_FEATURE` and `GSB11_OPTION_123_ENABLE_EXTENSION`,
+are set to `true`. To disable the feature, change the value to `false` or delete the setting.
 
 #### Feature Flag Truth Table
 
@@ -68,42 +77,53 @@ This table illustrates the behavior of feature flags in various states.
 | `featureFlag = ''`      | `false`         | An empty value is treated as `false`.    |
 | `featureFlag not exist` | `false`         | A non-existent flag defaults to `false`. |
 
-### Curent feature flags of `gsb_core`
+### Usage in PHP Code
+
+To use a feature flag in your PHP code, you can check the flag's value with the `isFeatureEnabled()` method of the `Features` class:
+
+```php
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_123_NEW_FEATURE')) {
+    echo 'Feature is enabled';
+
+    // Feature-specific code
+    ...
+}
+```
+
+### Usage in Fluid Templates
+
+Feature flags can also be checked in your Fluid templates with TYPO3's [Feature ViewHelper](https://docs.typo3.org/other/typo3/view-helper-reference/13.4/en-us/Global/Feature.html).
+
+#### Basic usage
+
+```html
+<f:feature name="GSB11_FEATURE_123_NEW_FEATURE">
+   This is being shown if the flag is enabled
+</f:feature>
+```
+
+#### Feature > then > else
+
+```html
+<f:feature name="GSB11_OPTION_123_ENABLE_EXTENSION">
+    <f:then>
+        Flag is enabled
+    </f:then>
+    <f:else>
+        Flag is undefined or not enabled
+    </f:else>
+</f:feature>
+```
+
+### Current feature flags of `gsb_core`
 
 | Feature flag           | Description                             |
 |------------------------|-----------------------------------------|
 | `brandingBackendLogin` | At default branding to the login screen |
 
-### Usage in PHP Code
+## Usage
 
-To use a feature flag in your PHP code, you can check the flag's value in the global TYPO3 configuration. Here's an example:
-
-```php
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-1234')) {
-    // Only if the feature flag is set to true the feature is activated
-    // Feature-specific code goes here
-}
-```
-
-In this example, the feature-specific code will only execute if the feature flag `ITZBUNDPHP-1234` is set to `true`.
-
-### Usage in Fluid Templates
-
-You can also use feature flags in your Fluid templates with a custom ViewHelper. First, ensure you include the namespace for the ViewHelper:
-
-```plaintext
-{namespace gsb=ITZBund\GsbCore\ViewHelpers}
-```
-
-Then, use the `featureFlag` ViewHelper to conditionally render content based on the feature flag:
-
-```html
-<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1234')}">
-    <!-- Feature-specific content goes here -->
-</f:if>
-```
-
-In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-1234` is not set to `false`.
+Nothing to do.
 
 ## Site package
 
