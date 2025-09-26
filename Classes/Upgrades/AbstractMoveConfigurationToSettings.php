@@ -68,6 +68,8 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
     /**
      * Returns the config keys that should be moved to site settings.
+     *
+     * @return mixed[]
      */
     abstract protected function getConfigKeys(): array;
 
@@ -151,6 +153,9 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
      *
      * @param int $siteId
      * @return mixed[]
+     *
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     protected function getParsedTypoScriptConstants(int $siteId, bool $debug = true): array
     {
@@ -190,6 +195,9 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
     /**
      * Removes old configuration from sys_template
      * Removes the specified constant keys from the TypoScript tree
+     *
+     * @param int $siteId
+     * @param mixed[] $parsedTypoScriptConstants
      */
     protected function removeOldConstants(int $siteId, array $parsedTypoScriptConstants): void
     {
@@ -214,6 +222,9 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
         }
     }
 
+    /**
+     * @param mixed[] $parsedTypoScriptConstants
+     */
     protected function getTyposcriptFromArray(array $parsedTypoScriptConstants): string
     {
         $typoscript = '';
@@ -223,7 +234,13 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
         return $typoscript;
     }
 
-    public function mapOneConstantToSettings(&$parsedTypoScriptConstants, string $settingKey, string $constantKey, array $settings = []): array
+    /**
+     * @param mixed[] $parsedTypoScriptConstants
+     * @param mixed[] $settings
+     *
+     * @return mixed[]
+     */
+    public function mapOneConstantToSettings(array &$parsedTypoScriptConstants, string $settingKey, string $constantKey, array $settings = []): array
     {
         if (isset($parsedTypoScriptConstants[$constantKey])) {
             $settings[$settingKey] = $parsedTypoScriptConstants[$constantKey];
@@ -236,6 +253,16 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
     /**
      * Maps one site config value to settings with optional TypoLink processing
+     *
+     * @param mixed[] $siteConfig
+     * @param mixed[] $settings
+     *
+     * @return mixed[]
+     *
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function mapOneSiteConfigToSettings(array $siteConfig, string $settingKey, string $configKey, array $settings = [], bool $useTypoLink = false, bool $castToBool = false): array
     {
@@ -297,6 +324,8 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
     /**
      * Returns an array of identifiers for prerequisite wizards.
+     *
+     * @return mixed[]
      */
     public function getPrerequisites(): array
     {
