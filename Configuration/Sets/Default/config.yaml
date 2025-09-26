@@ -19,3 +19,4 @@ optionalDependencies:
   - itzbund-gsb/rss
   - itzbund-gsb/solr
   - itzbund-gsb/widgets
+  - itzbund-gsb/glossary

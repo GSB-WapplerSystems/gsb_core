@@ -63,7 +63,7 @@ class ColorPickerValueItems
                 [$colors['gsb-background-color-3']['label'] ?? '', 'color_3'],
                 [$colors['gsb-background-color-4']['label'] ?? '', 'color_4'],
                 [$colors['gsb-background-color-5']['label'] ?? '', 'color_5'],
-                [$colors['gsb-background-color-6']['label'] ?? '', 'color_6']
+                [$colors['gsb-background-color-6']['label'] ?? '', 'color_6'],
             ]
         );
     }

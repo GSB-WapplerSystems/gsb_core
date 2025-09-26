@@ -22,20 +22,9 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Upgrades;
 
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\EventDispatcher\NoopEventDispatcher;
-use TYPO3\CMS\Core\LinkHandling\LinkService;
-use TYPO3\CMS\Core\Site\SiteFinder;
-use TYPO3\CMS\Core\TypoScript\AST\AstBuilder;
-use TYPO3\CMS\Core\TypoScript\TypoScriptStringFactory;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
-use TYPO3\CMS\Install\Updates\ChattyInterface;
-use TYPO3\CMS\Install\Updates\RepeatableInterface;
-use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /**
  * Combined upgrade wizard to move site configuration and TypoScript constants to site settings
@@ -50,7 +39,7 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
  * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
  */
 #[UpgradeWizard('gsbcore_moveConfigurationToSettings')]
-class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
+class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
 {
     /**
      * Site config keys that should be moved to site settings
@@ -135,11 +124,6 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
         'font-serif-name',
     ];
 
-    /**
-     * @var OutputInterface
-     */
-    protected $output;
-
     public function __construct(protected readonly ConnectionPool $connectionPool) {}
 
     /**
@@ -159,53 +143,38 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
     }
 
     /**
-     * Executes the update process.
+     * Returns the wizard identifier.
      */
-    public function executeUpdate(): bool
+    public function getWizardIdentifier(): string
     {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
+        return 'gsbcore_moveConfigurationToSettings';
+    }
 
-        foreach ($sites as $site) {
-            $siteIdentifier = $site->getIdentifier();
-            $this->output->writeln('Processing site: ' . $siteIdentifier);
+    /**
+     * Returns the config keys that should be moved to site settings.
+     */
+    protected function getConfigKeys(): array
+    {
+        return self::CONFIG_KEYS;
+    }
 
-            $configPath = Environment::getConfigPath() . '/sites/' . $siteIdentifier;
-            $settingsFile = $configPath . '/settings.yaml';
+    /**
+     * Checks if the update is necessary for the given site.
+     */
+    protected function isUpdateNecessaryForSite(string $siteIdentifier, int $siteId): bool
+    {
+        // Check if settings.yaml doesn't exist
+        return !$this->checkIfSettingsFileExists($siteIdentifier);
+    }
 
-            // Read existing settings or create new array
-            if (file_exists($settingsFile)) {
-                $this->output->writeln('Settings file already exists for site: ' . $siteIdentifier);
-                continue;
-            }
-            // Process site configuration
-            $siteConfig = $site->getConfiguration();
-
-            $this->output->writeln('Moving site config to site settings for site: ' . $siteIdentifier);
-            $newSettings = $this->mapSiteConfigToSettings($siteConfig);
-            $this->output->writeln('New settings: ' . print_r($newSettings, true));
-
-            // Process TypoScript constants
-            $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId());
-
-            $this->output->writeln('Moving TypoScript constants to site settings for site: ' . $siteIdentifier);
-            $typoScriptSettings = $this->mapConstantsToSettings($parsedTypoScriptConstants);
-            $newSettings = array_merge($newSettings, $typoScriptSettings);
-
-            // Merge with existing settings and write
-            try {
-                $yaml = Yaml::dump($newSettings, 10, 2);
-                $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
-                file_put_contents($settingsFile, $yaml);
-            } catch (\Exception $e) {
-                $this->output->writeln('Error writing settings.yaml for site: ' . $siteIdentifier . ' - ' . $e->getMessage());
-            }
-            $this->rearrangeSiteConfig($configPath . '/config.yaml');
-            $this->removeOldConfiguration($site->getRootPageId());
-
-        }
-
-        return true;
+    /**
+     * Checks if settings file exists for the given site.
+     */
+    protected function checkIfSettingsFileExists(string $siteIdentifier): bool
+    {
+        $configPath = Environment::getConfigPath() . '/sites/' . $siteIdentifier;
+        $settingsFile = $configPath . '/settings.yaml';
+        return file_exists($settingsFile);
     }
 
     /**
@@ -221,186 +190,80 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
      */
     protected function mapSiteConfigToSettings(array $siteConfig): array
     {
-        // Map specific config.yaml values to settings.yaml structure
         $settings = [];
-        if (isset($siteConfig['navType']) && $siteConfig['navType'] != 0) {
-            $settings['navigation.gsb-navType'] = $siteConfig['navType'];
-        }
-        if (isset($siteConfig['copyright']) && $siteConfig['copyright'] != '') {
-            $settings['copyright.notice'] = $siteConfig['copyright'];
-        }
-        if (isset($siteConfig['show-copyright'])) {
-            $settings['copyright.show-copyright'] = (bool)($siteConfig['show-copyright']);
-        }
-        if (isset($siteConfig['google_site_verification']) && $siteConfig['google_site_verification'] != '') {
-            $settings['search.googleSiteVerification'] = $siteConfig['google_site_verification'];
-        }
-        if (isset($siteConfig['solr_enabled_facets']) && $siteConfig['solr_enabled_facets'] != '') {
-            $settings['search.solrEnabledFacets'] = (bool)($siteConfig['solr_enabled_facets']);
-        }
-        if (isset($siteConfig['solrShowTopResults']) && $siteConfig['solrShowTopResults'] != '') {
-            $settings['search.solrShowTopResults'] = (bool)($siteConfig['solrShowTopResults']);
-        }
-        if (isset($siteConfig['search']) && $siteConfig['search'] != '') {
-            $settings['search.suche'] = (bool)($siteConfig['search']);
+
+        // Simple mappings without special processing
+        $simpleMappings = [
+            'navigation.gsb-navType' => 'navType',
+            'copyright.notice' => 'copyright',
+            'search.googleSiteVerification' => 'google_site_verification',
+            'colors.background.gsb-background-color-1.color' => 'color_1',
+            'colors.background.gsb-background-color-1.label' => 'label_color_1',
+            'colors.background.gsb-background-color-2.color' => 'color_2',
+            'colors.background.gsb-background-color-2.label' => 'label_color_2',
+            'colors.background.gsb-background-color-3.color' => 'color_3',
+            'colors.background.gsb-background-color-3.label' => 'label_color_3',
+            'colors.background.gsb-background-color-4.color' => 'color_4',
+            'colors.background.gsb-background-color-4.label' => 'label_color_4',
+            'colors.background.gsb-background-color-5.color' => 'color_5',
+            'colors.background.gsb-background-color-5.label' => 'label_color_5',
+            'colors.background.gsb-background-color-6.color' => 'color_6',
+            'colors.background.gsb-background-color-6.label' => 'label_color_6',
+            'colors.colorGeneral.gsb-color-primary' => 'color_primary',
+            'colors.colorGeneral.gsb-color-secondary' => 'color_secondary',
+            'colors.colorGeneral.gsb-color-secondary-rgba' => 'color_secondary_rgba',
+            'colors.colorGeneral.gsb-color-tertiary' => 'color_tertiary',
+            'logos.gsb-second-logo-alt' => 'second-logo-alt',
+            'logos.gsb-initiative-text' => 'initiative-text',
+        ];
+
+        foreach ($simpleMappings as $settingKey => $configKey) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings);
         }
 
-        if (isset($siteConfig['sign-language-page']) && $siteConfig['sign-language-page'] != '') {
-            $pageUid = $this->cutTypolinkToUid($siteConfig['sign-language-page']);
-            $settings['accessability.signLanguagePage'] = $pageUid;
-        }
-        if (isset($siteConfig['simple-language-page']) && $siteConfig['simple-language-page'] != '') {
-            $pageUid = $this->cutTypolinkToUid($siteConfig['simple-language-page']);
-            $settings['accessability.simpleLanguagePage'] = $pageUid;
+        // Boolean mappings
+        $booleanMappings = [
+            'copyright.show-copyright' => 'show-copyright',
+            'search.solrEnabledFacets' => 'solr_enabled_facets',
+            'search.solrShowTopResults' => 'solrShowTopResults',
+            'search.suche' => 'search',
+        ];
+
+        foreach ($booleanMappings as $settingKey => $configKey) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings, false, true);
         }
 
-        if (isset($siteConfig['color_1']) && $siteConfig['color_1'] != '') {
-            $settings['colors.background.gsb-background-color-1.color'] = $siteConfig['color_1'];
-        }
-        if (isset($siteConfig['label_color_1']) && $siteConfig['label_color_1'] != '') {
-            $settings['colors.background.gsb-background-color-1.label'] = $siteConfig['label_color_1'];
-        }
-        if (isset($siteConfig['color_2']) && $siteConfig['color_2'] != '') {
-            $settings['colors.background.gsb-background-color-2.color'] = $siteConfig['color_2'];
-        }
-        if (isset($siteConfig['label_color_2']) && $siteConfig['label_color_2'] != '') {
-            $settings['colors.background.gsb-background-color-2.label'] = $siteConfig['label_color_2'];
-        }
-        if (isset($siteConfig['color_3']) && $siteConfig['color_3'] != '') {
-            $settings['colors.background.gsb-background-color-3.color'] = $siteConfig['color_3'];
-        }
-        if (isset($siteConfig['label_color_3']) && $siteConfig['label_color_3'] != '') {
-            $settings['colors.background.gsb-background-color-3.label'] = $siteConfig['label_color_3'];
-        }
-        if (isset($siteConfig['color_4']) && $siteConfig['color_4'] != '') {
-            $settings['colors.background.gsb-background-color-4.color'] = $siteConfig['color_4'];
-        }
-        if (isset($siteConfig['label_color_4']) && $siteConfig['label_color_4'] != '') {
-            $settings['colors.background.gsb-background-color-4.label'] = $siteConfig['label_color_4'];
-        }
-        if (isset($siteConfig['color_5']) && $siteConfig['color_5'] != '') {
-            $settings['colors.background.gsb-background-color-5.color'] = $siteConfig['color_5'];
-        }
-        if (isset($siteConfig['label_color_5']) && $siteConfig['label_color_5'] != '') {
-            $settings['colors.background.gsb-background-color-5.label'] = $siteConfig['label_color_5'];
-        }
-        if (isset($siteConfig['color_6']) && $siteConfig['color_6'] != '') {
-            $settings['colors.background.gsb-background-color-6.color'] = $siteConfig['color_6'];
-        }
-        if (isset($siteConfig['label_color_6']) && $siteConfig['label_color_6'] != '') {
-            $settings['colors.background.gsb-background-color-6.label'] = $siteConfig['label_color_6'];
-        }
-        if (isset($siteConfig['color_primary']) && $siteConfig['color_primary'] != '') {
-            $settings['colors.colorGeneral.gsb-color-primary'] = $siteConfig['color_primary'];
-        }
-        if (isset($siteConfig['color_secondary']) && $siteConfig['color_secondary'] != '') {
-            $settings['colors.colorGeneral.gsb-color-secondary'] = $siteConfig['color_secondary'];
-        }
-        if (isset($siteConfig['color_secondary_rgba']) && $siteConfig['color_secondary_rgba'] != '') {
-            $settings['colors.colorGeneral.gsb-color-secondary-rgba'] = $siteConfig['color_secondary_rgba'];
-        }
-        if (isset($siteConfig['color_tertiary']) && $siteConfig['color_tertiary'] != '') {
-            $settings['colors.colorGeneral.gsb-color-tertiary'] = $siteConfig['color_tertiary'];
-        }
-        if (isset($siteConfig['logo-complete-toggle'])) {
-            if (isset($siteConfig['logo-complete-big']) && $siteConfig['logo-complete-big'] != '') {
-                $fileUid = $this->cutTypolinkToUid($siteConfig['logo-complete-big']);
-                $settings['logos.gsb-logo-big'] = $fileUid;
-            }
-            if (isset($siteConfig['logo-complete-small']) && $siteConfig['logo-complete-small'] != '') {
-                $fileUid = $this->cutTypolinkToUid($siteConfig['logo-complete-small']);
-                $settings['logos.gsb-logo-small'] = $fileUid;
-            }
+        // TypoLink mappings
+        $typoLinkMappings = [
+            'accessability.signLanguagePage' => 'sign-language-page',
+            'accessability.simpleLanguagePage' => 'simple-language-page',
+            'logos.gsb-logo-big' => 'logo-complete-big',
+            'logos.gsb-logo-small' => 'logo-complete-small',
+            'logos.gsb-logo-text' => 'logo-text',
+            'logos.gsb-second-logo' => 'second-logo',
+            'logos.gsb-second-logo-link' => 'second-logo-link',
+            'favicons.favicon-96x96-png' => 'favicon-96x96-png',
+            'favicons.faviconIco' => 'faviconIco',
+            'favicons.faviconSvg' => 'faviconSvg',
+            'favicons.apple-touch-icon' => 'apple-touch-icon',
+            'favicons.web-app-manifest-192x192' => 'web-app-manifest-192x192',
+            'favicons.web-app-manifest-512x512' => 'web-app-manifest-512x512',
+            'favicons.webmanifest' => 'webmanifest',
+            'fonts.sans.font-sans-name' => 'fonts.sans.font-sans-name',
+            'fonts.serif.font-serif-name' => 'fonts.serif.font-serif-name',
+            'fonts.sans.font-sans-normal' => 'font-sans-normal',
+            'fonts.sans.font-sans-italic' => 'font-sans-italic',
+            'fonts.sans.font-sans-medium' => 'font-sans-medium',
+            'fonts.sans.font-sans-bold' => 'font-sans-bold',
+            'fonts.sans.font-sans-bold-italic' => 'font-sans-bold-italic',
+            'fonts.serif.font-serif-normal' => 'font-serif-normal',
+            'fonts.serif.font-serif-italic' => 'font-serif-italic',
+        ];
+
+        foreach ($typoLinkMappings as $settingKey => $configKey) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings, true);
         }
 
-        if (isset($siteConfig['logo-text']) && $siteConfig['logo-text'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['logo-text']);
-            $settings['logos.gsb-logo-text'] = $fileUid;
-        }
-        if (isset($siteConfig['second-logo-complete-toggle'])) {
-            if (isset($siteConfig['second-logo']) && $siteConfig['second-logo'] != '') {
-                $fileUid = $this->cutTypolinkToUid($siteConfig['second-logo']);
-                $settings['logos.gsb-second-logo'] = $fileUid;
-            }
-            if (isset($siteConfig['second-logo-alt']) && $siteConfig['second-logo-alt'] != '') {
-                $settings['logos.gsb-second-logo-alt'] = $siteConfig['second-logo-alt'];
-            }
-            if (isset($siteConfig['second-logo-link']) && $siteConfig['second-logo-link'] != '') {
-                $pageUid = $this->cutTypolinkToUid($siteConfig['second-logo-link']);
-                $settings['logos.gsb-second-logo-link'] = $pageUid;
-            }
-        }
-
-        if (isset($siteConfig['initiative-text-toggle'])) {
-            if (isset($siteConfig['initiative-text']) && $siteConfig['initiative-text'] != '') {
-                $settings['logos.gsb-initiative-text'] = $siteConfig['initiative-text'];
-            }
-        }
-
-        if (isset($siteConfig['favicon-96x96-png']) && $siteConfig['favicon-96x96-png'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['favicon-96x96-png']);
-            $settings['favicons.favicon-96x96-png'] = $fileUid;
-        }
-        if (isset($siteConfig['faviconIco']) && $siteConfig['faviconIco'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['faviconIco']);
-            $settings['favicons.faviconIco'] = $fileUid;
-        }
-        if (isset($siteConfig['faviconSvg']) && $siteConfig['faviconSvg'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['faviconSvg']);
-            $settings['favicons.faviconSvg'] = $fileUid;
-        }
-        if (isset($siteConfig['apple-touch-icon']) && $siteConfig['apple-touch-icon'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['apple-touch-icon']);
-            $settings['favicons.apple-touch-icon'] = $fileUid;
-        }
-        if (isset($siteConfig['web-app-manifest-192x192']) && $siteConfig['web-app-manifest-192x192'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['web-app-manifest-192x192']);
-            $settings['favicons.web-app-manifest-192x192'] = $fileUid;
-        }
-        if (isset($siteConfig['web-app-manifest-512x512']) && $siteConfig['web-app-manifest-512x512'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['web-app-manifest-512x512']);
-            $settings['favicons.web-app-manifest-512x512'] = $fileUid;
-        }
-        if (isset($siteConfig['webmanifest']) && $siteConfig['webmanifest'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['webmanifest']);
-            $settings['favicons.webmanifest'] = $fileUid;
-        }
-        if (isset($siteConfig['fonts.sans.font-sans-name']) && $siteConfig['fonts.sans.font-sans-name'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['fonts.sans.font-sans-name']);
-            $settings['fonts.sans.font-sans-name'] = $fileUid;
-        }
-        if (isset($siteConfig['fonts.serif.font-serif-name']) && $siteConfig['fonts.serif.font-serif-name'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['fonts.serif.font-serif-name']);
-            $settings['fonts.serif.font-serif-name'] = $fileUid;
-        }
-        if (isset($siteConfig['font-sans-normal']) && $siteConfig['font-sans-normal'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-normal']);
-            $settings['fonts.sans.font-sans-normal'] = $fileUid;
-        }
-        if (isset($siteConfig['font-sans-italic']) && $siteConfig['font-sans-italic'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-italic']);
-            $settings['fonts.sans.font-sans-italic'] = $fileUid;
-        }
-        if (isset($siteConfig['font-sans-medium']) && $siteConfig['font-sans-medium'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-medium']);
-            $settings['fonts.sans.font-sans-medium'] = $fileUid;
-        }
-        if (isset($siteConfig['font-sans-bold']) && $siteConfig['font-sans-bold'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-bold']);
-            $settings['fonts.sans.font-sans-bold'] = $fileUid;
-        }
-        if (isset($siteConfig['font-sans-bold-italic']) && $siteConfig['font-sans-bold-italic'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-sans-bold-italic']);
-            $settings['fonts.sans.font-sans-bold-italic'] = $fileUid;
-        }
-        if (isset($siteConfig['font-serif-normal']) && $siteConfig['font-serif-normal'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-serif-normal']);
-            $settings['fonts.serif.font-serif-normal'] = $fileUid;
-        }
-        if (isset($siteConfig['font-serif-italic']) && $siteConfig['font-serif-italic'] != '') {
-            $fileUid = $this->cutTypolinkToUid($siteConfig['font-serif-italic']);
-            $settings['fonts.serif.font-serif-italic'] = $fileUid;
-        }
         return $settings;
     }
 
@@ -415,214 +278,47 @@ class MoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInter
      * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
-    protected function mapConstantsToSettings(array $parsedTypoScriptConstants): array
+    protected function mapConstantsToSettings(array &$parsedTypoScriptConstants): array
     {
         $settings = [];
 
-        // dev config
-        if (isset($parsedTypoScriptConstants['config.debug'])) {
-            $settings['devconfig.debug'] = $parsedTypoScriptConstants['config.debug'];
-        }
-        if (isset($parsedTypoScriptConstants['config.admPanel'])) {
-            $settings['devconfig.admPanel'] = $parsedTypoScriptConstants['config.admPanel'];
-        }
-        if (isset($parsedTypoScriptConstants['config.noCache'])) {
-            $settings['devconfig.noCache'] = $parsedTypoScriptConstants['config.no_cache'];
-        }
-        if (isset($parsedTypoScriptConstants['config.removeDefaultJS'])) {
-            $settings['devconfig.removeDefaultJS'] = $parsedTypoScriptConstants['config.removeDefaultJS'];
-        }
-        if (isset($parsedTypoScriptConstants['config.compressJs'])) {
-            $settings['devconfig.compressJs'] = $parsedTypoScriptConstants['config.compressJs'];
-        }
-        if (isset($parsedTypoScriptConstants['config.compressCss'])) {
-            $settings['devconfig.compressCss'] = $parsedTypoScriptConstants['config.compressCss'];
-        }
-        if (isset($parsedTypoScriptConstants['config.concatenateJs'])) {
-            $settings['devconfig.concatenateJs'] = $parsedTypoScriptConstants['config.concatenateJs'];
-        }
-        if (isset($parsedTypoScriptConstants['config.concatenateCss'])) {
-            $settings['devconfig.concatenateCss'] = $parsedTypoScriptConstants['config.concatenateCss'];
-        }
-        if (isset($parsedTypoScriptConstants['config.headerComment'])) {
-            $settings['devconfig.header-comment'] = $parsedTypoScriptConstants['config.headerComment'];
-        }
-        // security
-        if (isset($parsedTypoScriptConstants['config.spamProtectEmailAddresses'])) {
-            $settings['security.spam-protect-email-addresses'] = $parsedTypoScriptConstants['config.spamProtectEmailAddresses'];
-        }
-        if (isset($parsedTypoScriptConstants['config.spamProtectEmailAddresses_atSubst'])) {
-            $settings['security.spam-protect-email-addresses-at-subst'] = $parsedTypoScriptConstants['config.spamProtectEmailAddresses_atSubst'];
-        }
-        // pids
-        if (isset($parsedTypoScriptConstants['config.pids.Categories'])) {
-            $settings['navigation.categories-page'] = $parsedTypoScriptConstants['config.pids.Categories'];
-        }
-        if (isset($parsedTypoScriptConstants['config.pids.Home'])) {
-            $settings['navigation.home-page'] = $parsedTypoScriptConstants['config.pids.Home'];
-        }
-        if (isset($parsedTypoScriptConstants['config.pids.Meta'])) {
-            $settings['navigation.meta-page'] = $parsedTypoScriptConstants['config.pids.Meta'];
-        }
-        if (isset($parsedTypoScriptConstants['config.pids.MetaTop'])) {
-            $settings['navigation.metaTop-page'] = $parsedTypoScriptConstants['config.pids.MetaTop'];
-        }
-        if (isset($parsedTypoScriptConstants['config.pids.Footer'])) {
-            $settings['navigation.footer-page'] = $parsedTypoScriptConstants['config.pids.Footer'];
-        }
-        // navigation
-        if (isset($parsedTypoScriptConstants['config.headTitle'])) {
-            $settings['navigation.header-title'] = $parsedTypoScriptConstants['config.headTitle'];
+        $listToMap = [
+            'devconfig.debug' => 'config.debug',
+            'devconfig.admPanel' => 'config.admPanel',
+            'devconfig.noCache' => 'config.no_cache',
+            'search.seach-page' => 'config.pids.Search',
+            'felogin.emailFrom' => 'styles.content.loginform.emailFrom',
+            'felogin.replyToEmail' => 'styles.content.loginform.replyToEmail',
+            'devconfig.removeDefaultJS' => 'config.removeDefaultJS',
+            'devconfig.compressJs' => 'config.compressJs',
+            'devconfig.compressCss' => 'config.compressCss',
+            'devconfig.concatenateJs' => 'config.concatenateJs',
+            'devconfig.concatenateCss' => 'config.concatenateCss',
+            'devconfig.header-comment' => 'config.headerComment',
+            'security.spam-protect-email-addresses' => 'config.spamProtectEmailAddresses',
+            'security.spam-protect-email-addresses-at-subst' => 'config.spamProtectEmailAddresses_atSubst',
+            'navigation.categories-page' => 'config.pids.Categories',
+            'navigation.home-page' => 'config.pids.Home',
+            'navigation.meta-page' => 'config.pids.Meta',
+            'navigation.metaTop-page' => 'config.pids.MetaTop',
+            'navigation.footer-page' => 'config.pids.Footer',
+            'navigation.header-title' => 'config.headTitle',
+            'socialMediaLinks.facebook' => 'config.socialLinks.Facebook',
+            'socialMediaLinks.instagram' => 'config.socialLinks.Instagram',
+            'socialMediaLinks.linkedin' => 'config.socialLinks.LinkedIn',
+            'socialMediaLinks.youtube' => 'config.socialLinks.YouTube',
+            'socialMediaLinks.x' => 'config.socialLinks.Twitter',
+        ];
+
+        foreach ($listToMap as $settingKey => $constantKey) {
+            $settings = $this->mapOneConstantToSettings($parsedTypoScriptConstants, $settingKey, $constantKey, $settings);
         }
 
-        // templates
+        // templates with default values
         $settings['styles.templates.templateRootPath'] = $parsedTypoScriptConstants['styles.templates.templateRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Templates';
         $settings['styles.templates.partialRootPath'] = $parsedTypoScriptConstants['styles.templates.partialRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials';
         $settings['styles.templates.layoutRootPath'] = $parsedTypoScriptConstants['styles.templates.layoutRootPath'] ?? 'EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Layouts';
 
         return $settings;
-    }
-
-    /**
-     * Gets the TypoScript constants from sys_template
-     * @param int $siteId
-     * @return mixed[]
-     *
-     * @phpstan-ignore-next-line
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @phpstan-ignore-next-line
-     * @SuppressWarnings(PHPMD.NPathComplexity)
-     * @phpstan-ignore-next-line
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
-     * @phpstan-ignore-next-line
-     * @SuppressWarnings(PHPMD.CamelCaseVariableName)
-     */
-    protected function getParsedTypoScriptConstants(int $siteId): array
-    {
-        $config = [];
-        $TypoScriptFactory = GeneralUtility::makeInstance(TypoScriptStringFactory::class);
-        try {
-            $connection = $this->connectionPool->getConnectionForTable('sys_template');
-            $queryBuilder = $connection->createQueryBuilder();
-            // Get constants from sys_template table
-            $result = $queryBuilder
-                ->select('constants')
-                ->from('sys_template')
-                ->where(
-                    $queryBuilder->expr()->like('root', $queryBuilder->createNamedParameter(1)),
-                    $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($siteId))
-                )
-                ->executeQuery();
-
-            while ($row = $result->fetchAssociative()) {
-                if (!empty($row['constants'])) {
-                    $typoScriptTree = $TypoScriptFactory->parseFromString($row['constants'], new AstBuilder(new NoopEventDispatcher()));
-                    $config = $typoScriptTree->flatten();
-                }
-            }
-            $this->output->writeln('Found TypoScript constants: ' . print_r($config, true));
-
-        } catch (\Exception $e) {
-            $this->output->writeln('Error reading TypoScript constants: ' . $e->getMessage());
-        }
-
-        return $config;
-    }
-
-    protected function removeOldConfiguration(int $siteId): void
-    {
-        try {
-            $connection = $this->connectionPool->getConnectionForTable('sys_template');
-            $queryBuilder = $connection->createQueryBuilder();
-            // Get constants from sys_template table
-            $queryBuilder
-                ->update('sys_template')
-                ->set('constants', '')
-                ->set('include_static_file', '')
-                ->set('clear', 0)
-                ->where(
-                    $queryBuilder->expr()->like('root', $queryBuilder->createNamedParameter(1)),
-                    $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($siteId))
-                )
-                ->executeQuery();
-        } catch (\Exception $e) {
-            $this->output->writeln('Error removing TypoScript constants: ' . $e->getMessage());
-        }
-    }
-
-    /**
-     * Determines if the update is necessary.
-     */
-    public function updateNecessary(): bool
-    {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
-
-        foreach ($sites as $site) {
-            $siteIdentifier = $site->getIdentifier();
-
-            // Check if settings.yaml doesn't exist
-            if (!$this->checkIfSettingsFileExists($siteIdentifier)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    protected function checkIfSettingsFileExists(string $siteIdentifier): bool
-    {
-        $configPath = Environment::getConfigPath() . '/sites/' . $siteIdentifier;
-        $settingsFile = $configPath . '/settings.yaml';
-        return file_exists($settingsFile);
-    }
-
-    /**
-     * Returns an array of identifiers for prerequisite wizards.
-     */
-    public function getPrerequisites(): array
-    {
-        return [];
-    }
-
-    public function setOutput(OutputInterface $output): void
-    {
-        $this->output = $output;
-    }
-
-    protected function cutTypolinkToUid(string $typolink): ?int
-    {
-        $linkService = GeneralUtility::makeInstance(LinkService::class);
-        $this->output->writeln('extract uid from typolink: ' . $typolink);
-        $typoLink = trim($typolink);
-
-        if (str_contains($typoLink, 't3://page?')) {
-            $linkData = $linkService->resolve(trim($typoLink));
-            $this->output->writeln('linkData: ' . json_encode($linkData));
-
-            return $linkData['pageuid'];
-        }
-        if (str_contains($typoLink, 't3://file?')) {
-            if (preg_match('/uid=(\d+)/', $typoLink, $matches)) {
-                $this->output->writeln('linkData: ' . json_encode($matches));
-                return (int)$matches[1];
-            }
-        }
-
-        $this->output->writeln('no uid found in typolink');
-        return null;
-    }
-
-    protected function rearrangeSiteConfig(string $configFile): void
-    {
-        $config = Yaml::parseFile($configFile);
-        foreach (self::CONFIG_KEYS as $key) {
-            $this->output->writeln('removing key from site config: ' . $key);
-            unset($config[$key]);
-        }
-        $config['dependencies'] = ['itzbund-gsb/default'];
-
-        $yaml = Yaml::dump($config, 10, 2);
-        file_put_contents($configFile, $yaml);
     }
 }
