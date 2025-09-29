@@ -34,7 +34,7 @@
 			</trans-unit>
 			<trans-unit id="categories.description.GSB.functions.socialMediaLinks">
 				<source>Social Media Links to your profiles are displayed in the footer. Note: Only registered profiles are displayed.</source>
-				<target>Social Media Links zu ihren Profilen werden im Footer angezeigt. Hinweis: Nur eingetragene Profile werden angezeigt.</target>
+				<target>Social Media Links zu ihren Profilen werden im Footer angezeigt. ℹ️Hinweis: Nur eingetragene Profile werden angezeigt.</target>
 			</trans-unit>
 			<trans-unit id="settings.navigation.gsb-navType">
 				<source>Main Navigation</source>
@@ -74,7 +74,7 @@
 			</trans-unit>
 			<trans-unit id="settings.description.navigation.meta-page">
 				<source>Set the page ID for the meta parent page of the meta navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as meta navigation.</source>
-				<target>Seiten-ID für die Meta-Elternseite der Meta-Navigation festlegen, oder über den Button "Select Page" auswählen. Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als Meta-Navigation angezeigt.</target>
+				<target>Seiten-ID für die Meta-Elternseite der Meta-Navigation festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als Meta-Navigation angezeigt.</target>
 			</trans-unit>
 			<trans-unit id="settings.navigation.metaTop-page">
 				<source>MetaTop Pages</source>
@@ -82,7 +82,7 @@
 			</trans-unit>
 			<trans-unit id="settings.description.navigation.metaTop-page">
 				<source>Set the MetaTop page ID for the meta parent page of the MetaTop navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as MetaTop navigation.</source>
-				<target>MetaTop Seiten-ID für die Meta-Elternseite der MetaTop-Navigation festlegen, oder über den Button "Select Page" auswählen. Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als MetaTop-Navigation angezeigt.</target>
+				<target>MetaTop Seiten-ID für die Meta-Elternseite der MetaTop-Navigation festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als MetaTop-Navigation angezeigt.</target>
 			</trans-unit>
 			<trans-unit id="settings.navigation.footer-page">
 				<source>Footer Pages</source>
@@ -90,7 +90,7 @@
 			</trans-unit>
 			<trans-unit id="settings.description.navigation.footer-page">
 				<source>Set the footer page ID for the footer parent page, or select via the "Select Page" button. Note: the subpages of the selected footer page are displayed as footer navigation</source>
-				<target>Footer Seiten-ID für die Footer-Elternseite festlegen, oder über den Button "Select Page" auswählen. Hinweis: Die Unterseiten der ausgewählten Footer-Elternseite werden als Footer-Navigation angezeigt</target>
+				<target>Footer Seiten-ID für die Footer-Elternseite festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Footer-Elternseite werden als Footer-Navigation angezeigt</target>
 			</trans-unit>
 			<trans-unit id="settings.socialMediaLinks.x">
 				<source>X</source>
@@ -140,7 +140,7 @@
 			</trans-unit>
 			<trans-unit id="settings.description.devconfig.debug">
 				<source>Debug</source>
-				<target>Debug Modus kann aktiviert werden für die Fehlersuche. Wichtig: Nicht auf Produktionsseiten aktivieren.</target>
+				<target>Debug Modus kann aktiviert werden für die Fehlersuche. ⚠️ ⚠️Wichtig: Nicht auf Produktionsseiten aktivieren.</target>
 			</trans-unit>
 			<trans-unit id="settings.devconfig.admPanel">
 				<source>Admin Panel</source>
