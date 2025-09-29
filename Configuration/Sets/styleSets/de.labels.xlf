@@ -35,11 +35,11 @@
 			<!-- Category Descriptions -->
 			<trans-unit id="categories.description.GSB.style.colors.background">
 				<source>Define up to six background colors for the website that are then available in content elements. Important: Each color needs its own color name that indicates the purpose of use.</source>
-				<target>Festlegen von bis zu sechs Hintergrund-Farben für den Webauftritt, die dann in Inhaltselementen zur Verfügung stehen. Wichtig: Jede Farbe benötigt einen eigenen Farbnamen, der auf den Verwendungszweck hinweist.</target>
+				<target>Festlegen von bis zu sechs Hintergrund-Farben für den Webauftritt, die dann in Inhaltselementen zur Verfügung stehen. ⚠️Wichtig: Jede Farbe benötigt einen eigenen Farbnamen, der auf den Verwendungszweck hinweist.</target>
 			</trans-unit>
 			<trans-unit id="categories.description.GSB.style.colors.colorGeneral">
 				<source>The color values can be exchanged at this point to adjust the colors of buttons or links, for example. Important: Please ensure sufficient contrast.</source>
-				<target>Die Farbwerte können an dieser Stelle ausgestauscht werden um besipielsweise die Farben von Schaltflächen oder Links anzupassen. Wichtig: Bitte auf ausreichend Kontrast achten.</target>
+				<target>Die Farbwerte können an dieser Stelle ausgestauscht werden um besipielsweise die Farben von Schaltflächen oder Links anzupassen. ⚠️Wichtig: Bitte auf ausreichend Kontrast achten.</target>
 			</trans-unit>
 			<trans-unit id="categories.description.GSB.style.favicons">
 				<source>Please use the service at: https://realfavicongenerator.net/ (This service is free and copyright-free). For this you only need a 512x512 large favicon PNG image and have it processed by this service. Download the generated files and add them e.g. under /fileadmin/Favicons/. Then you can link the corresponding files here again to exchange your favicon. Of course you can also create all files manually. The file names and image sizes must be maintained.</source>
