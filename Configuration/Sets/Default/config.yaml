@@ -12,6 +12,7 @@ dependencies:
   - typo3/fluid-styled-content
 optionalDependencies:
   - itzbund-gsb/consent
+  - itzbund-gsb/glossary
   - itzbund-gsb/metadata-cleaner
   - itzbund-gsb/public-frontend
   - itzbund-gsb/private-frontend
@@ -19,3 +20,4 @@ optionalDependencies:
   - itzbund-gsb/rss
   - itzbund-gsb/solr
   - itzbund-gsb/widgets
+  - itzbund-gsb/glossary
