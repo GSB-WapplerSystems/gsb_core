@@ -305,7 +305,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'navigation.header-title' => 'config.headTitle',
             'socialMediaLinks.facebook' => 'config.socialLinks.Facebook',
             'socialMediaLinks.instagram' => 'config.socialLinks.Instagram',
-            'socialMediaLinks.linkedin' => 'config.socialLinks.LinkedIn',
             'socialMediaLinks.youtube' => 'config.socialLinks.YouTube',
             'socialMediaLinks.x' => 'config.socialLinks.Twitter',
         ];

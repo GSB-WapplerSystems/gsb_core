@@ -12,6 +12,7 @@ dependencies:
   - typo3/fluid-styled-content
 optionalDependencies:
   - itzbund-gsb/consent
+  - itzbund-gsb/glossary
   - itzbund-gsb/metadata-cleaner
   - itzbund-gsb/public-frontend
   - itzbund-gsb/private-frontend

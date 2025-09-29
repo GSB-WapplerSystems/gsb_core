@@ -6,7 +6,7 @@
     -->
 </f:comment>
 
-<f:if condition="{site.configuration.settings.socialMediaLinks.facebook} || {site.configuration.settings.socialMediaLinks.youtube} || {site.configuration.settings.socialMediaLinks.instagram} || {site.configuration.settings.socialMediaLinks.xing} || {site.configuration.settings.socialMediaLinks.facebook} || {site.configuration.settings.socialMediaLinks.linkedin}">
+<f:if condition="{site.configuration.settings.socialMediaLinks.facebook} || {site.configuration.settings.socialMediaLinks.youtube} || {site.configuration.settings.socialMediaLinks.instagram} || {site.configuration.settings.socialMediaLinks.facebook}">
     <aside class="row" aria-labelledby="SocialFooter">
         <div class="col-12">
             <div class="social-media justify-content-lg-end d-sm-flex align-items-center">
@@ -41,14 +41,6 @@
                             <a class="twitter" href="https://{site.configuration.settings.socialMediaLinks.x}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} X {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
                                 <span class="icon icon-twitter" aria-hidden="true"></span>
                                 <span class="visually-hidden">X</span>
-                            </a>
-                        </li>
-                    </f:if>
-                    <f:if condition="{site.configuration.settings.socialMediaLinks.xing}">
-                        <li>
-                            <a class="twitter" href="https://{site.configuration.settings.socialMediaLinks.xing}" rel="noreferrer" target="_blank" title="{f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:opens')} Xing {f:translate(key: 'LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:innewwindow')}">
-                                <span class="icon icon-xing" aria-hidden="true"></span>
-                                <span class="visually-hidden">Xing</span>
                             </a>
                         </li>
                     </f:if>

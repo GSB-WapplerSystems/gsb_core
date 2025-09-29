@@ -69,14 +69,6 @@ settings:
     category: GSB.functions.socialMediaLinks
     type: string
     default: 'instagram.com'
-  socialMediaLinks.xing:
-    category: GSB.functions.socialMediaLinks
-    type: string
-    default: 'xing.com'
-  socialMediaLinks.linkedin:
-    category: GSB.functions.socialMediaLinks
-    type: string
-    default: 'linkedin.com'
   socialMediaLinks.youtube:
     category: GSB.functions.socialMediaLinks
     type: string
