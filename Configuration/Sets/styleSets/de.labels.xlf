@@ -283,7 +283,7 @@
 			</trans-unit>
 			<trans-unit id="settings.description.favicons.webmanifest">
 				<source>The web manifest file must be adapted according to your wishes beforehand. Filename must be "site.webmanifest".</source>
-				<target>ie Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.</target>
+				<target>Die Webmanifest-Datei muss vorher nach ihren Wünschen angepasst werden. Dateiname muss "site.webmanifest" sein.</target>
 			</trans-unit>
 			<trans-unit id="settings.favicons.web-app-manifest-192x192">
 				<source>Web App Manifest 192x192 PNG</source>
