@@ -1,5 +1,5 @@
 FROM composer:2.8@sha256:adca13b22c7b77f7fc606353453be12ba93e0917c332b8b0fa5efe3a85bf27ab AS composer
-FROM php:8.4-apache@sha256:0d113313726de5f15498b1e6609c91d847e8e3b4b63a6867916805293e617a73
+FROM php:8.3.26-apache@sha256:7e0a3808ecc90d2f84c368456f32e7d1ee60e7c46bfad60c143bb53305c2fcf7
 
 ARG username
 ARG uid
