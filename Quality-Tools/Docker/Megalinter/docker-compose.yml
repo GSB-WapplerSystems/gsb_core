@@ -1,6 +1,6 @@
 services:
   megalinter:
-    image: registry.gsb-itzbund.de/gsb11/devops/images/megalinter:1.6.13@sha256:50df4ae2e22cb8b2ea3e1db74989ad8e7df9cc32efd6907e2144296fa3e1a65b
+    image: registry.gsb-itzbund.de/gsb11/devops/images/megalinter:1.6.14@sha256:81f0796334cdf371a7520d3d57a3ae5aedbed7cfbc04b1faed5553e5fec316f5
     container_name: ${PROJECT_NAME}-megalinter-container
     volumes:
       - type: bind
