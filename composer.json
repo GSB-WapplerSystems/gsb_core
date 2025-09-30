@@ -1,6 +1,6 @@
 {
   "name": "itzbund/gsb-core",
-  "description": "GSB Core. This is Part of the Goverment Site Build (GSB) 11. Der GSB 11 ist eine Maßnahme der Dienstekonsolidierung Bund (DKB) des Bundesministeriums des Innern und für Heimat (BMI) und wird im Auftrag des Informationstechnikzentrums Bund (ITZBund) durchgeführt.",
+  "description": "Core functionality and base configuration for Government Site Builder (GSB) 11. This is part of the Government Site Builder (GSB) 11. The GSB 11 is a measure of the Dienstekonsolidierung Bund (DKB) of the Federal Ministry of the Interior and for Homeland (BMI) and is carried out on behalf of the Information Technology Center of the Federal Government (ITZBund).",
   "license": [
     "GPL-3.0-or-later"
   ],
