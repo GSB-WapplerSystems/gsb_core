@@ -35,9 +35,12 @@ use TYPO3\CMS\Core\Type\Map;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 $cspCollection = [];
+$features = GeneralUtility::makeInstance(Features::class);
 
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('security.frontend.enforceContentSecurityPolicy') &&
-    !GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('gsb_csp.security.frontend.enforceHashbasedContentSecurityPolicy')) {
+if (
+    $features->isFeatureEnabled('security.frontend.enforceContentSecurityPolicy')
+    && !$features->isFeatureEnabled('GSB11_OPTION_4119_INTEGRITY_BASED_CSP_HASHES')
+) {
     $cspCollection = array_merge($cspCollection, [
         new Mutation(
             Environment::getContext()->isDevelopment() ? MutationMode::Reduce : MutationMode::Set,
