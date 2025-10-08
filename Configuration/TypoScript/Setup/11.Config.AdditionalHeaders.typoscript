@@ -37,7 +37,7 @@ config.additionalHeaders {
   config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: require-corp
 [global]
 
-[feature("cspForBitvTestTools") && feature("crossOriginEmbedderPolicy")]
+[feature("GSB11_OPTION_618_BITV_TEST_TOOLS") && feature("crossOriginEmbedderPolicy")]
   config.additionalHeaders.80.header = Cross-Origin-Embedder-Policy: unsafe-none
 [global]
 
@@ -45,7 +45,7 @@ config.additionalHeaders {
   config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: same-origin
 [global]
 
-[feature("crossOriginOpenerPolicy") && feature("cspForBitvTestTools")]
+[feature("crossOriginOpenerPolicy") && feature("GSB11_OPTION_618_BITV_TEST_TOOLS")]
   config.additionalHeaders.90.header = Cross-Origin-Opener-Policy: unsafe-none
 [global]
 
