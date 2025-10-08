@@ -26,13 +26,6 @@ services:
         command: 'gsbcore:backend:user:list'
         description: 'List backend users.'
 
-  ITZBund\GsbCore\Command\ConfigurationImportCommand:
-    tags:
-      - name: console.command
-        schedulable: false
-        command: 'gsbcore:configuration:import'
-        description: 'A command that does import Configuration for Workspaces and Backend User Groups from yaml-Files.'
-
   ITZBund\GsbCore\Command\TriggerSynchronizeConfigurationCommand:
     tags:
       - name: console.command
