@@ -10,131 +10,170 @@ use ITZBund\GsbCore\Middleware\VersionEndpoint;
 use ITZBund\GsbCore\Utility\EnvironmentVersionsUtility;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestDox;
+use PHPUnit\Framework\MockObject\MockObject;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use TYPO3\CMS\Core\Http\Response;
-use TYPO3\CMS\Core\Http\ResponseFactory;
-use TYPO3\CMS\Core\Http\ServerRequest;
-use TYPO3\CMS\Core\Http\Stream;
-use TYPO3\CMS\Core\Http\Uri;
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Package\PackageManager;
-use TYPO3\CMS\Frontend\Http\RequestHandler;
+use Psr\Http\Message\StreamInterface;
+use Psr\Http\Message\UriInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class VersionEndpointTest extends UnitTestCase
 {
+    /**
+     * @param string $path
+     * @param string $method
+     * @param string[][] $versionUtilityReturn
+     * @param string $streamReturn
+     * @param bool $equals
+     */
     #[Test]
-    #[DataProvider('wrongPathOrWrongMethod')]
-    public function versionEndpointMiddleWareReturnsEarlyWhenPathDoesOrMethodNotMatch($path, $method): void
-    {
-        $responseFactory = $this->getMockBuilder(ResponseFactory::class)->disableOriginalConstructor()->getMock();
-        $responseFactory->expects(self::never())->method('createResponse');
+    #[DataProvider('processDataProvider')]
+    #[TestDox('Return a Response containing a Stream with Version data $_dataName')]
+    public function processReturnsResponseInterface(
+        string $path,
+        string $method,
+        array $versionUtilityReturn,
+        string $streamReturn,
+        bool $equals
+    ): void {
+        /*###########
+        ## Arrange ##
+        ###########*/
+        /** Response **/
+        $responseMock = $this->createResponseMock($streamReturn);
+        /** ServerRequest **/
+        /** @var ServerRequestInterface $serverRequestMock */
+        $serverRequestMock = $this->createServerRequestMock($path, $method);
 
-        $packageManager = $this->getMockBuilder(PackageManager::class)->disableOriginalConstructor()->getMock();
+        /** RequestHandler **/
+        $requestHandlerMock = $this->getMockBuilder(RequestHandlerInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $requestHandlerMock
+            ->method('handle')
+            ->willReturn($responseMock);
 
-        $subject = new VersionEndpoint($responseFactory, new EnvironmentVersionsUtility(new Typo3Version(), $packageManager));
-        $handler = $this->getMockBuilder(RequestHandler::class)->disableOriginalConstructor()->getMock();
-        $handler->expects(self::once())->method('handle');
+        /** ResponseFactory **/
+        $responseFactoryMock = $this->getMockBuilder(ResponseFactoryInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $responseFactoryMock
+            ->method('createResponse')
+            ->willReturn($responseMock);
 
-        $subject->process($this->createServerRequest($path, $method), $handler);
+        /** Response **/
+        $environmentVersionsUtilityMock = $this->getMockBuilder(EnvironmentVersionsUtility::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $environmentVersionsUtilityMock
+            ->method('getVersions')
+            ->willReturn($versionUtilityReturn);
+
+        $subject = new VersionEndpoint($responseFactoryMock, $environmentVersionsUtilityMock);
+
+        /*#######
+        ## Act ##
+        #######*/
+        $assert = $subject->process($serverRequestMock, $requestHandlerMock);
+
+        /*##########
+        ## Assert ##
+        ##########*/
+        self::assertInstanceOf(StreamInterface::class, $assert->getBody());
+
+        if ($equals) {
+            self::assertSame(json_encode($versionUtilityReturn), $assert->getBody()->getContents());
+        } else {
+            self::assertNotSame(json_encode($versionUtilityReturn), $assert->getBody()->getContents());
+        }
     }
 
-    public static function wrongPathOrWrongMethod(): array
+    public static function processDataProvider(): \Generator
     {
-        return [
-            'path is wrong'  => [
-                '/api/wrong',
-                'GET',
-            ],
-            'method is wrong' => [
-                '/api/version',
-                'POST',
-            ],
+        yield 'fails with wrong path but correct method' => [
+            '/api/wrong',
+            'GET',
+            ['versions' => ['gsb' => '11']],
+            '',
+            false,
+        ];
+        yield 'fails with correct path but wrong method' => [
+            '/api/version',
+            'POST',
+            ['versions' => ['gsb' => '11']],
+            '',
+            false,
+        ];
+        yield 'fails with wrong path and wrong method' => [
+            '/api/wrong',
+            'POST',
+            ['versions' => ['gsb' => '11']],
+            '',
+            false,
+        ];
+        yield 'works with correct method and path and valid array for json_encode' => [
+            '/api/version',
+            'GET',
+            ['versions' => ['gsb' => '11']],
+            json_encode(['versions' => ['gsb' => '11']]),
+            true,
+        ];
+        yield 'fails with correct method and path but invalid array for json_encode' => [
+            '/api/version',
+            'GET',
+            ["\xB1"],
+            '',
+            false,
         ];
     }
 
-    #[Test]
-    public function versionMiddlewareReturnsResponseWithJsonBody(): void
+    protected function createResponseMock(string $streamReturn): MockObject|ResponseInterface
     {
-        putenv('GSB_VERSION=1');
-        putenv('CONTAINER_VERSION=2');
-        putenv('GSB_BASE_HELM_CHART_VERSION=3');
-        putenv('GSB_MANDANTEN_HELM_CHART_VERSION=5');
-        putenv('GSB_BASE_CONFIG_VERSION=4');
+        /** Stream **/
+        $streamMock = $this->getMockBuilder(StreamInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $streamMock
+            ->method('getContents')
+            ->willReturn($streamReturn);
 
-        $responseFactory = $this->getMockBuilder(ResponseFactory::class)->onlyMethods(['createResponse'])->disableOriginalConstructor()->getMock();
-        $response = $this->getMockBuilder(Response::class)->getMock();
+        /** Response **/
+        $responseMock = $this->getMockBuilder(ResponseInterface::class)
+            ->getMock();
+        $responseMock
+            ->method('getBody')
+            ->willReturn($streamMock);
+        $responseMock
+            ->method('withHeader')
+            ->willReturn($responseMock);
 
-        $stream = $this->getMockBuilder(Stream::class)->disableOriginalConstructor()->getMock();
-        $stream->expects(self::once())
-            ->method('write')
-            ->with(
-                json_encode([
-                    'versions' => [
-                        'gsb' => '1',
-                        'container' => '2',
-                        'gsbBaseHelmChart' => '3',
-                        'gsbMandantenHelmChart' => '5',
-                        'gsbBaseConfig' => '4',
-                        'TYPO3' => (new Typo3Version())->getVersion(),
-                        'packageCacheHash' => '42',
-                    ],
-                ])
-            );
-
-        $response->method('getBody')->willReturn($stream);
-        $response->method('withHeader')->willReturn($response);
-        $responseFactory->method('createResponse')->willReturn($response);
-
-        $packageManager = $this->getMockBuilder(PackageManager::class)->disableOriginalConstructor()->getMock();
-        $packageManager->method('getCacheIdentifier')->willReturn('42');
-
-        $subject = new VersionEndpoint($responseFactory, new EnvironmentVersionsUtility(new Typo3Version(), $packageManager));
-        $handler = $this->getMockBuilder(RequestHandler::class)->disableOriginalConstructor()->getMock();
-        $handler->expects(self::never())->method('handle');
-
-        $result = $subject->process($this->createServerRequest('/api/version', 'GET'), $handler);
-
-        self::assertInstanceOf(ResponseInterface::class, $result);
-
-        putenv('GSB_VERSION');
-        putenv('CONTAINER_VERSION');
-        putenv('GSB_BASE_HELM_CHART_VERSION');
-        putenv('GSB_MANDANTEN_HELM_CHART_VERSION');
-        putenv('GSB_BASE_CONFIG_VERSION');
+        return $responseMock;
     }
 
-    #[Test]
-    public function middleWareReturnsEmptyBodyWhenUtilityReturnsInvalidJson(): void
+    protected function createServerRequestMock(string $path, string $method): MockObject|ServerRequestInterface
     {
-        $responseFactory = $this->getMockBuilder(ResponseFactory::class)->onlyMethods(['createResponse'])->disableOriginalConstructor()->getMock();
-        $response = $this->getMockBuilder(Response::class)->getMock();
+        /** Uri **/
+        $uriMock = $this->getMockBuilder(UriInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $uriMock
+            ->method('getPath')
+            ->willReturn($path);
 
-        $stream = $this->getMockBuilder(Stream::class)->disableOriginalConstructor()->getMock();
-        $stream->expects(self::never())->method('write');
+        /** ServerRequest **/
+        $serverRequestMock = $this->getMockBuilder(ServerRequestInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $serverRequestMock
+            ->method('getUri')
+            ->willReturn($uriMock);
+        $serverRequestMock
+            ->method('getMethod')
+            ->willReturn($method);
 
-        $response->method('getBody')->willReturn($stream);
-        $response->method('withHeader')->willReturn($response);
-        $responseFactory->method('createResponse')->willReturn($response);
-
-        $packageManager = $this->getMockBuilder(PackageManager::class)->disableOriginalConstructor()->getMock();
-        $packageManager->method('getCacheIdentifier');
-
-        $utility = $this->getMockBuilder(EnvironmentVersionsUtility::class)->setConstructorArgs([new Typo3Version(), $packageManager])->getMock();
-        $utility->method('getVersions')->willThrowException(new \JsonException('json exception'));
-
-        $subject = new VersionEndpoint($responseFactory, $utility);
-        $handler = $this->getMockBuilder(RequestHandler::class)->disableOriginalConstructor()->getMock();
-
-        $result = $subject->process($this->createServerRequest('/api/version', 'GET'), $handler);
-
-        self::assertInstanceOf(ResponseInterface::class, $result);
-    }
-
-    public function createServerRequest(string $path, string $method): ServerRequestInterface
-    {
-        $uri = new Uri('https://example.com' . $path);
-        return new ServerRequest($uri, $method);
+        return $serverRequestMock;
     }
 }

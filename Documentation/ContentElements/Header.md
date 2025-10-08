@@ -30,6 +30,6 @@ Resources/Private/Partials/Page/Header.Mainnav.html
 Resources/Private/Partials/Page/Header.Search.html
 ```
 
-All these files are in rellation to the **Header.html**.
+All these files are in relation to the **Header.html**.
 
 **To learn more about Fluid and TypoScript we refer to the TYPO3 documentation. It is important to use the correct documentation for the given TYPO3 version.**

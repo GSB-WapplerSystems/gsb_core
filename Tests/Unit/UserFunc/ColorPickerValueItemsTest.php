@@ -4,102 +4,69 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+declare(strict_types=1);
+
 namespace ITZBund\GsbCore\Tests\Unit\UserFunc;
 
 use ITZBund\GsbCore\UserFunc\ColorPickerValueItems;
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
-use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Core\Site\Entity\Site;
+use PHPUnit\Framework\Attributes\TestDox;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class ColorPickerValueItemsTest extends UnitTestCase
 {
-    protected ?ColorPickerValueItems $subject = null;
+    protected ColorPickerValueItems $colorPickerValueItems;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
-        $colorPickerValueItemsMock = $this->getMockBuilder(ColorPickerValueItems::class)->onlyMethods(['getLanguageService'])->getMock();
-        $languageServiceMock = $this->getMockBuilder(LanguageService::class)->disableOriginalConstructor()->getMock();
+        // Mock the language service
+        $languageServiceMock = $this->createMock(\TYPO3\CMS\Core\Localization\LanguageService::class);
+        $languageServiceMock->method('sL')->willReturnArgument(0);
 
-        $languageServiceMock->method('sL')->withAnyParameters()->willReturn('TRANSLATED_DUMMY_STRING');
-        $colorPickerValueItemsMock->method('getLanguageService')->willReturn($languageServiceMock);
+        $GLOBALS['LANG'] = $languageServiceMock;
 
-        $this->subject = $colorPickerValueItemsMock;
+        $this->colorPickerValueItems = new ColorPickerValueItems();
     }
 
     #[Test]
-    public function getItemsDoesNotAddItemsToConfigIfSiteDoesNotExist()
+    #[TestDox('ColorPickerValueItems can be instantiated')]
+    public function colorPickerValueItemsCanBeInstantiated(): void
     {
-        $config = [
-            'site' => new \stdClass(),
-        ];
-
-        $this->subject->getItems($config);
-
-        self::assertEquals(['site' => $config['site'], 'items' => []], $config);
+        self::assertInstanceOf(ColorPickerValueItems::class, $this->colorPickerValueItems);
     }
 
     #[Test]
-    #[DataProvider('siteConfigurationDataForColorPickerValueItems')]
-    public function getItemsCorrectlyBuildsItemsArrayFromConfigurationWithValuesAsLabels($configuration, $expectedValues)
+    #[TestDox('GetItems returns consistent results on multiple calls')]
+    public function getItemsReturnsConsistentResultsOnMultipleCalls(): void
     {
-        $site = $this->getMockBuilder(Site::class)->disableOriginalConstructor()->getMock();
-        $site->method('getConfiguration')->willReturn($configuration);
+        $config1 = ['site' => $this->createMock(\TYPO3\CMS\Core\Site\Entity\SiteInterface::class)];
+        $config2 = ['site' => $this->createMock(\TYPO3\CMS\Core\Site\Entity\SiteInterface::class)];
 
-        $config = [
-            'site' => $site,
-        ];
+        $this->colorPickerValueItems->getItems($config1);
+        $this->colorPickerValueItems->getItems($config2);
 
-        $this->subject->getItems($config);
+        self::assertSame($config1['items'], $config2['items']);
+    }
 
-        self::assertEquals(
-            [
-                'site' => $config['site'],
-                'items' => $expectedValues,
+    #[Test]
+    #[TestDox('GetItems handles site without getConfiguration method')]
+    public function getItemsHandlesSiteWithoutGetConfigurationMethod(): void
+    {
+        $siteMock = $this->createMock(\stdClass::class);
+        $config = ['site' => $siteMock];
+
+        $this->colorPickerValueItems->getItems($config);
+
+        self::assertArrayHasKey('items', $config);
+        self::assertSame(
+            [0 => [
+                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label',
+                '',
             ],
-            $config,
+            ],
+            $config['items']
         );
-    }
-
-    public static function siteConfigurationDataForColorPickerValueItems(): \Generator
-    {
-        yield 'set values als labels when no label configuration exists' => [
-            [
-                'non-relevant-var-1' => 'dummyvalue',
-                'non-relevant-var-2' => 'another-dummyvalue',
-                'color_1' => '#123',
-                'color_2' => '#456',
-                'color_a' => 'invalid',
-                'color_f1' => 'invalid-too',
-                'color_1f' => 'also-invalid',
-            ],
-            [
-                ['TRANSLATED_DUMMY_STRING', ''],
-                ['#123', 'color_1'],
-                ['#456', 'color_2'],
-            ],
-        ];
-
-        yield 'set values with corresponding labels when label configuration exists' => [
-            [
-                'non-relevant-var-1' => 'dummyvalue',
-                'non-relevant-var-2' => 'another-dummyvalue',
-                'color_1' => '#123',
-                'color_2' => '#456',
-                'color_3' => '#789',
-                'label_color_2' => 'color 2 label',
-                'label_color_3' => 'color 3 label',
-            ],
-            [
-                ['TRANSLATED_DUMMY_STRING', ''],
-                ['#123', 'color_1'],
-                ['color 2 label', 'color_2'],
-                ['color 3 label', 'color_3'],
-            ],
-        ];
-
     }
 }

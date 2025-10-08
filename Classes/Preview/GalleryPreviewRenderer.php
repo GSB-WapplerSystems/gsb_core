@@ -25,6 +25,9 @@ namespace ITZBund\GsbCore\Preview;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Domain\RecordFactory;
+use TYPO3\CMS\Core\Domain\RecordInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Contains a preview rendering for the page module of CType="gallery"
@@ -35,24 +38,22 @@ class GalleryPreviewRenderer extends StandardContentPreviewRenderer
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $content = '';
-        $row = $item->getRecord();
-
-        if ($row['CType'] === 'gallery') {
-            if ($row['gallery_file']) {
-                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'gallery_file'), $row);
-                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'gallery_file', $row);
+        $table = $item->getTable();
+        $record = $item->getRecord();
+        /** @var RecordInterface $recordObj */
+        $recordObj = GeneralUtility::makeInstance(RecordFactory::class)->createResolvedRecordFromDatabaseRow($table, $record);
+        if ($recordObj->has('CType') && $recordObj->get('CType') === 'gallery') {
+            if ($recordObj->has('gallery_file') && $recordObj->get('gallery_file')) {
+                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($recordObj->get('gallery_file')), $record);
+                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'gallery_file', $record);
                 if ($fileReferences !== []) {
-                    // @codeCoverageIgnoreStart
-                    $linkedContent = '';
-                    $content .= $this->linkEditContent($linkedContent, $row);
-                    unset($linkedContent);
-                    // @codeCoverageIgnoreEnd
+                    $content .= $this->linkEditContent('', $record);
                 }
             }
         }
 
-        if ($row['gallery_layout']) {
-            $content .= $this->linkEditContent('<div class="text-left"><p style="font-size: 14px; padding-top: 14px;"><b>Layout: ' . $row['gallery_layout'] . '</b></p></div>', $row);
+        if ($recordObj->has('gallery_layout') && $recordObj->get('gallery_layout')) {
+            $content .= $this->linkEditContent('<div class="text-left"><p style="font-size: 14px; padding-top: 14px;"><b>Layout: ' . $recordObj->get('gallery_layout') . '</b></p></div>', $record);
         }
         return $content;
     }

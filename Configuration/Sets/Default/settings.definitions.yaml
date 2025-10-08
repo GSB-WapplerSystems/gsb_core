@@ -1,0 +1,11 @@
+categories:
+  GSB: ~
+  GSB.functions:
+    parent: GSB
+  GSB.copyright:
+    parent: GSB
+  GSB.style:
+    parent: GSB
+  GSB.devconfig:
+    parent: GSB
+settings: []

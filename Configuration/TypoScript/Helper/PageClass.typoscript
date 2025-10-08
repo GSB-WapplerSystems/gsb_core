@@ -63,14 +63,14 @@ lib.page.class {
 
   50 = TEXT
   50 {
-    data = site:second-logo-complete-toggle
+    data = {$logos.gsb-second-logo}
     ifEmpty = default
     noTrimWrap = | second-logo-||
   }
 
   60 = TEXT
   60 {
-    data = site:logo-complete-toggle
+    data = {$logos.gsb-logo-small}
     ifEmpty = default
     noTrimWrap = | complete-logo-||
   }
@@ -78,7 +78,7 @@ lib.page.class {
   // NavType
   70 = TEXT
   70 {
-    data = site:navType
+    data = {$navigation.gsb-navType}
     noTrimWrap = | navtype-||
   }
 }

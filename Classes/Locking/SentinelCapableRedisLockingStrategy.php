@@ -24,6 +24,7 @@ namespace ITZBund\GsbCore\Locking;
   * Highly inspired by TYPO3 CMS-based extension "distributed_locks" by b13.
   */
 
+use ITZBund\GsbCore\DataTransferObject\RedisEndpoint;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use TYPO3\CMS\Core\Locking\Exception\LockAcquireException;
@@ -33,6 +34,8 @@ use TYPO3\CMS\Core\Locking\LockingStrategyInterface;
 
 /**
  * Locking Strategy based on \Redis
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, LoggerAwareInterface
 {
@@ -43,52 +46,35 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     public const DEFAULT_PRIORITY = 100;
 
-    /**
-     * @var \Redis
-     */
     private \Redis $backend;
-
-    private ?\RedisSentinel $redisSentinel = null;
-
-    /**
-     * The locking subject (e.g. "pagesection")
-     * @var string
-     */
-    private string $subject;
 
     /**
      * The name of the lock
-     * @var string
      */
     private string $name;
 
     /**
      * The name for the mutex lock
-     * @var string
      */
     private string $mutexName;
 
     /**
      * The value to store into Redis
-     *
-     * @var string
      */
     private string $value;
 
     /**
-     * @var bool TRUE if lock is acquired by this locker
+     * True if lock is acquired by this locker
      */
     private bool $isAcquired = false;
 
     /**
      * The max amount of time within the database for locking in seconds.
-     *
-     * @var int
      */
     private int $ttl = 30;
 
     /**
-     * @var array
+     * @var mixed[]
      */
     private array $configuration = [];
 
@@ -97,6 +83,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
      */
     public function __construct($subject)
     {
+        /** @var mixed[]|string $configuration */
         $configuration = $GLOBALS['TYPO3_CONF_VARS']['SYS']['locking'][self::class]['options'] ?? null;
         if (!is_array($configuration)) {
             throw new LockCreateException(
@@ -125,7 +112,6 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         }
 
         $redisKeyPrefix = sha1($GLOBALS['TYPO3_CONF_VARS']['SYS']['encryptionKey'] . '_REDIS_LOCKING');
-        $this->subject = $subject;
         $this->name = sprintf('%s:lock:name:%s', $redisKeyPrefix, $subject);
         $this->mutexName = sprintf('%s:lock:mutex:%s', $redisKeyPrefix, $subject);
         $this->value = uniqid();
@@ -133,73 +119,29 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         $this->initializeWrite();
     }
 
-    private function initializeRead(): void
-    {
-        $this->retryOperation(function () {
-            $this->backend = $this->initializeConnection(false);
-        });
-    }
-
     private function initializeWrite(): void
     {
         $this->retryOperation(function () {
-            $this->backend = $this->initializeConnection(true);
+            $this->backend = $this->initializeConnection();
         });
     }
 
     /**
      * Set up redis connection.
      *
-     * @param bool $useWriteConnection
      * @return \Redis
      */
-    private function initializeConnection(bool $useWriteConnection): \Redis
+    private function initializeConnection(): \Redis
     {
-        $backend = new \Redis();
-        $host = $this->configuration['hostname'] ?? '127.0.0.1';
-        $port = $this->configuration['port'] ?? 6379;
-
-        if (array_key_exists('isSentinel', $this->configuration) && $this->configuration['isSentinel'] && $useWriteConnection) {
-            $sentinelConfig = [
-                'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
-                'port' => $this->configuration['sentinelPort'] ?? 26379,
-                'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
-                'persistent' => ($this->configuration['persistentConnection'] === true) ? 'lock' : null,
-            ];
-
-            if ($this->configuration['sentinelPassword'] !== null) {
-                $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
-            }
-
-            $redisSentinel = new \RedisSentinel($sentinelConfig);
-            $sentinelMaster = $redisSentinel->masters();
-            if ($sentinelMaster === false) {
-                throw new Exception('Could not get master from sentinel.', 1279765134);
-            }
-
-            $host = $sentinelMaster[0]['ip'];
-            $port = $sentinelMaster[0]['port'];
-        }
-
-        if ($this->configuration['persistentConnection']) {
-            $backend->pconnect(
-                $host,
-                $port,
-                $this->configuration['connectionTimeout'] ?? 0.0,
-                $this->configuration['database'] ?? 0
-            );
-        } else {
-            $backend->connect(
-                $host,
-                $port,
-                $this->configuration['connectionTimeout'] ?? 0.0,
-            );
-        }
+        $redisEndpoint = $this->getRedisEndpoint();
+        $backend = $this->getConnectedRedis($redisEndpoint);
 
         if (!empty($this->configuration['password'])) {
             $backend->auth($this->configuration['password']);
         }
+
         $backend->select((int)$this->configuration['database']);
+
         return $backend;
     }
 
@@ -236,31 +178,34 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         if ($this->isAcquired) {
             return true;
         }
-        if ((bool)($mode & self::LOCK_CAPABILITY_EXCLUSIVE)) {
-            if ((bool)($mode & self::LOCK_CAPABILITY_NOBLOCK)) {
-                // try to acquire the lock - non-blocking
-                if (!$this->isAcquired = $this->lock(false)) {
-                    throw new LockAcquireWouldBlockException(
-                        'Could not acquire exclusive lock (non-blocking).',
-                        1561445651
+
+        if (!($mode & self::LOCK_CAPABILITY_EXCLUSIVE)) {
+            throw new LockAcquireException('Could not acquire lock due to insufficient capabilities.', 1561445737);
+        }
+
+        if (!($mode & self::LOCK_CAPABILITY_NOBLOCK)) {
+            // try to acquire the lock - blocking
+            // N.B. we do this in a loop because between
+            // wait() and lock() another process may acquire the lock
+            while (!$this->isAcquired = $this->lock()) {
+                // this blocks till the lock gets released or timeout is reached
+                if ($this->wait() === false) {
+                    throw new LockAcquireException(
+                        'Could not acquire exclusive lock (blocking+exclusive).',
+                        1561445710
                     );
                 }
-            } else {
-                // try to acquire the lock - blocking
-                // N.B. we do this in a loop because between
-                // wait() and lock() another process may acquire the lock
-                while (!$this->isAcquired = $this->lock()) {
-                    // this blocks till the lock gets released or timeout is reached
-                    if ($this->wait() === false) {
-                        throw new LockAcquireException(
-                            'Could not acquire exclusive lock (blocking+exclusive).',
-                            1561445710
-                        );
-                    }
-                }
             }
-        } else {
-            throw new LockAcquireException('Could not acquire lock due to insufficient capabilities.', 1561445737);
+        }
+
+        // try to acquire the lock - non-blocking
+        $this->isAcquired = $this->lock(false);
+
+        if (!$this->isAcquired) {
+            throw new LockAcquireWouldBlockException(
+                'Could not acquire exclusive lock (non-blocking).',
+                1561445651
+            );
         }
 
         return $this->isAcquired;
@@ -269,7 +214,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
     /**
      * @inheritdoc
      */
-    public function release()
+    public function release(): bool
     {
         if (!$this->isAcquired) {
             return true;
@@ -277,11 +222,14 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         // Even in an error, the release is locked
         $this->unlockAndSignal();
         $this->isAcquired = false;
+
         return true;
     }
 
     /**
      * @inheritdoc
+     *
+     * @phpstan-ignore-next-line
      */
     public function destroy()
     {
@@ -297,7 +245,79 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
     }
 
     /**
+     * @return RedisEndpoint
+     *
+     * @throws \Exception
+     */
+    private function getRedisEndpoint(): RedisEndpoint
+    {
+        $timeout = (float)($this->configuration['connectionTimeout'] ?? 0.0);
+        $persistentId = (string)($this->configuration['database'] ?? '0');
+
+        if (!array_key_exists('isSentinel', $this->configuration) || !$this->configuration['isSentinel']) {
+            return new RedisEndpoint(
+                (string)($this->configuration['hostname'] ?? '127.0.0.1'),
+                (int)($this->configuration['port'] ?? 6379),
+                $timeout,
+                $persistentId
+            );
+        }
+
+        $sentinelConfig = [
+            'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
+            'port' => $this->configuration['sentinelPort'] ?? 26379,
+            'connectTimeout' => $timeout,
+            'persistent' => ($this->configuration['persistentConnection'] === true) ? 'lock' : null,
+        ];
+
+        if ($this->configuration['sentinelPassword'] !== null) {
+            $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
+        }
+
+        /** @phpstan-ignore-next-line */
+        $sentinelMaster = (new \RedisSentinel($sentinelConfig))->masters();
+
+        if ($sentinelMaster === false) {
+            throw new \Exception('Could not get master from sentinel.', 1279765134);
+        }
+
+        return new RedisEndpoint(
+            (string)$sentinelMaster[0]['ip'],
+            (int)$sentinelMaster[0]['port'],
+            $timeout,
+            $persistentId
+        );
+    }
+
+    private function getConnectedRedis(RedisEndpoint $redisEndpoint): \Redis
+    {
+        $redis = new \Redis();
+
+        if ($this->configuration['persistentConnection']) {
+            $redis->pconnect(
+                $redisEndpoint->getHost(),
+                $redisEndpoint->getPort(),
+                $redisEndpoint->getTimeout(),
+                $redisEndpoint->getPersistentId()
+            );
+
+            return $redis;
+        }
+
+        $redis->connect(
+            $redisEndpoint->getHost(),
+            $redisEndpoint->getPort(),
+            $redisEndpoint->getTimeout(),
+        );
+
+        return $redis;
+    }
+
+    /**
      * Try to lock in the Redis backend
+     *
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      *
      * @param bool $blocking whether the lock is set or not
      * @return bool TRUE on success, FALSE otherwise
@@ -307,15 +327,16 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         try {
             // option NX: set value if key is not present
             $result = (bool)$this->backend->set($this->name, $this->value, ['NX', 'EX' => $this->ttl]);
-            // Non blocking, but the current request is the same, you're fine.
-            if (!$blocking && !$result) {
-                if ($this->backend->get($this->name) === $this->value) {
-                    return true;
-                }
+            // Non-blocking, but the current request is the same, you're fine.
+            if (!$blocking
+                && !$result
+                && $this->backend->get($this->name) === $this->value
+            ) {
+                return true;
             }
             return $result;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not lock in redis', [
+            $this->logger?->critical('Could not lock in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -340,7 +361,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
 
             return is_array($result) ? $result[1] : false;
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not wait in redis', [
+            $this->logger?->critical('Could not wait in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -368,7 +389,7 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
         ';
             return (bool)$this->backend->eval($script, [$this->name, $this->mutexName, $this->value, $this->ttl], 2);
         } catch (\Throwable $e) {
-            $this->logger->critical('Could not unlock and signal in redis', [
+            $this->logger?->critical('Could not unlock and signal in redis', [
                 'message' => $e->getMessage(),
                 'exception' => $e,
             ]);
@@ -403,20 +424,20 @@ class SentinelCapableRedisLockingStrategy implements LockingStrategyInterface, L
 
     /**
      * Check if the given exception is permanent or temporary
-     * @param \RedisException $e
+     * @param \RedisException $exception
      * @return bool
      */
-    private function isPermanentException(\RedisException $e): bool
+    private function isPermanentException(\RedisException $exception): bool
     {
         // Check for authentification errors
-        if (str_contains($e->getMessage(), 'AUTH')) {
+        if (str_contains($exception->getMessage(), 'AUTH')) {
             return true; // Authentification errors are permanent
         }
 
         // Check for configuration errors
         $configurationErrors = ['host', 'port', 'database'];
         foreach ($configurationErrors as $errorString) {
-            if (str_contains($e->getMessage(), $errorString)) {
+            if (str_contains($exception->getMessage(), $errorString)) {
                 return true; // Configuration errors are permanent
             }
         }

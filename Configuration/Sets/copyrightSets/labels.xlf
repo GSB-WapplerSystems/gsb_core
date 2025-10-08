@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/copyrightSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
+		<body>
+			<trans-unit id="label">
+				<source>GSB Copyright Notice</source>
+			</trans-unit>
+			<!-- Copyright Settings -->
+			<trans-unit id="settings.copyright.notice">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="settings.description.copyright.notice">
+				<source>The copyright notice is displayed in the footer with the current year. Example: © 2025 ITZBund</source>
+			</trans-unit>
+			<trans-unit id="settings.copyright.show-copyright">
+				<source>Teaser and Stage Images</source>
+			</trans-unit>
+			<trans-unit id="settings.description.copyright.show-copyright">
+				<source>Display copyright notice for images additionally on teaser and stage images. Note: Standard image elements already have copyright notices.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

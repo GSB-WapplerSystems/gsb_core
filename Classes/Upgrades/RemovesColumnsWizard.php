@@ -24,7 +24,6 @@ namespace ITZBund\GsbCore\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\ChattyInterface;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
@@ -57,6 +56,8 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     protected $output;
 
+    public function __construct(protected readonly ConnectionPool $connectionPool) {}
+
     /**
      * Returns the title of the upgrade wizard.
      */
@@ -80,7 +81,7 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
     {
         $filteredTables = $this->filterByUpdateNeccessary(self::TABLES_AND_COLUMNS);
         foreach ($filteredTables as $table => $columns) {
-            $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table);
+            $connection = $this->connectionPool->getConnectionForTable($table);
             foreach ($columns as $column) {
                 $connection->executeStatement('ALTER TABLE ' . $table . ' DROP COLUMN ' . $column);
             }
@@ -125,7 +126,7 @@ class RemovesColumnsWizard implements UpgradeWizardInterface, ChattyInterface, R
      */
     private function columnExistsInDatabase(string $tableName, string $columnName): bool
     {
-        $connection = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($tableName);
+        $connection = $this->connectionPool->getConnectionForTable($tableName);
         $schemaManager = $connection->createSchemaManager();
         $columns = $schemaManager->listTableColumns($tableName);
 

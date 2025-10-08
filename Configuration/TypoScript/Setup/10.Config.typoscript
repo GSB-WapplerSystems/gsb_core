@@ -26,18 +26,18 @@
 ################
 
 config {
-  no_cache = {$config.no_cache}
+  no_cache = {$devconfig.noCache}
   pageTitleFirst = 1
   pageTitleSeparator = -
   pageTitleSeparator.noTrimWrap = | | |
   doctype = html5
-  removeDefaultJS = {$config.removeDefaultJS}
+  removeDefaultJS = {$devconfig.removeDefaultJS}
   inlineStyle2TempFile = 1
   moveJsFromHeaderToFooter = 1
-  spamProtectEmailAddresses = {$config.spamProtectEmailAddresses}
-  spamProtectEmailAddresses_atSubst = {$config.spamProtectEmailAddresses_atSubst}
-  admPanel = {$config.admPanel}
-  debug = {$config.debug}
+  spamProtectEmailAddresses = {$security.spam-protect-email-addresses}
+  spamProtectEmailAddresses_atSubst = {$security.spam-protect-email-addresses-at-subst}
+  admPanel = {$devconfig.admPanel}
+  debug = {$devconfig.debug}
   cache_period = 43200
   sendCacheHeaders = 1
   intTarget =
@@ -46,15 +46,24 @@ config {
   index_enable = 1
   index_externals = 1
   index_metatags = 0
-  headerComment = {$config.headerComment}
+  headerComment = {$devconfig.header-comment}
   htmlTag {
     attributes {
       class = no-js
     }
   }
   // Compression and concatenation of CSS and JS files
-  compressJs = {$config.compressJs}
-  compressCss = {$config.compressCss}
-  concatenateJs = {$config.concatenateJs}
-  concatenateCss = {$config.concatenateCss}
+  compressJs = {$devconfig.compressJs}
+  compressCss = {$devconfig.compressCss}
+  concatenateJs = {$devconfig.concatenateJs}
+  concatenateCss = {$devconfig.concatenateCss}
 }
+
+#if header comment is not empty ignore the strange formart it works only this way
+[site('configuration')['settings']['devconfig']['header-comment'] == '']
+  config.headerComment ( itzbund.de
+=========================================================================================
+Uses GSB 11 https://software.opencode.de/project/2460
+=========================================================================================
+  )
+[GLOBAL]

@@ -35,6 +35,9 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * List or delete backend users
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class BackendUserListCommand extends Command
 {
@@ -99,6 +102,10 @@ EOF
         }
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $filter = $this->sanitizeFilter($input->getOption('filter'));
@@ -172,7 +179,9 @@ EOF
 
     /**
      * @param array<mixed,mixed> $filter
+     *
      * @return array<string,string>
+     *
      * @throws \UnexpectedValueException
      * @throws Exception
      * @throws \InvalidArgumentException
@@ -186,7 +195,7 @@ EOF
         $returnFilter = [];
         foreach ($filter as $filterLine) {
             $split = explode('=', $filterLine);
-            $field = $split[0] ?? null;
+            $field = !empty($split[0]) ? $split[0] : null;
             $value = $split[1] ?? null;
             if ($field !== null && $value !== null && $field !== 'password') {
                 if ($tableDetails->hasColumn($field)) {

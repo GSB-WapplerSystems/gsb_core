@@ -30,12 +30,16 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * List or delete backend users
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class BackendUserDeleteCommand extends Command
 {
@@ -54,7 +58,8 @@ class BackendUserDeleteCommand extends Command
 
     protected function configure(): void
     {
-        $this->setDescription('Deletes users by criteria')
+        $this->setName('gsb:backend-user:delete')
+        ->setDescription('Deletes users by criteria')
         ->setHelp(
             <<<'EOF'
 The <info>%command.name%</info> deletes users:
@@ -69,12 +74,16 @@ Note: Using at least one of the <comment>--uid</comment>, <comment>--email</comm
 
 EOF
         )
-        ->addOption('email', 'e', InputOption::VALUE_REQUIRED, 'email to use as criteria')
+        ->addOption('email', null, InputOption::VALUE_REQUIRED, 'email to use as criteria')
         ->addOption('uid', null, InputOption::VALUE_REQUIRED, 'uid to use as criteria')
         ->addOption('username', 'name', InputOption::VALUE_REQUIRED, 'username to use as criteria')
         ->addOption('dry', null, InputOption::VALUE_NONE, 'Dry run');
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     protected function initialize(InputInterface $input, OutputInterface $output): void
     {
         $this->dry = $input->getOption('dry') ?? false;
@@ -109,16 +118,17 @@ EOF
      */
     protected function deleteUsers(array $users): void
     {
-        \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendAuthentication();
+        Bootstrap::initializeBackendAuthentication();
         $dataHandler = GeneralUtility::makeInstance(DataHandler::class);
         $dataHandler->admin = true;
         $cmd = [];
         foreach ($users as $user) {
             if ((int)$user['deleted'] == 1) {
                 $this->forceDelete($user['uid']);
-            } else {
-                $cmd['be_users'][$user['uid']]['delete'] = 1;
+                continue;
             }
+
+            $cmd['be_users'][$user['uid']]['delete'] = 1;
         }
         $dataHandler->start([], $cmd);
         $dataHandler->process_cmdmap();

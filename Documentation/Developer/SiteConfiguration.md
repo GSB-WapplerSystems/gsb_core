@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 # Site Configuration
 
-In the gsb_core we created the posibility to extend the Site Configuration from your Extension.
+In the gsb_core we created the possibility to extend the Site Configuration from your Extension.
 
 ## Function
 

@@ -1,0 +1,178 @@
+categories:
+
+  GSB.style.colors.background:
+    parent: GSB.style
+  GSB.style.colors.colorGeneral:
+    parent: GSB.style
+  GSB.style.logos:
+    parent: GSB.style
+  GSB.style.favicons:
+    parent: GSB.style
+  GSB.style.fonts:
+    parent: GSB.style
+settings:
+  # Background colors
+  colors.background.gsb-background-color-1.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#000000'
+  colors.background.gsb-background-color-1.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Schwarz'
+  colors.background.gsb-background-color-2.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#ffffff'
+  colors.background.gsb-background-color-2.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Weiss'
+  colors.background.gsb-background-color-3.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#09406e'
+  colors.background.gsb-background-color-3.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Dunkel Blau'
+  colors.background.gsb-background-color-4.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#f5f5f5'
+  colors.background.gsb-background-color-4.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Hell Grau'
+  colors.background.gsb-background-color-5.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#006533'
+  colors.background.gsb-background-color-5.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Dunkel Grün'
+  colors.background.gsb-background-color-6.color:
+    category: GSB.style.colors.background
+    type: color
+    default: '#e9df2e'
+  colors.background.gsb-background-color-6.label:
+    category: GSB.style.colors.background
+    type: string
+    default: 'Gelb'
+  # Color General
+  colors.colorGeneral.gsb-color-primary:
+    category: GSB.style.colors.colorGeneral
+    type: color
+    default: '#C0003C'
+  colors.colorGeneral.gsb-color-secondary:
+    category: GSB.style.colors.colorGeneral
+    type: color
+    default: '#0A406E'
+  colors.colorGeneral.gsb-color-secondary-rgba:
+    category: GSB.style.colors.colorGeneral
+    type: number
+    default: 0.5
+  colors.colorGeneral.gsb-color-tertiary:
+    category: GSB.style.colors.colorGeneral
+    type: color
+    default: '#FFFFFF'
+  colors.colorGeneral.gsb-color-quaternary:
+    category: GSB.style.colors.colorGeneral
+    type: color
+    default: '#E9DF2E'
+  # logos
+  logos.gsb-logo-big:
+    category: GSB.style.logos
+    type: file
+    default: 0
+  logos.gsb-logo-small:
+    category: GSB.style.logos
+    type: file
+    default: 0
+  logos.gsb-logo-text:
+    category: GSB.style.logos
+    type: file
+    default: 0
+  logos.gsb-initiative-text:
+    category: GSB.style.logos
+    type: string
+    default: ''
+  logos.gsb-second-logo:
+    category: GSB.style.logos
+    type: file
+    default: 0
+  logos.gsb-second-logo-link:
+    category: GSB.style.logos
+    type: page
+    default: 0
+  logos.gsb-second-logo-alt:
+    category: GSB.style.logos
+    type: string
+    default: ''
+  # favicons
+  favicons.favicon-96x96-png:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.faviconIco:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.faviconSvg:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.apple-touch-icon:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.webmanifest:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.web-app-manifest-192x192:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+  favicons.web-app-manifest-512x512:
+    category: GSB.style.favicons
+    type: file
+    default: 0
+#fonts
+  fonts.sans.font-sans-name:
+    category: GSB.style.fonts
+    type: string
+    default: ''
+  fonts.sans.font-sans-normal:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.sans.font-sans-italic:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.sans.font-sans-medium:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.sans.font-sans-bold:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.sans.font-sans-bold-italic:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.serif.font-serif-name:
+    category: GSB.style.fonts
+    type: string
+    default: ''
+  fonts.serif.font-serif-normal:
+    category: GSB.style.fonts
+    type: file
+    default: 0
+  fonts.serif.font-serif-italic:
+    category: GSB.style.fonts
+    type: file
+    default: 0

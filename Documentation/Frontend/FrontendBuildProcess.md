@@ -15,7 +15,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 - Webpack is used to compile the frontend [webpack.js.org](https://webpack.js.org/)
 - Two important linters are worked with in this project. The ESlint and stylelint are used.
 More details can be found in the package.json
-- In addition postcss is also used to implement routine operations for the SCSS/CSS [postcss.org](https://postcss.org/)
+- In addition, postcss is also used to implement routine operations for the SCSS/CSS [postcss.org](https://postcss.org/)
 
 ### Some node packages are special and must be taken into account during implementation
 - The dependencies media element is included in order to. This is an audio and video player library for people with disabilities,

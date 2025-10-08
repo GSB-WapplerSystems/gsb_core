@@ -35,7 +35,7 @@ page {
       20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       20 {
         special = directory
-        special.value = {$config.pids.Home}
+        special.value = {$navigation.home-page}
         levels = 4
         includeSpacer = 1
         as = menuMain
@@ -50,28 +50,28 @@ page {
       40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       40 {
         special = directory
-        special.value = {$config.pids.Footer}
+        special.value = {$navigation.footer-page}
         levels = 1
         as = menuMeta
       }
       50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       50 {
         special = directory
-        special.value = {$config.pids.Meta}
+        special.value = {$navigation.meta-page}
         levels = 1
         as = menuMetaTop
       }
       60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       60 {
         special = directory
-        special.value = {$config.pids.MetaTop}
+        special.value = {$navigation.metaTop-page}
         levels = 1
         as = menuMetaMain
       }
       70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       70 {
         special = directory
-        special.value = {$config.pids.Home}
+        special.value = {$navigation.home-page}
         levels = 4
         includeSpacer = 1
         as = menuMainDesktop

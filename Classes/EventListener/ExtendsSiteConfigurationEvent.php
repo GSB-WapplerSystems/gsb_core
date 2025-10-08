@@ -43,18 +43,18 @@ final class ExtendsSiteConfigurationEvent
         $siteConfiguration = $event->getConfiguration();
         $siteConfigExtendsAll = $this->registry->get('_all');
         foreach ($siteConfigExtendsAll as $fileInfo) {
-            $this->addToYamlConfiguration($siteConfiguration, $loader, (string)$fileInfo);
+            $this->addToYamlConfiguration($siteConfiguration, $loader, $fileInfo);
         }
 
         $siteConfigExtends = $this->registry->get($event->getSiteIdentifier());
         foreach ($siteConfigExtends as $fileInfo) {
-            $this->addToYamlConfiguration($siteConfiguration, $loader, (string)$fileInfo);
+            $this->addToYamlConfiguration($siteConfiguration, $loader, $fileInfo);
         }
         $event->setConfiguration($siteConfiguration);
     }
 
     /**
-     * @param array<string,mixed> &$siteConfiguration
+     * @param mixed[] &$siteConfiguration
      */
     protected function addToYamlConfiguration(array &$siteConfiguration, YamlFileLoader $loader, string $filepath): void
     {

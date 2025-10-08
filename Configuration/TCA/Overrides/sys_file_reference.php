@@ -40,7 +40,7 @@ defined('TYPO3') || die();
                 'rows' => 3,
             ],
         ],
-        'link' => [
+        'tx_link' => [
             'config' => [
                 'type' => 'passthrough',
             ],

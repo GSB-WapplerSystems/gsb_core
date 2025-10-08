@@ -1,0 +1,19 @@
+services:
+  composer:
+    build:
+      args:
+        gid: '${DOCKER_GID}'
+        uid: '${DOCKER_UID}'
+        username: '${DOCKER_USERNAME}'
+      context: ./Docker/Composer
+    user: '${DOCKER_USER}'
+    image: ${PROJECT_NAME}-composer-container
+    container_name: ${PROJECT_NAME}-composer-container
+    volumes:
+      - type: bind
+        source: ./../../../
+        target: /var/www/html
+        consistency: cached
+    environment:
+      TERM: xterm-256color
+      TZ: Europe/Berlin

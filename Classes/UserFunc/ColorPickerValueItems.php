@@ -34,35 +34,38 @@ class ColorPickerValueItems
     {
         /** @var SiteInterface $site */
         $site = $config['site'];
+        $colors = [];
+
         $items = [
             [
                 $this->getLanguageService()->sL('LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.color_0.label'),
                 '',
             ],
         ];
-        if (!method_exists($site, 'getConfiguration')) {
-            $config['items'] = [];
+
+        if (!method_exists($site, 'getSettings')) {
+            $config['items'] = $items;
             return;
         }
 
-        $configuration = $site->getConfiguration();
-
-        $colors = array_filter(
-            $configuration,
-            function ($item, $key) { return (int)preg_match('/^color_[0-9]+$/', $key) > 0 && $item !== ''; },
-            ARRAY_FILTER_USE_BOTH
-        );
-
-        foreach ($colors as $key => $color) {
-            $label = $color;
-            if (isset($configuration['label_color_' . substr($key, -1)]) && $configuration['label_color_' . substr($key, -1)] !== '') {
-                $label = $configuration['label_color_' . substr($key, -1)];
-            }
-
-            $items[] = [$label, $key];
+        $settings = $site->getSettings();
+        if (!isset($settings->get('colors')['background'])) {
+            $config['items'] = $items;
+            return;
         }
 
-        $config['items'] = $items;
+        $colors = $settings->get('colors')['background'];
+        $config['items'] = array_merge(
+            $items,
+            [
+                [$colors['gsb-background-color-1']['label'] ?? '', 'color_1'],
+                [$colors['gsb-background-color-2']['label'] ?? '', 'color_2'],
+                [$colors['gsb-background-color-3']['label'] ?? '', 'color_3'],
+                [$colors['gsb-background-color-4']['label'] ?? '', 'color_4'],
+                [$colors['gsb-background-color-5']['label'] ?? '', 'color_5'],
+                [$colors['gsb-background-color-6']['label'] ?? '', 'color_6'],
+            ]
+        );
     }
 
     /**
@@ -70,6 +73,9 @@ class ColorPickerValueItems
      */
     public function getLanguageService(): LanguageService
     {
+        if (!isset($GLOBALS['LANG']) || !$GLOBALS['LANG'] instanceof LanguageService) {
+            throw new \RuntimeException('Language service not available');
+        }
         return $GLOBALS['LANG'];
     }
 }

@@ -81,7 +81,7 @@ final class AddTypoScriptFromSitePackageEvent
     }
 
     /**
-     * @param array<string, int> $fakeRow
+     * @param mixed[] $fakeRow
      */
     private function setDbFields(array &$fakeRow): void
     {
@@ -112,10 +112,6 @@ final class AddTypoScriptFromSitePackageEvent
                 $fakeRow[$columnField] = $columnField === 'basedOn' ? null : 0;
             }
         }
-        /*$tstampField = $GLOBALS['TCA']['sys_template']['ctrl']['tstamp'] ?? null;
-        if ($tstampField) {
-            $fakeRow[$tstampField] = ($setup ? filemtime($setupFile) : null) ?? ($constants ? filemtime($constantsFile) : null) ?? time();
-        }*/
     }
 
     /**
