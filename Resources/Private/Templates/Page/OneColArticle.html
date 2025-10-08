@@ -19,17 +19,17 @@
                             <f:if condition="{data.lastUpdated}">
                                 <f:then>
                                     <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
-                                    <time datetime="{f:format.date(date:data.lastUpdated, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.lastUpdated}</f:format.date></time>
+                                    <time datetime="{f:format.date(date:data.lastUpdated, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %Y">{data.lastUpdated}</f:format.date></time>
                                 </f:then>
                                 <f:else>
                                     <f:if condition="{data.SYS_LASTCHANGED} > {data.tstamp}">
                                         <f:then>
                                             <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
-                                            <time datetime="{f:format.date(date:data.SYS_LASTCHANGED, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.SYS_LASTCHANGED}</f:format.date></time>
+                                            <time datetime="{f:format.date(date:data.SYS_LASTCHANGED, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %Y">{data.SYS_LASTCHANGED}</f:format.date></time>
                                         </f:then>
                                         <f:else>
                                             <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:contentElement.header.date" /></span>
-                                            <time datetime="{f:format.date(date:data.tstamp, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %G">{data.tstamp}</f:format.date></time>
+                                            <time datetime="{f:format.date(date:data.tstamp, format:'Y-m-d')}" class="date-text"><f:format.date format="%e. %B %Y">{data.tstamp}</f:format.date></time>
                                         </f:else>
                                     </f:if>
                                 </f:else>
