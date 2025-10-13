@@ -339,15 +339,6 @@
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 			</trans-unit>
-			<trans-unit id="dpn_glossary.modal_close" resname="dpn_glossary.modal_close">
-				<source>Close</source>
-			</trans-unit>
-			<trans-unit id="dpn_glossary.to_glossary" resname="dpn_glossary.to_glossary">
-				<source>To the glossary</source>
-			</trans-unit>
-			<trans-unit id="dpn_glossary.letter_filter" resname="dpn_glossary.letter_filter">
-				<source>Filter for letter</source>
-			</trans-unit>
 		</body>
     </file>
 </xliff>
