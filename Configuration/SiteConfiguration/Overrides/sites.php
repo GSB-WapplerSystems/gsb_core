@@ -22,6 +22,29 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['label'] = 'Logos';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['description'] = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.sitepackage.logos.palette.description';
 $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] = 'logo-complete-toggle,second-logo-complete-toggle, logo-text, logo-complete-big, logo-complete-small, second-logo, second-logo-alt, second-logo-link';
 
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-text'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-text',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-text',
+    'displayCond' => 'FIELD:logo-complete-toggle:REQ:false',
+
+    'config' =>
+        [
+            'type' => 'link',
+            'allowedTypes' => ['file'],
+        ],
+];
+
+$GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-toggle'] = [
+    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-toggle',
+    'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-toggle',
+    'onChange' => 'reload',
+    'config' => [
+        'renderType' => 'checkboxToggle',
+        'type' => 'check',
+        'default' => 0,
+    ],
+];
+
 $GLOBALS['SiteConfiguration']['site']['columns']['logo-complete-big'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.logo-complete-big',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.description.logo-complete-big',
@@ -107,6 +130,8 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['logos']['showitem'] .= ', ini
 $localizableKeys = [
     'logo-complete-big',
     'logo-complete-small',
+    'logo-complete-toggle',
+    'logo-text',
     'second-logo',
     'second-logo-alt',
     'second-logo-link',

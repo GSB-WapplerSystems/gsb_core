@@ -16,15 +16,17 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     /**
      * @param array<string, string|array<string, string|int>> $config
      * @param int $language
-     * @param array<string, string|array<string, string|int>> $result
+     * @param array<string, string|array<string, string|int>> $expected
      */
     #[Test]
     #[DataProvider('getTestConfigurations')]
-    public function overloadWithLocalizedConfigOverloadsExistingKeysForGivenLanguage(array $config, int $language, array $result): void
+    public function overloadWithLocalizedConfigOverloadsExistingKeysForGivenLanguage(array $config, int $language, array $expected): void
     {
-        $localizedConfig = (new ExtendSiteUtility())->overloadWithLocalizedConfig($config, $language);
-
-        self::assertEquals($result, $localizedConfig);
+        $subject = new \ReflectionClass(ExtendSiteUtility::class);
+        $method = $subject->getMethod('overloadWithLocalizedConfig');
+        $method->setAccessible(true);
+        $result = $method->invokeArgs(new ExtendSiteUtility(), [$config, $language]);
+        self::assertEquals($expected, $result);
     }
 
     public static function getTestConfigurations(): \Generator
@@ -289,6 +291,62 @@ class ExtendedSiteUtilityTest extends UnitTestCase
                         'languageId' => 1,
                         'some_default_key' => '',
                     ],
+                ],
+            ],
+        ];
+    }
+    /**
+     * @param array<string, string|array<string, string|int>> $config
+     * @param int $language
+     * @param array<string, string|array<string, string|int>> $expected
+     * @dataProvider provideOverrideSettingsWithLocalizedConfig
+     */
+    public function testOverrideSettingsWithLocalizedConfig(array $config, array $settings, int $language, array $expected): void
+    {
+        $subject = new \ReflectionClass(ExtendSiteUtility::class);
+        $method = $subject->getMethod('overrideSettingsWithLocalizedConfig');
+        $method->setAccessible(true);
+        $result = $method->invokeArgs(new ExtendSiteUtility(), [$config, $settings, $language]);
+        self::assertEquals($expected, $result);
+    }
+
+    public static function provideOverrideSettingsWithLocalizedConfig(): \Generator
+    {
+        yield 'Does overwrite if language matches' => [
+            [
+                'logos.gsb-initiative-text' => 'initial value',
+            ],
+            [
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'initiative-text' => 'overridden value',
+                    ],
+                ],
+            ],
+            1,
+            [
+                'logos' => [
+                    'gsb-initiative-text' => 'overridden value',
+                ],
+            ],
+        ];
+        yield 'Does not overwrite if language id does not matche' => [
+            [
+                'logos.gsb-initiative-text' => 'initial value',
+            ],
+            [
+                'languages' => [
+                    [
+                        'languageId' => 1,
+                        'initiative-text' => 'overridden value',
+                    ],
+                ],
+            ],
+            1101101,
+            [
+                'logos' => [
+                    'gsb-initiative-text' => 'initial value',
                 ],
             ],
         ];
