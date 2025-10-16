@@ -123,6 +123,7 @@
     "phpmd:generatebaseline": "php vendor/bin/phpmd Classes/ text gsb11.ruleset.xml --baseline-file phpmd.baseline.xml --generate-baseline",
     "phpstan:analyze": "php vendor/bin/phpstan analyse --no-progress",
     "phpstan:generatebaseline": "php vendor/bin/phpstan analyse --no-progress --generate-baseline",
+    "phpunit:test": "@php vendor/bin/phpunit --bootstrap vendor/autoload.php --no-configuration Tests/Unit",
     "typoscript:lint": "php vendor/bin/typoscript-lint -c .typoscript-lint.yml --ansi -n --fail-on-warnings -vvv Configuration/TypoScript",
     "yaml:lint": "rm -rf Build/node_modules && find . -not -path './vendor/*' -not -path './Build/*' -name '*.yaml' -o -name '*.yml' | xargs -r php vendor/bin/yaml-lint"
   },
@@ -138,6 +139,7 @@
     "phpmd:generatebaseline": "Generate baseline for PHPMD",
     "phpstan:analyze": "Analyze code with PHPStan",
     "phpstan:generatebaseline": "Generate baseline for PHPStan",
+    "phpunit:test": "Run unit tests",
     "typoscript:lint": "Lint TypoScript files",
     "yaml:lint": "Lint YAML files"
   }

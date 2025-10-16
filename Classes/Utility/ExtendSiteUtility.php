@@ -24,37 +24,58 @@ namespace ITZBund\GsbCore\Utility;
 
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
+use TYPO3\CMS\Core\Site\Entity\SiteSettings;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 class ExtendSiteUtility
 {
+    public const LOCALIZEDCONFIGURATION = [
+        'initiative-text' => 'logos.gsb-initiative-text',
+        'logo-complete-big' => 'logos.gsb-logo-big',
+        'logo-complete-small' => 'logos.gsb-logo-small',
+        'second-logo' => 'logos.gsb-second-logo',
+        'second-logo-alt' => 'logos.gsb-second-logo-alt',
+        'second-logo-link' => 'logos.gsb-second-logo-link',
+    ];
+
     public function extendSiteWithLocalizationOverload(Site $site, SiteLanguage $language): Site
     {
-        $localizedConfig = $this->overloadWithLocalizedConfig($site->getConfiguration(), $language->getLanguageId());
+        $siteConfiguration = $site->getConfiguration();
+        $localizedConfig = $this->overloadWithLocalizedConfig($siteConfiguration, $language->getLanguageId());
+        $settings = $site->getSettings()->getAllFlat();
+        $localizedSettingsTree = $this->overrideSettingsWithLocalizedConfig($settings, $siteConfiguration, $language->getLanguageId());
+        $localizedSettings = SiteSettings::createFromSettingsTree($localizedSettingsTree);
+        return new Site($site->getIdentifier(), $site->getRootPageId(), $localizedConfig, $localizedSettings);
+    }
 
-        return new Site($site->getIdentifier(), $site->getRootPageId(), $localizedConfig, $site->getSettings());
+    /**
+     * @param array<string,mixed> $settings
+     * @param array<string,mixed> $configuration
+     * @param int $languageId
+     * @return array<string,mixed>
+     */
+    protected function overrideSettingsWithLocalizedConfig(array $settings, array $configuration, int $languageId): array
+    {
+        $configuration = $this->getLocalizedPartOfConfiguration($configuration, $languageId);
+        foreach (self::LOCALIZEDCONFIGURATION as $old => $new) {
+            if (isset($configuration[$old])) {
+                $settings[$new] = $configuration[$old];
+            }
+        }
+        return ArrayUtility::unflatten($settings);
     }
 
     /**
      * @param array<string,mixed> $config
      * @return array<string,mixed>
      */
-    public function overloadWithLocalizedConfig(array $config, int $languageId): array
+    protected function overloadWithLocalizedConfig(array $config, int $languageId): array
     {
-        $languages = $config['languages'] ?? [];
-
-        $languageConfig = array_filter($languages, function (array $language) use ($languageId) {
-            return (int)$language['languageId'] === $languageId;
-        });
-
-        if (count($languageConfig) !== 1) {
-            return $config;
-        }
-
-        /** @var array<string,mixed> $languageConfig */
-        $languageConfig = reset($languageConfig);
+        $languageConfig = $this->getLocalizedPartOfConfiguration($config, $languageId);
 
         foreach ($languageConfig as $key => $value) {
             if (!isset($config[$key])) {
+                // why should one not overwrite this?
                 continue;
             }
             $config[$key] = $value;
@@ -111,5 +132,24 @@ class ExtendSiteUtility
         }
 
         return $settings;
+    }
+
+    /**
+     * @param array<string,mixed> $config
+     * @param int $languageId
+     * @return array<string,mixed>
+     */
+    protected function getLocalizedPartOfConfiguration(array $config, int $languageId): array
+    {
+        $languages = $config['languages'] ?? [];
+
+        $languageConfig = array_filter($languages, function (array $language) use ($languageId) {
+            return (int)$language['languageId'] === $languageId;
+        });
+
+        if (count($languageConfig) !== 1) {
+            return [];
+        }
+        return reset($languageConfig);
     }
 }

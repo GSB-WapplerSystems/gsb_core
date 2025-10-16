@@ -9,12 +9,12 @@
         SPDX-License-Identifier: GPL-3.0-or-later
         -->
     </f:comment>
-   
+
     <div class="logo-additional d-none d-lg-flex">
         <f:if condition="{site.configuration.settings.logos.gsb-second-logo}">
             <f:then>
-                <f:if condition="{site.configuration.initiative-text}">
-                    <div class="logo-additional-headline" role="heading" aria-level="2">{site.configuration.initiative-text}</div>
+                <f:if condition="{site.configuration.settings.logos.gsb-initiative-text}">
+                    <div class="logo-additional-headline" role="heading" aria-level="2">{site.configuration.settings.logos.gsb-initiative-text}</div>
                 </f:if>
             </f:then>
             <f:else>
