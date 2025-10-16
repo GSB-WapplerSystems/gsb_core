@@ -23,6 +23,10 @@
 			<trans-unit id="categories.GSB.devconfig">
 				<source>Developer Configuration</source>
 			</trans-unit>
+			<!-- felogin Settings Category -->
+			<trans-unit id="categories.felogin">
+				<source>felogin Settings</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

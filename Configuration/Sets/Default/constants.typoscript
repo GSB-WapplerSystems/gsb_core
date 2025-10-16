@@ -21,4 +21,3 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @import 'EXT:gsb_core/Configuration/TypoScript/constants.typoscript'
-

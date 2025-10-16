@@ -28,6 +28,11 @@
 				<source>🚧 Developer Configuration</source>
 				<target>🚧 Entwickler Konfiguration</target>
 			</trans-unit>
+			<!-- felogin Settings Category -->
+			<trans-unit id="categories.felogin">
+				<source>felogin Settings</source>
+				<target>felogin Einstellungen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
