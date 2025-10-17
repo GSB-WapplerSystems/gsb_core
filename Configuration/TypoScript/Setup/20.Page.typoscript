@@ -151,6 +151,9 @@ page {
       attribute = http-equiv
     }
   }
+  includeJSFooter {
+    glossaryModal = EXT:gsb_core/Resources/Public/JavaScript/glossaryDefinitionModal.js
+  }
 }
 
 [traverse(site("configuration"),"navType") == "1"]
