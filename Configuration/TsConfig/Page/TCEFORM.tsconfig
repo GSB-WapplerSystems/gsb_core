@@ -372,11 +372,5 @@ TCEFORM {
 }
 
 mod {
-  web_list.deniedNewTables := addToList(tx_gsbcore_consent)
   wizards.newContentElement.wizardItems.plugins.show = general,tx_solr_results
 }
-
-# Only allow consent layer records on siteroot pages
-[traverse(page, "is_siteroot") == 1]
-  mod.web_list.deniedNewTables := removeFromList(tx_gsbcore_consent)
-[global]

@@ -51,14 +51,6 @@ CREATE TABLE tx_gsbcore_forms
 	value15											text
 );
 
-CREATE TABLE tx_gsbcore_consent
-(
-	header varchar(255) DEFAULT '' NOT NULL,
-	accept_button_label varchar(255) DEFAULT '' NOT NULL,
-	body TEXT,
-	show_accept tinyint(1) DEFAULT '1' NOT NULL
-);
-
 CREATE TABLE tt_content
 (
 	tx_header_inside               tinyint(4)       DEFAULT '0' NOT NULL,
