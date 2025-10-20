@@ -104,8 +104,8 @@ settings:
     default: 0
   logos.gsb-second-logo-link:
     category: GSB.style.logos
-    type: page
-    default: 0
+    type: string
+    default: ""
   logos.gsb-second-logo-alt:
     category: GSB.style.logos
     type: string
