@@ -30,6 +30,7 @@ use TYPO3\CMS\Core\Utility\ArrayUtility;
 class ExtendSiteUtility
 {
     public const LOCALIZEDCONFIGURATION = [
+        'logo-text' => 'logos.gsb-logo-text',
         'initiative-text' => 'logos.gsb-initiative-text',
         'logo-complete-big' => 'logos.gsb-logo-big',
         'logo-complete-small' => 'logos.gsb-logo-small',
