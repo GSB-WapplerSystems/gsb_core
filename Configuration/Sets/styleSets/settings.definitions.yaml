@@ -97,7 +97,7 @@ settings:
   logos.gsb-initiative-text:
     category: GSB.style.logos
     type: string
-    default: ''
+    default: 'Eine Initiative von:'
   logos.gsb-second-logo:
     category: GSB.style.logos
     type: file
