@@ -24,6 +24,7 @@ tt_content.audio = FLUIDTEMPLATE
 tt_content.audio {
   partialRootPaths {
     200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+    250 = EXT:gsb_core/Resources/Private/Partials/Asset/
     300 = {$gsb_core.content.view.partialRootPath}
   }
   templateRootPaths {

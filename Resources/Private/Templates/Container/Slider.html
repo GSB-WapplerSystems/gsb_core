@@ -1,7 +1,7 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <f:comment>
     <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
@@ -34,15 +34,12 @@
             </f:if>
 
             <div class="swiper-navigation" aria-hidden="true">
-                <button class="swiper-button swiper-button-prev" tabindex="-1"></button>
+                <button class="swiper-button swiper-button-prev" tabindex="-1"><svg hidden="hidden"></svg></button>
                 <div class="swiper-pagination"></div>
-                <button class="swiper-button swiper-button-next" tabindex="-1"></button>
+                <button class="swiper-button swiper-button-next" tabindex="-1"><svg hidden="hidden"></svg></button>
             </div>
         </div>
-        <f:comment><!-- gsb_core does not provide javascript or css
-        <f:asset.script identifier="swiperJS" src="EXT:gsb_core/Resources/Public/JavaScripts/swiper.js"/>
-        <f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/swiper.css" identifier="swiperCSS"/>
-        --></f:comment>
+        <f:render arguments="{_all}" partial="Swiper" />
     </f:if>
 </f:section>
 
