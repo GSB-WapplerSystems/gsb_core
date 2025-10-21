@@ -29,6 +29,7 @@ lib {
     }
     partialRootPaths {
       0 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+      5 = EXT:gsb_core/Resources/Private/Partials/Asset/
       10 = {$plugin.containerContentElement.view.partialRootPath}
     }
     templateRootPaths {
