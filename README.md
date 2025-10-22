@@ -119,7 +119,7 @@ Feature flags can also be checked in your Fluid templates with TYPO3's [Feature 
 
 | Feature flag           | Description                             |
 |------------------------|-----------------------------------------|
-| `brandingBackendLogin` | At default branding to the login screen |
+| `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` | At default branding to the login screen |
 
 ## Usage
 
