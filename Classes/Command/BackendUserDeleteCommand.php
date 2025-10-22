@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Command;
 
 use Doctrine\DBAL\Exception;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ExceptionInvalidArgumentException;
 use Symfony\Component\Console\Helper\FormatterHelper;
@@ -41,6 +42,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @phpstan-ignore-next-line
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
+#[AsCommand(
+    name: 'gsbcore:backend:user:delete',
+    description: 'Delete backend users',
+)]
 class BackendUserDeleteCommand extends Command
 {
     /**
