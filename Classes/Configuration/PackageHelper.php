@@ -91,6 +91,7 @@ class PackageHelper
         }
     }
 
+    // TODO: understand why
     public function isSitePackage(PackageInterface $package): bool
     {
         $extra = $package->getValueFromComposerManifest('extra') ?? null;

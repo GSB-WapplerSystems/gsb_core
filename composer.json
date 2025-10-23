@@ -35,7 +35,11 @@
     "php": "^8.3",
     "ext-redis": "*",
     "b13/container": "3.1.10",
+    "b13/host-variants": "1.3.0",
     "b13/permission-sets": "^1.0",
+    "derhansen/form_crshield": "2.0.1",
+    "helhum/config-loader": "0.12.6",
+    "helhum/typo3-console": "8.2.2",
     "ichhabrecht/content-defender": "3.5.3",
     "kitzberger/form-mailtext": "^3.0",
     "symfony/serializer-pack": "^1.3",
@@ -58,6 +62,7 @@
     "typo3/cms-linkvalidator": "^13.4",
     "typo3/cms-lowlevel": "^13.4",
     "typo3/cms-opendocs": "^13.4",
+    "typo3/cms-recordlist": "^13.4",
     "typo3/cms-recycler": "^13.4",
     "typo3/cms-redirects": "^13.4",
     "typo3/cms-reports": "^13.4",
@@ -68,7 +73,9 @@
     "typo3/cms-sys-note": "^13.4",
     "typo3/cms-tstemplate": "^13.4",
     "typo3/cms-viewpage": "^13.4",
-    "typo3/cms-workspaces": "^13.4"
+    "typo3/cms-workspaces": "^13.4",
+    "wapplersystems/multisite-belogin": "13.0.0",
+    "wapplersystems/save_and_close": "13.0.1"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.47.0",

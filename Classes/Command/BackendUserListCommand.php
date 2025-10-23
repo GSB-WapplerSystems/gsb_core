@@ -22,17 +22,17 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Command;
 
+use DASPRiD\Enum\Exception\IllegalArgumentException;
 use Doctrine\DBAL\Exception;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ExceptionInvalidArgumentException;
 use Symfony\Component\Console\Helper\Table;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
-use DASPRiD\Enum\Exception\IllegalArgumentException;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * List backend users by filter criteria
@@ -195,7 +195,7 @@ EOF
     protected function sanitizeFilter(array $filter = []): array
     {
         $connection = $this->connectionPool->getConnectionForTable('be_users');
-        $tableDetails = $connection->createSchemaManager()->listTableColumns('be_users') ?? [];
+        $tableDetails = $connection->createSchemaManager()->listTableColumns('be_users');
         $returnFilter = [];
         foreach ($filter as $filterLine) {
             $split = explode('=', $filterLine);
@@ -210,5 +210,4 @@ EOF
         $connection->close();
         return $returnFilter;
     }
-
 }

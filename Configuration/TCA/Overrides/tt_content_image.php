@@ -6,8 +6,6 @@
 
 declare(strict_types=1);
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 defined('TYPO3') || die();
 
 (static function (): void {
@@ -24,18 +22,18 @@ defined('TYPO3') || die();
 
     if (isset($GLOBALS['TCA']['tt_content']['types']['image']['showitem'])) {
         $showitem = $GLOBALS['TCA']['tt_content']['types']['image']['showitem'];
-        
-        if (strpos($showitem, 'image,') !== false) {
+
+        if (str_contains($showitem, 'image,')) {
             $showitem = str_replace('image,', 'image,
                 tx_link,', $showitem);
-        } elseif (strpos($showitem, 'image;') !== false) {
+        } elseif (str_contains($showitem, 'image;')) {
             $showitem = str_replace('image;', 'image;
                 tx_link,', $showitem);
         } else {
             $showitem = rtrim($showitem, ',') . ',
                 tx_link,';
         }
-        
+
         $GLOBALS['TCA']['tt_content']['types']['image']['showitem'] = $showitem;
     }
 })();

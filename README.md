@@ -117,8 +117,8 @@ Feature flags can also be checked in your Fluid templates with TYPO3's [Feature 
 
 ### Current feature flags of `gsb_core`
 
-| Feature flag           | Description                             |
-|------------------------|-----------------------------------------|
+| Feature flag                               | Description                             |
+|--------------------------------------------|-----------------------------------------|
 | `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` | At default branding to the login screen |
 
 ## Usage
