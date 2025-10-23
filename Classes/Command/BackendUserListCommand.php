@@ -210,5 +210,4 @@ EOF
         $connection->close();
         return $returnFilter;
     }
-
 }
