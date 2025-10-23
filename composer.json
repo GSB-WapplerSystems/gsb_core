@@ -62,7 +62,6 @@
     "typo3/cms-linkvalidator": "^13.4",
     "typo3/cms-lowlevel": "^13.4",
     "typo3/cms-opendocs": "^13.4",
-    "typo3/cms-recordlist": "^13.4",
     "typo3/cms-recycler": "^13.4",
     "typo3/cms-redirects": "^13.4",
     "typo3/cms-reports": "^13.4",
