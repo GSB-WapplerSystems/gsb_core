@@ -39,7 +39,7 @@
     "b13/permission-sets": "^1.0",
     "derhansen/form_crshield": "2.0.1",
     "helhum/config-loader": "0.12.6",
-    "helhum/typo3-console": "8.2.2",
+    "helhum/typo3-console": "8.2.3",
     "ichhabrecht/content-defender": "3.5.3",
     "kitzberger/form-mailtext": "^3.0",
     "symfony/serializer-pack": "^1.3",
