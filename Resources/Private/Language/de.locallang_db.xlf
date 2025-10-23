@@ -1356,6 +1356,14 @@
 				<source>configure Page for Sign Language hier</source>
 				<target>Konfiguration Gebärdensprache Seite</target>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.label" resname="tt_content.palettes.image_link_config.label">
+				<source>Image Link Configuration</source>
+				<target>Bild-Link Konfiguration</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
+				<source>Configure link settings for the image element</source>
+				<target>Link-Einstellungen für das Bildelement konfigurieren</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

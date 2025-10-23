@@ -1108,6 +1108,12 @@
 			<trans-unit id="page.configuration.sign-language-page.description" resname="page.configuration.sign-language-page.description">
 				<source>configure Page for Sign Language hier</source>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.label" resname="tt_content.palettes.image_link_config.label">
+				<source>Image Link Configuration</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
+				<source>Configure link settings for the image element</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
