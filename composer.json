@@ -36,7 +36,6 @@
     "ext-redis": "*",
     "b13/container": "3.1.10",
     "b13/host-variants": "1.3.0",
-    "b13/permission-sets": "^1.0",
     "derhansen/form_crshield": "2.0.1",
     "helhum/config-loader": "0.12.6",
     "helhum/typo3-console": "8.2.3",
