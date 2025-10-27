@@ -131,6 +131,29 @@ defined('TYPO3') || die();
                 'exclude' => '1',
                 'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_link_position',
             ],
+        'tx_image_link' =>
+            [
+                'config' =>
+                    [
+                        'allowedTypes' => [
+                            '0' => 'page',
+                            '1' => 'file',
+                            '2' => 'url',
+                            '3' => 'record',
+                        ],
+                        'appearance' => [
+                            'browserTitle' => 'Bild-Link',
+                        ],
+                        'type' => 'link',
+                        'wizards' => [
+                            'link' => [
+                                'icon' => 'actions-wizard-link',
+                            ],
+                        ],
+                    ],
+                'exclude' => '1',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.tx_image_link',
+            ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $linkColumns);
 

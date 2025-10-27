@@ -62,9 +62,9 @@
         <f:for each="{row.columns}" as="column" iteration="iterator">
             <f:if condition="{column.media}">
                 <div data-count="{i.index}" class="image-wrapper {f:if(condition: '{data.imagecols} == 2', then: 'col col-md-6')}{f:if(condition: '{data.imagecols} == 3', then: 'col col-md-4')}{f:if(condition: '{data.imagecols} == 4', then: 'col col-md-4 col-xl-3')}{f:if(condition: '{data.imagecols} == 5', then: 'col')}">
-                    <f:if condition="{data.tx_link}">
+                    <f:if condition="{data.tx_image_link}">
                         <f:then>
-                            <f:link.typolink parameter="{data.tx_link}">
+                            <f:link.typolink parameter="{data.tx_image_link}">
                                 <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, index: index, settings: settings}" />
                             </f:link.typolink>
                         </f:then>

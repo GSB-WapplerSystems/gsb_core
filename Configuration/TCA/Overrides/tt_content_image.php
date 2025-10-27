@@ -14,7 +14,7 @@ defined('TYPO3') || die();
         'image_link_config' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.image_link_config.label',
             'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.palettes.image_link_config.description',
-            'showitem' => 'tx_link',
+            'showitem' => 'tx_image_link',
         ],
     ];
 
@@ -25,13 +25,13 @@ defined('TYPO3') || die();
 
         if (str_contains($showitem, 'image,')) {
             $showitem = str_replace('image,', 'image,
-                tx_link,', $showitem);
+                tx_image_link,', $showitem);
         } elseif (str_contains($showitem, 'image;')) {
             $showitem = str_replace('image;', 'image;
-                tx_link,', $showitem);
+                tx_image_link,', $showitem);
         } else {
             $showitem = rtrim($showitem, ',') . ',
-                tx_link,';
+                tx_image_link,';
         }
 
         $GLOBALS['TCA']['tt_content']['types']['image']['showitem'] = $showitem;
