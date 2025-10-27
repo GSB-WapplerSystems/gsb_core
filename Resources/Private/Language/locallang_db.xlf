@@ -144,6 +144,12 @@
 			<trans-unit id="gsb_singleteaser.description" resname="gsb_singleteaser.description">
 				<source>Adds a teaser with headline, image, text and link element</source>
 			</trans-unit>
+			<trans-unit id="gsb_imagemap.title" resname="gsb_imagemap.title">
+				<source>Image Map</source>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.description" resname="gsb_imagemap.description">
+				<source>Adds an interactive image map with hotspots</source>
+			</trans-unit>
 			<trans-unit id="gsb_banner.title" resname="gsb_banner.title">
 				<source>Banner</source>
 			</trans-unit>
@@ -1116,6 +1122,12 @@
 			</trans-unit>
 			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
 				<source>Configure link settings for the image element</source>
+			</trans-unit>
+			<trans-unit id="hotspot" resname="hotspot">
+				<source>Hotspot</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.tooltip" resname="tx_gsbcore_hotspot.tooltip">
+				<source>Tooltip</source>
 			</trans-unit>
 		</body>
 	</file>

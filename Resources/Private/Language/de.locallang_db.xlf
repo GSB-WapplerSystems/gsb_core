@@ -199,6 +199,14 @@
 				<source>Adds a teaser with headline, image, text and link element</source>
 				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 			</trans-unit>
+			<trans-unit id="gsb_imagemap.title" resname="gsb_imagemap.title">
+				<source>Image Map</source>
+				<target>Interaktive Grafik</target>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.description" resname="gsb_imagemap.description">
+				<source>Adds an interactive image map with hotspots</source>
+				<target>Fügt eine interaktive Grafik mit Hotspots hinzu</target>
+			</trans-unit>
 			<trans-unit id="gsb_banner.title" resname="gsb_banner.title" approved="yes">
 				<source>Banner</source>
 				<target>Banner</target>
