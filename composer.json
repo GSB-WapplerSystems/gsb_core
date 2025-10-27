@@ -79,6 +79,7 @@
     "ergebnis/composer-normalize": "^2.47.0",
     "helmich/typo3-typoscript-lint": "^3.3.0",
     "phpmd/phpmd": "^2.13",
+    "shipmonk/composer-dependency-analyser": "^1.8",
     "ssch/typo3-rector": "^3.5",
     "typo3/coding-standards": "^0.8",
     "typo3/testing-framework": "^8.2"
