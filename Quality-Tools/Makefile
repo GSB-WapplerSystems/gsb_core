@@ -36,8 +36,9 @@ COMPOSER_CONTAINER_ID	:= $(shell docker images --filter reference=${PROJECT_NAME
 .DEFAULT_GOAL := help
 
 # ----- SCRIPTS ----- #
-COMPOSER_NORMALIZE = "composer normalize --dry-run --no-check-lock"
+COMPOSER_NORMALIZE = "composer normalize --no-check-lock"
 COMPOSER_VALIDATE = "composer validate --strict --no-check-lock"
+DEPENDENCY_ANALYSER = "php vendor/bin/composer-dependency-analyser"
 PHP_CS_FIXER = "php vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php -v --dry-run --using-cache no --diff"
 PHP_MD = "php -r \"error_reporting(error_reporting() ^ E_DEPRECATED);\"; php ../vendor/bin/phpmd ../Classes/ text ../gsb11.ruleset.xml --baseline-file ../phpmd.baseline.xml -vvv"
 PHP_STAN = "php vendor/bin/phpstan analyse --memory-limit=256M --no-progress"
@@ -73,6 +74,16 @@ set-itzbund-auth-token:
 .PHONY: build
 build:
 	@COMPOSE_BAKE=true DOCKER_USER="root" ${DOCKER_ARGS} docker buildx bake --file Docker/Composer/docker-compose.yml --no-cache --provenance=false
+
+#dependency-check: ## Check dependencies of the code
+.PHONY: dependency-check
+dependency-check:
+	@printf "\n  $(BGC_CYAN)$(C_LIGHT_YELLOW)                                     $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    -----------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    |  Running dependency check |    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)    -----------------------------    $(BGC_DEFAULT)\n"
+	@printf "  $(BGC_CYAN)                                     $(C_DEFAULT)$(BGC_DEFAULT)\n\n"
+	@$(MAKE) container exec=${DEPENDENCY_ANALYSER} --no-print-directory
 
 #container: ## Execute given 'exec' parameter as command in container (e.g. "make container exec='composer list'" runs "composer list" inside the container)
 .PHONY: container
