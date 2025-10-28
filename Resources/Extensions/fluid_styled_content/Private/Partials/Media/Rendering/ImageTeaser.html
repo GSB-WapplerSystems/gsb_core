@@ -62,7 +62,9 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 550, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
+              <f:link.typolink parameter="{file.properties.link}" class="image-link">
                 <f:image class="figure-img img-fluid" style="{f:if(condition:'{file.properties.outline} == 1', then:'border-color:{data.grid_bgcolor}')}" cropVariant="default" loading="lazy" maxWidth="{data.imagewidth}" image="{file}" />
+              </f:link.typolink>
             </picture>
         </f:alias>
     </f:then>
@@ -119,7 +121,9 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 600, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
+              <f:link.typolink parameter="{file.properties.link}" class="image-link">
                 <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="1920" />
+              </f:link.typolink>
             </picture>
         </f:alias>
     </f:else>

@@ -6,6 +6,7 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
+<f:debug>{dimensions}</f:debug>
 <f:if condition="{dimensions.width}">
     <f:then>
         <f:alias map="{gsb:format.json.decode(value: file.properties.crop)}">
@@ -60,7 +61,9 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
+              <f:link.typolink parameter="{file.properties.link}" class="image-link">
                 <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+              </f:link.typolink>
             </picture>
         </f:alias>
     </f:then>
@@ -117,7 +120,9 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
+              <f:link.typolink parameter="{file.properties.link}" class="image-link">
                 <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="1920"/>
+              </f:link.typolink>
             </picture>
         </f:alias>
     </f:else>
