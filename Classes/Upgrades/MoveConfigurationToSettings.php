@@ -214,7 +214,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'colors.colorGeneral.gsb-color-tertiary' => 'color_tertiary',
             'logos.gsb-second-logo-alt' => 'second-logo-alt',
             'logos.gsb-initiative-text' => 'initiative-text',
-            'logos.gsb-show-headline' => 'show-headline',
         ];
 
         foreach ($simpleMappings as $settingKey => $configKey) {
@@ -226,6 +225,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'copyright.show-copyright' => 'show-copyright',
             'search.solrEnabledFacets' => 'solr_enabled_facets',
             'search.solrShowTopResults' => 'solrShowTopResults',
+            'logos.display-brand-topline' => 'display-brand-topline',
             'search.suche' => 'search',
         ];
 
@@ -242,7 +242,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'logos.gsb-logo-text' => 'logo-text',
             'logos.gsb-second-logo' => 'second-logo',
             'logos.gsb-second-logo-link' => 'second-logo-link',
-            'logos.gsb-show-headline' => 'display-brand-topline',
             'favicons.favicon-96x96-png' => 'favicon-96x96-png',
             'favicons.faviconIco' => 'faviconIco',
             'favicons.faviconSvg' => 'faviconSvg',
