@@ -60,9 +60,16 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-              <f:link.typolink parameter="{file.properties.link}" class="image-link">
-                <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
-              </f:link.typolink>
+                <f:feature name="GSB11_FEATURE_5488_IMAGE_LINK">
+                    <f:then>
+                        <f:link.typolink parameter="{file.properties.link}" class="image-link">
+                            <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+                    </f:else>
+                </f:feature>
             </picture>
         </f:alias>
     </f:then>
