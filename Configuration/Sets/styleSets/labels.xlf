@@ -185,6 +185,12 @@
 			<trans-unit id="settings.description.logos.gsb-second-logo-alt">
 				<source>Alt text for the second logo for visually impaired website visitors.</source>
 			</trans-unit>
+			<trans-unit id="settings.logos.display-brand-topline">
+				<source>Show page topline</source>
+			</trans-unit>
+			<trans-unit id="settings.description.logos.display-brand-topline">
+				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
+			</trans-unit>
 			<!-- Favicons -->
 			<trans-unit id="settings.favicons.favicon-96x96-png">
 				<source>Favicon 96x96 PNG</source>

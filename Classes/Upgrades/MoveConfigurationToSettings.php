@@ -107,7 +107,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'apple-touch-icon-76x76',
         'browserconfig',
         'color_quaternary',
-        'display-brand-topline',
         'favicon-16x16',
         'favicon-32x32',
         'safari-pinned-tab',
@@ -215,6 +214,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'colors.colorGeneral.gsb-color-tertiary' => 'color_tertiary',
             'logos.gsb-second-logo-alt' => 'second-logo-alt',
             'logos.gsb-initiative-text' => 'initiative-text',
+            'logos.gsb-show-headline' => 'show-headline',
         ];
 
         foreach ($simpleMappings as $settingKey => $configKey) {
@@ -242,6 +242,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'logos.gsb-logo-text' => 'logo-text',
             'logos.gsb-second-logo' => 'second-logo',
             'logos.gsb-second-logo-link' => 'second-logo-link',
+            'logos.gsb-show-headline' => 'display-brand-topline',
             'favicons.favicon-96x96-png' => 'favicon-96x96-png',
             'favicons.faviconIco' => 'faviconIco',
             'favicons.faviconSvg' => 'faviconSvg',

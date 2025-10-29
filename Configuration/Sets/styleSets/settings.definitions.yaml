@@ -110,6 +110,10 @@ settings:
     category: GSB.style.logos
     type: string
     default: ''
+  logos.display-brand-topline:
+    category: GSB.style.logos
+    type: bool
+    default: false
   # favicons
   favicons.favicon-96x96-png:
     category: GSB.style.favicons
