@@ -107,7 +107,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'apple-touch-icon-76x76',
         'browserconfig',
         'color_quaternary',
-        'display-brand-topline',
         'favicon-16x16',
         'favicon-32x32',
         'safari-pinned-tab',
@@ -226,6 +225,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'copyright.show-copyright' => 'show-copyright',
             'search.solrEnabledFacets' => 'solr_enabled_facets',
             'search.solrShowTopResults' => 'solrShowTopResults',
+            'logos.display-brand-topline' => 'display-brand-topline',
             'search.suche' => 'search',
         ];
 
