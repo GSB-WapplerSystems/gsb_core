@@ -1126,6 +1126,12 @@
 			<trans-unit id="hotspot" resname="hotspot">
 				<source>Hotspot</source>
 			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.coordinates" resname="tx_gsbcore_hotspot.coordinates">
+				<source>Coordinates</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.coordinates.edit" resname="tx_gsbcore_hotspot.coordinates.edit">
+				<source>Edit Hotspot Coordinates</source>
+			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.tooltip" resname="tx_gsbcore_hotspot.tooltip">
 				<source>Tooltip</source>
 			</trans-unit>

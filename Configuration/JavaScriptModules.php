@@ -28,6 +28,7 @@ return [
     ],
     'imports' => [
         '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
+        '@itzbund/gsb-core/helloworld.js' => 'EXT:gsb_core/Resources/Public/JavaScript/helloworld.js',
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
     ],
 ];

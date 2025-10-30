@@ -39,6 +39,19 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'coordinates' => [
+            'label' => 'Koordinaten',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'fieldControl' => [
+                    'editHotspotControl' => [
+                        'renderType' => 'editHotspotControl',
+                    ],
+                ],
+            ],
+        ],
         'imagemap' => [
             'label' => 'Imagemap',
             'config' => [
@@ -51,7 +64,7 @@ return [
     ],
     'types' => [
         '0' => ['showitem' =>
-            '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, imagemap,
+            '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, coordinates, imagemap,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime
         '],
