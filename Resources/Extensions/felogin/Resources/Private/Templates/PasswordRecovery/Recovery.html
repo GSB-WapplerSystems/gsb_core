@@ -24,27 +24,27 @@
                 </svg>
             </picture>
             <div class="container">
-                    <div class="frame frame-type-felogin_login mb-0">
-                        <p class="message"><f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_reset_message'}"/></p>
-                        <f:render partial="ValidationErrors"/>
+                <div class="frame frame-type-felogin_login mb-0">
+                    <p class="message"><f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_reset_message'}"/></p>
+                    <f:render partial="ValidationErrors"/>
 
-                        <f:form action="recovery" method="post">
-                            <fieldset>
-                                <div class="mb-3">
-                                    <label for="tx-felogin-input-data" class="form-label">{f:translate(key: 'felogin.username', extensionName: 'gsb_core')}</label>
-                                    <f:form.textfield name="userIdentifier" required="true" class="form-control" id="tx-felogin-input-data" />
-                                </div>
-                                <div class="mb-3">
-                                    <f:form.submit class="btn btn-primary" value="{f:translate(key: 'reset_password')}"/>
-                                </div>
-                            </fieldset>
-                        </f:form>
+                    <f:form action="recovery" method="post">
+                        <fieldset>
+                            <div class="mb-3">
+                                <label for="tx-felogin-input-data" class="form-label">{f:translate(key: 'felogin.username', extensionName: 'gsb_core')}</label>
+                                <f:form.textfield name="userIdentifier" required="true" class="form-control" id="tx-felogin-input-data" />
+                            </div>
+                            <div class="mb-3">
+                                <f:form.submit class="btn btn-primary" value="{f:translate(key: 'reset_password')}"/>
+                            </div>
+                        </fieldset>
+                    </f:form>
 
-                        <f:link.action action="login" controller="Login" class="mb-3">
-                            <f:translate key="forgot_header_backToLogin"/>
-                        </f:link.action>
-                    </div>
+                    <f:link.action action="login" controller="Login" class="mb-3">
+                        <f:translate key="forgot_header_backToLogin"/>
+                    </f:link.action>
                 </div>
+            </div>
         </div>
     </div>
 </div>
