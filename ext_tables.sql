@@ -101,5 +101,12 @@ CREATE TABLE tt_content
 	tx_link                        tinytext,
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
-	tx_link_position               tinytext
+	tx_link_position               tinytext,
+    tx_include_rendering           tinytext,
+    tx_include_url                 tinytext,
+    tx_include_width               tinytext,
+    tx_include_height              tinytext,
+    tx_include_markup_component    tinytext,
+    tx_include_html_title          tinytext,
+    tx_include_html_name           tinytext
 );

@@ -1,0 +1,33 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+  <f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+  </f:comment>
+
+  <f:if condition="{data.tx_include_url}">
+    <f:if condition="{data.tx_include_rendering} == 'iframe'">
+        <iframe
+            src="{data.tx_include_url}"
+            title="{data.tx_include_html_title}"
+            name="{data.tx_include_html_name}"
+            width="{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}"
+            height="{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')}"
+            style="border:none;"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </f:if>
+    <f:if condition="{data.tx_include_rendering} == 'webcomponent'">
+      <div
+          data-url="{data.tx_include_url}"
+          title="{data.tx_include_html_title}"
+          name="{data.tx_include_html_name}"
+          style="width:{data.tx_include_width};height:{data.height};">
+        <f:format.raw>{data.markup_component}</f:format.raw>
+      </div>
+    </f:if>
+  </f:if>
+</html>
