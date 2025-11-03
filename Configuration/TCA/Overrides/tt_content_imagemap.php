@@ -52,26 +52,30 @@ defined('TYPO3') || die();
                         'enableRichtext' => 1,
                     ],
                 ],
-                // ToDo: Disable Crop-Variants for Image
                 'image' => [
                     'config' => [
                         'maxitems' => 1,
                         'minitems' => 1,
-                        'allowed' => 'jpg,jpeg,svg,png,gif',
+                        'allowed' => 'jpg,jpeg,svg,png,gif,webp',
                         'overrideChildTca' => [
-                            // ToDo: Do we need these fields?
                             'columns' => [
-                                'description' => [
-                                    'config' => [
-                                        'type' => 'passthrough',
-                                    ],
-                                ],
                                 'link' => [
                                     'config' => [
                                         'type' => 'passthrough',
                                     ],
                                 ],
                                 'title' => [
+                                    'config' => [
+                                        'type' => 'passthrough',
+                                    ],
+                                ],
+                                'outline' => [
+                                    'config' => [
+                                        'type' => 'passthrough',
+                                        'renderType' => 'passthrough',
+                                    ],
+                                ],
+                                'crop' => [
                                     'config' => [
                                         'type' => 'passthrough',
                                     ],
