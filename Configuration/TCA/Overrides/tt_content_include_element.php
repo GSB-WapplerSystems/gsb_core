@@ -84,7 +84,7 @@ defined('TYPO3') || die();
                 'type' => 'input',
                 'eval' => 'trim',
             ],
-        ]
+        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $includeElementColumns);
@@ -94,7 +94,7 @@ defined('TYPO3') || die();
             'showitem' => 'tx_include_rendering,--linebreak--,tx_include_url,tx_include_markup_component,--linebreak--,tx_include_width,tx_include_height', 'canNotCollapse' => 1,
         ],
         'include_element_optional' => [
-            'showitem' => 'tx_include_html_title,tx_include_html_name'
+            'showitem' => 'tx_include_html_title,tx_include_html_name',
         ],
     ];
 
@@ -116,8 +116,8 @@ defined('TYPO3') || die();
                 --palette--;;hidden,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended'
-        ]
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ],
     ];
 
     ExtensionManagementUtility::addFieldsToPalette(
@@ -127,5 +127,3 @@ defined('TYPO3') || die();
     );
 
 })();
-
-
