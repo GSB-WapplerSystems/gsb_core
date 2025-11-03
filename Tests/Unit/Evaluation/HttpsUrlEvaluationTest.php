@@ -223,4 +223,3 @@ class HttpsUrlEvaluationTest extends UnitTestCase
     }
 
 }
-
