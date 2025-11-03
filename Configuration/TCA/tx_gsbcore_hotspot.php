@@ -39,12 +39,19 @@ return [
                 'eval' => 'trim',
             ],
         ],
-        'coordinates' => [
-            'label' => 'Koordinaten',
+        'link' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.link',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.link.description',
             'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
+                'type' => 'link',
+            ],
+        ],
+        'coordinates' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.coordinates',
+            'config' => [
+                'type' => 'text',
+                // ToDo: set readOnly
+//                'readOnly' => true,
                 'fieldControl' => [
                     'editHotspotControl' => [
                         'renderType' => 'editHotspotControl',
@@ -64,7 +71,7 @@ return [
     ],
     'types' => [
         '0' => ['showitem' =>
-            '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, coordinates, imagemap,
+            '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, imagemap,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime
         '],

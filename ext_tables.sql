@@ -101,11 +101,15 @@ CREATE TABLE tt_content
 	tx_link                        tinytext,
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
-	tx_link_position               tinytext
+	tx_link_position               tinytext,
+    color_default varchar(255),
+    color_active varchar(255),
+    color_hover varchar(255),
 );
 
 CREATE TABLE tx_gsbcore_hotspot
 (
     imagemap int(11) unsigned DEFAULT '0' NOT NULL,
+    coordinates text,
     tooltip varchar(255) DEFAULT '' NOT NULL
 );
