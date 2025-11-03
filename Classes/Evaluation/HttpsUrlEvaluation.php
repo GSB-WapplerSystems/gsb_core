@@ -4,25 +4,27 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 namespace ITZBund\GsbCore\Evaluation;
 
 use TYPO3\CMS\Core\Exception;
-use TYPO3\CMS\Extbase\Validation\Validator\UrlValidator;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Validation\Validator\UrlValidator;
 
 final class HttpsUrlEvaluation
 {
     /**
      * @psalm-suppress PossiblyUnusedMethod
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      *
      * @throws Exception
      */
-    public function evaluateFieldValue($value, $is_in = null, &$set = null): string
+    public function evaluateFieldValue(mixed $value, mixed $is_in = null, mixed &$set = null): string
     {
         if (is_array($value)) {
             $value = reset($value); // falls Array, nimm erstes Element
@@ -48,6 +50,7 @@ final class HttpsUrlEvaluation
 
     /**
      * @throws Exception
+     * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     private function setFlashMessageForValidHttpsUrl(): void
