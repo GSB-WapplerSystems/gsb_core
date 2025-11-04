@@ -20,7 +20,7 @@ final class EditHotspotControl extends AbstractNode
                 'data-tooltip' => $this->data['databaseRow']['tooltip'],
                 'data-coordinates' => $this->data['databaseRow']['coordinates'],
             ],
-            'javaScriptModules' => [JavaScriptModuleInstruction::create('@itzbund/gsb-core/helloworld.js')],
+            'javaScriptModules' => [JavaScriptModuleInstruction::create('@itzbund/gsb_public_frontend/interactiveImage.js')],
         ];
 
         return $result;
