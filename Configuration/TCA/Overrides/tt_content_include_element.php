@@ -85,6 +85,18 @@ defined('TYPO3') || die();
                 'eval' => 'trim',
             ],
         ],
+        'tx_include_banner_image' => [
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.banner_image',
+            'config' => [
+                'type' => 'file',
+                'allowed' => 'common-image-types',
+                'maxitems' => 1,
+                'appearance' => [
+                    'fileUploadAllowed' => true,
+                    'elementBrowserEnabled' => true,
+                ],
+            ],
+        ],
     ];
 
     ExtensionManagementUtility::addTCAcolumns('tt_content', $includeElementColumns);
@@ -94,7 +106,7 @@ defined('TYPO3') || die();
             'showitem' => 'tx_include_rendering,--linebreak--,tx_include_url,tx_include_markup_component,--linebreak--,tx_include_width,tx_include_height', 'canNotCollapse' => 1,
         ],
         'include_element_optional' => [
-            'showitem' => 'tx_include_html_title,tx_include_html_name',
+            'showitem' => 'tx_include_html_title,tx_include_html_name,--linebreak--,tx_include_banner_image',
         ],
     ];
 

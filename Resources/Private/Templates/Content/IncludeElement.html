@@ -6,28 +6,38 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
   </f:comment>
-
   <f:if condition="{data.tx_include_url}">
-    <f:if condition="{data.tx_include_rendering} == 'iframe'">
-        <iframe
-            src="{data.tx_include_url}"
+    <div id="c{data.uid}" class="frame frame-type-{data.CType}{f:if(condition: '!{data.tx_link}', then: ' nolink')} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+      <f:if condition="{banner_image}">
+        <f:then>
+          <div class="dsgvo dsgvo-external" style="background:url('{f:uri.image(image: banner_image.0, maxWidth: 1200)}') no-repeat 0 0; background-size: cover;">
+        </f:then>
+        <f:else>
+          <div class="dsgvo dsgvo-external">
+        </f:else>
+      </f:if>
+      <f:if condition="{data.tx_include_rendering} == 'iframe'">
+          <iframe
+              src="{data.tx_include_url}"
+              title="{data.tx_include_html_title}"
+              name="{data.tx_include_html_name}"
+              width="{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}"
+              height="{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')}"
+              style="border:none;"
+              loading="lazy"
+              allowfullscreen>
+          </iframe>
+      </f:if>
+      <f:if condition="{data.tx_include_rendering} == 'webcomponent'">
+        <div
+            data-url="{data.tx_include_url}"
             title="{data.tx_include_html_title}"
             name="{data.tx_include_html_name}"
-            width="{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}"
-            height="{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')}"
-            style="border:none;"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-    </f:if>
-    <f:if condition="{data.tx_include_rendering} == 'webcomponent'">
-      <div
-          data-url="{data.tx_include_url}"
-          title="{data.tx_include_html_title}"
-          name="{data.tx_include_html_name}"
-          style="width:{data.tx_include_width};height:{data.height};">
-        <f:format.raw>{data.markup_component}</f:format.raw>
+            style="width:{data.tx_include_width};height:{data.height};">
+          <f:format.raw>{data.markup_component}</f:format.raw>
+        </div>
+      </f:if>
       </div>
-    </f:if>
+    </div>
   </f:if>
 </html>

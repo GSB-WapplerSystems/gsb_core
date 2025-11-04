@@ -292,7 +292,7 @@
 				<source>Width (Default: 100%)</source>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.height" resname="tt_content.include_element.height">
-				<source>Height (Default: 400px)</source>
+				<source>Height</source>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.markup_component" resname="tt_content.include_element.markup_component">
 				<source>Text</source>
@@ -302,6 +302,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.html_name" resname="tt_content.include_element.html_name">
 				<source>HTML-Name-Attribute</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image">
+				<source>Consent Banner Image</source>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
 				<source>Multimedia</source>

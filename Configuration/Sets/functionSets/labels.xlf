@@ -75,6 +75,12 @@
 			<trans-unit id="settings.description.navigation.footer-page">
 				<source>Set the footer page ID for the footer parent page, or select via the "Select Page" button. Note: the subpages of the selected footer page are displayed as footer navigation</source>
 			</trans-unit>
+			<trans-unit id="settings.navigation.policy-page">
+				<source>Data Policy Page</source>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.policy-page">
+				<source>Set the data policy page ID, or select via the "Select Page" button.</source>
+			</trans-unit>
 			<!-- Social Media Links -->
 			<trans-unit id="settings.socialMediaLinks.x">
 				<source>X</source>
