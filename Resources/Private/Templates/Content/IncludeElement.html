@@ -10,12 +10,17 @@
     <div id="c{data.uid}" class="frame frame-type-{data.CType}{f:if(condition: '!{data.tx_link}', then: ' nolink')} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
       <f:if condition="{banner_image}">
         <f:then>
-          <div class="dsgvo dsgvo-external" style="background:url('{f:uri.image(image: banner_image.0, maxWidth: 1200)}') no-repeat 0 0; background-size: cover;">
+          <div class="dsgvo dsgvo-external" style="background:url('{f:uri.image(image: banner_image.0, maxWidth: 1200)}') no-repeat 0 0;">
         </f:then>
         <f:else>
           <div class="dsgvo dsgvo-external">
         </f:else>
       </f:if>
+      <div class="dsgvo-text">
+        <p>
+          <span class="h4">Bitte beachten Sie!</span><br>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <f:link.typolink parameter="{site.settings.navigation.policy-page}" target="_blank" class="btn btn-secondary" />.
+        </p>
+      </div>
       <f:if condition="{data.tx_include_rendering} == 'iframe'">
           <iframe
               src="{data.tx_include_url}"

@@ -125,6 +125,11 @@ page {
       attribute = http-equiv
     }
   }
+  includeJSFooterlibs {
+    dsgvoConsent = EXT:gsb_core/Resources/Public/JavaScript/dsgvo-consent.js
+    dsgvoConsent.excludeFromConcatenation = 1
+    dsgvoConsent.async = 1
+  }
 }
 
 [site('configuration')['settings']['navigation']['gsb-navType'] == "1"]
