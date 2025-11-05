@@ -4,25 +4,54 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\FormEngine\FieldControl;
 
+use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Backend\Form\AbstractNode;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Page\JavaScriptModuleInstruction;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class EditHotspotControl extends AbstractNode
 {
     public function render(): array
     {
-        // Todo: fetch imagemap record to find out about the image. ID is in $this->data['inlineParentUid']. Or can we solve this via JS?
-        $result = [
-            'iconIdentifier' => 'tx_imagemap',
-            'title' => "Edit Hotspot",
-            'linkAttributes' => [
-                'class' => 'hotspot',
-                'data-tooltip' => $this->data['databaseRow']['tooltip'],
-                'data-coordinates' => $this->data['databaseRow']['coordinates'],
-            ],
-            'javaScriptModules' => [JavaScriptModuleInstruction::create('@itzbund/gsb_public_frontend/interactiveImage.js')],
-        ];
-
+        $result = [];
+        $image = $this->getImage();
+        if ($image && isset($image['identifier'])) {
+            $result = [
+                'iconIdentifier' => 'tx_imagemap',
+                'title' => "Edit Hotspot",
+                'linkAttributes' => [
+                    'class' => 'hotspot',
+                    'data-tooltip' => $this->data['databaseRow']['tooltip'],
+                    'data-coordinates' => $this->data['databaseRow']['coordinates'],
+                    'data-image' => $image['identifier'],
+                ],
+                'javaScriptModules' => [JavaScriptModuleInstruction::create('@itzbund/gsb_public_frontend/interactiveImage.js')],
+            ];
+        }
         return $result;
+    }
+
+    private function getImage():?array
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('sys_file_reference');
+        $sysFileReference = $queryBuilder
+            ->select('*')
+            ->from('sys_file_reference')
+            ->where(
+                $queryBuilder->expr()->and(
+                    $queryBuilder->expr()->eq('uid_foreign', $queryBuilder->createNamedParameter($this->data['inlineParentUid'], ParameterType::INTEGER)),
+                    $queryBuilder->expr()->eq('tablenames', $queryBuilder->createNamedParameter('tt_content', ParameterType::STRING))
+                )
+            )
+            ->executeQuery()
+            ->fetchAssociative();
+
+        if ($sysFileReference) {
+            return BackendUtility::getRecord('sys_file', $sysFileReference['uid_local']);
+        }
+        return null;
     }
 }
