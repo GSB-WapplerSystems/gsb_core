@@ -1,0 +1,56 @@
+# SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+#
+# Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
+# BMI/ITZBund.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+tt_content {
+    gsb_imagemap = FLUIDTEMPLATE
+    gsb_imagemap {
+        templateRootPaths {
+            200 = EXT:gsb_core/Resources/Private/Templates/Content/
+            300 = {$gsb_core.content.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+            300 = {$gsb_core.content.view.partialRootPath}
+        }
+
+        templateName = ImageMap
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    fieldName = image
+                    table = tt_content
+                }
+                as = image
+            }
+
+            # ToDo Does it make sense to replace it with a custom DataProcessor (and an extbase model)?
+            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            20 {
+                table = tx_gsbcore_hotspot
+                where.dataWrap = tx_gsbcore_hotspot.imagemap = {FIELD:uid}
+                as = hotspots
+            }
+        }
+    }
+}
