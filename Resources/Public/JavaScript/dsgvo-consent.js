@@ -7,24 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const overlay = document.createElement('div');
     overlay.classList.add('dsgvo-overlay');
-
-    const info = document.createElement('div');
-    info.innerHTML = `
-            <p><strong>Externe Inhalte blockiert</strong></p>
-            <p>Mit einem Klick auf "Inhalt laden" stimmen Sie der Übermittlung Ihrer Daten
-            an externe Dienste (z. B. YouTube) gemäß Artikel 49 Abs. 1 lit. a DSGVO zu.</p>
-        `;
-
-    const button = document.createElement('button');
-    button.textContent = 'Inhalt laden';
-    button.classList.add('btn', 'btn-primary', 'dsgvo-accept');
-
-    overlay.appendChild(info);
-    overlay.appendChild(button);
-
+    overlay.appendChild(textBlock);
     container.appendChild(overlay);
 
-    button.addEventListener('click', function () {
+    const consentButton = overlay.querySelector('[data-dsgvo-button], .dsgvo-link, .dsgvo-accept');
+    if (!consentButton) return;
+
+    consentButton.addEventListener('click', function (event) {
+      event.preventDefault();
       overlay.remove();
       activateExternalContent(container);
     });

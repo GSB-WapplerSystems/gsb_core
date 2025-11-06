@@ -163,6 +163,14 @@
 				<source>Read more</source>
 				<target>Mehr lesen</target>
 			</trans-unit>
+			<trans-unit id="content.consent.external.title" resname="content.readmore">
+				<source>Please note!</source>
+				<target>Bitte beachten Sie!</target>
+			</trans-unit>
+			<trans-unit id="content.consent.external.text" resname="content.readmore">
+				<source>By clicking on the button, you accept the transfer of your data (including IP address) to Vimeo. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the</source>
+				<target>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der</target>
+			</trans-unit>
 			<trans-unit id="videoyoutube.play" resname="videoyoutube.play" approved="yes">
 				<source>Play video</source>
 				<target>Video abspielen</target>

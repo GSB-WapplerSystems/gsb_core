@@ -18,7 +18,8 @@
       </f:if>
       <div class="dsgvo-text">
         <p>
-          <span class="h4">Bitte beachten Sie!</span><br>Mit dem Klick auf den Button akzeptieren Sie die Übermittlung Ihrer Daten (u. a. IP-Adresse) an YouTube. Da es sich hier um ein in den USA ansässiges Unternehmen handelt, willigen Sie zudem in den Datentransfer nach Artikel 49 Abs. 1 lit a) DSGVO ein. Nähere Informationen finden Sie in der <f:link.typolink parameter="{site.settings.navigation.policy-page}" target="_blank" class="btn btn-secondary" />.
+          <span class="h4">{f:translate(key: 'content.consent.external.title', extensionName: 'gsb_core')}</span>
+          <br>{f:translate(key: 'content.consent.external.text', extensionName: 'gsb_core')} <f:link.typolink type="button" parameter="{site.settings.navigation.policy-page}" target="_blank" class="btn btn-secondary" data-dsgvo-button />.
         </p>
       </div>
       <f:if condition="{data.tx_include_rendering} == 'iframe'">
