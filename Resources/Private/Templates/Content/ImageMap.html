@@ -12,6 +12,64 @@
     <f:if condition="{data.header}">
         <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
-    <f:debug>{_all}</f:debug>
+    <f:if condition="{image.0}">
+        <!-- Start Dummy TEST -->
+        <style>
+            .map {
+                max-width: 900px; /* demo constraint */
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .hotspot {
+                fill: rgba(0, 128, 255, 0.18);
+                stroke: rgba(0, 128, 255, 0.9);
+                stroke-width: 3;
+                cursor: pointer;
+                transition: transform 120ms ease, fill 120ms ease;
+            }
+            .hotspot:hover, .hotspot:focus {
+                fill: rgba(0, 128, 255, 0.28);
+                outline: none; /* we’ll add a stroke change for focus */
+            }
+            .hotspot:focus {
+                stroke-width: 4;
+            }
+        </style>
+
+        <svg
+            class="map"
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid meet"
+            aria-label="Interactive image map"
+            >
+            <!-- The base image sits inside SVG, sized to the viewBox. Why is {image.0.publicUrl} not working here? -->
+            <image href="/fileadmin/user_upload/the-highway-code-rule-185.jpg" x="0" y="0" width="1200" height="800" />
+
+            <!-- Polygon overlay (coordinates are in the same 1200x800 space) -->
+            <polygon
+                class="hotspot"
+                points="220,180 420,160 480,280 300,340"
+                tabindex="0"
+                role="link"
+                aria-label="Open detail for Region A"
+                data-id="region-a"
+            ></polygon>
+
+            <polygon
+                class="hotspot"
+                points="700,400 920,380 980,520 760,560"
+                tabindex="0"
+                role="link"
+                aria-label="Open detail for Region B"
+                data-id="region-b"
+            ></polygon>
+        </svg>
+
+        <!-- End Dummy TEST -->
+    </f:if>
+    <f:debug inline="1">{_all}</f:debug>
+    <f:debug inline="1">{image.0.publicUrl}</f:debug>
 </div>
+<f:asset.script identifier="interactiveImageMap" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/interactiveImageFrontend.js" />
 </html>
