@@ -32,7 +32,7 @@ page {
         references.data = levelmedia: -1, slide
         as = media
       }
-      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 = ITZBund\GsbCore\DataProcessing\CachedMenuProcessor
       20 {
         special = directory
         special.value = {$navigation.home-page}
@@ -68,7 +68,7 @@ page {
         levels = 1
         as = menuMetaMain
       }
-      70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      70 = ITZBund\GsbCore\DataProcessing\CachedMenuProcessor
       70 {
         special = directory
         special.value = {$navigation.home-page}
