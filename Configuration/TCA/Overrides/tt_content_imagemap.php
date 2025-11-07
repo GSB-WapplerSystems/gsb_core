@@ -40,6 +40,14 @@ defined('TYPO3') || die();
                 ],
             ],
         ],
+        'hotspot_popup' => [
+            'label' => 'Hotspot Popup',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_gsbcore_hotspot',
+            ],
+        ],
         'color_default' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.color_default',
             'config' => [

@@ -1153,6 +1153,12 @@
 			<trans-unit id="tx_gsbcore_hotspot.color_hover" resname="tx_gsbcore_hotspot.color_hover">
 				<source>Hover Color for Icon</source>
 			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup" resname="tx_gsbcore_hotspot.popup">
+				<source>Content Element(s) for the Popup of this Hotspot</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup.description" resname="tx_gsbcore_hotspot.popup.description">
+				<source>When a user clicks on the hotspot in frontend view a popup will be displayed. Here you can add content elements to this popup as you like.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
