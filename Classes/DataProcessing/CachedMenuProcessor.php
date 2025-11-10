@@ -30,7 +30,11 @@ use TYPO3\CMS\Frontend\DataProcessing\MenuProcessor;
 
 class CachedMenuProcessor implements DataProcessorInterface
 {
-    private string $processedDataKey = '';
+    private string $configAs = '';
+    private string $configIncludeSpacer = '';
+    private string $configLevels = '';
+    private string $configRootPageId = '';
+    private string $configBreadcrumbAs = '';
     /**
      * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
@@ -49,40 +53,51 @@ class CachedMenuProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ): array {
-        $this->processedDataKey = $processorConfiguration['as'] ?? 'menuMain';
+        $this->configAs = $processorConfiguration['as'] ?? 'menuMain';
+        $this->configIncludeSpacer = $processorConfiguration['includeSpacer'] ?? '1';
+        $this->configLevels = $processorConfiguration['levels'] ?? '4';
+        $this->configRootPageId = $processorConfiguration['rootPageId'] ?? '0';
+        $this->configBreadcrumbAs = $processorConfiguration['breadcrumbAs'] ?? 'breadcrumbMenu';
 
-        $processedData = $this->getCachedData($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
+        if ($this->configRootPageId === '0') {
+            return $processedData;
+        }
+
+        $processedData = $this->getCachedData($cObj, $contentObjectConfiguration, $processedData);
         $processedData = $this->setBreadcrumb($cObj, $contentObjectConfiguration, $processedData);
-        debug($processedData);die;
 
         return $processedData;
     }
 
-
     /**
      * @param ContentObjectRenderer $cObj
      * @param array $contentObjectConfiguration
-     * @param array $processorConfiguration
      * @param array $processedData
      * @return mixed
      */
     private function getCachedData (
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
-        array $processorConfiguration,
         array $processedData
     ): array {
-        $cacheIdentifier = $processorConfiguration['special.']['value'] ?? '0';
+        $processorConfiguration = [
+            'as' => $this->configAs,
+            'includeSpacer' => $this->configIncludeSpacer,
+            'levels' => $this->configLevels,
+            'special' => 'directory',
+            'special.' => [
+                'value' => $this->configRootPageId
+            ]
+        ];
+
         $cache = $this->getCache();
 
-        if ($cache->has($cacheIdentifier)) {
-            debug('Cache hit for ' . $cacheIdentifier);
-            $processedData[$this->processedDataKey] = $cache->get($cacheIdentifier);
+        if ($cache->has($this->configRootPageId)) {
+            $processedData[$this->configAs] = $cache->get($this->configRootPageId);
         } else {
-            debug('Cache miss for ' . $cacheIdentifier);
             $menuProcessor = GeneralUtility::makeInstance(MenuProcessor::class);
             $processedData = $menuProcessor->process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
-            $cache->set($cacheIdentifier, $processedData[$this->processedDataKey], [], 2592000); // 30 days
+            $cache->set($this->configRootPageId, $processedData[$this->configAs], [], 2592000); // 30 days
         }
 
         return $processedData;
@@ -102,37 +117,32 @@ class CachedMenuProcessor implements DataProcessorInterface
         array $processedData
     ): array {
         $menuProcessor = GeneralUtility::makeInstance(MenuProcessor::class);
-        $rootLineConfig = ['as' => 'breadcrumbMenu', 'special' => 'rootline'];
-        $tmpProcessedData = $menuProcessor->process($cObj, $contentObjectConfiguration, $rootLineConfig, $processedData);
+        $rootLineConfig = ['as' => $this->configBreadcrumbAs, 'special' => 'rootline'];
+        $processedData = $menuProcessor->process($cObj, $contentObjectConfiguration, $rootLineConfig, $processedData);
         $breadcrumb = [];
 
-        foreach ($tmpProcessedData['breadcrumbMenu'] as $item) {
+        foreach ($processedData[$this->configBreadcrumbAs] as $item) {
             $uid = $item['data']['uid'];
             $breadcrumb[$uid]['active'] = $item['active'];
             $breadcrumb[$uid]['current'] = $item['current'];
         }
 
-        foreach ($processedData[$this->processedDataKey] as $menu) {
-
-        }
+        $processedData[$this->configAs] = $this->iterateCurrentActiveMenu($processedData[$this->configAs], $breadcrumb);
 
         return $processedData;
     }
 
-    private function iterateChildren(mixed $menuChildren, array $breadcrumb): array
+    private function iterateCurrentActiveMenu(mixed $processedMenuData, array $breadcrumb): array
     {
-        foreach ($menuChildren as $key => $child) {
-            if (isset($child['children']) && is_array($child['children'])) {
-                $menuChildren[$key]['children'] = $this->iterateChildren($child['children'], $breadcrumb);
-            }
+        foreach ($processedMenuData as $key => $menu) {
+            $processedMenuData[$key]['active'] = (int)($breadcrumb[$menu['data']['uid']]['active'] ?? 0);
+            $processedMenuData[$key]['current'] = (int)($breadcrumb[$menu['data']['uid']]['current'] ?? 0);
 
-            if (in_array($child['data']['uid'], $breadcrumb)) {
-                $breadcrumbItem = $breadcrumb[$child['data']['uid']];
-                $menuChildren[$key]['active'] = $breadcrumbItem['active'];
-                $menuChildren[$key]['current'] = $breadcrumbItem['current'];
+            if (isset($menu['children'])) {
+                $processedMenuData[$key]['children'] = $this->iterateCurrentActiveMenu($menu['children'], $breadcrumb);
             }
         }
 
-        return $menuChildren;
+        return $processedMenuData;
     }
 }
