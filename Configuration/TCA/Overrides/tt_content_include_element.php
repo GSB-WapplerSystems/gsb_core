@@ -32,7 +32,7 @@ defined('TYPO3') || die();
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.iframe', 'iframe'],
-                    //['LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.webcomponent', 'webcomponent'],
+                    ['LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.webcomponent', 'webcomponent'],
                 ],
                 'default' => 'iframe',
             ],

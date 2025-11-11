@@ -123,11 +123,14 @@
 			<trans-unit id="content.readmore" resname="content.readmore">
 				<source>Read more</source>
 			</trans-unit>
-			<trans-unit id="content.consent.external.title" resname="content.readmore">
+			<trans-unit id="content.consent.external.title" resname="content.consent.external.title">
 				<source>Please note!</source>
 			</trans-unit>
-			<trans-unit id="content.consent.external.text" resname="content.readmore">
+			<trans-unit id="content.consent.external.text" resname="content.consent.external.text">
 				<source>By clicking on the button, you accept the transfer of your data (including IP address) to Vimeo. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the</source>
+			</trans-unit>
+			<trans-unit id="content.consent.external.button" resname="content.consent.external.button">
+				<source>Approve and display</source>
 			</trans-unit>
 			<trans-unit id="videoyoutube.play" resname="videoyoutube.play">
 				<source>Play video</source>
