@@ -154,4 +154,12 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
+
+    // Configure caching framework
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['gsb_core_menu'] = [
+        'frontend' => \TYPO3\CMS\Core\Cache\Frontend\VariableFrontend::class,
+        'backend' => \TYPO3\CMS\Core\Cache\Backend\Typo3DatabaseBackend::class,
+        'options' => ['defaultLifetime' => 2592000], // 30 days
+        'groups' => ['pages'],
+    ];
 })();

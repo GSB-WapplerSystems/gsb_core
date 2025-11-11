@@ -15,9 +15,9 @@
     <div class="row align-items-center">
         <f:render arguments="{_all}" partial="Navigation/Primary/NavMainMobile"/>
         <nav class="mainnav-desktop justify-content-end d-none d-lg-flex" aria-labelledby="mainnavDesktop">
-            <div id="mainnavDesktop" class="visually-hidden" role="heading" aria-level="2">Hauptnavigation</div>
+            <div id="mainnavDesktop" class="visually-hidden" role="heading" aria-level="2">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</div>
             <ul class="list-unstyled d-flex mb-0 justify-content-end" id="nav-desktop">
-                <f:for as="mainItem" each="{menuMainDesktop}">
+                <f:for as="mainItem" each="{menuMain}">
                     <f:render partial="Navigation/Primary/NavMain" arguments="{mainItem: mainItem}" />
                 </f:for>
                 <f:if condition="{site.configuration.settings.search.suche} == 1">
