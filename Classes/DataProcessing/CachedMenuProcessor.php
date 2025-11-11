@@ -39,9 +39,9 @@ class CachedMenuProcessor implements DataProcessorInterface
      * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      *
-     * @param array<mixed,mixed> $contentObjectConfiguration
-     * @param array<mixed,mixed> $processorConfiguration
-     * @param array<mixed,mixed> $processedData
+     * @param mixed[] $contentObjectConfiguration
+     * @param mixed[] $processorConfiguration
+     * @param mixed[] $processedData
      *
      * @return mixed[]
      *
@@ -71,11 +71,12 @@ class CachedMenuProcessor implements DataProcessorInterface
 
     /**
      * @param ContentObjectRenderer $cObj
-     * @param array $contentObjectConfiguration
-     * @param array $processedData
-     * @return mixed
+     * @param mixed[] $contentObjectConfiguration
+     * @param mixed[] $processedData
+     *
+     * @return mixed[]
      */
-    private function getCachedData (
+    private function getCachedData(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processedData
@@ -86,19 +87,21 @@ class CachedMenuProcessor implements DataProcessorInterface
             'levels' => $this->configLevels,
             'special' => 'directory',
             'special.' => [
-                'value' => $this->configRootPageId
-            ]
+                'value' => $this->configRootPageId,
+            ],
         ];
 
         $cache = $this->getCache();
 
         if ($cache->has($this->configRootPageId)) {
             $processedData[$this->configAs] = $cache->get($this->configRootPageId);
-        } else {
-            $menuProcessor = GeneralUtility::makeInstance(MenuProcessor::class);
-            $processedData = $menuProcessor->process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
-            $cache->set($this->configRootPageId, $processedData[$this->configAs], [], 2592000); // 30 days
+
+            return $processedData;
         }
+
+        $menuProcessor = GeneralUtility::makeInstance(MenuProcessor::class);
+        $processedData = $menuProcessor->process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
+        $cache->set($this->configRootPageId, $processedData[$this->configAs]);
 
         return $processedData;
     }
@@ -109,6 +112,10 @@ class CachedMenuProcessor implements DataProcessorInterface
     }
 
     /**
+     * @param ContentObjectRenderer $cObj
+     * @param mixed[] $contentObjectConfiguration
+     * @param mixed[] $processedData
+     *
      * @return mixed[]
      */
     private function setBreadcrumb(
@@ -132,7 +139,13 @@ class CachedMenuProcessor implements DataProcessorInterface
         return $processedData;
     }
 
-    private function iterateCurrentActiveMenu(mixed $processedMenuData, array $breadcrumb): array
+    /**
+     * @param mixed[] $processedMenuData
+     * @param mixed[] $breadcrumb
+     *
+     * @return mixed[]
+     */
+    private function iterateCurrentActiveMenu(array $processedMenuData, array $breadcrumb): array
     {
         foreach ($processedMenuData as $key => $menu) {
             $processedMenuData[$key]['active'] = (int)($breadcrumb[$menu['data']['uid']]['active'] ?? 0);
