@@ -15,7 +15,7 @@
 
     <div class="row align-items-center d-none d-lg-block">
         <nav aria-labelledby="mainnavDesktop" class="mainnav-desktop justify-content-end d-none d-lg-flex">
-            <div aria-level="2" class="visually-hidden" id="mainnavDesktop" role="heading">Hauptnavigation</div>
+            <div aria-level="2" class="visually-hidden" id="mainnavDesktop" role="heading">{f:translate(key: 'header.mainnavigation', extensionName: 'gsb_core')}</div>
             <ul class="list-unstyled d-flex mb-0 justify-content-end" id="nav-desktop">
                 <f:for as="mainItem" each="{menuMain}">
                     <f:render arguments="{mainItem: mainItem}" partial="Navigation/Tertiary/NavMain" />
