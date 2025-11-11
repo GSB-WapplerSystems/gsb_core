@@ -51,8 +51,8 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 10,
-                // ToDo: set readOnly
-//                'readOnly' => true,
+                // 'readOnly' => true, // This will not show the button or checkmark anymore
+                'placeholder' => 'Keine Koordinaten festgelegt',
                 'fieldControl' => [
                     'editHotspotControl' => [
                         'renderType' => 'editHotspotControl',
