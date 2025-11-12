@@ -163,5 +163,6 @@ defined('TYPO3') or die('Access denied.');
         'groups' => ['pages'],
     ];
 
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:backend/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang.xlf';
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\ITZBund\GsbCore\Evaluation\HttpsUrlEvaluation::class] = '';
 })();
