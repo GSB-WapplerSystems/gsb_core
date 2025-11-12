@@ -36,7 +36,6 @@ class CachedMenuProcessor implements DataProcessorInterface
     private string $configRootPageId = '';
     private string $configBreadcrumbAs = '';
     /**
-     * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      *
      * @param mixed[] $contentObjectConfiguration
