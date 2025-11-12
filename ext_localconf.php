@@ -30,7 +30,6 @@ use ITZBund\GsbCore\Resource\Rendering\GenericExternalAudioRenderer;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalVideoRenderer;
 use TYPO3\CMS\Core\Configuration\Features;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -39,20 +38,15 @@ defined('TYPO3') or die('Access denied.');
 
 (function () {
     // @todo Check after implementation of  Feature https://forge.typo3.org/issues/100056
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['cspForBitvTestTools'] ??= false;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['GSB11_OPTION_618_BITV_TEST_TOOLS'] ??= false;
     // Future Security Headers
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginEmbedderPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginOpenerPolicy'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['crossOriginResourcePolicy'] ??= false;
 
     // Branded backend login screen
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['brandingBackendLogin'] ??= false;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['features']['GSB11_OPTION_1972_GSB11_BACKEND_BRANDING'] ??= false;
-    $features = GeneralUtility::makeInstance(Features::class);
-    if (
-        $features->isFeatureEnabled('brandingBackendLogin') ||
-        $features->isFeatureEnabled('GSB11_OPTION_1972_GSB11_BACKEND_BRANDING')
-    ) {
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_OPTION_1972_GSB11_BACKEND_BRANDING')) {
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendFavicon'] = 'EXT:gsb_core/Resources/Public/Images/logo.png';
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['backendLogo'] = 'EXT:gsb_core/Resources/Public/Images/logo.png';
         $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['backend']['loginBackgroundImage'] = 'EXT:gsb_core/Resources/Public/Images/bg.jpg';
@@ -159,15 +153,13 @@ defined('TYPO3') or die('Access denied.');
     }
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
-
-    $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
-    // Only include user.tsconfig if TYPO3 version is below 13 so that it is not imported twice.
-    if ($versionInformation->getMajorVersion() < 13) {
-        ExtensionManagementUtility::addUserTSConfig(
-            '@import "EXT:gsb_core/Configuration/user.tsconfig"'
-        );
-    }
-
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
 
+    // Configure caching framework
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['gsb_core_menu'] = [
+        'frontend' => \TYPO3\CMS\Core\Cache\Frontend\VariableFrontend::class,
+        'backend' => \TYPO3\CMS\Core\Cache\Backend\Typo3DatabaseBackend::class,
+        'options' => ['defaultLifetime' => 2592000], // 30 days
+        'groups' => ['pages'],
+    ];
 })();

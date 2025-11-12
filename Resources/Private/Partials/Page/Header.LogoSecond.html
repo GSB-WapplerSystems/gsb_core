@@ -11,10 +11,10 @@
     </f:comment>
 
     <div class="logo-additional d-none d-lg-flex">
-        <f:if condition="{site.configuration.initiative-text-toggle}">
+        <f:if condition="{site.configuration.settings.logos.gsb-second-logo}">
             <f:then>
-                <f:if condition="{site.configuration.initiative-text}">
-                    <div class="logo-additional-headline" role="heading" aria-level="2">{site.configuration.initiative-text}</div>
+                <f:if condition="{site.configuration.settings.logos.gsb-initiative-text}">
+                    <div class="logo-additional-headline" role="heading" aria-level="2">{site.configuration.settings.logos.gsb-initiative-text}</div>
                 </f:if>
             </f:then>
             <f:else>
@@ -26,9 +26,9 @@
 
         <f:if condition="{link} && {logo}">
             <f:then>
-                <a href="{link}" class="logo-additional-img">
+                <f:link.typolink parameter="{link}" target="_blank" class="logo-additional-img">
                     <f:image src="{logo}" class="img-fluid" alt="{alt}" maxHeight="120" />
-                </a>
+                </f:link.typolink>
             </f:then>
             <f:else>
                 <span class="logo-additional-img">

@@ -1,0 +1,139 @@
+categories:
+  GSB.functions.categories:
+    parent: GSB.functions
+  GSB.functions.socialMediaLinks:
+    parent: GSB.functions
+  GSB.functions.suche:
+    parent: GSB.functions
+  GSB.functions.navigation:
+    parent: GSB.functions
+  GSB.functions.accessability:
+    parent: GSB.functions
+  GSB.functions.security:
+    parent: GSB.functions
+  fsc:
+    parent: GSB.devconfig
+  felogin:
+    parent: GSB.devconfig
+  seo:
+    parent: GSB.devconfig
+  redirects:
+    parent: GSB.devconfig
+
+
+settings:
+
+### Navigation Einstellungen ###
+  navigation.gsb-navType:
+    type: string
+    default: '0'
+    category: GSB.functions.navigation
+    enum:
+      '0': 'Klassische Desktop Navigation'
+      '1': 'Burger Menü'
+  navigation.categories-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 150
+  navigation.header-title:
+    category: GSB.functions.navigation
+    type: string
+    default: 'ITZBund'
+  navigation.home-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 1
+  navigation.meta-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 66
+  navigation.metaTop-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 66
+  navigation.footer-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 25
+
+### Social Media Links Einstellungen ###
+  socialMediaLinks.x:
+    category: GSB.functions.socialMediaLinks
+    type: string
+    default: 'x.com'
+  socialMediaLinks.facebook:
+    category: GSB.functions.socialMediaLinks
+    type: string
+    default: 'facebook.com'
+  socialMediaLinks.instagram:
+    category: GSB.functions.socialMediaLinks
+    type: string
+    default: 'instagram.com'
+  socialMediaLinks.youtube:
+    category: GSB.functions.socialMediaLinks
+    type: string
+    default: 'youtube.com'
+# search
+  search.seach-page:
+    category: GSB.functions.suche
+    type: page
+    default: 35
+  search.googleSiteVerification:
+    category: GSB.functions
+    type: string
+    default: ''
+### devconfig Einstellungen ###
+  devconfig.debug:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.admPanel:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.noCache:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.removeDefaultJS:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.compressJs:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.compressCss:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.concatenateJs:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.concatenateCss:
+    category: GSB.devconfig
+    type: bool
+    default: false
+  devconfig.header-comment:
+    category: GSB.devconfig
+    type: string
+    default: ''
+### Barrierefreiheit Einstellungen ###
+  accessability.signLanguagePage:
+    category: GSB.functions.accessability
+    type: page
+    default: 94
+  accessability.simpleLanguagePage:
+    category: GSB.functions.accessability
+    type: page
+    default: 95
+### security Einstellungen ###
+  security.spam-protect-email-addresses:
+    category: GSB.functions.security
+    type: bool
+    default: true
+  security.spam-protect-email-addresses-at-subst:
+    category: GSB.functions.security
+    type: string
+    default: '@'

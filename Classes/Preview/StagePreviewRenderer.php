@@ -25,6 +25,9 @@ namespace ITZBund\GsbCore\Preview;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem;
+use TYPO3\CMS\Core\Domain\RecordFactory;
+use TYPO3\CMS\Core\Domain\RecordInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Contains a preview rendering for the page module of CType="stage"
@@ -35,20 +38,19 @@ class StagePreviewRenderer extends StandardContentPreviewRenderer
     public function renderPageModulePreviewContent(GridColumnItem $item): string
     {
         $content = '';
-        $row = $item->getRecord();
-        if ($row['CType'] === 'stage') {
-            if ($row['bodytext']) {
-                $content .= $this->linkEditContent('<div class="text-left">' . $row['bodytext'] . '</div>', $row);
+        $table = $item->getTable();
+        $record = $item->getRecord();
+        /** @var RecordInterface $recordObj */
+        $recordObj = GeneralUtility::makeInstance(RecordFactory::class)->createResolvedRecordFromDatabaseRow($table, $record);
+        if ($recordObj->has('CType') && $recordObj->get('CType') === 'stage') {
+            if ($recordObj->has('bodytext')) {
+                $content .= $this->linkEditContent('<div class="text-left">' . $recordObj->get('bodytext') . '</div>', $record);
             }
-            if ($row['image']) {
-                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($row, 'tt_content', 'image'), $row);
-                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'image', $row);
+            if ($recordObj->has('image') && $recordObj->get('image')) {
+                $content .= $this->linkEditContent($this->getThumbCodeUnlinked($recordObj->get('image')), $record);
+                $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'image', $record);
                 if ($fileReferences !== []) {
-                    // @codeCoverageIgnoreStart
-                    $linkedContent = '';
-                    $content .= $this->linkEditContent($linkedContent, $row);
-                    unset($linkedContent);
-                    // @codeCoverageIgnoreEnd
+                    $content .= $this->linkEditContent('', $record);
                 }
             }
         }

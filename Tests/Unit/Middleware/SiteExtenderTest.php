@@ -39,12 +39,16 @@ class SiteExtenderTest extends UnitTestCase
         $site = $this->getMockBuilder(Site::class)->disableOriginalConstructor()->getMock();
         $siteLanguage = $this->getMockBuilder(SiteLanguage::class)->disableOriginalConstructor()->getMock();
 
-        $request->expects(self::atLeast(2))->method('getAttribute')->willReturnCallback(function ($argument) use ($site, $siteLanguage) {
-            return match ($argument) {
-                'site' => $site,
-                'language' => $siteLanguage,
-            };
-        });
+        $request->expects(self::atLeast(2))
+            ->method('getAttribute')
+            ->willReturnCallback(
+                fn($argument) =>
+                    match ($argument) {
+                        'site' => $site,
+                        'language' => $siteLanguage,
+                        default => null,
+                    }
+            );
 
         $request->expects(self::once())->method('withAttribute');
 

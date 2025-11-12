@@ -56,48 +56,4 @@ class PackageHelper
             return null;
         }
     }
-
-    /**
-     * "itemsProcFunc" method adding a list of available "*site*" extension
-     * keys or "gsb_core" as select drop down items. Used in Site backend module.
-     *
-     * @param array $fieldDefinition
-     */
-    public function getSiteListForSiteModule(array &$fieldDefinition): void
-    {
-        $fieldDefinition['items'][] = [
-            '-- None --',
-            '',
-        ];
-        $currentValue = $fieldDefinition['row']['sitePackage'] ?? '';
-        $gotCurrentValue = false;
-        foreach ($this->packageManager->getActivePackages() as $package) {
-            if ($this->isSitePackage($package)) {
-                $packageKey = $package->getPackageKey();
-                $fieldDefinition['items'][] = [
-                    0 => $packageKey,
-                    1 => $packageKey,
-                ];
-                if ($currentValue === $packageKey) {
-                    $gotCurrentValue = true;
-                }
-            }
-        }
-        if (!$gotCurrentValue && $currentValue !== '') {
-            $fieldDefinition['items'][] = [
-                0 => $currentValue,
-                1 => $currentValue,
-            ];
-        }
-    }
-
-    public function isSitePackage(PackageInterface $package): bool
-    {
-        $extra = $package->getValueFromComposerManifest('extra') ?? null;
-        if (($extra !== null) && ($extra->{'itzbund/gsb-core'}->{'isSitePackage'} ?? false)) {
-            return true;
-        }
-        $packageKey = $package->getPackageKey();
-        return (str_contains($packageKey, 'site') || $packageKey === 'gsb_core') && !str_contains($packageKey, 'impexp');
-    }
 }

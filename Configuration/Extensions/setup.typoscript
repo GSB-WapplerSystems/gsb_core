@@ -23,4 +23,3 @@
 @import 'EXT:gsb_core/Configuration/Extensions/fluid_styled_content/TypoScript/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/Extensions/seo/Configuration/TypoScript/XmlSitemap/setup.typoscript'
 @import 'EXT:gsb_core/Configuration/Extensions/felogin/Configuration/TypoScript/setup.typoscript'
-@import 'EXT:gsb_core/Configuration/Extensions/dpn-glossary/Configuration/TypoScript/setup.typoscript'

@@ -8,7 +8,7 @@
 </f:comment>
 <f:if condition="{dimensions.width}">
     <f:then>
-        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+        <f:alias map="{gsb:format.json.decode(value: file.properties.crop)}">
             <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
                     media="(min-width: 1200px)"
@@ -60,12 +60,21 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 543, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
-                <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+                <f:feature name="GSB11_FEATURE_5488_IMAGE_LINK">
+                    <f:then>
+                        <f:link.typolink parameter="{file.properties.link}" class="image-link">
+                            <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="{dimensions.width}"/>
+                    </f:else>
+                </f:feature>
             </picture>
         </f:alias>
     </f:then>
     <f:else>
-        <f:alias map="{gsb:format.json.decode(json: file.properties.crop)}">
+        <f:alias map="{gsb:format.json.decode(value: file.properties.crop)}">
             <picture class="{f:if(condition:'{file.properties.outline} == 1', then:'outline')}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
                 <source
                     media="(min-width: 1200px)"
@@ -117,7 +126,9 @@
                     srcset="{f:uri.image(image: file, cropVariant: 'xsmall', maxWidth: 576, fileExtension: 'jpg')}"
                     type="image/jpeg"
                 >
+              <f:link.typolink parameter="{file.properties.link}" class="image-link">
                 <f:image class="figure-img img-fluid" cropVariant="default" image="{file}" loading="lazy" maxWidth="1920"/>
+              </f:link.typolink>
             </picture>
         </f:alias>
     </f:else>

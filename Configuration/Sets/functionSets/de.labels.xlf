@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/functionSets/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
+		<body>
+			<trans-unit id="label">
+				<source>GSB Functions</source>
+				<target>GSB Funktionen</target>
+			</trans-unit>
+			<!-- Function Settings Categories -->
+			<trans-unit id="categories.GSB.functions.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+			<trans-unit id="categories.GSB.functions.socialMediaLinks">
+				<source>Social Media Links</source>
+				<target>Social Media Links</target>
+			</trans-unit>
+			<trans-unit id="categories.GSB.functions.suche">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+			<trans-unit id="categories.GSB.functions.navigation">
+				<source>Navigation</source>
+				<target>Navigation</target>
+			</trans-unit>
+			<trans-unit id="categories.GSB.functions.accessability">
+				<source>Accessibility</source>
+				<target>Barrierefreiheit</target>
+			</trans-unit>
+			<trans-unit id="categories.GSB.functions.security">
+				<source>Security</source>
+				<target>Sicherheit</target>
+			</trans-unit>
+			<trans-unit id="categories.description.GSB.functions.socialMediaLinks">
+				<source>Social Media Links to your profiles are displayed in the footer. Note: Only registered profiles are displayed.</source>
+				<target>Social Media Links zu ihren Profilen werden im Footer angezeigt. ℹ️Hinweis: Nur eingetragene Profile werden angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.gsb-navType">
+				<source>Main Navigation</source>
+				<target>Hauptnavigation</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.gsb-navType">
+				<source>Select the display type of the main navigation for the desktop view.</source>
+				<target>Darstellungsart der Hauptnavigation für die Desktop Ansicht auswählen.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.categories-page">
+				<source>Category Storage Location</source>
+				<target>Kategorie Ablageort</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.categories-page">
+				<source>Set the page ID for storing categories, or select via the "Select Page" button.</source>
+				<target>Seiten-ID für das Speichern der Kategorien festlegen, oder über den Button "Select Page" auswählen.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.header-title">
+				<source>Title Attribute</source>
+				<target>Title Attribut</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.header-title">
+				<source>The header title is written into the title attribute in the page source code</source>
+				<target>Der Header Title wird in das Title Attribut in den Quellcode der Seite geschrieben</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.home-page">
+				<source>Home Page</source>
+				<target>Startseite</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.home-page">
+				<source>Set the page ID for the link to the home page, or select via the "Select Page" button.</source>
+				<target>Seiten-ID für den Link zur Startseite festlegen, oder über den Button "Select Page" auswählen.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.meta-page">
+				<source>Meta Menu</source>
+				<target>Meta Menü</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.meta-page">
+				<source>Set the page ID for the meta parent page of the meta navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as meta navigation.</source>
+				<target>Seiten-ID für die Meta-Elternseite der Meta-Navigation festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als Meta-Navigation angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.metaTop-page">
+				<source>MetaTop Pages</source>
+				<target>MetaTop Seiten</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.metaTop-page">
+				<source>Set the MetaTop page ID for the meta parent page of the MetaTop navigation, or select via the "Select Page" button. Note: the subpages of the selected meta parent page are displayed as MetaTop navigation.</source>
+				<target>MetaTop Seiten-ID für die Meta-Elternseite der MetaTop-Navigation festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Meta-Elternseite werden als MetaTop-Navigation angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.footer-page">
+				<source>Footer Pages</source>
+				<target>Footer Seiten</target>
+			</trans-unit>
+			<trans-unit id="settings.description.navigation.footer-page">
+				<source>Set the footer page ID for the footer parent page, or select via the "Select Page" button. Note: the subpages of the selected footer page are displayed as footer navigation</source>
+				<target>Footer Seiten-ID für die Footer-Elternseite festlegen, oder über den Button "Select Page" auswählen. ℹ️Hinweis: Die Unterseiten der ausgewählten Footer-Elternseite werden als Footer-Navigation angezeigt</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.x">
+				<source>X</source>
+				<target>X</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.facebook">
+				<source>Facebook</source>
+				<target>Facebook</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.instagram">
+				<source>Instagram</source>
+				<target>Instagram</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.xing">
+				<source>Xing</source>
+				<target>Xing</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.linkedin">
+				<source>LinkedIn</source>
+				<target>LinkedIn</target>
+			</trans-unit>
+			<trans-unit id="settings.socialMediaLinks.youtube">
+				<source>YouTube</source>
+				<target>YouTube</target>
+			</trans-unit>
+			<!-- Search Settings -->
+			<trans-unit id="settings.search.seach-page">
+				<source>Search Page</source>
+				<target>Suche Seite</target>
+			</trans-unit>
+			<trans-unit id="settings.description.search.seach-page">
+				<source>Set the page ID for the search results page, or select via the "Select Page" button</source>
+				<target>Seiten-ID für die Suchergebnis-Seite festlegen, oder über den Button "Select Page" auswählen</target>
+			</trans-unit>
+			<trans-unit id="settings.search.googleSiteVerification">
+				<source>Google Site Verification Code</source>
+				<target>Google Site Verification Code</target>
+			</trans-unit>
+			<trans-unit id="settings.description.search.googleSiteVerification">
+				<source>The verification code provided by Google Search Console must be entered in this field. This allows confirmation of website ownership.</source>
+				<target>Im diesem Feld muss der von Google Search Console bereitgestellte Verifizierungscode eingetragen werden. Dies erlaubt die Bestätigung der Eigentümerschaft der Website.</target>
+			</trans-unit>
+			<!-- Developer Configuration -->
+			<trans-unit id="settings.devconfig.debug">
+				<source>Debug</source>
+				<target>Debug</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.debug">
+				<source>Debug</source>
+				<target>Debug Modus kann aktiviert werden für die Fehlersuche. ⚠️ ⚠️Wichtig: Nicht auf Produktionsseiten aktivieren.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.admPanel">
+				<source>Admin Panel</source>
+				<target>Admin Panel</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.admPanel">
+				<source>Admin Panel</source>
+				<target>Admin Panel kann aktiviert um zusätzliche Seitenfunktionen zu testen und zusätzliche Informationen zu erhalten.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.noCache">
+				<source>No Cache</source>
+				<target>Kein Cache</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.noCache">
+				<source>No Cache</source>
+				<target>Deaktivierung vom TYPO3 Cache zur Fehlersuche, um das Seitenverhalten ohne Cache zu sehen.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.removeDefaultJS">
+				<source>Remove Default JS</source>
+				<target>entferne Standard JS</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.removeDefaultJS">
+				<source>Remove Default JS</source>
+				<target>Entfernen von TYPO3 Standard Javascript um Störungen bei individuellem Javascript zu vermeiden.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.compressJs">
+				<source>Compress JS</source>
+				<target>komprimiere Javascript</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.compressJs">
+				<source>Compress JS</source>
+				<target>Aktievierung von komprimiertem Javascript um die Performance zu verbessern.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.compressCss">
+				<source>Compress CSS</source>
+				<target>komprimiere CSS</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.compressCss">
+				<source>Compress CSS</source>
+				<target>Aktievierung von komprimierten CSS um die Performance zu verbessern.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.concatenateJs">
+				<source>Concatenate JS</source>
+				<target>verknüpfe Javascript</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.concatenateJs">
+				<source>Concatenate JS</source>
+				<target>Aktivierung zum Zusammenfügen aller Javascript Dateinen zu einer Datei, um die Performance zu verbessern.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.concatenateCss">
+				<source>Concatenate CSS</source>
+				<target>verknüpfe CSS</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.concatenateCss">
+				<source>Concatenate CSS</source>
+				<target>Aktivierung zum Zusammenfügen aller CSS Dateinen zu einer Datei, um die Performance zu verbessern.</target>
+			</trans-unit>
+			<trans-unit id="settings.devconfig.header-comment">
+				<source>Header Comment</source>
+				<target>Header Kommentar</target>
+			</trans-unit>
+			<trans-unit id="settings.description.devconfig.header-comment">
+				<source>Header Comment</source>
+				<target>Header Kommentar wird im Quelcode der Seite angezeigt.</target>
+			</trans-unit>
+			<!-- Accessibility Settings -->
+			<trans-unit id="settings.accessability.signLanguagePage">
+				<source>Sign Language Page</source>
+				<target>Gebärdensprache Seite</target>
+			</trans-unit>
+			<trans-unit id="settings.description.accessability.signLanguagePage">
+				<source>Set the page ID for the sign language page, or select via the "Select Page" button.</source>
+				<target>Seiten-ID für die Gebärdensprache-Seite festlegen, oder über den Button "Select Page" auswählen.</target>
+			</trans-unit>
+			<trans-unit id="settings.accessability.simpleLanguagePage">
+				<source>Simple Language Page</source>
+				<target>Einfache Sprachen Seite</target>
+			</trans-unit>
+			<trans-unit id="settings.description.accessability.simpleLanguagePage">
+				<source>Set the page ID for the simple language page, or select via the "Select Page" button.</source>
+				<target>Seiten-ID für die Einfache Sprachen-Seite festlegen, oder über den Button "Select Page" auswählen.</target>
+			</trans-unit>
+			<!-- Security Settings -->
+			<trans-unit id="settings.security.spam-protect-email-addresses">
+				<source>Email Addresses</source>
+				<target>Email Adressen</target>
+			</trans-unit>
+			<trans-unit id="settings.description.security.spam-protect-email-addresses">
+				<source>Enable spam protection for all email addresses on the website.</source>
+				<target>Den Spam-Schutz für alle E-Mail-Adressen im Webauftritt aktivieren.</target>
+			</trans-unit>
+			<trans-unit id="settings.security.spam-protect-email-addresses-at-subst">
+				<source>@ Symbol Alternative</source>
+				<target>@-Zeichen Alternative</target>
+			</trans-unit>
+			<trans-unit id="settings.description.security.spam-protect-email-addresses-at-subst">
+				<source>Specify @ symbol in email addresses. Example: Instead of @ symbol, (at) is used.</source>
+				<target>At-Zeichen in den E-Mail-Adressen vorgeben. Beispiel: Anstelle @-Zeichen wird (at) verwendet.</target>
+			</trans-unit>
+			<!-- Navigation Enum Values -->
+			<trans-unit id="settings.navigation.gsb-navType.enum.0">
+				<source>Classic Desktop Navigation</source>
+				<target>Klassische Desktop Navigation</target>
+			</trans-unit>
+			<trans-unit id="settings.navigation.gsb-navType.enum.1">
+				<source>Burger Menu</source>
+				<target>Burger Menü</target>
+			</trans-unit>
+			<trans-unit id="categories.fsc">
+				<source>TYPO3 Fluid Styled Content</source>
+				<target>TYPO3 Fluid Styled Content</target>
+			</trans-unit>
+			<trans-unit id="categories.description.fsc">
+				<source>TYPO3 Fluid Styled Content</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
+			</trans-unit>
+			<trans-unit id="categories.seo">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3 SEO Sitemap</target>
+			</trans-unit>
+			<trans-unit id="categories.description.seo">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
+			</trans-unit>
+			<trans-unit id="categories.felogin">
+				<source>TYPO3 Frontend Login</source>
+				<target>TYPO3 Frontend Login</target>
+			</trans-unit>
+			<trans-unit id="categories.description.felogin">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
+			</trans-unit>
+			<trans-unit id="categories.redirects">
+				<source>TYPO3 Redirects</source>
+				<target>TYPO3 Redirects</target>
+			</trans-unit>
+			<trans-unit id="categories.description.redirects">
+				<source>TYPO3 SEO Sitemap</source>
+				<target>TYPO3-Voreinstellungen. Änderungen wirken sich auf den gesammten Webauftritt aus!</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

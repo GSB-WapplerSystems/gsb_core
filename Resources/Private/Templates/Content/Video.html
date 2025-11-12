@@ -1,7 +1,7 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 <f:comment>
     <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
@@ -9,9 +9,13 @@
 <f:variable name="videoImg">{files.0}</f:variable>
 <f:variable name="videoRelation">{video.0}</f:variable>
 <f:variable name="videoCaption">{video_caption.0}</f:variable>
+<f:variable name="videoDescription">{video_description.0}</f:variable>
+<f:variable name="audioDescription">{video_audiodescription.0}</f:variable>
 
-<f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/mp4' || {videoRelation.originalFile.properties.mime_type} == 'video/generic'">
-    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+<f:if
+        condition="{videoRelation.originalFile.properties.mime_type} == 'video/mp4' || {videoRelation.originalFile.properties.mime_type} == 'video/generic'">
+    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+         id="c{data.uid}">
         <f:if condition="{data.imageorient} == '8'">
             <f:if condition="{data.header}">
                 <f:render arguments="{_all}" partial="Header/All" />
@@ -21,22 +25,37 @@
             </f:if>
         </f:if>
         <div class="video video-local{f:if(condition: '{data.imageorient} == 0', then: ' mb-3', else: ' mt-3')}">
-            <f:if condition="{videoImg}">
-                <f:then>
-                    <video class="player local-video" controls poster="{f:uri.image(image: '{videoImg}', maxWidth: 973, maxHeight: 535c)}" preload="none" style="background: #000000; width:100%; height:100%;" src="{videoRelation.publicUrl}">
-                        <f:if condition="{videoCaption}">
-                            <track label="Deutsch" kind="subtitles" srclang="de" src="{f:uri.image(image: videoCaption)}" />
-                        </f:if>
-                    </video>
-                </f:then>
-                <f:else>
-                    <video class="player local-video" controls preload="none" style="background: #000000; width:100%; height:100%;" src="{videoRelation.publicUrl}">
-                        <f:if condition="{videoCaption}">
-                            <track label="Deutsch" kind="subtitles" srclang="de" src="{videoCaption.publicUrl}" />
-                        </f:if>
-                    </video>
-                </f:else>
+            <video
+                    class="player local-video"
+                    controls
+            <f:if condition="{videoImg}">poster="{f:uri.image(image: '{videoImg}', maxWidth: 973, maxHeight: 535c)}"</f:if>
+            preload="none"
+            style="background: #000000; width:100%; height:100%;"
+            src="{videoRelation.publicUrl}"
+            <f:if condition="{videoDescription}">
+                <f:variable name="videoDescriptionData" value="{
+                        0: {
+                            type: videoDescription.properties.mime_type,
+                            src: videoDescription.publicUrl
+                        }
+                    }" />
+                data-video-description='<f:format.raw><f:format.json>{videoDescriptionData}</f:format.json></f:format.raw>'
             </f:if>
+            <f:if condition="{audioDescription}">
+                <f:variable name="audioDescriptionData" value="{
+                        0: {
+                            type: audioDescription.properties.mime_type,
+                            src: audioDescription.publicUrl
+                        }
+                    }" />
+                data-audio-description='<f:format.raw><f:format.json>{audioDescriptionData}</f:format.json></f:format.raw>'
+                data-audio-description-voiceover='true'
+            </f:if>
+            >
+            <f:if condition="{videoCaption}">
+                <track label="Deutsch" kind="subtitles" srclang="de" src="{videoCaption.publicUrl}" />
+            </f:if>
+            </video>
         </div>
         <f:if condition="{data.imageorient} == '0'">
             <f:if condition="{data.header}">
@@ -47,17 +66,12 @@
             </f:if>
         </f:if>
     </div>
-    <f:comment><!--
-        For this media element to work properly you need to link it to mediaelements.js
-
-        An example is packages in gsb_public_frontend
-
-        <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/mediaelements.js"/>
--   --></f:comment>
+    <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/mediaelements.js" />
 </f:if>
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/youtube'">
-    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+         id="c{data.uid}">
         <f:if condition="{data.imageorient} == '8'">
             <f:if condition="{data.header}">
                 <f:render arguments="{_all}" partial="Header/All" />
@@ -69,16 +83,23 @@
         <div class="video video-youtube{f:if(condition: '{data.imageorient} == 0', then: ' mb-3', else: ' mt-3')}">
             <f:if condition="{files}">
                 <f:then>
-                    <div class="dsgvo dsgvo-youtube" style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
+                    <div class="dsgvo dsgvo-youtube"
+                         style="background:url('{f:uri.image(image: videoImg, maxWidth: 973, maxHeight: 535c)}') no-repeat 0 0; background-size: cover;"
+                         data-src="{videoRelation.publicUrl}"
+                         data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:then>
                 <f:else>
-                    <div class="dsgvo dsgvo-youtube" style="background-color:#333333;" data-src="{videoRelation.publicUrl}" data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
+                    <div class="dsgvo dsgvo-youtube" style="background-color:#333333;"
+                         data-src="{videoRelation.publicUrl}"
+                         data-title="{f:if(condition: videoRelation.properties.title, then: '{videoRelation.properties.title}', else: '{videoRelation.originalFile.properties.title}')}">
                 </f:else>
             </f:if>
             <div class="player-wrapper">
                 <div class="dsgvo-text">
-                    <button class="video-start video-start-youtube" title="{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}" type="button">
-                        <span class="visually-hidden">{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}</span>
+                    <button class="video-start video-start-youtube"
+                            title="{f:translate(key: 'videoyoutube.play', extensionName: 'gsb_core')}" type="button">
+                        <span class="visually-hidden">{f:translate(key: 'videoyoutube.play', extensionName:
+                            'gsb_core')}</span>
                     </button>
                     <f:format.html>{f:translate(key: 'videoyoutube.link', extensionName: 'gsb_core')}</f:format.html>
                 </div>
@@ -97,7 +118,8 @@
 </f:if>
 
 <f:if condition="{videoRelation.originalFile.properties.mime_type} == 'video/vimeo'">
-    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}" id="c{data.uid}">
+    <div class="frame frame-{data.frame_class} frame-type-video frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+         id="c{data.uid}">
         <f:if condition="{data.imageorient} == '8'">
             <f:if condition="{data.header}">
                 <f:render arguments="{_all}" partial="Header/All" />
@@ -117,8 +139,10 @@
             </f:if>
             <div class="player-wrapper">
                 <div class="dsgvo-text">
-                    <button class="video-start video-start-vimeo" title="{f:translate(key: 'videovimeo.play', extensionName: 'gsb_core')}" type="button">
-                        <span class="visually-hidden">{f:translate(key: 'videovimeo.play', extensionName: 'gsb_core')}</span>
+                    <button class="video-start video-start-vimeo"
+                            title="{f:translate(key: 'videovimeo.play', extensionName: 'gsb_core')}" type="button">
+                        <span class="visually-hidden">{f:translate(key: 'videovimeo.play', extensionName:
+                            'gsb_core')}</span>
                     </button>
                     <f:format.html>{f:translate(key: 'videovimeo.link', extensionName: 'gsb_core')}</f:format.html>
                 </div>
@@ -136,5 +160,5 @@
     </div>
 </f:if>
 
-<f:asset.css href="EXT:gsb_core/Resources/Public/StyleSheets/mediaelements.css" identifier="mediaelementsCSS"/>
+<f:render arguments="{_all}" partial="MediaElements" />
 </html>

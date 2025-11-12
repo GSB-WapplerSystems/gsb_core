@@ -22,18 +22,13 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\ViewHelpers\Format\Json;
 
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Class DecodeViewHelper
  */
 class DecodeViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
     /**
      * @var bool
      */
@@ -49,31 +44,22 @@ class DecodeViewHelper extends AbstractViewHelper
      */
     public function initializeArguments(): void
     {
-        $this->registerArgument('json', 'string', 'The JSON string to decode', true);
+        $this->registerArgument('value', 'string', 'The JSON string to decode', true);
     }
 
-    /**
-     * @param array $arguments
-     * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return string
-     */
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
+    public function render()
     {
-        if ($arguments === ['']) {
-            return '';
-        }
-        $json = $arguments['json'];
+        $json = $this->arguments['value'] ?? null;
 
-        if ($json === '' || $json === null) {
+        if ($json === null) {
             return '';
         }
 
-        $decodedValue = json_decode($json, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('The provided argument is invalid JSON.', 1358440054);
+        if ($json === '') {
+            throw new \JsonException('Empty string is not valid JSON');
         }
+
+        $decodedValue = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         return $decodedValue;
     }

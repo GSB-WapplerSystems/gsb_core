@@ -27,14 +27,16 @@
     <f:comment><!-- we render in a section so we dont spill internal variables into the global space --></f:comment>
     <f:section name="mainItemLoop"><f:spaceless>
         <f:variable name="signLanguagePageAdditionalClass"></f:variable>
-        <f:variable name="simpleLanguagePageAdditionalClass"></f:variable>
-        <f:variable name="linkToPage"><f:link.typolink parameter="{mainItem.data.uid}" /></f:variable>
-        <f:if condition="{site.configuration.sign-language-page} && {f:link.typolink(parameter: site.configuration.sign-language-page)} == {linkToPage}">
+        <f:variable name="simpleLanguagePageAdditionalClass"></f:variable> 
+
+        <f:if condition="{site.configuration.settings.accessability.signLanguagePage}  == {mainItem.data.uid}">
             <f:variable name="signLanguagePageAdditionalClass"> sign-language-page</f:variable>
         </f:if>
-        <f:if condition="{site.configuration.simple-language-page} && {f:link.typolink(parameter: site.configuration.simple-language-page)} == {linkToPage}">
+
+        <f:if condition="{site.configuration.settings.accessability.simpleLanguagePage} == {mainItem.data.uid}">
             <f:variable name="simpleLanguagePageAdditionalClass"> simple-language-page</f:variable>
         </f:if>
+        
         </f:spaceless><li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
             <f:if condition="{mainItem.current}">
                 <f:then>

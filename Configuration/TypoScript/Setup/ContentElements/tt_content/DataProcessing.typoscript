@@ -32,13 +32,11 @@ page {
         references.data = levelmedia: -1, slide
         as = media
       }
-      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 = ITZBund\GsbCore\DataProcessing\CachedMenuProcessor
       20 {
-        special = directory
-        special.value = {$config.pids.Home}
-        levels = 4
-        includeSpacer = 1
         as = menuMain
+        breadcrumbAs = breadcrumbMenu
+        rootPageId = {$navigation.home-page}
       }
       30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       30 {
@@ -50,36 +48,23 @@ page {
       40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       40 {
         special = directory
-        special.value = {$config.pids.Footer}
+        special.value = {$navigation.footer-page}
         levels = 1
         as = menuMeta
       }
       50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       50 {
         special = directory
-        special.value = {$config.pids.Meta}
+        special.value = {$navigation.meta-page}
         levels = 1
         as = menuMetaTop
       }
       60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       60 {
         special = directory
-        special.value = {$config.pids.MetaTop}
+        special.value = {$navigation.metaTop-page}
         levels = 1
         as = menuMetaMain
-      }
-      70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      70 {
-        special = directory
-        special.value = {$config.pids.Home}
-        levels = 4
-        includeSpacer = 1
-        as = menuMainDesktop
-      }
-      80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      80 {
-        as = breadcrumbMenu
-        special = rootline
       }
       90 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
       90 {

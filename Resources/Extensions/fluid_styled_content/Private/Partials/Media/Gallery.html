@@ -8,25 +8,27 @@
 </f:comment>
 <f:if condition="{gallery.rows}">
     <f:if condition="{gallery.position.horizontal} == center">
-        <div class="ce-gallery" data-images="{gallery.count.files}">
+        <div class="ce-gallery" data-images="{gallery.count.files}"><f:render section="Gallery" arguments="{_all}" /></div>
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        <div class="ce-gallery float-lg-end ms-md-5" data-images="{gallery.count.files}">
+        <div class="ce-gallery float-lg-end ms-md-5" data-images="{gallery.count.files}"><f:render section="Gallery" arguments="{_all}" /></div>
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        <div class="ce-gallery float-lg-start me-md-5" data-images="{gallery.count.files}">
+        <div class="ce-gallery float-lg-start me-md-5" data-images="{gallery.count.files}"><f:render section="Gallery" arguments="{_all}" /></div>
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
-        <div class="ce-gallery ms-md-5 order-1" data-images="{gallery.count.files}">
+        <div class="ce-gallery ms-md-5 order-1" data-images="{gallery.count.files}"><f:render section="Gallery" arguments="{_all}" /></div>
     </f:if>
 
     <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
-        <div class="ce-gallery me-md-5" data-images="{gallery.count.files}">
+        <div class="ce-gallery me-md-5" data-images="{gallery.count.files}"><f:render section="Gallery" arguments="{_all}" /></div>
     </f:if>
+</f:if>
 
+<f:section name="Gallery">
     <f:if condition="{gallery.count.files} == 1">
         <f:then>
             <f:render section="GalleryDiv" arguments="{_all}" />
@@ -35,27 +37,7 @@
             <f:render section="GalleryList" arguments="{_all}" />
         </f:else>
     </f:if>
-
-    <f:if condition="{gallery.position.horizontal} == center">
-        </div>
-    </f:if>
-
-    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        </div>
-    </f:if>
-
-    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} != TRUE">
-        </div>
-    </f:if>
-
-    <f:if condition="{gallery.position.horizontal} == right && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
-        </div>
-    </f:if>
-
-    <f:if condition="{gallery.position.horizontal} == left && {gallery.position.vertical} == intext && {gallery.position.noWrap} == TRUE">
-        </div>
-    </f:if>
-</f:if>
+</f:section>
 
 <f:section name="GalleryDiv">
     <f:for each="{gallery.rows}" as="row" iteration="i">

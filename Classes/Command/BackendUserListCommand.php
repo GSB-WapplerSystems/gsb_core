@@ -24,6 +24,7 @@ namespace ITZBund\GsbCore\Command;
 
 use DASPRiD\Enum\Exception\IllegalArgumentException;
 use Doctrine\DBAL\Exception;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ExceptionInvalidArgumentException;
 use Symfony\Component\Console\Helper\Table;
@@ -34,8 +35,15 @@ use TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
- * List or delete backend users
+ * List backend users by filter criteria
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
+#[AsCommand(
+    name: 'gsbcore:backend:user:list',
+    description: 'List backend users by filter criteria',
+)]
 class BackendUserListCommand extends Command
 {
     public const MODE_CSV = 0;
@@ -99,6 +107,10 @@ EOF
         }
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $filter = $this->sanitizeFilter($input->getOption('filter'));
@@ -172,7 +184,9 @@ EOF
 
     /**
      * @param array<mixed,mixed> $filter
+     *
      * @return array<string,string>
+     *
      * @throws \UnexpectedValueException
      * @throws Exception
      * @throws \InvalidArgumentException
@@ -181,15 +195,14 @@ EOF
     protected function sanitizeFilter(array $filter = []): array
     {
         $connection = $this->connectionPool->getConnectionForTable('be_users');
-        $tableDetails = $connection->getSchemaInformation()->introspectTable('be_users');
-
+        $tableDetails = $connection->createSchemaManager()->listTableColumns('be_users');
         $returnFilter = [];
         foreach ($filter as $filterLine) {
             $split = explode('=', $filterLine);
-            $field = $split[0] ?? null;
+            $field = !empty($split[0]) ? $split[0] : null;
             $value = $split[1] ?? null;
             if ($field !== null && $value !== null && $field !== 'password') {
-                if ($tableDetails->hasColumn($field)) {
+                if (array_key_exists($field, $tableDetails)) {
                     $returnFilter[$field] = $value;
                 }
             }
@@ -197,5 +210,4 @@ EOF
         $connection->close();
         return $returnFilter;
     }
-
 }

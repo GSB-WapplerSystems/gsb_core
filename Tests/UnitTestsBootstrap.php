@@ -14,18 +14,8 @@
  */
 
 /**
- * Boilerplate for a unit test phpunit boostrap file.
- *
- * This file is loosely maintained within TYPO3 testing-framework, extensions
- * are encouraged to not use it directly, but to copy it to an own place,
- * usually in parallel to a UnitTests.xml file.
- *
  * This file is defined in UnitTests.xml and called by phpunit
  * before instantiating the test suites.
- *
- * The recommended way to execute the suite is "runTests.sh". See the
- * according script within TYPO3 core's Build/Scripts directory and
- * adapt to extensions needs.
  */
 (static function () {
     $testbase = new \TYPO3\TestingFramework\Core\Testbase();
@@ -46,18 +36,8 @@
 
     $testbase->defineSitePath();
 
-    // We can use the "typo3/cms-composer-installers" constant "TYPO3_COMPOSER_MODE" to determine composer mode.
-    // This should be always true except for TYPO3 mono repository.
-    $composerMode = defined('TYPO3_COMPOSER_MODE') && TYPO3_COMPOSER_MODE === true;
-
-    // @todo: Remove else branch when dropping support for v12
-    $hasConsolidatedHttpEntryPoint = class_exists(CoreHttpApplication::class);
-    if ($hasConsolidatedHttpEntryPoint) {
-        \TYPO3\TestingFramework\Core\SystemEnvironmentBuilder::run(0, \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_CLI, $composerMode);
-    } else {
-        $requestType = \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_BE | \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_CLI;
-        \TYPO3\TestingFramework\Core\SystemEnvironmentBuilder::run(0, $requestType, $composerMode);
-    }
+    $requestType = \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_BE | \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_CLI;
+    \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::run(0, $requestType);
 
     $testbase->createDirectory(\TYPO3\CMS\Core\Core\Environment::getPublicPath() . '/typo3conf/ext');
     $testbase->createDirectory(\TYPO3\CMS\Core\Core\Environment::getPublicPath() . '/typo3temp/assets');
@@ -76,10 +56,8 @@
         'core',
         new \TYPO3\CMS\Core\Cache\Backend\NullBackend('production', [])
     );
-    $packageManager = \TYPO3\CMS\Core\Core\Bootstrap::createPackageManager(
-        \TYPO3\CMS\Core\Package\UnitTestPackageManager::class,
-        \TYPO3\CMS\Core\Core\Bootstrap::createPackageCache($cache)
-    );
+    // Set all packages to active
+    $packageManager = \TYPO3\CMS\Core\Core\Bootstrap::createPackageManager(\TYPO3\CMS\Core\Package\UnitTestPackageManager::class, \TYPO3\CMS\Core\Core\Bootstrap::createPackageCache($cache));
 
     \TYPO3\CMS\Core\Utility\GeneralUtility::setSingletonInstance(\TYPO3\CMS\Core\Package\PackageManager::class, $packageManager);
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::setPackageManager($packageManager);

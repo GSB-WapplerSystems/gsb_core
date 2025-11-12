@@ -168,6 +168,9 @@
 			<trans-unit id="tt_content.tx_link_position" resname="tt_content.tx_link_position">
 				<source>Link position</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_image_link" resname="tt_content.tx_image_link">
+				<source>Image Link</source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_link_layout.I.0" resname="tt_content.tx_link_layout.I.0">
 				<source>Primary button</source>
 			</trans-unit>
@@ -750,27 +753,6 @@
 			<trans-unit id="tx_gsbcore_forms.value15" resname="tx_gsbcore_forms.value15">
 				<source>Value 15</source>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent" resname="tx_gsbcore_consent">
-				<source>Consent layer</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.header" resname="tx_gsbcore_consent.header">
-				<source>Header</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.body" resname="tx_gsbcore_consent.body">
-				<source>Body</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept">
-				<source>Show accept button</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.show_accept.show" resname="tx_gsbcore_consent.show_accept.show">
-				<source>Show</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.show_accept.hide" resname="tx_gsbcore_consent.show_accept.hide">
-				<source>Hide</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.accept_button_label" resname="tx_gsbcore_consent.accept_button_label">
-				<source>Accept button label</source>
-			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage" resname="page.configuration.sitepackage">
 				<source>Site package of this site</source>
 			</trans-unit>
@@ -1128,6 +1110,12 @@
 			</trans-unit>
 			<trans-unit id="page.configuration.sign-language-page.description" resname="page.configuration.sign-language-page.description">
 				<source>configure Page for Sign Language hier</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.label" resname="tt_content.palettes.image_link_config.label">
+				<source>Image Link Configuration</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
+				<source>Configure link settings for the image element</source>
 			</trans-unit>
 		</body>
 	</file>

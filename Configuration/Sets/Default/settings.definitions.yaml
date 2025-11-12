@@ -1,0 +1,54 @@
+categories:
+  GSB: ~
+  GSB.functions:
+    parent: GSB
+  GSB.copyright:
+    parent: GSB
+  GSB.style:
+    parent: GSB
+  GSB.devconfig:
+    parent: GSB
+  felogin:
+    parent: GSB.devconfig
+settings:
+  # Override felogin default values for GSB
+  felogin.emailFrom:
+    default: 'noreply@gsb.bund.de'
+    type: string
+    category: felogin
+  felogin.emailFromName:
+    default: 'GSB Bundesverwaltung'
+    type: string
+    category: felogin
+  felogin.replyToEmail:
+    default: 'support@gsb.bund.de'
+    type: string
+    category: felogin
+  felogin.showForgotPassword:
+    default: true
+    type: bool
+    category: felogin
+  felogin.showPermaLogin:
+    default: true
+    type: bool
+    category: felogin
+  felogin.showLogoutFormAfterLogin:
+    default: false
+    type: bool
+    category: felogin
+  felogin.forgotLinkHashValidTime:
+    default: 24
+    type: int
+    category: felogin
+  felogin.redirectMode:
+    default: 'login,referer'
+    type: string
+    category: felogin
+  felogin.redirectFirstMethod:
+    default: true
+    type: bool
+    category: felogin
+  felogin.exposeNonexistentUserInForgotPasswordDialog:
+    default: false
+    type: bool
+    category: felogin

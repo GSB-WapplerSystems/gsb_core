@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/Default/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
+		<header />
+		<body>
+			<!-- Default Settings Category -->
+			<trans-unit id="categories.GSB">
+				<source>GSB Individualization Settings</source>
+				<target>GSB Individualisierungs Einstellungen</target>
+			</trans-unit>
+			<!-- Function Settings Category -->
+			<trans-unit id="categories.GSB.functions">
+				<source>⚙️ Functions</source>
+				<target>⚙️ Funktionen</target>
+			</trans-unit>
+			<!-- Style Settings Category -->
+			<trans-unit id="categories.GSB.style">
+				<source>🎨 Style Settings</source>
+				<target>🎨 Stil-Corporate Design</target>
+			</trans-unit>
+			<!-- Copyright Settings Category -->
+			<trans-unit id="categories.GSB.copyright">
+				<source>©️ Copyright Settings</source>
+				<target>©️ Urheberrechtshinweis (Copyright)</target>
+			</trans-unit>
+			<!-- Developer Settings Category -->
+			<trans-unit id="categories.GSB.devconfig">
+				<source>🚧 Developer Configuration</source>
+				<target>🚧 Entwickler Konfiguration</target>
+			</trans-unit>
+			<!-- felogin Settings Category -->
+			<trans-unit id="categories.felogin">
+				<source>felogin Settings</source>
+				<target>felogin Einstellungen</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

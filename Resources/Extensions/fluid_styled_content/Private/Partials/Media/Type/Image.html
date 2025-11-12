@@ -1,22 +1,13 @@
-<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<f:comment>
-    <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers">
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
-    SPDX-License-Identifier: GPL-3.0-or-later
-    -->
-</f:comment>
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
     <figure class="figure{f:if(condition: file.properties.copyright, then: ' me-lg-3')}">
-        <f:if condition="{file.link}">
-            <f:then>
-                <f:link.typolink parameter="{file.link}" title="{file.link.title}">
-                    <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
-                </f:link.typolink>
-            </f:then>
-            <f:else>
-                <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
-            </f:else>
-        </f:if>
+        <f:render arguments="{file: file, dimensions: dimensions, settings: settings, data: data, index: index, metaDataProperties: metaDataProperties}" partial="Media/Rendering/Image"/>
         <f:if condition="{file.originalFile.properties.caption} || {file.properties.caption}">
             <figcaption class="figure-caption">
                 <f:if condition="{file.properties.caption}">

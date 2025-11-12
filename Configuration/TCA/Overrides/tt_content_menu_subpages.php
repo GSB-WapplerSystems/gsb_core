@@ -69,7 +69,7 @@ defined('TYPO3') || die();
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
         --palette--;;frames,
         --palette--;;menu_subpages_items_appearance,
-        --palette--;;appearanceLinks, tx_dpnglossary_disable_parser,
+        --palette--;;appearanceLinks,
     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.accessibility,
         --palette--;;menu_accessibility,
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

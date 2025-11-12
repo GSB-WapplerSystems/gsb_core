@@ -55,18 +55,6 @@ page {
   }
   10 = FLUIDTEMPLATE
   10 {
-    # Template names will be generated automatically by converting the applied
-    # backend_layout, there is no explicit mapping necessary anymore.
-    #
-    # BackendLayout Key
-    # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
-    #
-    # Backend Record
-    # uid: 1 -> 1.html
-    #
-    # Database Entry
-    # value: -1 -> None.html
-    # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
     templateName = TEXT
     templateName {
       cObject = TEXT
@@ -97,20 +85,6 @@ page {
       // set main-menu
       navType = TEXT
       navType.value = 0
-
-      // social media links
-      socialLinks-Facebook = TEXT
-      socialLinks-Facebook.value = {$config.socialLinks.Facebook}
-      socialLinks-Instagram = TEXT
-      socialLinks-Instagram.value = {$config.socialLinks.Instagram}
-      socialLinks-Twitter = TEXT
-      socialLinks-Twitter.value = {$config.socialLinks.Twitter}
-      socialLinks-YouTube = TEXT
-      socialLinks-YouTube.value = {$config.socialLinks.YouTube}
-
-      // getting absRefPrefix dynamically
-      absRefPrefix = TEXT
-      absRefPrefix.value = {$config.absRefPrefix}
 
       # general title and vars
       jumpNav = < lib.jumpNav
@@ -153,14 +127,10 @@ page {
   }
 }
 
-[traverse(site("configuration"),"navType") == "1"]
+[site('configuration')['settings']['navigation']['gsb-navType'] == "1"]
   page.10.variables.navType.value = 1
 [GLOBAL]
 
-[traverse(site("configuration"),"google_site_verification") !== ""]
-  page.meta.google-site-verification =
-  page.meta.google-site-verification {
-    preCObject = TEXT
-    data = site:google_site_verification
-  }
+[site('configuration')['settings']['search']['googleSiteVerification'] !== ""]
+  page.meta.google-site-verification = {$search.googleSiteVerification}
 [GLOBAL]

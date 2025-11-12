@@ -22,9 +22,10 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Session\Backend;
 
-use Exception;
+use ITZBund\GsbCore\DataTransferObject\RedisEndpoint;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotCreatedException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotFoundException;
 use TYPO3\CMS\Core\Session\Backend\Exception\SessionNotUpdatedException;
@@ -39,51 +40,48 @@ use TYPO3\CMS\Core\Session\Backend\SessionBackendInterface;
  * .'persistentConnection' (default false), 'connectionTimeout' (default 0.0)
  *
  * Fails gracefully if redis is not available nad try to reconnect a few times before giving up.
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class SentinelCapableRedisSessionBackend implements SessionBackendInterface, HashableSessionBackendInterface, LoggerAwareInterface
 {
     use LoggerAwareTrait;
-    /**
-     * @var \RedisSentinel
-     */
+
     protected ?\RedisSentinel $redisSentinel = null;
 
     /**
-     * @var array
+     * @var mixed[]
      */
-    protected $configuration = [];
+    protected array $configuration = [];
 
     /**
      * Indicates whether the server is connected
-     *
-     * @var bool
      */
-    protected $connected = false;
+    protected bool $connected = false;
 
     /**
      * Used as instance independent identifier
      * (e.g. if multiple installations write into the same database)
-     *
-     * @var string
      */
-    protected $applicationIdentifier = '';
+    protected string $applicationIdentifier = '';
 
     /**
      * Instance of the PHP redis class
-     *
-     * @var \Redis
      */
-    protected $redis;
+    protected \Redis $redis;
 
-    /**
-     * @var string
-     */
-    protected $identifier;
+    protected string $identifier;
+
+    public function __construct(private readonly Context $context) {}
 
     /**
      * Initializes the session backend
      *
      * @param string $identifier Name of the session type, e.g. FE or BE
+     * @param mixed[] $configuration Configuration for the session backend, e.g. hostname, port, database, password
+     *
      * @internal To be used only by SessionManager
      */
     public function initialize(string $identifier, array $configuration): void
@@ -138,7 +136,8 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
     /**
      * Read session data, fail gracefully if redis is not available
      *
-     * @return array Returns the session data
+     * @return mixed[] Returns the session data
+     *
      * @throws SessionNotFoundException
      */
     public function get(string $sessionId): array
@@ -207,7 +206,10 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
      * This method updates ses_tstamp automatically
      * This method will fail gracefully if redis is not available
      *
-     * @return array The newly created session record.
+     * @param mixed[] $sessionData
+     *
+     * @return mixed[] The newly created session record.
+     *
      * @throws SessionNotCreatedException
      */
     public function set(string $sessionId, array $sessionData): array
@@ -221,7 +223,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
             $hashedSessionId = $this->hash($sessionId);
             $sessionData['ses_id'] = $hashedSessionId;
-            $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
+            $sessionData['ses_tstamp'] = $this->context->getPropertyFromAspect('date', 'timestamp') ?? time();
 
             // nx will not allow overwriting existing keys
             $jsonString = json_encode($sessionData);
@@ -254,8 +256,10 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
      * This method updates ses_tstamp automatically
      * This method will fail gracefully if redis is not available
      *
-     * @param array $sessionData The session data to update. Data may be partial.
-     * @return array $sessionData The newly updated session record.
+     * @param mixed[] $sessionData The session data to update. Data may be partial.
+     *
+     * @return mixed[] $sessionData The newly updated session record.
+     *
      * @throws SessionNotUpdatedException
      */
     public function update(string $sessionId, array $sessionData): array
@@ -268,7 +272,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
                 throw new SessionNotUpdatedException('Cannot update non-existing record', 1484389971, $e);
             }
             $sessionData['ses_id'] = $hashedSessionId;
-            $sessionData['ses_tstamp'] = $GLOBALS['EXEC_TIME'] ?? time();
+            $sessionData['ses_tstamp'] = $this->context->getPropertyFromAspect('date', 'timestamp') ?? time();
 
             $key = $this->getSessionKeyName($hashedSessionId);
             $jsonString = json_encode($sessionData);
@@ -301,14 +305,16 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
     {
         try {
             foreach ($this->getAll() as $sessionRecord) {
-                if (!($sessionRecord['ses_userid'] ?? false)) {
-                    if ($maximumAnonymousLifetime > 0 && ($sessionRecord['ses_tstamp'] + $maximumAnonymousLifetime) < $GLOBALS['EXEC_TIME']) {
-                        $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
-                    }
-                } else {
-                    if (($sessionRecord['ses_tstamp'] + $maximumLifetime) < $GLOBALS['EXEC_TIME']) {
-                        $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
-                    }
+                if (
+                    (
+                        !($sessionRecord['ses_userid'] ?? false)
+                        && $maximumAnonymousLifetime > 0
+                        && ($sessionRecord['ses_tstamp'] + $maximumAnonymousLifetime) < $this->context->getPropertyFromAspect('date', 'timestamp')
+                    ) || (
+                        ($sessionRecord['ses_tstamp'] + $maximumLifetime) < $this->context->getPropertyFromAspect('date', 'timestamp')
+                    )
+                ) {
+                    $this->redis->del($this->getSessionKeyName($sessionRecord['ses_id']));
                 }
             }
         } catch (\Throwable $e) {
@@ -321,16 +327,12 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
     private function initializeRead(): void
     {
-        $this->retryOperation(function () {
-            $this->initializeConnection(false);
-        });
+        $this->retryOperation(fn() => $this->initializeConnection(false));
     }
 
     private function initializeWrite(): void
     {
-        $this->retryOperation(function () {
-            $this->initializeConnection(true);
-        });
+        $this->retryOperation(fn() => $this->initializeConnection(true));
     }
 
     /**
@@ -341,46 +343,8 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
     protected function initializeConnection(bool $useWriteConnection): void
     {
         try {
-            $this->redis = new \Redis();
-            $host = $this->configuration['hostname'] ?? '127.0.01';
-            $port = $this->configuration['port'] ?? 6379;
-
-            if (array_key_exists('isSentinel', $this->configuration)  && $this->configuration['isSentinel'] && $useWriteConnection) {
-                $sentinelConfig = [
-                    'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
-                    'port' => $this->configuration['sentinelPort'] ?? 26379,
-                    'connectTimeout' => $this->configuration['connectionTimeout'] ?? 0.0,
-                    'persistent' => ($this->configuration['persistentConnection'] === true) ? $this->identifier : null,
-                ];
-
-                if ($this->configuration['sentinelPassword'] !== null) {
-                    $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
-                }
-
-                $this->redisSentinel = new \RedisSentinel($sentinelConfig);
-                $sentinelMaster = $this->redisSentinel->masters();
-                if ($sentinelMaster === false) {
-                    throw new \Exception('Could not get master from sentinel.', 1279765134);
-                }
-
-                $host = $sentinelMaster[0]['ip'];
-                $port = $sentinelMaster[0]['port'];
-            }
-
-            if ($this->configuration['persistentConnection']) {
-                $this->connected = $this->redis->pconnect(
-                    (string)$host,
-                    (int)$port,
-                    $this->configuration['connectionTimeout'] ?? 0.0,
-                    $this->configuration['database'] ?? 0
-                );
-            } else {
-                $this->connected = $this->redis->connect(
-                    (string)$host,
-                    (int)$port,
-                    $this->configuration['connectionTimeout'] ?? 0.0
-                );
-            }
+            $redisEndpoint = $this->getRedisEndpoint($useWriteConnection);
+            $this->setConnectedRedis($redisEndpoint);
         } catch (\RedisException $e) {
             $this->logger?->alert('Could not connect to redis server.', ['exception' => $e]);
         }
@@ -416,7 +380,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
     /**
      * List all sessions
      *
-     * @return array Return a list of all user sessions. The list may be empty.
+     * @return mixed[] Return a list of all user sessions. The list may be empty.
      */
     public function getAll(): array
     {
@@ -456,6 +420,74 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
         return $sessions;
     }
 
+    /**
+     * @return RedisEndpoint
+     *
+     * @throws \Exception
+     */
+    private function getRedisEndpoint(bool $useWriteConnection): RedisEndpoint
+    {
+        $timeout = (float)($this->configuration['connectionTimeout'] ?? 0.0);
+        $persistentId = (string)($this->configuration['database'] ?? '0');
+
+        if (!array_key_exists('isSentinel', $this->configuration) || !$this->configuration['isSentinel'] || !$useWriteConnection) {
+            return new RedisEndpoint(
+                (string)($this->configuration['hostname'] ?? '127.0.0.1'),
+                (int)($this->configuration['port'] ?? 6379),
+                $timeout,
+                $persistentId
+            );
+        }
+
+        $sentinelConfig = [
+            'host' => $this->configuration['sentinelHostname'] ?? '127.0.0.1',
+            'port' => $this->configuration['sentinelPort'] ?? 26379,
+            'connectTimeout' => $timeout,
+            'persistent' => ($this->configuration['persistentConnection'] === true) ? $this->identifier : null,
+        ];
+
+        if ($this->configuration['sentinelPassword'] !== null) {
+            $sentinelConfig['auth'] = $this->configuration['sentinelPassword'];
+        }
+
+        /** @phpstan-ignore-next-line */
+        $this->redisSentinel = new \RedisSentinel($sentinelConfig);
+        $sentinelMaster = $this->redisSentinel->masters();
+
+        if ($sentinelMaster === false) {
+            throw new \Exception('Could not get master from sentinel.', 1279765134);
+        }
+
+        return new RedisEndpoint(
+            (string)$sentinelMaster[0]['ip'],
+            (int)$sentinelMaster[0]['port'],
+            $timeout,
+            $persistentId
+        );
+    }
+
+    private function setConnectedRedis(RedisEndpoint $redisEndpoint): void
+    {
+        $this->redis = new \Redis();
+
+        if ($this->configuration['persistentConnection']) {
+            $this->connected = $this->redis->pconnect(
+                $redisEndpoint->getHost(),
+                $redisEndpoint->getPort(),
+                $redisEndpoint->getTimeout(),
+                $redisEndpoint->getPersistentId()
+            );
+
+            return;
+        }
+
+        $this->connected = $this->redis->connect(
+            $redisEndpoint->getHost(),
+            $redisEndpoint->getPort(),
+            $redisEndpoint->getTimeout(),
+        );
+    }
+
     protected function getSessionKeyName(string $sessionId): string
     {
         return $this->applicationIdentifier . $sessionId;
@@ -472,7 +504,9 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
      * @param callable $operation
      * @param int $retryCount
      * @param int $delay
+     *
      * @return mixed
+     *
      * @throws \RedisException
      */
     private function retryOperation(callable $operation, int $retryCount = 3, int $delay = 100): mixed
@@ -481,10 +515,7 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
             try {
                 return $operation();
             } catch (\RedisException $e) {
-                if ($this->isPermanentException($e)) {
-                    throw $e;
-                }
-                if ($attempt === $retryCount - 1) {
+                if ($this->isPermanentException($e) || $attempt === $retryCount - 1) {
                     throw $e;
                 }
                 // Wait for a while before retrying
@@ -496,20 +527,20 @@ class SentinelCapableRedisSessionBackend implements SessionBackendInterface, Has
 
     /**
      * Check if the given exception is permanent or temporary
-     * @param \RedisException $e
+     * @param \RedisException $exception
      * @return bool
      */
-    private function isPermanentException(\RedisException $e): bool
+    private function isPermanentException(\RedisException $exception): bool
     {
         // Check for authentification errors
-        if (str_contains($e->getMessage(), 'AUTH')) {
+        if (str_contains($exception->getMessage(), 'AUTH')) {
             return true; // Authentification errors are permanent
         }
 
         // Check for configuration errors
         $configurationErrors = ['host', 'port', 'database'];
         foreach ($configurationErrors as $errorString) {
-            if (str_contains($e->getMessage(), $errorString)) {
+            if (str_contains($exception->getMessage(), $errorString)) {
                 return true; // Configuration errors are permanent
             }
         }

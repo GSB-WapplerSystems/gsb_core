@@ -871,26 +871,6 @@
 				<source>Value 15</source>
 				<target>Wert 15</target>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent" resname="tx_gsbcore_consent" approved="yes">
-				<source>Consent layer</source>
-				<target>Consent popup</target>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.header" resname="tx_gsbcore_consent.header" approved="yes">
-				<source>Header</source>
-				<target>Überschrift</target>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.body" resname="tx_gsbcore_consent.body" approved="yes">
-				<source>Body</source>
-				<target>Text</target>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.show_accept" resname="tx_gsbcore_consent.show_accept" approved="yes">
-				<source>Show accept button</source>
-				<target>Annehmen-Button anzeigen</target>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_consent.accept_button_label" resname="tx_gsbcore_consent.accept_button_label" approved="yes">
-				<source>Accept button label</source>
-				<target>Annehmen-Button-Beschriftung</target>
-			</trans-unit>
 			<trans-unit id="page.configuration.sitepackage.search.palette.lable" resname="page.configuration.sitepackage.search.palette.lable">
 				<source>Favicons can be configured here.</source>
 				<target>Faceten nutzen</target>
@@ -1375,6 +1355,14 @@
 			<trans-unit id="page.configuration.sign-language-page.description" resname="page.configuration.sign-language-page.description">
 				<source>configure Page for Sign Language hier</source>
 				<target>Konfiguration Gebärdensprache Seite</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.label" resname="tt_content.palettes.image_link_config.label">
+				<source>Image Link Configuration</source>
+				<target>Bild-Link Konfiguration</target>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
+				<source>Configure link settings for the image element</source>
+				<target>Link-Einstellungen für das Bildelement konfigurieren</target>
 			</trans-unit>
 		</body>
 	</file>

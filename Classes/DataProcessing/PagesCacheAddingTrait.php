@@ -20,8 +20,9 @@
 
 namespace ITZBund\GsbCore\DataProcessing;
 
+use TYPO3\CMS\Core\Cache\CacheDataCollector;
+use TYPO3\CMS\Core\Cache\CacheTag;
 use TYPO3\CMS\Core\Http\ServerRequest;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 trait PagesCacheAddingTrait
 {
@@ -29,9 +30,11 @@ trait PagesCacheAddingTrait
     {
         $request = $GLOBALS['TYPO3_REQUEST'] ?? null;
         if ($request instanceof ServerRequest) {
-            /** @var TyposcriptFrontendController $controller */
-            $controller = $request->getAttribute('frontend.controller');
-            $controller->addCacheTags([sprintf('pageId_%d', $pageUid)]);
+            /** @var CacheDataCollector $collector */
+            $collector = $request->getAttribute('frontend.cache.collector');
+            $collector->addCacheTags(
+                new CacheTag(sprintf('pageId_%d', $pageUid), 3600)
+            );
         }
     }
 }

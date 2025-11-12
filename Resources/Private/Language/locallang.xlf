@@ -127,7 +127,7 @@
 				<source>Play video</source>
 			</trans-unit>
 			<trans-unit id="videoyoutube.link" resname="videoyoutube.link">
-				<source><![CDATA[<p><span class="h4">Please note!</span><br>By clicking on the button, you accept the transfer of your data (including IP address) to YouTube. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the <a href="/en/privacy-policy"><u>Privacy Policy</u></a>.</p>]]></source>
+				<source><![CDATA[<p><span class="h4">Please note!</span><br>By clicking on the button, you accept the transfer of your data (including IP address) to YouTube. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the <a href="/en/privacy-policy" target="_blank"><u>Privacy Policy</u></a>.</p>]]></source>
 			</trans-unit>
 			<trans-unit id="audio.play" resname="audio.play">
 				<source>Play audio</source>
@@ -338,15 +338,6 @@
 			</trans-unit>
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
-			</trans-unit>
-			<trans-unit id="dpn_glossary.modal_close" resname="dpn_glossary.modal_close">
-				<source>Close</source>
-			</trans-unit>
-			<trans-unit id="dpn_glossary.to_glossary" resname="dpn_glossary.to_glossary">
-				<source>To the glossary</source>
-			</trans-unit>
-			<trans-unit id="dpn_glossary.letter_filter" resname="dpn_glossary.letter_filter">
-				<source>Filter for letter</source>
 			</trans-unit>
 		</body>
     </file>

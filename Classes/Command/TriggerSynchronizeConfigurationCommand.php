@@ -6,6 +6,7 @@
 
 namespace ITZBund\GsbCore\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,6 +15,10 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 /**
  * Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions
  */
+#[AsCommand(
+    name: 'gsbcore:triggersynchronize',
+    description: 'Used to trigger ExtensionConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions to get around readonly filesystem woes',
+)]
 class TriggerSynchronizeConfigurationCommand extends Command
 {
     public function __construct(private readonly ExtensionConfiguration $extConfiguration)
@@ -21,6 +26,10 @@ class TriggerSynchronizeConfigurationCommand extends Command
         parent::__construct();
     }
 
+    /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->extConfiguration->synchronizeExtConfTemplateWithLocalConfigurationOfAllExtensions(true);

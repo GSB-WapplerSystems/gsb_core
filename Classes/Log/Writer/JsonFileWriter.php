@@ -29,6 +29,7 @@ use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Log\LogRecord;
 use TYPO3\CMS\Core\Log\Writer\FileWriter;
+use TYPO3\CMS\Core\Log\Writer\WriterInterface;
 use TYPO3\CMS\Core\SysLog\Action as SystemLogAction;
 use TYPO3\CMS\Core\SysLog\Error as SystemLogErrorClassification;
 use TYPO3\CMS\Core\SysLog\Type as SystemLogType;
@@ -38,27 +39,28 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * Specialized writer that uses Symfony Serializer to encode the log data as json
  *
  * Best used in containers when directing the output to php://stderr
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class JsonFileWriter extends FileWriter
 {
     /**
      * Writes the log record
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UndefinedVariable)
      *
      * @param LogRecord $record Log record
-     * @return WriterInterface $this
      * @throws \RuntimeException
      */
-    public function writeLog(LogRecord $record)
+    public function writeLog(LogRecord $record): WriterInterface
     {
         $context = $record->getData();
         $message = $record->getMessage();
 
-        if (!empty($context)) {
+        if (!empty($context) && isset($context['exception']) && $context['exception'] instanceof \Throwable) {
             // Fold an exception into the message, and string-ify it into context so it can be jsonified.
-            if (isset($context['exception']) && $context['exception'] instanceof \Throwable) {
-                $message .= $this->formatException($context['exception']);
-                $context['exception'] = (string)$context['exception'];
-            }
+            $message .= $this->formatException($context['exception']);
+            $context['exception'] = (string)$context['exception'];
         }
 
         $payload = [
@@ -76,14 +78,12 @@ class JsonFileWriter extends FileWriter
             $payload['X-Request-Id'] = (string)reset($requestIdHeader);
         }
 
-        $encoders = [new JsonEncoder()];
-        $normalizers = [new ObjectNormalizer()];
-        $serializer = GeneralUtility::makeInstance(Serializer::class, $normalizers, $encoders);
-
+        $serializer = $this->getSerializer();
         /* we don't want to stumble over warnings like undefined keys */
         $oldReporting = (int)ini_get('error_reporting');
         error_reporting(E_ERROR);
         $safePayload = $payload;
+
         try {
             $jsonString = $serializer->serialize($payload, 'json');
         } catch (\Exception $e) {
@@ -96,23 +96,34 @@ class JsonFileWriter extends FileWriter
 
         error_reporting($oldReporting);
 
+        /** @phpstan-ignore-next-line */
         if (fwrite(self::$logFileHandles[$this->logFile], $jsonString . LF) === false) {
-            if ($this->getBackendUser() instanceof BackendUserAuthentication) {
-                try {
-                    $this->getBackendUser()->writelog(SystemLogType::ERROR, SystemLogAction::UNDEFINED, SystemLogErrorClassification::USER_ERROR, 0, 'Could not write log record to log file', $safePayload);
-                } catch (\Exception $e) {
-
-                }
-            } else {
-                throw new \RuntimeException('Could not write log record to log file', 1697542908);
-            }
+            $this->getBackendUser()->writelog(
+                SystemLogType::ERROR,
+                SystemLogAction::UNDEFINED,
+                SystemLogErrorClassification::USER_ERROR,
+                null,
+                'Could not write log record to log file',
+                $safePayload
+            );
         }
 
         return $this;
     }
 
-    protected function getBackendUser(): ?BackendUserAuthentication
+    protected function getSerializer(): Serializer
     {
-        return $GLOBALS['BE_USER'] ?? null;
+        return GeneralUtility::makeInstance(Serializer::class, [new ObjectNormalizer()], [new JsonEncoder()]);
+    }
+
+    protected function getBackendUser(): BackendUserAuthentication
+    {
+        $beUser = $GLOBALS['BE_USER'] ?? null;
+
+        if (!$beUser instanceof BackendUserAuthentication) {
+            throw new \RuntimeException('Could not get BackendUser', 1697542908);
+        }
+
+        return $beUser;
     }
 }

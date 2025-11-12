@@ -6,7 +6,8 @@
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
 </f:comment>
-<f:if condition="{file.properties.copyright} && {site.configuration.show-copyright} == 1">
+
+<f:if condition="{file.properties.copyright} && {site.configuration.settings.copyright.show-copyright} == true">
     <div class="btn-copyright-wrapper dropstart">
         <button aria-expanded="false" class="btn btn-image btn-copyright" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">
             <span class="visually-hidden"><f:translate key="LLL:EXT:gsb_core/Resources/Private/Language/locallang.xlf:gallery.copyright.button" /></span>

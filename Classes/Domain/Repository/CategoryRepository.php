@@ -6,6 +6,10 @@
 
 namespace ITZBund\GsbCore\Domain\Repository;
 
+use ITZBund\GsbCore\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
+/**
+ * @extends Repository<Category>
+ */
 class CategoryRepository extends Repository {}

@@ -1,7 +1,7 @@
 <html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:gsb="http://typo3.org/ns/ITZBund/GsbCore/ViewHelpers">
 <f:comment>
     <!--
-    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 
     SPDX-License-Identifier: GPL-3.0-or-later
     -->
@@ -9,7 +9,8 @@
 <f:variable name="audioImg">{files.0}</f:variable>
 <f:variable name="audioRelation">{audio.0}</f:variable>
 
-<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+<div id="c{data.uid}"
+     class="frame frame-{data.frame_class} frame-type-audio frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
     <f:if condition="{data.header}">
         <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
@@ -21,13 +22,21 @@
     <f:if condition="{audio}">
         <div class="audio audio-local">
             <f:if condition="{audioImg}">
-                <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}" data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}" data-aspectratio-xs="{xsmall.selectedRatio}">
-                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'default', maxWidth: 1440)}" media="(min-width: 1220px)">
-                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'large', maxWidth: 1220)}" media="(min-width: 992px)">
-                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'medium', maxWidth: 992)}" media="(min-width: 768px)">
-                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'small', maxWidth: 768)}" media="(min-width: 576px)">
-                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'xsmall', maxWidth: 576)}" media="(min-width: 0)">
-                    <f:image image="{audioImg}" maxWidth="1440" cropVariant="default" treatIdAsReference="1" class="figure-img img-fluid" loading="lazy" />
+                <picture data-aspectratio-xl="{default.selectedRatio}" data-aspectratio-lg="{large.selectedRatio}"
+                         data-aspectratio-md="{medium.selectedRatio}" data-aspectratio-sm="{small.selectedRatio}"
+                         data-aspectratio-xs="{xsmall.selectedRatio}">
+                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'default', maxWidth: 1440)}"
+                            media="(min-width: 1220px)">
+                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'large', maxWidth: 1220)}"
+                            media="(min-width: 992px)">
+                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'medium', maxWidth: 992)}"
+                            media="(min-width: 768px)">
+                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'small', maxWidth: 768)}"
+                            media="(min-width: 576px)">
+                    <source srcset="{f:uri.image(image: audioImg, cropVariant: 'xsmall', maxWidth: 576)}"
+                            media="(min-width: 0)">
+                    <f:image image="{audioImg}" maxWidth="1440" cropVariant="default" treatIdAsReference="1"
+                             class="figure-img img-fluid" loading="lazy" />
                 </picture>
             </f:if>
             <audio preload="none" controls class="player local-audio" style="max-width:100%; width: 100%;">
@@ -36,12 +45,6 @@
         </div>
     </f:if>
 </div>
-    <f:comment><!--
-        For this media element to work properly you need to link it to mediaelements.js
 
-        An example is packages in gsb_public_frontend
-
-        <f:asset.script identifier="mediaelementsJS" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/mediaelements.js"/>
-        <f:asset.css identifier="mediaelementsCSS" href="EXT:gsb_public_frontend/Resources/Public/StyleSheets/mediaelements.css" />
-    --></f:comment>
+<f:render arguments="{_all}" partial="MediaElements" />
 </html>

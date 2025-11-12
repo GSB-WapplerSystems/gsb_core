@@ -27,9 +27,15 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class CustomContentCategoryProcessor extends AbstractCategoryProcessor implements DataProcessorInterface
 {
     /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
      * @param array<mixed,mixed> $contentObjectConfiguration
      * @param array<mixed,mixed> $processorConfiguration
      * @param array<mixed,mixed> $processedData
+     *
+     * @return mixed[]
+     *
      * @throws Exception
      */
     public function process(

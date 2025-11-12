@@ -58,7 +58,7 @@ renderables:
             label: 'URL, von der aus Sie auf dieses Formular zugegriffen haben.'
             properties:
               fluidAdditionalAttributes:
-                data-initialize-with-referrer: true
+                data-initialize-with-referrer: 1
           -
             defaultValue: ''
             type: Text

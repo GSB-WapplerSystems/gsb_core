@@ -27,8 +27,10 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Fluid\ViewHelpers;
 
 use Psr\Http\Message\RequestInterface;
+use TYPO3\CMS\Core\Imaging\ImageManipulation\Area;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
+use TYPO3\CMS\Core\Resource\FileInterface;
+use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
@@ -111,6 +113,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
  *    <f:image src="NonExistingImage.png" alt="foo" />
  *
  * ``Could not get image resource for "NonExistingImage.png".``
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 final class ImageViewHelper extends AbstractTagBasedViewHelper
 {
@@ -124,19 +129,19 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
     public function __construct()
     {
         parent::__construct();
+
         $this->imageService = GeneralUtility::makeInstance(ImageService::class);
     }
 
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerUniversalTagAttributes();
-        $this->registerTagAttribute('alt', 'string', 'Specifies an alternate text for an image', false);
-        $this->registerTagAttribute('ismap', 'string', 'Specifies an image as a server-side image-map. Rarely used. Look at usemap instead', false);
-        $this->registerTagAttribute('longdesc', 'string', 'Specifies the URL to a document that contains a long description of an image', false);
-        $this->registerTagAttribute('usemap', 'string', 'Specifies an image as a client-side image-map', false);
-        $this->registerTagAttribute('loading', 'string', 'Native lazy-loading for images property. Can be "lazy", "eager" or "auto"', false);
-        $this->registerTagAttribute('decoding', 'string', 'Provides an image decoding hint to the browser. Can be "sync", "async" or "auto"', false);
+        $this->registerArgument('alt', 'string', 'Specifies an alternate text for an image');
+        $this->registerArgument('ismap', 'string', 'Specifies an image as a server-side image-map. Rarely used. Look at usemap instead');
+        $this->registerArgument('longdesc', 'string', 'Specifies the URL to a document that contains a long description of an image');
+        $this->registerArgument('usemap', 'string', 'Specifies an image as a client-side image-map');
+        $this->registerArgument('loading', 'string', 'Native lazy-loading for images property. Can be "lazy", "eager" or "auto"');
+        $this->registerArgument('decoding', 'string', 'Provides an image decoding hint to the browser. Can be "sync", "async" or "auto"');
 
         $this->registerArgument('src', 'string', 'a path to a file, a combined FAL identifier or an uid (int). If $treatIdAsReference is set, the integer is considered the uid of the sys_file_reference record. If you already got a FAL object, consider using the $image parameter instead', false, '');
         $this->registerArgument('treatIdAsReference', 'bool', 'given src argument is a sys_file_reference record', false, false);
@@ -154,10 +159,29 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('absolute', 'bool', 'Force absolute URL', false, false);
     }
 
+    private function addTagAttributeIfSet(string $attributeName): void
+    {
+        /** @var string|null $attributeValue */
+        $attributeValue = $this->arguments[$attributeName] ?? null;
+
+        if ($attributeValue) {
+            $this->tag->addAttribute($attributeName, $attributeValue);
+        }
+    }
+
     public function render(): string
     {
-        $result = '';
         try {
+            if ((string)$this->arguments['fileExtension'] && !GeneralUtility::inList($GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'], (string)$this->arguments['fileExtension'])) {
+                throw new Exception(
+                    $this->getExceptionMessage(
+                        'The extension ' . $this->arguments['fileExtension'] . ' is not specified in $GLOBALS[\'TYPO3_CONF_VARS\'][\'GFX\'][\'imagefile_ext\']'
+                        . ' as a valid image file extension and can not be processed.',
+                    ),
+                    1618989190
+                );
+            }
+
             $result = $this->originalRender();
         } catch (\Exception $e) {
             /* @var \TYPO3\CMS\Core\Http\ServerRequest $request */
@@ -182,76 +206,18 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
     public function originalRender(): string
     {
         $src = (string)$this->arguments['src'];
+
         if (($src === '' && $this->arguments['image'] === null) || ($src !== '' && $this->arguments['image'] !== null)) {
             throw new Exception($this->getExceptionMessage('You must either specify a string src or a File object.'), 1382284106);
         }
 
-        if ((string)$this->arguments['fileExtension'] && !GeneralUtility::inList($GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'], (string)$this->arguments['fileExtension'])) {
-            throw new Exception(
-                $this->getExceptionMessage(
-                    'The extension ' . $this->arguments['fileExtension'] . ' is not specified in $GLOBALS[\'TYPO3_CONF_VARS\'][\'GFX\'][\'imagefile_ext\']'
-                    . ' as a valid image file extension and can not be processed.',
-                ),
-                1618989190
-            );
-        }
-
         try {
-            $image = $this->imageService->getImage($src, $this->arguments['image'], (bool)$this->arguments['treatIdAsReference']);
-            $cropString = $this->arguments['crop'];
-            if ($cropString === null && $image->hasProperty('crop') && $image->getProperty('crop')) {
-                $cropString = $image->getProperty('crop');
-            }
-
-            // CropVariantCollection needs a string, but this VH could also receive an array
-            if (is_array($cropString)) {
-                $cropString = json_encode($cropString);
-            }
-
-            $cropVariantCollection = CropVariantCollection::create((string)$cropString);
             $cropVariant = $this->arguments['cropVariant'] ?: 'default';
+            $image = $this->imageService->getImage($src, $this->arguments['image'], (bool)$this->arguments['treatIdAsReference']);
+            $cropVariantCollection = $this->createCropVariantCollection($image);
             $cropArea = $cropVariantCollection->getCropArea($cropVariant);
-            $processingInstructions = [
-                'width' => $this->arguments['width'],
-                'height' => $this->arguments['height'],
-                'minWidth' => $this->arguments['minWidth'],
-                'minHeight' => $this->arguments['minHeight'],
-                'maxWidth' => $this->arguments['maxWidth'],
-                'maxHeight' => $this->arguments['maxHeight'],
-                'crop' => $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($image),
-            ];
-            if (!empty($this->arguments['fileExtension'] ?? '')) {
-                $processingInstructions['fileExtension'] = $this->arguments['fileExtension'];
-            }
-            $processedImage = $this->imageService->applyProcessingInstructions($image, $processingInstructions);
-            $imageUri = $this->imageService->getImageUri($processedImage, $this->arguments['absolute']);
-
-            if (!$this->tag->hasAttribute('data-focus-area')) {
-                $focusArea = $cropVariantCollection->getFocusArea($cropVariant);
-                if (!$focusArea->isEmpty()) {
-                    $this->tag->addAttribute('data-focus-area', $focusArea->makeAbsoluteBasedOnFile($image));
-                }
-            }
-            $this->tag->addAttribute('src', $imageUri);
-            $this->tag->addAttribute('width', $processedImage->getProperty('width'));
-            $this->tag->addAttribute('height', $processedImage->getProperty('height'));
-
-            if (is_string($this->arguments['alt'] ?? false) && $this->arguments['alt'] === '') {
-                // In case the "alt" attribute is explicitly set to an empty string, respect
-                // this to allow excluding it from screen readers, improving accessibility.
-                $this->tag->addAttribute('alt', '');
-            } elseif (empty($this->arguments['alt'])) {
-                // The alt-attribute is mandatory to have valid html-code, therefore use "alternative" property or empty
-                $this->tag->addAttribute('alt', $image->hasProperty('alternative') ? $image->getProperty('alternative') : '');
-            }
-            // Add title-attribute from property if not already set and the property is not an empty string
-            $title = (string)($image->hasProperty('title') ? $image->getProperty('title') : '');
-            if (empty($this->arguments['title']) && $title !== '') {
-                $this->tag->addAttribute('title', $title);
-            }
-        } catch (ResourceDoesNotExistException $e) {
-            // thrown if file does not exist
-            throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741911, $e);
+            $processedImage = $this->getProcessedImage($image, $cropArea);
+            $this->setImageTags($processedImage, $image);
         } catch (\UnexpectedValueException $e) {
             // thrown if a file has been replaced with a folder
             throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741912, $e);
@@ -259,7 +225,74 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
             // thrown if file storage does not exist
             throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741914, $e);
         }
+
+        $this->addTagAttributeIfSet('alt');
+        $this->addTagAttributeIfSet('ismap');
+        $this->addTagAttributeIfSet('longdesc');
+        $this->addTagAttributeIfSet('usemap');
+        $this->addTagAttributeIfSet('loading');
+        $this->addTagAttributeIfSet('decoding');
+
         return $this->tag->render();
+    }
+
+    protected function setImageTags(ProcessedFile $processedImage, FileInterface $image): void
+    {
+        $imageUri = $this->imageService->getImageUri($processedImage, $this->arguments['absolute']);
+
+        $this->tag->addAttribute('src', $imageUri);
+        $this->tag->addAttribute('width', $processedImage->getProperty('width'));
+        $this->tag->addAttribute('height', $processedImage->getProperty('height'));
+
+        if (is_string($this->arguments['alt'] ?? false) && $this->arguments['alt'] === '') {
+            // In case the "alt" attribute is explicitly set to an empty string, respect
+            // this to allow excluding it from screen readers, improving accessibility.
+            $this->tag->addAttribute('alt', '');
+        } elseif (empty($this->arguments['alt'])) {
+            // The alt-attribute is mandatory to have valid html-code, therefore use "alternative" property or empty
+            $this->tag->addAttribute('alt', $image->hasProperty('alternative') ? $image->getProperty('alternative') : '');
+        }
+        // Add title-attribute from property if not already set and the property is not an empty string
+        $title = (string)($image->hasProperty('title') ? $image->getProperty('title') : '');
+
+        if (empty($this->additionalArguments['title']) && $title !== '') {
+            $this->tag->addAttribute('title', $title);
+        }
+    }
+
+    protected function createCropVariantCollection(FileInterface $image): CropVariantCollection
+    {
+        $cropString = $this->arguments['crop'];
+
+        if ($cropString === null && $image->hasProperty('crop') && $image->getProperty('crop')) {
+            $cropString = $image->getProperty('crop');
+        }
+
+        // CropVariantCollection needs a string, but this VH could also receive an array
+        if (is_array($cropString)) {
+            $cropString = json_encode($cropString);
+        }
+
+        return CropVariantCollection::create((string)$cropString);
+    }
+
+    protected function getProcessedImage(FileInterface $image, Area $cropArea): ProcessedFile
+    {
+        $processingInstructions = [
+            'width' => $this->arguments['width'],
+            'height' => $this->arguments['height'],
+            'minWidth' => $this->arguments['minWidth'],
+            'minHeight' => $this->arguments['minHeight'],
+            'maxWidth' => $this->arguments['maxWidth'],
+            'maxHeight' => $this->arguments['maxHeight'],
+            'crop' => $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($image),
+        ];
+
+        if (!empty($this->arguments['fileExtension'] ?? '')) {
+            $processingInstructions['fileExtension'] = $this->arguments['fileExtension'];
+        }
+
+        return $this->imageService->applyProcessingInstructions($image, $processingInstructions);
     }
 
     protected function getExceptionMessage(string $detailedMessage): string

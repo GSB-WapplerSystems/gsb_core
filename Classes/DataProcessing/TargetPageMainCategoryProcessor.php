@@ -35,6 +35,9 @@ class TargetPageMainCategoryProcessor implements DataProcessorInterface
     use PagesCacheAddingTrait;
 
     /**
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
      * @param array<mixed> $contentObjectConfiguration
      * @param array<mixed> $processorConfiguration
      * @param array<mixed> $processedData

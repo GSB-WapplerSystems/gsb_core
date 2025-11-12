@@ -1,0 +1,15 @@
+services:
+  megalinter:
+    image: registry.gsb-itzbund.de/gsb11/devops/images/megalinter:1.6.16@sha256:6540a747c4d711367b7def78cfb1ed8726e51eba1eb190c553e8f4f3cab6c5bf
+    container_name: ${PROJECT_NAME}-megalinter-container
+    volumes:
+      - type: bind
+        source: ./../../../
+        target: /var/www/html
+        consistency: cached
+    environment:
+      DEFAULT_WORKSPACE: /var/www/html
+      REPORT_OUTPUT_FOLDER: ${REPORT_OUTPUT_FOLDER}
+      GIT_DEPTH: 0
+      TERM: xterm-256color
+      TZ: Europe/Berlin

@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 // SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
+
+declare(strict_types=1);
 
 /*
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
@@ -27,16 +27,14 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Fluid\ViewHelpers\Uri;
 
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
+use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
  * Resizes a given image (if required) and returns its relative path.
@@ -116,10 +114,18 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  *    <f:uri.image src="NonExistingImage.png" />
  *
  * ``Could not get image resource for "NonExistingImage.png".``
+ *
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 final class ImageViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
+    protected ImageService $imageService;
+
+    public function __construct()
+    {
+        $this->imageService = GeneralUtility::makeInstance(ImageService::class);
+    }
 
     public function initializeArguments(): void
     {
@@ -139,11 +145,11 @@ final class ImageViewHelper extends AbstractViewHelper
         $this->registerArgument('absolute', 'bool', 'Force absolute URL', false, false);
     }
 
-    public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function render(): string
     {
         $result = '';
         try {
-            $result = static::originalRenderStatic($arguments, $renderChildrenClosure, $renderingContext);
+            $result = $this->originalRender();
         } catch (\Exception $e) {
             /* @var \TYPO3\CMS\Core\Http\ServerRequest $request */
             $request = $GLOBALS['TYPO3_REQUEST'] ?? null;
@@ -158,87 +164,74 @@ final class ImageViewHelper extends AbstractViewHelper
      *
      * @throws Exception
      */
-    public static function originalRenderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext): string
+    public function originalRender(): string
     {
-        $src = (string)$arguments['src'];
-        $image = $arguments['image'];
-        $treatIdAsReference = (bool)$arguments['treatIdAsReference'];
-        $cropString = $arguments['crop'];
-        $absolute = $arguments['absolute'];
-
-        if (($src === '' && $image === null) || ($src !== '' && $image !== null)) {
-            throw new Exception(self::getExceptionMessage('You must either specify a string src or a File object.', $renderingContext), 1460976233);
-        }
-
-        if ((string)$arguments['fileExtension'] && !GeneralUtility::inList($GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'], (string)$arguments['fileExtension'])) {
-            throw new Exception(
-                self::getExceptionMessage(
-                    'The extension ' . $arguments['fileExtension'] . ' is not specified in $GLOBALS[\'TYPO3_CONF_VARS\'][\'GFX\'][\'imagefile_ext\']'
-                    . ' as a valid image file extension and can not be processed.',
-                    $renderingContext
-                ),
-                1618992262
-            );
-        }
-
         try {
-            $imageService = self::getImageService();
-            $image = $imageService->getImage($src, $image, $treatIdAsReference);
+            $image = $this->imageService->getImage(
+                (string)$this->arguments['src'],
+                $this->arguments['image'],
+                (bool)$this->arguments['treatIdAsReference']
+            );
 
-            if ($cropString === null && $image->hasProperty('crop') && $image->getProperty('crop')) {
-                $cropString = $image->getProperty('crop');
-            }
-
-            // CropVariantCollection needs a string, but this VH could also receive an array
-            if (is_array($cropString)) {
-                $cropString = json_encode($cropString);
-            }
-
-            $cropVariantCollection = CropVariantCollection::create((string)$cropString);
-            $cropVariant = $arguments['cropVariant'] ?: 'default';
+            $cropVariantCollection = $this->createCropVariantCollection($image);
+            $cropVariant = $this->arguments['cropVariant'] ?: 'default';
             $cropArea = $cropVariantCollection->getCropArea($cropVariant);
             $processingInstructions = [
-                'width' => $arguments['width'],
-                'height' => $arguments['height'],
-                'minWidth' => $arguments['minWidth'],
-                'minHeight' => $arguments['minHeight'],
-                'maxWidth' => $arguments['maxWidth'],
-                'maxHeight' => $arguments['maxHeight'],
+                'width' => $this->arguments['width'],
+                'height' => $this->arguments['height'],
+                'minWidth' => $this->arguments['minWidth'],
+                'minHeight' => $this->arguments['minHeight'],
+                'maxWidth' => $this->arguments['maxWidth'],
+                'maxHeight' => $this->arguments['maxHeight'],
                 'crop' => $cropArea->isEmpty() ? null : $cropArea->makeAbsoluteBasedOnFile($image),
             ];
-            if (!empty($arguments['fileExtension'])) {
-                $processingInstructions['fileExtension'] = $arguments['fileExtension'];
+            if (!empty($this->arguments['fileExtension'])) {
+                $processingInstructions['fileExtension'] = $this->arguments['fileExtension'];
             }
 
-            $processedImage = $imageService->applyProcessingInstructions($image, $processingInstructions);
-            return $imageService->getImageUri($processedImage, $absolute);
-        } catch (ResourceDoesNotExistException $e) {
-            // thrown if file does not exist
-            throw new Exception(self::getExceptionMessage($e->getMessage(), $renderingContext), 1509741907, $e);
+            $processedImage = $this->imageService->applyProcessingInstructions($image, $processingInstructions);
+
+            return $this->imageService->getImageUri($processedImage, $this->arguments['absolute']);
         } catch (\UnexpectedValueException $e) {
             // thrown if a file has been replaced with a folder
-            throw new Exception(self::getExceptionMessage($e->getMessage(), $renderingContext), 1509741908, $e);
+            throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741908, $e);
         } catch (\InvalidArgumentException $e) {
             // thrown if file storage does not exist
-            throw new Exception(self::getExceptionMessage($e->getMessage(), $renderingContext), 1509741910, $e);
+            throw new Exception($this->getExceptionMessage($e->getMessage()), 1509741910, $e);
         }
     }
 
-    protected static function getExceptionMessage(string $detailedMessage, RenderingContextInterface $renderingContext): string
+    protected function createCropVariantCollection(FileInterface $image): CropVariantCollection
     {
-        /** @var RenderingContext $renderingContext */
-        $request = $renderingContext->getRequest();
+        $cropString = $this->arguments['crop'];
+
+        if ($cropString === null && $image->hasProperty('crop') && $image->getProperty('crop')) {
+            $cropString = $image->getProperty('crop');
+        }
+
+        // CropVariantCollection needs a string, but this VH could also receive an array
+        if (is_array($cropString)) {
+            $cropString = json_encode($cropString);
+        }
+
+        return CropVariantCollection::create((string)$cropString);
+    }
+
+    protected function getExceptionMessage(string $detailedMessage): string
+    {
+        $request = null;
+
+        if (!$this->renderingContext->hasAttribute(ServerRequestInterface::class)) {
+            $request = $this->renderingContext->getAttribute(ServerRequestInterface::class);
+        }
+
         if ($request instanceof RequestInterface) {
             $currentContentObject = $request->getAttribute('currentContentObject');
             if ($currentContentObject instanceof ContentObjectRenderer) {
                 return sprintf('Unable to render image uri in "%s": %s', $currentContentObject->currentRecord, $detailedMessage);
             }
         }
-        return sprintf('Unable to render image uri: %s', $detailedMessage);
-    }
 
-    protected static function getImageService(): ImageService
-    {
-        return GeneralUtility::makeInstance(ImageService::class);
+        return sprintf('Unable to render image uri: %s', $detailedMessage);
     }
 }

@@ -20,8 +20,8 @@
 
 namespace ITZBund\GsbCore\Cache\Backend;
 
+use ITZBund\GsbCore\DataTransferObject\RedisEndpoint;
 use TYPO3\CMS\Core\Cache\Backend\RedisBackend;
-use TYPO3\CMS\Core\Cache\Exception;
 
 /**
  * A caching backend which stores cache entries by using Redis with phpredis
@@ -50,7 +50,7 @@ class SentinelCapableRedisBackend extends RedisBackend
      *
      * @var \RedisSentinel
      */
-    protected $redisSentinel;
+    protected \RedisSentinel $redisSentinel;
 
     /**
      * Indicates whether the server is sentinel
@@ -73,72 +73,75 @@ class SentinelCapableRedisBackend extends RedisBackend
     /**
      * @throws \RedisException
      */
-    private function initializeRead(): void
+    private function initializeWrite(): void
     {
-        $this->retryOperation(function () {
-            $this->initializeConnection(false);
-        });
+        $this->retryOperation(fn() => $this->initializeConnection());
     }
 
     /**
-     * @throws \RedisException
+     * @return RedisEndpoint
+     *
+     * @throws \RuntimeException
      */
-    private function initializeWrite(): void
+    private function getRedisEndpoint(): RedisEndpoint
     {
-        $this->retryOperation(function () {
-            $this->initializeConnection(true);
-        });
+        if (!$this->isSentinel) {
+            return new RedisEndpoint(
+                $this->hostname,
+                $this->port,
+                (float)$this->connectionTimeout,
+                $this->persistentConnection ? (string)$this->database : null
+            );
+        }
+
+        $sentinelConfig = [
+            'host' => $this->sentinelHostname,
+            'port' => $this->sentinelPort,
+            'connectTimeout' => $this->connectionTimeout,
+            'persistent' => $this->persistentConnection ? 'cachebackend' : null,
+        ];
+
+        if ($this->sentinelPassword !== null) {
+            $sentinelConfig['auth'] = $this->sentinelPassword;
+        }
+
+        /** @phpstan-ignore-next-line */
+        $sentinelMaster = (new \RedisSentinel($sentinelConfig))->masters();
+
+        if ($sentinelMaster === false) {
+            throw new \RuntimeException('Could not get master from sentinel.', 1279765134);
+        }
+
+        return new RedisEndpoint(
+            (string)$sentinelMaster[0]['ip'],
+            (int)$sentinelMaster[0]['port'],
+            (float)$this->connectionTimeout,
+            $this->persistentConnection ? (string)$this->database : null
+        );
     }
 
     /**
      * Initializes the redis backend for writing (use only master) and reading (use all)
-     * @param bool $useWriteConnection
      */
-    private function initializeConnection(bool $useWriteConnection): void
+    private function initializeConnection(): void
     {
         try {
+            $redisEndpoint = $this->getRedisEndpoint();
+
             $this->redis = new \Redis();
-            $host = $this->hostname;
-            $port = $this->port;
+            $this->connected = $this->redis->pconnect(
+                $redisEndpoint->getHost(),
+                $redisEndpoint->getPort(),
+                $redisEndpoint->getTimeout(),
+                $redisEndpoint->getPersistentId()
+            );
 
-            if ($this->isSentinel) {
-                $sentinelConfig = [
-                    'host' => $this->sentinelHostname,
-                    'port' => $this->sentinelPort,
-                    'connectTimeout' => $this->connectionTimeout,
-                    'persistent' => ($this->persistentConnection === true) ? 'cachebackend' : null,
-                ];
-
-                if ($this->sentinelPassword !== null) {
-                    $sentinelConfig['auth'] = $this->sentinelPassword;
-                }
-
-                $redisSentinel = new \RedisSentinel($sentinelConfig);
-                $sentinelMaster = $redisSentinel->masters();
-                if ($sentinelMaster === false) {
-                    throw new \RuntimeException('Could not get master from sentinel.', 1279765134);
-                }
-                $host = $sentinelMaster[0]['ip'];
-                $port = $sentinelMaster[0]['port'];
+            if ($this->connected && $this->password !== '' && !$this->redis->auth($this->password)) {
+                throw new \RuntimeException('The given password was not accepted by the redis server.', 1279765134);
             }
 
-            if ($this->persistentConnection) {
-                $this->connected = $this->redis->pconnect($host, $port, $this->connectionTimeout, (string)$this->database);
-            } else {
-                $this->connected = $this->redis->connect($host, $port, $this->connectionTimeout);
-            }
-
-            if ($this->connected && $this->password !== '') {
-                $success = $this->redis->auth($this->password);
-                if (!$success) {
-                    throw new \RuntimeException('The given password was not accepted by the redis server.', 1279765134);
-                }
-            }
-            if ($this->connected && $this->database >= 0) {
-                $success = $this->redis->select($this->database);
-                if (!$success) {
-                    throw new \RuntimeException('The given database "' . $this->database . '" could not be selected.', 1279765144);
-                }
+            if ($this->connected && $this->database >= 0 && !$this->redis->select($this->database)) {
+                throw new \RuntimeException('The given database "' . $this->database . '" could not be selected.', 1279765144);
             }
         } catch (\Throwable $e) {
             throw new \RuntimeException('Could not initialize connection to redis server: ' . $e->getMessage(), 1736508869, $e);
@@ -186,22 +189,12 @@ class SentinelCapableRedisBackend extends RedisBackend
      */
     public function get($entryIdentifier): mixed
     {
-        $this->initializeRead();
-        if ($this->connected) {
-            try {
-                return $this->retryOperation(function () use ($entryIdentifier) {
-                    return parent::get($entryIdentifier);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while getting Data from Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
-        return false;
+        return $this->retryOperationFrame(
+            fn() => parent::get($entryIdentifier),
+            __METHOD__,
+            'Error while getting Data from Redis Cache',
+            false
+        );
     }
 
     /**
@@ -214,22 +207,12 @@ class SentinelCapableRedisBackend extends RedisBackend
      */
     public function has($entryIdentifier): bool
     {
-        $this->initializeRead();
-        if ($this->connected) {
-            try {
-                return $this->retryOperation(function () use ($entryIdentifier) {
-                    return parent::has($entryIdentifier);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while checking if Redis Cache has Data', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
-        return false;
+        return $this->retryOperationFrame(
+            fn() => parent::has($entryIdentifier),
+            __METHOD__,
+            'Error while checking if Redis Cache has Data',
+            false
+        );
     }
 
     /**
@@ -240,26 +223,16 @@ class SentinelCapableRedisBackend extends RedisBackend
      * Scales O(n) with number of tag entries
      *
      * @param string $tag The tag to search for
-     * @return array An array of entries with all matching entries. An empty array if no entries matched
+     * @return mixed[] An array of entries with all matching entries. An empty array if no entries matched
      */
     public function findIdentifiersByTag($tag): array
     {
-        $this->initializeRead();
-        if ($this->connected) {
-            try {
-                return $this->retryOperation(function () use ($tag) {
-                    return parent::findIdentifiersByTag($tag);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while fetching from Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
-        return [];
+        return $this->retryOperationFrame(
+            fn() => parent::findIdentifiersByTag($tag),
+            __METHOD__,
+            'Error while fetching from Redis Cache',
+            []
+        );
     }
 
     /**
@@ -270,26 +243,16 @@ class SentinelCapableRedisBackend extends RedisBackend
      *
      * @param string $entryIdentifier Identifier for this specific cache entry
      * @param string $data Data to be stored
-     * @param array $tags Tags to associate with this cache entry
+     * @param mixed[] $tags Tags to associate with this cache entry
      * @param int $lifetime Lifetime of this cache entry in seconds. If NULL is specified, default lifetime is used. "0" means unlimited lifetime.
      */
     public function set($entryIdentifier, $data, array $tags = [], $lifetime = null): void
     {
-        $this->initializeWrite();
-        if ($this->connected) {
-            try {
-                $this->retryOperation(function () use ($entryIdentifier, $data, $tags, $lifetime) {
-                    parent::set($entryIdentifier, $data, $tags, $lifetime);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while setting data into Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
+        $this->retryOperationFrame(
+            fn() => parent::set($entryIdentifier, $data, $tags, $lifetime),
+            __METHOD__,
+            'Error while setting data into Redis Cache'
+        );
     }
 
     /**
@@ -303,22 +266,12 @@ class SentinelCapableRedisBackend extends RedisBackend
      */
     public function remove($entryIdentifier): bool
     {
-        $this->initializeWrite();
-        if ($this->connected) {
-            try {
-                $this->retryOperation(function () use ($entryIdentifier) {
-                    parent::remove($entryIdentifier);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while removing data from Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
-        return false;
+        return $this->retryOperationFrame(
+            fn() => parent::remove($entryIdentifier),
+            __METHOD__,
+            'Error while removing data from Redis Cache',
+            false
+        );
     }
 
     /**
@@ -336,17 +289,19 @@ class SentinelCapableRedisBackend extends RedisBackend
     public function collectGarbage(): void
     {
         $this->initializeWrite();
-        if ($this->connected) {
-            try {
-                parent::collectGarbage();
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while collecting garbage in Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
+        if (!$this->connected) {
             $this->logger?->critical('Not connected', ['method' => __METHOD__]);
+
+            return;
+        }
+
+        try {
+            parent::collectGarbage();
+        } catch (\Throwable $e) {
+            $this->logger?->critical('Error while collecting garbage in Redis Cache', [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
         }
     }
 
@@ -357,21 +312,11 @@ class SentinelCapableRedisBackend extends RedisBackend
      */
     public function flush(): void
     {
-        $this->initializeWrite();
-        if ($this->connected) {
-            try {
-                $this->retryOperation(function () {
-                    parent::flush();
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while flushing complete cache in Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
-        }
+        $this->retryOperationFrame(
+            fn() => parent::flush(),
+            __METHOD__,
+            'Error while flushing complete cache in Redis Cache'
+        );
     }
 
     /**
@@ -384,21 +329,32 @@ class SentinelCapableRedisBackend extends RedisBackend
      */
     public function flushByTag($tag): void
     {
+        $this->retryOperationFrame(
+            fn() => parent::flushByTag($tag),
+            __METHOD__,
+            'Error while flushing cache tag in Redis Cache'
+        );
+    }
+
+    private function retryOperationFrame(callable $operation, string $methodName, string $errorMessage, mixed $defaultReturn = null): mixed
+    {
         $this->initializeWrite();
-        if ($this->connected) {
-            try {
-                $this->retryOperation(function () use ($tag) {
-                    parent::flushByTag($tag);
-                });
-            } catch (\Throwable $e) {
-                $this->logger?->critical('Error while flushing cache tag in Redis Cache', [
-                    'message' => $e->getMessage(),
-                    'exception' => $e,
-                ]);
-            }
-        } else {
-            $this->logger?->critical('Not connected', ['method' => __METHOD__]);
+        if (!$this->connected) {
+            $this->logger?->critical('Not connected', ['method' => $methodName]);
+
+            return $defaultReturn;
         }
+
+        try {
+            return $this->retryOperation($operation);
+        } catch (\Throwable $e) {
+            $this->logger?->critical($errorMessage, [
+                'message' => $e->getMessage(),
+                'exception' => $e,
+            ]);
+        }
+
+        return $defaultReturn;
     }
 
     /**
@@ -432,17 +388,17 @@ class SentinelCapableRedisBackend extends RedisBackend
      * Check if the given exception is permanent or temporary
      * @return bool
      */
-    private function isPermanentException(\RedisException|\RuntimeException $e): bool
+    private function isPermanentException(\RedisException|\RuntimeException $exception): bool
     {
         // Check for authentification errors
-        if (str_contains($e->getMessage(), 'AUTH')) {
+        if (str_contains($exception->getMessage(), 'AUTH')) {
             return true; // Authentification errors are permanent
         }
 
         // Check for configuration errors
         $configurationErrors = ['host', 'port', 'database'];
         foreach ($configurationErrors as $errorString) {
-            if (str_contains($e->getMessage(), $errorString)) {
+            if (str_contains($exception->getMessage(), $errorString)) {
                 return true; // Configuration errors are permanent
             }
         }

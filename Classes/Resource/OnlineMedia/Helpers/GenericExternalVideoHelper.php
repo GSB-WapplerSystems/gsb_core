@@ -63,6 +63,8 @@ class GenericExternalVideoHelper extends AbstractOnlineMediaHelper
 
     /**
      * @codeCoverageIgnore
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      * @return array<int,mixed>
      */
     public function getMetaData(File $file): array
@@ -71,7 +73,7 @@ class GenericExternalVideoHelper extends AbstractOnlineMediaHelper
     }
 
     /**
-     * @param ?array<int,string> $allowedVideoDomains
+     * @param array<int,string>|null $allowedVideoDomains
      */
     protected function matchesAllowedDomains(string $mediaUrl, ?array $allowedVideoDomains): bool
     {

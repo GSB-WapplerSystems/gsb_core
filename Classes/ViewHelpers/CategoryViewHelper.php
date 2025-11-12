@@ -51,12 +51,12 @@ class CategoryViewHelper extends AbstractViewHelper
 
     public function render(): string
     {
-        $as = $this->arguments['as'];
+        $asVariable = $this->arguments['as'];
         $uid = $this->arguments['category'] ?? $this->renderChildren();
         $categoryRepository = GeneralUtility::makeInstance(CategoryRepository::class);
         $categoryRepository->injectPersistenceManager($this->persistenceManager);
         $category = $categoryRepository->findByUid($uid);
-        $this->templateVariableContainer->add($as, $category);
+        $this->templateVariableContainer->add($asVariable, $category);
         return '';
     }
 }

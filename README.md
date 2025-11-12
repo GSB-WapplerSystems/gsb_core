@@ -4,10 +4,12 @@ SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
+<!-- PROJECT SHIELDS -->
+
 # GSB&nbsp;11 Extension gsb_core
 
-<!-- PROJECT SHIELDS -->
-[![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
+[![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
+[![PHP 8.3](https://img.shields.io/badge/PHP-8.3-%23777BB4.svg?logo=php&logoColor=white)](https://www.php.net/releases/8.3/en.php)
 
 ## About
 
@@ -24,36 +26,45 @@ The best way to install this extension is to start with the [GSB Sitepackage Kic
 In a composer-based TYPO3 installation you can install the extension EXT:gsb_core via composer:
 
 ```sh
-composer config -g gitlab-domains gitlab.opencode.de && \
-composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core.git
+  composer config -g gitlab-domains gitlab.opencode.de && \
+  composer config -g repositories.gsb-core vcs https://gitlab.opencode.de/bmi/government-site-builder-11/extensions/gsb_core.git
 ```
 
 ```sh
-composer require itzbund/gsb-core
+  composer require itzbund/gsb-core
 ```
 
 In TYPO3 installations above version 11.5 the extension will be automatically installed. You do not have to activate it manually.
 
-## Usage
+## Feature Flags
 
-Nothing to do.
+This document explains how to use feature flags. We separate between two different kinds of feature flags:
 
-## Feature Flags in `gsb_core`
+### Feature
 
-This document explains how to use feature flags. Feature flags allow you to enable or disable specific features in your installation.
-This is of particular importance to not use features that have not passed the approval process.
+Feature flags allow you to enable or disable specific features in your installation. \
+This is of particular importance to disable features that have not passed the approval process.
 
-### Configuration
+### Optional
 
-Feature flags are configured in the `.env` or the `local-dev/.ddev/docker-compose.environment.yaml` file on ddev machine. To add a feature flag, use the following syntax:
+Optional flags allow you to (de-)activate specific features for your installation. \
+A practical use for these is the (de-)activation of an extension.
 
-```plaintext
-# Feature flag for the specific tickets. Set them to true to activate the features.
-- TYPO3__SYS__features__ITZBUNDPHP-1234=%const(bool:true)%
+For more information about feature flags in TYPO3, please refer to the official [TYPO3 Documentation on Feature Flags](https://docs.typo3.org/m/typo3/reference-coreapi/13.4/en-us/ApiOverview/FeatureToggleApi/Index.html).
+
+### Feature Flag Configuration
+
+Feature and Optional flags are configured in the `.env` or the `local-dev/.ddev/docker-compose.environment.yaml` file on ddev machine. To add a feature flag, use the following syntax:
+
+```yaml
+# FEATURE FLAG
+- TYPO3__SYS__features__GSB11_FEATURE_123_NEW_FEATURE=%const(bool:true)%
+# OPTIONAL FLAG
+- TYPO3__SYS__features__GSB11_OPTION_123_ENABLE_EXTENSION=%const(bool:true)%
 ```
 
-In this example, the feature flag `ITZBUNDPHP-1234` is set to `true`. To disable the feature, change the value to `false` or delete
-the setting.
+In this example, both feature flags, `GSB11_FEATURE_123_NEW_FEATURE` and `GSB11_OPTION_123_ENABLE_EXTENSION`,
+are set to `true`. To disable the feature, change the value to `false` or delete the setting.
 
 #### Feature Flag Truth Table
 
@@ -66,42 +77,54 @@ This table illustrates the behavior of feature flags in various states.
 | `featureFlag = ''`      | `false`         | An empty value is treated as `false`.    |
 | `featureFlag not exist` | `false`         | A non-existent flag defaults to `false`. |
 
-### Curent feature flags of `gsb_core`
-
-| Feature flag                                                                      | Description                              |
-|-----------------------------------------------------------------------------------|------------------------------------------|
-| `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` or `brandingBackendLogin` (deprecated) | Add default branding to the login screen |
-
 ### Usage in PHP Code
 
-To use a feature flag in your PHP code, you can check the flag's value in the global TYPO3 configuration. Here's an example:
+To use a feature flag in your PHP code, you can check the flag's value with the `isFeatureEnabled()` method of the `Features` class:
 
 ```php
-if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('ITZBUNDPHP-1234')) {
-    // Only if the feature flag is set to true the feature is activated
-    // Feature-specific code goes here
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_123_NEW_FEATURE')) {
+    echo 'Feature is enabled';
+
+    // Feature-specific code
+    ...
 }
 ```
 
-In this example, the feature-specific code will only execute if the feature flag `ITZBUNDPHP-1234` is set to `true`.
-
 ### Usage in Fluid Templates
 
-You can also use feature flags in your Fluid templates with a custom ViewHelper. First, ensure you include the namespace for the ViewHelper:
+Feature flags can also be checked in your Fluid templates with TYPO3's [Feature ViewHelper](https://docs.typo3.org/other/typo3/view-helper-reference/13.4/en-us/Global/Feature.html).
 
-```plaintext
-{namespace gsb=ITZBund\GsbCore\ViewHelpers}
-```
-
-Then, use the `featureFlag` ViewHelper to conditionally render content based on the feature flag:
+#### Basic usage
 
 ```html
-<f:if condition="{gsb:featureFlag(featureKey: 'ITZBUNDPHP-1234')}">
-    <!-- Feature-specific content goes here -->
-</f:if>
+<f:feature name="GSB11_FEATURE_123_NEW_FEATURE">
+   This is being shown if the flag is enabled
+</f:feature>
 ```
 
-In this example, the content inside the `<f:if>` tag will always be rendered if the feature flag `ITZBUNDPHP-1234` is not set to `false`.
+#### Feature > then > else
+
+```html
+<f:feature name="GSB11_OPTION_123_ENABLE_EXTENSION">
+    <f:then>
+        Flag is enabled
+    </f:then>
+    <f:else>
+        Flag is undefined or not enabled
+    </f:else>
+</f:feature>
+```
+
+### Current feature flags of `gsb_core`
+
+| Feature flag                               | Description                             |
+|--------------------------------------------|-----------------------------------------|
+| `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` | At default branding to the login screen |
+| `GSB11_FEATURE_5488_IMAGE_LINK`            | att linked only image elements          |
+
+## Usage
+
+Nothing to do.
 
 ## Site package
 
@@ -123,14 +146,6 @@ A package is available in the site configuration if it **matches one of the foll
 ```
 
 If a package has been selected as a site package, it's typoscript configuration (`Configuration/TypoScript/{constants|setttings}.typoscript`) will be loaded as the root template, which allows for zero configuration deployments.
-
-## Site Configuration Extension
-
-As certain parts of the site configuration are not easily writeable `EXT:gsb_core` provides a way to extend the site `config.yaml` files without actually writing these files.
-
-This is done by placing yaml files in a `Configuration\SiteConfiguration\Extends\SITEIDENTIFIER` folder, which will cause them to be evaluated for the site with the identifier `SITEIDENTIFIER`.
-
-If you choose `_all` as the identifier, the yaml file will be added to all sites.
 
 ### Further Reading
 
