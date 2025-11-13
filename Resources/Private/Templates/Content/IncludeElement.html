@@ -1,0 +1,64 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+  <f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+  </f:comment>
+
+  <f:variable name="overlayHtmlText">
+    <p>
+        <span class="h4">
+            {f:translate(key: 'content.consent.external.title', extensionName: 'gsb_core')}
+        </span><br />
+      {f:translate(key: 'content.consent.external.text', extensionName: 'gsb_core')}
+      <f:link.typolink parameter="{site.settings.navigation.policy-page}" target="_blank" />.
+      <br /><br />
+      <button type="button" class="btn btn-secondary" data-dsgvo-button>
+        {f:translate(key: 'content.consent.external.button', extensionName: 'gsb_core')}
+      </button>
+    </p>
+  </f:variable>
+  <f:variable name="overlayImage">
+    {f:uri.image(image: banner_image.0, maxWidth: 1200)}
+  </f:variable>
+
+  <f:asset.script identifier="dsgvo-external-loader" src="EXT:gsb_core/Resources/Public/JavaScript/dsgvo-external-loader.js" />
+
+  <f:if condition="{data.tx_include_url}">
+    <div
+        id="c{data.uid}"
+        class="frame frame-type-{data.CType}{f:if(condition: '!{data.tx_link}', then: ' nolink')} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+        style="width='{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}';"
+    >
+      <f:render
+          partial="ConsentOverlay"
+          arguments="{image: overlayImage, height: data.tx_include_height, width: data.tx_include_width, textHtml: overlayHtmlText}"
+      />
+      <f:if condition="{data.tx_include_rendering} == 'iframe'">
+          <iframe
+              src="{data.tx_include_url}"
+              title="{data.tx_include_html_title}"
+              name="{data.tx_include_html_name}"
+              width="{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}"
+              height="{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')}"
+              style="border:none;"
+              loading="lazy"
+              allowfullscreen>
+          </iframe>
+      </f:if>
+      <f:if condition="{data.tx_include_rendering} == 'webcomponent'">
+        <div class="external-webcomponent"
+             data-url="{data.tx_include_url}"
+             title="{data.tx_include_html_title}"
+             name="{data.tx_include_html_name}"
+             style="width:{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')};
+                    height:{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')};">
+          <f:format.html>{data.markup_component}</f:format.html>
+        </div>
+      </f:if>
+      </div>
+    </div>
+  </f:if>
+</html>
