@@ -58,7 +58,8 @@ readonly class PasswordType implements SettingsTypeInterface
         if (!$this->validate($value, $definition)) {
             $this->logger->warning('Setting validation field, reverting to default: {key}', ['key' => $definition->key]);
             $defaultValue = $definition->default ?? '';
-            return $this->encryptIfNeeded((string)$defaultValue);
+            $defaultValueString = is_string($defaultValue) ? $defaultValue : '';
+            return $this->encryptIfNeeded($defaultValueString);
         }
 
         if ($value === null || $value === '') {
@@ -94,13 +95,15 @@ readonly class PasswordType implements SettingsTypeInterface
         // Use AES-256-CBC for encryption
         $cipher = 'AES-256-CBC';
         $ivLength = openssl_cipher_iv_length($cipher);
+        // @phpstan-ignore-next-line
         if ($ivLength === false) {
             $this->logger->error('Failed to get IV length for encryption');
             return $value;
         }
 
-        $iv = openssl_random_pseudo_bytes($ivLength);
-        if ($iv === false) {
+        $initializationVector = openssl_random_pseudo_bytes($ivLength);
+        // @phpstan-ignore-next-line
+        if ($initializationVector === false) {
             $this->logger->error('Failed to generate IV for encryption');
             return $value;
         }
@@ -108,14 +111,14 @@ readonly class PasswordType implements SettingsTypeInterface
         // Use a derived key from the encryptionKey
         $key = hash('sha256', $encryptionKey, true);
 
-        $encrypted = openssl_encrypt($value, $cipher, $key, OPENSSL_RAW_DATA, $iv);
+        $encrypted = openssl_encrypt($value, $cipher, $key, OPENSSL_RAW_DATA, $initializationVector);
         if ($encrypted === false) {
             $this->logger->error('Failed to encrypt password');
             return $value;
         }
 
         // Combine IV and encrypted value and encode as base64
-        $encryptedValue = base64_encode($iv . $encrypted);
+        $encryptedValue = base64_encode($initializationVector . $encrypted);
 
         return self::ENCRYPTION_PREFIX . $encryptedValue;
     }
@@ -148,6 +151,7 @@ readonly class PasswordType implements SettingsTypeInterface
 
         $cipher = 'AES-256-CBC';
         $ivLength = openssl_cipher_iv_length($cipher);
+        // @phpstan-ignore-next-line
         if ($ivLength === false) {
             $this->logger->error('Failed to get IV length for decryption');
             return '';
@@ -159,12 +163,12 @@ readonly class PasswordType implements SettingsTypeInterface
             return '';
         }
 
-        $iv = substr($decoded, 0, $ivLength);
+        $initializationVector = substr($decoded, 0, $ivLength);
         $encrypted = substr($decoded, $ivLength);
 
         $key = hash('sha256', $encryptionKey, true);
 
-        $decrypted = openssl_decrypt($encrypted, $cipher, $key, OPENSSL_RAW_DATA, $iv);
+        $decrypted = openssl_decrypt($encrypted, $cipher, $key, OPENSSL_RAW_DATA, $initializationVector);
         if ($decrypted === false) {
             $this->logger->error('Failed to decrypt password');
             return '';
@@ -178,4 +182,3 @@ readonly class PasswordType implements SettingsTypeInterface
         return '@itzbund/gsb-core/site-sets-type/password.js';
     }
 }
-
