@@ -43,14 +43,17 @@ tt_content {
                 }
                 as = image
             }
-
-            # ToDo Does it make sense to replace it with a custom DataProcessor (and an extbase model)?
-            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
-            20 {
-                table = tx_gsbcore_hotspot
-                where.dataWrap = tx_gsbcore_hotspot.imagemap = {FIELD:uid}
-                as = hotspots
-            }
+            20 = ITZBund\GsbCore\DataProcessing\HotspotProcessor
         }
+    }
+}
+
+# used to render CEs inside the popup of a hotspot
+lib.popup = CONTENT
+lib.popup {
+    table = tt_content
+    select {
+        uidInList.field = uid
+        pidInList = 0
     }
 }
