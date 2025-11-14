@@ -108,5 +108,6 @@ CREATE TABLE tt_content
     tx_include_height              tinytext,
     tx_include_markup_component    tinytext,
     tx_include_html_title          tinytext,
-    tx_include_html_name           tinytext
+    tx_include_html_name           tinytext,
+    tx_include_banner_image        tinytext,
 );

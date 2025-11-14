@@ -28,6 +28,9 @@ services:
   ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor:
     public: true
 
+  ITZBund\GsbCore\DataProcessing\CachedMenuProcessor:
+    public: true
+
   ITZBund\GsbCore\EventListener\AddInfoButtonToContentElementsEvent:
     public: true
     tags:

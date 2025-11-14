@@ -23,5 +23,22 @@
 tt_content.include_element = FLUIDTEMPLATE
 tt_content.include_element {
   templateRootPaths.10 = EXT:gsb_core/Resources/Private/Templates/Content/
+  partialRootPaths.20 = EXT:gsb_consent/Resources/Private/Partials/Page/
   templateName = IncludeElement
+
+  dataProcessing {
+    5 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+    5 {
+      as = site
+    }
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      if.isTrue.field = tx_include_banner_image
+      references {
+        fieldName = tx_include_banner_image
+        table = tt_content
+      }
+      as = banner_image
+    }
+  }
 }

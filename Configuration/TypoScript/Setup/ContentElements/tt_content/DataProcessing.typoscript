@@ -32,13 +32,11 @@ page {
         references.data = levelmedia: -1, slide
         as = media
       }
-      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 = ITZBund\GsbCore\DataProcessing\CachedMenuProcessor
       20 {
-        special = directory
-        special.value = {$navigation.home-page}
-        levels = 4
-        includeSpacer = 1
         as = menuMain
+        breadcrumbAs = breadcrumbMenu
+        rootPageId = {$navigation.home-page}
       }
       30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
       30 {
@@ -67,19 +65,6 @@ page {
         special.value = {$navigation.metaTop-page}
         levels = 1
         as = menuMetaMain
-      }
-      70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      70 {
-        special = directory
-        special.value = {$navigation.home-page}
-        levels = 4
-        includeSpacer = 1
-        as = menuMainDesktop
-      }
-      80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      80 {
-        as = breadcrumbMenu
-        special = rootline
       }
       90 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
       90 {
