@@ -12,7 +12,7 @@ defined('TYPO3') || die();
 
 (static function (): void {
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_imagemap'] = 'tx_imagemap';
-
+    $GLOBALS['TCA']['tt_content']['ctrl']['rootLevel'] = -1;
     ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
         'CType',
