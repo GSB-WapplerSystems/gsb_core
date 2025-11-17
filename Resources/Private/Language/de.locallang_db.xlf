@@ -1404,6 +1404,10 @@
 				<source>Configure link settings for the image element</source>
 				<target>Link-Einstellungen für das Bildelement konfigurieren</target>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_override.header" resname="tt_content.palettes.image_override.header">
+				<source>Image elements</source>
+				<target>Bildelemente</target>
+			</trans-unit>
 			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
 				<source>Enter name</source>
 				<target>Name eingeben</target>
