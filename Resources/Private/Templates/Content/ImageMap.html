@@ -7,19 +7,30 @@
     -->
 </f:comment>
 
+<style>
+    #interactive-image-map-container {
+        max-width: 900px; /* demo constraint */
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
+
 <div class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.gallery_textcolor, then: ' gallery-text-white')}{f:if(condition: data.gallery_bg, then: ' gallery-bg-dark')}"
-     id="c{data.uid}">
+    id="c{data.uid}">
     <f:if condition="{data.header}">
         <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
-    <f:for each="{hotspots}" as="hotspot">
+    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-hotspots="{hotspots -> f:format.json()}">
+        <canvas></canvas>
+    </div>
+    <!-- <f:for each="{hotspots}" as="hotspot">
         <f:comment>This renders the selected CEs for the popup of the hotspot.</f:comment>
         <f:for as="popupcontent" each="{hotspot.contents}">
             <f:cObject typoscriptObjectPath="lib.popup" data="{uid: popupcontent.uid}"/>
         </f:for>
     </f:for>
     <f:if condition="{image.0}">
-        <!-- Start Dummy TEST -->
         <style>
             .map {
                 max-width: 900px; /* demo constraint */
@@ -27,21 +38,11 @@
                 height: auto;
                 display: block;
             }
-            .hotspot {
-                fill: rgba(0, 128, 255, 0.18);
-                stroke: rgba(0, 128, 255, 0.9);
-                stroke-width: 3;
-                cursor: pointer;
-                transition: transform 120ms ease, fill 120ms ease;
-            }
-            .hotspot:hover, .hotspot:focus {
-                fill: rgba(0, 128, 255, 0.28);
-                outline: none; /* we’ll add a stroke change for focus */
-            }
-            .hotspot:focus {
-                stroke-width: 4;
-            }
         </style>
+
+        <div class="hotspot-container">
+            <canvas class="hotspot-canvas"></canvas>
+        </div>
 
         <svg
             class="map"
@@ -49,10 +50,10 @@
             preserveAspectRatio="xMidYMid meet"
             aria-label="Interactive image map"
             >
-            <!-- The base image sits inside SVG, sized to the viewBox. Why is {image.0.publicUrl} not working here? -->
+
             <image href="/fileadmin/user_upload/the-highway-code-rule-185.jpg" x="0" y="0" width="1200" height="800" />
 
-            <!-- Polygon overlay (coordinates are in the same 1200x800 space) -->
+
             <polygon
                 class="hotspot"
                 points="220,180 420,160 480,280 300,340"
@@ -71,11 +72,9 @@
                 data-id="region-b"
             ></polygon>
         </svg>
-
-        <!-- End Dummy TEST -->
-    </f:if>
+    </f:if> -->
     <f:debug inline="1">{_all}</f:debug>
     <f:debug inline="1">{image.0.publicUrl}</f:debug>
 </div>
-<f:asset.script identifier="interactiveImageMap" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/interactiveImageFrontend.js" />
+<f:asset.script type="module" identifier="interactiveImageMap" src="EXT:gsb_public_frontend/Resources/Public/JavaScripts/interactiveImageFrontend.js" />
 </html>
