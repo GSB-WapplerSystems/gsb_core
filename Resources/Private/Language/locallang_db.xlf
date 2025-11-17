@@ -1156,6 +1156,40 @@
 			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
 				<source>Configure link settings for the image element</source>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator_tool.placeholder" resname="sys_file_metadata.creator_tool.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.publisher.placeholder" resname="sys_file_metadata.publisher.placeholder">
+				<source>Enter website or name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source.placeholder" resname="sys_file_metadata.source.placeholder">
+				<source>Enter website or name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.copyright.placeholder" resname="sys_file_metadata.copyright.placeholder">
+				<source>Enter the name of the author or enter the license</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.language.placeholder" resname="sys_file_metadata.language.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country.placeholder" resname="sys_file_metadata.location_country.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region.placeholder" resname="sys_file_metadata.location_region.placeholder">
+				<source>Enter the name of the region</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city.placeholder" resname="sys_file_metadata.location_city.placeholder">
+				<source>Enter the name of the city</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_creation_date.placeholder" resname="sys_file_metadata.content_creation_date.placeholder">
+				<source>Enter date</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_modification_date.placeholder" resname="sys_file_metadata.content_modification_date.placeholder">
+				<source>Enter date</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
