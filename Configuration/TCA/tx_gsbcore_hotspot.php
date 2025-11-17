@@ -49,7 +49,6 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 10,
-                // 'readOnly' => true, // This will not show the button or checkmark anymore
                 'placeholder' => 'Keine Koordinaten festgelegt',
                 'fieldControl' => [
                     'editHotspotControl' => [
