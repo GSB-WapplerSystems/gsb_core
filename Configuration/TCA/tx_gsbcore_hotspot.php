@@ -21,9 +21,7 @@ return [
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource' => 'l10n_source',
         'enablecolumns' => [
-            'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
+            'disabled' => 'hidden'
         ],
         'hideTable' => true,
         'security' => [
@@ -87,11 +85,9 @@ return [
         ]
     ],
     'types' => [
-        '0' => ['showitem' =>
-            '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, popup, imagemap,
-        '],
-    ],
-];
-// ToDo Do we need these standard fields? In Tabs?
-//             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
-//            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime
+        '0' =>
+            ['showitem' =>
+                '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, popup, imagemap,'
+            ],
+        ],
+    ];
