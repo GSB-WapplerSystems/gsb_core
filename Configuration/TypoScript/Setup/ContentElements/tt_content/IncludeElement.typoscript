@@ -23,7 +23,10 @@
 tt_content.include_element = FLUIDTEMPLATE
 tt_content.include_element {
   templateRootPaths.10 = EXT:gsb_core/Resources/Private/Templates/Content/
-  partialRootPaths.20 = EXT:gsb_consent/Resources/Private/Partials/Page/
+  partialRootPaths {
+    10 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+    20 = EXT:gsb_consent/Resources/Private/Partials/Page/
+  }
   templateName = IncludeElement
 
   dataProcessing {

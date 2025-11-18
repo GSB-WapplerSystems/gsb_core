@@ -298,7 +298,7 @@
 				<source>Text</source>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.html_title" resname="tt_content.include_element.html_title">
-				<source>HTML-Title-Attribute</source>
+				<source>HTML-Titel-Attribute</source>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.html_name" resname="tt_content.include_element.html_name">
 				<source>HTML-Name-Attribute</source>

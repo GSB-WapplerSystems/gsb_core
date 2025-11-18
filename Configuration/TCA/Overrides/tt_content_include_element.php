@@ -63,7 +63,7 @@ defined('TYPO3') || die();
         ],
         'tx_include_markup_component' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.markup_component',
-            'displayCond' => 'FIELD:rendering:=:webcomponent',
+            'displayCond' => 'FIELD:tx_include_rendering:=:webcomponent',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -103,7 +103,7 @@ defined('TYPO3') || die();
 
     $GLOBALS['TCA']['tt_content']['palettes'] += [
         'include_element' => [
-            'showitem' => 'tx_include_rendering,--linebreak--,tx_include_url,tx_include_markup_component,--linebreak--,tx_include_width,tx_include_height', 'canNotCollapse' => 1,
+            'showitem' => 'tx_include_rendering,--linebreak--,tx_include_url,--linebreak--,tx_include_width,tx_include_height,--linebreak--, tx_include_markup_component', 'canNotCollapse' => 1,
         ],
         'include_element_optional' => [
             'showitem' => 'tx_include_html_title,tx_include_html_name,--linebreak--,tx_include_banner_image',
