@@ -31,7 +31,7 @@ class GsbVersionViewHelperTest extends UnitTestCase
         /*#######
         ## Act ##
         #######*/
-        $assert = $gsbVersionViewHelper->initializeArgumentsAndRender();
+        $assert = $gsbVersionViewHelper->render();
 
         /*##########
         ## Assert ##
