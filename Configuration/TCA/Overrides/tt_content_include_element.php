@@ -6,11 +6,14 @@
 
 declare(strict_types=1);
 
+use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
-(static function (): void {
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_5987_INCLUDE_ELEMENT')) {
+
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['include_element'] = 'tx_include_element';
 
     ExtensionManagementUtility::addTcaSelectItem(
@@ -138,4 +141,4 @@ defined('TYPO3') || die();
         'include_element'
     );
 
-})();
+}
