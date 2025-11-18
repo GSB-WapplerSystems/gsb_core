@@ -1156,6 +1156,10 @@
 			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
 				<source>Configure link settings for the image element</source>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_override.header" resname="tt_content.palettes.image_override.header">
+				<source>Image elements</source>
+				<target>Bildelemente</target>
+			</trans-unit>
 			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
 				<source>Enter name</source>
 			</trans-unit>
