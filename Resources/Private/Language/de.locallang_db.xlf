@@ -1404,6 +1404,51 @@
 				<source>Configure link settings for the image element</source>
 				<target>Link-Einstellungen für das Bildelement konfigurieren</target>
 			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator_tool.placeholder" resname="sys_file_metadata.creator_tool.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.publisher.placeholder" resname="sys_file_metadata.publisher.placeholder">
+				<source>Enter website or name</source>
+				<target>Webseite oder Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source.placeholder" resname="sys_file_metadata.source.placeholder">
+				<source>Enter website or name</source>
+				<target>Webseite oder Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.copyright.placeholder" resname="sys_file_metadata.copyright.placeholder">
+				<source>Enter the name of the author or enter the license</source>
+				<target>Name der Urheberin oder des Urhebers eingeben oder Lizenz eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.language.placeholder" resname="sys_file_metadata.language.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country.placeholder" resname="sys_file_metadata.location_country.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region.placeholder" resname="sys_file_metadata.location_region.placeholder">
+				<source>Enter the name of the region</source>
+				<target>Name der Region eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city.placeholder" resname="sys_file_metadata.location_city.placeholder">
+				<source>Enter name</source>
+				<target>Name der Stadt eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_creation_date.placeholder" resname="sys_file_metadata.content_creation_date.placeholder">
+				<source>Enter date</source>
+				<target>Datum eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_modification_date.placeholder" resname="sys_file_metadata.content_modification_date.placeholder">
+				<source>Enter date</source>
+				<target>Datum eingeben</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>
