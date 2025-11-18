@@ -1,12 +1,21 @@
 <html data-namespace-typo3-fluid="true" lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <f:comment>
+        <!--
+        SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+        SPDX-License-Identifier: GPL-3.0-or-later
+        -->
+    </f:comment>
+
+    <f:variable name="detailPageUrl">{f:link.page(pageUid: '{detailPage}')}</f:variable>
     <dfn
         data-glossary-title="{data.descriptions.0.meaning -> f:format.htmlentities()}"
         data-glossary-text="{data.descriptions.0.text -> f:format.htmlentities()}"
         title="{title}"
         {f:if(condition: data.term_lang, then: 'lang="{data.term_lang}"')}>
-        <f:variable name="detailPageUrl">{f:link.page(pageUid: '{detailPage}')}</f:variable>
         <a href="{f:if(condition:'{detailPageUrl}',then: '{overviewLink}', else: '#')}" title="{title}" class="dpnglossary link" role="button" data-bs-target="#glossary-definition-modal" data-bs-toggle="modal">{data.name}</a>
     </dfn>
 </html>
+
