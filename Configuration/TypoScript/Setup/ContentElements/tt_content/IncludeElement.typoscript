@@ -19,7 +19,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+[feature("GSB11_FEATURE_5987_INCLUDE_ELEMENT")]
 tt_content.include_element = FLUIDTEMPLATE
 tt_content.include_element {
   templateRootPaths.10 = EXT:gsb_core/Resources/Private/Templates/Content/
@@ -45,3 +45,4 @@ tt_content.include_element {
     }
   }
 }
+[global]

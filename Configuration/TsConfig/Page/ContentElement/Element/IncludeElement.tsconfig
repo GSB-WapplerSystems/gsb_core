@@ -19,6 +19,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+[feature("GSB11_FEATURE_5987_INCLUDE_ELEMENT")]
 mod.wizards.newContentElement.wizardItems.special {
   elements {
     include_element {
@@ -32,3 +33,4 @@ mod.wizards.newContentElement.wizardItems.special {
   }
   show := addToList(include_element)
 }
+[global]
