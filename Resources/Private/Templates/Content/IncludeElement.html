@@ -32,10 +32,15 @@
         class="frame frame-type-{data.CType}{f:if(condition: '!{data.tx_link}', then: ' nolink')} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
         style="width='{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')}';"
     >
+      <f:if condition="{data.header}">
+        <f:render arguments="{_all}" partial="Header/All" />
+      </f:if>
+
       <f:render
           partial="ConsentOverlay"
           arguments="{image: overlayImage, height: data.tx_include_height, width: data.tx_include_width, textHtml: overlayHtmlText}"
       />
+
       <f:if condition="{data.tx_include_rendering} == 'iframe'">
           <iframe
               src="{data.tx_include_url}"
@@ -55,10 +60,18 @@
              name="{data.tx_include_html_name}"
              style="width:{f:if(condition:data.tx_include_width, then:data.tx_include_width, else:'100%')};
                     height:{f:if(condition:data.tx_include_height, then:data.tx_include_height, else:'400px')};">
-          <f:format.html>{data.markup_component}</f:format.html>
         </div>
       </f:if>
       </div>
+      <f:if condition="{data.tx_include_rendering} == 'webcomponent'">
+        <f:if condition="{data.tx_include_markup_component}">
+          <div class="text">
+            <div class="ce-bodytext">
+              <f:format.html>{data.tx_include_markup_component}</f:format.html>
+            </div>
+          </div>
+        </f:if>
+      </f:if>
     </div>
   </f:if>
 </html>

@@ -375,6 +375,14 @@
 				<source>Height</source>
 				<target>Höhe</target>
 			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_title" resname="tt_content.include_element.html_title" approved="yes">
+				<source>HTML-Title-Attribute</source>
+				<target>HTML-Titel-Attribute</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_name" resname="tt_content.include_element.html_name" approved="yes">
+				<source>HTML-Name-Attribute</source>
+				<target>HTML-Name-Attribute</target>
+			</trans-unit>
 			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image" approved="yes">
 				<source>Consent Banner Image</source>
 				<target>Banner Hintergrundbild</target>
