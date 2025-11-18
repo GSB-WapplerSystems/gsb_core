@@ -31,7 +31,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class RequestIdViewHelperTest extends UnitTestCase
 {
-    private const string SERVER_REQUEST_HEADER = 'isSet';
+    private const SERVER_REQUEST_HEADER = 'isSet';
 
     #[Test]
     #[DataProvider('requestIdViewHelperDataProvider')]
