@@ -46,7 +46,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
      */
     protected const CONSTANT_KEYS_TO_REMOVE = [
         'config.debug',
-		'config.navType',
+        'config.navType',
         'config.admPanel',
         'config.no_cache',
         'config.pids.Search',
