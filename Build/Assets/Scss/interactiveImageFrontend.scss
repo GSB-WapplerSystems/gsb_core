@@ -1,0 +1,95 @@
+/* HotSpot Viewer Styles */
+#interactive-image-map-container {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+#interactive-image-map-container canvas {
+    position: relative;
+    z-index: 1;
+}
+
+.hotspot-viewer-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.hotspot-viewer-button {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    border: 2px solid;
+}
+
+.hotspot-viewer-button-inner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.hotspot-viewer-tooltip {
+    position: absolute;
+    background: white;
+    border: 2px solid;
+    border-radius: 0;
+    padding: 8px 12px;
+    font-weight: bold;
+    color: black;
+    pointer-events: auto;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+.hotspot-viewer-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(128 128 128 / 50%);
+    backdrop-filter: blur(4px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    pointer-events: auto;
+}
+
+.hotspot-viewer-modal-dialog {
+    position: relative;
+    background: white;
+    border: 4px solid;
+    border-radius: 0;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: auto;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+    z-index: 1001;
+    max-height: 100%;
+}
+
+.hotspot-viewer-modal-content {
+    position: relative;
+}
+

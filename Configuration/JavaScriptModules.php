@@ -28,7 +28,7 @@ return [
     ],
     'imports' => [
         '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
-        '@itzbund/gsb_public_frontend/interactiveImage/backend.js' => 'EXT:gsb_public_frontend/Resources/Public/JavaScripts/interactiveImageBackend.js',
+        '@itzbund/gsb_core/interactiveImage/backend.js' => 'EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageBackend.js',
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
     ],
 ];

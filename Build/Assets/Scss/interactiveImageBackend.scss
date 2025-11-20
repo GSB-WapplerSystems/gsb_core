@@ -1,0 +1,64 @@
+[data-title="Hotspot"] {
+    .form-irre-object {
+        border-left: 2px solid var(--token-color-blue-30);
+
+        .panel-heading {
+            background-color: var(--token-color-blue-10);
+
+            @media (prefers-color-scheme: dark) {
+                background-color: var(--token-color-blue-70);
+            }
+        }
+
+        .form-irre-object {
+            border-left: 2px solid var(--token-color-green-30);
+
+            .panel-heading {
+                background-color: var(--token-color-green-10);
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: var(--token-color-green-80);
+                }
+            }
+        }
+    }
+
+    .form-wizards-wrap:has(textarea[name*="[coordinates]"]) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: .5rem;
+    }
+
+    .form-wizards-item-element {
+        textarea[name*="[coordinates]"] {
+            display: none;
+        }
+
+        // Show checkmark when the coordinates textarea has a value
+        &:has(textarea[name*="[coordinates]"]:not(:placeholder-shown)) {
+            position: relative;
+
+            &::after {
+                content: '✓';
+                color: green;
+                font-weight: bold;
+                position: absolute;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    // Show green check for non-empty coordinates textarea
+    // textarea[name*="[coordinates]"]:not(:placeholder-shown) {
+    //     border-color: green;
+
+    //     &::after {
+    //         content: '✓';
+    //         display: block;
+    //         color: green;
+    //         font-weight: bold;
+    //         margin-left: 0.25rem;
+    //     }
+    // }
+}
