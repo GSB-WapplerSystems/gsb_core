@@ -148,7 +148,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
 
         // Check if old constants are still present
         $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($siteId, false);
-        
+
         foreach (self::CONSTANT_KEYS_TO_REMOVE as $constantKey) {
             if (isset($parsedTypoScriptConstants[$constantKey])) {
                 return true;
@@ -189,7 +189,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
 
             // Get current TypoScript constants
             $parsedTypoScriptConstants = $this->getParsedTypoScriptConstants($site->getRootPageId(), false);
-            
+
             // Remove constants that should be removed
             $constantsToRemove = [];
             foreach (self::CONSTANT_KEYS_TO_REMOVE as $constantKey) {
@@ -203,7 +203,9 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
             // Update sys_template if constants were removed
             if (!empty($constantsToRemove)) {
                 $this->removeOldConstants($site->getRootPageId(), $parsedTypoScriptConstants);
-            } else {
+            }
+
+            if (empty($constantsToRemove)) {
                 $this->output->writeln('No old constants found to remove for site: ' . $siteIdentifier);
             }
         }
@@ -221,4 +223,3 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
         return ['gsbcore_moveConfigurationToSettings'];
     }
 }
-
