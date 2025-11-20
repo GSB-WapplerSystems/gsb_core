@@ -6,6 +6,10 @@
                 <source>Your new folder name</source>
 				<target state="final">Ordnertitel eingeben</target>
             </trans-unit>
+            <trans-unit id="create_folder.title" approved="yes">
+				<source>Create new folder</source>
+				<target state="final">Ordnertitel eingeben</target>
+			</trans-unit>
         </body>
     </file>
 </xliff>
