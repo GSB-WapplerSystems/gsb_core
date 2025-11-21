@@ -76,12 +76,15 @@ export class HotSpotCanvas {
         const natH = this.bgImage.naturalHeight;
         const ratio = natW / natH;
         const container = this.canvas.parentElement || document.documentElement;
+        const viewportW = (window.visualViewport?.width || document.documentElement.clientWidth || window.innerWidth);
+        const viewportH = (window.visualViewport?.height || document.documentElement.clientHeight || window.innerHeight);
         const crect = container.getBoundingClientRect();
-        const containerW = Math.max(0, crect.width || container.clientWidth || 0);
-        const maxH = Math.max(0, Math.floor(window.innerHeight * 0.9));
+        const containerClientW = container.clientWidth || crect.width || 0;
+        const availableW = Math.min(containerClientW, viewportW);
+        const maxH = Math.max(0, Math.floor(viewportH * 0.9));
         const maxWFromVh = Math.floor(maxH * ratio);
-
-        const targetW = Math.min(containerW, maxWFromVh);
+        const maxWFromViewport = Math.floor(viewportW * 0.99);
+        const targetW = Math.min(availableW, maxWFromVh, maxWFromViewport);
         if (!isFinite(targetW) || targetW <= 0) return;
         const targetH = Math.floor(targetW / ratio);
         this.canvas.style.width = `${Math.round(targetW)}px`;
@@ -95,10 +98,10 @@ export class HotSpotCanvas {
 
     _drawBackground(){
         if (!this.bgImage) return;
-        const { width, height } = this.canvas;
         this.ctx.save();
+        this.ctx.setTransform(1, 0, 0, 1, 0, 0);
         this.ctx.imageSmoothingEnabled = true;
-        this.ctx.drawImage(this.bgImage, 0, 0, width, height);
+        this.ctx.drawImage(this.bgImage, 0, 0, this.canvas.width, this.canvas.height);
         this.ctx.restore();
     }
 

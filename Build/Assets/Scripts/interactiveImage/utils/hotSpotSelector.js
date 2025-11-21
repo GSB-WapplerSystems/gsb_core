@@ -10,6 +10,7 @@ import { Geometry } from './geometry.js';
  * @property {string} [previewColor]
  * @property {boolean} [enableGrid]
  * @property {number} [minRectSize]
+ * @property {boolean} [showDefaultRec]
  */
 
 /**
@@ -63,6 +64,7 @@ export class HotSpotSelector extends HotSpotCanvas {
         this.strokeColor = (opts && opts.strokeColor) || '#fff';
         this.pointColor = (opts && opts.pointColor) || '#000';
         this.previewColor = (opts && opts.previewColor) || '#38bdf8';
+        this.showDefaultRec = Boolean(opts.showDefaultRec);
 
         // Init
         this._bindUI();
@@ -99,6 +101,33 @@ export class HotSpotSelector extends HotSpotCanvas {
             this.isConnected = this.points.length >= 3;
             this._draw();
             return;
+        }
+
+        // Create default rectangle if showDefaultRec is true and initPoints are undefined
+        if (this.showDefaultRec && !this._pendingInit) {
+            const rNow = this._getCurrentDrawRect();
+            if (!rNow) return; // can't create default rect without background rect
+
+            const centerX = rNow.dx + rNow.dw / 2;
+            const centerY = rNow.dy + rNow.dh / 2;
+            const rectSize = 100;
+            const halfSize = rectSize / 2;
+
+            // Create 4 corner points for rectangle (TL, TR, BR, BL)
+            const x0 = centerX - halfSize;
+            const y0 = centerY - halfSize;
+            const x1 = centerX + halfSize;
+            const y1 = centerY + halfSize;
+
+            this.points = [
+                { x: x0, y: y0 }, // TL
+                { x: x1, y: y0 }, // TR
+                { x: x1, y: y1 }, // BR
+                { x: x0, y: y1 }  // BL
+            ];
+            this.isConnected = true;
+            this._draw();
+            this._emitShape();
         }
     }
     //#endregion

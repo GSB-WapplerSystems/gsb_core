@@ -34,7 +34,6 @@ const init = () => {
             size: Modal.sizes.full,
             staticBackdrop: true,
             buttons: [
-                { text: 'Löschen', btnClass: 'btn-default', name: 'clear' },
                 { text: 'Schließen', trigger: (_e, modalElement) => modalElement.hideModal(), btnClass: 'btn-default' },
                 {
                     text: 'Speichern',
@@ -50,19 +49,16 @@ const init = () => {
         });
 
         modalEl.addEventListener('shown.bs.modal', () => {
-            const clearBtn = modalEl.querySelector('button[name="clear"]');
             new HotSpotSelector({
                 canvas,
                 imageUrl,
-                ui: { clearBtn },
                 onShapeChange: updateCoordinates,
-                opts: { mode: 'rect', minRectSize: 50 },
+                opts: { mode: 'rect', minRectSize: 50, showDefaultRec: true },
                 initPoints: coordinatesField.value ? JSON.parse(coordinatesField.value) : null });
         }, { once: true });
     };
 
     new RegularEvent('click', function (e) {
-        console.log('click event');
         const activePanel = e.target.closest('.panel');
         const coordinatesField = activePanel?.querySelector('[name*="[coordinates]"]');
         const dataLink = activePanel?.querySelector('.hotspot.btn');

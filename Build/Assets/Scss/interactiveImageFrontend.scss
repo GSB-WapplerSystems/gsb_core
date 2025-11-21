@@ -1,15 +1,20 @@
 /* HotSpot Viewer Styles */
 #interactive-image-map-container {
-    max-width: 900px;
     width: 100%;
     height: auto;
     display: block;
     position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 #interactive-image-map-container canvas {
     position: relative;
     z-index: 1;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
 }
 
 .hotspot-viewer-button-container {
@@ -58,15 +63,18 @@
     display: none;
     z-index: 1000;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
 }
 
 .hotspot-viewer-modal-backdrop {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(128 128 128 / 50%);
+    width: 100vw;
+    height: 100vh;
+    background: #222222B2;
     backdrop-filter: blur(4px);
     display: none;
     flex-direction: column;
@@ -74,6 +82,7 @@
     justify-content: center;
     z-index: 10000;
     pointer-events: auto;
+    padding-top: 81px;
 }
 
 .hotspot-viewer-modal-dialog {
@@ -81,15 +90,46 @@
     background: white;
     border: 4px solid;
     border-radius: 0;
-    padding: 20px;
+    padding: 0 90px 24px;
     overflow-y: auto;
     overflow-x: auto;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     z-index: 1001;
-    max-height: 100%;
+    max-width: 960px;
+    width: calc(100% - 40px);
+    }
+
+.hotspot-viewer-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+    transition: opacity 0.2s ease;
+}
+
+.hotspot-viewer-modal-close:hover {
+    opacity: 0.7;
+}
+
+.hotspot-viewer-modal-close:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }
 
 .hotspot-viewer-modal-content {
     position: relative;
+    padding-top: 56px;
 }
 

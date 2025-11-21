@@ -34,7 +34,6 @@ const BUTTON_DOT_RADIUS = 14;
 const BUTTON_HEIGHT = 28;
 const BUTTON_CENTER_Y = BUTTON_HEIGHT / 2;
 const TOOLTIP_SPACING = 10;
-const MODAL_MAX_SIZE_RATIO = 0.8;
 
 export class HotSpotViewer extends HotSpotCanvas {
 
@@ -127,6 +126,16 @@ export class HotSpotViewer extends HotSpotCanvas {
         return content;
     }
 
+    _createModalCloseButton() {
+        const closeButton = document.createElement('button');
+        closeButton.className = 'hotspot-viewer-modal-close';
+        closeButton.setAttribute('aria-label', 'Close modal');
+        closeButton.setAttribute('type', 'button');
+        closeButton.innerHTML = '×';
+        closeButton.addEventListener('click', () => this._closeModal());
+        return closeButton;
+    }
+
     _attachModalBackdropEvents(backdrop) {
         backdrop.addEventListener('click', (e) => {
             if (e.target === backdrop) {
@@ -158,13 +167,14 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _createModal() {
-        this._ensureParentIsRelative(this.canvas);
         this.modalBackdrop = this._createModalBackdrop();
         this.modalDialog = this._createModalDialog();
         this.modalContent = this._createModalContent();
+        this.modalCloseButton = this._createModalCloseButton();
+        this.modalDialog.appendChild(this.modalCloseButton);
         this.modalDialog.appendChild(this.modalContent);
         this.modalBackdrop.appendChild(this.modalDialog);
-        this.canvas.parentElement.insertBefore(this.modalBackdrop, this.canvas.nextSibling);
+        document.body.appendChild(this.modalBackdrop);
         this._focusableElements = [];
         this._firstFocusableElement = null;
         this._lastFocusableElement = null;
@@ -322,7 +332,7 @@ export class HotSpotViewer extends HotSpotCanvas {
         button.style.display = 'flex';
 
         if (tooltip && this._shouldShowTooltip(hotspotIndex)) {
-            this._positionTooltipRelativeToButton(button, tooltip, position.x, canvasRect.width);
+            this._positionTooltipRelativeToButton(tooltip, position.x, canvasRect.width);
         }
     }
 
@@ -356,21 +366,33 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _calculateTooltipHorizontalPosition(buttonX, tooltipWidth, containerWidth) {
-        const spaceOnLeft = buttonX - BUTTON_DOT_RADIUS - TOOLTIP_SPACING;
-        const shouldPlaceOnLeft = spaceOnLeft >= tooltipWidth;
+        const buttonRightEdge = buttonX + BUTTON_DOT_RADIUS;
+        const buttonLeftEdge = buttonX - BUTTON_DOT_RADIUS;
+        const spaceOnRight = containerWidth - buttonRightEdge - TOOLTIP_SPACING;
+        const spaceOnLeft = buttonLeftEdge - TOOLTIP_SPACING;
+
+        const rightPlacementX = BUTTON_DOT_RADIUS + (TOOLTIP_SPACING * 2);
+        const leftPlacementX = -BUTTON_DOT_RADIUS - TOOLTIP_SPACING - tooltipWidth;
 
         let tooltipX;
-        if (shouldPlaceOnLeft) {
-            tooltipX = -BUTTON_DOT_RADIUS - TOOLTIP_SPACING - tooltipWidth;
+        let needsClamping = false;
+
+        if (spaceOnRight >= tooltipWidth) {
+            tooltipX = rightPlacementX;
+        } else if (spaceOnLeft >= tooltipWidth) {
+            tooltipX = leftPlacementX;
         } else {
-            tooltipX = BUTTON_DOT_RADIUS + TOOLTIP_SPACING;
+            tooltipX = spaceOnRight > spaceOnLeft ? rightPlacementX : leftPlacementX;
+            needsClamping = true;
         }
 
-        const absoluteX = buttonX + tooltipX;
-        if (absoluteX < 0) {
-            tooltipX = -buttonX;
-        } else if (absoluteX + tooltipWidth > containerWidth) {
-            tooltipX = containerWidth - buttonX - tooltipWidth;
+        if (needsClamping) {
+            const absoluteX = buttonX + tooltipX;
+            if (absoluteX < 0) {
+                tooltipX = Math.max(0, leftPlacementX);
+            } else if (absoluteX + tooltipWidth > containerWidth) {
+                tooltipX = containerWidth - buttonX - tooltipWidth;
+            }
         }
 
         return tooltipX;
@@ -380,7 +402,7 @@ export class HotSpotViewer extends HotSpotCanvas {
         return BUTTON_CENTER_Y - (tooltipHeight / 2);
     }
 
-    _positionTooltipRelativeToButton(button, tooltip, buttonX, containerWidth) {
+    _positionTooltipRelativeToButton(tooltip, buttonX, containerWidth) {
         const {
             width: tooltipWidth,
             height: tooltipHeight
@@ -423,7 +445,6 @@ export class HotSpotViewer extends HotSpotCanvas {
 
     _updateTooltipVisibility() {
         this.hotspotButtons.forEach(({
-            button,
             tooltip,
             hotspotIndex
         }) => {
@@ -437,7 +458,7 @@ export class HotSpotViewer extends HotSpotCanvas {
                 const buttonX = this._calculateButtonPositionForTooltip(hotspotIndex);
                 if (buttonX !== null) {
                     const canvasRect = this.canvas.getBoundingClientRect();
-                    this._positionTooltipRelativeToButton(button, tooltip, buttonX, canvasRect.width);
+                    this._positionTooltipRelativeToButton(tooltip, buttonX, canvasRect.width);
                 }
             } else {
                 tooltip.style.display = 'none';
@@ -488,17 +509,7 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _repositionModal() {
-        if (!this.modalBackdrop || this.modalBackdrop.style.display !== 'flex') return;
-
-        const canvasRect = this.canvas.getBoundingClientRect();
-        const parentRect = this.canvas.parentElement.getBoundingClientRect();
-
-        this.modalBackdrop.style.top = `${canvasRect.top - parentRect.top}px`;
-        this.modalBackdrop.style.left = `${canvasRect.left - parentRect.left}px`;
-        this.modalBackdrop.style.width = `${canvasRect.width}px`;
-        this.modalBackdrop.style.height = `${canvasRect.height}px`;
-        this.modalDialog.style.maxWidth = `${canvasRect.width * MODAL_MAX_SIZE_RATIO}px`;
-        this.modalDialog.style.maxHeight = `${canvasRect.height * MODAL_MAX_SIZE_RATIO}px`;
+        // Modal now covers full page, no repositioning needed
     }
 
     _bindResizeHandlers() {
@@ -597,22 +608,6 @@ export class HotSpotViewer extends HotSpotCanvas {
         this.modalContent.appendChild(clonedContent);
     }
 
-    _positionModalBackdrop() {
-        const canvasRect = this.canvas.getBoundingClientRect();
-        const parentRect = this.canvas.parentElement.getBoundingClientRect();
-
-        this.modalBackdrop.style.top = `${canvasRect.top - parentRect.top}px`;
-        this.modalBackdrop.style.left = `${canvasRect.left - parentRect.left}px`;
-        this.modalBackdrop.style.width = `${canvasRect.width}px`;
-        this.modalBackdrop.style.height = `${canvasRect.height}px`;
-    }
-
-    _setModalDialogSize() {
-        const canvasRect = this.canvas.getBoundingClientRect();
-        this.modalDialog.style.maxWidth = `${canvasRect.width * MODAL_MAX_SIZE_RATIO}px`;
-        this.modalDialog.style.maxHeight = `${canvasRect.height * MODAL_MAX_SIZE_RATIO}px`;
-    }
-
     _disableInteractions() {
         this.hotspotButtons.forEach(({
             button
@@ -644,8 +639,6 @@ export class HotSpotViewer extends HotSpotCanvas {
         if (!contentElement) return;
 
         this._setModalContent(contentElement);
-        this._positionModalBackdrop();
-        this._setModalDialogSize();
         this.modalDialog.style.borderColor = this.colorDefault;
         this._disableInteractions();
         this._preventBodyScroll();
