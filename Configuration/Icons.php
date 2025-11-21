@@ -29,10 +29,9 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Singleteaser.svg',
     ],
-    // ToDo: Change Icon
     'tx_imagemap' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Imagemap.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Hotspot.svg',
     ],
     'tx_banner' => [
         'provider' => SvgIconProvider::class,

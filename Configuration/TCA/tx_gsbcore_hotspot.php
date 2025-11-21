@@ -15,7 +15,7 @@ return [
         'default_sortby' => 'tooltip',
         'versioningWS' => true,
         'rootLevel' => -1,
-        'iconfile' => 'EXT:gsb_core/Resources/Public/Images/Icons/Imagemap.svg',
+        'iconfile' => 'EXT:gsb_core/Resources/Public/Images/Icons/Hotspot.svg',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
