@@ -112,16 +112,24 @@ class CachedMenuProcessor implements DataProcessorInterface
             ],
         ];
 
-        if ($this->cache->has($this->configRootPageId)) {
-            $processedData[$this->configAs] = $this->cache->get($this->configRootPageId);
+        $langCode = $this->getCurrentLangCode($cObj);
+        $cacheKey = $this->configRootPageId . '-' . $langCode;
+
+        if ($this->cache->has($cacheKey)) {
+            $processedData[$this->configAs] = $this->cache->get($cacheKey);
 
             return $processedData;
         }
 
         $processedData = $this->menuProcessor->process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
-        $this->cache->set($this->configRootPageId, $processedData[$this->configAs]);
+        $this->cache->set($cacheKey, $processedData[$this->configAs]);
 
         return $processedData;
+    }
+
+    private function getCurrentLangCode(ContentObjectRenderer $cObj): string
+    {
+        return $cObj->getRequest()->getAttribute('language')?->getLocale()?->getLanguageCode() ?? 'default';
     }
 
     /**
