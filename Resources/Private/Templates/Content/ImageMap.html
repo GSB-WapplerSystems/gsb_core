@@ -12,7 +12,7 @@
     <f:if condition="{data.header}">
         <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
-    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-hotspots="{hotspots -> f:format.json()}" data-data="{data -> f:format.json()}">
+    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-image="{image.0 -> f:format.json()}" data-hotspots="{hotspots -> f:format.json()}" data-data="{data -> f:format.json()}">
         <canvas></canvas>
     </div>
 
@@ -26,6 +26,7 @@
     </div>
 
     <f:debug inline="1">{_all}</f:debug>
+    <f:debug inline="1">{image.0}</f:debug>
 </div>
 <f:asset.script type="module" identifier="interactiveImageMap" src="EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageFrontend.js" />
 <f:asset.css identifier="interactiveImageMapCSS" href="EXT:gsb_core/Resources/Public/Build/StyleSheets/interactiveImageFrontend.css" />

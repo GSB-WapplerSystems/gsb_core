@@ -72,5 +72,27 @@ export const Geometry = {
         }
         if (idx === -1) return -1;
         return Math.sqrt(best) <= threshold ? idx : -1;
+    },
+    normalizedToCanvas(points, drawPoly) {
+        if (!drawPoly) return points;
+        const {
+            dx,
+            dy,
+            dw,
+            dh
+        } = drawPoly;
+        return points.map(({
+            u,
+            v
+        }) => ({
+            x: dx + u * dw,
+            y: dy + v * dh
+        }));
+    },
+
+    resolveColor(cssVarName) {
+        const element = document.documentElement;
+        const computedValue = getComputedStyle(element).getPropertyValue(cssVarName).trim();
+        return computedValue;
     }
 };

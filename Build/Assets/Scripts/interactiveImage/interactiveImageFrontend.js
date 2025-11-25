@@ -17,15 +17,10 @@ const init = () => {
 
     const imageUrl = interactiveImageMapContainer.getAttribute('data-image-url');
     const canvas = interactiveImageMapContainer.querySelector('canvas');
-    const data = JSON.parse(interactiveImageMapContainer.getAttribute('data-data'));
     const hotspotsRaw = JSON.parse(interactiveImageMapContainer.getAttribute('data-hotspots'));
     const hotspots = mapHotSpots(hotspotsRaw, interactiveImageMapContainer);
 
-    new HotSpotViewer({ canvas, imageUrl, hotspots, opts: {
-        colorActive: data.color_active,
-        colorDefault: data.color_default,
-        colorHover: data.color_hover
-    } });
+    new HotSpotViewer({ canvas, imageUrl, hotspots});
 
 
 };
