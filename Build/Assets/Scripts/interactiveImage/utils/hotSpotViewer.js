@@ -5,13 +5,21 @@ import { Geometry } from './geometry.js';
  * @typedef {Object} HotSpotViewerOptions
  * @property {boolean} [showPolygons]
  * @property {string} [imageAlt]
+ * @property {string} [imageDescription]
+ */
+
+/**
+ * @typedef {Object} HotSpotLink
+ * @property {string} [url]
+ * @property {string} [target]
+ * @property {string} [title]
  */
 
 /**
  * @typedef {Object} HotSpotViewerHotSpot
  * @property {boolean} [showPolygons]
  * @property {string} [tooltip]
- * @property {string} [link]
+ * @property {HotSpotLink} [link]
  * @property {object} [coordinates]
  * @property {HTMLElement} [content]
  */
@@ -52,7 +60,8 @@ export class HotSpotViewer extends HotSpotCanvas {
         this.hoveredHotspotIndex = -1;
         this.focusedHotspotIndex = -1;
         this.showPolygons = Boolean(opts.showPolygons);
-        this.imageAlt = opts.imageAlt || '';
+        this.imageAlt = opts.imageAlt || 'Interactive image map';
+        this.imageDescription = opts.imageDescription || '';
 
         this._setupCanvasAccessibility();
         this._createButtonContainer();
@@ -63,22 +72,14 @@ export class HotSpotViewer extends HotSpotCanvas {
 
     _setupCanvasAccessibility() {
         this.canvas.setAttribute('role', 'img');
-        const ariaLabel = this.imageAlt || 'Interactive image map';
-        this.canvas.setAttribute('aria-label', ariaLabel);
+        this.canvas.setAttribute('aria-label', this.imageAlt);
+        this.canvas.setAttribute('aria-description', this.imageDescription);
     }
 
     _createTooltipElement(button, hotspot) {
         const tooltip = document.createElement('div');
         tooltip.className = 'hotspot-viewer-tooltip';
         tooltip.textContent = hotspot.tooltip || '';
-
-        tooltip.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (hotspot.content) {
-                this._openModal(hotspot.content);
-            }
-        });
-
         button.appendChild(tooltip);
         return tooltip;
     }
@@ -192,13 +193,30 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _createButtonElement(hotspot, index, totalCount) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'hotspot-viewer-button';
         const buttonNumber = index + 1;
         const ariaLabel = hotspot.tooltip
             ? `${hotspot.tooltip}, hotspot ${buttonNumber} of ${totalCount}`
             : `Hotspot ${buttonNumber} of ${totalCount}`;
+
+        if (hotspot.link?.url) {
+            const link = document.createElement('a');
+            link.href = hotspot.link.url;
+            link.className = 'hotspot-viewer-button';
+            link.setAttribute('aria-label', ariaLabel);
+
+            if (hotspot.link.target) {
+                link.target = hotspot.link.target;
+            }
+
+            if (hotspot.link.title) {
+                link.title = hotspot.link.title;
+            }
+
+            return link;
+        }
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'hotspot-viewer-button';
         button.setAttribute('aria-label', ariaLabel);
         return button;
     }
@@ -210,6 +228,8 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _attachButtonClickHandler(button, hotspot) {
+        if (button.tagName !== 'BUTTON') return;
+
         button.addEventListener('click', (e) => {
             e.stopPropagation();
             if (hotspot.content) {
@@ -587,7 +607,13 @@ export class HotSpotViewer extends HotSpotCanvas {
         const hotspotIndex = this._findHotspotAtPoint(x, y);
         if (hotspotIndex !== -1) {
             const hotspot = this.hotspots[hotspotIndex];
-            if (hotspot.content) {
+            if (hotspot.link?.url) {
+                if (hotspot.link.target === '_blank') {
+                    window.open(hotspot.link.url, hotspot.link.target);
+                } else {
+                    window.location.href = hotspot.link.url;
+                }
+            } else if (hotspot.content) {
                 this._openModal(hotspot.content);
             }
         }

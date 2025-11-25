@@ -12,11 +12,11 @@
     <f:if condition="{data.header}">
         <f:render arguments="{_all}" partial="Header/All" />
     </f:if>
-    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-image="{image.0 -> f:format.json()}" data-hotspots="{hotspots -> f:format.json()}" data-data="{data -> f:format.json()}">
+    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-image-alt="{image.0.properties.alternative}" data-image-description="{image.0.properties.description}" data-hotspots="{hotspots -> f:format.json()}" data-data="{data -> f:format.json()}">
         <canvas></canvas>
     </div>
 
-    <div id="interactive-image-map-popups" style="display: none;">
+    <div id="interactive-image-map-popups"   style="display: none;">
         <f:for each="{hotspots}" as="hotspot">
             <f:comment>This renders the selected CEs for the popup of the hotspot.</f:comment>
             <f:for as="popupcontent" each="{hotspot.contents}">
@@ -24,9 +24,6 @@
             </f:for>
         </f:for>
     </div>
-
-    <f:debug inline="1">{_all}</f:debug>
-    <f:debug inline="1">{image.0}</f:debug>
 </div>
 <f:asset.script type="module" identifier="interactiveImageMap" src="EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageFrontend.js" />
 <f:asset.css identifier="interactiveImageMapCSS" href="EXT:gsb_core/Resources/Public/Build/StyleSheets/interactiveImageFrontend.css" />
