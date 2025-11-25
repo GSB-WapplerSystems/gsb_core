@@ -48,43 +48,8 @@ defined('TYPO3') || die();
                 'foreign_table' => 'tx_gsbcore_hotspot',
             ],
         ],
-        'color_default' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.color_default',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [],
-                'itemsProcFunc' => ITZBund\GsbCore\UserFunc\ColorPickerValueItems::class . '->getItems',
-            ],
-        ],
-        'color_active' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.color_active',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [],
-                'itemsProcFunc' => ITZBund\GsbCore\UserFunc\ColorPickerValueItems::class . '->getItems',
-            ],
-        ],
-        'color_hover' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.color_hover',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [],
-                'itemsProcFunc' => ITZBund\GsbCore\UserFunc\ColorPickerValueItems::class . '->getItems',
-            ],
-        ],
     ];
     ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
-
-    $GLOBALS['TCA']['tt_content']['palettes'] += [
-        'hotspotColor' => [
-            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.colors',
-            'showitem' => 'color_default,color_active,color_hover',
-            'canNotCollapse' => 1,
-        ]
-    ];
 
     $GLOBALS['TCA']['tt_content']['types'] += [
         'gsb_imagemap' => [
@@ -144,7 +109,7 @@ defined('TYPO3') || die();
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,header,
                     --palette--;;header_config,subheader,
                 --div--;LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.title,
-                    image, --palette--;;hotspotColor, hotspot,
+                    image, hotspot,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;
                 frames,

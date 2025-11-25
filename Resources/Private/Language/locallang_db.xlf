@@ -1141,18 +1141,6 @@
 			<trans-unit id="tx_gsbcore_hotspot.link.description" resname="tx_gsbcore_hotspot.link.description">
 				<source>Please only fill in this field if you want the hotspot to be linked on click. Leave empty to display popup on click.</source>
 			</trans-unit>
-			<trans-unit id="tx_gsbcore_hotspot.colors" resname="tx_gsbcore_hotspot.colors">
-				<source>Icon Colors</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_hotspot.color_default" resname="tx_gsbcore_hotspot.color_default">
-				<source>Default Color for Icon</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_hotspot.color_active" resname="tx_gsbcore_hotspot.color_active">
-				<source>Active Color for Icon</source>
-			</trans-unit>
-			<trans-unit id="tx_gsbcore_hotspot.color_hover" resname="tx_gsbcore_hotspot.color_hover">
-				<source>Hover Color for Icon</source>
-			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.popup" resname="tx_gsbcore_hotspot.popup">
 				<source>Content Element(s) for the Popup of this Hotspot</source>
 			</trans-unit>
