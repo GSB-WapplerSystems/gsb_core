@@ -22,12 +22,14 @@ namespace ITZBund\GsbCore\DataProcessing;
 
 use Doctrine\DBAL\Exception;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\LinkHandling\TypoLinkCodecService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 class HotspotProcessor implements DataProcessorInterface
 {
-    public function __construct(private readonly ConnectionPool $connectionPool) {}
+    public function __construct(private readonly ConnectionPool $connectionPool, private readonly TypoLinkCodecService $typolinkCodecService) {}
     /**
      * @phpstan-ignore-next-line
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
@@ -54,6 +56,13 @@ class HotspotProcessor implements DataProcessorInterface
             ->executeQuery()
             ->fetchAllAssociative();
         foreach ($hotspots as $key => $hotspot) {
+            $urlParts = $this->typolinkCodecService->decode($hotspot['link']);
+            $urlParts['typolink'] = $cObj->typoLink_URL([
+                'parameter' => $hotspot['link'],
+                'forceAbsoluteUrl' => true,
+            ]);
+            $hotspots[$key]['urlParts'] = $urlParts;
+
             $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tt_content');
             $hotspots[$key]['contents'] = $queryBuilder
                 ->select('*')
