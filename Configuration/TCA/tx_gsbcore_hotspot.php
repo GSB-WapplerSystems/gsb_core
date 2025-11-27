@@ -31,6 +31,7 @@ return [
     'columns' => [
         'tooltip' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.tooltip',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.tooltip.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -67,6 +68,7 @@ return [
                 'appearance' => [
                     'collapseAll' => true,
                     'expandSingle' => true,
+                    'newRecordLinkTitle' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.popup.new',
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,
                     'showPossibleLocalizationRecords' => true,
@@ -88,5 +90,5 @@ return [
             ['showitem' =>
                 '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, popup, imagemap,'
             ],
-        ],
-    ];
+    ],
+];

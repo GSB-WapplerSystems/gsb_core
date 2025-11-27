@@ -144,12 +144,6 @@
 			<trans-unit id="gsb_singleteaser.description" resname="gsb_singleteaser.description">
 				<source>Adds a teaser with headline, image, text and link element</source>
 			</trans-unit>
-			<trans-unit id="gsb_imagemap.title" resname="gsb_imagemap.title">
-				<source>Image Map</source>
-			</trans-unit>
-			<trans-unit id="gsb_imagemap.description" resname="gsb_imagemap.description">
-				<source>Adds an interactive image map with hotspots</source>
-			</trans-unit>
 			<trans-unit id="gsb_banner.title" resname="gsb_banner.title">
 				<source>Banner</source>
 			</trans-unit>
@@ -1123,8 +1117,20 @@
 			<trans-unit id="tt_content.palettes.image_link_config.description" resname="tt_content.palettes.image_link_config.description">
 				<source>Configure link settings for the image element</source>
 			</trans-unit>
+			<trans-unit id="gsb_imagemap.title" resname="gsb_imagemap.title">
+				<source>Image Map</source>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.description" resname="gsb_imagemap.description">
+				<source>Adds an interactive image map with hotspots</source>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.image" resname="gsb_imagemap.image">
+				<source>Grafik Bild</source>
+			</trans-unit>
 			<trans-unit id="hotspot" resname="hotspot">
 				<source>Hotspot</source>
+			</trans-unit>
+			<trans-unit id="hotspot.new" resname="hotspot.new">
+				<source>Create new hotspot</source>
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.coordinates" resname="tx_gsbcore_hotspot.coordinates">
 				<source>Coordinates (JSON)</source>
@@ -1143,6 +1149,9 @@
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.popup" resname="tx_gsbcore_hotspot.popup">
 				<source>Content Element(s) for the Popup of this Hotspot</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup.new" resname="tx_gsbcore_hotspot.popup.new">
+				<source>Create new Content Element in Popup(Modal)</source>
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.popup.description" resname="tx_gsbcore_hotspot.popup.description">
 				<source>When a user clicks on the hotspot in frontend view a popup will be displayed. Here you can add content elements to this popup as you like.</source>

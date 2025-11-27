@@ -27,13 +27,14 @@ defined('TYPO3') || die();
     $tempColumns = [
         'hotspot' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:hotspot',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:hotspot.description',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_gsbcore_hotspot',
                 'foreign_field' => 'imagemap',
-
                 'appearance' => [
                     'expandSingle' => true,
+                    'newRecordLinkTitle' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:hotspot.new',
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,
                     'showPossibleLocalizationRecords' => true,
@@ -61,6 +62,7 @@ defined('TYPO3') || die();
                     ],
                 ],
                 'image' => [
+                    'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.image',
                     'config' => [
                         'maxitems' => 1,
                         'minitems' => 1,
