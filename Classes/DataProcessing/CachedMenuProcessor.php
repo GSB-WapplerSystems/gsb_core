@@ -25,6 +25,7 @@ use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Context\UserAspect;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\DataProcessing\MenuProcessor;
@@ -112,8 +113,7 @@ class CachedMenuProcessor implements DataProcessorInterface
             ],
         ];
 
-        $langCode = $this->getCurrentLangCode($cObj);
-        $cacheKey = $this->configRootPageId . '-' . $langCode;
+        $cacheKey = $this->configRootPageId . '-' . $this->getCurrentSiteLanguageId($cObj);
 
         if ($this->cache->has($cacheKey)) {
             $processedData[$this->configAs] = $this->cache->get($cacheKey);
@@ -127,9 +127,12 @@ class CachedMenuProcessor implements DataProcessorInterface
         return $processedData;
     }
 
-    private function getCurrentLangCode(ContentObjectRenderer $cObj): string
+    private function getCurrentSiteLanguageId(ContentObjectRenderer $cObj): int
     {
-        return $cObj->getRequest()->getAttribute('language')?->getLocale()?->getLanguageCode() ?? 'default';
+        /** @var null|SiteLanguage $siteLanguage */
+        $siteLanguage = $cObj->getRequest()->getAttribute('language');
+
+        return $siteLanguage?->getLanguageId() ?? 0;
     }
 
     /**
