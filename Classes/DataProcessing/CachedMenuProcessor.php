@@ -129,7 +129,7 @@ class CachedMenuProcessor implements DataProcessorInterface
 
     private function getCurrentSiteLanguageId(ContentObjectRenderer $cObj): int
     {
-        /** @var null|SiteLanguage $siteLanguage */
+        /** @var SiteLanguage|null $siteLanguage */
         $siteLanguage = $cObj->getRequest()->getAttribute('language');
 
         return $siteLanguage?->getLanguageId() ?? 0;
