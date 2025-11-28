@@ -39,12 +39,14 @@ class CachedMenuProcessor implements DataProcessorInterface
     private string $configBreadcrumbAs = '';
     private UserAspect $userAspect;
     private FrontendInterface $cache;
+    private MenuProcessor $breadCrumbProcessor;
 
     public function __construct(
         private readonly Context $context,
         private readonly CacheManager $cacheManager,
         private readonly MenuProcessor $menuProcessor,
     ) {
+        $this->breadCrumbProcessor = clone $menuProcessor;
         $this->userAspect = $this->context->getAspect('frontend.user');
         $this->cache = $this->cacheManager->getCache('gsb_core_menu');
     }
@@ -147,7 +149,7 @@ class CachedMenuProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processedData
     ): array {
-        return $this->menuProcessor->process(
+        return $this->breadCrumbProcessor->process(
             $cObj,
             $contentObjectConfiguration,
             ['as' => $this->configBreadcrumbAs, 'special' => 'rootline'],
