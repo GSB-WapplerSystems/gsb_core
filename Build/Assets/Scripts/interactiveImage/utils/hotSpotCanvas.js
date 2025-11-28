@@ -1,15 +1,11 @@
-//#region Type Definitions
 /**
  * @typedef {Object} HotSpotCanvasParams
  * @property {HTMLCanvasElement} canvas
  * @property {string} imageUrl
  */
-//#endregion
-
 
 export class HotSpotCanvas {
 
-    //#region Constructor
     /**
      * @param {HotSpotCanvasParams} params
      */
@@ -18,77 +14,118 @@ export class HotSpotCanvas {
         this.ctx = canvas.getContext('2d');
         this.bgImage = null;
         this._initialized = false;
+        this.lastCanvasSize = null;
 
-        this._loadBackgroundFromUrl(imageUrl);
-        this._bindWindowEvents();
+        this._loadBackgroundImageFromUrl(imageUrl);
+        this._bindWindowResizeEvent();
         this._handleResize();
-        this._initResponsiveSizing();
+        this._initializeResponsiveSizing();
     }
 
-    //#endregion
-
-    _initResponsiveSizing() {
+    _initializeResponsiveSizing() {
         const container = this.canvas.parentElement || document.documentElement;
-        const roCallback = () => this._handleResize();
-        this._roCanvas = new ResizeObserver(roCallback);
-        this._roCanvas.observe(this.canvas);
-        this._roContainer = new ResizeObserver(roCallback);
-        this._roContainer.observe(container);
+        const resizeCallback = () => this._handleResize();
 
-        const waitUntilLaidOut = () => {
-            const r = this.canvas.getBoundingClientRect();
-            if (r.width === 0 || r.height === 0) {
-                requestAnimationFrame(waitUntilLaidOut);
+        this._canvasResizeObserver = new ResizeObserver(resizeCallback);
+        this._canvasResizeObserver.observe(this.canvas);
+
+        this._containerResizeObserver = new ResizeObserver(resizeCallback);
+        this._containerResizeObserver.observe(container);
+
+        this._waitForCanvasLayout();
+    }
+
+    _waitForCanvasLayout() {
+        const checkLayout = () => {
+            const canvasRect = this.canvas.getBoundingClientRect();
+            if (canvasRect.width === 0 || canvasRect.height === 0) {
+                requestAnimationFrame(checkLayout);
                 return;
             }
             this._handleResize();
         };
-        requestAnimationFrame(waitUntilLaidOut);
+        requestAnimationFrame(checkLayout);
     }
 
-    _waitForReadyAndApplyInit(onInit) {
-        const ready = () => {
-            const rect = this.canvas.getBoundingClientRect();
-            const canvasReady = rect.width > 0 && rect.height > 0;
-            const bgReady = !!this.bgImage;
-            return canvasReady && bgReady;
+    _waitForReadyAndApplyInit(initializationCallback) {
+        const isReady = () => {
+            const canvasRect = this.canvas.getBoundingClientRect();
+            const isCanvasReady = canvasRect.width > 0 && canvasRect.height > 0;
+            const isBackgroundReady = !!this.bgImage;
+            return isCanvasReady && isBackgroundReady;
         };
 
-        const tick = () => {
-            if (!ready()) { requestAnimationFrame(tick); return; }
-            onInit?.();
+        const checkReady = () => {
+            if (!isReady()) {
+                requestAnimationFrame(checkReady);
+                return;
+            }
+            initializationCallback?.();
             this._initialized = true;
         };
-        requestAnimationFrame(tick);
+        requestAnimationFrame(checkReady);
     }
 
-    _canvasPos(evt){
-        const rect = this.canvas.getBoundingClientRect();
-        return { x: (evt.clientX - rect.left), y: (evt.clientY - rect.top) };
+    _loadBackgroundImageFromUrl(imageUrl){
+        const image = new Image();
+        image.onload = () => {
+            this.bgImage = image;
+            this._applyCanvasStyles();
+            this._layoutCanvasToContainer();
+            this._handleResize();
+        };
+        image.src = imageUrl;
     }
 
-    _clear(){ this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height); }
+    _applyCanvasStyles() {
+        this.canvas.style.display = 'block';
+        this.canvas.style.margin = '0 auto';
+        this.canvas.style.maxWidth = '';
+        this.canvas.style.maxHeight = '';
+        this.canvas.style.aspectRatio = `${this.bgImage.naturalWidth} / ${this.bgImage.naturalHeight}`;
+    }
 
-    _layoutCanvasToContainer() {
-        if (!this.bgImage) return;
+    _bindWindowResizeEvent(){
+        window.addEventListener('resize', () => this._handleResize());
+    }
 
-        const natW = this.bgImage.naturalWidth;
-        const natH = this.bgImage.naturalHeight;
-        const ratio = natW / natH;
-        const container = this.canvas.parentElement || document.documentElement;
-        const viewportW = (window.visualViewport?.width || document.documentElement.clientWidth || window.innerWidth);
-        const viewportH = (window.visualViewport?.height || document.documentElement.clientHeight || window.innerHeight);
-        const crect = container.getBoundingClientRect();
-        const containerClientW = container.clientWidth || crect.width || 0;
-        const availableW = Math.min(containerClientW, viewportW);
-        const maxH = Math.max(0, Math.floor(viewportH * 0.9));
-        const maxWFromVh = Math.floor(maxH * ratio);
-        const maxWFromViewport = Math.floor(viewportW * 0.99);
-        const targetW = Math.min(availableW, maxWFromVh, maxWFromViewport);
-        if (!isFinite(targetW) || targetW <= 0) return;
-        const targetH = Math.floor(targetW / ratio);
-        this.canvas.style.width = `${Math.round(targetW)}px`;
-        this.canvas.style.height = `${Math.round(targetH)}px`;
+    _handleResize(rescalePointsCallback){
+        this._layoutCanvasToContainer();
+
+        const canvasRect = this.canvas.getBoundingClientRect();
+        const cssWidth = Math.floor(canvasRect.width);
+        const cssHeight = Math.floor(canvasRect.height);
+
+        if (!cssWidth || !cssHeight) return;
+
+        if (this.lastCanvasSize){
+            this._rescalePointsIfNeeded(cssWidth, cssHeight, rescalePointsCallback);
+        }
+
+        this._updateCanvasDimensions(cssWidth, cssHeight);
+        this.lastCanvasSize = { w: cssWidth, h: cssHeight };
+        this._draw();
+    }
+
+    _rescalePointsIfNeeded(cssWidth, cssHeight, rescalePointsCallback) {
+        const scaleX = cssWidth / this.lastCanvasSize.w;
+        const scaleY = cssHeight / this.lastCanvasSize.h;
+
+        if (isFinite(scaleX) && isFinite(scaleY) && scaleX > 0 && scaleY > 0) {
+            rescalePointsCallback?.(scaleX, scaleY);
+        }
+    }
+
+    _updateCanvasDimensions(cssWidth, cssHeight) {
+        const devicePixelRatio = Math.max(1, window.devicePixelRatio || 1);
+        const targetWidth = Math.round(cssWidth * devicePixelRatio);
+        const targetHeight = Math.round(cssHeight * devicePixelRatio);
+
+        if (this.canvas.width !== targetWidth || this.canvas.height !== targetHeight) {
+            this.canvas.width = targetWidth;
+            this.canvas.height = targetHeight;
+            this.ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+        }
     }
 
     _draw(){
@@ -98,59 +135,81 @@ export class HotSpotCanvas {
 
     _drawBackground(){
         if (!this.bgImage) return;
+
         this.ctx.save();
         this.ctx.setTransform(1, 0, 0, 1, 0, 0);
         this.ctx.imageSmoothingEnabled = true;
-        this.ctx.drawImage(this.bgImage, 0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(
+            this.bgImage,
+            0,
+            0,
+            this.canvas.width,
+            this.canvas.height
+        );
         this.ctx.restore();
     }
 
-    _loadBackgroundFromUrl(imageUrl){
-        const img = new Image();
-        img.onload = () => {
-            this.bgImage = img;
-            this.canvas.style.display = 'block';
-            this.canvas.style.margin = '0 auto';
-            this.canvas.style.maxWidth = '';
-            this.canvas.style.maxHeight = '';
-            this.canvas.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+    _layoutCanvasToContainer() {
+        if (!this.bgImage) return;
 
-            this._layoutCanvasToContainer();
-            this._handleResize();
+        const imageAspectRatio = this._calculateImageAspectRatio();
+        const container = this.canvas.parentElement || document.documentElement;
+        const viewportDimensions = this._getViewportDimensions();
+        const containerDimensions = this._getContainerDimensions(container);
+
+        const targetWidth = this._calculateTargetWidth(
+            containerDimensions,
+            viewportDimensions,
+            imageAspectRatio
+        );
+
+        if (!isFinite(targetWidth) || targetWidth <= 0) return;
+
+        const targetHeight = Math.floor(targetWidth / imageAspectRatio);
+        this._applyCanvasDimensions(targetWidth, targetHeight);
+    }
+
+    _calculateImageAspectRatio() {
+        return this.bgImage.naturalWidth / this.bgImage.naturalHeight;
+    }
+
+    _getViewportDimensions() {
+        return {
+            width: window.visualViewport?.width || document.documentElement.clientWidth || window.innerWidth,
+            height: window.visualViewport?.height || document.documentElement.clientHeight || window.innerHeight
         };
-        img.src = imageUrl;
     }
 
-    _bindWindowEvents(){
-        window.addEventListener('resize', () => this._handleResize());
+    _getContainerDimensions(container) {
+        const containerRect = container.getBoundingClientRect();
+        return {
+            clientWidth: container.clientWidth || containerRect.width || 0
+        };
     }
 
-    _handleResize(rescalePoints){
-        this._layoutCanvasToContainer();
+    _calculateTargetWidth(containerDimensions, viewportDimensions, imageAspectRatio) {
+        const availableWidth = Math.min(containerDimensions.clientWidth, viewportDimensions.width);
+        const maxHeight = Math.max(0, Math.floor(viewportDimensions.height * 0.9));
+        const maxWidthFromViewportHeight = Math.floor(maxHeight * imageAspectRatio);
+        const maxWidthFromViewport = Math.floor(viewportDimensions.width * 0.99);
 
-        const rect = this.canvas.getBoundingClientRect();
-        const cssW = Math.floor(rect.width);
-        const cssH = Math.floor(rect.height);
+        return Math.min(availableWidth, maxWidthFromViewportHeight, maxWidthFromViewport);
+    }
 
-        if (!cssW || !cssH) return;
-        if (this.lastSize){
-            const sx = cssW / this.lastSize.w;
-            const sy = cssH / this.lastSize.h;
-            if (isFinite(sx) && isFinite(sy) && sx > 0 && sy > 0) {
-                rescalePoints?.(sx, sy);
-            }
-        }
+    _applyCanvasDimensions(targetWidth, targetHeight) {
+        this.canvas.style.width = `${Math.round(targetWidth)}px`;
+        this.canvas.style.height = `${Math.round(targetHeight)}px`;
+    }
 
-        const dpr = Math.max(1, window.devicePixelRatio || 1);
-        const wantW = Math.round(cssW * dpr);
-        const wantH = Math.round(cssH * dpr);
-        if (this.canvas.width !== wantW || this.canvas.height !== wantH) {
-            this.canvas.width = wantW;
-            this.canvas.height = wantH;
-            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        }
+    _canvasPos(event){
+        const canvasRect = this.canvas.getBoundingClientRect();
+        return {
+            x: (event.clientX - canvasRect.left),
+            y: (event.clientY - canvasRect.top)
+        };
+    }
 
-        this.lastSize = { w: cssW, h: cssH };
-        this._draw();
+    _clear(){
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }

@@ -1,6 +1,6 @@
 import { HotSpotCanvas } from './hotSpotCanvas.js';
-import { Geometry } from './geometry.js';
-//#region Type Definitions
+import { hotspotHelper } from './hotspotHelper.js';
+
 /**
  * @typedef {Object} HotSpotViewerOptions
  * @property {boolean} [showPolygons]
@@ -31,8 +31,6 @@ import { Geometry } from './geometry.js';
  * @property {HotSpotViewerHotSpot[]} hotspots
  * @property {HotSpotViewerOptions} [opts]
  */
-//#endregion
-
 
 const BUTTON_DOT_RADIUS = 14;
 const BUTTON_HEIGHT = 28;
@@ -43,6 +41,9 @@ const CSS_COLOR_SECONDARY = 'var(--bs-secondary)';
 
 export class HotSpotViewer extends HotSpotCanvas {
 
+    /**
+     * @param {HotSpotViewerParams} params
+     */
     constructor({
         canvas,
         imageUrl,
@@ -74,14 +75,6 @@ export class HotSpotViewer extends HotSpotCanvas {
         this.canvas.setAttribute('role', 'img');
         this.canvas.setAttribute('aria-label', this.imageAlt);
         this.canvas.setAttribute('aria-description', this.imageDescription);
-    }
-
-    _createTooltipElement(button, hotspot) {
-        const tooltip = document.createElement('div');
-        tooltip.className = 'hotspot-viewer-tooltip';
-        tooltip.textContent = hotspot.tooltip || '';
-        button.appendChild(tooltip);
-        return tooltip;
     }
 
     _createButtonContainer() {
@@ -305,14 +298,149 @@ export class HotSpotViewer extends HotSpotCanvas {
         this._positionButtons();
     }
 
+    _createTooltipElement(button, hotspot) {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'hotspot-viewer-tooltip';
+        tooltip.textContent = hotspot.tooltip || '';
+        button.appendChild(tooltip);
+        return tooltip;
+    }
+
+    _bindResizeHandlers() {
+        const resizeObserver = new ResizeObserver(() => {
+            this._positionButtons();
+        });
+        resizeObserver.observe(this.canvas);
+
+        window.addEventListener('resize', () => {
+            this._positionButtons();
+        });
+    }
+
+    _bindCanvasEvents() {
+        this.canvas.addEventListener('mousemove', (e) => this._onMouseMove(e));
+        this.canvas.addEventListener('mouseleave', () => this._onMouseLeave());
+        this.canvas.addEventListener('click', (e) => this._onCanvasClick(e));
+        this._bindResizeHandlers();
+    }
+
+    _draw() {
+        this._clear();
+        this._drawBackground();
+        if (this.showPolygons) this._drawPolygons();
+        this._positionButtons();
+    }
+
+    _drawPolygons() {
+        if (!this.showPolygons || !Array.isArray(this.hotspots)) return;
+        const {
+            ctx
+        } = this;
+        const drawPoly = this._getCurrentDrawPoly();
+        ctx.save();
+
+        this.hotspots.forEach(hotspot => {
+            if (!Array.isArray(hotspot.points) || hotspot.points.length < 2) return;
+            const canvasPoints = hotspotHelper.normalizedToCanvas(hotspot.points, drawPoly);
+            this._drawSinglePolygon(ctx, canvasPoints);
+        });
+
+        ctx.restore();
+    }
+
+    _drawSinglePolygon(ctx, canvasPoints) {
+        ctx.beginPath();
+        ctx.moveTo(canvasPoints[0].x, canvasPoints[0].y);
+        for (let i = 1; i < canvasPoints.length; i++) {
+            ctx.lineTo(canvasPoints[i].x, canvasPoints[i].y);
+        }
+        ctx.closePath();
+
+        const fillColor = hotspotHelper.resolveColor(CSS_COLOR_SECONDARY);
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+
+        ctx.lineWidth = 2;
+        const strokeColor = hotspotHelper.resolveColor(CSS_COLOR_TERTIARY);
+        ctx.strokeStyle = strokeColor;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.stroke();
+    }
+
+    _onMouseMove(e) {
+        const {
+            x,
+            y
+        } = this._eventToCanvasCoords(e);
+        const newHoveredIndex = this._findHotspotAtPoint(x, y);
+
+        if (this.hoveredHotspotIndex !== newHoveredIndex) {
+            this.hoveredHotspotIndex = newHoveredIndex;
+            this._clearFocus();
+            this._updateButtonStates();
+            this._updateTooltipVisibility();
+            this._draw();
+        }
+    }
+
+    _onMouseLeave() {
+        if (this.hoveredHotspotIndex !== -1) {
+            this.hoveredHotspotIndex = -1;
+            this._updateTooltipVisibility();
+            this._draw();
+        }
+    }
+
+    _onCanvasClick(e) {
+        const {
+            x,
+            y
+        } = this._eventToCanvasCoords(e);
+        this._clearFocus();
+
+        const hotspotIndex = this._findHotspotAtPoint(x, y);
+        if (hotspotIndex !== -1) {
+            const hotspot = this.hotspots[hotspotIndex];
+            if (hotspot.link?.url) {
+                if (hotspot.link.target === '_blank') {
+                    window.open(hotspot.link.url, hotspot.link.target);
+                } else {
+                    window.location.href = hotspot.link.url;
+                }
+            } else if (hotspot.content) {
+                this._openModal(hotspot.content);
+            }
+        }
+
+        this._draw();
+    }
+
+    _openModal(contentElement) {
+        if (!contentElement) return;
+
+        this._setModalContent(contentElement);
+        this._disableInteractions();
+        this._preventBodyScroll();
+        this.modalBackdrop.style.display = 'flex';
+        this.modalDialog.focus();
+    }
+
+    _closeModal() {
+        this.modalBackdrop.style.display = 'none';
+        this.modalContent.innerHTML = '';
+        this._enableInteractions();
+        this._allowBodyScroll();
+    }
+
     _updateButtonContainerSize(canvasRect) {
         this.buttonContainer.style.width = `${canvasRect.width}px`;
         this.buttonContainer.style.height = `${canvasRect.height}px`;
     }
 
     _calculateButtonPosition(hotspot, canvasRect, drawPoly) {
-        const canvasPoints = Geometry.normalizedToCanvas(hotspot.points, drawPoly);
-        const centroid = Geometry.getPolygonCentroid(canvasPoints);
+        const canvasPoints = hotspotHelper.normalizedToCanvas(hotspot.points, drawPoly);
+        const centroid = hotspotHelper.getPolygonCentroid(canvasPoints);
         if (!centroid) return null;
 
         const scaleX = canvasRect.width / this.canvas.width;
@@ -451,8 +579,8 @@ export class HotSpotViewer extends HotSpotCanvas {
         const canvasRect = this.canvas.getBoundingClientRect();
         const drawPoly = this._getCurrentDrawPoly();
         const hotspot = this.hotspots[hotspotIndex];
-        const canvasPoints = Geometry.normalizedToCanvas(hotspot.points, drawPoly);
-        const centroid = Geometry.getPolygonCentroid(canvasPoints);
+        const canvasPoints = hotspotHelper.normalizedToCanvas(hotspot.points, drawPoly);
+        const centroid = hotspotHelper.getPolygonCentroid(canvasPoints);
         if (!centroid) return null;
 
         const scaleX = canvasRect.width / this.canvas.width;
@@ -481,70 +609,6 @@ export class HotSpotViewer extends HotSpotCanvas {
         });
     }
 
-    _drawPolygons() {
-        if (!this.showPolygons || !Array.isArray(this.hotspots)) return;
-        const {
-            ctx
-        } = this;
-        const drawPoly = this._getCurrentDrawPoly();
-        ctx.save();
-
-        this.hotspots.forEach(hotspot => {
-            if (!Array.isArray(hotspot.points) || hotspot.points.length < 2) return;
-            const canvasPoints = Geometry.normalizedToCanvas(hotspot.points, drawPoly);
-            this._drawSinglePolygon(ctx, canvasPoints);
-        });
-
-        ctx.restore();
-    }
-
-    _drawSinglePolygon(ctx, canvasPoints) {
-        ctx.beginPath();
-        ctx.moveTo(canvasPoints[0].x, canvasPoints[0].y);
-        for (let i = 1; i < canvasPoints.length; i++) {
-            ctx.lineTo(canvasPoints[i].x, canvasPoints[i].y);
-        }
-        ctx.closePath();
-
-        const fillColor = Geometry.resolveColor(CSS_COLOR_SECONDARY);
-        ctx.fillStyle = fillColor;
-        ctx.fill();
-
-        ctx.lineWidth = 2;
-        const strokeColor = Geometry.resolveColor(CSS_COLOR_TERTIARY);
-        ctx.strokeStyle = strokeColor;
-        ctx.lineJoin = 'round';
-        ctx.lineCap = 'round';
-        ctx.stroke();
-    }
-
-    _draw() {
-        this._clear();
-        this._drawBackground();
-        if (this.showPolygons) this._drawPolygons();
-        this._positionButtons();
-    }
-
-
-
-    _bindResizeHandlers() {
-        const resizeObserver = new ResizeObserver(() => {
-            this._positionButtons();
-        });
-        resizeObserver.observe(this.canvas);
-
-        window.addEventListener('resize', () => {
-            this._positionButtons();
-        });
-    }
-
-    _bindCanvasEvents() {
-        this.canvas.addEventListener('mousemove', (e) => this._onMouseMove(e));
-        this.canvas.addEventListener('mouseleave', () => this._onMouseLeave());
-        this.canvas.addEventListener('click', (e) => this._onCanvasClick(e));
-        this._bindResizeHandlers();
-    }
-
     _eventToCanvasCoords(e) {
         const cssPos = this._canvasPos(e);
         const dpr = Math.max(1, window.devicePixelRatio || 1);
@@ -559,8 +623,8 @@ export class HotSpotViewer extends HotSpotCanvas {
         for (let i = 0; i < this.hotspots.length; i++) {
             const hotspot = this.hotspots[i];
             if (!Array.isArray(hotspot.points) || hotspot.points.length < 3) continue;
-            const canvasPoints = Geometry.normalizedToCanvas(hotspot.points, drawPoly);
-            if (Geometry.pointInPolygon(x, y, canvasPoints)) {
+            const canvasPoints = hotspotHelper.normalizedToCanvas(hotspot.points, drawPoly);
+            if (hotspotHelper.pointInPolygon(x, y, canvasPoints)) {
                 return i;
             }
         }
@@ -571,54 +635,6 @@ export class HotSpotViewer extends HotSpotCanvas {
         if (this.focusedHotspotIndex !== -1) {
             this.focusedHotspotIndex = -1;
         }
-    }
-
-    _onMouseMove(e) {
-        const {
-            x,
-            y
-        } = this._eventToCanvasCoords(e);
-        const newHoveredIndex = this._findHotspotAtPoint(x, y);
-
-        if (this.hoveredHotspotIndex !== newHoveredIndex) {
-            this.hoveredHotspotIndex = newHoveredIndex;
-            this._clearFocus();
-            this._updateButtonStates();
-            this._updateTooltipVisibility();
-            this._draw();
-        }
-    }
-
-    _onMouseLeave() {
-        if (this.hoveredHotspotIndex !== -1) {
-            this.hoveredHotspotIndex = -1;
-            this._updateTooltipVisibility();
-            this._draw();
-        }
-    }
-
-    _onCanvasClick(e) {
-        const {
-            x,
-            y
-        } = this._eventToCanvasCoords(e);
-        this._clearFocus();
-
-        const hotspotIndex = this._findHotspotAtPoint(x, y);
-        if (hotspotIndex !== -1) {
-            const hotspot = this.hotspots[hotspotIndex];
-            if (hotspot.link?.url) {
-                if (hotspot.link.target === '_blank') {
-                    window.open(hotspot.link.url, hotspot.link.target);
-                } else {
-                    window.location.href = hotspot.link.url;
-                }
-            } else if (hotspot.content) {
-                this._openModal(hotspot.content);
-            }
-        }
-
-        this._draw();
     }
 
     _setModalContent(contentElement) {
@@ -652,23 +668,6 @@ export class HotSpotViewer extends HotSpotCanvas {
 
     _allowBodyScroll() {
         document.body.style.overflow = '';
-    }
-
-    _openModal(contentElement) {
-        if (!contentElement) return;
-
-        this._setModalContent(contentElement);
-        this._disableInteractions();
-        this._preventBodyScroll();
-        this.modalBackdrop.style.display = 'flex';
-        this.modalDialog.focus();
-    }
-
-    _closeModal() {
-        this.modalBackdrop.style.display = 'none';
-        this.modalContent.innerHTML = '';
-        this._enableInteractions();
-        this._allowBodyScroll();
     }
 
     _getCurrentDrawPoly() {

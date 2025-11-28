@@ -1,14 +1,9 @@
 import { HotSpotCanvas } from './hotSpotCanvas.js';
-import { Geometry } from './geometry.js';
-//#region Type Definitions
+import { hotspotHelper } from './hotspotHelper.js';
+
 /**
  * @typedef {Object} HotSpotSelectorOptions
  * @property {'rect' | 'polygon'} [mode]
- * @property {string} [fillColor]
- * @property {string} [strokeColor]
- * @property {string} [pointColor]
- * @property {string} [previewColor]
- * @property {boolean} [enableGrid]
  * @property {number} [minRectSize]
  * @property {boolean} [showDefaultRec]
  */
@@ -27,11 +22,14 @@ import { Geometry } from './geometry.js';
  * @property {HotSpotSelectorOptions} [opts]
  * @property {Array} [initPoints]
  */
-//#endregion
+
+const FILL_COLOR = 'rgba(30, 58, 138, 0.25)';
+const STROKE_COLOR = '#fff';
+const POINT_COLOR = '#000';
+const PREVIEW_COLOR = '#38bdf8';
 
 export class HotSpotSelector extends HotSpotCanvas {
 
-    //#region Constructor
     /**
      * @param {HotSpotSelectorParams} params
      */
@@ -41,32 +39,22 @@ export class HotSpotSelector extends HotSpotCanvas {
         this.ui = ui || {};
         this.onShapeChange = typeof onShapeChange === 'function' ? onShapeChange : () => {};
 
-      // State
         this.points = [];
-        this.mode = opts.mode === 'rect' ? 'rect' : 'polygon'; // configurable initial mode
-        this.isConnected = false; // closed polygon state
-        this.isDrawingRect = false;
-        this.rectStart = null;
-        this.rectEnd = null;
-        this.dragIndex = -1;
-        this.hoveringIndex = -1;
-        this.isPanning = false;
-        this.panLast = null;
-        this.lastSize = null; // {w,h}
+        this.mode = opts.mode === 'rect' ? 'rect' : 'polygon';
+        this.isShapeClosed = false;
+        this.isDrawingRectangle = false;
+        this.rectangleStartPoint = null;
+        this.rectangleEndPoint = null;
+        this.draggedPointIndex = -1;
+        this.hoveredPointIndex = -1;
+        this.isPanningShape = false;
+        this.panningLastPosition = null;
 
-        // Config
-        this.minRectSize = (opts && Number.isFinite(opts.minRectSize)) ? opts.minRectSize : 10;
-        this.enableGrid = Boolean(opts.enableGrid);
-        this.gridStep = 40;
+        this.minimumRectangleSize = (opts && Number.isFinite(opts.minRectSize)) ? opts.minRectSize : 10;
         this.pointRadius = 4;
-        this.closeThreshold = 10; // px
-        this.fillColor = (opts && opts.fillColor) || 'rgba(30, 58, 138, 0.25)';
-        this.strokeColor = (opts && opts.strokeColor) || '#fff';
-        this.pointColor = (opts && opts.pointColor) || '#000';
-        this.previewColor = (opts && opts.previewColor) || '#38bdf8';
-        this.showDefaultRec = Boolean(opts.showDefaultRec);
+        this.pointCloseThreshold = 10;
+        this.showDefaultRectangle = Boolean(opts.showDefaultRec);
 
-        // Init
         this._bindUI();
         this._bindCanvasEvents();
         this.canvas.style.cursor = 'crosshair';
@@ -74,89 +62,85 @@ export class HotSpotSelector extends HotSpotCanvas {
         this._pendingInit = initPoints || null;
         this._waitForReadyAndApplyInit(this._applyInitialPoints.bind(this));
     }
-    //#endregion
 
-    //#region Public API
     setMode(mode){
-        const m = mode === 'rect' ? 'rect' : 'polygon';
-        if (this.mode === m) return;
-        this.mode = m;
-        this.isConnected = false;
-        this.isDrawingRect = false;
-        this.rectStart = null;
-        this.rectEnd = null;
+        const normalizedMode = mode === 'rect' ? 'rect' : 'polygon';
+        if (this.mode === normalizedMode) return;
+        this.mode = normalizedMode;
+        this.isShapeClosed = false;
+        this.isDrawingRectangle = false;
+        this.rectangleStartPoint = null;
+        this.rectangleEndPoint = null;
         this.points = [];
         this._draw();
     }
-    //#endregion
 
-    //#region Initialization & Setup
     _applyInitialPoints() {
-        if (this._pendingInit && this._pendingInit.normalized && this._pendingInit.basis && this._pendingInit.basis.drawRect) {
-            const { normalized } = this._pendingInit;
-            const rNow = this._getCurrentDrawRect();
-            if (!rNow) return; // can't map without background rect
-            const { dx, dy, dw, dh } = rNow;
-            this.points = normalized.map(({u, v}) => ({ x: dx + u * dw, y: dy + v * dh }));
-            this.isConnected = this.points.length >= 3;
-            this._draw();
+        if (this._hasNormalizedInitialPoints()) {
+            this._applyNormalizedPoints();
             return;
         }
 
-        // Create default rectangle if showDefaultRec is true and initPoints are undefined
-        if (this.showDefaultRec && !this._pendingInit) {
-            const rNow = this._getCurrentDrawRect();
-            if (!rNow) return; // can't create default rect without background rect
-
-            const centerX = rNow.dx + rNow.dw / 2;
-            const centerY = rNow.dy + rNow.dh / 2;
-            const rectSize = 100;
-            const halfSize = rectSize / 2;
-
-            // Create 4 corner points for rectangle (TL, TR, BR, BL)
-            const x0 = centerX - halfSize;
-            const y0 = centerY - halfSize;
-            const x1 = centerX + halfSize;
-            const y1 = centerY + halfSize;
-
-            this.points = [
-                { x: x0, y: y0 }, // TL
-                { x: x1, y: y0 }, // TR
-                { x: x1, y: y1 }, // BR
-                { x: x0, y: y1 }  // BL
-            ];
-            this.isConnected = true;
-            this._draw();
-            this._emitShape();
+        if (this._shouldCreateDefaultRectangle()) {
+            this._createDefaultRectangle();
         }
     }
-    //#endregion
 
-    //#region Utilities & Helpers
-    _nearestPoint(x, y, thresh = this.closeThreshold){
-        return Geometry.nearestPoint(x, y, this.points, thresh);
+    _hasNormalizedInitialPoints() {
+        return this._pendingInit
+            && this._pendingInit.normalized
+            && this._pendingInit.basis
+            && this._pendingInit.basis.drawRect;
     }
 
-    _pointInPolygon(x, y){
-        return Geometry.pointInPolygon(x, y, this.points);
+    _applyNormalizedPoints() {
+        const { normalized } = this._pendingInit;
+        const currentDrawRect = this._getCurrentDrawRect();
+        if (!currentDrawRect) return;
+
+        const { dx, dy, dw, dh } = currentDrawRect;
+        this.points = normalized.map(({u, v}) => ({
+            x: dx + u * dw,
+            y: dy + v * dh
+        }));
+        this.isShapeClosed = this.points.length >= 3;
+        this._draw();
     }
 
-    _polygonCentroid(){
-        return Geometry.getPolygonCentroid(this.points);
+    _shouldCreateDefaultRectangle() {
+        return this.showDefaultRectangle && !this._pendingInit;
+    }
+
+    _createDefaultRectangle() {
+        const currentDrawRect = this._getCurrentDrawRect();
+        if (!currentDrawRect) return;
+
+        const centerX = currentDrawRect.dx + currentDrawRect.dw / 2;
+        const centerY = currentDrawRect.dy + currentDrawRect.dh / 2;
+        const defaultRectangleSize = 100;
+        const halfSize = defaultRectangleSize / 2;
+
+        const topLeftX = centerX - halfSize;
+        const topLeftY = centerY - halfSize;
+        const bottomRightX = centerX + halfSize;
+        const bottomRightY = centerY + halfSize;
+
+        this.points = [
+            { x: topLeftX, y: topLeftY },
+            { x: bottomRightX, y: topLeftY },
+            { x: bottomRightX, y: bottomRightY },
+            { x: topLeftX, y: bottomRightY }
+        ];
+        this.isShapeClosed = true;
+        this._draw();
+        this._emitShape();
     }
 
     _bindUI(){
         const { clearBtn } = this.ui;
-        if (clearBtn) clearBtn.addEventListener('click', () => this._clearAll());
-    }
-
-    _clearAll(){
-        this.points = [];
-        this.isConnected = false;
-        this.isDrawingRect = false;
-        this.rectStart = null;
-        this.rectEnd = null;
-        this._draw();
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => this._clearAllPoints());
+        }
     }
 
     _bindCanvasEvents(){
@@ -168,142 +152,84 @@ export class HotSpotSelector extends HotSpotCanvas {
         this.canvas.addEventListener('mouseleave', () => this._onMouseLeave());
     }
 
-    _computeDrawRect(imgW, imgH, canvasW, canvasH, mode){
-        if (mode === 'stretch') return { dx:0, dy:0, dw:canvasW, dh:canvasH };
-        const scaleContain = Math.min(canvasW / imgW, canvasH / imgH);
-        const scaleCover = Math.max(canvasW / imgW, canvasH / imgH);
-        const s = mode === 'cover' ? scaleCover : scaleContain;
-        const dw = imgW * s, dh = imgH * s;
-        const dx = (canvasW - dw) / 2;
-        const dy = (canvasH - dh) / 2;
-        return { dx, dy, dw, dh };
-    }
-    //#endregion
-
-    //#region Background & Layout
-
-
     _handleResize(){
-        super._handleResize(this._rescalePoints.bind(this));
+        super._handleResize(this._scalePointsByFactor.bind(this));
     }
 
-    _getCurrentDrawRect(){
-        // Useful if you emit normalized coords
-        return { dx: 0, dy: 0, dw: this.canvas.width, dh: this.canvas.height };
-    }
-    //#endregion
-
-    //#region Shape Data & Events
-    _getShapeData() {
-        // Canvas-space points
-        const ptsCanvas = this.points.map(p => ({
-          x: Math.round(p.x * 1000) / 1000,
-          y: Math.round(p.y * 1000) / 1000
-        }));
-
-        // Center in canvas space
-        const c = this._polygonCentroid() || { x: null, y: null };
-        const centerCanvas = {
-          x: c && c.x != null ? Math.round(c.x * 1000) / 1000 : null,
-          y: c && c.y != null ? Math.round(c.y * 1000) / 1000 : null
-        };
-
-        // If background known, also produce normalized-to-drawRect points (u,v in [0..1])
-        const drawRect = this._getCurrentDrawRect();
-        let ptsNormalized = null;
-        let centerNormalized = null;
-
-        if (drawRect) {
-            const { dx, dy, dw, dh } = drawRect;
-            const toUV = (p) => ({ u: (p.x - dx) / dw, v: (p.y - dy) / dh });
-            ptsNormalized = ptsCanvas.map(toUV);
-            centerNormalized = centerCanvas.x == null ? null : toUV(centerCanvas);
-        }
-
-        return {
-          // Original (canvas-space) for backward compatibility
-            points: ptsCanvas,
-            center: centerCanvas,
-
-          // Recommended robust payload:
-            normalized: ptsNormalized,     // [{u,v}] relative to current drawRect
-            normalizedCenter: centerNormalized,
-            basis: drawRect ? {
-                drawRect,                                // {dx,dy,dw,dh}
-                fit: 'contain',                         // 'contain' | 'cover' | 'stretch'
-                image: { w: this.bgImage.naturalWidth, h: this.bgImage.naturalHeight },
-                canvas: { w: this.canvas.width, h: this.canvas.height }
-            } : null
-        };
-    }
-
-    _emitShape() {
-        if (!this.isConnected) return;
-        try {
-            this.onShapeChange(this._getShapeData());
-        } catch (error) {
-            console.error('onShapeChange error', error);
-        }
-    }
-    //#endregion
-
-    //#region Rendering
     _draw(){
         this._clear();
         this._drawBackground();
-        this._drawGrid();
-        if (this.mode === 'rect' && this.isDrawingRect && this.rectStart && this.rectEnd) this._drawRectPreview(this.rectStart, this.rectEnd);
-        if (this.isConnected) { this._drawPath(true); this._drawPoints(); this._drawCentroid(); }
-        else { this._drawPath(false); this._drawPoints(); this._drawFirstPointHint(); }
+
+        if (this._shouldDrawRectanglePreview()) {
+            this._drawRectanglePreview(this.rectangleStartPoint, this.rectangleEndPoint);
+        }
+
+        if (this.isShapeClosed) {
+            this._drawClosedShape();
+        } else {
+            this._drawOpenShape();
+        }
     }
 
-    _drawGrid(){
-        if (!this.enableGrid) return;
-        const { ctx } = this;
-        const step = this.gridStep;
-        ctx.save();
-        ctx.strokeStyle = '#ffffff0f';
-        ctx.lineWidth = 1;
-        for (let x = 0; x < this.canvas.width; x += step) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, this.canvas.height); ctx.stroke(); }
-        for (let y = 0; y < this.canvas.height; y += step) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(this.canvas.width, y); ctx.stroke(); }
-        ctx.restore();
+    _shouldDrawRectanglePreview() {
+        return this.mode === 'rect'
+            && this.isDrawingRectangle
+            && this.rectangleStartPoint
+            && this.rectangleEndPoint;
+    }
+
+    _drawClosedShape() {
+        this._drawPath(true);
+        this._drawPoints();
+        this._drawCentroid();
+    }
+
+    _drawOpenShape() {
+        this._drawPath(false);
+        this._drawPoints();
+        this._drawFirstPointCloseHint();
     }
 
     _drawPoints(){
-        if(!this.points) return;
+        if(!this.points || this.points.length === 0) return;
         const { ctx } = this;
         ctx.save();
-        ctx.fillStyle = this.pointColor;
-        ctx.strokeStyle = this.strokeColor;
-        ctx.textBaseline = 'top';
-        this.points.forEach((p) => {
+        ctx.fillStyle = POINT_COLOR;
+        ctx.strokeStyle = STROKE_COLOR;
+
+        this.points.forEach((point) => {
             ctx.beginPath();
-            ctx.arc(p.x, p.y, this.pointRadius, 0, Math.PI * 2);
+            ctx.arc(point.x, point.y, this.pointRadius, 0, Math.PI * 2);
             ctx.fill();
             ctx.stroke();
-            ctx.fillStyle = this.pointColor;
         });
+
         ctx.restore();
     }
 
-    _drawPath(close = true){
-        if(!this.points) return;
-        if (this.points.length < 2) return;
+    _drawPath(shouldClose = true){
+        if(!this.points || this.points.length < 2) return;
+
         const { ctx } = this;
         ctx.save();
         ctx.beginPath();
         ctx.moveTo(this.points[0].x, this.points[0].y);
-        for (let i = 1; i < this.points.length; i++) ctx.lineTo(this.points[i].x, this.points[i].y);
-        if (close) ctx.closePath();
 
-        // NEW: fill only when the shape is connected (closed)
-        if (close && this.isConnected) {
-            ctx.fillStyle = this.fillColor;
-            ctx.fill(); // fill under the stroke
+        for (let i = 1; i < this.points.length; i++) {
+            ctx.lineTo(this.points[i].x, this.points[i].y);
+        }
+
+        if (shouldClose) {
+            ctx.closePath();
+        }
+
+        if (shouldClose && this.isShapeClosed) {
+            ctx.fillStyle = FILL_COLOR;
+            ctx.fill();
         }
 
         ctx.lineWidth = 2;
-        ctx.strokeStyle = this.strokeColor;
+        ctx.strokeStyle = STROKE_COLOR;
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
         ctx.stroke();
@@ -311,262 +237,508 @@ export class HotSpotSelector extends HotSpotCanvas {
     }
 
     _drawCentroid(){
-        if (!this.isConnected || this.points.length < 2) return;
-        const c = this._polygonCentroid();
-        if (!c) return;
+        if (!this.isShapeClosed || this.points.length < 2) return;
+
+        const centroid = this._calculatePolygonCentroid();
+        if (!centroid) return;
+
         const { ctx } = this;
+        const centroidRadius = 5;
         ctx.save();
-        ctx.fillStyle = this.strokeColor;
-        const r = 5;
+        ctx.fillStyle = STROKE_COLOR;
         ctx.beginPath();
-        ctx.arc(c.x, c.y, r, 0, Math.PI * 2);
+        ctx.arc(centroid.x, centroid.y, centroidRadius, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
     }
 
-    _drawFirstPointHint(){
-        if (this.isConnected) return;
+    _drawFirstPointCloseHint(){
+        if (this.isShapeClosed) return;
         if (this.mode !== 'polygon') return;
         if (this.points.length < 3) return;
-        const p0 = this.points[0];
+
+        const firstPoint = this.points[0];
         const { ctx } = this;
+        const hintRadius = this.pointRadius + 8;
+
         ctx.save();
         ctx.beginPath();
         ctx.lineWidth = 2;
-        ctx.setLineDash([4,4]);
-        ctx.strokeStyle = this.strokeColor;
-        ctx.arc(p0.x, p0.y, this.pointRadius + 8, 0, Math.PI * 2);
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = STROKE_COLOR;
+        ctx.arc(firstPoint.x, firstPoint.y, hintRadius, 0, Math.PI * 2);
         ctx.stroke();
         ctx.restore();
     }
 
-    _drawRectPreview(a, b){
-        const x0 = Math.min(a.x, b.x), y0 = Math.min(a.y, b.y);
-        const x1 = Math.max(a.x, b.x), y1 = Math.max(a.y, b.y);
+    _drawRectanglePreview(startPoint, endPoint){
+        const minX = Math.min(startPoint.x, endPoint.x);
+        const minY = Math.min(startPoint.y, endPoint.y);
+        const maxX = Math.max(startPoint.x, endPoint.x);
+        const maxY = Math.max(startPoint.y, endPoint.y);
+        const width = maxX - minX;
+        const height = maxY - minY;
+
         const { ctx } = this;
         ctx.save();
-        ctx.setLineDash([6,6]);
+        ctx.setLineDash([6, 6]);
         ctx.lineWidth = 2;
-        ctx.strokeStyle = this.previewColor;
-        ctx.strokeRect(x0, y0, x1 - x0, y1 - y0);
+        ctx.strokeStyle = PREVIEW_COLOR;
+        ctx.strokeRect(minX, minY, width, height);
         ctx.restore();
     }
-    //#endregion
 
-    //#region Rectangle Helpers
-    _finalizeRectangle(a, b){
-
-        const end = this._clampPreviewToMinSize(a, b);
-
-        const x0 = Math.min(a.x, end.x), y0 = Math.min(a.y, end.y);
-        const x1 = Math.max(a.x, end.x), y1 = Math.max(a.y, end.y);
-
-        this.points.length = 0;
-        // TL, TR, BR, BL
-        this.points.push({x:x0,y:y0},{x:x1,y:y0},{x:x1,y:y1},{x:x0,y:y1});
-        this.isConnected = true;
-        this.isDrawingRect = false;
-        this.rectStart = this.rectEnd = null;
-        this._draw();
-        this._emitShape();
-    }
-
-    _enforceRectDrag(i, x, y){
-        if (this.points.length !== 4) return;
-
-        const clamped = this._clampCornerDragToMin(i, x, y);
-        x = clamped.x;
-        y = clamped.y;
-
-        switch(i){
-          case 0: // TL
-            this.points[0] = {x, y};
-            this.points[1] = {x: this.points[1].x, y};
-            this.points[3] = {x, y: this.points[3].y};
-            this.points[2] = {x: this.points[1].x, y: this.points[3].y};
-            break;
-          case 1: // TR
-            this.points[1] = {x, y};
-            this.points[0] = {x: this.points[0].x, y};
-            this.points[2] = {x, y: this.points[2].y};
-            this.points[3] = {x: this.points[0].x, y: this.points[2].y};
-            break;
-          case 2: // BR
-            this.points[2] = {x, y};
-            this.points[1] = {x, y: this.points[1].y};
-            this.points[3] = {x: this.points[3].x, y};
-            this.points[0] = {x: this.points[3].x, y: this.points[1].y};
-            break;
-          case 3: // BL
-            this.points[3] = {x, y};
-            this.points[0] = {x, y: this.points[0].y};
-            this.points[2] = {x: this.points[2].x, y};
-            this.points[1] = {x: this.points[2].x, y: this.points[0].y};
-            break;
-        }
-    }
-
-    _clampPreviewToMinSize(start, curr) {
-        const min = this.minRectSize;
-        let x = curr.x;
-        let y = curr.y;
-
-        const dx = x - start.x;
-        const dy = y - start.y;
-
-        if (Math.abs(dx) < min) x = start.x + (dx >= 0 ? min : -min);
-        if (Math.abs(dy) < min) y = start.y + (dy >= 0 ? min : -min);
-
-        return { x, y };
-    }
-
-    _clampCornerDragToMin(i, x, y) {
-        const min = this.minRectSize;
-        if (this.points.length !== 4) return { x, y };
-
-        // Opposite corner index across the diagonal
-        const oppIndex = (i + 2) % 4;
-        const opp = this.points[oppIndex];
-
-        const dx = x - opp.x;
-        const dy = y - opp.y;
-
-        if (Math.abs(dx) < min) x = opp.x + (dx >= 0 ? min : -min);
-        if (Math.abs(dy) < min) y = opp.y + (dy >= 0 ? min : -min);
-
-        return { x, y };
-    }
-    //#endregion
-
-    //#region Helper Methods
-    _rescalePoints(sx, sy){
-        if(!this.points) return;
-        for (let i = 0; i < this.points.length; i++){
-            this.points[i].x *= sx;
-            this.points[i].y *= sy;
-        }
-    }
-    //#endregion
-
-    //#region Event Handlers
     _onCanvasClick(e){
-        if (this.isConnected) return;
+        if (this.isShapeClosed) return;
         if (this.mode === 'rect') return;
+
         const {x, y} = this._canvasPos(e);
 
-      // close loop if clicking first point
-        if (this.points.length >= 3){
-            const idx = this._nearestPoint(x, y);
-            if (idx === 0){ this.isConnected = true; this._draw(); this._emitShape(); return; }
+        if (this._shouldClosePolygonOnFirstPoint(x, y)) {
+            this._closePolygon();
+            return;
         }
 
         this.points.push({x, y});
         this._draw();
     }
 
+    _shouldClosePolygonOnFirstPoint(x, y) {
+        if (this.points.length < 3) return false;
+
+        const nearestPointIndex = this._findNearestPointIndex(x, y);
+        return nearestPointIndex === 0;
+    }
+
+    _closePolygon() {
+        this.isShapeClosed = true;
+        this._draw();
+        this._emitShape();
+    }
+
     _onContextMenu(e){
         e.preventDefault();
-        if (this.mode === 'rect' && this.isConnected) return; // keep rectangle intact
-        if (!this.points.length) return;
+        if (this.mode === 'rect' && this.isShapeClosed) return;
+        if (!this.points || this.points.length === 0) return;
+
         const {x, y} = this._canvasPos(e);
-        let best = {i: -1, d2: Infinity};
-        for (let i = 0; i < this.points.length; i++){
-            const dx = this.points[i].x - x, dy = this.points[i].y - y;
-            const d2 = dx*dx + dy*dy;
-            if (d2 < best.d2) best = {i, d2};
+        const pointIndexToRemove = this._findClosestPointIndex(x, y);
+
+        if (pointIndexToRemove !== -1) {
+            this.points.splice(pointIndexToRemove, 1);
         }
-        if (best.i !== -1) this.points.splice(best.i, 1);
-        if (this.points.length < 2) this.isConnected = false;
+
+        if (this.points.length < 2) {
+            this.isShapeClosed = false;
+        }
         this._draw();
     }
 
     _onMouseMove(e){
         const {x, y} = this._canvasPos(e);
 
-      // Rectangle preview while dragging to create
-        if (!this.isConnected && this.mode === 'rect'){
-            if (this.isDrawingRect && this.rectStart){
-                this.rectEnd = this._clampPreviewToMinSize(this.rectStart, { x, y });
-                this._draw();
-            }
+        if (this._handleRectanglePreviewMode(x, y)) return;
+        if (this._handlePolygonCloseHintMode(x, y)) return;
+        if (!this.isShapeClosed) {
             this.canvas.style.cursor = 'crosshair';
             return;
         }
 
-      // Polygon mode not connected: indicate close-on-first
-        if (!this.isConnected && this.mode === 'polygon'){
-            if (this.points.length >= 3){
-            const idx = this._nearestPoint(x, y);
-            if (idx === 0){ this.canvas.style.cursor = 'pointer'; return; }
-            }
-            this.canvas.style.cursor = 'crosshair';
-            return;
-        }
+        if (this._handleShapePanning(x, y)) return;
+        if (this._handleVertexDragging(x, y)) return;
 
-        if (!this.isConnected){ this.canvas.style.cursor = 'crosshair'; return; }
+        this._updateCursorForHover(x, y);
+    }
 
-      // Whole-shape pan
-        if (this.isPanning && this.panLast){
-            const dx = x - this.panLast.x;
-            const dy = y - this.panLast.y;
-            for (let i = 0; i < this.points.length; i++){
-                this.points[i].x += dx;
-                this.points[i].y += dy;
-            }
-            this.panLast = {x, y};
-            this.canvas.style.cursor = 'grabbing';
+    _handleRectanglePreviewMode(x, y) {
+        if (this.isShapeClosed || this.mode !== 'rect') return false;
+
+        if (this.isDrawingRectangle && this.rectangleStartPoint) {
+            this.rectangleEndPoint = this._ensureMinimumRectangleSize(
+                this.rectangleStartPoint,
+                { x, y }
+            );
             this._draw();
+        }
+        this.canvas.style.cursor = 'crosshair';
+        return true;
+    }
+
+    _handlePolygonCloseHintMode(x, y) {
+        if (this.isShapeClosed || this.mode !== 'polygon') return false;
+
+        if (this.points.length >= 3) {
+            const nearestPointIndex = this._findNearestPointIndex(x, y);
+            if (nearestPointIndex === 0) {
+                this.canvas.style.cursor = 'pointer';
+                return true;
+            }
+        }
+        this.canvas.style.cursor = 'crosshair';
+        return true;
+    }
+
+    _handleShapePanning(x, y) {
+        if (!this.isPanningShape || !this.panningLastPosition) return false;
+
+        const deltaX = x - this.panningLastPosition.x;
+        const deltaY = y - this.panningLastPosition.y;
+
+        for (let i = 0; i < this.points.length; i++){
+            this.points[i].x += deltaX;
+            this.points[i].y += deltaY;
+        }
+
+        this.panningLastPosition = {x, y};
+        this.canvas.style.cursor = 'grabbing';
+        this._draw();
+        return true;
+    }
+
+    _handleVertexDragging(x, y) {
+        if (this.draggedPointIndex === -1) return false;
+
+        if (this.mode === 'rect' && this.isShapeClosed) {
+            this._updateRectangleCornersDuringDrag(this.draggedPointIndex, x, y);
+        } else {
+            this.points[this.draggedPointIndex].x = x;
+            this.points[this.draggedPointIndex].y = y;
+        }
+
+        this._draw();
+        return true;
+    }
+
+    _updateCursorForHover(x, y) {
+        this.hoveredPointIndex = this._findNearestPointIndex(x, y);
+
+        if (this.hoveredPointIndex !== -1) {
+            this.canvas.style.cursor = 'pointer';
             return;
         }
 
-      // Vertex drag
-        if (this.dragIndex !== -1){
-            if (this.mode === 'rect' && this.isConnected) this._enforceRectDrag(this.dragIndex, x, y);
-            else { this.points[this.dragIndex].x = x; this.points[this.dragIndex].y = y; }
-            this._draw();
-            return;
-        }
-
-      // Hover logic
-        this.hoveringIndex = this._nearestPoint(x, y);
-        if (this.hoveringIndex !== -1){ this.canvas.style.cursor = 'pointer'; return; }
-        this.canvas.style.cursor = this._pointInPolygon(x, y) ? 'grab' : 'default';
+        this.canvas.style.cursor = this._isPointInsidePolygon(x, y) ? 'grab' : 'default';
     }
 
     _onMouseDown(e){
         const {x, y} = this._canvasPos(e);
 
-        // Begin rectangle drawing
-        if (!this.isConnected && this.mode === 'rect'){
-            this.isDrawingRect = true; this.rectStart = {x, y}; this.rectEnd = {x, y}; e.preventDefault(); this._draw(); return;
-        }
+        if (this._startRectangleDrawing(x, y, e)) return;
+        if (!this.isShapeClosed) return;
 
-        if (!this.isConnected) return;
+        if (this._startVertexDrag(x, y, e)) return;
+        if (this._startShapePan(x, y, e)) return;
+    }
 
-        // Start vertex drag
-        const idx = this._nearestPoint(x, y);
-        if (idx !== -1){ this.dragIndex = idx; this.canvas.style.cursor = 'grabbing'; e.preventDefault(); return; }
+    _startRectangleDrawing(x, y, event) {
+        if (this.isShapeClosed || this.mode !== 'rect') return false;
 
-        // Start whole-shape pan
-        if (this._pointInPolygon(x, y)){
-            this.isPanning = true; this.panLast = {x, y}; this.canvas.style.cursor = 'grabbing'; e.preventDefault(); return;
-        }
+        this.isDrawingRectangle = true;
+        this.rectangleStartPoint = {x, y};
+        this.rectangleEndPoint = {x, y};
+        event.preventDefault();
+        this._draw();
+        return true;
+    }
+
+    _startVertexDrag(x, y, event) {
+        const nearestPointIndex = this._findNearestPointIndex(x, y);
+        if (nearestPointIndex === -1) return false;
+
+        this.draggedPointIndex = nearestPointIndex;
+        this.canvas.style.cursor = 'grabbing';
+        event.preventDefault();
+        return true;
+    }
+
+    _startShapePan(x, y, event) {
+        if (!this._isPointInsidePolygon(x, y)) return false;
+
+        this.isPanningShape = true;
+        this.panningLastPosition = {x, y};
+        this.canvas.style.cursor = 'grabbing';
+        event.preventDefault();
+        return true;
     }
 
     _onMouseUp(){
-        if (!this.isConnected && this.mode === 'rect' && this.isDrawingRect && this.rectStart && this.rectEnd){ this._finalizeRectangle(this.rectStart, this.rectEnd); return; }
-        const wasDragging = this.dragIndex !== -1;
-        const wasPanning = this.isPanning;
-        if (this.dragIndex !== -1){ this.dragIndex = -1; this._draw(); }
-        if (this.isPanning){ this.isPanning = false; this.panLast = null; }
-        if (this.isConnected && (wasDragging || wasPanning)) this._emitShape();
+        if (this._finalizeRectangleDrawing()) return;
+
+        const wasDraggingVertex = this.draggedPointIndex !== -1;
+        const wasPanningShape = this.isPanningShape;
+
+        this._endVertexDrag();
+        this._endShapePan();
+
+        if (this.isShapeClosed && (wasDraggingVertex || wasPanningShape)) {
+            this._emitShape();
+        }
+    }
+
+    _finalizeRectangleDrawing() {
+        if (this.isShapeClosed || this.mode !== 'rect') return false;
+        if (!this.isDrawingRectangle) return false;
+        if (!this.rectangleStartPoint || !this.rectangleEndPoint) return false;
+
+        this._finalizeRectangleFromPoints(this.rectangleStartPoint, this.rectangleEndPoint);
+        return true;
+    }
+
+    _endVertexDrag() {
+        if (this.draggedPointIndex !== -1) {
+            this.draggedPointIndex = -1;
+            this._draw();
+        }
+    }
+
+    _endShapePan() {
+        if (this.isPanningShape) {
+            this.isPanningShape = false;
+            this.panningLastPosition = null;
+        }
     }
 
     _onMouseLeave(){
-        if (this.dragIndex !== -1) this.dragIndex = -1;
-        if (this.isPanning){ this.isPanning = false; this.panLast = null; }
-        this.hoveringIndex = -1;
-        this.canvas.style.cursor = this.isConnected ? 'default' : 'crosshair';
+        this._endVertexDrag();
+        this._endShapePan();
+        this.hoveredPointIndex = -1;
+        this.canvas.style.cursor = this.isShapeClosed ? 'default' : 'crosshair';
     }
-    //#endregion
+
+    _getCurrentDrawRect(){
+        return {
+            dx: 0,
+            dy: 0,
+            dw: this.canvas.width,
+            dh: this.canvas.height
+        };
+    }
+
+    _getShapeData() {
+        const canvasSpacePoints = this._calculateCanvasSpacePoints();
+        const canvasSpaceCenter = this._calculateCanvasSpaceCenter();
+        const normalizedData = this._calculateNormalizedData(canvasSpacePoints, canvasSpaceCenter);
+
+        return this._createShapeDataObject(canvasSpacePoints, canvasSpaceCenter, normalizedData);
+    }
+
+    _calculateCanvasSpacePoints() {
+        return this.points.map(point => ({
+            x: Math.round(point.x * 1000) / 1000,
+            y: Math.round(point.y * 1000) / 1000
+        }));
+    }
+
+    _calculateCanvasSpaceCenter() {
+        const centroid = this._calculatePolygonCentroid() || { x: null, y: null };
+        return {
+            x: centroid && centroid.x != null ? Math.round(centroid.x * 1000) / 1000 : null,
+            y: centroid && centroid.y != null ? Math.round(centroid.y * 1000) / 1000 : null
+        };
+    }
+
+    _calculateNormalizedData(canvasSpacePoints, canvasSpaceCenter) {
+        const drawRect = this._getCurrentDrawRect();
+        if (!drawRect) return { points: null, center: null };
+
+        const { dx, dy, dw, dh } = drawRect;
+        const convertToNormalized = (point) => ({
+            u: (point.x - dx) / dw,
+            v: (point.y - dy) / dh
+        });
+
+        const normalizedPoints = canvasSpacePoints.map(convertToNormalized);
+        const normalizedCenter = canvasSpaceCenter.x == null
+            ? null
+            : convertToNormalized(canvasSpaceCenter);
+
+        return { points: normalizedPoints, center: normalizedCenter };
+    }
+
+    _createShapeDataObject(canvasSpacePoints, canvasSpaceCenter, normalizedData) {
+        const drawRect = this._getCurrentDrawRect();
+        return {
+            points: canvasSpacePoints,
+            center: canvasSpaceCenter,
+            normalized: normalizedData.points,
+            normalizedCenter: normalizedData.center,
+            basis: drawRect ? {
+                drawRect,
+                fit: 'contain',
+                image: {
+                    w: this.bgImage.naturalWidth,
+                    h: this.bgImage.naturalHeight
+                },
+                canvas: {
+                    w: this.canvas.width,
+                    h: this.canvas.height
+                }
+            } : null
+        };
+    }
+
+    _emitShape() {
+        if (!this.isShapeClosed) return;
+        this.onShapeChange(this._getShapeData());
+    }
+
+    _findNearestPointIndex(x, y, threshold = this.pointCloseThreshold){
+        return hotspotHelper.nearestPoint(x, y, this.points, threshold);
+    }
+
+    _isPointInsidePolygon(x, y){
+        return hotspotHelper.pointInPolygon(x, y, this.points);
+    }
+
+    _calculatePolygonCentroid(){
+        return hotspotHelper.getPolygonCentroid(this.points);
+    }
+
+    _clearAllPoints(){
+        this.points = [];
+        this.isShapeClosed = false;
+        this.isDrawingRectangle = false;
+        this.rectangleStartPoint = null;
+        this.rectangleEndPoint = null;
+        this._draw();
+    }
+
+    _finalizeRectangleFromPoints(startPoint, endPoint){
+        const clampedEndPoint = this._ensureMinimumRectangleSize(startPoint, endPoint);
+        const rectangleBounds = this._calculateRectangleBounds(startPoint, clampedEndPoint);
+        this._setRectanglePoints(rectangleBounds);
+        this._resetRectangleDrawingState();
+        this._draw();
+        this._emitShape();
+    }
+
+    _calculateRectangleBounds(startPoint, endPoint) {
+        return {
+            topLeftX: Math.min(startPoint.x, endPoint.x),
+            topLeftY: Math.min(startPoint.y, endPoint.y),
+            bottomRightX: Math.max(startPoint.x, endPoint.x),
+            bottomRightY: Math.max(startPoint.y, endPoint.y)
+        };
+    }
+
+    _setRectanglePoints(bounds) {
+        this.points = [
+            { x: bounds.topLeftX, y: bounds.topLeftY },
+            { x: bounds.bottomRightX, y: bounds.topLeftY },
+            { x: bounds.bottomRightX, y: bounds.bottomRightY },
+            { x: bounds.topLeftX, y: bounds.bottomRightY }
+        ];
+        this.isShapeClosed = true;
+    }
+
+    _resetRectangleDrawingState() {
+        this.isDrawingRectangle = false;
+        this.rectangleStartPoint = null;
+        this.rectangleEndPoint = null;
+    }
+
+    _updateRectangleCornersDuringDrag(cornerIndex, x, y){
+        if (this.points.length !== 4) return;
+
+        const clampedPosition = this._ensureMinimumSizeWhenDraggingCorner(cornerIndex, x, y);
+        const updatedPosition = { x: clampedPosition.x, y: clampedPosition.y };
+
+        this._updateCornerAndAdjacentPoints(cornerIndex, updatedPosition);
+    }
+
+    _updateCornerAndAdjacentPoints(cornerIndex, position) {
+        const TOP_LEFT = 0;
+        const TOP_RIGHT = 1;
+        const BOTTOM_RIGHT = 2;
+        const BOTTOM_LEFT = 3;
+
+        switch(cornerIndex){
+            case TOP_LEFT:
+                this.points[0] = position;
+                this.points[1] = { x: this.points[1].x, y: position.y };
+                this.points[3] = { x: position.x, y: this.points[3].y };
+                this.points[2] = { x: this.points[1].x, y: this.points[3].y };
+                break;
+            case TOP_RIGHT:
+                this.points[1] = position;
+                this.points[0] = { x: this.points[0].x, y: position.y };
+                this.points[2] = { x: position.x, y: this.points[2].y };
+                this.points[3] = { x: this.points[0].x, y: this.points[2].y };
+                break;
+            case BOTTOM_RIGHT:
+                this.points[2] = position;
+                this.points[1] = { x: position.x, y: this.points[1].y };
+                this.points[3] = { x: this.points[3].x, y: position.y };
+                this.points[0] = { x: this.points[3].x, y: this.points[1].y };
+                break;
+            case BOTTOM_LEFT:
+                this.points[3] = position;
+                this.points[0] = { x: position.x, y: this.points[0].y };
+                this.points[2] = { x: this.points[2].x, y: position.y };
+                this.points[1] = { x: this.points[2].x, y: this.points[0].y };
+                break;
+        }
+    }
+
+    _ensureMinimumRectangleSize(startPoint, currentPoint) {
+        let x = currentPoint.x;
+        let y = currentPoint.y;
+        const deltaX = x - startPoint.x;
+        const deltaY = y - startPoint.y;
+
+        if (Math.abs(deltaX) < this.minimumRectangleSize) {
+            x = startPoint.x + (deltaX >= 0 ? this.minimumRectangleSize : -this.minimumRectangleSize);
+        }
+        if (Math.abs(deltaY) < this.minimumRectangleSize) {
+            y = startPoint.y + (deltaY >= 0 ? this.minimumRectangleSize : -this.minimumRectangleSize);
+        }
+
+        return { x, y };
+    }
+
+    _ensureMinimumSizeWhenDraggingCorner(cornerIndex, x, y) {
+        if (this.points.length !== 4) return { x, y };
+
+        const oppositeCornerIndex = (cornerIndex + 2) % 4;
+        const oppositeCorner = this.points[oppositeCornerIndex];
+        const deltaX = x - oppositeCorner.x;
+        const deltaY = y - oppositeCorner.y;
+
+        let clampedX = x;
+        let clampedY = y;
+
+        if (Math.abs(deltaX) < this.minimumRectangleSize) {
+            clampedX = oppositeCorner.x + (deltaX >= 0 ? this.minimumRectangleSize : -this.minimumRectangleSize);
+        }
+        if (Math.abs(deltaY) < this.minimumRectangleSize) {
+            clampedY = oppositeCorner.y + (deltaY >= 0 ? this.minimumRectangleSize : -this.minimumRectangleSize);
+        }
+
+        return { x: clampedX, y: clampedY };
+    }
+
+    _scalePointsByFactor(scaleX, scaleY){
+        if(!this.points || this.points.length === 0) return;
+
+        for (let i = 0; i < this.points.length; i++){
+            this.points[i].x *= scaleX;
+            this.points[i].y *= scaleY;
+        }
+    }
+
+    _findClosestPointIndex(x, y) {
+        let closestPoint = { index: -1, distanceSquared: Infinity };
+
+        for (let i = 0; i < this.points.length; i++){
+            const deltaX = this.points[i].x - x;
+            const deltaY = this.points[i].y - y;
+            const distanceSquared = deltaX * deltaX + deltaY * deltaY;
+
+            if (distanceSquared < closestPoint.distanceSquared) {
+                closestPoint = { index: i, distanceSquared };
+            }
+        }
+
+        return closestPoint.index;
+    }
 }
