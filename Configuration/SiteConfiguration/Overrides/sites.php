@@ -154,7 +154,7 @@ foreach ($localizableKeys as $localizableKey) {
 $GLOBALS['SiteConfiguration']['site_language']['palettes']['localized-logos-and-copyright'] = [
     'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.label',
     'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:page.configuration.palette.localized-logos-and-copyright.description',
-    'showitem' => implode(',', $localizableKeys),
+    'showitem' => 'logo-complete-toggle,logo-text,--linebreak--,logo-complete-big,logo-complete-small,--linebreak--,second-logo,second-logo-alt,--linebreak--,second-logo-link,initiative-text',
 ];
 
 $GLOBALS['SiteConfiguration']['site_language']['types']['1']['showitem'] .= ',--palette--;;localized-logos-and-copyright';
