@@ -73,6 +73,20 @@ return [
                     'showAllLocalizationLink' => true,
                     'showPossibleLocalizationRecords' => true,
                 ],
+                'overrideChildTca' => [
+                    'columns' => [
+                        'CType' => [
+                            'config' => [
+/* ToDo: this simply sets default. But it cant be overriden here in inline element ton only show certain CTypes
+* so we will have to replace this by hook or event
+*                                'type' => 'passthrough',
+*                                'renderType' => '',
+*/
+                                'default' => 'textpic',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
         'imagemap' => [
