@@ -27,7 +27,7 @@ class InlinePidSetter
     public function processDatamap_afterAllOperations(
         DataHandler $dataHandler
     ): void {
-        if ($dataHandler->datamap && is_array($dataHandler->datamap['tx_gsbcore_hotspot'])) {
+        if ($dataHandler->datamap && array_key_exists('tx_gsbcore_hotspot', $dataHandler->datamap)) {
             // move new tt_content elements which are created inside of an imageMap hotspot to the configured page (gsbCore.inlineContentPid)
             foreach ($dataHandler->datamap['tx_gsbcore_hotspot'] as $hotspot) {
                 if ($hotspot['popup']) {
