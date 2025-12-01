@@ -13,6 +13,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class EditHotspotControl extends AbstractNode
 {
+    /**
+     * @return mixed[]
+     */
     public function render(): array
     {
         $result = [];
@@ -34,6 +37,9 @@ final class EditHotspotControl extends AbstractNode
         return $result;
     }
 
+    /**
+     * @return mixed[]
+     */
     private function getImage(): ?array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)

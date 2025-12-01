@@ -12,10 +12,22 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class InlinePidSetter
 {
+    /**
+     * Hook function for DataHandler
+     *
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.CamelCaseMethodName)
+     *
+     * @param DataHandler $dataHandler Reference to the main data handler object
+     */
     public function processDatamap_afterAllOperations(
         DataHandler $dataHandler
-    ) {
-        if ($dataHandler->datamap && isset($dataHandler->datamap['tx_gsbcore_hotspot']) && is_array($dataHandler->datamap['tx_gsbcore_hotspot'])) {
+    ): void {
+        if ($dataHandler->datamap && is_array($dataHandler->datamap['tx_gsbcore_hotspot'])) {
             // move new tt_content elements which are created inside of an imageMap hotspot to the configured page (gsbCore.inlineContentPid)
             foreach ($dataHandler->datamap['tx_gsbcore_hotspot'] as $hotspot) {
                 if ($hotspot['popup']) {
