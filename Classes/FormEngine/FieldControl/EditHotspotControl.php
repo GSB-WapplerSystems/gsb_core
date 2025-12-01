@@ -20,7 +20,7 @@ final class EditHotspotControl extends AbstractNode
         if ($image && isset($image['identifier'])) {
             $result = [
                 'iconIdentifier' => 'tx_imagemap_hotspot_rounded',
-                'title' => "Edit Hotspot",
+                'title' => 'Edit Hotspot',
                 'linkAttributes' => [
                     'class' => 'hotspot',
                     'data-tooltip' => $this->data['databaseRow']['tooltip'],
@@ -34,7 +34,7 @@ final class EditHotspotControl extends AbstractNode
         return $result;
     }
 
-    private function getImage():?array
+    private function getImage(): ?array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('sys_file_reference');

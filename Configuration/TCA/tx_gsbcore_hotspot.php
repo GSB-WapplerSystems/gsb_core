@@ -21,7 +21,7 @@ return [
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'translationSource' => 'l10n_source',
         'enablecolumns' => [
-            'disabled' => 'hidden'
+            'disabled' => 'hidden',
         ],
         'hideTable' => true,
         'security' => [
@@ -83,12 +83,12 @@ return [
                 'foreign_table' => 'tt_content',
                 'foreign_table_where' => 'AND ctype="tx_gsb_imagemap"',
             ],
-        ]
+        ],
     ],
     'types' => [
         '0' =>
             ['showitem' =>
-                '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, popup, imagemap,'
+                '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, tooltip, link, coordinates, popup, imagemap',
             ],
     ],
 ];
