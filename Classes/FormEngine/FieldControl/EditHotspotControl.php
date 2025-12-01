@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the package itzbund/gsb-feusermanagement of the GSB 11 Project by ITZBund.
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
  * Copyright (C) 2023 - 2025 Bundesrepublik Deutschland, vertreten durch das
  * BMI/ITZBund.
