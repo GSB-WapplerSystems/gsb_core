@@ -164,5 +164,10 @@ defined('TYPO3') or die('Access denied.');
     ];
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:backend/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:core/Resources/Private/Language/locallang_common.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/locallang_common.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:core/Resources/Private/Language/locallang_common.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang_common.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/locallang_layout.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang_layout.xlf';
+
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\ITZBund\GsbCore\Evaluation\HttpsUrlEvaluation::class] = '';
 })();
