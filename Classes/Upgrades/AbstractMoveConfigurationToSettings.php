@@ -210,7 +210,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
                 ->update('sys_template')
                 ->set('constants', $typoscript)
                 ->set('include_static_file', '')
-                ->set('clear', '')
+                ->set('clear', 0)
                 ->where(
                     $updateQueryBuilder->expr()->like('root', $updateQueryBuilder->createNamedParameter(1)),
                     $updateQueryBuilder->expr()->eq('pid', $updateQueryBuilder->createNamedParameter($siteId))

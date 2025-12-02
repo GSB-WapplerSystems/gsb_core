@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2025-11-11T15‚:44:59Z" product-name="gsb_core">
+        <body>
+            <trans-unit id="hide" approved="yes">
+                <source>Hide element</source>
+				<target state="final">Element verbergen</target>
+            </trans-unit>
+            <trans-unit id="unHide" resname="unHide" approved="yes">
+				<source>Un-hide element</source>
+				<target state="final">Element sichtbar machen</target>
+			</trans-unit>
+            <trans-unit id="deleteItem" approved="yes">
+				<source>Delete element</source>
+				<target state="final">Element löschen</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -4,6 +4,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+declare(strict_types=1);
+
 namespace ITZBund\GsbCore\Tests\Unit\Resource\OnlineMedia\Helpers;
 
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;

@@ -32,6 +32,7 @@ final class ResolveJavaScriptImportEventListener
     {
         if ($event->specifier === '@typo3/backend/settings/editor.js') {
             $event->importMap->includeImportsFor('@itzbund/gsb-core/site-sets-type/file.js');
+            $event->importMap->includeImportsFor('@itzbund/gsb-core/site-sets-type/password.js');
         }
     }
 }

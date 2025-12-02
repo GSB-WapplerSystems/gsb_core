@@ -8,7 +8,7 @@
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
   * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Ole Hartwig, Matthias Peltzer, Christian Rath-Ulrich
+  * BMI/ITZBund. Author: Ole Hartwig, Matthias Peltzer, Christian Rath-Ulrich, Markus Gausepohl
   *
   * It is free software; you can redistribute it and/or modify it under
   * the terms of the GNU General Public License, either version 3
@@ -78,5 +78,9 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/NoFrame.svg',
         'spinning' => false,
+    ],
+    'tx_include_element' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/IncludeElement.svg',
     ],
 ];
