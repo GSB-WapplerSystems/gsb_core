@@ -18,8 +18,6 @@ use TYPO3\CMS\Extbase\Validation\Validator\UrlValidator;
 final class HttpsUrlEvaluation
 {
     /**
-     * Serverseitige Validierung (wie bisher)
-     *
      * @throws Exception
      */
     public function evaluateFieldValue(mixed $value, mixed $is_in = null, mixed &$set = null): string
@@ -48,7 +46,6 @@ final class HttpsUrlEvaluation
 
     /**
      * Clientseitige Validierung.
-     * Wird von der FormEngine automatisch vor dem Absenden aufgerufen.
      */
     public function returnFieldJS(): string
     {
@@ -90,8 +87,6 @@ final class HttpsUrlEvaluation
     }
 
     /**
-     * Serverseitige Fehlermeldung (wenn jemand die JS-Validierung umgeht).
-     *
      * @throws Exception
      */
     private function setFlashMessageForValidHttpsUrl(): void
