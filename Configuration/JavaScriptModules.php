@@ -18,6 +18,22 @@
   * LICENSE file that was distributed with this source code.
   */
 
+use TYPO3\CMS\Core\Configuration\Features;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_6050_IMAGEMAP')) {
+    $imports = [
+        '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
+        '@itzbund/gsb_core/interactiveImage/backend.js' => 'EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageBackend.js',
+        '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+    ];
+} else {
+    $imports = [
+        '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
+        '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+    ];
+}
+
 return [
     'dependencies' => [
         'backend',
@@ -26,9 +42,5 @@ return [
         'backend.form',
         'settings.type',
     ],
-    'imports' => [
-        '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
-        '@itzbund/gsb_core/interactiveImage/backend.js' => 'EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageBackend.js',
-        '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
-    ],
+    'imports' => $imports,
 ];
