@@ -4,6 +4,28 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+/*
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+ *
+ * Copyright (C) 2023 - 2025 Bundesrepublik Deutschland, vertreten durch das
+ * BMI/ITZBund.
+ * Developed by sitegeist media solutions GmbH (https://www.sitegeist.de)
+ * Developer: Martin Neumann
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:hotspot',
@@ -77,11 +99,11 @@ return [
                     'columns' => [
                         'CType' => [
                             'config' => [
-/* ToDo: this simply sets default. But it cant be overriden here in inline element ton only show certain CTypes
-* so we will have to replace this by hook or event
-*                                'type' => 'passthrough',
-*                                'renderType' => '',
-*/
+                                /* ToDo: this simply sets default. But it cant be overriden here in inline element to only show certain CTypes
+                                * so we will have to replace this by hook or event
+                                *                                'type' => 'passthrough',
+                                *                                'renderType' => '',
+                                */
                                 'default' => 'textpic',
                             ],
                         ],

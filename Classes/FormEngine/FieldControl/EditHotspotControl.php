@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
+// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 /*
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
  * Copyright (C) 2023 - 2025 Bundesrepublik Deutschland, vertreten durch das
  * BMI/ITZBund.
- * Author: Martin Neumann (sitegeist media solutions GmbH)
+ * Developed by sitegeist media solutions GmbH (https://www.sitegeist.de)
+ * Developer: Martin Neumann
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

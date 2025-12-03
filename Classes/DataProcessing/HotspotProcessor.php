@@ -1,22 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 // SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 /*
-  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
-  *
-  * Copyright (C) 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Christian Rath-Ulrich
-  *
-  * It is free software; you can redistribute it and/or modify it under
-  * the terms of the GNU General Public License, either version 3
-  * of the License, or any later version.
-  *
-  * For the full copyright and license information, please read the
-  * LICENSE file that was distributed with this source code.
-  */
+ * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
+ *
+ * Copyright (C) 2023 - 2025 Bundesrepublik Deutschland, vertreten durch das
+ * BMI/ITZBund.
+ * Developed by sitegeist media solutions GmbH (https://www.sitegeist.de)
+ * Developer: Martin Neumann
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 namespace ITZBund\GsbCore\DataProcessing;
 
