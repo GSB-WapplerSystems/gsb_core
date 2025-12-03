@@ -21,7 +21,7 @@ import { hotspotHelper } from './hotspotHelper.js';
  * @property {string} [tooltip]
  * @property {HotSpotLink} [link]
  * @property {object} [coordinates]
- * @property {HTMLElement} [content]
+ * @property {HTMLElement[]} [contents]
  */
 
 /**
@@ -170,7 +170,7 @@ export class HotSpotViewer extends HotSpotCanvas {
             tooltip: hotspot.tooltip || '',
             link: hotspot.link || '',
             points: hotspot.coordinates?.normalized || [],
-            content: hotspot.content || null,
+            contents: Array.isArray(hotspot.contents) ? hotspot.contents : [],
         }));
 
         this._pendingInit = false;
@@ -225,8 +225,8 @@ export class HotSpotViewer extends HotSpotCanvas {
 
         button.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (hotspot.content) {
-                this._openModal(hotspot.content);
+            if (Array.isArray(hotspot.contents) && hotspot.contents.length > 0) {
+                this._openModal(hotspot.contents);
             }
         });
     }
@@ -382,6 +382,8 @@ export class HotSpotViewer extends HotSpotCanvas {
             this._updateTooltipVisibility();
             this._draw();
         }
+
+        this.canvas.style.cursor = newHoveredIndex !== -1 ? 'pointer' : 'default';
     }
 
     _onMouseLeave() {
@@ -390,6 +392,7 @@ export class HotSpotViewer extends HotSpotCanvas {
             this._updateTooltipVisibility();
             this._draw();
         }
+        this.canvas.style.cursor = 'default';
     }
 
     _onCanvasClick(e) {
@@ -408,18 +411,18 @@ export class HotSpotViewer extends HotSpotCanvas {
                 } else {
                     window.location.href = hotspot.link.url;
                 }
-            } else if (hotspot.content) {
-                this._openModal(hotspot.content);
+            } else if (Array.isArray(hotspot.contents) && hotspot.contents.length > 0) {
+                this._openModal(hotspot.contents);
             }
         }
 
         this._draw();
     }
 
-    _openModal(contentElement) {
-        if (!contentElement) return;
+    _openModal(contents) {
+        if (!Array.isArray(contents) || contents.length === 0) return;
 
-        this._setModalContent(contentElement);
+        this._setModalContent(contents);
         this._disableInteractions();
         this._preventBodyScroll();
         this.modalBackdrop.style.display = 'flex';
@@ -480,7 +483,14 @@ export class HotSpotViewer extends HotSpotCanvas {
         }
     }
 
+    _isMobileDevice() {
+        return 'ontouchstart' in window || window.matchMedia('(max-width: 62rem)').matches;
+    }
+
     _shouldShowTooltip(hotspotIndex) {
+        if (this._isMobileDevice()) {
+            return false;
+        }
         return this.hoveredHotspotIndex === hotspotIndex || this.focusedHotspotIndex === hotspotIndex;
     }
 
@@ -637,10 +647,14 @@ export class HotSpotViewer extends HotSpotCanvas {
         }
     }
 
-    _setModalContent(contentElement) {
+    _setModalContent(contents) {
         this.modalContent.innerHTML = '';
-        const clonedContent = contentElement.cloneNode(true);
-        this.modalContent.appendChild(clonedContent);
+        contents.forEach(contentElement => {
+            if (contentElement && contentElement.cloneNode) {
+                const clonedContent = contentElement.cloneNode(true);
+                this.modalContent.appendChild(clonedContent);
+            }
+        });
     }
 
     _disableInteractions() {

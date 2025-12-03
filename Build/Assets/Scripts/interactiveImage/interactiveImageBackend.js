@@ -16,7 +16,6 @@ const init = () => {
         const mount = document.createElement('div');
         mount.className = 'f';
         mount.id = 'my-react-root';
-        mount.innerHTML = '<h3>This is my Image tool!</h3>';
         const canvas = document.createElement('canvas');
 
         mount.appendChild(canvas);

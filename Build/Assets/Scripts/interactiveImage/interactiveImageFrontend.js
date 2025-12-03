@@ -11,7 +11,7 @@ const mapHotSpots = (hotspots) => hotspots.filter(hotspot => hotspot.coordinates
             target: hotspot.urlParts.target,
             title: hotspot.urlParts.title,
         },
-        content: popupContainer?.querySelector(`#c${hotspot.contents[0]?.uid}`),
+        contents: hotspot.contents.map(content => popupContainer?.querySelector(`#c${content?.uid}`)),
     };
 });
 
