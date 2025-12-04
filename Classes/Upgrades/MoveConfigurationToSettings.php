@@ -233,6 +233,11 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings, false, true);
         }
 
+        // Convert dot-notation keys to nested array structure
+        // This ensures that settings like 'search.suche' become settings['search']['suche']
+        // which is required for TypoScript conditions like site('configuration')['settings']['search']['solrEnabledFacets']
+        $settings = $this->convertDotNotationToNestedArray($settings);
+
         // TypoLink mappings
         $typoLinkMappings = [
             'accessability.signLanguagePage' => 'sign-language-page',
@@ -265,6 +270,35 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         }
 
         return $settings;
+    }
+
+    /**
+     * Converts dot-notation keys (e.g., 'search.suche') to nested array structure
+     * (e.g., ['search' => ['suche' => ...]])
+     *
+     * @param mixed[] $settings
+     * @return mixed[]
+     */
+    protected function convertDotNotationToNestedArray(array $settings): array
+    {
+        $result = [];
+        foreach ($settings as $key => $value) {
+            if (is_string($key) && str_contains($key, '.')) {
+                $keys = explode('.', $key);
+                $current = &$result;
+                foreach ($keys as $k) {
+                    $k = (string)$k;
+                    if (!isset($current[$k]) || !is_array($current[$k])) {
+                        $current[$k] = [];
+                    }
+                    $current = &$current[$k];
+                }
+                $current = $value;
+            } else {
+                $result[$key] = $value;
+            }
+        }
+        return $result;
     }
 
     /**

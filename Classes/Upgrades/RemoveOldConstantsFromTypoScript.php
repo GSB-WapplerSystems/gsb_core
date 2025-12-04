@@ -210,6 +210,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
                 $this->output->writeln('No old constants found to remove for site: ' . $siteIdentifier);
             }
         }
+        $this->output->writeln('Finished processing sites');
 
         return true;
     }
