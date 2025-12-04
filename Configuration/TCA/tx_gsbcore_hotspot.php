@@ -133,6 +133,5 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
                 ],
         ],
     ];
-} else {
-    return [];
 }
+return [];
