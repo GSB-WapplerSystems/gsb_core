@@ -24,7 +24,6 @@ namespace ITZBund\GsbCore\EventListener;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Context\BackendUserContext;
 
 class BackendFormValidUrlListener
 {

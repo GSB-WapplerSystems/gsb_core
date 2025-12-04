@@ -19,6 +19,8 @@ final class HttpsUrlEvaluation
 {
     /**
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
      */
     public function evaluateFieldValue(mixed $value, mixed $is_in = null, mixed &$set = null): string
     {
@@ -58,32 +60,32 @@ final class HttpsUrlEvaluation
 
         return 'function(value){ return value; }';
 
-//        return '
-//            function(value) {
-//                if (typeof value !== "string") {
-//                    value = "" + value;
-//                }
-//                value = value.trim();
-//
-//                if (value === "") {
-//                    // Leere Werte hier durchlassen – "required" kümmert sich separat darum
-//                    return value;
-//                }
-//
-//                // Einfache HTTPS-Validierung
-//                var isValid = /^https:\/\/.+/i.test(value);
-//
-//                if (!isValid) {
-//                    // Hier analog zum required-Dialog eine Meldung ausgeben.
-//                    // Einfacher Fallback: Browser-Alert.
-//                    alert("Die eingegebene URL ist ungültig. Es muss eine gültige HTTPS-URL sein.");
-//                    // Ungültigen Wert verwerfen, Formular-Submit wird dadurch abgebrochen.
-//                    return "";
-//                }
-//
-//                return value;
-//            }
-//        ';
+        //        return '
+        //            function(value) {
+        //                if (typeof value !== "string") {
+        //                    value = "" + value;
+        //                }
+        //                value = value.trim();
+        //
+        //                if (value === "") {
+        //                    // Leere Werte hier durchlassen – "required" kümmert sich separat darum
+        //                    return value;
+        //                }
+        //
+        //                // Einfache HTTPS-Validierung
+        //                var isValid = /^https:\/\/.+/i.test(value);
+        //
+        //                if (!isValid) {
+        //                    // Hier analog zum required-Dialog eine Meldung ausgeben.
+        //                    // Einfacher Fallback: Browser-Alert.
+        //                    alert("Die eingegebene URL ist ungültig. Es muss eine gültige HTTPS-URL sein.");
+        //                    // Ungültigen Wert verwerfen, Formular-Submit wird dadurch abgebrochen.
+        //                    return "";
+        //                }
+        //
+        //                return value;
+        //            }
+        //        ';
     }
 
     /**
