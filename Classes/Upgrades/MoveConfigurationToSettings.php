@@ -294,9 +294,9 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
                     $current = &$current[$k];
                 }
                 $current = $value;
-            } else {
-                $result[$key] = $value;
+                continue;
             }
+            $result[$key] = $value;
         }
         return $result;
     }
