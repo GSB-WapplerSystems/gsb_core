@@ -27,6 +27,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class BackendFormValidUrlListener
 {
+    /**
+     * @param array<string, mixed> $params
+     */
     public function __invoke(array $params): void
     {
         $record = $params['record'] ?? [];

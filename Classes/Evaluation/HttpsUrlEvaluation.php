@@ -19,8 +19,8 @@ final class HttpsUrlEvaluation
 {
     /**
      * @throws Exception
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     * @SuppressWarnings(PHPMD.CamelCaseParameterName)
+     * @SuppressWarnings("PHPMD.UnusedFormalParameter")
+     * @SuppressWarnings("PHPMD.CamelCaseParameterName")
      */
     public function evaluateFieldValue(mixed $value, mixed $is_in = null, mixed &$set = null): string
     {
