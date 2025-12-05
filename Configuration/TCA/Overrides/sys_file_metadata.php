@@ -25,7 +25,7 @@ defined('TYPO3') || die();
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $newColumns);
-    
+
     // Add field to palette 26 (same palette as alternative field)
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_metadata',
