@@ -279,6 +279,9 @@
 			<trans-unit id="tt_content.include_element.rendering" resname="tt_content.include_element.rendering">
 				<source>Type</source>
 			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.description" resname="tt_content.include_element.rendering.description">
+				<source>Choose between iFrame or WebComponentt</source>
+			</trans-unit>
 			<trans-unit id="tt_content.include_element.rendering.iframe" resname="tt_content.include_element.rendering.iframe">
 				<source>iFrame</source>
 			</trans-unit>
@@ -305,6 +308,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image">
 				<source>Consent Banner Image</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image.description" resname="tt_content.include_element.banner_image.description">
+				<source>Background Image for Consent overlay</source>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
 				<source>Multimedia</source>

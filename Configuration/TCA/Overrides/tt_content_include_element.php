@@ -30,6 +30,7 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
     $includeElementColumns = [
         'tx_include_rendering' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -90,6 +91,7 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
         ],
         'tx_include_banner_image' => [
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.banner_image',
+            'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.banner_image.description',
             'config' => [
                 'type' => 'file',
                 'allowed' => 'common-image-types',

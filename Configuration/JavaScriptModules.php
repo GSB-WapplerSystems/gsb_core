@@ -30,5 +30,6 @@ return [
         '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
         '@itzbund/gsb-core/site-sets-type/password.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/password.js',
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+        '@itzbund/gsb-core/validation/https-url-validator.js' => 'EXT:gsb_core/Resources/Public/JavaScript/validation/https-url-validator.js',
     ],
 ];

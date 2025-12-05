@@ -341,11 +341,11 @@
 			</trans-unit>
 			<trans-unit id="include_element.title" resname="include_element.title" approved="yes">
 				<source>Include Element</source>
-				<target>Einbetten Element</target>
+				<target>Externe Inhalte</target>
 			</trans-unit>
 			<trans-unit id="include_element.description" resname="include_element.description" approved="yes">
 				<source>Element for embedding external Content via iFrame or WebComponent</source>
-				<target>Element zum einbetten von iFrames und WebComponents</target>
+				<target>Mit diesem Element können externe Inhalte wahlweise mit einem iFrame oder einer WebComponent eingebettet werden.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.title" resname="tt_content.include_element.title" approved="yes">
 				<source>Title</source>
@@ -354,6 +354,10 @@
 			<trans-unit id="tt_content.include_element.rendering" resname="tt_content.include_element.rendering" approved="yes">
 				<source>Type</source>
 				<target>Typ auswählen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.description" resname="tt_content.include_element.rendering,description" approved="yes">
+				<source>Choose between iFrame or WebComponent</source>
+				<target>Auswahl zwischen iFrame und WebComponent zum Einbetten externer Inhalte.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.rendering.iframe" resname="tt_content.include_element.rendering.iframe" approved="yes">
 				<source>iFrame</source>
@@ -385,7 +389,11 @@
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image" approved="yes">
 				<source>Consent Banner Image</source>
-				<target>Banner Hintergrundbild</target>
+				<target>Platzhalter Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image.description" resname="tt_content.include_element.banner_image.description" approved="yes">
+				<source>Background Image for Consent overlay</source>
+				<target>Hintergrundbild, für die Abfrage vor der Freischaltung von externen Inhalten.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video" approved="yes">
 				<source>Multimedia</source>
