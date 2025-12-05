@@ -283,20 +283,20 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
     {
         $result = [];
         foreach ($settings as $key => $value) {
-            if (!is_string($key) || !str_contains($key, '.')) {
-                $result[$key] = $value;
+            if (is_string($key) && str_contains($key, '.')) {
+                $keys = explode('.', $key);
+                $current = &$result;
+                foreach ($keys as $k) {
+                    $k = (string)$k;
+                    if (!isset($current[$k]) || !is_array($current[$k])) {
+                        $current[$k] = [];
+                    }
+                    $current = &$current[$k];
+                }
+                $current = $value;
                 continue;
             }
-            $keys = explode('.', $key);
-            $current = &$result;
-            foreach ($keys as $k) {
-                $k = (string)$k;
-                if (!isset($current[$k]) || !is_array($current[$k])) {
-                    $current[$k] = [];
-                }
-                $current = &$current[$k];
-            }
-            $current = $value;
+            $result[$key] = $value;
         }
         return $result;
     }
