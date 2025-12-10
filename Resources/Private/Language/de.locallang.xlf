@@ -163,6 +163,18 @@
 				<source>Read more</source>
 				<target>Mehr lesen</target>
 			</trans-unit>
+			<trans-unit id="content.consent.external.title" resname="content.consent.external.title" approved="yes">
+				<source>Please note!</source>
+				<target>Externe Inhalte!</target>
+			</trans-unit>
+			<trans-unit id="content.consent.external.text" resname="content.consent.external.text" approved="yes">
+				<source>By clicking on the button, you accept the transfer of your data (including IP address) to Vimeo. As this is a company based in the USA, you also consent to the transfer of data in accordance with Article 49(1)(a) GDPR. You can find more information in the</source>
+				<target>Beim Anzeigen dieses Inhalts werden Daten an externe Anbieter übermittelt. Wenn Sie fortfahren, stimmen Sie der Datenübertragung an diese Drittanbieter zu. Weitere Informationen finden Sie hier:</target>
+			</trans-unit>
+			<trans-unit id="content.consent.external.button" resname="content.consent.external.button" approved="yes">
+				<source>Approve and display</source>
+				<target>Zustimmen und anzeigen</target>
+			</trans-unit>
 			<trans-unit id="videoyoutube.play" resname="videoyoutube.play" approved="yes">
 				<source>Play video</source>
 				<target>Video abspielen</target>
@@ -454,6 +466,10 @@
 			<trans-unit id="config.additionalAllowedFileExtensionsForUploadsElement" resname="config.additionalAllowedFileExtensionsForUploadsElement">
 				<source>Additional allowed file extensions for uploads element: e.g. docx,xls</source>
 				<target>Weitere erlaubte Dateiendungen für das Dateilinks-Element: z.B. docx,xls</target>
+			</trans-unit>
+			<trans-unit id="error.noValidHttpsUrl" resname="error.noValidHttpsUrl">
+				<source>This field requires a valid https-url</source>
+				<target>Bitte eine valide URL inkl. https eintragen.</target>
 			</trans-unit>
 		</body>
 	</file>

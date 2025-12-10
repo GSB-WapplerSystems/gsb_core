@@ -4,6 +4,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+declare(strict_types=1);
+
 namespace ITZBund\GsbCore\Tests\Unit\Utility;
 
 use ITZBund\GsbCore\Utility\ExtendSiteUtility;
@@ -297,10 +299,12 @@ class ExtendedSiteUtilityTest extends UnitTestCase
     }
     /**
      * @param array<string, string|array<string, string|int>> $config
+     * @param array<string, string|array<string, string|int>> $settings
      * @param int $language
      * @param array<string, string|array<string, string|int>> $expected
-     * @dataProvider provideOverrideSettingsWithLocalizedConfig
      */
+    #[Test]
+    #[DataProvider('provideOverrideSettingsWithLocalizedConfig')]
     public function testOverrideSettingsWithLocalizedConfig(array $config, array $settings, int $language, array $expected): void
     {
         $subject = new \ReflectionClass(ExtendSiteUtility::class);

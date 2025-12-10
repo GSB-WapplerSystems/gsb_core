@@ -55,6 +55,10 @@ settings:
     category: GSB.functions.navigation
     type: page
     default: 25
+  navigation.policy-page:
+    category: GSB.functions.navigation
+    type: page
+    default: 28
 
 ### Social Media Links Einstellungen ###
   socialMediaLinks.x:

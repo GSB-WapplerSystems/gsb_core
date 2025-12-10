@@ -201,7 +201,6 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
      */
     protected function removeOldConstants(int $siteId, array $parsedTypoScriptConstants): void
     {
-        $this->output->writeln('Removing old constants: ' . print_r($parsedTypoScriptConstants, true));
         $typoscript = $this->getTyposcriptFromArray($parsedTypoScriptConstants);
         try {
             $connection = $this->connectionPool->getConnectionForTable('sys_template');
@@ -210,7 +209,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
                 ->update('sys_template')
                 ->set('constants', $typoscript)
                 ->set('include_static_file', '')
-                ->set('clear', '')
+                ->set('clear', 0)
                 ->where(
                     $updateQueryBuilder->expr()->like('root', $updateQueryBuilder->createNamedParameter(1)),
                     $updateQueryBuilder->expr()->eq('pid', $updateQueryBuilder->createNamedParameter($siteId))

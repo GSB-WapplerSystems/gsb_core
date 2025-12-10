@@ -26,14 +26,13 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Fluid\ViewHelpers;
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\Area;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\ProcessedFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
-use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
@@ -297,15 +296,20 @@ final class ImageViewHelper extends AbstractTagBasedViewHelper
 
     protected function getExceptionMessage(string $detailedMessage): string
     {
-        /** @var RenderingContext $renderingContext */
-        $renderingContext = $this->renderingContext;
-        $request = $renderingContext->getRequest();
-        if ($request instanceof RequestInterface) {
+        $request = $this->getRequest();
+        if (!is_null($request)) {
             $currentContentObject = $request->getAttribute('currentContentObject');
             if ($currentContentObject instanceof ContentObjectRenderer) {
                 return sprintf('Unable to render image tag in "%s": %s', $currentContentObject->currentRecord, $detailedMessage);
             }
         }
         return "Unable to render image tag: $detailedMessage";
+    }
+    public function getRequest(): ?ServerRequestInterface
+    {
+        if (!$this->renderingContext->hasAttribute(ServerRequestInterface::class)) {
+            return null;
+        }
+        return $this->renderingContext->getAttribute(ServerRequestInterface::class);
     }
 }

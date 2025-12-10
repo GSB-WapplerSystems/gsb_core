@@ -4,6 +4,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+declare(strict_types=1);
+
 namespace ITZBund\GsbCore\Tests\Unit\ViewHelpers;
 
 use ITZBund\GsbCore\ViewHelpers\GsbVersionViewHelper;
@@ -34,7 +36,7 @@ class GsbVersionViewHelperTest extends UnitTestCase
         /*#######
         ## Act ##
         #######*/
-        $assert = $gsbVersionViewHelper->initializeArgumentsAndRender();
+        $assert = $gsbVersionViewHelper->render();
 
         /*##########
         ## Assert ##

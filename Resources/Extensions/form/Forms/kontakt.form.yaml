@@ -246,7 +246,7 @@ renderables:
                 - image/jpeg
                 - image/png
                 - text/plain
-              elementDescription: 'In dieses Feld kann eine Datei hochgeladen oder ersetzt werden. Dateigröße maximal 2 MB. Erlaubte Dateitypen: pdf, txt, jpg, png.'
+              elementDescription: 'In dieses Feld kann eine Datei hochgeladen oder ersetzt werden. Die maximal erlaubte Dateigröße beträgt 2MB (Megabyte). Erlaubte Dateitypen: pdf, txt, jpg, png.'
             type: FileUpload
             identifier: fileupload-1
             label: Dateiupload

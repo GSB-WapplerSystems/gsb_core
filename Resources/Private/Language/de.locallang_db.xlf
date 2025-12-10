@@ -398,6 +398,62 @@
 				<source>No</source>
 				<target>Nein</target>
 			</trans-unit>
+			<trans-unit id="include_element.title" resname="include_element.title" approved="yes">
+				<source>Include Element</source>
+				<target>Externe Inhalte</target>
+			</trans-unit>
+			<trans-unit id="include_element.description" resname="include_element.description" approved="yes">
+				<source>Element for embedding external Content via iFrame or WebComponent</source>
+				<target>Mit diesem Element können externe Inhalte wahlweise mit einem iFrame oder einer WebComponent eingebettet werden.</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.title" resname="tt_content.include_element.title" approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering" resname="tt_content.include_element.rendering" approved="yes">
+				<source>Type</source>
+				<target>Typ auswählen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.description" resname="tt_content.include_element.rendering,description" approved="yes">
+				<source>Choose between iFrame or WebComponent</source>
+				<target>Auswahl zwischen iFrame und WebComponent zum Einbetten externer Inhalte.</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.iframe" resname="tt_content.include_element.rendering.iframe" approved="yes">
+				<source>iFrame</source>
+				<target>iFrame</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.webcomponent" resname="tt_content.include_element.rendering.webcomponent" approved="yes">
+				<source>WebComponent</source>
+				<target>WebComponent</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.url" resname="tt_content.include_element.url" approved="yes">
+				<source>Source URL</source>
+				<target>Externe URL</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.width" resname="tt_content.include_element.width" approved="yes">
+				<source>Width</source>
+				<target>Breite</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.height" resname="tt_content.include_element.height" approved="yes">
+				<source>Height</source>
+				<target>Höhe</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_title" resname="tt_content.include_element.html_title" approved="yes">
+				<source>HTML-Title-Attribute</source>
+				<target>HTML-Titel-Attribute</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_name" resname="tt_content.include_element.html_name" approved="yes">
+				<source>HTML-Name-Attribute</source>
+				<target>HTML-Name-Attribute</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image" approved="yes">
+				<source>Consent Banner Image</source>
+				<target>Platzhalter Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image.description" resname="tt_content.include_element.banner_image.description" approved="yes">
+				<source>Background Image for Consent overlay</source>
+				<target>Hintergrundbild, für die Abfrage vor der Freischaltung von externen Inhalten.</target>
+			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video" approved="yes">
 				<source>Multimedia</source>
 				<target>Multimedia</target>
@@ -1423,6 +1479,55 @@
 				<source>Configure link settings for the image element</source>
 				<target>Link-Einstellungen für das Bildelement konfigurieren</target>
 			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_override.header" resname="tt_content.palettes.image_override.header">
+				<source>Image elements</source>
+				<target>Bildelemente</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator_tool.placeholder" resname="sys_file_metadata.creator_tool.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.publisher.placeholder" resname="sys_file_metadata.publisher.placeholder">
+				<source>Enter website or name</source>
+				<target>Webseite oder Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source.placeholder" resname="sys_file_metadata.source.placeholder">
+				<source>Enter website or name</source>
+				<target>Webseite oder Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.copyright.placeholder" resname="sys_file_metadata.copyright.placeholder">
+				<source>Enter the name of the author or enter the license</source>
+				<target>Name der Urheberin oder des Urhebers eingeben oder Lizenz eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.language.placeholder" resname="sys_file_metadata.language.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country.placeholder" resname="sys_file_metadata.location_country.placeholder">
+				<source>Enter name</source>
+				<target>Name eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region.placeholder" resname="sys_file_metadata.location_region.placeholder">
+				<source>Enter the name of the region</source>
+				<target>Name der Region eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city.placeholder" resname="sys_file_metadata.location_city.placeholder">
+				<source>Enter name</source>
+				<target>Name der Stadt eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_creation_date.placeholder" resname="sys_file_metadata.content_creation_date.placeholder">
+				<source>Enter date</source>
+				<target>Datum eingeben</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_modification_date.placeholder" resname="sys_file_metadata.content_modification_date.placeholder">
+				<source>Enter date</source>
+				<target>Datum eingeben</target>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

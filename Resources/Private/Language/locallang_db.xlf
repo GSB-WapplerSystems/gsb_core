@@ -267,6 +267,51 @@
 			<trans-unit id="tt_content.tx_video_a11y_audio_voiceover.unchecked" resname="tt_content.tx_video_a11y_audio_voiceover.unchecked">
 				<source>No</source>
 			</trans-unit>
+			<trans-unit id="include_element.title" resname="include_element.title">
+				<source>Include Element</source>
+			</trans-unit>
+			<trans-unit id="include_element.description" resname="include_element.description">
+				<source>Element for embedding external Content via iFrame or WebComponent</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.title" resname="tt_content.include_element.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering" resname="tt_content.include_element.rendering">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.description" resname="tt_content.include_element.rendering.description">
+				<source>Choose between iFrame or WebComponentt</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.iframe" resname="tt_content.include_element.rendering.iframe">
+				<source>iFrame</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.webcomponent" resname="tt_content.include_element.rendering.webcomponent">
+				<source>WebComponent</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.url" resname="tt_content.include_element.url">
+				<source>Source URL</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.width" resname="tt_content.include_element.width">
+				<source>Width (Default: 100%)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.height" resname="tt_content.include_element.height">
+				<source>Height</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.markup_component" resname="tt_content.include_element.markup_component">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_title" resname="tt_content.include_element.html_title">
+				<source>HTML-Title-Attribute</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.html_name" resname="tt_content.include_element.html_name">
+				<source>HTML-Name-Attribute</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image">
+				<source>Consent Banner Image</source>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image.description" resname="tt_content.include_element.banner_image.description">
+				<source>Background Image for Consent overlay</source>
+			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video">
 				<source>Multimedia</source>
 			</trans-unit>
@@ -1155,6 +1200,43 @@
 			</trans-unit>
 			<trans-unit id="tx_gsbcore_hotspot.popup.description" resname="tx_gsbcore_hotspot.popup.description">
 				<source>When a user clicks on the hotspot in frontend view a popup will be displayed. Here you can add content elements to this popup as you like.</source>
+			</trans-unit>
+			<trans-unit id="tt_content.palettes.image_override.header" resname="tt_content.palettes.image_override.header">
+				<source>Image elements</source>
+				<target>Bildelemente</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator.placeholder" resname="sys_file_metadata.creator.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.creator_tool.placeholder" resname="sys_file_metadata.creator_tool.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.publisher.placeholder" resname="sys_file_metadata.publisher.placeholder">
+				<source>Enter website or name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source.placeholder" resname="sys_file_metadata.source.placeholder">
+				<source>Enter website or name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.copyright.placeholder" resname="sys_file_metadata.copyright.placeholder">
+				<source>Enter the name of the author or enter the license</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.language.placeholder" resname="sys_file_metadata.language.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country.placeholder" resname="sys_file_metadata.location_country.placeholder">
+				<source>Enter name</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region.placeholder" resname="sys_file_metadata.location_region.placeholder">
+				<source>Enter the name of the region</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city.placeholder" resname="sys_file_metadata.location_city.placeholder">
+				<source>Enter the name of the city</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_creation_date.placeholder" resname="sys_file_metadata.content_creation_date.placeholder">
+				<source>Enter date</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.content_modification_date.placeholder" resname="sys_file_metadata.content_modification_date.placeholder">
+				<source>Enter date</source>
 			</trans-unit>
 		</body>
 	</file>

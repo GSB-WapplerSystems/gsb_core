@@ -25,10 +25,39 @@ defined('TYPO3') || die();
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $newColumns);
+
+    // Add field to palette 26 (same palette as alternative field)
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_metadata',
-        '25',
+        '20',
         'is_accessible',
-        'after:caption'
+        'after:alternative'
     );
+
+    // add placeholder
+    $fields = [
+        'creator',
+        'creator_tool',
+        'publisher',
+        'source',
+        'copyright',
+        'language',
+        'location_country',
+        'location_region',
+        'location_city',
+        'content_creation_date',
+        'content_modification_date',
+    ];
+
+    $lll = 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:sys_file_metadata';
+    $fieldKey = 'placeholder';
+
+    $columns = &$GLOBALS['TCA']['sys_file_metadata']['columns'];
+
+    foreach ($fields as $field) {
+        if (isset($columns[$field]['config'])) {
+            $columns[$field]['config']['placeholder'] = $lll . '.' . $field . '.' . $fieldKey;
+        }
+    }
+
 })();
