@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+// interactiveImageBackend.js
 
 import Modal from '@typo3/backend/modal.js';
 import DocumentService from '@typo3/core/document-service.js';
