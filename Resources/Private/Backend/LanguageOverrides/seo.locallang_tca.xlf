@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2025-11-11T15‚:44:59Z" product-name="gsb_core">
+        <body>
+			<trans-unit id="pages.seo_title">
+				<source>Title for search engines (255 characters)</source>
+			</trans-unit>
+			<trans-unit id="pages.palettes.opengraph">
+				<source>Open Graph (Facebook, 255 characters)</source>
+			</trans-unit>
+			<trans-unit id="pages.twitter_title">
+				<source>X / Twitter Title (255 characters)</source>
+			</trans-unit>
+		</body>
+    </file>
+</xliff>

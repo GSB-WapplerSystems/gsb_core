@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2025-11-11T15‚:44:59Z" product-name="gsb_core">
+        <body>
+			<trans-unit id="pages.title_formlabel">
+                <source>Page Title (255 characters)</source>
+            </trans-unit>
+            <trans-unit id="pages.nav_title_formlabel">
+				<source>Alternative Navigation Title (255 characters)</source>
+			</trans-unit>
+			<trans-unit id="pages.subtitle_formlabel">
+				<source>Subtitle (255 characters)</source>
+			</trans-unit>
+			<trans-unit id="LGL.description">
+				<source>Description (2000 characters)</source>
+			</trans-unit>
+			<trans-unit id="LGL.subheader">
+				<source>Subheader (255 characters)</source>
+			</trans-unit>
+		</body>
+    </file>
+</xliff>

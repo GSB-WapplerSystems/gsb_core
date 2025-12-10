@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:frontend/Resources/Private/Language/locallang_ttc.xlf" date="2011-10-17T20:22:32Z" product-name="cms" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="header_formlabel" resname="header_formlabel" approved="yes">
+				<source>Header</source>
+				<target state="final">Überschrift (255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="subheader_formlabel" resname="subheader_formlabel" approved="yes">
+				<source>Subheader</source>
+				<target state="final">Unterüberschrift (255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="header" resname="header" approved="yes">
+				<source>Header</source>
+				<target state="final">Überschrift (255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="header.ALT.shortcut_formlabel" resname="header.ALT.shortcut_formlabel" approved="yes">
+				<source>Name (not visible in frontend)</source>
+				<target state="final">Name (in der Webseite nicht sichtbar, 255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="target" resname="target" approved="yes">
+				<source>Target</source>
+				<target state="final">Ziel (30 Zeichen):</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
