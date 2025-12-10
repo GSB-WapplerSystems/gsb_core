@@ -11,6 +11,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestDox;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContext;
 
 class GsbVersionViewHelperTest extends UnitTestCase
 {
@@ -23,6 +24,8 @@ class GsbVersionViewHelperTest extends UnitTestCase
         ## Arrange ##
         ###########*/
         $gsbVersionViewHelper = new GsbVersionViewHelper();
+        $renderingContext = new RenderingContext();
+        $gsbVersionViewHelper->setRenderingContext($renderingContext);
 
         if ($customEnvValue) {
             putenv('GSB_VERSION=' . $expectedResult);
