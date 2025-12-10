@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+// hotspotHelper.js
+
 function calculateSimpleCentroid(points) {
     let sumX = 0;
     let sumY = 0;

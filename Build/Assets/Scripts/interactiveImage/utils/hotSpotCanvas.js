@@ -1,4 +1,8 @@
 /**
+ * SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * 
  * @typedef {Object} HotSpotCanvasParams
  * @property {HTMLCanvasElement} canvas
  * @property {string} imageUrl
