@@ -281,7 +281,7 @@
             </trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside" approved="yes">
 				<source>Intext</source>
-				<target>Im Text</target>
+				<target>Position im Text anstatt über dem Bild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext" approved="yes">
 				<source>Left (in text)</source>
