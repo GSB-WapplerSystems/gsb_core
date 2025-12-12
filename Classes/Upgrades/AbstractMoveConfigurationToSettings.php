@@ -408,7 +408,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
             $container = GeneralUtility::getContainer();
             $commandRegistry = $container->get(\TYPO3\CMS\Core\Console\CommandRegistry::class);
-            /** @var \ITZBund\GsbClusteredCaching\Command\FlushCacheOnStateChangeCommand $command */
+            /** @var \Symfony\Component\Console\Command\Command $command */
             $command = $commandRegistry->get('gsbclusteredcaching:flushCacheOnStateChange');
 
             $input = new \Symfony\Component\Console\Input\ArrayInput([
