@@ -22,12 +22,7 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Upgrades;
 
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
-use TYPO3\CMS\Core\Console\CommandRegistry;
-use Symfony\Component\Yaml\Yaml;
-use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\TypoScript\TypoScriptStringFactory;
@@ -41,6 +36,8 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @phpstan-ignore-next-line
  * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
 {
@@ -138,14 +135,14 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $siteIdentifier = $site->getIdentifier();
             $this->output->writeln('Processing site: ' . $siteIdentifier);
 
-            $configPath = Environment::getConfigPath() . '/sites/' . $siteIdentifier;
+            $configPath = \TYPO3\CMS\Core\Core\Environment::getConfigPath() . '/sites/' . $siteIdentifier;
             $settingsFile = $configPath . '/settings.yaml';
 
             // Read existing settings or create new array
             $existingSettings = [];
             if (file_exists($settingsFile)) {
                 $this->output->writeln('Settings file already exists for site: ' . $siteIdentifier);
-                $existingSettings = Yaml::parseFile($settingsFile) ?? [];
+                $existingSettings = \Symfony\Component\Yaml\Yaml::parseFile($settingsFile) ?? [];
             }
 
             // Process site configuration
@@ -165,7 +162,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
             // Write settings file
             try {
-                $yaml = Yaml::dump($newSettings, 10, 2);
+                $yaml = \Symfony\Component\Yaml\Yaml::dump($newSettings, 10, 2);
                 $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
                 file_put_contents($settingsFile, $yaml);
             } catch (\Exception $e) {
@@ -331,7 +328,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             return;
         }
 
-        $config = Yaml::parseFile($configFile);
+        $config = \Symfony\Component\Yaml\Yaml::parseFile($configFile);
         foreach ($this->getConfigKeys() as $key) {
             $this->output->writeln('Removing key from site config: ' . $key);
             unset($config[$key]);
@@ -341,7 +338,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $config['dependencies'] = ['itzbund-gsb/default'];
         }
 
-        $yaml = Yaml::dump($config, 10, 2);
+        $yaml = \Symfony\Component\Yaml\Yaml::dump($config, 10, 2);
         file_put_contents($configFile, $yaml);
     }
 
@@ -410,16 +407,16 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $this->output->writeln('Executing FlushCacheOnStateChangeCommand with version: ' . $randomVersion);
 
             $container = GeneralUtility::getContainer();
-            $commandRegistry = $container->get(CommandRegistry::class);
+            $commandRegistry = $container->get(\TYPO3\CMS\Core\Console\CommandRegistry::class);
             /** @var \ITZBund\GsbClusteredCaching\Command\FlushCacheOnStateChangeCommand $command */
             $command = $commandRegistry->get('gsbclusteredcaching:flushCacheOnStateChange');
-            
-            $input = new ArrayInput([
+
+            $input = new \Symfony\Component\Console\Input\ArrayInput([
                 'version' => $randomVersion,
                 '--groups' => 'all',
             ]);
             $input->bind($command->getDefinition());
-            $output = new BufferedOutput(OutputInterface::VERBOSITY_NORMAL);
+            $output = new \Symfony\Component\Console\Output\BufferedOutput(OutputInterface::VERBOSITY_NORMAL);
 
             $result = $command->run($input, $output);
             $this->output->writeln('Cache flush command executed with result: ' . $result);
