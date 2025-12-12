@@ -22,6 +22,9 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Upgrades;
 
+use ITZBund\GsbClusteredCaching\Command\FlushCacheOnStateChangeCommand;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Core\Environment;
@@ -144,6 +147,10 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $this->rearrangeSiteConfig($configPath . '/config.yaml');
             $this->removeOldConstants($site->getRootPageId(), $parsedTypoScriptConstants);
         }
+        $this->output->writeln('Update completed');
+        //flush cache and warmup
+        $this->output->writeln('Flushing cache');
+        $this->flushCacheOnStateChange();
 
         return true;
     }
@@ -357,5 +364,30 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
         $this->output->writeln('no uid found in typolink');
         return null;
+    }
+
+    /**
+     * Flushes cache using FlushCacheOnStateChangeCommand with group 'all' and random version
+     */
+    protected function flushCacheOnStateChange(): void
+    {
+        try {
+            $randomVersion = bin2hex(random_bytes(16));
+            $this->output->writeln('Executing FlushCacheOnStateChangeCommand with version: ' . $randomVersion);
+
+            $command = GeneralUtility::makeInstance(FlushCacheOnStateChangeCommand::class);
+            $input = new ArrayInput([
+                'version' => $randomVersion,
+                '--groups' => 'all',
+            ]);
+            $input->bind($command->getDefinition());
+            $output = new BufferedOutput(OutputInterface::VERBOSITY_NORMAL);
+
+            $result = $command->run($input, $output);
+            $this->output->writeln('Cache flush command executed with result: ' . $result);
+            $this->output->writeln($output->fetch());
+        } catch (\Exception $e) {
+            $this->output->writeln('Error executing cache flush command: ' . $e->getMessage());
+        }
     }
 }
