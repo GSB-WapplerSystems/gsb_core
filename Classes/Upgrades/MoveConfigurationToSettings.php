@@ -123,8 +123,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'font-serif-name',
     ];
 
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
-
     /**
      * Returns the title of the upgrade wizard.
      */

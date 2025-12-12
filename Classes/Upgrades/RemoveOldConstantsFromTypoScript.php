@@ -75,8 +75,6 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
         'styles.templates.layoutRootPath',
     ];
 
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
-
     /**
      * Returns the title of the upgrade wizard.
      */
@@ -175,8 +173,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
      */
     public function executeUpdate(): bool
     {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
+        $sites = $this->getSiteFinder()->getAllSites();
 
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
