@@ -1,0 +1,197 @@
+/*
+ * SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+// Interactive Image Frontend Styles
+.frame-type-gsb_imagemap {
+    #interactive-image-map-container {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    #interactive-image-map-container canvas {
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    .hotspot-viewer-button-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 100;
+    }
+
+    .hotspot-viewer-button {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: auto;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease;
+        border: 3px solid var(--bs-tertiary);
+        background: var(--bs-secondary);
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            background: var(--bs-secondary);
+            border-color: var(--bs-tertiary);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        &:focus {
+            outline: 2px solid var(--bs-focus-ring-color);
+            outline-offset: 2px;
+        }
+
+        &:active {
+            background: var(--bs-secondary);
+            border-color: var(--bs-tertiary);
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .hotspot-viewer-button-inner-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--bs-tertiary);
+
+        &:hover {
+            background: var(--bs-secondary);
+        }
+
+        &:active {
+            background: var(--bs-secondary);
+        }
+    }
+
+    .hotspot-viewer-tooltip {
+        position: absolute;
+        background: var(--bs-tertiary);
+        border: 2px solid var(--bs-secondary);
+        border-radius: 0;
+        padding: 8px 12px;
+        font-weight: bold;
+        color: black;
+        pointer-events: auto;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 300px;
+    }
+
+    .hotspot-viewer-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #222222B2;
+        backdrop-filter: blur(4px);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        pointer-events: auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        @media (width >= 768px) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        @media (width >= 1400px) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+
+    .hotspot-viewer-modal-dialog {
+        position: relative;
+        background: var(--bs-tertiary);
+        border: 4px solid var(--bs-secondary);
+        border-radius: 0;
+        padding: 0 20px 24px;
+        overflow-y: auto;
+        overflow-x: auto;
+        z-index: 1001;
+        max-width: calc(100% - 40px);
+        width: calc(100% - 40px);
+
+        @media (width >= 768px) {
+            max-width: 720px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @media (width >= 1400px) {
+            max-width: 960px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+    }
+
+    .hotspot-viewer-modal-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: transparent;
+        font-size: 32px;
+        line-height: 1;
+        cursor: pointer;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1002;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            outline: 2px solid var(--bs-focus-ring-color);
+            outline-offset: 2px;
+        }
+    }
+
+    .hotspot-viewer-modal-content {
+        position: relative;
+        padding-top: 56px;
+    }
+}
+

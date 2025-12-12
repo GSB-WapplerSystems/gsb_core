@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>
+    <!--
+    SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+    -->
+</f:comment>
+
+<div class="frame frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}{f:if(condition: data.gallery_textcolor, then: ' gallery-text-white')}{f:if(condition: data.gallery_bg, then: ' gallery-bg-dark')}"
+    id="c{data.uid}">
+    <f:if condition="{data.header}">
+        <f:render arguments="{_all}" partial="Header/All" />
+    </f:if>
+    <div id="interactive-image-map-container" data-image-url="{image.0.publicUrl}" data-image-alt="{image.0.properties.alternative}" data-image-description="{image.0.properties.description}" data-hotspots="{hotspots -> f:format.json()}" data-data="{data -> f:format.json()}">
+        <canvas></canvas>
+    </div>
+
+    <div id="interactive-image-map-popups"   style="display: none;">
+        <f:for each="{hotspots}" as="hotspot">
+            <f:comment>This renders the selected CEs for the popup of the hotspot.</f:comment>
+            <f:for as="popupcontent" each="{hotspot.contents}">
+                <f:cObject typoscriptObjectPath="lib.popup" data="{uid: popupcontent.uid}"/>
+            </f:for>
+        </f:for>
+    </div>
+</div>
+<f:asset.script type="module" identifier="interactiveImageMap" src="EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageFrontend.js" />
+<f:asset.css identifier="interactiveImageMapCSS" href="EXT:gsb_core/Resources/Public/Build/StyleSheets/interactiveImageFrontend.css" />
+</html>

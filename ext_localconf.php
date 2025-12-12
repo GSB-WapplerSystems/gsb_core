@@ -24,6 +24,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use ITZBund\GsbCore\FormEngine\FieldControl\EditHotspotControl;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalAudioHelper;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalAudioRenderer;
@@ -155,6 +156,15 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
 
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_6050_IMAGEMAP')) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1761661200] = [
+            'nodeName' => 'editHotspotControl',
+            'priority' => 70,
+            'class' => EditHotspotControl::class,
+        ];
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
+            \ITZBund\GsbCore\Hooks\InlinePidSetter::class;
+    }
     // Configure caching framework
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['gsb_core_menu'] = [
         'frontend' => \TYPO3\CMS\Core\Cache\Frontend\VariableFrontend::class,
@@ -171,4 +181,5 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:workspaces/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.workspace.locallang.xlf';
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\ITZBund\GsbCore\Evaluation\HttpsUrlEvaluation::class] = '';
+
 })();
