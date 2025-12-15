@@ -23,13 +23,8 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Yaml\Yaml;
-use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\EventDispatcher\NoopEventDispatcher;
-use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Site\SiteFinder;
-use TYPO3\CMS\Core\TypoScript\AST\AstBuilder;
 use TYPO3\CMS\Core\TypoScript\TypoScriptStringFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Updates\ChattyInterface;
@@ -41,6 +36,8 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @phpstan-ignore-next-line
  * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+ * @phpstan-ignore-next-line
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInterface, ChattyInterface, RepeatableInterface
 {
@@ -49,7 +46,40 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
      */
     protected $output;
 
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
+    protected ?ConnectionPool $connectionPool = null;
+    protected ?SiteFinder $siteFinder = null;
+    protected ?TypoScriptStringFactory $typoScriptStringFactory = null;
+
+    public function __construct(?ConnectionPool $connectionPool = null, ?SiteFinder $siteFinder = null, ?TypoScriptStringFactory $typoScriptStringFactory = null)
+    {
+        $this->connectionPool = $connectionPool;
+        $this->siteFinder = $siteFinder;
+        $this->typoScriptStringFactory = $typoScriptStringFactory;
+    }
+
+    protected function getConnectionPool(): ConnectionPool
+    {
+        if ($this->connectionPool === null) {
+            $this->connectionPool = GeneralUtility::makeInstance(ConnectionPool::class);
+        }
+        return $this->connectionPool;
+    }
+
+    protected function getSiteFinder(): SiteFinder
+    {
+        if ($this->siteFinder === null) {
+            $this->siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
+        }
+        return $this->siteFinder;
+    }
+
+    protected function getTypoScriptStringFactory(): TypoScriptStringFactory
+    {
+        if ($this->typoScriptStringFactory === null) {
+            $this->typoScriptStringFactory = GeneralUtility::makeInstance(TypoScriptStringFactory::class);
+        }
+        return $this->typoScriptStringFactory;
+    }
 
     /**
      * Returns the title of the upgrade wizard.
@@ -99,21 +129,20 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
      */
     public function executeUpdate(): bool
     {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
+        $sites = $this->getSiteFinder()->getAllSites();
 
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
             $this->output->writeln('Processing site: ' . $siteIdentifier);
 
-            $configPath = Environment::getConfigPath() . '/sites/' . $siteIdentifier;
+            $configPath = \TYPO3\CMS\Core\Core\Environment::getConfigPath() . '/sites/' . $siteIdentifier;
             $settingsFile = $configPath . '/settings.yaml';
 
             // Read existing settings or create new array
             $existingSettings = [];
             if (file_exists($settingsFile)) {
                 $this->output->writeln('Settings file already exists for site: ' . $siteIdentifier);
-                $existingSettings = Yaml::parseFile($settingsFile) ?? [];
+                $existingSettings = \Symfony\Component\Yaml\Yaml::parseFile($settingsFile) ?? [];
             }
 
             // Process site configuration
@@ -133,7 +162,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
             // Write settings file
             try {
-                $yaml = Yaml::dump($newSettings, 10, 2);
+                $yaml = \Symfony\Component\Yaml\Yaml::dump($newSettings, 10, 2);
                 $this->output->writeln('Writing settings.yaml for site: ' . $siteIdentifier);
                 file_put_contents($settingsFile, $yaml);
             } catch (\Exception $e) {
@@ -144,6 +173,10 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $this->rearrangeSiteConfig($configPath . '/config.yaml');
             $this->removeOldConstants($site->getRootPageId(), $parsedTypoScriptConstants);
         }
+        $this->output->writeln('Update completed');
+        //flush cache and warmup
+        $this->output->writeln('Flushing cache');
+        $this->flushCacheOnStateChange();
 
         return true;
     }
@@ -160,10 +193,9 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
     protected function getParsedTypoScriptConstants(int $siteId, bool $debug = true): array
     {
         $config = [];
-        $typoScriptFactory = GeneralUtility::makeInstance(TypoScriptStringFactory::class);
 
         try {
-            $connection = $this->connectionPool->getConnectionForTable('sys_template');
+            $connection = $this->getConnectionPool()->getConnectionForTable('sys_template');
             $queryBuilder = $connection->createQueryBuilder();
 
             $result = $queryBuilder
@@ -177,7 +209,14 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
             while ($row = $result->fetchAssociative()) {
                 if (!empty($row['constants'])) {
-                    $typoScriptTree = $typoScriptFactory->parseFromString($row['constants'], new AstBuilder(new NoopEventDispatcher()));
+                    $astBuilder = GeneralUtility::makeInstance(
+                        \TYPO3\CMS\Core\TypoScript\AST\AstBuilder::class,
+                        GeneralUtility::makeInstance(\TYPO3\CMS\Core\EventDispatcher\NoopEventDispatcher::class)
+                    );
+                    $typoScriptTree = $this->getTypoScriptStringFactory()->parseFromString(
+                        $row['constants'],
+                        $astBuilder
+                    );
                     $config = $typoScriptTree->flatten();
                 }
             }
@@ -203,7 +242,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
     {
         $typoscript = $this->getTyposcriptFromArray($parsedTypoScriptConstants);
         try {
-            $connection = $this->connectionPool->getConnectionForTable('sys_template');
+            $connection = $this->getConnectionPool()->getConnectionForTable('sys_template');
             $updateQueryBuilder = $connection->createQueryBuilder();
             $updateQueryBuilder
                 ->update('sys_template')
@@ -289,7 +328,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             return;
         }
 
-        $config = Yaml::parseFile($configFile);
+        $config = \Symfony\Component\Yaml\Yaml::parseFile($configFile);
         foreach ($this->getConfigKeys() as $key) {
             $this->output->writeln('Removing key from site config: ' . $key);
             unset($config[$key]);
@@ -299,7 +338,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
             $config['dependencies'] = ['itzbund-gsb/default'];
         }
 
-        $yaml = Yaml::dump($config, 10, 2);
+        $yaml = \Symfony\Component\Yaml\Yaml::dump($config, 10, 2);
         file_put_contents($configFile, $yaml);
     }
 
@@ -308,8 +347,7 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
      */
     public function updateNecessary(): bool
     {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
+        $sites = $this->getSiteFinder()->getAllSites();
 
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
@@ -338,11 +376,11 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
     protected function cutTypolinkToUid(string $typolink): ?int
     {
-        $linkService = GeneralUtility::makeInstance(LinkService::class);
         $this->output->writeln('extract uid from typolink: ' . $typolink);
         $typoLink = trim($typolink);
 
         if (str_contains($typoLink, 't3://page?')) {
+            $linkService = GeneralUtility::makeInstance(\TYPO3\CMS\Core\LinkHandling\LinkService::class);
             $linkData = $linkService->resolve(trim($typoLink));
             $this->output->writeln('linkData: ' . json_encode($linkData));
 
@@ -357,5 +395,34 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
 
         $this->output->writeln('no uid found in typolink');
         return null;
+    }
+
+    /**
+     * Flushes cache using FlushCacheOnStateChangeCommand with group 'all' and random version
+     */
+    protected function flushCacheOnStateChange(): void
+    {
+        try {
+            $randomVersion = bin2hex(random_bytes(16));
+            $this->output->writeln('Executing FlushCacheOnStateChangeCommand with version: ' . $randomVersion);
+
+            $container = GeneralUtility::getContainer();
+            $commandRegistry = $container->get(\TYPO3\CMS\Core\Console\CommandRegistry::class);
+            /** @var \Symfony\Component\Console\Command\Command $command */
+            $command = $commandRegistry->get('gsbclusteredcaching:flushCacheOnStateChange');
+
+            $input = new \Symfony\Component\Console\Input\ArrayInput([
+                'version' => $randomVersion,
+                '--groups' => 'all',
+            ]);
+            $input->bind($command->getDefinition());
+            $output = new \Symfony\Component\Console\Output\BufferedOutput(OutputInterface::VERBOSITY_NORMAL);
+
+            $result = $command->run($input, $output);
+            $this->output->writeln('Cache flush command executed with result: ' . $result);
+            $this->output->writeln($output->fetch());
+        } catch (\Exception $e) {
+            $this->output->writeln('Error executing cache flush command: ' . $e->getMessage());
+        }
     }
 }

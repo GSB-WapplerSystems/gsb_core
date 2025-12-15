@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
@@ -122,8 +121,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'font-serif-italic',
         'font-serif-name',
     ];
-
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
 
     /**
      * Returns the title of the upgrade wizard.

@@ -23,39 +23,39 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 tt_content {
-    gsb_imagemap = FLUIDTEMPLATE
-    gsb_imagemap {
-        templateRootPaths {
-            200 = EXT:gsb_core/Resources/Private/Templates/Content/
-            300 = {$gsb_core.content.view.templateRootPath}
-        }
-
-        partialRootPaths {
-            200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
-            300 = {$gsb_core.content.view.partialRootPath}
-        }
-
-        templateName = ImageMap
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-            10 {
-                references {
-                    fieldName = image
-                    table = tt_content
-                }
-                as = image
-            }
-            20 = ITZBund\GsbCore\DataProcessing\HotspotProcessor
-        }
+  gsb_imagemap = FLUIDTEMPLATE
+  gsb_imagemap {
+    templateRootPaths {
+      200 = EXT:gsb_core/Resources/Private/Templates/Content/
+      300 = {$gsb_core.content.view.templateRootPath}
     }
+
+    partialRootPaths {
+      200 = EXT:gsb_core/Resources/Extensions/fluid_styled_content/Private/Partials/
+      300 = {$gsb_core.content.view.partialRootPath}
+    }
+
+    templateName = ImageMap
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references {
+          fieldName = image
+          table = tt_content
+        }
+        as = image
+      }
+      20 = ITZBund\GsbCore\DataProcessing\HotspotProcessor
+    }
+  }
 }
 
 # used to render CEs inside the popup of a hotspot
 lib.popup = CONTENT
 lib.popup {
-    table = tt_content
-    select {
-        uidInList.field = uid
-        pidInList = 0
-    }
+  table = tt_content
+  select {
+    uidInList.field = uid
+    pidInList = 0
+  }
 }
