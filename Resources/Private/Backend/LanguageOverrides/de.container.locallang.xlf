@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="container/Resources/Private/Language/locallang.xlf" date="2020-08-10T10:26:01Z">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="container/Resources/Private/Language/container.locallang.xlf" date="2025-12-16T09:26:01Z"  product-name="gsb_core"‚>
         <header />
         <body>
             <trans-unit id="container" resname="container">
-                <source>Übergeordneter Container</source>
+                <source>Parent container</source>
+                <target>Übergeordneter Container</target>
             </trans-unit>
         </body>
     </file>
