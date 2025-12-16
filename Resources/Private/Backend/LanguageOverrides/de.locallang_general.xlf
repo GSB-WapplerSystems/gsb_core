@@ -4,23 +4,23 @@
 		<header/>
 		<body>
             <trans-unit id="pages.title_formlabel" resname="pages.title_formlabel" approved="yes">
-				<source>Page Title</source>
+				<source>Page Title (255 Zeichen)</source>
 				<target state="final">Seitentitel (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="pages.nav_title_formlabel" resname="pages.nav_title_formlabel" approved="yes">
-				<source>Alternative Navigation Title</source>
+				<source>Alternative Navigation Title (255 Zeichen)</source>
 				<target state="final">Alternativer Navigationstitel (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="pages.subtitle" resname="pages.subtitle" approved="yes">
-				<source>Subtitle</source>
+				<source>Subtitle  (255 Zeichen)</source>
 				<target state="final">Untertitel (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="LGL.description" resname="LGL.description" approved="yes">
-				<source>Description</source>
+				<source>Description (2000 Zeichen)</source>
 				<target state="final">Beschreibung (2000 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="LGL.subheader" resname="subheader" approved="yes">
-				<source>Subheader</source>
+				<source>Subheader (255 characters)</source>
 				<target state="final">Untertitel (255 characters)</target>
 			</trans-unit>
 		</body>

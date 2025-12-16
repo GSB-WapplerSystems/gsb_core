@@ -4,23 +4,23 @@
 		<header/>
 		<body>
 			<trans-unit id="header_formlabel" resname="header_formlabel" approved="yes">
-				<source>Header</source>
+				<source>Header (255 Zeichen)</source>
 				<target state="final">Überschrift (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="subheader_formlabel" resname="subheader_formlabel" approved="yes">
-				<source>Subheader</source>
+				<source>Subheader (255 Zeichen)</source>
 				<target state="final">Unterüberschrift (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="header" resname="header" approved="yes">
-				<source>Header</source>
+				<source>Header (255 Zeichen)</source>
 				<target state="final">Überschrift (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="header.ALT.shortcut_formlabel" resname="header.ALT.shortcut_formlabel" approved="yes">
-				<source>Name (not visible in frontend)</source>
+				<source>Name (not visible in frontend, 255 characters)</source>
 				<target state="final">Name (in der Webseite nicht sichtbar, 255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="target" resname="target" approved="yes">
-				<source>Target</source>
+				<source>Target (30 characters)‚</source>
 				<target state="final">Ziel (30 Zeichen):</target>
 			</trans-unit>
 		</body>

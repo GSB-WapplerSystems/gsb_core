@@ -4,15 +4,15 @@
 		<header/>
 		<body>
 			<trans-unit id="pages.seo_title" resname="pages.seo_title" approved="yes">
-				<source>Title for search engines</source>
+				<source>Title for search engines (255 Zeichen)</source>
 				<target state="final">Titel für Suchmaschinen (255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="pages.palettes.opengraph" resname="pages.palettes.opengraph" approved="yes">
-				<source>Open Graph (Facebook)</source>
+				<source>Open Graph (Facebook, 255 Zeichen)</source>
 				<target state="final">Open-Graph (Facebook, 255 Zeichen)</target>
 			</trans-unit>
 			<trans-unit id="pages.twitter_title" resname="pages.twitter_title" approved="yes">
-				<source>X / Twitter Title</source>
+				<source>X / Twitter Title (255 Zeichen)</source>
 				<target state="final">X / Twitter Titel (255 Zeichen)</target>
 			</trans-unit>
         </body>

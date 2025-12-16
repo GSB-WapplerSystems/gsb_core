@@ -309,7 +309,7 @@
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video_caption" resname="tt_content.tx_video_caption" approved="yes">
 				<source>Caption</source>
-				<target>_Untertitel</target>
+				<target>Untertitel</target>‚
 			</trans-unit>
 			<trans-unit id="tt_content.tx_video" resname="tt_content.tx_video" approved="yes">
 				<source>Video</source>
