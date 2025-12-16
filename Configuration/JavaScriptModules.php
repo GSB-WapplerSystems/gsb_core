@@ -8,7 +8,7 @@
   * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
   *
   * Copyright (C) 2023 - 2024 Bundesrepublik Deutschland, vertreten durch das
-  * BMI/ITZBund. Author: Ole Hartwig, Patrick Schriner
+  * BMI/ITZBund. Author: Ole Hartwig, Patrick Schriner, Thorsten Müller, Christian Rath-Ulrich, Martin Neumann
   *
   * It is free software; you can redistribute it and/or modify it under
   * the terms of the GNU General Public License, either version 3
@@ -30,5 +30,7 @@ return [
         '@itzbund/gsb-core/site-sets-type/file.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/file.js',
         '@itzbund/gsb-core/site-sets-type/password.js' => 'EXT:gsb_core/Resources/Public/JavaScript/settings/type/password.js',
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+        '@itzbund/gsb-core/validation/https-url-validator.js' => 'EXT:gsb_core/Resources/Public/JavaScript/validation/https-url-validator.js',
+        '@itzbund/gsb_core/interactiveImage/backend.js' => 'EXT:gsb_core/Resources/Public/Build/JavaScripts/interactiveImageBackend.js',
     ],
 ];

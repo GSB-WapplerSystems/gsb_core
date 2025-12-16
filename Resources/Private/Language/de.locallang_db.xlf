@@ -199,6 +199,65 @@
 				<source>Adds a teaser with headline, image, text and link element</source>
 				<target>Fügt einen Teaser mit Überschrift, Bild, Text und Linkelement hinzu</target>
 			</trans-unit>
+			<trans-unit id="gsb_imagemap.title" resname="gsb_imagemap.title">
+				<source>Image Map</source>
+				<target>Interaktive Grafik</target>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.description" resname="gsb_imagemap.description">
+				<source>Adds an interactive image map with hotspots</source>
+				<target>Mit diesem Element erstellen Sie interaktive Grafiken um Details oder zusätzliche Informationen bereitzustellen. Dieses Content-Element ist im Backend für einige Personen nur eingeschränkt barrierefrei, im Frontend jedoch vollständig barrierefrei umsetzbar.</target>
+			</trans-unit>
+			<trans-unit id="gsb_imagemap.image" resname="gsb_imagemap.image">
+				<source>Grafik Bild</source>
+				<target>Grafik Bild</target>
+			</trans-unit>
+			<trans-unit id="hotspot" resname="hotspot">
+				<source>Hotspot</source>
+				<target>Hotspot</target>
+			</trans-unit>
+			<trans-unit id="hotspot.description" resname="hotspot.description">
+				<source>Hotspot</source>
+				<target>Erstellen und bearbeiten von Hotspots.</target>
+			</trans-unit>
+			<trans-unit id="hotspot.new" resname="hotspot.new">
+				<source>Create new hotspot</source>
+				<target>Neuen Hotspot erstellen</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.coordinates" resname="tx_gsbcore_hotspot.coordinates">
+				<source>Coordinates (JSON)</source>
+				<target>Hotspot platzieren</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.coordinates.edit" resname="tx_gsbcore_hotspot.coordinates.edit">
+				<source>Edit Hotspot Coordinates</source>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.tooltip" resname="tx_gsbcore_hotspot.tooltip">
+				<source>Tooltip</source>
+				<target>Tooltip</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.tooltip.description" resname="tx_gsbcore_hotspot.tooltip.description">
+				<source>Tooltip</source>
+				<target>Geben Sie hier einen kurzen prägnanten Text für den Tooltip ein. Empfehlung: Unter 40 Zeichen.</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.link" resname="tx_gsbcore_hotspot.link">
+				<source>Link</source>
+				<target>Seite verlinken</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.link.description" resname="tx_gsbcore_hotspot.link.description">
+				<source>Please only fill in this field if you want the hotspot to be linked on click. Leave empty to display popup on click.</source>
+				<target>Verlinken Sie hier die Seite, die bei Klick des Hotspots angezeigt werden soll. Hinweis: Lassen Sie das Feld frei wenn Sie stattdessen ein Modal nutzen möchten.</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup" resname="tx_gsbcore_hotspot.popup">
+				<source>Content Element(s) for the Popup of this Hotspot</source>
+				<target>Popup (Modal) Inhaltselemente</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup.new" resname="tx_gsbcore_hotspot.popup.new">
+				<source>Create new Content Element in Popup(Modal)</source>
+				<target>Neues Inhaltselement im Popup(Modal) erstellen</target>
+			</trans-unit>
+			<trans-unit id="tx_gsbcore_hotspot.popup.description" resname="tx_gsbcore_hotspot.popup.description">
+				<source>When a user clicks on the hotspot in frontend view a popup will be displayed. Here you can add content elements to this popup as you like.</source>
+				<target>Erstellen Sie hier Inhalt der bei Klick auf den Hotspot als Popup (Modal) angezeigt werden soll. Hinweis: Verlinkung zu einer Seite kann nicht zusammen mit einem Popup (Modal) erstellt werden.</target>
+			</trans-unit>
 			<trans-unit id="gsb_banner.title" resname="gsb_banner.title" approved="yes">
 				<source>Banner</source>
 				<target>Banner</target>
@@ -341,11 +400,11 @@
 			</trans-unit>
 			<trans-unit id="include_element.title" resname="include_element.title" approved="yes">
 				<source>Include Element</source>
-				<target>Einbetten Element</target>
+				<target>Externe Inhalte</target>
 			</trans-unit>
 			<trans-unit id="include_element.description" resname="include_element.description" approved="yes">
 				<source>Element for embedding external Content via iFrame or WebComponent</source>
-				<target>Element zum einbetten von iFrames und WebComponents</target>
+				<target>Mit diesem Element können externe Inhalte wahlweise mit einem iFrame oder einer WebComponent eingebettet werden.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.title" resname="tt_content.include_element.title" approved="yes">
 				<source>Title</source>
@@ -354,6 +413,10 @@
 			<trans-unit id="tt_content.include_element.rendering" resname="tt_content.include_element.rendering" approved="yes">
 				<source>Type</source>
 				<target>Typ auswählen</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.rendering.description" resname="tt_content.include_element.rendering,description" approved="yes">
+				<source>Choose between iFrame or WebComponent</source>
+				<target>Auswahl zwischen iFrame und WebComponent zum Einbetten externer Inhalte.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.rendering.iframe" resname="tt_content.include_element.rendering.iframe" approved="yes">
 				<source>iFrame</source>
@@ -385,7 +448,11 @@
 			</trans-unit>
 			<trans-unit id="tt_content.include_element.banner_image" resname="tt_content.include_element.banner_image" approved="yes">
 				<source>Consent Banner Image</source>
-				<target>Banner Hintergrundbild</target>
+				<target>Platzhalter Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="tt_content.include_element.banner_image.description" resname="tt_content.include_element.banner_image.description" approved="yes">
+				<source>Background Image for Consent overlay</source>
+				<target>Hintergrundbild, für die Abfrage vor der Freischaltung von externen Inhalten.</target>
 			</trans-unit>
 			<trans-unit id="tt_content.CType.div.video" resname="tt_content.CType.div.video" approved="yes">
 				<source>Multimedia</source>

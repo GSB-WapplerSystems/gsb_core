@@ -28,6 +28,9 @@ services:
   ITZBund\GsbCore\DataProcessing\TargetPageDateProcessor:
     public: true
 
+  ITZBund\GsbCore\DataProcessing\HotspotProcessor:
+    public: true
+
   ITZBund\GsbCore\DataProcessing\CachedMenuProcessor:
     public: true
 
@@ -57,6 +60,10 @@ services:
       - name: event.listener
         identifier: 'gsb_core/synchronize-localized-site-settings'
 
+  ITZBund\GsbCore\EventListener\BackendFormValidUrlListener:
+    tags:
+      - name: signal
+        identifier: TYPO3\CMS\Backend\Form\FormDataProvider\TcaDatabaseRecord->getDataPostProc
 
   ITZBund\GsbCore\ViewHelpers\:
     resource: '../Classes/ViewHelpers/*'

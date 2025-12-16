@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
@@ -122,8 +121,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'font-serif-italic',
         'font-serif-name',
     ];
-
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
 
     /**
      * Returns the title of the upgrade wizard.
@@ -233,6 +230,11 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings, false, true);
         }
 
+        // Convert dot-notation keys to nested array structure
+        // This ensures that settings like 'search.suche' become settings['search']['suche']
+        // which is required for TypoScript conditions like site('configuration')['settings']['search']['solrEnabledFacets']
+        $settings = $this->convertDotNotationToNestedArray($settings);
+
         // TypoLink mappings
         $typoLinkMappings = [
             'accessability.signLanguagePage' => 'sign-language-page',
@@ -265,6 +267,35 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         }
 
         return $settings;
+    }
+
+    /**
+     * Converts dot-notation keys (e.g., 'search.suche') to nested array structure
+     * (e.g., ['search' => ['suche' => ...]])
+     *
+     * @param mixed[] $settings
+     * @return mixed[]
+     */
+    protected function convertDotNotationToNestedArray(array $settings): array
+    {
+        $result = [];
+        foreach ($settings as $key => $value) {
+            if (is_string($key) && str_contains($key, '.')) {
+                $keys = explode('.', $key);
+                $current = &$result;
+                foreach ($keys as $k) {
+                    $k = (string)$k;
+                    if (!isset($current[$k]) || !is_array($current[$k])) {
+                        $current[$k] = [];
+                    }
+                    $current = &$current[$k];
+                }
+                $current = $value;
+                continue;
+            }
+            $result[$key] = $value;
+        }
+        return $result;
     }
 
     /**

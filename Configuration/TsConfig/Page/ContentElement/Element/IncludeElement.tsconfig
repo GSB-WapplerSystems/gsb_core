@@ -20,17 +20,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 [feature("GSB11_FEATURE_5987_INCLUDE_ELEMENT")]
-mod.wizards.newContentElement.wizardItems.special {
-  elements {
-    include_element {
-      iconIdentifier = tx_include_element
-      title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.title
-      description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.description
-      tt_content_defValues {
-        CType = include_element
+  mod.wizards.newContentElement.wizardItems.special {
+    elements {
+      include_element {
+        iconIdentifier = tx_include_element
+        title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.title
+        description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.description
+        tt_content_defValues {
+          CType = include_element
+        }
       }
     }
+    show := addToList(include_element)
   }
-  show := addToList(include_element)
-}
 [global]

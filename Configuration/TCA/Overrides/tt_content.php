@@ -259,4 +259,3 @@ defined('TYPO3') || die();
 })();
 
 $GLOBALS['TCA']['tt_content']['columns']['header_layout']['config']['default'] = '2';
-$GLOBALS['TCA']['tt_content']['types']['header']['columnsOverrides']['header']['config']['required'] = 1;

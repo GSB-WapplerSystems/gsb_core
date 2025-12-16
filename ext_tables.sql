@@ -102,7 +102,7 @@ CREATE TABLE tt_content
 	tx_link_layout                 tinytext,
 	tx_link_text                   tinytext,
 	tx_link_position               tinytext,
-    tx_include_rendering           tinytext,
+	tx_include_rendering           tinytext,
     tx_include_url                 tinytext,
     tx_include_width               tinytext,
     tx_include_height              tinytext,
@@ -110,4 +110,11 @@ CREATE TABLE tt_content
     tx_include_html_title          tinytext,
     tx_include_html_name           tinytext,
     tx_include_banner_image        tinytext,
+);
+
+CREATE TABLE tx_gsbcore_hotspot
+(
+    imagemap int(11) unsigned DEFAULT '0' NOT NULL,
+    coordinates text,
+    tooltip varchar(255) DEFAULT '' NOT NULL
 );
