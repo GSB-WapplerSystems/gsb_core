@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use Symfony\Component\Console\Output\OutputInterface;
-use TYPO3\CMS\Core\Core\BootService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\TypoScript\TypoScriptStringFactory;
@@ -52,8 +51,10 @@ abstract class AbstractMoveConfigurationToSettings implements UpgradeWizardInter
     protected ?TypoScriptStringFactory $typoScriptStringFactory = null;
 
     public function __construct(
-        protected readonly BootService $bootService, ?ConnectionPool $connectionPool = null, ?SiteFinder $siteFinder = null, ?TypoScriptStringFactory $typoScriptStringFactory = null)
-    {
+        ?ConnectionPool $connectionPool = null,
+        ?SiteFinder $siteFinder = null,
+        ?TypoScriptStringFactory $typoScriptStringFactory = null
+    ) {
         $this->connectionPool = $connectionPool;
         $this->siteFinder = $siteFinder;
         $this->typoScriptStringFactory = $typoScriptStringFactory;
