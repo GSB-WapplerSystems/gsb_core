@@ -5384,8 +5384,6 @@
 		},
 		"node_modules/sass": {
 			"version": "1.97.1",
-			"resolved": "https://registry.npmjs.org/sass/-/sass-1.97.1.tgz",
-			"integrity": "sha512-uf6HoO8fy6ClsrShvMgaKUn14f2EHQLQRtpsZZLeU/Mv0Q1K5P0+x2uvH6Cub39TVVbWNSrraUhDAoFph6vh0A==",
 			"dev": true,
 			"license": "MIT",
 			"peer": true,
@@ -6262,8 +6260,6 @@
 		},
 		"node_modules/webpack": {
 			"version": "5.104.1",
-			"resolved": "https://registry.npmjs.org/webpack/-/webpack-5.104.1.tgz",
-			"integrity": "sha512-Qphch25abbMNtekmEGJmeRUhLDbe+QfiWTiqpKYkpCOWY64v9eyl+KRRLmqOFA2AvKPpc9DC6+u2n76tQLBoaA==",
 			"dev": true,
 			"license": "MIT",
 			"peer": true,
@@ -6383,8 +6379,6 @@
 		},
 		"node_modules/webpack/node_modules/eslint-scope": {
 			"version": "5.1.1",
-			"resolved": "https://registry.npmjs.org/eslint-scope/-/eslint-scope-5.1.1.tgz",
-			"integrity": "sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==",
 			"dev": true,
 			"license": "BSD-2-Clause",
 			"dependencies": {
@@ -6397,8 +6391,6 @@
 		},
 		"node_modules/webpack/node_modules/estraverse": {
 			"version": "4.3.0",
-			"resolved": "https://registry.npmjs.org/estraverse/-/estraverse-4.3.0.tgz",
-			"integrity": "sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==",
 			"dev": true,
 			"license": "BSD-2-Clause",
 			"engines": {
