@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// interactiveImageFrontend.js
+// interactiveImage/frontend.js
 
-import '../../Scss/interactiveImageFrontend.scss';
+import '../../Scss/interactiveImage/frontend.scss';
 import { HotSpotViewer } from './utils/hotSpotViewer.js';
 
 const mapHotSpots = (hotspots) => hotspots.filter(hotspot => hotspot.coordinates.length).map(hotspot => {

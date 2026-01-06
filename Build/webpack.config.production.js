@@ -1,27 +1,31 @@
-// SPDX-FileCopyrightText: 2024 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
+// SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import path from 'path';
-import {fileURLToPath} from 'url';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default {
   // Define the entry points of our application (can be multiple for different sections of a website)
   entry: {
-    interactiveImageBackend: './Assets/Scripts/interactiveImage/interactiveImageBackend.js',
-    interactiveImageFrontend: './Assets/Scripts/interactiveImage/interactiveImageFrontend.js'
+    'interactiveImage/backend': './Assets/Scripts/interactiveImage/backend.js',
+    'interactiveImage/frontend': './Assets/Scripts/interactiveImage/frontend.js',
+    'validation/formValidationAutofocus': './Assets/Scripts/validation/formValidationAutofocus.js',
+    'validation/httpsUrlValidator': './Assets/Scripts/validation/httpsUrlValidator.js',
+    dsgvoExternalLoader: './Assets/Scripts/dsgvoExternalLoader.js',
+    formInitializeWithReferrer: './Assets/Scripts/formInitializeWithReferrer.js'
   },
 
   // Define the destination directory and filenames of compiled resources and files
   output: {
-    filename: 'JavaScripts/[name].js',
-    path: path.resolve(__dirname, '../Resources/Public/Build'),
+    filename: 'JavaScript/[name].js',
+    path: path.resolve(__dirname, '../Resources/Public'),
     assetModuleFilename: '[name][ext]',
     clean: true
   },
@@ -60,7 +64,7 @@ export default {
             loader: 'sass-loader',
             options: {
               sassOptions: {
-                silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import'],
+                silenceDeprecations: ['color-functions', 'global-builtin', 'import'],
               }
             }
           }
