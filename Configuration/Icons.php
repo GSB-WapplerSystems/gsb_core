@@ -29,6 +29,18 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Singleteaser.svg',
     ],
+    'tx_imagemap' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/ImageMap.svg',
+    ],
+    'tx_imagemap_wizard' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/ImageMap.svg',
+    ],
+    'tx_imagemap_hotspot_rounded' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/HotspotRounded.svg',
+    ],
     'tx_banner' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Banner.svg',

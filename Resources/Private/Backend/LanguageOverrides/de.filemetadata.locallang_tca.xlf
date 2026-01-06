@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:filemetadata/Resources/Private/Language/locallang_tca.xlf" date="2025-12-10T10:22:32Z" product-name="cms" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="sys_file_metadata.publisher" resname="sys_file_metadata.publisher" approved="yes">
+				<source>Publisher (120 Zeichen)</source>
+				<target state="final">Herausgeber (120 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source" resname="sys_file_metadata.source" approved="yes">
+				<source>Source (255 Zeichen)</source>
+				<target state="final">Quelle (255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country" resname="sys_file_metadata.location_country" approved="yes">
+				<source>Country (45 Zeichen)</source>
+				<target state="final">Land Quelle (45 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region" resname="sys_file_metadata.location_region" approved="yes">
+				<source>Region (45 Zeichen)</source>
+				<target state="final">Region (45 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city" resname="sys_file_metadata.location_city" approved="yes">
+				<source>City (45 Zeichen)</source>
+				<target state="final">Stadt (45 Zeichen)</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

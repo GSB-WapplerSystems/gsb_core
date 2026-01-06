@@ -24,6 +24,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use ITZBund\GsbCore\FormEngine\FieldControl\EditHotspotControl;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalAudioHelper;
 use ITZBund\GsbCore\Resource\OnlineMedia\Helpers\GenericExternalVideoHelper;
 use ITZBund\GsbCore\Resource\Rendering\GenericExternalAudioRenderer;
@@ -155,6 +156,15 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['FrontendEditing']['DataProcessing']['custom_category_processor'] = \ITZBund\GsbCore\DataProcessing\CustomPageCategoryProcessor::class;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fluid']['namespaces']['f'][] = 'ITZBund\\GsbCore\\Fluid\\ViewHelpers';
 
+    if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_6050_IMAGEMAP')) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1761661200] = [
+            'nodeName' => 'editHotspotControl',
+            'priority' => 70,
+            'class' => EditHotspotControl::class,
+        ];
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
+            \ITZBund\GsbCore\Hooks\InlinePidSetter::class;
+    }
     // Configure caching framework
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['gsb_core_menu'] = [
         'frontend' => \TYPO3\CMS\Core\Cache\Frontend\VariableFrontend::class,
@@ -169,8 +179,20 @@ defined('TYPO3') or die('Access denied.');
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/locallang_layout.xlf';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang_layout.xlf';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:workspaces/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.workspace.locallang.xlf';
+
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:container/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/container.locallang.xlf';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:container/Resources/Private/Language/locallang.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.container.locallang.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:frontend/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/locallang_tca.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:frontend/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang_tca.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:seo/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/seo.locallang_tca.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:seo/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.seo.locallang_tca.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:core/Resources/Private/Language/locallang_general.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/locallang_general.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:core/Resources/Private/Language/locallang_general.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.locallang_general.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:frontend/Resources/Private/Language/locallang_ttc.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/frontend.locallang_ttc.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:frontend/Resources/Private/Language/locallang_ttc.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.frontend.locallang_ttc.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:filemetadata/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/filemetadata.locallang_tca.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['de']['EXT:filemetadata/Resources/Private/Language/locallang_tca.xlf'][] = 'EXT:gsb_core/Resources/Private/Backend/LanguageOverrides/de.filemetadata.locallang_tca.xlf';
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\ITZBund\GsbCore\Evaluation\HttpsUrlEvaluation::class] = '';
+
 })();

@@ -23,9 +23,6 @@ declare(strict_types=1);
 namespace ITZBund\GsbCore\Upgrades;
 
 use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Site\SiteFinder;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 
 /**
@@ -74,8 +71,6 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
         'styles.templates.partialRootPath',
         'styles.templates.layoutRootPath',
     ];
-
-    public function __construct(protected readonly ConnectionPool $connectionPool) {}
 
     /**
      * Returns the title of the upgrade wizard.
@@ -175,8 +170,7 @@ class RemoveOldConstantsFromTypoScript extends AbstractMoveConfigurationToSettin
      */
     public function executeUpdate(): bool
     {
-        $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-        $sites = $siteFinder->getAllSites();
+        $sites = $this->getSiteFinder()->getAllSites();
 
         foreach ($sites as $site) {
             $siteIdentifier = $site->getIdentifier();
