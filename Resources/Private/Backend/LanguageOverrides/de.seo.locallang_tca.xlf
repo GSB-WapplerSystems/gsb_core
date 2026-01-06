@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:frontend/Resources/Private/Language/locallang_tca.xlf" date="2025-12-10T10:22:32Z" product-name="cms" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="pages.seo_title" resname="pages.seo_title" approved="yes">
+				<source>Title for search engines (255 Zeichen)</source>
+				<target state="final">Titel für Suchmaschinen (255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="pages.palettes.opengraph" resname="pages.palettes.opengraph" approved="yes">
+				<source>Open Graph (Facebook, 255 Zeichen)</source>
+				<target state="final">Open-Graph (Facebook, 255 Zeichen)</target>
+			</trans-unit>
+			<trans-unit id="pages.twitter_title" resname="pages.twitter_title" approved="yes">
+				<source>X / Twitter Title (255 Zeichen)</source>
+				<target state="final">X / Twitter Titel (255 Zeichen)</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>
