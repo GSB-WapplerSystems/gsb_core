@@ -351,6 +351,9 @@
 			<trans-unit id="error.noValidHttpsUrl" resname="error.noValidHttpsUrl">
 				<source>This field requires a valid https-url</source>
 			</trans-unit>
+			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
+				<source>GSB (Opens external site)</source>
+			</trans-unit>
 		</body>
     </file>
 </xliff>

@@ -471,6 +471,10 @@
 				<source>This field requires a valid https-url</source>
 				<target>Bitte eine valide URL inkl. https eintragen.</target>
 			</trans-unit>
+			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
+				<source>GSB (Opens external site)</source>
+				<target>GSB (Öffnet externe Seite)</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
