@@ -18,17 +18,15 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\UserFunc;
 
-use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class ExternalLinkModifier
 {
     /**
      * @param string $content
-     * @param array $conf
      * @return string
      */
-    public function addAriaLabelToExternalLinks(string $content, array $conf): string
+    public function addAriaLabelToExternalLinks(string $content): string
     {
         $trimmedContent = trim($content);
         if ($trimmedContent === '') {
@@ -44,7 +42,7 @@ class ExternalLinkModifier
 
         $result = $dom->saveHTML();
 
-        return trim($result);
+        return trim($result ?: '');
     }
 
     /**
@@ -69,11 +67,11 @@ class ExternalLinkModifier
     }
 
     /**
-     * @param \DOMNodeList $links
-     * @return void
+     * @param \DOMNodeList<\DOMElement> $links
      */
     public function addAriaAttributeToExternalLinks(\DOMNodeList $links): void
     {
+        /** @var \DOMElement $link */
         foreach ($links as $link) {
             $href = $link->getAttribute('href');
             $target = $link->getAttribute('class');
@@ -92,6 +90,9 @@ class ExternalLinkModifier
                     'externalLinkAriaLabel',
                     'gsb_core'
                 );
+
+                $ariaLabel ??= 'Externer Link';
+
                 $link->setAttribute('aria-label', $ariaLabel);
             }
         }
