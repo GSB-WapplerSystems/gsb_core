@@ -59,6 +59,7 @@ return (new Configuration())
     ->ignoreErrorsOnPackage('symfony/finder', [ErrorType::SHADOW_DEPENDENCY])
     ->ignoreErrorsOnPackage('symfony/yaml', [ErrorType::SHADOW_DEPENDENCY])
     ->ignoreErrorsOnPackage('typo3fluid/fluid', [ErrorType::SHADOW_DEPENDENCY])
+    ->ignoreErrorsOnPackage('doctrine/dbal', [ErrorType::SHADOW_DEPENDENCY])
     // included by symfony/serializer-pack
     ->ignoreErrorsOnPackage('symfony/serializer', [ErrorType::SHADOW_DEPENDENCY])
 ;
