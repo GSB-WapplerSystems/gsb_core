@@ -56,7 +56,7 @@ final class EditHotspotControl extends AbstractNode
                     'data-coordinates' => $this->data['databaseRow']['coordinates'],
                     'data-image' => $image['identifier'],
                 ],
-                'stylesheetFiles' => ['EXT:gsb_core/Resources/Public/Build/StyleSheets/interactiveImageBackend.css'],
+                'stylesheetFiles' => ['EXT:gsb_core/Resources/Public/StyleSheets/interactiveImage/backend.css'],
                 'javaScriptModules' => [JavaScriptModuleInstruction::create('@itzbund/gsb_core/interactiveImage/backend.js')],
             ];
         }
