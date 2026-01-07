@@ -21,7 +21,7 @@ var __decorate = function (decorators, target, key, desc) {
 };
 
 const componentName = "typo3-backend-settings-type-password";
-const ENCRYPTION_PREFIX = "###ENCRYPTED###";
+const PASSWORD_PREFIX = "###ENCRYPTED###";
 const MASKED_PASSWORD = "********";
 
 let PasswordTypeElement = class extends BaseElement {
@@ -35,7 +35,7 @@ let PasswordTypeElement = class extends BaseElement {
     connectedCallback() {
         super.connectedCallback();
         // Store the original encrypted value and keep it in this.value
-        if (this.value && typeof this.value === 'string' && this.value.startsWith(ENCRYPTION_PREFIX)) {
+        if (this.value && typeof this.value === 'string' && this.value.startsWith(PASSWORD_PREFIX)) {
             this.originalEncryptedValue = this.value;
             // Keep the encrypted value in this.value, only change display
             this.displayValue = MASKED_PASSWORD;
