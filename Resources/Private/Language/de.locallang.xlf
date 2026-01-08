@@ -467,6 +467,10 @@
 				<source>Filter for letter</source>
 				<target>Filterung nach Buchstabe</target>
 			</trans-unit>
+			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
+				<source>GSB (Opens external site)</source>
+            	<target>GSB (Öffnet externe Seite)</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
