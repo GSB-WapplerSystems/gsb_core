@@ -42,7 +42,7 @@ class ExternalLinkModifier
 
         $result = $dom->saveHTML();
 
-        return trim($result ?: '');
+        return trim($result ?? '');
     }
 
     /**
