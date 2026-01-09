@@ -80,8 +80,8 @@
 				<target>Anmelden</target>
 			</trans-unit>
 			<trans-unit id="header.servicenavigation" resname="header.servicenavigation" approved="yes">
-				<source>Service navigation</source>
-				<target>Service-Navigation</target>
+				<source>Service navigation Header</source>
+				<target>Service-Navigation Header</target>
 			</trans-unit>
 			<trans-unit id="header.languageswitcher" resname="header.languageswitcher" approved="yes">
 				<source>Language switcher</source>
@@ -144,8 +144,8 @@
 				<target>Zusatzinformationen</target>
 			</trans-unit>
 			<trans-unit id="footer.metanav" resname="footer.metanav" approved="yes">
-				<source>Service navigation</source>
-				<target>Service-Navigation</target>
+				<source>Service navigation Footer</source>
+				<target>Service-Navigation Footer</target>
 			</trans-unit>
 			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader" approved="yes">
 				<source>Follow us at</source>
