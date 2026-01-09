@@ -13,9 +13,7 @@
 
 <div class="layer"></div>
 
-<header aria-labelledby="headerWrapperBg" class="header-wrapper fixed-top">
-    <div aria-level="1" class="visually-hidden" id="headerWrapperBg" role="heading">{f:translate(key: 'header.area',
-        extensionName: 'gsb_core')}</div>
+<header class="header-wrapper fixed-top">
     <f:if condition="{site.configuration.settings.logos.display-brand-topline}">
         <div class="brand-topline w-100 bg-light mx-auto overflow-hidden">
             <div class="container">
@@ -43,7 +41,7 @@
                     arguments="{logo: site.configuration.settings.logos.gsb-second-logo, link: site.configuration.settings.logos.gsb-second-logo-link, alt: site.configuration.settings.logos.gsb-second-logo-alt, site: site}"
                     partial="Header.LogoSecond" />
             </f:if>
-            
+
             <f:if condition="{site.configuration.settings.navigation.gsb-navType} == 0">
                 <f:render arguments="{_all}" partial="Navigation/Primary/NavPrimary" />
             </f:if>
