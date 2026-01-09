@@ -317,7 +317,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'devconfig.debug' => 'config.debug',
             'devconfig.admPanel' => 'config.admPanel',
             'devconfig.noCache' => 'config.no_cache',
-            'search.seach-page' => 'config.pids.Search',
+            'search.search-page' => 'config.pids.Search',
             'felogin.emailFrom' => 'styles.content.loginform.emailFrom',
             'felogin.replyToEmail' => 'styles.content.loginform.replyToEmail',
             'devconfig.removeDefaultJS' => 'config.removeDefaultJS',
