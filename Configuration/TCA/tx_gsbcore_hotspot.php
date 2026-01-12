@@ -60,7 +60,8 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
                 'description' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tx_gsbcore_hotspot.tooltip.description',
                 'config' => [
                     'type' => 'input',
-                    'size' => 30,
+                    'size' => 40,
+                    'max' => 300,
                     'eval' => 'trim',
                 ],
             ],
