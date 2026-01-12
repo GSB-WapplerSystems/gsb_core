@@ -252,12 +252,18 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         return $settings;
     }
 
+    /**
+     * @param mixed[] $settings
+     * @param mixed[] $siteConfig
+     * @return mixed[]
+     */
     protected function addLogosToSettings(array $settings, array $siteConfig): array
     {
         if (isset($siteConfig['logo-complete-toggle']) && $siteConfig['logo-complete-toggle']) {
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-complete-big', 'logo-complete-big', $settings, true);
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-complete-small', 'logo-complete-small', $settings, true);
-        } else {
+        }
+        if (!isset($siteConfig['logo-complete-toggle']) || !$siteConfig['logo-complete-toggle']) {
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-text', 'logo-text', $settings);
         }
         if (isset($siteConfig['second-logo-complete-toggle']) && $siteConfig['second-logo-complete-toggle']) {
