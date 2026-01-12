@@ -110,6 +110,16 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'font-serif',
         'font-serif-italic',
         'font-serif-name',
+        'logo-complete-big',
+        'logo-complete-small',
+        'logo-complete-toggle',
+        'logo-text',
+        'second-logo',
+        'second-logo-link',
+        'second-logo-alt',
+        'second-logo-complete-toggle',
+        'initiative-text-toggle',
+        'initiative-text',
     ];
 
     /**
