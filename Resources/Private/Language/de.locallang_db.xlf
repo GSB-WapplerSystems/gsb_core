@@ -339,8 +339,8 @@
                 <target>Kategorien mit Dachzeile überschreiben</target>
             </trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside" approved="yes">
-				<source>Intext</source>
-				<target>Im Text</target>
+				<source>Position in text instead of above the image</source>
+				<target>Position im Text anstatt über dem Bild</target>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext" approved="yes">
 				<source>Left (in text)</source>

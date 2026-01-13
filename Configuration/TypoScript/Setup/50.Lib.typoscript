@@ -37,7 +37,7 @@ lib {
   home.value = {$navigation.home-page}
 
   search = TEXT
-  search.value = {$search.seach-page}
+  search.value = {$search.search-page}
 
   parseFunc_RTE {
     externalBlocks {
@@ -65,6 +65,8 @@ lib {
 
     tags {
       a {
+        postUserFunc = ITZBund\GsbCore\UserFunc\ExternalLinkModifier->addAriaLabelToExternalLinks
+
         postCObject = COA
         postCObject {
           10 = FILES

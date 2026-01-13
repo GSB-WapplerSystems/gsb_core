@@ -61,7 +61,7 @@
 				<source>Log in</source>
 			</trans-unit>
 			<trans-unit id="header.servicenavigation" resname="header.servicenavigation">
-				<source>Service navigation</source>
+				<source>Service navigation Header</source>
 			</trans-unit>
 			<trans-unit id="header.languageswitcher" resname="header.languageswitcher">
 				<source>Language switcher</source>
@@ -109,7 +109,7 @@
 				<source>Additional information</source>
 			</trans-unit>
 			<trans-unit id="footer.metanav" resname="footer.metanav">
-				<source>Service navigation</source>
+				<source>Service navigation Footer</source>
 			</trans-unit>
 			<trans-unit id="footer.socialmediaheader" resname="footer.socialmediaheader">
 				<source>Follow us at</source>
@@ -350,6 +350,9 @@
 			</trans-unit>
 			<trans-unit id="error.noValidHttpsUrl" resname="error.noValidHttpsUrl">
 				<source>This field requires a valid https-url</source>
+			</trans-unit>
+			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
+				<source>GSB (Opens external site)</source>
 			</trans-unit>
 		</body>
     </file>

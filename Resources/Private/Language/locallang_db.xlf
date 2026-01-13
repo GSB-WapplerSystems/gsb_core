@@ -214,7 +214,7 @@
                 <source>override categories by Kicker</source>
             </trans-unit>
 			<trans-unit id="tt_content.header_position.inside" resname="tt_content.header_position.inside">
-				<source>Intext</source>
+				<source>Position in text instead of above the image</source>
 			</trans-unit>
 			<trans-unit id="tt_content.header_position.leftintext" resname="tt_content.header_position.leftintext">
 				<source>Left (in text)</source>

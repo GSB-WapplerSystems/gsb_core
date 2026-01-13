@@ -1,7 +1,5 @@
 import Modal from '@typo3/backend/modal.js';
 
-console.log('Validator URL loaded!');
-
 window.GsbCoreHttpsUrlValidator = {
   showError(message) {
     Modal.confirm(

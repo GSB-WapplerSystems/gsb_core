@@ -1,0 +1,1 @@
+import{default as r}from"@typo3/backend/modal.js";window.GsbCoreHttpsUrlValidator={showError(t){r.confirm("Fehlerhafte URL",t,r.types.alert,[{text:"OK",btnClass:"btn-primary",name:"ok"}])}};

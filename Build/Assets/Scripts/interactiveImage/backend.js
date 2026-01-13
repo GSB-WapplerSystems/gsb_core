@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// interactiveImageBackend.js
+// interactiveImage/backend.js
 
 import Modal from '@typo3/backend/modal.js';
 import DocumentService from '@typo3/core/document-service.js';
 import RegularEvent from '@typo3/core/event/regular-event.js';
-import '../../Scss/interactiveImageBackend.scss';
+import '../../Scss/interactiveImage/backend.scss';
 
 import { HotSpotSelector } from './utils/hotSpotSelector.js';
 

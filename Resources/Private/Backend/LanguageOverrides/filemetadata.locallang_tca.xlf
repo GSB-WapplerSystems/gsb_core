@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:filemetadata/Resources/Private/Language/locallang_tca.xlf" date="2025-12-10T10:22:32Z" product-name="cms" target-language="de">
+		<header/>
+		<body>
+			<trans-unit id="sys_file_metadata.publisher">
+				<source>Publisher (120 characters)</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.source">
+				<source>Source (255 characters)</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_country">
+				<source>Country (45 characters)</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_region">
+				<source>Region (45 characters)</source>
+			</trans-unit>
+			<trans-unit id="sys_file_metadata.location_city">
+				<source>City (45 characters)</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

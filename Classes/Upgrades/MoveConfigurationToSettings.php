@@ -69,16 +69,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'color_secondary',
         'color_secondary_rgba',
         'color_tertiary',
-        'logo-complete-toggle',
-        'logo-complete-big',
-        'logo-complete-small',
-        'logo-text',
-        'second-logo-complete-toggle',
-        'second-logo',
-        'second-logo-alt',
-        'second-logo-link',
-        'initiative-text-toggle',
-        'initiative-text',
         'favicon-96x96-png',
         'faviconIco',
         'faviconSvg',
@@ -120,6 +110,16 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         'font-serif',
         'font-serif-italic',
         'font-serif-name',
+        'logo-complete-big',
+        'logo-complete-small',
+        'logo-complete-toggle',
+        'logo-text',
+        'second-logo',
+        'second-logo-link',
+        'second-logo-alt',
+        'second-logo-complete-toggle',
+        'initiative-text-toggle',
+        'initiative-text',
     ];
 
     /**
@@ -209,8 +209,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'colors.colorGeneral.gsb-color-secondary' => 'color_secondary',
             'colors.colorGeneral.gsb-color-secondary-rgba' => 'color_secondary_rgba',
             'colors.colorGeneral.gsb-color-tertiary' => 'color_tertiary',
-            'logos.gsb-second-logo-alt' => 'second-logo-alt',
-            'logos.gsb-initiative-text' => 'initiative-text',
         ];
 
         foreach ($simpleMappings as $settingKey => $configKey) {
@@ -239,11 +237,6 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         $typoLinkMappings = [
             'accessability.signLanguagePage' => 'sign-language-page',
             'accessability.simpleLanguagePage' => 'simple-language-page',
-            'logos.gsb-logo-big' => 'logo-complete-big',
-            'logos.gsb-logo-small' => 'logo-complete-small',
-            'logos.gsb-logo-text' => 'logo-text',
-            'logos.gsb-second-logo' => 'second-logo',
-            'logos.gsb-second-logo-link' => 'second-logo-link',
             'favicons.favicon-96x96-png' => 'favicon-96x96-png',
             'favicons.faviconIco' => 'faviconIco',
             'favicons.faviconSvg' => 'faviconSvg',
@@ -265,7 +258,33 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
         foreach ($typoLinkMappings as $settingKey => $configKey) {
             $settings = $this->mapOneSiteConfigToSettings($siteConfig, $settingKey, $configKey, $settings, true);
         }
+        $settings = $this->addLogosToSettings($settings, $siteConfig);
+        return $settings;
+    }
 
+    /**
+     * @param mixed[] $settings
+     * @param mixed[] $siteConfig
+     * @return mixed[]
+     */
+    protected function addLogosToSettings(array $settings, array $siteConfig): array
+    {
+        if (isset($siteConfig['logo-complete-toggle']) && $siteConfig['logo-complete-toggle']) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-complete-big', 'logo-complete-big', $settings, true);
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-complete-small', 'logo-complete-small', $settings, true);
+        }
+        if (!isset($siteConfig['logo-complete-toggle']) || !$siteConfig['logo-complete-toggle']) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.logo-text', 'logo-text', $settings);
+        }
+        if (isset($siteConfig['second-logo-complete-toggle']) && $siteConfig['second-logo-complete-toggle']) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.second-logo', 'second-logo', $settings, true);
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.second-logo-link', 'second-logo-link', $settings);
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.second-logo-alt', 'second-logo-alt', $settings);
+        }
+        if (isset($siteConfig['initiative-text-toggle']) && $siteConfig['initiative-text-toggle']) {
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.initiative-text-toggle', 'initiative-text-toggle', $settings, false, true);
+            $settings = $this->mapOneSiteConfigToSettings($siteConfig, 'logos.initiative-text', 'initiative-text', $settings);
+        }
         return $settings;
     }
 
@@ -317,7 +336,7 @@ class MoveConfigurationToSettings extends AbstractMoveConfigurationToSettings
             'devconfig.debug' => 'config.debug',
             'devconfig.admPanel' => 'config.admPanel',
             'devconfig.noCache' => 'config.no_cache',
-            'search.seach-page' => 'config.pids.Search',
+            'search.search-page' => 'config.pids.Search',
             'felogin.emailFrom' => 'styles.content.loginform.emailFrom',
             'felogin.replyToEmail' => 'styles.content.loginform.replyToEmail',
             'devconfig.removeDefaultJS' => 'config.removeDefaultJS',

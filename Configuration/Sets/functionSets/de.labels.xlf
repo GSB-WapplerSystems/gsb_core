@@ -117,11 +117,11 @@
 				<target>YouTube</target>
 			</trans-unit>
 			<!-- Search Settings -->
-			<trans-unit id="settings.search.seach-page">
+			<trans-unit id="settings.search.search-page">
 				<source>Search Page</source>
 				<target>Suche Seite</target>
 			</trans-unit>
-			<trans-unit id="settings.description.search.seach-page">
+			<trans-unit id="settings.description.search.search-page">
 				<source>Set the page ID for the search results page, or select via the "Select Page" button</source>
 				<target>Seiten-ID für die Suchergebnis-Seite festlegen, oder über den Button "Select Page" auswählen</target>
 			</trans-unit>
