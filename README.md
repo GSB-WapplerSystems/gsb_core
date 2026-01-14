@@ -120,9 +120,8 @@ Feature flags can also be checked in your Fluid templates with TYPO3's [Feature 
 | Feature flag                               | Description                             |
 |--------------------------------------------|-----------------------------------------|
 | `GSB11_OPTION_1972_GSB11_BACKEND_BRANDING` | At default branding to the login screen |
-| `GSB11_FEATURE_5488_IMAGE_LINK`            | att linked only image elements          |
 | `GSB11_FEATURE_5987_INCLUDE_ELEMENT`       | Include element content type            |
-| `GSB11_FEATURE_6050_IMAGEMAP`              | Interactive Images                      | 
+| `GSB11_FEATURE_6050_IMAGEMAP`              | Interactive Images                      |
 
 
 ## Usage
