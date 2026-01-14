@@ -49,7 +49,7 @@
     "typo3/cms-backend": "^13.4",
     "typo3/cms-belog": "^13.4",
     "typo3/cms-beuser": "^13.4",
-    "typo3/cms-core": "13.4.22",
+    "typo3/cms-core": "13.4.23",
     "typo3/cms-dashboard": "^13.4",
     "typo3/cms-extbase": "^13.4",
     "typo3/cms-extensionmanager": "^13.4",
