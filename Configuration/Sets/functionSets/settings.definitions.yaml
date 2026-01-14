@@ -78,7 +78,7 @@ settings:
     type: string
     default: 'youtube.com'
 # search
-  search.seach-page:
+  search.search-page:
     category: GSB.functions.suche
     type: page
     default: 35
