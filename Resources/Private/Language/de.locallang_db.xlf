@@ -1394,8 +1394,8 @@
 				<target>Kopfzeile anzeigen</target>
 			</trans-unit>
 			<trans-unit id="page.configuration.display-brand-topline.description" resname="page.configuration.display-brand-topline.description">
-				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
-				<target>Zeigt als Kopfzeile der Webseite den Text "Eine offizielle Website der Bundesrepublik Deutschland" an.</target>
+				<source>Displays the text "Official website – Federal Republic of Germany" as topline of the website.</source>
+				<target>Zeigt als Kopfzeile der Webseite den Text "Offizielle Website – Bundesrepublik Deutschland" an.</target>
 			</trans-unit>
             <trans-unit id="page.configuration.fonts.palette.label" resname="page.configuration.fonts.palette.label">
                 <source>Fonts</source>

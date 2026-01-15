@@ -1100,7 +1100,7 @@
 				<source>Show page topline</source>
 			</trans-unit>
 			<trans-unit id="page.configuration.display-brand-topline.description" resname="page.configuration.display-brand-topline.description">
-				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
+				<source>Displays the text "Official website – Federal Republic of Germany" as topline of the website.</source>
 			</trans-unit>
             <trans-unit id="page.configuration.fonts.palette.label" resname="page.configuration.sitepackage.fonts.palette.label">
                 <source>Fonts</source>

@@ -97,7 +97,7 @@
 				<source>Link to homepage</source>
 			</trans-unit>
 			<trans-unit id="header.brandtopline" resname="header.brandtopline">
-				<source>An official website of the Federal Republic of Germany</source>
+				<source>Official website – Federal Republic of Germany</source>
 			</trans-unit>
 			<trans-unit id="header.brandtopline.title" resname="header.brandtopline.title">
 				<source>Flag of the Federal Republic of Germany</source>
