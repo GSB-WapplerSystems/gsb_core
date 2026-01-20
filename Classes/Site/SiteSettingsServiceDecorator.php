@@ -66,14 +66,14 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
     {
         // Call parent method to write the settings
         parent::writeSettings($site, $settings);
-        
+
         // Clear pages cache using cluster caching
         $payload = [
             'groups' => [
-                ['group' => 'pages', 'flush' => true]
-            ]
+                ['group' => 'pages', 'flush' => true],
+            ],
         ];
-        
+
         $this->payloadBasedCacheClear->collectAndSendFlushCommands($payload);
     }
 }
