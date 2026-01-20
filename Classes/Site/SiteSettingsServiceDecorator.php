@@ -46,10 +46,6 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
      */
     private readonly PayloadBasedCacheClear $payloadBasedCacheClear;
 
-    /**
-     * @param PayloadBasedCacheClear $payloadBasedCacheClear
-     * @phpstan-ignore-next-line
-     */
     public function __construct(
         SiteWriter $siteWriter,
         #[Autowire(service: 'cache.core')]
@@ -59,6 +55,7 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         SettingsFactory $settingsFactory,
         SettingsTypeRegistry $settingsTypeRegistry,
         FlashMessageService $flashMessageService,
+        /** @phpstan-ignore-next-line */
         PayloadBasedCacheClear $payloadBasedCacheClear
     ) {
         $this->payloadBasedCacheClear = $payloadBasedCacheClear;
