@@ -60,13 +60,6 @@ services:
       - name: event.listener
         identifier: 'gsb_core/synchronize-localized-site-settings'
 
-  ITZBund\GsbCore\EventListener\ClearCacheAfterSiteSettingsChanged:
-    public: true
-    tags:
-      - name: event.listener
-        identifier: 'gsb_core/clear-cache-after-site-settings-changed'
-        event: TYPO3\CMS\Core\Configuration\Event\SiteConfigurationChangedEvent
-
   ITZBund\GsbCore\EventListener\BackendFormValidUrlListener:
     tags:
       - name: signal
@@ -79,7 +72,7 @@ services:
   ITZBund\GsbCore\Controller\ReportController:
     tags: ['backend.controller']
 
-  # Replace SiteSettingsService with our decorator that dispatches events when settings are saved
+  # Replace SiteSettingsService with our decorator that clears cache when settings are saved
   TYPO3\CMS\Core\Site\SiteSettingsService:
     class: ITZBund\GsbCore\Site\SiteSettingsServiceDecorator
     public: false

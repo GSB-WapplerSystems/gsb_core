@@ -22,10 +22,9 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Site;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
+use ITZBund\GsbClusteredCaching\Service\PayloadBasedCacheClear;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use TYPO3\CMS\Core\Cache\Frontend\PhpFrontend;
-use TYPO3\CMS\Core\Configuration\Event\SiteConfigurationChangedEvent;
 use TYPO3\CMS\Core\Configuration\SiteWriter;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Settings\SettingsFactory;
@@ -36,8 +35,8 @@ use TYPO3\CMS\Core\Site\SiteSettingsFactory;
 use TYPO3\CMS\Core\Site\SiteSettingsService;
 
 /**
- * Extended SiteSettingsService that dispatches SiteConfigurationChangedEvent
- * when writeSettings() is called, ensuring cache clearing works correctly.
+ * Extended SiteSettingsService that clears the pages cache
+ * when writeSettings() is called using cluster caching.
  */
 final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
 {
@@ -50,7 +49,7 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         SettingsFactory $settingsFactory,
         SettingsTypeRegistry $settingsTypeRegistry,
         FlashMessageService $flashMessageService,
-        private readonly EventDispatcherInterface $eventDispatcher
+        private readonly PayloadBasedCacheClear $payloadBasedCacheClear
     ) {
         parent::__construct(
             $siteWriter,
@@ -68,7 +67,13 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         // Call parent method to write the settings
         parent::writeSettings($site, $settings);
         
-        // Dispatch the event to trigger cache clearing
-        $this->eventDispatcher->dispatch(new SiteConfigurationChangedEvent($site->getIdentifier()));
+        // Clear pages cache using cluster caching
+        $payload = [
+            'groups' => [
+                ['group' => 'pages', 'flush' => true]
+            ]
+        ];
+        
+        $this->payloadBasedCacheClear->collectAndSendFlushCommands($payload);
     }
 }
