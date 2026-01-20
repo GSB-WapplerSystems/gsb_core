@@ -40,6 +40,16 @@ use TYPO3\CMS\Core\Site\SiteSettingsService;
  */
 final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
 {
+    /**
+     * @var PayloadBasedCacheClear
+     * @phpstan-ignore-next-line
+     */
+    private readonly PayloadBasedCacheClear $payloadBasedCacheClear;
+
+    /**
+     * @param PayloadBasedCacheClear $payloadBasedCacheClear
+     * @phpstan-ignore-next-line
+     */
     public function __construct(
         SiteWriter $siteWriter,
         #[Autowire(service: 'cache.core')]
@@ -49,8 +59,9 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         SettingsFactory $settingsFactory,
         SettingsTypeRegistry $settingsTypeRegistry,
         FlashMessageService $flashMessageService,
-        private readonly PayloadBasedCacheClear $payloadBasedCacheClear
+        PayloadBasedCacheClear $payloadBasedCacheClear
     ) {
+        $this->payloadBasedCacheClear = $payloadBasedCacheClear;
         parent::__construct(
             $siteWriter,
             $codeCache,
@@ -62,18 +73,24 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         );
     }
 
+    /**
+     * @param Site $site
+     * @param array<string, mixed> $settings
+     */
     public function writeSettings(Site $site, array $settings): void
     {
         // Call parent method to write the settings
         parent::writeSettings($site, $settings);
 
         // Clear pages cache using cluster caching
+        /** @var array{groups: array<int, array{group: string, flush: bool}>} $payload */
         $payload = [
             'groups' => [
                 ['group' => 'pages', 'flush' => true],
             ],
         ];
 
+        /** @phpstan-ignore-next-line */
         $this->payloadBasedCacheClear->collectAndSendFlushCommands($payload);
     }
 }
