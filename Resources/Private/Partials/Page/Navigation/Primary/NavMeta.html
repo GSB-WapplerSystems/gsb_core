@@ -38,9 +38,9 @@
         </f:spaceless><li class="nav-item {f:if(condition:mainItem.active, then:' active')}">
             <f:if condition="{mainItem.current}">
                 <f:then>
-                    <f:link.page aria="{current: 'page'}"
-                                    class="nav-link meta-{mainItem.data.uid}{signLanguagePageAdditionalClass}{simpleLanguagePageAdditionalClass}{f:if(condition:mainItem.active, then:' current')}"
-                                    pageUid="{mainItem.data.uid}">
+                    <f:link.page
+                            class="nav-link meta-{mainItem.data.uid}{signLanguagePageAdditionalClass}{simpleLanguagePageAdditionalClass}{f:if(condition:mainItem.active, then:' current')}"
+                            pageUid="{mainItem.data.uid}">
                         <span>{mainItem.title}</span>
                     </f:link.page>
                 </f:then>
