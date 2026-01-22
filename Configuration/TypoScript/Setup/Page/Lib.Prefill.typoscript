@@ -37,13 +37,13 @@ lib {
     tags {
       link {
         typolink {
-          wrap = <span class="icon" aria-hidden="true"></span>|
+          wrap = <span class="icon"></span>|
           ATagBeforeWrap = 1
         }
       }
       a {
         typolink {
-          wrap = <span class="icon" aria-hidden="true"></span>|
+          wrap = <span class="icon"></span>|
           ATagBeforeWrap = 1
         }
       }
@@ -53,13 +53,13 @@ lib {
     tags {
       link {
         typolink {
-          wrap = <span class="icon" aria-hidden="true"></span>|
+          wrap = <span class="icon"></span>|
           ATagBeforeWrap = 1
         }
       }
       a {
         typolink {
-          wrap = <span class="icon" aria-hidden="true"></span>|
+          wrap = <span class="icon"></span>|
           ATagBeforeWrap = 1
         }
       }
@@ -71,13 +71,13 @@ lib {
             tags {
               link {
                 typolink {
-                  wrap = <span class="icon" aria-hidden="true"></span>|
+                  wrap = <span class="icon"></span>|
                   ATagBeforeWrap = 1
                 }
               }
               a {
                 typolink {
-                  wrap = <span class="icon" aria-hidden="true"></span>|
+                  wrap = <span class="icon"></span>|
                   ATagBeforeWrap = 1
                 }
               }
