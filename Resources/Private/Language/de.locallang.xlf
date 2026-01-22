@@ -467,9 +467,21 @@
 				<source>Filter for letter</source>
 				<target>Filterung nach Buchstabe</target>
 			</trans-unit>
-			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
-				<source>GSB (Opens external site)</source>
-            	<target>GSB (Öffnet externe Seite)</target>
+			<trans-unit id="linkTypeAriaLabel.1" resname="linkTypeAriaLabel.1">
+            	<source>external</source>
+            	<target>extern</target>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.2" resname="linkTypeAriaLabel.2">
+            	<source>phone</source>
+            	<target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.3" resname="linkTypeAriaLabel.3">
+            	<source>email</source>
+            	<target>E-Mail</target>
+            </trans-unit>
+			<trans-unit id="linkTypeAriaLabel.4" resname="linkTypeAriaLabel.4">
+            	<source>intern</source>
+            	<target>intern</target>
             </trans-unit>
 		</body>
 	</file>

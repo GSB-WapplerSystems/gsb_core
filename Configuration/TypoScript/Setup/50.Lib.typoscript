@@ -65,7 +65,7 @@ lib {
 
     tags {
       a {
-        postUserFunc = ITZBund\GsbCore\UserFunc\ExternalLinkModifier->addAriaLabelToExternalLinks
+        postUserFunc = ITZBund\GsbCore\UserFunc\LinkIconAriaLabelModifier->addAriaLabelToLinks
 
         postCObject = COA
         postCObject {
