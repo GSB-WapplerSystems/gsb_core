@@ -189,7 +189,7 @@
 				<source>Show page topline</source>
 			</trans-unit>
 			<trans-unit id="settings.description.logos.display-brand-topline">
-				<source>Displays the text "An official website of the Federal Republic of Germany" as topline of the website.</source>
+				<source>Displays the text "Official website – Federal Republic of Germany" as topline of the website.</source>
 			</trans-unit>
 			<!-- Favicons -->
 			<trans-unit id="settings.favicons.favicon-96x96-png">

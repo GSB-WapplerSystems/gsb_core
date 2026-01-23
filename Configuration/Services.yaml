@@ -71,3 +71,8 @@ services:
 
   ITZBund\GsbCore\Controller\ReportController:
     tags: ['backend.controller']
+
+  # Replace SiteSettingsService with our decorator that clears cache when settings are saved
+  TYPO3\CMS\Core\Site\SiteSettingsService:
+    class: ITZBund\GsbCore\Site\SiteSettingsServiceDecorator
+    public: false

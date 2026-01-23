@@ -97,7 +97,7 @@
 				<source>Link to homepage</source>
 			</trans-unit>
 			<trans-unit id="header.brandtopline" resname="header.brandtopline">
-				<source>An official website of the Federal Republic of Germany</source>
+				<source>Official website – Federal Republic of Germany</source>
 			</trans-unit>
 			<trans-unit id="header.brandtopline.title" resname="header.brandtopline.title">
 				<source>Flag of the Federal Republic of Germany</source>
@@ -351,9 +351,18 @@
 			<trans-unit id="error.noValidHttpsUrl" resname="error.noValidHttpsUrl">
 				<source>This field requires a valid https-url</source>
 			</trans-unit>
-			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
-				<source>GSB (Opens external site)</source>
-			</trans-unit>
+			<trans-unit id="linkTypeAriaLabel.1" resname="linkTypeAriaLabel.1">
+            	<source>external</source>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.2" resname="linkTypeAriaLabel.2">
+            	<source>phone</source>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.3" resname="linkTypeAriaLabel.3">
+            	<source>email</source>
+            </trans-unit>
+			<trans-unit id="linkTypeAriaLabel.4" resname="linkTypeAriaLabel.4">
+            	<source>intern</source>
+            </trans-unit>
 		</body>
     </file>
 </xliff>

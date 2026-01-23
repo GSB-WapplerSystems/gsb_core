@@ -128,8 +128,8 @@
 				<target>Zur Startseite</target>
 			</trans-unit>
 			<trans-unit id="header.brandtopline" resname="header.brandtopline">
-				<source>An official website of the Federal Republic of Germany</source>
-				<target>Eine offizielle Website der Bundesrepublik Deutschland</target>
+				<source>Official website – Federal Republic of Germany</source>
+				<target>Offizielle Website – Bundesrepublik Deutschland</target>
 			</trans-unit>
 			<trans-unit id="header.brandtopline.title" resname="header.brandtopline.title">
 				<source>Flag of the Federal Republic of Germany</source>
@@ -471,10 +471,22 @@
 				<source>This field requires a valid https-url</source>
 				<target>Bitte eine valide URL inkl. https eintragen.</target>
 			</trans-unit>
-			<trans-unit id="externalLinkAriaLabel" resname="externalLinkAriaLabel">
-				<source>GSB (Opens external site)</source>
-				<target>GSB (Öffnet externe Seite)</target>
-			</trans-unit>
+			<trans-unit id="linkTypeAriaLabel.1" resname="linkTypeAriaLabel.1">
+            	<source>external</source>
+            	<target>extern</target>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.2" resname="linkTypeAriaLabel.2">
+            	<source>phone</source>
+            	<target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="linkTypeAriaLabel.3" resname="linkTypeAriaLabel.3">
+            	<source>email</source>
+            	<target>E-Mail</target>
+            </trans-unit>
+			<trans-unit id="linkTypeAriaLabel.4" resname="linkTypeAriaLabel.4">
+            	<source>intern</source>
+            	<target>intern</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
