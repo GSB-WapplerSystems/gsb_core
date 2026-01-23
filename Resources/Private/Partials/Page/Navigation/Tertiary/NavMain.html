@@ -13,7 +13,7 @@
                 <f:if condition="{mainItem.children}">
                     <f:if condition="{mainItem.current}">
                         <f:then>
-                            <f:link.page aria="{current: 'page'}" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
+                            <f:link.page class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
                                 {mainItem.title}
                             </f:link.page>
                         </f:then>
@@ -40,7 +40,7 @@
             <f:else>
                 <f:if condition="{mainItem.current}">
                     <f:then>
-                        <f:link.page aria="{current: 'page'}" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
+                        <f:link.page class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
                             {mainItem.title}
                         </f:link.page>
                     </f:then>
@@ -60,7 +60,7 @@
                 <li>
                     <f:if condition="{mainChild.current}">
                         <f:then>
-                            <f:link.page aria="{current: 'page'}" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
+                            <f:link.page class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
                                 <span>{mainChild.title}</span>
                             </f:link.page>
                         </f:then>
@@ -86,7 +86,7 @@
                 <li>
                 <f:if condition="{mainChild.current}">
                     <f:then>
-                        <f:link.page aria="{current: 'page'}" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
+                        <f:link.page class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
                             <span>{mainChild.title}</span>
                         </f:link.page>
                     </f:then>

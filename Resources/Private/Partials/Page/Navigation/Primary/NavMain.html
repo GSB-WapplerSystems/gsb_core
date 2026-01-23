@@ -11,7 +11,7 @@
         <f:if condition="{mainItem.children}">
             <f:then>
                 <f:if condition="{mainItem.children}">
-                    <button aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav first-nav-btn{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.submenuOpen', extensionName: 'gsb_core')}">
+                    <button aria-current="true" aria-controls="menu-desktop-{mainItem.data.uid}" aria-expanded="false" class="first-nav first-nav-btn{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" data-bs-auto-close="outside" data-bs-boundary="scrollParent" data-bs-display="static" data-bs-reference="parent" data-bs-toggle="dropdown" type="button" title="{f:translate(key: 'header.submenuOpen', extensionName: 'gsb_core')}">
                         <span class="txt">{mainItem.title}</span>
                     </button>
                     <div class="dropdown-menu main-menu-desktop" id="menu-desktop-{mainItem.data.uid}">
@@ -29,7 +29,7 @@
             <f:else>
                 <f:if condition="{mainItem.current}">
                     <f:then>
-                        <f:link.page aria="{current: 'page'}" class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
+                        <f:link.page aria="{current: 'true'}"  class="first-nav{f:if(condition:mainItem.active, then:' act')}{f:if(condition:mainItem.current, then:' current')}{f:if(condition:mainItem.hasSubpages, then:' hassub')}" pageUid="{mainItem.data.uid}">
                             {mainItem.title}
                         </f:link.page>
                     </f:then>
@@ -59,7 +59,7 @@
                 <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <f:if condition="{mainChild.current}">
                     <f:then>
-                        <f:link.page aria="{current: 'page'}" class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
+                        <f:link.page class="sub collapsed dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
                             <span>{mainChild.title}</span>
                         </f:link.page>
                     </f:then>
