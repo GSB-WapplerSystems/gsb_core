@@ -3,32 +3,112 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:gsb_core/Configuration/Sets/Default/labels.xlf" date="2025-09-18T15:00:00" product-name="gsb_core">
 		<header />
 		<body>
-			<!-- Default Settings Category -->
+			<!-- FeLogin -->
+			<trans-unit id="settings.felogin.emailFrom">
+				<source>Email Sender Address</source>
+				<target>E-Mail-Absenderadresse</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.emailFrom">
+				<source>email address used as sender of the change password emails</source>
+				<target>E-Mail-Adresse, die als Absender der E-Mails zum Ändern des Passworts verwendet wird</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.emailFromName">
+				<source>Email Sender Name</source>
+				<target>Name des E-Mail-Absenders</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.emailFromName">
+				<source>Name used as sender of the change password emails</source>
+				<target>Name, der als Absender der E-Mails zum Ändern des Passworts verwendet wird</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.replyToEmail">
+				<source>Reply-to email Address</source>
+				<target>E-Mail-Adresse für Antworten</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.replyToEmail">
+				<source>Reply-to address used in the change password emails</source>
+				<target>In den E-Mails zum Passwortwechsel verwendete Antwortadresse</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.showForgotPassword">
+				<source>Display Password Recovery Link</source>
+				<target>Link zur Passwortwiederherstellung anzeigen</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.showForgotPassword">
+				<source>If set, the section in the template to display the link to the forgot password dialog is visible.</source>
+				<target>Wenn diese Option aktiviert ist, wird der Abschnitt in der Vorlage angezeigt, in dem der Link zum Dialogfeld „Passwort vergessen“ angezeigt wird.</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.showPermaLogin">
+				<source>Display Remember Login Option</source>
+				<target>Anzeige Option „Anmeldung speichern“</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.showPermaLogin">
+				<source>If set, the section in the template to display the option to remember the login (with a cookie) is visible.</source>
+				<target>Wenn diese Option aktiviert ist, wird der Abschnitt in der Vorlage angezeigt, in dem die Option zum Speichern der Anmeldedaten (mit einem Cookie) angezeigt wird.</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.showLogoutFormAfterLogin">
+				<source>Disable redirect after successful login, but display logout-form</source>
+				<target>Weiterleitung nach erfolgreicher Anmeldung deaktivieren, aber Abmeldeformular anzeigen</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.showLogoutFormAfterLogin">
+				<source>If set, the logout form will be displayed immediately after successful login.</source>
+				<target>Wenn diese Option aktiviert ist, wird das Abmeldeformular unmittelbar nach erfolgreicher Anmeldung angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.forgotLinkHashValidTime">
+				<source>Time in hours how long the link for forgot password is valid</source>
+				<target>Zeit in Stunden, wie lange der Link zum Zurücksetzen des Passworts gültig ist</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.forgotLinkHashValidTime">
+				<source>How many hours the link for forgot password is valid</source>
+				<target>Wie viele Stunden lang ist der Link zum Zurücksetzen des Passworts gültig?</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.redirectMode">
+				<source>Redirect Mode</source>
+				<target>Umleitungsmodus</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.redirectMode">
+				<source>Comma separated list of redirect modes.\
+					Possible values: groupLogin, userLogin, login, getpost, referer, refererDomains, loginError, logout.\
+					Warning: redirects only work if neither the plugin nor the page it is displayed on are set to `hide at login`.</source>
+				<target>Durch Kommas getrennte Liste der Weiterleitungsmodi.\
+					Mögliche Werte: groupLogin, userLogin, login, getpost, referer, refererDomains, loginError, logout.\
+					Warnung: Weiterleitungen funktionieren nur, wenn weder das Plugin noch die Seite, auf der es angezeigt wird, auf „Bei Anmeldung ausblenden” eingestellt sind.</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.redirectFirstMethod">
+				<source>Use First Supported Mode from Selection</source>
+				<target>Ersten unterstützten Modus aus Auswahl verwenden</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.redirectFirstMethod">
+				<source>If set the first method from redirectMode which is possible will be used</source>
+				<target>Wenn die erste Methode aus redirectMode festgelegt ist, wird diese verwendet, sofern möglich.</target>
+			</trans-unit>
+			<trans-unit id="settings.felogin.exposeNonexistentUserInForgotPasswordDialog">
+				<source>Expose existing users</source>
+				<target>Bestehende Benutzer anzeigen</target>
+			</trans-unit>
+			<trans-unit id="settings.description.felogin.exposeNonexistentUserInForgotPasswordDialog">
+				<source>Expose the information on whether or not the account for which a new password was requested exists. By default, that information is not disclosed for privacy reasons.</source>
+				<target>Geben Sie die Information darüber bekannt, ob das Konto, für das ein neues Passwort angefordert wurde, existiert. Standardmäßig wird diese Information aus Datenschutzgründen nicht offengelegt.</target>
+			</trans-unit>
+			<!-- Extension Categories -->
 			<trans-unit id="categories.GSB">
 				<source>GSB Individualization Settings</source>
 				<target>GSB Individualisierungs Einstellungen</target>
 			</trans-unit>
-			<!-- Function Settings Category -->
 			<trans-unit id="categories.GSB.functions">
 				<source>⚙️ Functions</source>
 				<target>⚙️ Funktionen</target>
 			</trans-unit>
-			<!-- Style Settings Category -->
 			<trans-unit id="categories.GSB.style">
 				<source>🎨 Style Settings</source>
 				<target>🎨 Stil-Corporate Design</target>
 			</trans-unit>
-			<!-- Copyright Settings Category -->
 			<trans-unit id="categories.GSB.copyright">
 				<source>©️ Copyright Settings</source>
 				<target>©️ Urheberrechtshinweis (Copyright)</target>
 			</trans-unit>
-			<!-- Developer Settings Category -->
 			<trans-unit id="categories.GSB.devconfig">
 				<source>🚧 Developer Configuration</source>
 				<target>🚧 Entwickler Konfiguration</target>
 			</trans-unit>
-			<!-- felogin Settings Category -->
 			<trans-unit id="categories.felogin">
 				<source>felogin Settings</source>
 				<target>felogin Einstellungen</target>

@@ -249,6 +249,7 @@
 				<source>Burger Menu</source>
 				<target>Burger Menü</target>
 			</trans-unit>
+			<!-- Extension Categories -->
 			<trans-unit id="categories.fsc">
 				<source>TYPO3 Fluid Styled Content</source>
 				<target>TYPO3 Fluid Styled Content</target>
