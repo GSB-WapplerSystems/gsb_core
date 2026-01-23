@@ -62,7 +62,7 @@
                 <li{f:if(condition:'{mainChild.data.doktype} == 4', then:' class="shortcut"')}>
                 <f:if condition="{mainChild.current}">
                     <f:then>
-                        <f:link.page aria="{current: 'page'}" class="sub dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
+                        <f:link.page class="sub dropdown-item{f:if(condition:mainChild.active, then:' act')}{f:if(condition:mainChild.current, then:' current')}{f:if(condition:mainChild.hasSubpages, then:' hassub')}" pageUid="{mainChild.data.uid}">
                             {mainChild.title}
                         </f:link.page>
                     </f:then>
