@@ -87,26 +87,26 @@
 			}
 		},
 		"node_modules/@cacheable/memory/node_modules/@keyv/bigmap": {
-			"version": "1.3.0",
-			"resolved": "https://registry.npmjs.org/@keyv/bigmap/-/bigmap-1.3.0.tgz",
-			"integrity": "sha512-KT01GjzV6AQD5+IYrcpoYLkCu1Jod3nau1Z7EsEuViO3TZGRacSbO9MfHmbJ1WaOXFtWLxPVj169cn2WNKPkIg==",
+			"version": "1.3.1",
+			"resolved": "https://registry.npmjs.org/@keyv/bigmap/-/bigmap-1.3.1.tgz",
+			"integrity": "sha512-WbzE9sdmQtKy8vrNPa9BRnwZh5UF4s1KTmSK0KUVLo3eff5BlQNNWDnFOouNpKfPKDnms9xynJjsMYjMaT/aFQ==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
-				"hashery": "^1.2.0",
-				"hookified": "^1.13.0"
+				"hashery": "^1.4.0",
+				"hookified": "^1.15.0"
 			},
 			"engines": {
 				"node": ">= 18"
 			},
 			"peerDependencies": {
-				"keyv": "^5.5.4"
+				"keyv": "^5.6.0"
 			}
 		},
 		"node_modules/@cacheable/memory/node_modules/keyv": {
-			"version": "5.5.5",
-			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.5.5.tgz",
-			"integrity": "sha512-FA5LmZVF1VziNc0bIdCSA1IoSVnDCqE8HJIZZv2/W8YmoAM50+tnUgJR/gQZwEeIMleuIOnRnHA/UaZRNeV4iQ==",
+			"version": "5.6.0",
+			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.6.0.tgz",
+			"integrity": "sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw==",
 			"dev": true,
 			"license": "MIT",
 			"peer": true,
@@ -126,13 +126,37 @@
 			}
 		},
 		"node_modules/@cacheable/utils/node_modules/keyv": {
-			"version": "5.5.5",
-			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.5.5.tgz",
-			"integrity": "sha512-FA5LmZVF1VziNc0bIdCSA1IoSVnDCqE8HJIZZv2/W8YmoAM50+tnUgJR/gQZwEeIMleuIOnRnHA/UaZRNeV4iQ==",
+			"version": "5.6.0",
+			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.6.0.tgz",
+			"integrity": "sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
 				"@keyv/serialize": "^1.1.1"
+			}
+		},
+		"node_modules/@csstools/cascade-layer-name-parser": {
+			"version": "3.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/cascade-layer-name-parser/-/cascade-layer-name-parser-3.0.0.tgz",
+			"integrity": "sha512-/3iksyevwRfSJx5yH0RkcrcYXwuhMQx3Juqf40t97PeEy2/Mz2TItZ/z/216qpe4GgOyFBP8MKIwVvytzHmfIQ==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"engines": {
+				"node": ">=20.19.0"
+			},
+			"peerDependencies": {
+				"@csstools/css-parser-algorithms": "^4.0.0",
+				"@csstools/css-tokenizer": "^4.0.0"
 			}
 		},
 		"node_modules/@csstools/color-helpers": {
@@ -155,10 +179,62 @@
 				"node": ">=20.19.0"
 			}
 		},
+		"node_modules/@csstools/css-calc": {
+			"version": "3.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
+			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"engines": {
+				"node": ">=20.19.0"
+			},
+			"peerDependencies": {
+				"@csstools/css-parser-algorithms": "^4.0.0",
+				"@csstools/css-tokenizer": "^4.0.0"
+			}
+		},
+		"node_modules/@csstools/css-color-parser": {
+			"version": "4.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
+			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"dependencies": {
+				"@csstools/color-helpers": "^6.0.0",
+				"@csstools/css-calc": "^3.0.0"
+			},
+			"engines": {
+				"node": ">=20.19.0"
+			},
+			"peerDependencies": {
+				"@csstools/css-parser-algorithms": "^4.0.0",
+				"@csstools/css-tokenizer": "^4.0.0"
+			}
+		},
 		"node_modules/@csstools/css-parser-algorithms": {
-			"version": "3.0.5",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-3.0.5.tgz",
-			"integrity": "sha512-DaDeUkXZKjdGhgYaHNJTV9pV7Y9B3b644jCLs9Upc3VeNGg6LWARAT6O+Q+/COo+2gg/bM5rhpMAtf70WqfBdQ==",
+			"version": "4.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
+			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
 			"dev": true,
 			"funding": [
 				{
@@ -173,10 +249,10 @@
 			"license": "MIT",
 			"peer": true,
 			"engines": {
-				"node": ">=18"
+				"node": ">=20.19.0"
 			},
 			"peerDependencies": {
-				"@csstools/css-tokenizer": "^3.0.4"
+				"@csstools/css-tokenizer": "^4.0.0"
 			}
 		},
 		"node_modules/@csstools/css-syntax-patches-for-csstree": {
@@ -200,9 +276,9 @@
 			}
 		},
 		"node_modules/@csstools/css-tokenizer": {
-			"version": "3.0.4",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz",
-			"integrity": "sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==",
+			"version": "4.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
+			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
 			"dev": true,
 			"funding": [
 				{
@@ -217,13 +293,13 @@
 			"license": "MIT",
 			"peer": true,
 			"engines": {
-				"node": ">=18"
+				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/media-query-list-parser": {
-			"version": "4.0.3",
-			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-4.0.3.tgz",
-			"integrity": "sha512-HAYH7d3TLRHDOUQK4mZKf9k9Ph/m8Akstg66ywKR4SFAigjs3yBiUeZtFxywiTm5moZMAp/5W/ZuFnNXXYLuuQ==",
+			"version": "5.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-5.0.0.tgz",
+			"integrity": "sha512-T9lXmZOfnam3eMERPsszjY5NK0jX8RmThmmm99FZ8b7z8yMaFZWKwLWGZuTwdO3ddRY5fy13GmmEYZXB4I98Eg==",
 			"dev": true,
 			"funding": [
 				{
@@ -237,11 +313,11 @@
 			],
 			"license": "MIT",
 			"engines": {
-				"node": ">=18"
+				"node": ">=20.19.0"
 			},
 			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^3.0.5",
-				"@csstools/css-tokenizer": "^3.0.4"
+				"@csstools/css-parser-algorithms": "^4.0.0",
+				"@csstools/css-tokenizer": "^4.0.0"
 			}
 		},
 		"node_modules/@csstools/postcss-alpha-function": {
@@ -274,103 +350,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-alpha-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-alpha-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-alpha-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-alpha-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-cascade-layers": {
 			"version": "6.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-cascade-layers/-/postcss-cascade-layers-6.0.0.tgz",
@@ -396,29 +375,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-cascade-layers/node_modules/@csstools/selector-specificity": {
-			"version": "6.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-6.0.0.tgz",
-			"integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT-0",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"postcss-selector-parser": "^7.1.1"
 			}
 		},
 		"node_modules/@csstools/postcss-color-function": {
@@ -481,200 +437,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-color-function-display-p3-linear/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function-display-p3-linear/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function-display-p3-linear/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function-display-p3-linear/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-color-mix-function": {
 			"version": "4.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-color-mix-function/-/postcss-color-mix-function-4.0.0.tgz",
@@ -703,103 +465,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-color-mix-variadic-function-arguments": {
@@ -832,103 +497,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-color-mix-variadic-function-arguments/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-variadic-function-arguments/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-variadic-function-arguments/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-color-mix-variadic-function-arguments/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-content-alt-text": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-content-alt-text/-/postcss-content-alt-text-3.0.0.tgz",
@@ -956,50 +524,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-content-alt-text/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-content-alt-text/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-contrast-color-function": {
@@ -1032,103 +556,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-contrast-color-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-contrast-color-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-contrast-color-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-contrast-color-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-exponential-functions": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-exponential-functions/-/postcss-exponential-functions-3.0.0.tgz",
@@ -1155,75 +582,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-exponential-functions/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-exponential-functions/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-exponential-functions/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-font-format-keywords": {
@@ -1281,103 +639,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-gamut-mapping/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gamut-mapping/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gamut-mapping/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gamut-mapping/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-gradients-interpolation-method": {
 			"version": "6.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-gradients-interpolation-method/-/postcss-gradients-interpolation-method-6.0.0.tgz",
@@ -1408,103 +669,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-gradients-interpolation-method/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gradients-interpolation-method/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gradients-interpolation-method/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-gradients-interpolation-method/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-hwb-function": {
 			"version": "5.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-hwb-function/-/postcss-hwb-function-5.0.0.tgz",
@@ -1533,103 +697,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-hwb-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-hwb-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-hwb-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-hwb-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-ic-unit": {
@@ -1710,29 +777,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-is-pseudo-class/node_modules/@csstools/selector-specificity": {
-			"version": "6.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-6.0.0.tgz",
-			"integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT-0",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"postcss-selector-parser": "^7.1.1"
-			}
-		},
 		"node_modules/@csstools/postcss-light-dark-function": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-light-dark-function/-/postcss-light-dark-function-3.0.0.tgz",
@@ -1760,50 +804,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-light-dark-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-light-dark-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-logical-float-and-clear": {
@@ -1928,26 +928,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-logical-viewport-units/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-media-minmax": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-media-minmax/-/postcss-media-minmax-3.0.0.tgz",
@@ -1975,99 +955,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-media-minmax/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-media-minmax/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-media-minmax/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
-		"node_modules/@csstools/postcss-media-minmax/node_modules/@csstools/media-query-list-parser": {
-			"version": "5.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-5.0.0.tgz",
-			"integrity": "sha512-T9lXmZOfnam3eMERPsszjY5NK0jX8RmThmmm99FZ8b7z8yMaFZWKwLWGZuTwdO3ddRY5fy13GmmEYZXB4I98Eg==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
 			}
 		},
 		"node_modules/@csstools/postcss-media-queries-aspect-ratio-number-values": {
@@ -2098,75 +985,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-media-queries-aspect-ratio-number-values/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-media-queries-aspect-ratio-number-values/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
-		"node_modules/@csstools/postcss-media-queries-aspect-ratio-number-values/node_modules/@csstools/media-query-list-parser": {
-			"version": "5.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-5.0.0.tgz",
-			"integrity": "sha512-T9lXmZOfnam3eMERPsszjY5NK0jX8RmThmmm99FZ8b7z8yMaFZWKwLWGZuTwdO3ddRY5fy13GmmEYZXB4I98Eg==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
 		"node_modules/@csstools/postcss-mixins": {
 			"version": "1.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-mixins/-/postcss-mixins-1.0.0.tgz",
@@ -2192,50 +1010,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-mixins/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-mixins/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-nested-calc": {
@@ -2321,103 +1095,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-oklab-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-oklab-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-oklab-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-oklab-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-position-area-property": {
 			"version": "2.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-position-area-property/-/postcss-position-area-property-2.0.0.tgz",
@@ -2494,50 +1171,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-property-rule-prelude-list/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-property-rule-prelude-list/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-random-function": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-random-function/-/postcss-random-function-3.0.0.tgz",
@@ -2564,75 +1197,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-random-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-random-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-random-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-relative-color-syntax": {
@@ -2663,103 +1227,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-relative-color-syntax/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-relative-color-syntax/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-relative-color-syntax/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-relative-color-syntax/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-scope-pseudo-class": {
@@ -2816,75 +1283,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-sign-functions/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-sign-functions/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-sign-functions/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-stepped-value-functions": {
 			"version": "5.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-stepped-value-functions/-/postcss-stepped-value-functions-5.0.0.tgz",
@@ -2913,75 +1311,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-stepped-value-functions/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-stepped-value-functions/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-stepped-value-functions/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-syntax-descriptor-syntax-production": {
 			"version": "2.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-syntax-descriptor-syntax-production/-/postcss-syntax-descriptor-syntax-production-2.0.0.tgz",
@@ -3006,26 +1335,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-syntax-descriptor-syntax-production/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-system-ui-font-family": {
@@ -3053,50 +1362,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/@csstools/postcss-system-ui-font-family/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-system-ui-font-family/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/@csstools/postcss-text-decoration-shorthand": {
@@ -3154,75 +1419,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/@csstools/postcss-trigonometric-functions/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-trigonometric-functions/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/@csstools/postcss-trigonometric-functions/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/@csstools/postcss-unset-value": {
 			"version": "5.0.0",
 			"resolved": "https://registry.npmjs.org/@csstools/postcss-unset-value/-/postcss-unset-value-5.0.0.tgz",
@@ -3270,9 +1466,9 @@
 			}
 		},
 		"node_modules/@csstools/selector-specificity": {
-			"version": "5.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-5.0.0.tgz",
-			"integrity": "sha512-PCqQV3c4CoVm3kdPhyeZ07VmBRdH2EpMFA/pd9OASpOEC3aXNGoqPDAZ80D0cLpMBxnmk0+yNhGsEx31hq7Gtw==",
+			"version": "6.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-6.0.0.tgz",
+			"integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
 			"dev": true,
 			"funding": [
 				{
@@ -3286,10 +1482,10 @@
 			],
 			"license": "MIT-0",
 			"engines": {
-				"node": ">=18"
+				"node": ">=20.19.0"
 			},
 			"peerDependencies": {
-				"postcss-selector-parser": "^7.0.0"
+				"postcss-selector-parser": "^7.1.1"
 			}
 		},
 		"node_modules/@csstools/utilities": {
@@ -3724,9 +1920,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.5.4.tgz",
-			"integrity": "sha512-WYa2tUVV5HiArWPB3ydlOc4R2ivq0IDrlqhMi3l7mVsFEXNcTfxYFPIHXHXIh/ca/y/V5N4E1zecyxdIBjYnkQ==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.5.6.tgz",
+			"integrity": "sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==",
 			"dev": true,
 			"hasInstallScript": true,
 			"license": "MIT",
@@ -3745,25 +1941,25 @@
 				"url": "https://opencollective.com/parcel"
 			},
 			"optionalDependencies": {
-				"@parcel/watcher-android-arm64": "2.5.4",
-				"@parcel/watcher-darwin-arm64": "2.5.4",
-				"@parcel/watcher-darwin-x64": "2.5.4",
-				"@parcel/watcher-freebsd-x64": "2.5.4",
-				"@parcel/watcher-linux-arm-glibc": "2.5.4",
-				"@parcel/watcher-linux-arm-musl": "2.5.4",
-				"@parcel/watcher-linux-arm64-glibc": "2.5.4",
-				"@parcel/watcher-linux-arm64-musl": "2.5.4",
-				"@parcel/watcher-linux-x64-glibc": "2.5.4",
-				"@parcel/watcher-linux-x64-musl": "2.5.4",
-				"@parcel/watcher-win32-arm64": "2.5.4",
-				"@parcel/watcher-win32-ia32": "2.5.4",
-				"@parcel/watcher-win32-x64": "2.5.4"
+				"@parcel/watcher-android-arm64": "2.5.6",
+				"@parcel/watcher-darwin-arm64": "2.5.6",
+				"@parcel/watcher-darwin-x64": "2.5.6",
+				"@parcel/watcher-freebsd-x64": "2.5.6",
+				"@parcel/watcher-linux-arm-glibc": "2.5.6",
+				"@parcel/watcher-linux-arm-musl": "2.5.6",
+				"@parcel/watcher-linux-arm64-glibc": "2.5.6",
+				"@parcel/watcher-linux-arm64-musl": "2.5.6",
+				"@parcel/watcher-linux-x64-glibc": "2.5.6",
+				"@parcel/watcher-linux-x64-musl": "2.5.6",
+				"@parcel/watcher-win32-arm64": "2.5.6",
+				"@parcel/watcher-win32-ia32": "2.5.6",
+				"@parcel/watcher-win32-x64": "2.5.6"
 			}
 		},
 		"node_modules/@parcel/watcher-android-arm64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.5.4.tgz",
-			"integrity": "sha512-hoh0vx4v+b3BNI7Cjoy2/B0ARqcwVNrzN/n7DLq9ZB4I3lrsvhrkCViJyfTj/Qi5xM9YFiH4AmHGK6pgH1ss7g==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.5.6.tgz",
+			"integrity": "sha512-YQxSS34tPF/6ZG7r/Ih9xy+kP/WwediEUsqmtf0cuCV5TPPKw/PQHRhueUo6JdeFJaqV3pyjm0GdYjZotbRt/A==",
 			"cpu": [
 				"arm64"
 			],
@@ -3782,9 +1978,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-darwin-arm64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-darwin-arm64/-/watcher-darwin-arm64-2.5.4.tgz",
-			"integrity": "sha512-kphKy377pZiWpAOyTgQYPE5/XEKVMaj6VUjKT5VkNyUJlr2qZAn8gIc7CPzx+kbhvqHDT9d7EqdOqRXT6vk0zw==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-darwin-arm64/-/watcher-darwin-arm64-2.5.6.tgz",
+			"integrity": "sha512-Z2ZdrnwyXvvvdtRHLmM4knydIdU9adO3D4n/0cVipF3rRiwP+3/sfzpAwA/qKFL6i1ModaabkU7IbpeMBgiVEA==",
 			"cpu": [
 				"arm64"
 			],
@@ -3803,9 +1999,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-darwin-x64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-darwin-x64/-/watcher-darwin-x64-2.5.4.tgz",
-			"integrity": "sha512-UKaQFhCtNJW1A9YyVz3Ju7ydf6QgrpNQfRZ35wNKUhTQ3dxJ/3MULXN5JN/0Z80V/KUBDGa3RZaKq1EQT2a2gg==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-darwin-x64/-/watcher-darwin-x64-2.5.6.tgz",
+			"integrity": "sha512-HgvOf3W9dhithcwOWX9uDZyn1lW9R+7tPZ4sug+NGrGIo4Rk1hAXLEbcH1TQSqxts0NYXXlOWqVpvS1SFS4fRg==",
 			"cpu": [
 				"x64"
 			],
@@ -3824,9 +2020,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-freebsd-x64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-freebsd-x64/-/watcher-freebsd-x64-2.5.4.tgz",
-			"integrity": "sha512-Dib0Wv3Ow/m2/ttvLdeI2DBXloO7t3Z0oCp4bAb2aqyqOjKPPGrg10pMJJAQ7tt8P4V2rwYwywkDhUia/FgS+Q==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-freebsd-x64/-/watcher-freebsd-x64-2.5.6.tgz",
+			"integrity": "sha512-vJVi8yd/qzJxEKHkeemh7w3YAn6RJCtYlE4HPMoVnCpIXEzSrxErBW5SJBgKLbXU3WdIpkjBTeUNtyBVn8TRng==",
 			"cpu": [
 				"x64"
 			],
@@ -3845,9 +2041,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-arm-glibc": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm-glibc/-/watcher-linux-arm-glibc-2.5.4.tgz",
-			"integrity": "sha512-I5Vb769pdf7Q7Sf4KNy8Pogl/URRCKu9ImMmnVKYayhynuyGYMzuI4UOWnegQNa2sGpsPSbzDsqbHNMyeyPCgw==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm-glibc/-/watcher-linux-arm-glibc-2.5.6.tgz",
+			"integrity": "sha512-9JiYfB6h6BgV50CCfasfLf/uvOcJskMSwcdH1PHH9rvS1IrNy8zad6IUVPVUfmXr+u+Km9IxcfMLzgdOudz9EQ==",
 			"cpu": [
 				"arm"
 			],
@@ -3866,9 +2062,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-arm-musl": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm-musl/-/watcher-linux-arm-musl-2.5.4.tgz",
-			"integrity": "sha512-kGO8RPvVrcAotV4QcWh8kZuHr9bXi9a3bSZw7kFarYR0+fGliU7hd/zevhjw8fnvIKG3J9EO5G6sXNGCSNMYPQ==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm-musl/-/watcher-linux-arm-musl-2.5.6.tgz",
+			"integrity": "sha512-Ve3gUCG57nuUUSyjBq/MAM0CzArtuIOxsBdQ+ftz6ho8n7s1i9E1Nmk/xmP323r2YL0SONs1EuwqBp2u1k5fxg==",
 			"cpu": [
 				"arm"
 			],
@@ -3887,9 +2083,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-arm64-glibc": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-glibc/-/watcher-linux-arm64-glibc-2.5.4.tgz",
-			"integrity": "sha512-KU75aooXhqGFY2W5/p8DYYHt4hrjHZod8AhcGAmhzPn/etTa+lYCDB2b1sJy3sWJ8ahFVTdy+EbqSBvMx3iFlw==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-glibc/-/watcher-linux-arm64-glibc-2.5.6.tgz",
+			"integrity": "sha512-f2g/DT3NhGPdBmMWYoxixqYr3v/UXcmLOYy16Bx0TM20Tchduwr4EaCbmxh1321TABqPGDpS8D/ggOTaljijOA==",
 			"cpu": [
 				"arm64"
 			],
@@ -3908,9 +2104,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-arm64-musl": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-musl/-/watcher-linux-arm64-musl-2.5.4.tgz",
-			"integrity": "sha512-Qx8uNiIekVutnzbVdrgSanM+cbpDD3boB1f8vMtnuG5Zau4/bdDbXyKwIn0ToqFhIuob73bcxV9NwRm04/hzHQ==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-musl/-/watcher-linux-arm64-musl-2.5.6.tgz",
+			"integrity": "sha512-qb6naMDGlbCwdhLj6hgoVKJl2odL34z2sqkC7Z6kzir8b5W65WYDpLB6R06KabvZdgoHI/zxke4b3zR0wAbDTA==",
 			"cpu": [
 				"arm64"
 			],
@@ -3929,9 +2125,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-x64-glibc": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.5.4.tgz",
-			"integrity": "sha512-UYBQvhYmgAv61LNUn24qGQdjtycFBKSK3EXr72DbJqX9aaLbtCOO8+1SkKhD/GNiJ97ExgcHBrukcYhVjrnogA==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.5.6.tgz",
+			"integrity": "sha512-kbT5wvNQlx7NaGjzPFu8nVIW1rWqV780O7ZtkjuWaPUgpv2NMFpjYERVi0UYj1msZNyCzGlaCWEtzc+exjMGbQ==",
 			"cpu": [
 				"x64"
 			],
@@ -3950,9 +2146,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-linux-x64-musl": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.4.tgz",
-			"integrity": "sha512-YoRWCVgxv8akZrMhdyVi6/TyoeeMkQ0PGGOf2E4omODrvd1wxniXP+DBynKoHryStks7l+fDAMUBRzqNHrVOpg==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.6.tgz",
+			"integrity": "sha512-1JRFeC+h7RdXwldHzTsmdtYR/Ku8SylLgTU/reMuqdVD7CtLwf0VR1FqeprZ0eHQkO0vqsbvFLXUmYm/uNKJBg==",
 			"cpu": [
 				"x64"
 			],
@@ -3971,9 +2167,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-win32-arm64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-arm64/-/watcher-win32-arm64-2.5.4.tgz",
-			"integrity": "sha512-iby+D/YNXWkiQNYcIhg8P5hSjzXEHaQrk2SLrWOUD7VeC4Ohu0WQvmV+HDJokZVJ2UjJ4AGXW3bx7Lls9Ln4TQ==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-arm64/-/watcher-win32-arm64-2.5.6.tgz",
+			"integrity": "sha512-3ukyebjc6eGlw9yRt678DxVF7rjXatWiHvTXqphZLvo7aC5NdEgFufVwjFfY51ijYEWpXbqF5jtrK275z52D4Q==",
 			"cpu": [
 				"arm64"
 			],
@@ -3992,9 +2188,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-win32-ia32": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-ia32/-/watcher-win32-ia32-2.5.4.tgz",
-			"integrity": "sha512-vQN+KIReG0a2ZDpVv8cgddlf67J8hk1WfZMMP7sMeZmJRSmEax5xNDNWKdgqSe2brOKTQQAs3aCCUal2qBHAyg==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-ia32/-/watcher-win32-ia32-2.5.6.tgz",
+			"integrity": "sha512-k35yLp1ZMwwee3Ez/pxBi5cf4AoBKYXj00CZ80jUz5h8prpiaQsiRPKQMxoLstNuqe2vR4RNPEAEcjEFzhEz/g==",
 			"cpu": [
 				"ia32"
 			],
@@ -4013,9 +2209,9 @@
 			}
 		},
 		"node_modules/@parcel/watcher-win32-x64": {
-			"version": "2.5.4",
-			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.5.4.tgz",
-			"integrity": "sha512-3A6efb6BOKwyw7yk9ro2vus2YTt2nvcd56AuzxdMiVOxL9umDyN5PKkKfZ/gZ9row41SjVmTVQNWQhaRRGpOKw==",
+			"version": "2.5.6",
+			"resolved": "https://registry.npmjs.org/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.5.6.tgz",
+			"integrity": "sha512-hbQlYcCq5dlAX9Qx+kFb0FHue6vbjlf0FrNzSKdYK2APUf7tGfGxQCk2ihEREmbR6ZMc0MVAD5RIX/41gpUzTw==",
 			"cpu": [
 				"x64"
 			],
@@ -4129,9 +2325,9 @@
 			"license": "MIT"
 		},
 		"node_modules/@types/node": {
-			"version": "25.0.9",
-			"resolved": "https://registry.npmjs.org/@types/node/-/node-25.0.9.tgz",
-			"integrity": "sha512-/rpCXHlCWeqClNBwUhDcusJxXYDjZTyE8v5oTO7WbL8eij2nKhUeU89/6xgjU7N4/Vh3He0BtyhJdQbDyhiXAw==",
+			"version": "25.0.10",
+			"resolved": "https://registry.npmjs.org/@types/node/-/node-25.0.10.tgz",
+			"integrity": "sha512-zWW5KPngR/yvakJgGOmZ5vTBemDoSqF3AcV/LrO5u5wTWyEAVVh+IT39G4gtyAkh3CtTZs8aX/yRM82OfzHJRg==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
@@ -4571,9 +2767,9 @@
 			"license": "MIT"
 		},
 		"node_modules/baseline-browser-mapping": {
-			"version": "2.9.15",
-			"resolved": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.9.15.tgz",
-			"integrity": "sha512-kX8h7K2srmDyYnXRIppo4AH/wYgzWVCs+eKr3RusRSQ5PvRYoEFmR/I0PbdTjKFAoKqp5+kbxnNTFO9jOfSVJg==",
+			"version": "2.9.17",
+			"resolved": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.9.17.tgz",
+			"integrity": "sha512-agD0MgJFUP/4nvjqzIB29zRPUuCF7Ge6mEv9s8dHrtYD7QWXRcx75rOADE/d5ah1NI+0vkDl0yorDd5U852IQQ==",
 			"dev": true,
 			"license": "Apache-2.0",
 			"bin": {
@@ -4687,9 +2883,9 @@
 			}
 		},
 		"node_modules/cacheable/node_modules/keyv": {
-			"version": "5.5.5",
-			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.5.5.tgz",
-			"integrity": "sha512-FA5LmZVF1VziNc0bIdCSA1IoSVnDCqE8HJIZZv2/W8YmoAM50+tnUgJR/gQZwEeIMleuIOnRnHA/UaZRNeV4iQ==",
+			"version": "5.6.0",
+			"resolved": "https://registry.npmjs.org/keyv/-/keyv-5.6.0.tgz",
+			"integrity": "sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
@@ -4707,9 +2903,9 @@
 			}
 		},
 		"node_modules/caniuse-lite": {
-			"version": "1.0.30001764",
-			"resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001764.tgz",
-			"integrity": "sha512-9JGuzl2M+vPL+pz70gtMF9sHdMFbY9FJaQBi186cHKH3pSzDvzoUJUPV6fqiKIMyXbud9ZLg4F3Yza1vJ1+93g==",
+			"version": "1.0.30001766",
+			"resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001766.tgz",
+			"integrity": "sha512-4C0lfJ0/YPjJQHagaE9x2Elb69CIqEPZeG0anQt9SIvIoOH4a4uaRl73IavyO+0qZh6MDLH//DrXThEYKHkmYA==",
 			"dev": true,
 			"funding": [
 				{
@@ -4995,29 +3191,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/css-has-pseudo/node_modules/@csstools/selector-specificity": {
-			"version": "6.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-6.0.0.tgz",
-			"integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT-0",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"postcss-selector-parser": "^7.1.1"
-			}
-		},
 		"node_modules/css-loader": {
 			"version": "7.1.2",
 			"resolved": "https://registry.npmjs.org/css-loader/-/css-loader-7.1.2.tgz",
@@ -5301,9 +3474,9 @@
 			}
 		},
 		"node_modules/electron-to-chromium": {
-			"version": "1.5.267",
-			"resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.267.tgz",
-			"integrity": "sha512-0Drusm6MVRXSOJpGbaSVgcQsuB4hEkMpHXaVstcPmhu5LIedxs1xNK/nIxmQIU/RPC0+1/o0AVZfBTkTNJOdUw==",
+			"version": "1.5.278",
+			"resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.278.tgz",
+			"integrity": "sha512-dQ0tM1svDRQOwxnXxm+twlGTjr9Upvt8UFWAgmLsxEzFQxhbti4VwxmMjsDxVC51Zo84swW7FVCXEV+VAkhuPw==",
 			"dev": true,
 			"license": "ISC"
 		},
@@ -6955,103 +5128,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/postcss-color-functional-notation/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-color-functional-notation/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-color-functional-notation/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-color-functional-notation/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/postcss-color-hex-alpha": {
 			"version": "11.0.0",
 			"resolved": "https://registry.npmjs.org/postcss-color-hex-alpha/-/postcss-color-hex-alpha-11.0.0.tgz",
@@ -7135,99 +5211,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/postcss-custom-media/node_modules/@csstools/cascade-layer-name-parser": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/cascade-layer-name-parser/-/cascade-layer-name-parser-3.0.0.tgz",
-			"integrity": "sha512-/3iksyevwRfSJx5yH0RkcrcYXwuhMQx3Juqf40t97PeEy2/Mz2TItZ/z/216qpe4GgOyFBP8MKIwVvytzHmfIQ==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-media/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-media/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
-		"node_modules/postcss-custom-media/node_modules/@csstools/media-query-list-parser": {
-			"version": "5.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-5.0.0.tgz",
-			"integrity": "sha512-T9lXmZOfnam3eMERPsszjY5NK0jX8RmThmmm99FZ8b7z8yMaFZWKwLWGZuTwdO3ddRY5fy13GmmEYZXB4I98Eg==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
 		"node_modules/postcss-custom-properties": {
 			"version": "15.0.0",
 			"resolved": "https://registry.npmjs.org/postcss-custom-properties/-/postcss-custom-properties-15.0.0.tgz",
@@ -7258,75 +5241,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/postcss-custom-properties/node_modules/@csstools/cascade-layer-name-parser": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/cascade-layer-name-parser/-/cascade-layer-name-parser-3.0.0.tgz",
-			"integrity": "sha512-/3iksyevwRfSJx5yH0RkcrcYXwuhMQx3Juqf40t97PeEy2/Mz2TItZ/z/216qpe4GgOyFBP8MKIwVvytzHmfIQ==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-properties/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-properties/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/postcss-custom-selectors": {
 			"version": "9.0.0",
 			"resolved": "https://registry.npmjs.org/postcss-custom-selectors/-/postcss-custom-selectors-9.0.0.tgz",
@@ -7354,75 +5268,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/postcss-custom-selectors/node_modules/@csstools/cascade-layer-name-parser": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/cascade-layer-name-parser/-/cascade-layer-name-parser-3.0.0.tgz",
-			"integrity": "sha512-/3iksyevwRfSJx5yH0RkcrcYXwuhMQx3Juqf40t97PeEy2/Mz2TItZ/z/216qpe4GgOyFBP8MKIwVvytzHmfIQ==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-selectors/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-custom-selectors/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
 			}
 		},
 		"node_modules/postcss-dir-pseudo-class": {
@@ -7637,103 +5482,6 @@
 				"postcss": "^8.4"
 			}
 		},
-		"node_modules/postcss-lab-function/node_modules/@csstools/css-calc": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.0.0.tgz",
-			"integrity": "sha512-q4d82GTl8BIlh/dTnVsWmxnbWJeb3kiU8eUH71UxlxnS+WIaALmtzTL8gR15PkYOexMQYVk0CO4qIG93C1IvPA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-lab-function/node_modules/@csstools/css-color-parser": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.0.0.tgz",
-			"integrity": "sha512-Ueqr+H5w5Hd8qdlXMkwpQvGWeyTOGFNbxdSdczszPB02QgGKrlpXjhDX4OgkNqIkXbpY1vcyM1m7YT0YfYw+og==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"@csstools/color-helpers": "^6.0.0",
-				"@csstools/css-calc": "^3.0.0"
-			},
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-parser-algorithms": "^4.0.0",
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-lab-function/node_modules/@csstools/css-parser-algorithms": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz",
-			"integrity": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"@csstools/css-tokenizer": "^4.0.0"
-			}
-		},
-		"node_modules/postcss-lab-function/node_modules/@csstools/css-tokenizer": {
-			"version": "4.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz",
-			"integrity": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT",
-			"peer": true,
-			"engines": {
-				"node": ">=20.19.0"
-			}
-		},
 		"node_modules/postcss-loader": {
 			"version": "8.2.0",
 			"resolved": "https://registry.npmjs.org/postcss-loader/-/postcss-loader-8.2.0.tgz",
@@ -7888,29 +5636,6 @@
 			},
 			"peerDependencies": {
 				"postcss": "^8.4"
-			}
-		},
-		"node_modules/postcss-nesting/node_modules/@csstools/selector-specificity": {
-			"version": "6.0.0",
-			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-6.0.0.tgz",
-			"integrity": "sha512-4sSgl78OtOXEX/2d++8A83zHNTgwCJMaR24FvsYL7Uf/VS8HZk9PTwR51elTbGqMuwH3szLvvOXEaVnqn0Z3zA==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/csstools"
-				},
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/csstools"
-				}
-			],
-			"license": "MIT-0",
-			"engines": {
-				"node": ">=20.19.0"
-			},
-			"peerDependencies": {
-				"postcss-selector-parser": "^7.1.1"
 			}
 		},
 		"node_modules/postcss-opacity-percentage": {
@@ -9079,6 +6804,98 @@
 			"peerDependencies": {
 				"stylelint": "^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0",
 				"webpack": "^5.0.0"
+			}
+		},
+		"node_modules/stylelint/node_modules/@csstools/css-parser-algorithms": {
+			"version": "3.0.5",
+			"resolved": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-3.0.5.tgz",
+			"integrity": "sha512-DaDeUkXZKjdGhgYaHNJTV9pV7Y9B3b644jCLs9Upc3VeNGg6LWARAT6O+Q+/COo+2gg/bM5rhpMAtf70WqfBdQ==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"peer": true,
+			"engines": {
+				"node": ">=18"
+			},
+			"peerDependencies": {
+				"@csstools/css-tokenizer": "^3.0.4"
+			}
+		},
+		"node_modules/stylelint/node_modules/@csstools/css-tokenizer": {
+			"version": "3.0.4",
+			"resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz",
+			"integrity": "sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"peer": true,
+			"engines": {
+				"node": ">=18"
+			}
+		},
+		"node_modules/stylelint/node_modules/@csstools/media-query-list-parser": {
+			"version": "4.0.3",
+			"resolved": "https://registry.npmjs.org/@csstools/media-query-list-parser/-/media-query-list-parser-4.0.3.tgz",
+			"integrity": "sha512-HAYH7d3TLRHDOUQK4mZKf9k9Ph/m8Akstg66ywKR4SFAigjs3yBiUeZtFxywiTm5moZMAp/5W/ZuFnNXXYLuuQ==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT",
+			"engines": {
+				"node": ">=18"
+			},
+			"peerDependencies": {
+				"@csstools/css-parser-algorithms": "^3.0.5",
+				"@csstools/css-tokenizer": "^3.0.4"
+			}
+		},
+		"node_modules/stylelint/node_modules/@csstools/selector-specificity": {
+			"version": "5.0.0",
+			"resolved": "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-5.0.0.tgz",
+			"integrity": "sha512-PCqQV3c4CoVm3kdPhyeZ07VmBRdH2EpMFA/pd9OASpOEC3aXNGoqPDAZ80D0cLpMBxnmk0+yNhGsEx31hq7Gtw==",
+			"dev": true,
+			"funding": [
+				{
+					"type": "github",
+					"url": "https://github.com/sponsors/csstools"
+				},
+				{
+					"type": "opencollective",
+					"url": "https://opencollective.com/csstools"
+				}
+			],
+			"license": "MIT-0",
+			"engines": {
+				"node": ">=18"
+			},
+			"peerDependencies": {
+				"postcss-selector-parser": "^7.0.0"
 			}
 		},
 		"node_modules/stylelint/node_modules/balanced-match": {
