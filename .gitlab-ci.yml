@@ -1,4 +1,4 @@
 ---
 stages: [lint, build-app, test, release]
 include:
-  - component: ${CI_SERVER_HOST}/gsb11/gitlab-ci-cd-components/gsb-extensions/build@1.7.402
+  - component: ${CI_SERVER_HOST}/gsb11/gitlab-ci-cd-components/gsb-extensions/build@1.7.408
