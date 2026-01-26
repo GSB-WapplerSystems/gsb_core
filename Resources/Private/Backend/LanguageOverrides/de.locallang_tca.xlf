@@ -11,6 +11,10 @@
 				<source>Alternative Navigation Title (255 Zeichen)</source>
 				<target state="final">Alternativer Navigationstitel (255 Zeichen)</target>
 			</trans-unit>
+			<trans-unit id="pages.subtitle" resname="pages.subtitle" approved="yes">
+				<source>Subtitle (255 Zeichen)</source>
+				<target state="final">Untertitel (255 Zeichen)</target>
+			</trans-unit>
 			<trans-unit id="pages.subtitle_formlabel" resname="pages.subtitle_formlabel" approved="yes">
 				<source>Subtitle (255 Zeichen)</source>
 				<target state="final">Untertitel (255 Zeichen)</target>
