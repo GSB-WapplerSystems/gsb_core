@@ -49,7 +49,9 @@ class ColorPickerValueItems
 
         $colors = array_filter(
             $configuration,
-            function ($item, $key) { return (int)preg_match('/^color_[0-9]+$/', $key) > 0 && $item !== ''; },
+            function ($item, $key) {
+                return (int)preg_match('/^color_[0-9]+$/', $key) > 0 && $item !== '';
+            },
             ARRAY_FILTER_USE_BOTH
         );
 
