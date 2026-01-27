@@ -25,7 +25,7 @@
 			</trans-unit>
 			<trans-unit id="LGL.subheader" resname="subheader" approved="yes">
 				<source>Subheader (255 characters)</source>
-				<target state="final">Untertitel (255 characters)</target>
+				<target state="final">Untertitel (255 Zeichen)</target>
 			</trans-unit>
 		</body>
     </file>
