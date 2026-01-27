@@ -12,3 +12,4 @@ kics.yml
 .phplint.cache
 megalinter-reports
 megalinter-yaml
+.yarn
