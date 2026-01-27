@@ -61,6 +61,8 @@ export class HotSpotViewer extends HotSpotCanvas {
             imageUrl
         });
 
+        console.log('HotSpotViewer constructor', canvas, imageUrl, hotspots, opts);
+
         this.hotspotsRaw = hotspots;
         this.hotspots = [];
         this._pendingInit = true;
@@ -452,12 +454,9 @@ export class HotSpotViewer extends HotSpotCanvas {
         const centroid = hotspotHelper.getPolygonCentroid(canvasPoints);
         if (!centroid) return null;
 
-        const scaleX = canvasRect.width / this.canvas.width;
-        const scaleY = canvasRect.height / this.canvas.height;
-
         return {
-            x: centroid.x * scaleX,
-            y: centroid.y * scaleY
+            x: centroid.x,
+            y: centroid.y
         };
     }
 
@@ -592,15 +591,13 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _calculateButtonPositionForTooltip(hotspotIndex) {
-        const canvasRect = this.canvas.getBoundingClientRect();
         const drawPoly = this._getCurrentDrawPoly();
         const hotspot = this.hotspots[hotspotIndex];
         const canvasPoints = hotspotHelper.normalizedToCanvas(hotspot.points, drawPoly);
         const centroid = hotspotHelper.getPolygonCentroid(canvasPoints);
         if (!centroid) return null;
 
-        const scaleX = canvasRect.width / this.canvas.width;
-        return centroid.x * scaleX;
+        return centroid.x;
     }
 
     _updateTooltipVisibility() {
@@ -627,10 +624,9 @@ export class HotSpotViewer extends HotSpotCanvas {
 
     _eventToCanvasCoords(e) {
         const cssPos = this._canvasPos(e);
-        const dpr = Math.max(1, window.devicePixelRatio || 1);
         return {
-            x: cssPos.x * dpr,
-            y: cssPos.y * dpr
+            x: cssPos.x,
+            y: cssPos.y
         };
     }
 
@@ -691,11 +687,12 @@ export class HotSpotViewer extends HotSpotCanvas {
     }
 
     _getCurrentDrawPoly() {
+        const canvasRect = this.canvas.getBoundingClientRect();
         return {
             dx: 0,
             dy: 0,
-            dw: this.canvas.width,
-            dh: this.canvas.height
+            dw: canvasRect.width,
+            dh: canvasRect.height
         };
     }
 }
