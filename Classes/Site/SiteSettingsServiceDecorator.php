@@ -10,7 +10,7 @@ declare(strict_types=1);
  * This file is part of the package itzbund/gsb-core of the GSB 11 Project by ITZBund.
  *
  * Copyright (C) 2025 Bundesrepublik Deutschland, vertreten durch das
- * BMI/ITZBund. Author: Christian Rath-Ulrich
+ * BMI/ITZBund. Author: Christian Rath-Ulrich, Thorsten Müller
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 3
@@ -22,54 +22,18 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\Site;
 
-use ITZBund\GsbClusteredCaching\Service\PayloadBasedCacheClear;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use TYPO3\CMS\Core\Cache\Frontend\PhpFrontend;
-use TYPO3\CMS\Core\Configuration\SiteWriter;
-use TYPO3\CMS\Core\Messaging\FlashMessageService;
-use TYPO3\CMS\Core\Settings\SettingsFactory;
-use TYPO3\CMS\Core\Settings\SettingsTypeRegistry;
+use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Site\Entity\Site;
-use TYPO3\CMS\Core\Site\Set\SetRegistry;
-use TYPO3\CMS\Core\Site\SiteSettingsFactory;
 use TYPO3\CMS\Core\Site\SiteSettingsService;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Extended SiteSettingsService that clears the pages cache
- * when writeSettings() is called using cluster caching.
+ * Extended SiteSettingsService to clear the pages cache
+ * when writeSettings() is called.
  */
-final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
+readonly class SiteSettingsServiceDecorator extends SiteSettingsService
 {
-    /**
-     * @var PayloadBasedCacheClear
-     * @phpstan-ignore-next-line
-     */
-    private readonly PayloadBasedCacheClear $payloadBasedCacheClear;
-
-    public function __construct(
-        SiteWriter $siteWriter,
-        #[Autowire(service: 'cache.core')]
-        PhpFrontend $codeCache,
-        SetRegistry $setRegistry,
-        SiteSettingsFactory $siteSettingsFactory,
-        SettingsFactory $settingsFactory,
-        SettingsTypeRegistry $settingsTypeRegistry,
-        FlashMessageService $flashMessageService,
-        /** @phpstan-ignore-next-line */
-        PayloadBasedCacheClear $payloadBasedCacheClear
-    ) {
-        $this->payloadBasedCacheClear = $payloadBasedCacheClear;
-        parent::__construct(
-            $siteWriter,
-            $codeCache,
-            $setRegistry,
-            $siteSettingsFactory,
-            $settingsFactory,
-            $settingsTypeRegistry,
-            $flashMessageService
-        );
-    }
-
     /**
      * @param Site $site
      * @param array<string, mixed> $settings
@@ -79,15 +43,11 @@ final readonly class SiteSettingsServiceDecorator extends SiteSettingsService
         // Call parent method to write the settings
         parent::writeSettings($site, $settings);
 
-        // Clear pages cache using cluster caching
-        /** @var array{groups: array<int, array{group: string, flush: bool}>} $payload */
-        $payload = [
-            'groups' => [
-                ['group' => 'pages', 'flush' => true],
-            ],
-        ];
+        if (ExtensionManagementUtility::isLoaded('gsb_clustered_caching')) {
+            return;
+        }
 
-        /** @phpstan-ignore-next-line */
-        $this->payloadBasedCacheClear->collectAndSendFlushCommands($payload);
+        $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
+        $cacheManager->flushCachesInGroup('pages');
     }
 }
