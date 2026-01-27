@@ -42,6 +42,8 @@ export class HotSpotSelector extends HotSpotCanvas {
     constructor({canvas, imageUrl, ui, onShapeChange, opts = {}, initPoints }){
         super({canvas, imageUrl});
 
+        console.log('v1.1.0');
+
         this.ui = ui || {};
         this.onShapeChange = typeof onShapeChange === 'function' ? onShapeChange : () => {};
 
@@ -512,11 +514,12 @@ export class HotSpotSelector extends HotSpotCanvas {
     }
 
     _getCurrentDrawRect(){
+        const canvasRect = this.canvas.getBoundingClientRect();
         return {
             dx: 0,
             dy: 0,
-            dw: this.canvas.width,
-            dh: this.canvas.height
+            dw: canvasRect.width,
+            dh: canvasRect.height
         };
     }
 
@@ -563,6 +566,7 @@ export class HotSpotSelector extends HotSpotCanvas {
 
     _createShapeDataObject(canvasSpacePoints, canvasSpaceCenter, normalizedData) {
         const drawRect = this._getCurrentDrawRect();
+        const canvasRect = this.canvas.getBoundingClientRect();
         return {
             points: canvasSpacePoints,
             center: canvasSpaceCenter,
@@ -576,8 +580,8 @@ export class HotSpotSelector extends HotSpotCanvas {
                     h: this.bgImage.naturalHeight
                 },
                 canvas: {
-                    w: this.canvas.width,
-                    h: this.canvas.height
+                    w: canvasRect.width,
+                    h: canvasRect.height
                 }
             } : null
         };

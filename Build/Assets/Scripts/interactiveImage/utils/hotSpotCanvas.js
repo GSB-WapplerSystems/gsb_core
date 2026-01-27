@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: 2025 Bundesrepublik Deutschland, vertreten durch das BMI/ITZBund
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
- * 
+ *
  * @typedef {Object} HotSpotCanvasParams
  * @property {HTMLCanvasElement} canvas
  * @property {string} imageUrl
@@ -187,7 +187,7 @@ export class HotSpotCanvas {
     _getContainerDimensions(container) {
         const containerRect = container.getBoundingClientRect();
         return {
-            clientWidth: container.clientWidth || containerRect.width || 0
+            clientWidth: containerRect.width || container.clientWidth || 0
         };
     }
 
