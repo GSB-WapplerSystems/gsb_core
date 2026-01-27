@@ -483,6 +483,10 @@
             	<source>intern</source>
             	<target>intern</target>
             </trans-unit>
+			<trans-unit id="linkTypeAriaLabel.5" resname="linkTypeAriaLabel.5">
+            	<source>download</source>
+            	<target>download</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

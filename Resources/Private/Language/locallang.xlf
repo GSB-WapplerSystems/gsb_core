@@ -360,6 +360,9 @@
 			<trans-unit id="linkTypeAriaLabel.4" resname="linkTypeAriaLabel.4">
             	<source>intern</source>
             </trans-unit>
+			<trans-unit id="linkTypeAriaLabel.5" resname="linkTypeAriaLabel.5">
+            	<source>download</source>
+            </trans-unit>
 		</body>
     </file>
 </xliff>
