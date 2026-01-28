@@ -19,11 +19,13 @@
                             </f:for>
                         </div>
                     </f:if>
-                    <div class="banner-text p-1">{data.tx_link_text}</div>
+                    <p class="banner-text p-1">
+                        <span class="icon" aria-label="{linkData.ariaLabel}"></span>
+                        <span>{data.tx_link_text}</span>
+                    </p>
                 </f:link.typolink>
             </f:if>
         </div>
-
     </div>
 </div>
 </html>
