@@ -52,6 +52,12 @@ tt_content {
         where.dataWrap = sys_category_record_mm.tablenames = 'tt_content' AND sys_category_record_mm.fieldname = 'categories' AND sys_category_record_mm.uid_foreign = {FIELD:uid}
         as = contentCategories
       }
+
+      30 = ITZBund\GsbCore\DataProcessing\LinkInfoProcessor
+      30 {
+        field = tx_link
+        as = linkData
+      }
     }
   }
 }
