@@ -52,6 +52,11 @@ tt_content {
         field = gsb_singleteaser
       }
 
+      110 = ITZBund\GsbCore\DataProcessing\LinkInfoProcessor
+      110 {
+        field = tx_link
+        as = linkData
+      }
     }
   }
 }
