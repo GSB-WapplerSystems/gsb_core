@@ -33,10 +33,10 @@ class LinkInfoProcessor implements DataProcessorInterface
     /**
      * process
      * @param ContentObjectRenderer $cObj
-     * @param array $contentObjectConfiguration
-     * @param array $processorConfiguration
-     * @param array $processedData
-     * @return array
+     * @param array<mixed> $contentObjectConfiguration
+     * @param array<mixed> $processorConfiguration
+     * @param array<mixed> $processedData
+     * @return array<mixed>
      */
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
     {
