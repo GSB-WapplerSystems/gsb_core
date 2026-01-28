@@ -57,6 +57,12 @@ tt_content {
         field = gsb_singleteaser
       }
 
+      110 = ITZBund\GsbCore\DataProcessing\LinkInfoProcessor
+      110 {
+        field = tx_link
+        as = linkData
+      }
+
       1733847629 = ITZBund\GsbCore\DataProcessing\TargetPageMainCategoryProcessor
       1733847629 {
         as = targetPageMainCategory

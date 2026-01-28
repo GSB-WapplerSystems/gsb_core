@@ -67,6 +67,12 @@ tt_content {
       100 {
         field = stage
       }
+
+      110 = ITZBund\GsbCore\DataProcessing\LinkInfoProcessor
+      110 {
+        field = tx_link
+        as = linkData
+      }
     }
   }
 }
