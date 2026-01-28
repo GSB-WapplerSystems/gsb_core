@@ -45,7 +45,7 @@ class LinkInfoProcessor implements DataProcessorInterface
 
         $linkString = $cObj->data[$fieldName] ?? $processedData['data'][$fieldName] ?? '';
 
-        if (empty($linkString)) {
+        if (is_array($linkString) && count($linkString) === 0) {
             return $processedData;
         }
 
