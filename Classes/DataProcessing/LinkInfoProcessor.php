@@ -27,6 +27,7 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
 /**
  * Class LinkInfoProcessor
+ * @SuppressWarnings(PHPMD)
  */
 class LinkInfoProcessor implements DataProcessorInterface
 {
@@ -71,6 +72,7 @@ class LinkInfoProcessor implements DataProcessorInterface
             $result['ariaCssClass'] = $ariaCssClass;
             $processedData[$targetVariableName] = $result;
         } catch (\Exception $e) {
+            return $processedData;
         }
 
         return $processedData;
