@@ -42,8 +42,6 @@ export class HotSpotSelector extends HotSpotCanvas {
     constructor({canvas, imageUrl, ui, onShapeChange, opts = {}, initPoints }){
         super({canvas, imageUrl});
 
-        console.log('v1.1.0');
-
         this.ui = ui || {};
         this.onShapeChange = typeof onShapeChange === 'function' ? onShapeChange : () => {};
 

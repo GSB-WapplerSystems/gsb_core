@@ -61,8 +61,6 @@ export class HotSpotViewer extends HotSpotCanvas {
             imageUrl
         });
 
-        console.log('HotSpotViewer constructor', canvas, imageUrl, hotspots, opts);
-
         this.hotspotsRaw = hotspots;
         this.hotspots = [];
         this._pendingInit = true;

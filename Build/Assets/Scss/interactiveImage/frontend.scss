@@ -17,7 +17,6 @@
 
     #interactive-image-map-container canvas {
         position: relative;
-        z-index: 1;
         max-width: 100%;
         height: auto;
         display: block;
@@ -31,7 +30,6 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        z-index: 1;
     }
 
     .hotspot-viewer-button {
@@ -99,7 +97,6 @@
         pointer-events: auto;
         cursor: pointer;
         display: none;
-        z-index: 1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -118,7 +115,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        z-index: 2;
+        z-index: 1;
         pointer-events: auto;
         padding-top: 24px;
         padding-bottom: 24px;
@@ -142,7 +139,7 @@
         padding: 0 20px 24px;
         overflow-y: auto;
         overflow-x: auto;
-        z-index: 2;
+        z-index: 1;
         max-width: calc(100% - 40px);
         width: calc(100% - 40px);
 
@@ -176,7 +173,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 3;
+        z-index: 2;
         transition: opacity 0.2s ease;
 
         &:hover {
