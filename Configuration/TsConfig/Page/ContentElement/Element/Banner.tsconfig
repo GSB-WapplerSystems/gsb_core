@@ -23,7 +23,7 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
     gsb_banner {
-      iconIdentifier = tx_banner
+      iconIdentifier = tx-banner-icon
       title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.title
       description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.description
       tt_content_defValues {

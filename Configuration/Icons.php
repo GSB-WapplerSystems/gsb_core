@@ -21,11 +21,11 @@
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
-    'tx_stage' => [
+    'tx-stage-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Stage.svg',
     ],
-    'tx_singleteaser' => [
+    'tx-singleteaser-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Singleteaser.svg',
     ],
@@ -33,65 +33,65 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/ImageMap.svg',
     ],
-    'tx_imagemap_wizard' => [
+    'tx-imagemap-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/ImageMap.svg',
     ],
-    'tx_imagemap_hotspot_rounded' => [
+    'tx-imagemap-hotspot-rounded-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/HotspotRounded.svg',
     ],
-    'tx_banner' => [
+    'tx-banner-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Banner.svg',
     ],
-    'tx_slider' => [
+    'tx-slider-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Slider.svg',
     ],
-    'tx_video' => [
+    'tx-video-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Video.svg',
     ],
-    'tx_audio' => [
+    'tx-audio-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Audio.svg',
     ],
-    'tx_gallery' => [
+    'tx-gallery-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Gallery.svg',
     ],
-    'tx_container' => [
+    'tx-container-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Container.svg',
         'spinning' => false,
     ],
-    'tx_tabs' => [
+    'tx-tabs-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Tabs.svg',
         'spinning' => false,
     ],
-    'tx_accordion' => [
+    'tx-accordion-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Accordion.svg',
         'spinning' => false,
     ],
-    'tx_grid' => [
+    'tx-grid-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Grid.svg',
         'spinning' => false,
     ],
-    'tx_frame' => [
+    'tx-frame-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/Frame.svg',
         'spinning' => false,
     ],
-    'tx_noframe' => [
+    'tx-noframe-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/NoFrame.svg',
         'spinning' => false,
     ],
-    'tx_include_element' => [
+    'tx-include-element-icon' => [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:gsb_core/Resources/Public/Icons/IncludeElement.svg',
     ],

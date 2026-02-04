@@ -12,7 +12,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined('TYPO3') || die();
 
 (static function (): void {
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['video'] = 'tx_video';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['video'] = 'tx-video-icon';
 
     $tempVideoColumns = [
         'tx_video_caption' =>
@@ -140,7 +140,7 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
         'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.video',
         'video',
-        'tx_video',
+        'tx-video-icon',
         'default',
     ];
 

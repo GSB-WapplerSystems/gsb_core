@@ -25,7 +25,7 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
     gsb_imagemap {
-      iconIdentifier = tx_imagemap_wizard
+      iconIdentifier = tx-imagemap-icon
       title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.title
       description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.description
       tt_content_defValues {

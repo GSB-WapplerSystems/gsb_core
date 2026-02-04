@@ -34,7 +34,7 @@ defined('TYPO3') or die('Access denied.');
             ]
         )
         )
-        ->setIcon('tx_accordion')
+        ->setIcon('tx-accordion-icon')
         ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );

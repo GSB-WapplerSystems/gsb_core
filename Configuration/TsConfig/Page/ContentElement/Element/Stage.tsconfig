@@ -22,7 +22,7 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
     stage {
-      iconIdentifier = tx_stage
+      iconIdentifier = tx-stage-icon
       title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_title
       description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:stage.tx_stage_description
       tt_content_defValues {

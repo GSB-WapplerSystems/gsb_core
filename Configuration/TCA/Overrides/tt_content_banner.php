@@ -12,16 +12,16 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined('TYPO3') || die();
 
 (static function (): void {
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_banner'] = 'tx_banner';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_banner'] = 'tx-banner-icon';
 
     ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
         'CType',
         [
-            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.title',
-            'gsb_banner',
-            'tx_banner',
-            'default',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_banner.title',
+            'value' => 'gsb_banner',
+            'icon' => 'tx-banner-icon',
+            'group' => 'default',
         ]
     );
 

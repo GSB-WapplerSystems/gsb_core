@@ -35,7 +35,7 @@ defined('TYPO3') or die('Access denied.');
                 ]
             )
         )
-        ->setIcon('tx_grid')
+        ->setIcon('tx-grid-icon')
         ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );

@@ -22,7 +22,7 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
     video {
-      iconIdentifier = tx_video
+      iconIdentifier = tx-video-icon
       title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:video.video_title
       description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:video.video_description
       tt_content_defValues {

@@ -32,7 +32,7 @@ defined('TYPO3') or die('Access denied.');
                 ]
             )
         )
-        ->setIcon('tx_container')
+        ->setIcon('tx-container-icon')
         ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
         ->setSaveAndCloseInNewContentElementWizard(true)
     );

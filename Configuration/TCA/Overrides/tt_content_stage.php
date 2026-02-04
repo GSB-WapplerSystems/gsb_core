@@ -12,7 +12,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined('TYPO3') || die();
 
 (static function (): void {
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx_stage';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['stage'] = 'tx-stage-icon';
     $tempStageColumns = [
         'tx_stage_switch' =>
             [
@@ -110,7 +110,7 @@ defined('TYPO3') || die();
     $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
         'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.CType.stage',
         'stage',
-        'tx_stage',
+        'tx-stage-icon',
         'default',
     ];
 

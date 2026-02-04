@@ -14,16 +14,16 @@ defined('TYPO3') || die();
 
 if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_5987_INCLUDE_ELEMENT')) {
 
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['include_element'] = 'tx_include_element';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['include_element'] = 'tx-include-element-icon';
 
     ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
         'CType',
         [
-            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.title',
-            'include_element',
-            'tx_include_element',
-            'special',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.title',
+            'value' => 'include_element',
+            'icon' => 'tx-include-element-icon',
+            'group' => 'special',
         ]
     );
 
@@ -35,8 +35,14 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.iframe', 'iframe'],
-                    ['LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.webcomponent', 'webcomponent'],
+                    [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.iframe',
+                        'value' => 'iframe'
+                    ],
+                    [
+                        'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.webcomponent',
+                        'value' => 'webcomponent'
+                    ],
                 ],
                 'default' => 'iframe',
             ],
@@ -45,8 +51,9 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
             'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.url',
             'config' => [
                 'type' => 'input',
-                'eval' => 'trim,required,ITZBund\\GsbCore\\Evaluation\\HttpsUrlEvaluation',
+                'eval' => 'trim,ITZBund\GsbCore\Evaluation\HttpsUrlEvaluation',
                 'placeholder' => 'https://www.bund.de',
+                'required' => true,
             ],
         ],
         'tx_include_width' => [
