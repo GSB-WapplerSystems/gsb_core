@@ -23,76 +23,76 @@ use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 return [
     'tx_stage' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Stage.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Stage.svg',
     ],
     'tx_singleteaser' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Singleteaser.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Singleteaser.svg',
     ],
     'tx_imagemap' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/ImageMap.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/ImageMap.svg',
     ],
     'tx_imagemap_wizard' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/ImageMap.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/ImageMap.svg',
     ],
     'tx_imagemap_hotspot_rounded' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/HotspotRounded.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/HotspotRounded.svg',
     ],
     'tx_banner' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Banner.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Banner.svg',
     ],
     'tx_slider' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Slider.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Slider.svg',
     ],
     'tx_video' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Video.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Video.svg',
     ],
     'tx_audio' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Audio.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Audio.svg',
     ],
     'tx_gallery' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Gallery.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Gallery.svg',
     ],
     'tx_container' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Container.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Container.svg',
         'spinning' => false,
     ],
     'tx_tabs' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Tabs.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Tabs.svg',
         'spinning' => false,
     ],
     'tx_accordion' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Accordion.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Accordion.svg',
         'spinning' => false,
     ],
     'tx_grid' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Grid.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Grid.svg',
         'spinning' => false,
     ],
     'tx_frame' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/Frame.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/Frame.svg',
         'spinning' => false,
     ],
     'tx_noframe' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/NoFrame.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/NoFrame.svg',
         'spinning' => false,
     ],
     'tx_include_element' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:gsb_core/Resources/Public/Images/Icons/IncludeElement.svg',
+        'source' => 'EXT:gsb_core/Resources/Public/Icons/IncludeElement.svg',
     ],
 ];
