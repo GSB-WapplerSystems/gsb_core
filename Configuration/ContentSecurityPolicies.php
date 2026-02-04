@@ -27,6 +27,7 @@ use TYPO3\CMS\Core\Security\ContentSecurityPolicy\Directive;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\Mutation;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\MutationCollection;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\MutationMode;
+use TYPO3\CMS\Core\Security\ContentSecurityPolicy\RawValue;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\Scope;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\SourceKeyword;
 use TYPO3\CMS\Core\Security\ContentSecurityPolicy\SourceScheme;
@@ -90,7 +91,7 @@ if (
         new Mutation(
             MutationMode::Extend,
             Directive::FrameAncestors,
-            SourceKeyword::self,
+            SourceKeyword::none,
         ),
         new Mutation(
             MutationMode::Extend,
@@ -126,13 +127,13 @@ if (
         ),
         new Mutation(
             MutationMode::Extend,
-            Directive::MediaSrc,
-            new UriValue('https://www.youtube.com'),
+            Directive::ObjectSrc,
+            SourceKeyword::none
         ),
         new Mutation(
             MutationMode::Extend,
-            Directive::ScriptSrcElem,
-            new UriValue('https://www.youtube.com'),
+            Directive::RequireTrustedTypesFor,
+            new RawValue('\'script\'')
         ),
     ]);
 }
