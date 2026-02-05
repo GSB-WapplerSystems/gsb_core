@@ -37,11 +37,11 @@ if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATU
                 'items' => [
                     [
                         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.iframe',
-                        'value' => 'iframe'
+                        'value' => 'iframe',
                     ],
                     [
                         'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:tt_content.include_element.rendering.webcomponent',
-                        'value' => 'webcomponent'
+                        'value' => 'webcomponent',
                     ],
                 ],
                 'default' => 'iframe',
