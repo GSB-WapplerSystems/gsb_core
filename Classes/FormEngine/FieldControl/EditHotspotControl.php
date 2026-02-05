@@ -48,7 +48,7 @@ final class EditHotspotControl extends AbstractNode
         $image = $this->getImage();
         if ($image && isset($image['identifier'])) {
             $result = [
-                'iconIdentifier' => 'tx_imagemap_hotspot_rounded',
+                'iconIdentifier' => 'tx-imagemap-hotspot-rounded-icon',
                 'title' => 'Edit Hotspot',
                 'linkAttributes' => [
                     'class' => 'hotspot',

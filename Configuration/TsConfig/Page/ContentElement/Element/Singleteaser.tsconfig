@@ -23,7 +23,7 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
     gsb_singleteaser {
-      iconIdentifier = tx_singleteaser
+      iconIdentifier = tx-singleteaser-icon
       title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title
       description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.description
       tt_content_defValues {

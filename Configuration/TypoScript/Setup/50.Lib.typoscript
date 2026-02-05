@@ -137,7 +137,7 @@ lib {
                   data = file:current:size
                   insertData = 1
                   bytes = 1
-                  bytes.labels = "B|KB|MB|GB"
+                  bytes.labels = " B| KB| MB| GB"
                 }
               }
             }

@@ -12,16 +12,16 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 defined('TYPO3') || die();
 
 (static function (): void {
-    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_singleteaser'] = 'tx_singleteaser';
+    $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_singleteaser'] = 'tx-singleteaser-icon';
 
     ExtensionManagementUtility::addTcaSelectItem(
         'tt_content',
         'CType',
         [
-            'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
-            'gsb_singleteaser',
-            'tx_singleteaser',
-            'default',
+            'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_singleteaser.title',
+            'value' => 'gsb_singleteaser',
+            'icon' => 'tx-singleteaser-icon',
+            'group' => 'default',
         ]
     );
 

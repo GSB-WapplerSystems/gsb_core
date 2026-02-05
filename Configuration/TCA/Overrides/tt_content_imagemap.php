@@ -36,16 +36,16 @@ defined('TYPO3') || die();
 
 (static function (): void {
     if (GeneralUtility::makeInstance(Features::class)->isFeatureEnabled('GSB11_FEATURE_6050_IMAGEMAP')) {
-        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_imagemap'] = 'tx_imagemap';
+        $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gsb_imagemap'] = 'tx-imagemap-icon';
         $GLOBALS['TCA']['tt_content']['ctrl']['rootLevel'] = -1;
         ExtensionManagementUtility::addTcaSelectItem(
             'tt_content',
             'CType',
             [
-                'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.title',
-                'gsb_imagemap',
-                'tx_imagemap',
-                'default',
+                'label' => 'LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:gsb_imagemap.title',
+                'value' => 'gsb_imagemap',
+                'icon' => 'tx-imagemap-icon',
+                'group' => 'default',
             ]
         );
 

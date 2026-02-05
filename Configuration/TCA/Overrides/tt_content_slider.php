@@ -33,7 +33,7 @@ defined('TYPO3') || die();
             ]
         )
         )
-            ->setIcon('tx_slider')
+            ->setIcon('tx-slider-icon')
             ->setBackendTemplate('EXT:gsb_core/Resources/Private/Backend/Templates/Container.html')
             ->setSaveAndCloseInNewContentElementWizard(true)
     );

@@ -23,7 +23,7 @@
   mod.wizards.newContentElement.wizardItems.special {
     elements {
       include_element {
-        iconIdentifier = tx_include_element
+        iconIdentifier = tx-include-element-icon
         title = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.title
         description = LLL:EXT:gsb_core/Resources/Private/Language/locallang_db.xlf:include_element.description
         tt_content_defValues {
