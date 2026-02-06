@@ -29,6 +29,7 @@ if (VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::ge
         'imports' => [
             '@ckeditor/ckeditor5-language' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language.js',
             '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+            '@ckeditor/ckeditor5-special-characters-greek.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-special-characters-greek.js',
         ],
     ];
 }
@@ -39,5 +40,6 @@ return [
     ],
     'imports' => [
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
+        '@ckeditor/ckeditor5-special-characters-greek.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-special-characters-greek.js',
     ],
 ];
