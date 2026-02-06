@@ -18,7 +18,7 @@ editor:
     importModules:
       - {module: '@ckeditor/ckeditor5-language-translations.js', exports: []}
       - {module: '@ckeditor/ckeditor5-language', exports: ['TextPartLanguage']}
-
+      - {module: '@itzbund/gsb-core/ckeditor/plugin/special-characters-greek.js', exports: ['SpecialCharactersGreek']}
     heading:
       options:
         - {model: "paragraph", title: "Paragraph"}
