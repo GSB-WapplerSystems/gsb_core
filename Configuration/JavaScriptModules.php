@@ -32,5 +32,6 @@ return [
         '@ckeditor/ckeditor5-language-translations.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/ckeditor5-language-translations.js',
         '@itzbund/gsb-core/validation/https-url-validator.js' => 'EXT:gsb_core/Resources/Public/JavaScript/validation/httpsUrlValidator.js',
         '@itzbund/gsb_core/interactiveImage/backend.js' => 'EXT:gsb_core/Resources/Public/JavaScript/interactiveImage/backend.js',
+        '@itzbund/gsb-core/ckeditor/plugin/special-characters-greek.js' => 'EXT:gsb_core/Resources/Public/CKEditor/JavaScript/plugin/special-characters-greek.js',
     ],
 ];
