@@ -30,8 +30,7 @@ use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Localization\LanguageService;
-use TYPO3\CMS\Reports\Registry\ReportRegistry;
-use TYPO3\CMS\Reports\RequestAwareReportInterface;
+use TYPO3\CMS\Reports\Service\RecordStatisticsService;
 
 /**
  * The "Reports" backend module.
@@ -44,7 +43,7 @@ class ReportController
         protected readonly UriBuilder $uriBuilder,
         protected readonly ModuleTemplateFactory $mTemplateFactory,
         protected readonly IconRegistry $iconRegistry,
-        protected readonly ReportRegistry $reportRegistry
+        private RecordStatisticsService $recordStatisticsService,
     ) {}
 
     /**
