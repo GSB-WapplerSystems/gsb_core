@@ -39,7 +39,7 @@ class ResilientSimpleFileBackend extends SimpleFileBackend
      * @param string $entryIdentifier An identifier which describes the cache entry to load
      * @return mixed Potential return value from the include operation
      */
-    public function require(string $entryIdentifier)
+    public function require(string $entryIdentifier): mixed
     {
         try {
             return parent::require($entryIdentifier);
