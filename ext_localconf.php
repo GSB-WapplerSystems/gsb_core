@@ -103,18 +103,17 @@ defined('TYPO3') or die('Access denied.');
      */
     // $GLOBALS['TYPO3_CONF_VARS']['FE']['contentRenderingTemplates'][] = 'gsb_core/Configuration/TypoScript/';
 
+    /*
     $extVideoFileExtension = 'externalvideo';
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extVideoFileExtension] = GenericExternalVideoHelper::class;
 
-    /** @var RendererRegistry $rendererRegistry */
     $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
     $rendererRegistry->registerRendererClass(GenericExternalVideoRenderer::class);
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extVideoFileExtension] = 'video/generic';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extVideoFileExtension;
 
-    /** @var IconRegistry $iconRegistry */
     $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
     $iconRegistry->registerFileExtension($extVideoFileExtension, 'mimetypes-media-video');
 
@@ -122,16 +121,15 @@ defined('TYPO3') or die('Access denied.');
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers'][$extAudioFileExtension] = GenericExternalAudioHelper::class;
 
-    /** @var RendererRegistry $rendererRegistry */
     $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
     $rendererRegistry->registerRendererClass(GenericExternalAudioRenderer::class);
 
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType'][$extAudioFileExtension] = 'audio/generic';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',' . $extAudioFileExtension;
 
-    /** @var IconRegistry $iconRegistry */
     $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
     $iconRegistry->registerFileExtension($extAudioFileExtension, 'mimetypes-media-audio');
+    */
 
     // Add default RTE configuration for the template package
     $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['default'] = 'EXT:gsb_core/Configuration/RTE/Default.yaml';
