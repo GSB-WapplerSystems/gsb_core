@@ -18,6 +18,7 @@ declare(strict_types=1);
 
 namespace ITZBund\GsbCore\UserFunc;
 
+use TYPO3\CMS\Core\Attribute\AsAllowedCallable;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class LinkIconAriaLabelModifier
@@ -26,6 +27,7 @@ class LinkIconAriaLabelModifier
      * @param string $content
      * @return string
      */
+    #[AsAllowedCallable]
     public function addAriaLabelToLinks(string $content): string
     {
         $trimmedContent = trim($content);
